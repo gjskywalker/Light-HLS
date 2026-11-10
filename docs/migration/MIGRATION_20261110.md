@@ -5,7 +5,7 @@ The Light-HLS component from `/home/eeuser/Desktop/DAPO_II/Light_HLS` is now ava
 ## Snapshot and scope
 
 - Source DAPO-II HEAD: `024e088d4f53f863e9cf1b4558d222927232963c`.
-- The [SHA-256 manifest](source_manifest.csv) covers **740 entries**: 701 regular files and 39 relative symlinks. **738 entries match exactly**; the two build-only differences are described below. No copied symlink is broken.
+- The [SHA-256 manifest](source_manifest.csv) covers **741 entries**: 702 regular files and 39 relative symlinks. **739 entries match exactly**; the two build-only differences are described below. No copied symlink is broken.
 - Compiler passes, scheduling/binding/RTL sources, examples, board/operator data, test fixtures, and regression runners are included. Helpers ignored by the original DAPO-II Git configuration are explicitly included here, so the original Git revision alone is insufficient to reconstruct this snapshot.
 - Backend design notes and historical baseline evidence are retained. These dated archives are separate from the fresh validation below.
 - Build trees, static libraries, old compiler binaries, generated RTL/run outputs, and local agent/editor configuration are excluded from Git. Two historical CMake-generated Makefiles and the compiled `App/2dloop2darray_pl_apint/test` example are also excluded. They can be regenerated rather than depending on old absolute paths.
