@@ -1,0 +1,176 @@
+{
+  "valid": true,
+  "results": [
+    {
+      "case": "nested",
+      "read_latency": 1,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 12288
+    },
+    {
+      "case": "nested",
+      "read_latency": 2,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 14336
+    },
+    {
+      "case": "dynamic_trip",
+      "read_latency": 1,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 8768
+    },
+    {
+      "case": "dynamic_trip",
+      "read_latency": 2,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 10816
+    },
+    {
+      "case": "simultaneous",
+      "read_latency": 1,
+      "valid": true,
+      "bypasses": 2,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 12288
+    },
+    {
+      "case": "simultaneous",
+      "read_latency": 2,
+      "valid": true,
+      "bypasses": 2,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 14336
+    },
+    {
+      "case": "load_dependent",
+      "read_latency": 1,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 20480
+    },
+    {
+      "case": "load_dependent",
+      "read_latency": 2,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 38912
+    },
+    {
+      "case": "late_transition",
+      "read_latency": 1,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 20480
+    },
+    {
+      "case": "late_transition",
+      "read_latency": 2,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 38912
+    },
+    {
+      "case": "pipeline",
+      "read_latency": 1,
+      "valid": true,
+      "bypasses": 0,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 13312
+    },
+    {
+      "case": "pipeline",
+      "read_latency": 2,
+      "valid": true,
+      "bypasses": 0,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 15360
+    },
+    {
+      "case": "narrow",
+      "read_latency": 1,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 20480
+    },
+    {
+      "case": "narrow",
+      "read_latency": 2,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 22528
+    },
+    {
+      "case": "multicycle",
+      "read_latency": 1,
+      "valid": true,
+      "bypasses": 0,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 299072
+    },
+    {
+      "case": "multicycle",
+      "read_latency": 2,
+      "valid": true,
+      "bypasses": 0,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 301120
+    },
+    {
+      "case": "old_phi_liveout",
+      "read_latency": 1,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 12288
+    },
+    {
+      "case": "old_phi_liveout",
+      "read_latency": 2,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 14336
+    }
+  ],
+  "calls": 1152,
+  "outputs": 18432,
+  "executable_sha256": "d0b0d06f0be9d11446e5257f9cad9b5ea4412902faa96bbf5052e4d6b00eea25",
+  "test_sources_sha256": {
+    "README.md": "8010edfc4b4cfd57584bf3e0c85af95364c54d61ec3d9b844048cd3b7a05c8c0",
+    "recurrence.cpp": "4dfbb1e46ce1e07012fed5b9ff003659010fd36a1fde533b1d9ddd1f473320ef",
+    "recurrence_tb.v": "f86a951624d4ed70725bc36b4661f30b4f25d4e96416b9e05ce35071794d0ab1",
+    "run_tests.py": "da267ec51fbf787c26d730582c5615331b871127ed5a0bd6626038a37251ef6d"
+  }
+}

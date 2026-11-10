@@ -1,0 +1,214 @@
+{
+  "valid": true,
+  "results": [
+    {
+      "case": "nested",
+      "read_latency": 1,
+      "valid": true,
+      "outer_feedback_wires": 1,
+      "read_phi_bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 11264
+    },
+    {
+      "case": "nested",
+      "read_latency": 2,
+      "valid": true,
+      "outer_feedback_wires": 1,
+      "read_phi_bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 12288
+    },
+    {
+      "case": "zero_dynamic_outer",
+      "read_latency": 1,
+      "valid": true,
+      "outer_feedback_wires": 1,
+      "read_phi_bypasses": 1,
+      "calls": 64,
+      "outputs": 480,
+      "total_cycles": 5344
+    },
+    {
+      "case": "zero_dynamic_outer",
+      "read_latency": 2,
+      "valid": true,
+      "outer_feedback_wires": 1,
+      "read_phi_bypasses": 1,
+      "calls": 64,
+      "outputs": 480,
+      "total_cycles": 5824
+    },
+    {
+      "case": "descending",
+      "read_latency": 1,
+      "valid": true,
+      "outer_feedback_wires": 0,
+      "read_phi_bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 11264
+    },
+    {
+      "case": "descending",
+      "read_latency": 2,
+      "valid": true,
+      "outer_feedback_wires": 0,
+      "read_phi_bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 12288
+    },
+    {
+      "case": "dynamic_step",
+      "read_latency": 1,
+      "valid": true,
+      "outer_feedback_wires": 0,
+      "read_phi_bypasses": 1,
+      "calls": 64,
+      "outputs": 534,
+      "total_cycles": 6472
+    },
+    {
+      "case": "dynamic_step",
+      "read_latency": 2,
+      "valid": true,
+      "outer_feedback_wires": 0,
+      "read_phi_bypasses": 1,
+      "calls": 64,
+      "outputs": 534,
+      "total_cycles": 7006
+    },
+    {
+      "case": "load_liveout",
+      "read_latency": 1,
+      "valid": true,
+      "outer_feedback_wires": 1,
+      "read_phi_bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 11264
+    },
+    {
+      "case": "load_liveout",
+      "read_latency": 2,
+      "valid": true,
+      "outer_feedback_wires": 1,
+      "read_phi_bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 12288
+    },
+    {
+      "case": "two_successors",
+      "read_latency": 1,
+      "valid": true,
+      "outer_feedback_wires": 0,
+      "read_phi_bypasses": 2,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 15424
+    },
+    {
+      "case": "two_successors",
+      "read_latency": 2,
+      "valid": true,
+      "outer_feedback_wires": 0,
+      "read_phi_bypasses": 2,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 16448
+    },
+    {
+      "case": "division_liveout",
+      "read_latency": 1,
+      "valid": true,
+      "outer_feedback_wires": 1,
+      "read_phi_bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 47168
+    },
+    {
+      "case": "division_liveout",
+      "read_latency": 2,
+      "valid": true,
+      "outer_feedback_wires": 1,
+      "read_phi_bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 48192
+    },
+    {
+      "case": "inner_pipeline",
+      "read_latency": 1,
+      "valid": true,
+      "outer_feedback_wires": 1,
+      "read_phi_bypasses": 0,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 13312
+    },
+    {
+      "case": "inner_pipeline",
+      "read_latency": 2,
+      "valid": true,
+      "outer_feedback_wires": 1,
+      "read_phi_bypasses": 0,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 14336
+    },
+    {
+      "case": "two_port_responses",
+      "read_latency": 1,
+      "valid": true,
+      "outer_feedback_wires": 0,
+      "read_phi_bypasses": 1,
+      "calls": 64,
+      "outputs": 64,
+      "total_cycles": 768
+    },
+    {
+      "case": "two_port_responses",
+      "read_latency": 2,
+      "valid": true,
+      "outer_feedback_wires": 0,
+      "read_phi_bypasses": 1,
+      "calls": 64,
+      "outputs": 64,
+      "total_cycles": 832
+    },
+    {
+      "case": "load_branch",
+      "read_latency": 1,
+      "valid": true,
+      "outer_feedback_wires": 0,
+      "read_phi_bypasses": 0,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 16384
+    },
+    {
+      "case": "load_branch",
+      "read_latency": 2,
+      "valid": true,
+      "outer_feedback_wires": 0,
+      "read_phi_bypasses": 0,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 17408
+    }
+  ],
+  "calls": 1280,
+  "outputs": 16492,
+  "executable_sha256": "d0b0d06f0be9d11446e5257f9cad9b5ea4412902faa96bbf5052e4d6b00eea25",
+  "test_sources_sha256": {
+    "README.md": "708b2cdf82bd1ddf9e2cd124981e8f4f3f3a0086b9b4fb097bf871b1d3259647",
+    "outer_edges.cpp": "d1cbb1ab712ce064b68bf56121c858d876f71f8835c46c4ffdd8cac83c0a65a6",
+    "outer_edges_tb.v": "16385cd60e6a7c3deea85b87b584ef427b677d5f23c421db4cbef7b16bae8a40",
+    "run_tests.py": "d89a2237695bcfa2cf0fbd72301d8a6ea07e781ce2a02e738c7e788bdb82714f"
+  }
+}

@@ -1,0 +1,33 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Tue Sep 29 13:38:19 2026
+| Host         : EE4F089 running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_utilization -hierarchical -file /tmp/lighthls-correctness-20260929.kZl9Xq/final-bank-250/vitis_hls_context/hierarchical_utilization.rpt
+| Design       : registered_pressure_shell
+| Device       : xcu250-figd2104-2L-e
+| Speed File   : -2L
+| Design State : Routed
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++-------------------------------------------------------+----------------------------------------------------+------------+------------+---------+------+-----+--------+--------+------+------------+
+|                        Instance                       |                       Module                       | Total LUTs | Logic LUTs | LUTRAMs | SRLs | FFs | RAMB36 | RAMB18 | URAM | DSP Blocks |
++-------------------------------------------------------+----------------------------------------------------+------------+------------+---------+------+-----+--------+--------+------+------------+
+| registered_pressure_shell                             |                                              (top) |        132 |        132 |       0 |    0 | 204 |      0 |      2 |    0 |          0 |
+|   (registered_pressure_shell)                         |                                              (top) |         30 |         30 |       0 |    0 | 126 |      0 |      0 |    0 |          0 |
+|   kernel                                              |                           qor_pressure__normalized |        102 |        102 |       0 |    0 |  78 |      0 |      2 |    0 |          0 |
+|     native_instance                                   |                                       qor_pressure |        102 |        102 |       0 |    0 |  78 |      0 |      2 |    0 |          0 |
+|       grp_qor_pressure_Pipeline_VITIS_LOOP_13_2_fu_70 | qor_pressure_qor_pressure_Pipeline_VITIS_LOOP_13_2 |         54 |         54 |       0 |    0 |  20 |      0 |      0 |    0 |          0 |
++-------------------------------------------------------+----------------------------------------------------+------------+------------+---------+------+-----+--------+--------+------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

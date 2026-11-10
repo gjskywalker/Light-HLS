@@ -1,0 +1,635 @@
+{
+  "valid": true,
+  "comparison_sha256": null,
+  "rtl_root": "/tmp/lighthls-next3-20260928.t1orVg/dsp-dataflow-250-v3",
+  "source_sha256": "f00d0955fe4d078cbf42c0057a12afef7976e653b493e306b0218fa1545b88dd",
+  "testbench_sha256": "45a1b7d4cb75d56e35099cd26b3dd95ca52e8910f7ceef9133f70f11111a04de",
+  "contract": "32 held-start offers, changing coefficient, immutable input RAM, one-cycle reads, no output backpressure",
+  "note": "Ready is an acknowledgement, not necessarily the first execution edge. Throughput uses final commits.",
+  "results": {
+    "light_hls": {
+      "rtl_sha256": {
+        "light_hls/reports/rtl/top.v": "8ac3a065dee2b3fe208f1c0ab196841e115422556b15a129dc02476274d57263"
+      },
+      "reference_outputs": 8192,
+      "events": [
+        {
+          "trial": 0,
+          "acknowledged": 5,
+          "last_commit": 267,
+          "done": 268
+        },
+        {
+          "trial": 1,
+          "acknowledged": 6,
+          "last_commit": 528,
+          "done": 529
+        },
+        {
+          "trial": 2,
+          "acknowledged": 268,
+          "last_commit": 789,
+          "done": 790
+        },
+        {
+          "trial": 3,
+          "acknowledged": 529,
+          "last_commit": 1050,
+          "done": 1051
+        },
+        {
+          "trial": 4,
+          "acknowledged": 790,
+          "last_commit": 1311,
+          "done": 1312
+        },
+        {
+          "trial": 5,
+          "acknowledged": 1051,
+          "last_commit": 1572,
+          "done": 1573
+        },
+        {
+          "trial": 6,
+          "acknowledged": 1312,
+          "last_commit": 1833,
+          "done": 1834
+        },
+        {
+          "trial": 7,
+          "acknowledged": 1573,
+          "last_commit": 2094,
+          "done": 2095
+        },
+        {
+          "trial": 8,
+          "acknowledged": 1834,
+          "last_commit": 2355,
+          "done": 2356
+        },
+        {
+          "trial": 9,
+          "acknowledged": 2095,
+          "last_commit": 2616,
+          "done": 2617
+        },
+        {
+          "trial": 10,
+          "acknowledged": 2356,
+          "last_commit": 2877,
+          "done": 2878
+        },
+        {
+          "trial": 11,
+          "acknowledged": 2617,
+          "last_commit": 3138,
+          "done": 3139
+        },
+        {
+          "trial": 12,
+          "acknowledged": 2878,
+          "last_commit": 3399,
+          "done": 3400
+        },
+        {
+          "trial": 13,
+          "acknowledged": 3139,
+          "last_commit": 3660,
+          "done": 3661
+        },
+        {
+          "trial": 14,
+          "acknowledged": 3400,
+          "last_commit": 3921,
+          "done": 3922
+        },
+        {
+          "trial": 15,
+          "acknowledged": 3661,
+          "last_commit": 4182,
+          "done": 4183
+        },
+        {
+          "trial": 16,
+          "acknowledged": 3922,
+          "last_commit": 4443,
+          "done": 4444
+        },
+        {
+          "trial": 17,
+          "acknowledged": 4183,
+          "last_commit": 4704,
+          "done": 4705
+        },
+        {
+          "trial": 18,
+          "acknowledged": 4444,
+          "last_commit": 4965,
+          "done": 4966
+        },
+        {
+          "trial": 19,
+          "acknowledged": 4705,
+          "last_commit": 5226,
+          "done": 5227
+        },
+        {
+          "trial": 20,
+          "acknowledged": 4966,
+          "last_commit": 5487,
+          "done": 5488
+        },
+        {
+          "trial": 21,
+          "acknowledged": 5227,
+          "last_commit": 5748,
+          "done": 5749
+        },
+        {
+          "trial": 22,
+          "acknowledged": 5488,
+          "last_commit": 6009,
+          "done": 6010
+        },
+        {
+          "trial": 23,
+          "acknowledged": 5749,
+          "last_commit": 6270,
+          "done": 6271
+        },
+        {
+          "trial": 24,
+          "acknowledged": 6010,
+          "last_commit": 6531,
+          "done": 6532
+        },
+        {
+          "trial": 25,
+          "acknowledged": 6271,
+          "last_commit": 6792,
+          "done": 6793
+        },
+        {
+          "trial": 26,
+          "acknowledged": 6532,
+          "last_commit": 7053,
+          "done": 7054
+        },
+        {
+          "trial": 27,
+          "acknowledged": 6793,
+          "last_commit": 7314,
+          "done": 7315
+        },
+        {
+          "trial": 28,
+          "acknowledged": 7054,
+          "last_commit": 7575,
+          "done": 7576
+        },
+        {
+          "trial": 29,
+          "acknowledged": 7315,
+          "last_commit": 7836,
+          "done": 7837
+        },
+        {
+          "trial": 30,
+          "acknowledged": 7576,
+          "last_commit": 8097,
+          "done": 8098
+        },
+        {
+          "trial": 31,
+          "acknowledged": 7837,
+          "last_commit": 8358,
+          "done": 8359
+        }
+      ],
+      "intervals": {
+        "acknowledged": [
+          1,
+          262,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261
+        ],
+        "last_commit": [
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261
+        ],
+        "done": [
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261,
+          261
+        ]
+      },
+      "warmup_intervals": 4,
+      "steady_commit_interval_cycles": 261.0,
+      "steady_commit_interval_min": 261,
+      "steady_commit_interval_max": 261,
+      "steady_outputs_per_cycle": 0.9808429118773946
+    },
+    "vitis_hls": {
+      "rtl_sha256": {
+        "vitis_hls/vitis_project/solution/syn/verilog/qor_pressure.v": "17ab360632696cf1052a284184ca201a69006f1fbf576d7a9cdd3e2fbd5a0388",
+        "vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_compute_pressure.v": "a064cf49d82b05a1ac2acadf5ce5ddf975c6dcb18d45e1b2b8f0f908de6041ab",
+        "vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_compute_pressure_Pipeline_VITIS_LOOP_17_1.v": "e283447f3749c255c6c771a2db489a1ff936203875004c7e3add1ccdcd94e963",
+        "vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_entry_proc.v": "ebfa22e1dcbca2fa8e59bd6433051558bd371fc42de2cb9298cd4a5a175c74f1",
+        "vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_fifo_w32_d3_S.v": "30ff4f3ab79d6adcc5403a7fb7c6fff2631043280ba415af3ec267198cf0e95c",
+        "vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_fifo_w32_d4_S.v": "578c1f4a66a9ddfaf16bb7862ff65dc6de1a985bb52cbf97b66c160f69dc4731",
+        "vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_flow_control_loop_pipe.v": "1dc529306b4e287ba5494382c5f263af08186d2a8bb0662d7dd997f9ed6e9f3e",
+        "vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_flow_control_loop_pipe_sequential_init.v": "04fd4335e9e9581c5586f46b98085ebb45d2d697162715c2779f22fd8aba9594",
+        "vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_load_pressure.v": "8cdd0f3fcbcf6c0bce8858bb6b06cfd5839c15d33986313315dd0a16e063a0ce",
+        "vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_mac_muladd_17ns_17ns_8ns_32_4_1.v": "b60db3b8e8f87069f6de5d55bef6fa13d7043b0c1cba81006ed1d20f12572a43",
+        "vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_start_for_compute_pressure_U0.v": "382f9cc09c9bb95bf6bb35324e918b3d2783dabac92df624551232d27f7c7ca4",
+        "vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_start_for_store_pressure_U0.v": "f27de232f3b8cae579d5e9f23d78ca00a4c94b2480aa5b5c2ec6286a80a6556f",
+        "vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_store_pressure.v": "ebf9cfb35806dfc851136e208f022162259bfccefd47563e9835946786e1e19a"
+      },
+      "reference_outputs": 8192,
+      "events": [
+        {
+          "trial": 0,
+          "acknowledged": 260,
+          "last_commit": 266,
+          "done": 266
+        },
+        {
+          "trial": 1,
+          "acknowledged": 518,
+          "last_commit": 526,
+          "done": 526
+        },
+        {
+          "trial": 2,
+          "acknowledged": 778,
+          "last_commit": 786,
+          "done": 786
+        },
+        {
+          "trial": 3,
+          "acknowledged": 1038,
+          "last_commit": 1046,
+          "done": 1046
+        },
+        {
+          "trial": 4,
+          "acknowledged": 1298,
+          "last_commit": 1306,
+          "done": 1306
+        },
+        {
+          "trial": 5,
+          "acknowledged": 1558,
+          "last_commit": 1566,
+          "done": 1566
+        },
+        {
+          "trial": 6,
+          "acknowledged": 1818,
+          "last_commit": 1826,
+          "done": 1826
+        },
+        {
+          "trial": 7,
+          "acknowledged": 2078,
+          "last_commit": 2086,
+          "done": 2086
+        },
+        {
+          "trial": 8,
+          "acknowledged": 2338,
+          "last_commit": 2346,
+          "done": 2346
+        },
+        {
+          "trial": 9,
+          "acknowledged": 2598,
+          "last_commit": 2606,
+          "done": 2606
+        },
+        {
+          "trial": 10,
+          "acknowledged": 2858,
+          "last_commit": 2866,
+          "done": 2866
+        },
+        {
+          "trial": 11,
+          "acknowledged": 3118,
+          "last_commit": 3126,
+          "done": 3126
+        },
+        {
+          "trial": 12,
+          "acknowledged": 3378,
+          "last_commit": 3386,
+          "done": 3386
+        },
+        {
+          "trial": 13,
+          "acknowledged": 3638,
+          "last_commit": 3646,
+          "done": 3646
+        },
+        {
+          "trial": 14,
+          "acknowledged": 3898,
+          "last_commit": 3906,
+          "done": 3906
+        },
+        {
+          "trial": 15,
+          "acknowledged": 4158,
+          "last_commit": 4166,
+          "done": 4166
+        },
+        {
+          "trial": 16,
+          "acknowledged": 4418,
+          "last_commit": 4426,
+          "done": 4426
+        },
+        {
+          "trial": 17,
+          "acknowledged": 4678,
+          "last_commit": 4686,
+          "done": 4686
+        },
+        {
+          "trial": 18,
+          "acknowledged": 4938,
+          "last_commit": 4946,
+          "done": 4946
+        },
+        {
+          "trial": 19,
+          "acknowledged": 5198,
+          "last_commit": 5206,
+          "done": 5206
+        },
+        {
+          "trial": 20,
+          "acknowledged": 5458,
+          "last_commit": 5466,
+          "done": 5466
+        },
+        {
+          "trial": 21,
+          "acknowledged": 5718,
+          "last_commit": 5726,
+          "done": 5726
+        },
+        {
+          "trial": 22,
+          "acknowledged": 5978,
+          "last_commit": 5986,
+          "done": 5986
+        },
+        {
+          "trial": 23,
+          "acknowledged": 6238,
+          "last_commit": 6246,
+          "done": 6246
+        },
+        {
+          "trial": 24,
+          "acknowledged": 6498,
+          "last_commit": 6506,
+          "done": 6506
+        },
+        {
+          "trial": 25,
+          "acknowledged": 6758,
+          "last_commit": 6766,
+          "done": 6766
+        },
+        {
+          "trial": 26,
+          "acknowledged": 7018,
+          "last_commit": 7026,
+          "done": 7026
+        },
+        {
+          "trial": 27,
+          "acknowledged": 7278,
+          "last_commit": 7286,
+          "done": 7286
+        },
+        {
+          "trial": 28,
+          "acknowledged": 7538,
+          "last_commit": 7546,
+          "done": 7546
+        },
+        {
+          "trial": 29,
+          "acknowledged": 7798,
+          "last_commit": 7806,
+          "done": 7806
+        },
+        {
+          "trial": 30,
+          "acknowledged": 8058,
+          "last_commit": 8066,
+          "done": 8066
+        },
+        {
+          "trial": 31,
+          "acknowledged": 8318,
+          "last_commit": 8326,
+          "done": 8326
+        }
+      ],
+      "intervals": {
+        "acknowledged": [
+          258,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260
+        ],
+        "last_commit": [
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260
+        ],
+        "done": [
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260
+        ]
+      },
+      "warmup_intervals": 4,
+      "steady_commit_interval_cycles": 260.0,
+      "steady_commit_interval_min": 260,
+      "steady_commit_interval_max": 260,
+      "steady_outputs_per_cycle": 0.9846153846153847
+    }
+  }
+}

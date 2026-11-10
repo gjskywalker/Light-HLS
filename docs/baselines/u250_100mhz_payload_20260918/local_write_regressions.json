@@ -1,0 +1,77 @@
+{
+  "valid": true,
+  "executable_sha256": "24266e01ef47fcde15715edbc5777b9841dc38f92b79be45c1e59b4a3810091d",
+  "test_sources_sha256": {
+    "external_only.cpp": "2270bfb976049f31492059371dfc0c94d7f306bbad3bf5679ae601ebf0ec5f7f",
+    "local_dataflow.cpp": "0693ea6220ac043ba4c78c5838a443578c3236144804a72562d8cb2e44594952",
+    "local_write_data_tb.v": "f3f720bf66274b1cdaa9ac6bfc534aabfb90d132bc069c14c620fa0caf511a2b",
+    "multiple_dual.cpp": "54ca15472b4c2d45a0594e8b3c299f6175ee1228b7445e06a4a1d2592e91c935",
+    "multiple_ordinary.cpp": "939db8eb0c2fe2ee0b99b8d76601cce5543b5d5c831bf97ec640e5f8e282d4b4",
+    "partial_banks.cpp": "d7f01c1a3c6509433febc65feac6204e0e1d9976b384597e18d166d9a668a7aa",
+    "run_tests.py": "3687f9b253ac51550766569534f9e3e8a27226ca408b5f75c4efb413d515696c",
+    "run_tests.sh": "07c6b1e919716c4954d3416cb42623af79a098539019fb138f26cc784ed2e6b3",
+    "single_latency2.cpp": "2a48abdf31b24a0bd4b261475f1cf5996ae7eefb311dc5fd56db8bd0a0d7c664",
+    "single_ordinary.cpp": "23e2261d22b888f7e64aa9bb1b8575875f7224dfd70b58092ab0004a3290da62",
+    "single_pipeline.cpp": "71aa5c7c484afd8dee1ff488a6d348159df94df6784077a8d18b5d499b45320f"
+  },
+  "calls": 512,
+  "outputs": 8192,
+  "results": [
+    {
+      "case": "single_ordinary",
+      "valid": true,
+      "direct_local_write_ports": 4,
+      "calls": 64,
+      "outputs": 1024
+    },
+    {
+      "case": "single_pipeline",
+      "valid": true,
+      "direct_local_write_ports": 4,
+      "calls": 64,
+      "outputs": 1024
+    },
+    {
+      "case": "single_latency2",
+      "valid": true,
+      "direct_local_write_ports": 4,
+      "calls": 64,
+      "outputs": 1024
+    },
+    {
+      "case": "multiple_ordinary",
+      "valid": true,
+      "direct_local_write_ports": 0,
+      "calls": 64,
+      "outputs": 1024
+    },
+    {
+      "case": "multiple_dual",
+      "valid": true,
+      "direct_local_write_ports": 2,
+      "calls": 64,
+      "outputs": 1024
+    },
+    {
+      "case": "partial_banks",
+      "valid": true,
+      "direct_local_write_ports": 3,
+      "calls": 64,
+      "outputs": 1024
+    },
+    {
+      "case": "external_only",
+      "valid": true,
+      "direct_local_write_ports": 0,
+      "calls": 64,
+      "outputs": 1024
+    },
+    {
+      "case": "local_dataflow",
+      "valid": true,
+      "direct_local_write_ports": 1,
+      "calls": 64,
+      "outputs": 1024
+    }
+  ]
+}

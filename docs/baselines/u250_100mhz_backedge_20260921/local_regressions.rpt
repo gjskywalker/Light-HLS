@@ -1,0 +1,21 @@
+Light-HLS Unified Local Regression
+
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+
+| Suite                        | Status   | Runtime (s)  | Script SHA256    | Log                                                     |
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+
+| AppCorrectness               | PASS     | 6.777144     | bc9bca0b5a23cf7a | /tmp/lighthls-backedge-qor-20260921.CGzauP/regressio... |
+| RTL_Backend                  | PASS     | 1.367733     | 2efc8e1d603b2805 | /tmp/lighthls-backedge-qor-20260921.CGzauP/regressio... |
+| PipelineBackend              | PASS     | 1.122071     | 1e72af514281a249 | /tmp/lighthls-backedge-qor-20260921.CGzauP/regressio... |
+| PipelineStorage              | PASS     | 1.317349     | fa2e0cfeced688a7 | /tmp/lighthls-backedge-qor-20260921.CGzauP/regressio... |
+| ArrayPartitionBackend        | PASS     | 1.068809     | aa96771d07abf904 | /tmp/lighthls-backedge-qor-20260921.CGzauP/regressio... |
+| OrdinaryBankAnalysis         | PASS     | 4.609836     | 07c6b1e919716c49 | /tmp/lighthls-backedge-qor-20260921.CGzauP/regressio... |
+| LocalWriteData               | PASS     | 2.234707     | 07c6b1e919716c49 | /tmp/lighthls-backedge-qor-20260921.CGzauP/regressio... |
+| FIFOEvents                   | PASS     | 3.079663     | b1b40f025149c208 | /tmp/lighthls-backedge-qor-20260921.CGzauP/regressio... |
+| OrdinaryFeedback             | PASS     | 3.748237     | 7a4ff0bacb1987dd | /tmp/lighthls-backedge-qor-20260921.CGzauP/regressio... |
+| OrdinaryBackedge             | PASS     | 5.397506     | 23eac8fdb13e8a57 | /tmp/lighthls-backedge-qor-20260921.CGzauP/regressio... |
+| StorageBindingBackend        | PASS     | 0.167783     | d1f3e60b11fd09ea | /tmp/lighthls-backedge-qor-20260921.CGzauP/regressio... |
+| DataflowBackend              | PASS     | 2.620796     | 5d9dc84e5a6f03df | /tmp/lighthls-backedge-qor-20260921.CGzauP/regressio... |
+| FairComparisonInterface      | PASS     | 0.034841     | ee70546062d906f1 | /tmp/lighthls-backedge-qor-20260921.CGzauP/regressio... |
+| AppCapability                | PASS     | 15.685932    | e1b101b2b74f1cac | /tmp/lighthls-backedge-qor-20260921.CGzauP/regressio... |
+| FairComparisonQoR            | PASS     | 0.034624     | 03cf3a9a1059d072 | /tmp/lighthls-backedge-qor-20260921.CGzauP/regressio... |
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+

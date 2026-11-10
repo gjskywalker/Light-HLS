@@ -1,0 +1,497 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date              : Tue Sep 29 13:28:08 2026
+| Host              : EE4F089 running 64-bit Ubuntu 22.04.5 LTS
+| Command           : report_timing_summary -delay_type min_max -report_unconstrained -file /tmp/lighthls-correctness-20260929.kZl9Xq/final-map-100/light_hls_context/route_timing_summary.rpt
+| Design            : registered_pressure_shell
+| Device            : xcu250-figd2104
+| Speed File        : -2L  PRODUCTION 1.28 03-30-2022
+| Design State      : Routed
+| Temperature Grade : E
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+No report available as report_methodology has not been run prior. Run report_methodology on the current design for the summary of methodology violations.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (0)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (0)
+5. checking no_input_delay (0)
+6. checking no_output_delay (0)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (0)
+------------------------
+ There are 0 register/latch pins with no clock.
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (0)
+------------------------------------------------
+ There are 0 pins that are not constrained for maximum delay.
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (0)
+------------------------------
+ There are 0 input ports with no input delay specified.
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (0)
+-------------------------------
+ There are 0 ports with no output delay specified.
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+      7.411        0.000                      0                  359        0.035        0.000                      0                  359        4.725        0.000                       0                   160  
+
+
+All user specified timing constraints are met.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+Clock   Waveform(ns)       Period(ns)      Frequency(MHz)
+-----   ------------       ----------      --------------
+ap_clk  {0.000 5.000}      10.000          100.000         
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+ap_clk              7.411        0.000                      0                  359        0.035        0.000                      0                  359        4.725        0.000                       0                   160  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                      ap_clk        
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------
+From Clock:  ap_clk
+  To Clock:  ap_clk
+
+Setup :            0  Failing Endpoints,  Worst Slack        7.411ns,  Total Violation        0.000ns
+Hold  :            0  Failing Endpoints,  Worst Slack        0.035ns,  Total Violation        0.000ns
+PW    :            0  Failing Endpoints,  Worst Slack        4.725ns,  Total Violation        0.000ns
+---------------------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             7.411ns  (required time - arrival time)
+  Source:                 input_r_q0_reg[0]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            observed_outputs_reg[6]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            10.000ns  (ap_clk rise@10.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.486ns  (logic 1.682ns (67.659%)  route 0.804ns (32.341%))
+  Logic Levels:           7  (DSP_A_B_DATA=1 DSP_ALU=1 DSP_M_DATA=1 DSP_MULTIPLIER=1 DSP_OUTPUT=1 DSP_PREADD_DATA=1 LUT4=1)
+  Clock Path Skew:        -0.093ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    1.416ns = ( 11.416 - 10.000 ) 
+    Source Clock Delay      (SCD):    1.618ns
+    Clock Pessimism Removal (CPR):    0.109ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      1.547ns (routing 0.699ns, distribution 0.848ns)
+  Clock Net Delay (Destination): 1.356ns (routing 0.636ns, distribution 0.720ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.043     0.043    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X4Y8 (CLOCK_ROOT)    net (fo=164, routed)         1.547     1.618    kernel_clk
+    SLR Crossing[1->2]   
+    SLICE_X121Y510       FDRE                                         r  input_r_q0_reg[0]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X121Y510       FDRE (Prop_HFF2_SLICEM_C_Q)
+                                                      0.078     1.696 f  input_r_q0_reg[0]/Q
+                         net (fo=1, routed)           0.406     2.102    kernel/native_instance/output_r_d00/A[0]
+    DSP48E2_X16Y204      DSP_A_B_DATA (Prop_DSP_A_B_DATA_DSP48E2_A[0]_A2_DATA[0])
+                                                      0.192     2.294 r  kernel/native_instance/output_r_d00/DSP_A_B_DATA_INST/A2_DATA[0]
+                         net (fo=1, routed)           0.000     2.294    kernel/native_instance/output_r_d00/DSP_A_B_DATA.A2_DATA<0>
+    DSP48E2_X16Y204      DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_DSP48E2_A2_DATA[0]_A2A1[0])
+                                                      0.076     2.370 r  kernel/native_instance/output_r_d00/DSP_PREADD_DATA_INST/A2A1[0]
+                         net (fo=1, routed)           0.000     2.370    kernel/native_instance/output_r_d00/DSP_PREADD_DATA.A2A1<0>
+    DSP48E2_X16Y204      DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_DSP48E2_A2A1[0]_U[6])
+                                                      0.505     2.875 f  kernel/native_instance/output_r_d00/DSP_MULTIPLIER_INST/U[6]
+                         net (fo=1, routed)           0.000     2.875    kernel/native_instance/output_r_d00/DSP_MULTIPLIER.U<6>
+    DSP48E2_X16Y204      DSP_M_DATA (Prop_DSP_M_DATA_DSP48E2_U[6]_U_DATA[6])
+                                                      0.047     2.922 r  kernel/native_instance/output_r_d00/DSP_M_DATA_INST/U_DATA[6]
+                         net (fo=1, routed)           0.000     2.922    kernel/native_instance/output_r_d00/DSP_M_DATA.U_DATA<6>
+    DSP48E2_X16Y204      DSP_ALU (Prop_DSP_ALU_DSP48E2_U_DATA[6]_ALU_OUT[6])
+                                                      0.585     3.507 f  kernel/native_instance/output_r_d00/DSP_ALU_INST/ALU_OUT[6]
+                         net (fo=1, routed)           0.000     3.507    kernel/native_instance/output_r_d00/DSP_ALU.ALU_OUT<6>
+    DSP48E2_X16Y204      DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_ALU_OUT[6]_P[6])
+                                                      0.109     3.616 r  kernel/native_instance/output_r_d00/DSP_OUTPUT_INST/P[6]
+                         net (fo=1, routed)           0.345     3.961    kernel/native_instance/output_r_d00_n_99
+    SLICE_X122Y510       LUT4 (Prop_A6LUT_SLICEM_I0_O)
+                                                      0.090     4.051 r  kernel/native_instance/output_r_d0[6]_INST_0/O
+                         net (fo=1, routed)           0.053     4.104    output_r_d0[6]
+    SLICE_X122Y510       FDRE                                         r  observed_outputs_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)    10.000    10.000 r  
+                                                      0.000    10.000 r  ap_clk (IN)
+                         net (fo=0)                   0.036    10.036    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024    10.060 r  clock_buffer/O
+    X4Y8 (CLOCK_ROOT)    net (fo=164, routed)         1.356    11.416    kernel_clk
+    SLR Crossing[1->2]   
+    SLICE_X122Y510       FDRE                                         r  observed_outputs_reg[6]/C
+                         clock pessimism              0.109    11.525    
+                         clock uncertainty           -0.035    11.490    
+    SLICE_X122Y510       FDRE (Setup_AFF_SLICEM_C_D)
+                                                      0.025    11.515    observed_outputs_reg[6]
+  -------------------------------------------------------------------
+                         required time                         11.515    
+                         arrival time                          -4.104    
+  -------------------------------------------------------------------
+                         slack                                  7.411    
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack (MET) :             0.035ns  (arrival time - required time)
+  Source:                 kernel/native_instance/pipe_Loop_qor_pressure_1_launch_count_reg[5]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Destination:            kernel/native_instance/pipe_Loop_qor_pressure_1_iteration_age_reg[0][5]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.186ns  (logic 0.058ns (31.106%)  route 0.128ns (68.894%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.091ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.630ns
+    Source Clock Delay      (SCD):    1.430ns
+    Clock Pessimism Removal (CPR):    0.109ns
+  Clock Net Delay (Source):      1.370ns (routing 0.636ns, distribution 0.734ns)
+  Clock Net Delay (Destination): 1.559ns (routing 0.699ns, distribution 0.860ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.036     0.036    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     0.060 r  clock_buffer/O
+    X4Y8 (CLOCK_ROOT)    net (fo=164, routed)         1.370     1.430    kernel/native_instance/ap_clk
+    SLR Crossing[1->2]   
+    SLICE_X120Y508       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_1_launch_count_reg[5]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X120Y508       FDRE (Prop_FFF_SLICEL_C_Q)
+                                                      0.058     1.488 r  kernel/native_instance/pipe_Loop_qor_pressure_1_launch_count_reg[5]/Q
+                         net (fo=6, routed)           0.128     1.616    kernel/native_instance/pipe_Loop_qor_pressure_1_iteration_age[5]
+    SLICE_X121Y508       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_1_iteration_age_reg[0][5]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.043     0.043    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X4Y8 (CLOCK_ROOT)    net (fo=164, routed)         1.559     1.630    kernel/native_instance/ap_clk
+    SLR Crossing[1->2]   
+    SLICE_X121Y508       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_1_iteration_age_reg[0][5]/C
+                         clock pessimism             -0.109     1.521    
+    SLICE_X121Y508       FDRE (Hold_AFF_SLICEM_C_D)
+                                                      0.060     1.581    kernel/native_instance/pipe_Loop_qor_pressure_1_iteration_age_reg[0][5]
+  -------------------------------------------------------------------
+                         required time                         -1.581    
+                         arrival time                           1.616    
+  -------------------------------------------------------------------
+                         slack                                  0.035    
+
+
+
+
+
+Pulse Width Checks
+--------------------------------------------------------------------------------------
+Clock Name:         ap_clk
+Waveform(ns):       { 0.000 5.000 }
+Period(ns):         10.000
+Sources:            { ap_clk }
+
+Check Type        Corner  Lib Pin   Reference Pin  Required(ns)  Actual(ns)  Slack(ns)  Location        Pin
+Min Period        n/a     BUFGCE/I  n/a            1.290         10.000      8.710      BUFGCE_X0Y183   clock_buffer/I
+Low Pulse Width   Slow    FDSE/C    n/a            0.275         5.000       4.725      SLICE_X119Y510  coefficient_reg[0]/C
+High Pulse Width  Slow    FDSE/C    n/a            0.275         5.000       4.725      SLICE_X119Y510  coefficient_reg[0]/C
+
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  ap_clk
+
+Max Delay            15 Endpoints
+Min Delay            15 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 kernel/native_instance/output_r_d00/DSP_A_B_DATA_INST/A2_DATA[26]
+                            (internal pin)
+  Destination:            observed_outputs_reg[28]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Setup (Max at Slow Process Corner)
+  Data Path Delay:        1.844ns  (logic 1.420ns (77.007%)  route 0.424ns (22.993%))
+  Logic Levels:           6  (DSP_ALU=1 DSP_M_DATA=1 DSP_MULTIPLIER=1 DSP_OUTPUT=1 DSP_PREADD_DATA=1 LUT4=1)
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 1.367ns (routing 0.636ns, distribution 0.731ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    DSP48E2_X16Y204      DSP_A_B_DATA                 0.000     0.000 r  kernel/native_instance/output_r_d00/DSP_A_B_DATA_INST/A2_DATA[26]
+                         net (fo=1, routed)           0.000     0.000    kernel/native_instance/output_r_d00/DSP_A_B_DATA.A2_DATA<26>
+    DSP48E2_X16Y204      DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_DSP48E2_A2_DATA[26]_A2A1[26])
+                                                      0.076     0.076 r  kernel/native_instance/output_r_d00/DSP_PREADD_DATA_INST/A2A1[26]
+                         net (fo=1, routed)           0.000     0.076    kernel/native_instance/output_r_d00/DSP_PREADD_DATA.A2A1<26>
+    DSP48E2_X16Y204      DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_DSP48E2_A2A1[26]_U[28])
+                                                      0.505     0.581 f  kernel/native_instance/output_r_d00/DSP_MULTIPLIER_INST/U[28]
+                         net (fo=1, routed)           0.000     0.581    kernel/native_instance/output_r_d00/DSP_MULTIPLIER.U<28>
+    DSP48E2_X16Y204      DSP_M_DATA (Prop_DSP_M_DATA_DSP48E2_U[28]_U_DATA[28])
+                                                      0.047     0.628 r  kernel/native_instance/output_r_d00/DSP_M_DATA_INST/U_DATA[28]
+                         net (fo=1, routed)           0.000     0.628    kernel/native_instance/output_r_d00/DSP_M_DATA.U_DATA<28>
+    DSP48E2_X16Y204      DSP_ALU (Prop_DSP_ALU_DSP48E2_U_DATA[28]_ALU_OUT[28])
+                                                      0.585     1.213 f  kernel/native_instance/output_r_d00/DSP_ALU_INST/ALU_OUT[28]
+                         net (fo=1, routed)           0.000     1.213    kernel/native_instance/output_r_d00/DSP_ALU.ALU_OUT<28>
+    DSP48E2_X16Y204      DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_ALU_OUT[28]_P[28])
+                                                      0.109     1.322 r  kernel/native_instance/output_r_d00/DSP_OUTPUT_INST/P[28]
+                         net (fo=1, routed)           0.357     1.679    kernel/native_instance/output_r_d00_n_77
+    SLICE_X121Y513       LUT4 (Prop_F6LUT_SLICEM_I0_O)
+                                                      0.098     1.777 r  kernel/native_instance/output_r_d0[28]_INST_0/O
+                         net (fo=1, routed)           0.067     1.844    output_r_d0[28]
+    SLICE_X121Y513       FDRE                                         r  observed_outputs_reg[28]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.036     0.036    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     0.060 r  clock_buffer/O
+    X4Y8 (CLOCK_ROOT)    net (fo=164, routed)         1.367     1.427    kernel_clk
+    SLR Crossing[1->2]   
+    SLICE_X121Y513       FDRE                                         r  observed_outputs_reg[28]/C
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 kernel/native_instance/output_r_d00/DSP_A_B_DATA_INST/A2_DATA[26]
+                            (internal pin)
+  Destination:            observed_outputs_reg[29]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@5.000ns period=10.000ns})
+  Path Group:             (none)
+  Path Type:              Hold (Min at Fast Process Corner)
+  Data Path Delay:        0.348ns  (logic 0.277ns (79.598%)  route 0.071ns (20.402%))
+  Logic Levels:           6  (DSP_ALU=1 DSP_M_DATA=1 DSP_MULTIPLIER=1 DSP_OUTPUT=1 DSP_PREADD_DATA=1 LUT4=1)
+  Clock Uncertainty:      0.025ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.050ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Destination): 0.971ns (routing 0.426ns, distribution 0.545ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    DSP48E2_X16Y204      DSP_A_B_DATA                 0.000     0.000 r  kernel/native_instance/output_r_d00/DSP_A_B_DATA_INST/A2_DATA[26]
+                         net (fo=1, routed)           0.000     0.000    kernel/native_instance/output_r_d00/DSP_A_B_DATA.A2_DATA<26>
+    DSP48E2_X16Y204      DSP_PREADD_DATA (Prop_DSP_PREADD_DATA_DSP48E2_A2_DATA[26]_A2A1[26])
+                                                      0.019     0.019 r  kernel/native_instance/output_r_d00/DSP_PREADD_DATA_INST/A2A1[26]
+                         net (fo=1, routed)           0.000     0.019    kernel/native_instance/output_r_d00/DSP_PREADD_DATA.A2A1<26>
+    DSP48E2_X16Y204      DSP_MULTIPLIER (Prop_DSP_MULTIPLIER_DSP48E2_A2A1[26]_U[29])
+                                                      0.066     0.085 f  kernel/native_instance/output_r_d00/DSP_MULTIPLIER_INST/U[29]
+                         net (fo=1, routed)           0.000     0.085    kernel/native_instance/output_r_d00/DSP_MULTIPLIER.U<29>
+    DSP48E2_X16Y204      DSP_M_DATA (Prop_DSP_M_DATA_DSP48E2_U[29]_U_DATA[29])
+                                                      0.012     0.097 r  kernel/native_instance/output_r_d00/DSP_M_DATA_INST/U_DATA[29]
+                         net (fo=1, routed)           0.000     0.097    kernel/native_instance/output_r_d00/DSP_M_DATA.U_DATA<29>
+    DSP48E2_X16Y204      DSP_ALU (Prop_DSP_ALU_DSP48E2_U_DATA[29]_ALU_OUT[29])
+                                                      0.113     0.210 f  kernel/native_instance/output_r_d00/DSP_ALU_INST/ALU_OUT[29]
+                         net (fo=1, routed)           0.000     0.210    kernel/native_instance/output_r_d00/DSP_ALU.ALU_OUT<29>
+    DSP48E2_X16Y204      DSP_OUTPUT (Prop_DSP_OUTPUT_DSP48E2_ALU_OUT[29]_P[29])
+                                                      0.030     0.240 r  kernel/native_instance/output_r_d00/DSP_OUTPUT_INST/P[29]
+                         net (fo=1, routed)           0.062     0.302    kernel/native_instance/output_r_d00_n_76
+    SLICE_X121Y513       LUT4 (Prop_F5LUT_SLICEM_I0_O)
+                                                      0.037     0.339 r  kernel/native_instance/output_r_d0[29]_INST_0/O
+                         net (fo=1, routed)           0.009     0.348    output_r_d0[29]
+    SLICE_X121Y513       FDRE                                         r  observed_outputs_reg[29]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.030     0.030    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.019     0.049 r  clock_buffer/O
+    X4Y8 (CLOCK_ROOT)    net (fo=164, routed)         0.971     1.020    kernel_clk
+    SLR Crossing[1->2]   
+    SLICE_X121Y513       FDRE                                         r  observed_outputs_reg[29]/C
+
+
+
+
+

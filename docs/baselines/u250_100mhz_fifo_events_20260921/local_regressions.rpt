@@ -1,0 +1,19 @@
+Light-HLS Unified Local Regression
+
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+
+| Suite                        | Status   | Runtime (s)  | Script SHA256    | Log                                                     |
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+
+| AppCorrectness               | PASS     | 6.777204     | bc9bca0b5a23cf7a | /tmp/lighthls-fifo-events-20260921.sXuNPi/regression... |
+| RTL_Backend                  | PASS     | 1.367989     | 2efc8e1d603b2805 | /tmp/lighthls-fifo-events-20260921.sXuNPi/regression... |
+| PipelineBackend              | PASS     | 1.119869     | 1e72af514281a249 | /tmp/lighthls-fifo-events-20260921.sXuNPi/regression... |
+| PipelineStorage              | PASS     | 1.36889      | fa2e0cfeced688a7 | /tmp/lighthls-fifo-events-20260921.sXuNPi/regression... |
+| ArrayPartitionBackend        | PASS     | 1.0679       | aa96771d07abf904 | /tmp/lighthls-fifo-events-20260921.sXuNPi/regression... |
+| OrdinaryBankAnalysis         | PASS     | 4.607183     | 07c6b1e919716c49 | /tmp/lighthls-fifo-events-20260921.sXuNPi/regression... |
+| LocalWriteData               | PASS     | 2.280531     | 07c6b1e919716c49 | /tmp/lighthls-fifo-events-20260921.sXuNPi/regression... |
+| FIFOEvents                   | PASS     | 3.482243     | b1b40f025149c208 | /tmp/lighthls-fifo-events-20260921.sXuNPi/regression... |
+| StorageBindingBackend        | PASS     | 0.167688     | d1f3e60b11fd09ea | /tmp/lighthls-fifo-events-20260921.sXuNPi/regression... |
+| DataflowBackend              | PASS     | 2.719127     | 5d9dc84e5a6f03df | /tmp/lighthls-fifo-events-20260921.sXuNPi/regression... |
+| FairComparisonInterface      | PASS     | 0.035517     | ee70546062d906f1 | /tmp/lighthls-fifo-events-20260921.sXuNPi/regression... |
+| AppCapability                | PASS     | 13.918351    | e1b101b2b74f1cac | /tmp/lighthls-fifo-events-20260921.sXuNPi/regression... |
+| FairComparisonQoR            | PASS     | 0.035033     | 03cf3a9a1059d072 | /tmp/lighthls-fifo-events-20260921.sXuNPi/regression... |
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+

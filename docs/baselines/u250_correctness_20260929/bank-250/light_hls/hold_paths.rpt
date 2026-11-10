@@ -1,0 +1,537 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date              : Tue Sep 29 13:28:30 2026
+| Host              : EE4F089 running 64-bit Ubuntu 22.04.5 LTS
+| Command           : report_timing -delay_type min -max_paths 10 -file /tmp/lighthls-correctness-20260929.kZl9Xq/final-bank-250/light_hls_context/hold_paths.rpt
+| Design            : registered_pressure_shell
+| Device            : xcu250-figd2104
+| Speed File        : -2L  PRODUCTION 1.28 03-30-2022
+| Design State      : Routed
+| Temperature Grade : E
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             0.033ns  (arrival time - required time)
+  Source:                 coefficient_reg[17]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            kernel/native_instance/arg_coefficient_reg[17]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.165ns  (logic 0.058ns (35.166%)  route 0.107ns (64.834%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.070ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.122ns
+    Source Clock Delay      (SCD):    2.801ns
+    Clock Pessimism Removal (CPR):    0.251ns
+  Clock Net Delay (Source):      2.741ns (routing 2.023ns, distribution 0.718ns)
+  Clock Net Delay (Destination): 3.051ns (routing 2.228ns, distribution 0.823ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.036     0.036    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     0.060 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         2.741     2.801    kernel_clk
+    SLR Crossing[1->3]   
+    SLICE_X175Y858       FDRE                                         r  coefficient_reg[17]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X175Y858       FDRE (Prop_BFF_SLICEM_C_Q)
+                                                      0.058     2.859 r  coefficient_reg[17]/Q
+                         net (fo=2, routed)           0.107     2.966    kernel/native_instance/coefficient[17]
+    SLICE_X174Y856       FDRE                                         r  kernel/native_instance/arg_coefficient_reg[17]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.043     0.043    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         3.051     3.122    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    SLICE_X174Y856       FDRE                                         r  kernel/native_instance/arg_coefficient_reg[17]/C
+                         clock pessimism             -0.251     2.871    
+    SLICE_X174Y856       FDRE (Hold_HFF2_SLICEL_C_D)
+                                                      0.062     2.933    kernel/native_instance/arg_coefficient_reg[17]
+  -------------------------------------------------------------------
+                         required time                         -2.933    
+                         arrival time                           2.966    
+  -------------------------------------------------------------------
+                         slack                                  0.033    
+
+Slack (MET) :             0.034ns  (arrival time - required time)
+  Source:                 kernel/native_instance/pipe_Loop_qor_pressure_1_launch_count_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            kernel/native_instance/pipe_Loop_qor_pressure_1_iteration_age_reg[0][1]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.138ns  (logic 0.059ns (42.671%)  route 0.079ns (57.329%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.042ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.207ns
+    Source Clock Delay      (SCD):    2.858ns
+    Clock Pessimism Removal (CPR):    0.306ns
+  Clock Net Delay (Source):      2.798ns (routing 2.023ns, distribution 0.775ns)
+  Clock Net Delay (Destination): 3.136ns (routing 2.228ns, distribution 0.908ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.036     0.036    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     0.060 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         2.798     2.858    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    SLICE_X177Y857       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_1_launch_count_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X177Y857       FDRE (Prop_DFF_SLICEL_C_Q)
+                                                      0.059     2.917 r  kernel/native_instance/pipe_Loop_qor_pressure_1_launch_count_reg[1]/Q
+                         net (fo=8, routed)           0.079     2.997    kernel/native_instance/pipe_Loop_qor_pressure_1_launch_count_reg_n_0_[1]
+    SLICE_X177Y859       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_1_iteration_age_reg[0][1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.043     0.043    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         3.136     3.207    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    SLICE_X177Y859       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_1_iteration_age_reg[0][1]/C
+                         clock pessimism             -0.306     2.901    
+    SLICE_X177Y859       FDRE (Hold_AFF2_SLICEL_C_D)
+                                                      0.062     2.963    kernel/native_instance/pipe_Loop_qor_pressure_1_iteration_age_reg[0][1]
+  -------------------------------------------------------------------
+                         required time                         -2.963    
+                         arrival time                           2.997    
+  -------------------------------------------------------------------
+                         slack                                  0.034    
+
+Slack (MET) :             0.034ns  (arrival time - required time)
+  Source:                 coefficient_reg[21]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            kernel/native_instance/arg_coefficient_reg[21]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.166ns  (logic 0.057ns (34.352%)  route 0.109ns (65.648%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.070ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.121ns
+    Source Clock Delay      (SCD):    2.800ns
+    Clock Pessimism Removal (CPR):    0.251ns
+  Clock Net Delay (Source):      2.740ns (routing 2.023ns, distribution 0.717ns)
+  Clock Net Delay (Destination): 3.050ns (routing 2.228ns, distribution 0.822ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.036     0.036    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     0.060 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         2.740     2.800    kernel_clk
+    SLR Crossing[1->3]   
+    SLICE_X175Y858       FDRE                                         r  coefficient_reg[21]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X175Y858       FDRE (Prop_FFF_SLICEM_C_Q)
+                                                      0.057     2.857 r  coefficient_reg[21]/Q
+                         net (fo=2, routed)           0.109     2.966    kernel/native_instance/coefficient[21]
+    SLICE_X174Y857       FDRE                                         r  kernel/native_instance/arg_coefficient_reg[21]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.043     0.043    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         3.050     3.121    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    SLICE_X174Y857       FDRE                                         r  kernel/native_instance/arg_coefficient_reg[21]/C
+                         clock pessimism             -0.251     2.870    
+    SLICE_X174Y857       FDRE (Hold_FFF2_SLICEL_C_D)
+                                                      0.062     2.932    kernel/native_instance/arg_coefficient_reg[21]
+  -------------------------------------------------------------------
+                         required time                         -2.932    
+                         arrival time                           2.966    
+  -------------------------------------------------------------------
+                         slack                                  0.034    
+
+Slack (MET) :             0.040ns  (arrival time - required time)
+  Source:                 kernel/native_instance/pipe_Loop_qor_pressure_2_launch_count_reg[2]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            kernel/native_instance/pipe_Loop_qor_pressure_2_iteration_age_reg[0][2]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.102ns  (logic 0.040ns (39.332%)  route 0.062ns (60.668%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.015ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.989ns
+    Source Clock Delay      (SCD):    1.765ns
+    Clock Pessimism Removal (CPR):    0.210ns
+  Clock Net Delay (Source):      1.723ns (routing 1.217ns, distribution 0.506ns)
+  Clock Net Delay (Destination): 1.940ns (routing 1.364ns, distribution 0.576ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.025     0.025    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.017     0.042 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         1.723     1.765    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    SLICE_X178Y853       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_2_launch_count_reg[2]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X178Y853       FDRE (Prop_GFF2_SLICEL_C_Q)
+                                                      0.040     1.805 r  kernel/native_instance/pipe_Loop_qor_pressure_2_launch_count_reg[2]/Q
+                         net (fo=8, routed)           0.062     1.866    kernel/native_instance/pipe_Loop_qor_pressure_2_iteration_age[2]
+    SLICE_X178Y854       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_2_iteration_age_reg[0][2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.030     0.030    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.019     0.049 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         1.940     1.989    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    SLICE_X178Y854       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_2_iteration_age_reg[0][2]/C
+                         clock pessimism             -0.210     1.779    
+    SLICE_X178Y854       FDRE (Hold_DFF2_SLICEL_C_D)
+                                                      0.047     1.826    kernel/native_instance/pipe_Loop_qor_pressure_2_iteration_age_reg[0][2]
+  -------------------------------------------------------------------
+                         required time                         -1.826    
+                         arrival time                           1.866    
+  -------------------------------------------------------------------
+                         slack                                  0.040    
+
+Slack (MET) :             0.041ns  (arrival time - required time)
+  Source:                 coefficient_reg[7]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            kernel/native_instance/arg_coefficient_reg[7]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.105ns  (logic 0.039ns (37.110%)  route 0.066ns (62.890%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.017ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.946ns
+    Source Clock Delay      (SCD):    1.725ns
+    Clock Pessimism Removal (CPR):    0.205ns
+  Clock Net Delay (Source):      1.683ns (routing 1.217ns, distribution 0.466ns)
+  Clock Net Delay (Destination): 1.897ns (routing 1.364ns, distribution 0.533ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.025     0.025    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.017     0.042 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         1.683     1.725    kernel_clk
+    SLR Crossing[1->3]   
+    SLICE_X175Y856       FDRE                                         r  coefficient_reg[7]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X175Y856       FDRE (Prop_HFF_SLICEM_C_Q)
+                                                      0.039     1.764 r  coefficient_reg[7]/Q
+                         net (fo=2, routed)           0.066     1.830    kernel/native_instance/coefficient[7]
+    SLICE_X175Y855       FDRE                                         r  kernel/native_instance/arg_coefficient_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.030     0.030    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.019     0.049 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         1.897     1.946    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    SLICE_X175Y855       FDRE                                         r  kernel/native_instance/arg_coefficient_reg[7]/C
+                         clock pessimism             -0.205     1.741    
+    SLICE_X175Y855       FDRE (Hold_EFF2_SLICEM_C_D)
+                                                      0.047     1.788    kernel/native_instance/arg_coefficient_reg[7]
+  -------------------------------------------------------------------
+                         required time                         -1.788    
+                         arrival time                           1.830    
+  -------------------------------------------------------------------
+                         slack                                  0.041    
+
+Slack (MET) :             0.043ns  (arrival time - required time)
+  Source:                 kernel/native_instance/pipe_Loop_qor_pressure_2_launch_count_reg[6]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            kernel/native_instance/pipe_Loop_qor_pressure_2_iteration_age_reg[0][6]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.106ns  (logic 0.039ns (36.870%)  route 0.067ns (63.130%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.016ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.990ns
+    Source Clock Delay      (SCD):    1.765ns
+    Clock Pessimism Removal (CPR):    0.210ns
+  Clock Net Delay (Source):      1.723ns (routing 1.217ns, distribution 0.506ns)
+  Clock Net Delay (Destination): 1.941ns (routing 1.364ns, distribution 0.577ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.025     0.025    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.017     0.042 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         1.723     1.765    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    SLICE_X178Y854       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_2_launch_count_reg[6]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X178Y854       FDRE (Prop_GFF_SLICEL_C_Q)
+                                                      0.039     1.804 r  kernel/native_instance/pipe_Loop_qor_pressure_2_launch_count_reg[6]/Q
+                         net (fo=6, routed)           0.067     1.870    kernel/native_instance/pipe_Loop_qor_pressure_2_iteration_age[6]
+    SLICE_X178Y852       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_2_iteration_age_reg[0][6]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.030     0.030    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.019     0.049 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         1.941     1.990    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    SLICE_X178Y852       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_2_iteration_age_reg[0][6]/C
+                         clock pessimism             -0.210     1.780    
+    SLICE_X178Y852       FDRE (Hold_EFF2_SLICEL_C_D)
+                                                      0.047     1.827    kernel/native_instance/pipe_Loop_qor_pressure_2_iteration_age_reg[0][6]
+  -------------------------------------------------------------------
+                         required time                         -1.827    
+                         arrival time                           1.870    
+  -------------------------------------------------------------------
+                         slack                                  0.043    
+
+Slack (MET) :             0.045ns  (arrival time - required time)
+  Source:                 kernel/native_instance/pipe_Loop_qor_pressure_2_launch_count_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            kernel/native_instance/pipe_Loop_qor_pressure_2_launch_count_reg[2]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.098ns  (logic 0.059ns (60.065%)  route 0.039ns (39.935%))
+  Logic Levels:           1  (LUT3=1)
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.993ns
+    Source Clock Delay      (SCD):    1.765ns
+    Clock Pessimism Removal (CPR):    0.223ns
+  Clock Net Delay (Source):      1.723ns (routing 1.217ns, distribution 0.506ns)
+  Clock Net Delay (Destination): 1.944ns (routing 1.364ns, distribution 0.580ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.025     0.025    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.017     0.042 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         1.723     1.765    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    SLICE_X178Y853       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_2_launch_count_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X178Y853       FDRE (Prop_GFF_SLICEL_C_Q)
+                                                      0.039     1.804 r  kernel/native_instance/pipe_Loop_qor_pressure_2_launch_count_reg[1]/Q
+                         net (fo=8, routed)           0.033     1.837    kernel/native_instance/pipe_Loop_qor_pressure_2_iteration_age[1]
+    SLICE_X178Y853       LUT3 (Prop_G5LUT_SLICEL_I2_O)
+                                                      0.020     1.857 r  kernel/native_instance/pipe_Loop_qor_pressure_2_launch_count[2]_i_1/O
+                         net (fo=1, routed)           0.006     1.863    kernel/native_instance/pipe_Loop_qor_pressure_2_launch_count[2]
+    SLICE_X178Y853       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_2_launch_count_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.030     0.030    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.019     0.049 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         1.944     1.993    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    SLICE_X178Y853       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_2_launch_count_reg[2]/C
+                         clock pessimism             -0.223     1.771    
+    SLICE_X178Y853       FDRE (Hold_GFF2_SLICEL_C_D)
+                                                      0.047     1.818    kernel/native_instance/pipe_Loop_qor_pressure_2_launch_count_reg[2]
+  -------------------------------------------------------------------
+                         required time                         -1.818    
+                         arrival time                           1.863    
+  -------------------------------------------------------------------
+                         slack                                  0.045    
+
+Slack (MET) :             0.045ns  (arrival time - required time)
+  Source:                 kernel/native_instance/pipe_Loop_qor_pressure_2_iteration_age_reg[0][1]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            kernel/native_instance/pipe_Loop_qor_pressure_2_iteration_age_reg[1][1]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Slow Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.179ns  (logic 0.058ns (32.329%)  route 0.121ns (67.671%))
+  Logic Levels:           0  
+  Clock Path Skew:        0.074ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    3.199ns
+    Source Clock Delay      (SCD):    2.867ns
+    Clock Pessimism Removal (CPR):    0.258ns
+  Clock Net Delay (Source):      2.807ns (routing 2.023ns, distribution 0.784ns)
+  Clock Net Delay (Destination): 3.128ns (routing 2.228ns, distribution 0.900ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.036     0.036    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     0.060 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         2.807     2.867    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    SLICE_X179Y853       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_2_iteration_age_reg[0][1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X179Y853       FDRE (Prop_EFF_SLICEM_C_Q)
+                                                      0.058     2.925 r  kernel/native_instance/pipe_Loop_qor_pressure_2_iteration_age_reg[0][1]/Q
+                         net (fo=3, routed)           0.121     3.046    kernel/native_instance/pipe_Loop_qor_pressure_2_iteration_age_reg_n_0_[0][1]
+    SLICE_X178Y854       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_2_iteration_age_reg[1][1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.043     0.043    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         3.128     3.199    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    SLICE_X178Y854       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_2_iteration_age_reg[1][1]/C
+                         clock pessimism             -0.258     2.941    
+    SLICE_X178Y854       FDRE (Hold_DFF_SLICEL_C_D)
+                                                      0.060     3.001    kernel/native_instance/pipe_Loop_qor_pressure_2_iteration_age_reg[1][1]
+  -------------------------------------------------------------------
+                         required time                         -3.001    
+                         arrival time                           3.046    
+  -------------------------------------------------------------------
+                         slack                                  0.045    
+
+Slack (MET) :             0.046ns  (arrival time - required time)
+  Source:                 kernel/native_instance/pipe_Loop_qor_pressure_1_launch_count_reg[4]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            kernel/native_instance/pipe_Loop_qor_pressure_1_launch_count_reg[4]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.098ns  (logic 0.054ns (55.367%)  route 0.044ns (44.633%))
+  Logic Levels:           1  (LUT6=1)
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.990ns
+    Source Clock Delay      (SCD):    1.762ns
+    Clock Pessimism Removal (CPR):    0.222ns
+  Clock Net Delay (Source):      1.720ns (routing 1.217ns, distribution 0.503ns)
+  Clock Net Delay (Destination): 1.941ns (routing 1.364ns, distribution 0.577ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.025     0.025    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.017     0.042 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         1.720     1.762    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    SLICE_X177Y856       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_1_launch_count_reg[4]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X177Y856       FDRE (Prop_BFF_SLICEL_C_Q)
+                                                      0.039     1.801 r  kernel/native_instance/pipe_Loop_qor_pressure_1_launch_count_reg[4]/Q
+                         net (fo=5, routed)           0.029     1.829    kernel/native_instance/pipe_Loop_qor_pressure_1_launch_count_reg_n_0_[4]
+    SLICE_X177Y856       LUT6 (Prop_B6LUT_SLICEL_I5_O)
+                                                      0.015     1.844 r  kernel/native_instance/pipe_Loop_qor_pressure_1_launch_count[4]_i_1/O
+                         net (fo=1, routed)           0.015     1.859    kernel/native_instance/pipe_Loop_qor_pressure_1_launch_count[4]_i_1_n_0
+    SLICE_X177Y856       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_1_launch_count_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.030     0.030    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.019     0.049 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         1.941     1.990    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    SLICE_X177Y856       FDRE                                         r  kernel/native_instance/pipe_Loop_qor_pressure_1_launch_count_reg[4]/C
+                         clock pessimism             -0.222     1.768    
+    SLICE_X177Y856       FDRE (Hold_BFF_SLICEL_C_D)
+                                                      0.046     1.814    kernel/native_instance/pipe_Loop_qor_pressure_1_launch_count_reg[4]
+  -------------------------------------------------------------------
+                         required time                         -1.814    
+                         arrival time                           1.859    
+  -------------------------------------------------------------------
+                         slack                                  0.046    
+
+Slack (MET) :             0.048ns  (arrival time - required time)
+  Source:                 reset_count_reg[1]/C
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            reset_count_reg[1]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Hold (Min at Fast Process Corner)
+  Requirement:            0.000ns  (ap_clk rise@0.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        0.100ns  (logic 0.052ns (51.952%)  route 0.048ns (48.048%))
+  Logic Levels:           1  (LUT2=1)
+  Clock Path Skew:        0.006ns (DCD - SCD - CPR)
+    Destination Clock Delay (DCD):    1.998ns
+    Source Clock Delay      (SCD):    1.769ns
+    Clock Pessimism Removal (CPR):    0.224ns
+  Clock Net Delay (Source):      1.727ns (routing 1.217ns, distribution 0.510ns)
+  Clock Net Delay (Destination): 1.949ns (routing 1.364ns, distribution 0.585ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.025     0.025    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.017     0.042 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         1.727     1.769    kernel_clk
+    SLR Crossing[1->3]   
+    SLICE_X179Y858       FDRE                                         r  reset_count_reg[1]/C
+  -------------------------------------------------------------------    -------------------
+    SLICE_X179Y858       FDRE (Prop_BFF_SLICEM_C_Q)
+                                                      0.038     1.807 r  reset_count_reg[1]/Q
+                         net (fo=3, routed)           0.027     1.834    reset_count[1]
+    SLICE_X179Y858       LUT2 (Prop_B6LUT_SLICEM_I1_O)
+                                                      0.014     1.848 r  reset_count[1]_i_1/O
+                         net (fo=1, routed)           0.021     1.869    reset_count[1]_i_1_n_0
+    SLICE_X179Y858       FDRE                                         r  reset_count_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.030     0.030    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.019     0.049 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         1.949     1.998    kernel_clk
+    SLR Crossing[1->3]   
+    SLICE_X179Y858       FDRE                                         r  reset_count_reg[1]/C
+                         clock pessimism             -0.224     1.775    
+    SLICE_X179Y858       FDRE (Hold_BFF_SLICEM_C_D)
+                                                      0.046     1.821    reset_count_reg[1]
+  -------------------------------------------------------------------
+                         required time                         -1.821    
+                         arrival time                           1.869    
+  -------------------------------------------------------------------
+                         slack                                  0.048    
+
+
+
+

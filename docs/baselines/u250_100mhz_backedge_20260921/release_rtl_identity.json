@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "stage": "measured_rtl_identity_audit",
+  "valid": true,
+  "light_hls_executable_sha256": "8db9a9f74bb67e570154bc242a0ec9d5e0cdbe8023b64fe5bac9728c2ae6e5c8",
+  "measurements_rewritten": false,
+  "cases": [
+    {
+      "case": "private",
+      "comparison_id": "172bc9a5e2783dabfac4c4a841e7f8af93d9e2736382f9fad604f04a400ef37d",
+      "measured_executable_sha256": "8db9a9f74bb67e570154bc242a0ec9d5e0cdbe8023b64fe5bac9728c2ae6e5c8",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "3298e75ee864b4bcac990567a0f70221ffdfd4b131a80fe8d3cb47bba4d96cd6",
+      "regenerated_rtl_sha256": "3298e75ee864b4bcac990567a0f70221ffdfd4b131a80fe8d3cb47bba4d96cd6"
+    },
+    {
+      "case": "scalar",
+      "comparison_id": "d55c3d9b8ddaa033107f9e3d1f12fddb4a1e12293e09fa1c18f3e057952f2352",
+      "measured_executable_sha256": "8db9a9f74bb67e570154bc242a0ec9d5e0cdbe8023b64fe5bac9728c2ae6e5c8",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "9a43973d5e10c9d6872058454bdbd780316a391bb8c577df501284e793643bbd",
+      "regenerated_rtl_sha256": "9a43973d5e10c9d6872058454bdbd780316a391bb8c577df501284e793643bbd"
+    }
+  ]
+}

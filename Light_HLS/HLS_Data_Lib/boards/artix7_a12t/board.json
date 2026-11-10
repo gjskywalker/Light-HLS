@@ -1,0 +1,29 @@
+{
+  "board": "artix7_a12t",
+  "clock_periods_ns": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "12.5",
+    "15",
+    "16",
+    "17.5",
+    "20",
+    "25",
+    "30"
+  ],
+  "notes": [
+    "Legacy library migrated without changing its instruction data.",
+    "The original characterization scripts set part xa7a12tcsg325-1q.",
+    "The exact legacy Vivado HLS release was not recorded."
+  ],
+  "part": "xa7a12tcsg325-1q",
+  "schema_version": 1,
+  "tool": "Vivado HLS",
+  "tool_version": "unknown"
+}

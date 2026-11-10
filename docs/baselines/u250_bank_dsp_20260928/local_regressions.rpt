@@ -1,0 +1,33 @@
+Light-HLS Unified Local Regression
+
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+
+| Suite                        | Status   | Runtime (s)  | Script SHA256    | Log                                                     |
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+
+| AppCorrectness               | PASS     | 6.873743     | fd31e7a5f00cd0fc | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| RTL_Backend                  | PASS     | 1.565494     | 9c10edc59c92514d | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| PipelineBackend              | PASS     | 1.36569      | 1e72af514281a249 | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| PipelineStorage              | PASS     | 1.665657     | be47ce1012a6bbfa | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| ArrayPartitionBackend        | PASS     | 1.265341     | aa96771d07abf904 | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| OrdinaryBankAnalysis         | PASS     | 4.674873     | 07c6b1e919716c49 | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| LocalWriteData               | PASS     | 2.367761     | 07c6b1e919716c49 | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| FIFOEvents                   | PASS     | 4.673285     | 87e7673ea19bc9dc | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| OrdinaryFeedback             | PASS     | 4.019194     | 7a4ff0bacb1987dd | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| OrdinaryBackedge             | PASS     | 5.828707     | da267ec51fbf787c | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| OrdinaryLoopEdges            | PASS     | 4.672343     | d89a2237695bcfa2 | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| TransactionEdges             | PASS     | 1.618547     | 4c311687b6049f78 | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| ScalarBankEvents             | PASS     | 2.068865     | b86eba8a492712d2 | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| ScalarReturns                | PASS     | 1.616729     | 1294b9622bd0b373 | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| PIPOBanks                    | PASS     | 0.914667     | e1dc03b8d1b423e1 | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| BindingCost                  | PASS     | 1.516779     | 2198f230d041f18d | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| QoRPressure                  | PASS     | 6.025237     | dcf56062208b5759 | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| BankConflict                 | PASS     | 34.411848    | 4373105016a04d09 | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| ArithmeticMapping            | PASS     | 0.364938     | d5f0e22060394650 | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| DataflowCompletion           | PASS     | 1.065054     | ef9d6783f15e94e5 | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| StorageBindingBackend        | PASS     | 0.214584     | d1f3e60b11fd09ea | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| DataflowBackend              | PASS     | 3.072868     | 1b464099a4ce8402 | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| FairComparisonInterface      | PASS     | 0.063979     | ee70546062d906f1 | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| AppCapability                | PASS     | 14.157505    | e1b101b2b74f1cac | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| FairComparisonQoR            | PASS     | 0.03164      | 03cf3a9a1059d072 | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| TransactionEventMetrics      | PASS     | 0.063707     | 44ae1602b29e1431 | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
+| EvaluationContract           | PASS     | 0.063757     | f893279698e43f09 | /tmp/lighthls-next3-20260928.t1orVg/final-complete-r... |
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+

@@ -1,0 +1,26 @@
+{
+  "command": "HI_HLS_LIB_PATH=\"$PWD/Light_HLS/HLS_Data_Lib\" Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_Top Light_HLS/App/backend_scalar/backend_scalar.c backend_scalar --board u250 --freq 100MHz --synthesis enable --output \"$PWD/runs/migration_20261110/scalar_synthesis\"",
+  "inputs_and_outputs": {
+    "compiler": {
+      "path": "Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_Top",
+      "sha256": "9c575f4231830e86a744bce8ef52f847e0566acf708b10b85ecec1d248d069fc"
+    },
+    "source": {
+      "path": "Light_HLS/App/backend_scalar/backend_scalar.c",
+      "sha256": "6a128cb5d89c0c32d37362a9b0dee6c3808f231bc0db90b884581433cc67b40f"
+    },
+    "rtl": {
+      "path": "runs/migration_20261110/scalar_synthesis/reports/rtl/top.v",
+      "sha256": "dfa6cab7e0a468c326db2f7316c4562f6bffd47605930f8763dca5f87b8fb143"
+    },
+    "full_vivado_log": {
+      "path": "runs/migration_20261110/scalar_synthesis/reports/vivado_report/vivado.log",
+      "sha256": "72c35f2a28265bb5b812537d695d508dfce45fb6cef0d2fe085ccc0253507040"
+    },
+    "checkpoint": {
+      "path": "runs/migration_20261110/scalar_synthesis/reports/vivado_report/post_synth.dcp",
+      "sha256": "67845553c065dba4e4304d93d4b3aea86a334c297b56a7096c9bd073429884ea"
+    }
+  },
+  "scope": "Out-of-context RTL synthesis smoke only; no place-and-route or routed Fmax claim."
+}

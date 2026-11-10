@@ -1,0 +1,25 @@
+{
+  "generator": "constraint-sweep/gen_constraint_sweep.py",
+  "part": "xcu250-figd2104-2L-e",
+  "target_freq_mhz": 200.0,
+  "points": [
+    {
+      "id": 1,
+      "freq_mhz": 150.0,
+      "clock_period_ns": 6.667,
+      "tcl": "/tmp/lighthls-four-work-20260928.08r0cq/constraint-plan/sweep_1_150.00MHz.tcl"
+    },
+    {
+      "id": 2,
+      "freq_mhz": 200.0,
+      "clock_period_ns": 5.0,
+      "tcl": "/tmp/lighthls-four-work-20260928.08r0cq/constraint-plan/sweep_2_200.00MHz.tcl"
+    },
+    {
+      "id": 3,
+      "freq_mhz": 250.0,
+      "clock_period_ns": 4.0,
+      "tcl": "/tmp/lighthls-four-work-20260928.08r0cq/constraint-plan/sweep_3_250.00MHz.tcl"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "valid": true,
+  "generator": "light_hls",
+  "post_route_dcp_sha256": "d85598df63f95b98461281b14899178ca40dde22b1cac3964c790318d47fe300",
+  "testbench_sha256": "fa160e47d80775252ad4556a8fe617e89111141086d5aad50d20b4db8e95832d",
+  "reference_sha256": "9388269210d3388799086a96c810d6f86a191f5a534ff3ceeb7061be28fce913",
+  "scope": "Post-route functional simulation with UNISIM; delays are checked separately by STA, not SDF",
+  "reference_outputs": 8192,
+  "netlist_sha256": "840097fd4c059bc019d7a5aae2053f3053bd1342b6a95b71ef37abadeb9f266d"
+}

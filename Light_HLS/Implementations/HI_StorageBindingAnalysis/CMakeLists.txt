@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.10)
+project(HI_StorageBindingAnalysis)
+
+add_library(HI_StorageBindingAnalysis
+  HI_StorageBindingAnalysis.cc)
+target_link_libraries(HI_StorageBindingAnalysis PUBLIC HI_BackendCommon)

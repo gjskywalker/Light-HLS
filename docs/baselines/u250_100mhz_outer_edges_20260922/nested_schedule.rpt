@@ -1,0 +1,99 @@
+================================================================
+== Light-HLS Operation Schedule
+================================================================
++----------------------+---------------------------------------------------------+
+| Field                | Value                                                   |
++----------------------+---------------------------------------------------------+
+| Design               | outer_edges                                             |
+| Top Function         | outer_edges                                             |
+| Target Board         | u250                                                    |
+| Target Frequency     | 100.000 MHz                                             |
+| Clock Period         | 10.000 ns                                               |
++----------------------+---------------------------------------------------------+
+Source: /tmp/lighthls-outer-edges-20260922.nuyJGJ/edges-release/nested_latency1/outer_edges.cpp
+
++ Schedule Summary:
+
++------------------------------+----------------+----------------------------------------+
+| Metric                       | Value          | Description                            |
++------------------------------+----------------+----------------------------------------+
+| Valid                        | yes            | Scheduler status                       |
+| Latency                      | -              | dynamic control-flow cycle             |
+| Achieved II                  | 0              | cycles                                 |
+| FSM States                   | 7              | scheduled control states               |
+| Memory Port Conflicts        | 0              | conflicts                              |
+| Serialization Cycles         | 0              | cycles added for memory ports          |
+| Memory Ordering Cycles       | 0              | request-edge alias constraints         |
+| Forwarded Block Loads        | 0              | response-ready sampling without a c... |
+| Hardware Constants           | 2              | object-relative constants without s... |
+| Combinational Values         | 13             | SSA values without dedicated registers |
+| Ordinary Feedback Wires      | 2              | constant-step updates sampled at th... |
+| Backedge Bypasses            | 1              | same-edge operator-to-PHI paths; re... |
+| Read-to-PHI Bypasses         | 1              | response capture and successor PHI ... |
+| Chain Delay Budget (ns)      | 7.000000       | heuristic; verify post-synthesis ti... |
++------------------------------+----------------+----------------------------------------+
+
++ Ordinary Feedback Wires:
+
++----------------------------------+----------------------------------+------------+---------------------------+
+| Update                           | Held PHI                         | IR Bits    | Sampling Edge             |
++----------------------------------+----------------------------------+------------+---------------------------+
+| v_HI_indvars_iv_nextnew6         | v_HI_indvars_ivnew1              | 5          | ordinary loop latch       |
+| v_HI_lsr_iv_nextnew9             | v_HI_lsr_ivnew8                  | 4          | ordinary self-backedge    |
++----------------------------------+----------------------------------+------------+---------------------------+
+
++ Ordinary Backedge Bypasses:
+
++----------------------------------+----------------------------------+--------------------+--------------------+
+| Held PHI                         | Registered Update                | Issue/Sample Cycle | Update Register    |
++----------------------------------+----------------------------------+--------------------+--------------------+
+| v_x_017                          | v_xor5                           | 0                  | retained           |
++----------------------------------+----------------------------------+--------------------+--------------------+
+
++ Ordinary Read-to-PHI Bypasses:
+
++--------------------------+----------------------------------+----------------------------------+----------------------+------------------+
+| Predecessor              | Successor PHI                    | Load                             | Capture/Sample Cycle | Load Register    |
++--------------------------+----------------------------------+----------------------------------+----------------------+------------------+
+| for.body                 | v_x_017                          | v_v5                             | 1                    | retained         |
++--------------------------+----------------------------------+----------------------------------+----------------------+------------------+
+
++ Basic-Block Schedule:
+
++----------------------------------+--------------+------------+--------------+
+| Block                            | First State  | States     | Operations   |
++----------------------------------+--------------+------------+--------------+
+| entry                            | 1            | 1          | 0            |
+| for_cond_cleanup                 | 2            | 1          | 0            |
+| for_body                         | 3            | 2          | 5            |
+| for_cond_cleanup3                | 5            | 1          | 6            |
+| for_body4                        | 6            | 1          | 6            |
++----------------------------------+--------------+------------+--------------+
+
++ Operation Schedule:
+
++--------------------+--------------------------+--------------+----------+----------+----------+
+| Block              | Operation                | Opcode       | Start    | Latency  | Width    |
++--------------------+--------------------------+--------------+----------+----------+----------+
+| for_body           | v_bcast4                 | zext         | 0        | 1        | 64       |
+| for_body           | v_bcast2                 | zext         | 0        | 0        | 64       |
+| for_body           | v_HI_new3                | add          | 0        | 0        | 64       |
+| for_body           | void_19                  | inttoptr     | 0        | 0        | 0        |
+| for_body           | v_v5                     | load         | 0        | 2        | 32       |
+| for_cond_cleanup3  | v_xor6                   | xor          | 0        | 0        | 32       |
+| for_cond_cleanup3  | v_HI_new5                | add          | 0        | 0        | 64       |
+| for_cond_cleanup3  | void_20                  | inttoptr     | 0        | 0        | 0        |
+| for_cond_cleanup3  | void_21                  | store        | 0        | 1        | 0        |
+| for_cond_cleanup3  | v_HI_indvars_iv_nextnew6 | add          | 0        | 0        | 5        |
+| for_cond_cleanup3  | v_HI_exitcond21_notnew7  | icmp         | 0        | 0        | 1        |
+| for_body4          | v_shl                    | shl          | 0        | 0        | 32       |
+| for_body4          | v_shr                    | lshr         | 0        | 0        | 32       |
+| for_body4          | v_v15                    | xor          | 0        | 0        | 32       |
+| for_body4          | v_xor5                   | xor          | 0        | 1        | 32       |
+| for_body4          | v_HI_lsr_iv_nextnew9     | add          | 0        | 0        | 4        |
+| for_body4          | v_HI_exitcond_notnew10   | icmp         | 0        | 0        | 1        |
++--------------------+--------------------------+--------------+----------+----------+----------+
+
++ Diagnostics:
+
+WARNING [BACKEND_DYNAMIC_LATENCY] The top function contains a control-flow cycle. The schedule is valid, but a single static latency cannot be reported without loop-trip analysis.

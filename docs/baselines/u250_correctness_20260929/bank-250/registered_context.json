@@ -1,0 +1,140 @@
+{
+  "valid": true,
+  "physical_valid": true,
+  "flow_id": "vivado_registered_pressure_context_v1",
+  "scope": "Closed on-chip pressure harness with a routed BUFG, registered scalar source, one-cycle RAM response, and retained output observers; not board IO signoff",
+  "baseline_comparison_sha256": "342b15131c7af118ace4f76db1e989a05ee283f1cc5e2ca33664ca72681286d0",
+  "source_sha256": "7610e6ca4ebf3874740c3b8269c87362434958ee2e39074e5a53913fa41730f0",
+  "compiler_sha256": "3339196986828e95536405f2ff438b1ba7b464000829c45b17a3e66e33977f95",
+  "part": "xcu250-figd2104-2L-e",
+  "clock_period_ns": 4.0,
+  "source": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/QoRPressure/bram_banked.cpp",
+  "output": "/tmp/lighthls-correctness-20260929.kZl9Xq/final-bank-250",
+  "results": {
+    "light_hls": {
+      "functional_valid": true,
+      "reference_outputs": 8192,
+      "rtl_sha256": {
+        "/tmp/lighthls-correctness-20260929.kZl9Xq/final-bank-250/light_hls/reports/rtl/top.v": "705a2392d14db83c2d67560732d0e1fa0aa7b5308a590fc552a552dfa867c8bb",
+        "/tmp/lighthls-next3-20260928.t1orVg/bram-banked-250-v3/interface_normalization/light_hls/normalized_wrapper.v": "3bc40ae5ab6ec73cbc6ff992ce9d00519481ad7ec63d06df6b90cd25f4e022dd",
+        "/tmp/lighthls-correctness-20260929.kZl9Xq/final-bank-250/registered_shell.v": "d137e2cb01986e03a60bc826e9f41b118a97c26f8ae92aac9152bf7cad688210"
+      },
+      "post_route": {
+        "valid": true,
+        "qor_kind": "measured_registered_context",
+        "tool": "vivado",
+        "tool_version": "2025.2",
+        "part": "xcu250-figd2104-2L-e",
+        "flow_id": "vivado_registered_pressure_context_v1",
+        "runtime_seconds": 601.4139461720042,
+        "resources": {
+          "lut": 167,
+          "ff": 217,
+          "dsp": 0,
+          "bram_tiles": 1.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "constraints_before_synthesis": true,
+          "worst_slack_ns": 1.627,
+          "critical_path_delay_ns": 2.373,
+          "critical_path_delay_note": "Period minus routed WNS in the closed registered context; not a frequency sweep or board Fmax",
+          "worst_hold_slack_ns": 0.033
+        },
+        "interface_signature": [
+          "ap_clk|IN|1"
+        ],
+        "clock_scope": "Closed on-chip pressure harness with a routed BUFG, registered scalar source, one-cycle RAM response, and retained output observers; not board IO signoff",
+        "unrouted_nets": 0,
+        "routing_errors": 0,
+        "timing_coverage": {
+          "no_clock": 0,
+          "unconstrained_internal_endpoints": 0,
+          "no_input_delay": 0,
+          "no_output_delay": 0,
+          "partial_input_delay": 0,
+          "partial_output_delay": 0
+        },
+        "timing_met": true,
+        "kernel_resources": {
+          "lut": 135,
+          "ff": 91,
+          "dsp": 0,
+          "bram_tiles": 1.0
+        },
+        "shell_resources": {
+          "lut": 32,
+          "ff": 126,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        }
+      }
+    },
+    "vitis_hls": {
+      "functional_valid": true,
+      "reference_outputs": 8192,
+      "rtl_sha256": {
+        "/tmp/lighthls-next3-20260928.t1orVg/bram-banked-250-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure.v": "f0105c1a29939b3d78447ce51bfb8543105133df553b00f072daa4f979362ea9",
+        "/tmp/lighthls-next3-20260928.t1orVg/bram-banked-250-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_flow_control_loop_pipe_sequential_init.v": "04fd4335e9e9581c5586f46b98085ebb45d2d697162715c2779f22fd8aba9594",
+        "/tmp/lighthls-next3-20260928.t1orVg/bram-banked-250-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_qor_pressure_Pipeline_VITIS_LOOP_13_2.v": "50316d575da659492718f57519f33295b4235c3e639759a0b9f5f9f2038cb3d7",
+        "/tmp/lighthls-next3-20260928.t1orVg/bram-banked-250-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_qor_pressure_Pipeline_VITIS_LOOP_8_1.v": "876557e2df4ea00d836696a99bf8be0cf1b2403e0b0303a53d35fb0d14782213",
+        "/tmp/lighthls-next3-20260928.t1orVg/bram-banked-250-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_tile_RAM_1P_BRAM_1R1W.v": "c7de1462f73a9cc5584b53d8344211a755bc7c534d25e62da526f5125f0a4a37",
+        "/tmp/lighthls-next3-20260928.t1orVg/bram-banked-250-v3/interface_normalization/vitis_hls/normalized_wrapper.v": "3bc40ae5ab6ec73cbc6ff992ce9d00519481ad7ec63d06df6b90cd25f4e022dd",
+        "/tmp/lighthls-correctness-20260929.kZl9Xq/final-bank-250/registered_shell.v": "d137e2cb01986e03a60bc826e9f41b118a97c26f8ae92aac9152bf7cad688210"
+      },
+      "post_route": {
+        "valid": true,
+        "qor_kind": "measured_registered_context",
+        "tool": "vivado",
+        "tool_version": "2025.2",
+        "part": "xcu250-figd2104-2L-e",
+        "flow_id": "vivado_registered_pressure_context_v1",
+        "runtime_seconds": 595.0543068780098,
+        "resources": {
+          "lut": 132,
+          "ff": 204,
+          "dsp": 0,
+          "bram_tiles": 1.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "constraints_before_synthesis": true,
+          "worst_slack_ns": 1.836,
+          "critical_path_delay_ns": 2.164,
+          "critical_path_delay_note": "Period minus routed WNS in the closed registered context; not a frequency sweep or board Fmax",
+          "worst_hold_slack_ns": 0.021
+        },
+        "interface_signature": [
+          "ap_clk|IN|1"
+        ],
+        "clock_scope": "Closed on-chip pressure harness with a routed BUFG, registered scalar source, one-cycle RAM response, and retained output observers; not board IO signoff",
+        "unrouted_nets": 0,
+        "routing_errors": 0,
+        "timing_coverage": {
+          "no_clock": 0,
+          "unconstrained_internal_endpoints": 0,
+          "no_input_delay": 0,
+          "no_output_delay": 0,
+          "partial_input_delay": 0,
+          "partial_output_delay": 0
+        },
+        "timing_met": true,
+        "kernel_resources": {
+          "lut": 102,
+          "ff": 78,
+          "dsp": 0,
+          "bram_tiles": 1.0
+        },
+        "shell_resources": {
+          "lut": 30,
+          "ff": 126,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        }
+      }
+    }
+  },
+  "not_interchangeable_with_virtual_io_qor": true,
+  "shell_sha256": "d137e2cb01986e03a60bc826e9f41b118a97c26f8ae92aac9152bf7cad688210",
+  "testbench_sha256": "fa160e47d80775252ad4556a8fe617e89111141086d5aad50d20b4db8e95832d"
+}

@@ -1,0 +1,217 @@
+{
+  "valid": true,
+  "scope": "Bounded RTL correctness and registered on-chip physical context; no RL",
+  "compiler_sha256": "3339196986828e95536405f2ff438b1ba7b464000829c45b17a3e66e33977f95",
+  "raw_run_root": "/tmp/lighthls-correctness-20260929.kZl9Xq",
+  "physical": {
+    "map-100": {
+      "light_hls": {
+        "setup_slack_ns": 7.411,
+        "hold_slack_ns": 0.035,
+        "kernel_resources": {
+          "lut": 46,
+          "ff": 32,
+          "dsp": 1,
+          "bram_tiles": 0.0
+        },
+        "shell_resources": {
+          "lut": 31,
+          "ff": 126,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "post_route_dcp_sha256": "d85598df63f95b98461281b14899178ca40dde22b1cac3964c790318d47fe300",
+        "routed_functional_outputs": 8192
+      },
+      "vitis_hls": {
+        "setup_slack_ns": 7.735,
+        "hold_slack_ns": 0.048,
+        "kernel_resources": {
+          "lut": 18,
+          "ff": 46,
+          "dsp": 1,
+          "bram_tiles": 0.0
+        },
+        "shell_resources": {
+          "lut": 32,
+          "ff": 126,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "post_route_dcp_sha256": "c4ec628e6548ca2fca44a2e1c16d34145453cbbb97aa21980990b5968e7c24b9",
+        "routed_functional_outputs": 8192
+      }
+    },
+    "bank-250": {
+      "light_hls": {
+        "setup_slack_ns": 1.627,
+        "hold_slack_ns": 0.033,
+        "kernel_resources": {
+          "lut": 135,
+          "ff": 91,
+          "dsp": 0,
+          "bram_tiles": 1.0
+        },
+        "shell_resources": {
+          "lut": 32,
+          "ff": 126,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "post_route_dcp_sha256": "fece39e893ef2eae8ece612ed45a0599c35804bdcb01c31051ebdcb97f807684",
+        "routed_functional_outputs": 8192
+      },
+      "vitis_hls": {
+        "setup_slack_ns": 1.836,
+        "hold_slack_ns": 0.021,
+        "kernel_resources": {
+          "lut": 102,
+          "ff": 78,
+          "dsp": 0,
+          "bram_tiles": 1.0
+        },
+        "shell_resources": {
+          "lut": 30,
+          "ff": 126,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "post_route_dcp_sha256": "e74d445fe8160ee822ba1725b87f694bd923913e52aa0c7f6057cb722ab2a3a2",
+        "routed_functional_outputs": 8192
+      }
+    },
+    "dataflow-250": {
+      "light_hls": {
+        "setup_slack_ns": 1.523,
+        "hold_slack_ns": 0.009,
+        "kernel_resources": {
+          "lut": 201,
+          "ff": 147,
+          "dsp": 1,
+          "bram_tiles": 0.0
+        },
+        "shell_resources": {
+          "lut": 31,
+          "ff": 126,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "post_route_dcp_sha256": "42632834f910ad5ab359d68cfa7daac1b45b9e5bc845137b922091cb0274f8a4",
+        "routed_functional_outputs": 8192
+      },
+      "vitis_hls": {
+        "setup_slack_ns": 1.963,
+        "hold_slack_ns": 0.024,
+        "kernel_resources": {
+          "lut": 132,
+          "ff": 79,
+          "dsp": 1,
+          "bram_tiles": 0.0
+        },
+        "shell_resources": {
+          "lut": 31,
+          "ff": 126,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "post_route_dcp_sha256": "cf42445a6820ad3be759ca7de16e4c8ec649b576b5f4e9cf7cd6c1d9132ba686",
+        "routed_functional_outputs": 8192
+      }
+    }
+  },
+  "pre_fix_compiler_sha256": "53d44a4998aee81d29d0782181aaae4a76bda53d682499342f21fe2f8e616067",
+  "artifact_sha256": {
+    "local_regressions.json": "6add581a8088c1ed12689642f65c7ea80b8229368087e4079b6986b63edad707",
+    "local_regressions.rpt": "99cea4bd0725a081272c6ef7a999ae8b088610cb9de7d99cc45fd2da790f0ddd",
+    "pressure.json": "dda46c9d4dfb23a046174d55fe8307e19416484f349fd5dce8475eea3e2cae11",
+    "app_smoke.json": "659de3ec072e9344af16ddf180942c8de02735336ca05c0ae971d49b91e76867",
+    "transaction_edges.json": "3a11ae36471e1d27a14a24483c5f32674fa5906d2e145b8a2747f810d48f9f7b",
+    "negative_control.log": "f7c0907f886b8640f79cd83455f733f75d9ea35458a5cbde8c9d6f331649ff6e",
+    "negative_control_rtl.v": "f01378c62b254d6e9a9ba0ef3bc2f8204612de152de073af279a7fc1ca1b3c34",
+    "map-100/registered_context.json": "d054cc0e23c0f0be1059b3a7719f1f2c6a50a1745d1e38b510688b33d978d08e",
+    "map-100/source.cpp": "1386f273980d13fc7f56a7bb072fff224a616bbed05b9201fc6f584c8e95b4a3",
+    "map-100/registered_shell.v": "d137e2cb01986e03a60bc826e9f41b118a97c26f8ae92aac9152bf7cad688210",
+    "map-100/light_hls/netlist_verification.json": "d24b84af9b0d8d132463cfe6b0343d53e39f8ef5e627b0c37bc802539c2c4843",
+    "map-100/light_hls/run.tcl": "662cad7a745a2f7e5ebc16ab39496f135b876a6465abc444f8b96422fcdf97bd",
+    "map-100/light_hls/constraints.xdc": "ce16c7a76e0c2be205df58de596b0b843a9e0c2838846f23fc881a2db0784e52",
+    "map-100/light_hls/route_metrics.txt": "1082ab98acba0d52810aec094fab69dcf2c22d72036290dd914999167b64b0e1",
+    "map-100/light_hls/route_status.rpt": "9f63d71e32a77326175cb92c13e3baf2b8228a5f16fad094791c1a3799981f6d",
+    "map-100/light_hls/route_timing_summary.rpt": "c8813411617f9c5409ae1ee7620a2d9acf6ae2573b4e7f97bba7d7ceeccbe4c8",
+    "map-100/light_hls/route_drc.rpt": "3922597c015d9c9a998392435081699723fb8e1053d6b2b0f50c6ffababc0d64",
+    "map-100/light_hls/kernel_utilization.rpt": "888048d2a303328d211e40e0f3f9fe39ebe0530d755008c9c571e74232a32fe7",
+    "map-100/light_hls/hierarchical_utilization.rpt": "5e57edd1f36de5626e7d7e4f5c123e663b876622b416a2aa2aa8713bd3b5f04c",
+    "map-100/light_hls/clock_utilization.rpt": "2b8ae273eb7e76fdf3fae560c933729ef0895c78ab2ab84d656af07edd5b1fb5",
+    "map-100/light_hls/hold_paths.rpt": "af67ba17e5e05ed474c57bb77c8492facc1bcdc0da2a06f5ce8dbd4632f5443f",
+    "map-100/light_hls/setup_paths.rpt": "9e64b8c3327468d6368bdc9c0030e7e781c4eb28e716759dd73d1a3813d35fd9",
+    "map-100/vitis_hls/netlist_verification.json": "5a3b9028b3bb53333d4279ae2d67f07a69df3a86ff978394e390c8a89a66f0d1",
+    "map-100/vitis_hls/run.tcl": "cd12a3701cc2350543457bb017b853b38bc0a01e492e0e67cc45c333656f2f29",
+    "map-100/vitis_hls/constraints.xdc": "ce16c7a76e0c2be205df58de596b0b843a9e0c2838846f23fc881a2db0784e52",
+    "map-100/vitis_hls/route_metrics.txt": "0b035ed29f5c6d339d2065e40b2ce249c75568330130c8998e498b1e8697736a",
+    "map-100/vitis_hls/route_status.rpt": "b9b8082f31dd6c0a0a98149a6bd59a4c5299367fef16e5ad365cc10a91564699",
+    "map-100/vitis_hls/route_timing_summary.rpt": "53d1c46891421d244218bdf65d4cdea5deb5be66bcd3a4e48166de1eb94d1211",
+    "map-100/vitis_hls/route_drc.rpt": "984f2955648ab75696d58cb8b03ea642f6a8824034c191f212b2486517280fe7",
+    "map-100/vitis_hls/kernel_utilization.rpt": "8d16f9cecd3deb8ac6cc10e85d51c13320a44b9e1031de9f4941e9e7339af6f9",
+    "map-100/vitis_hls/hierarchical_utilization.rpt": "ddb4d788285ce7ff037e2e438e74dbe759bb98d8724b55a3d985f957b3ba012d",
+    "map-100/vitis_hls/clock_utilization.rpt": "38521dd40ae271d765ca97aeb4dccac6bde175b95f71fe11fe0b68757ce99b61",
+    "map-100/vitis_hls/hold_paths.rpt": "ee544d84c67aa910c0d99675e28200968b6bcbcac47fcf62f24afd2a2efccac4",
+    "map-100/vitis_hls/setup_paths.rpt": "6c3f62d33b9c0882b4226489854849adc0e11e35066b63c3cce01f6689edc135",
+    "bank-250/registered_context.json": "de034ef1308d930e12bdf057930a3728203210f0a6db7717da744e375c488491",
+    "bank-250/source.cpp": "7610e6ca4ebf3874740c3b8269c87362434958ee2e39074e5a53913fa41730f0",
+    "bank-250/registered_shell.v": "d137e2cb01986e03a60bc826e9f41b118a97c26f8ae92aac9152bf7cad688210",
+    "bank-250/light_hls/netlist_verification.json": "5f8a76839d2bdd84e83af0b38c60b1f9fa1536f70ed4c5fa3035c2b5ba920681",
+    "bank-250/light_hls/run.tcl": "611660e52489073a717167984213bf2aec65fdfce04643511e21a307b79c1106",
+    "bank-250/light_hls/constraints.xdc": "dc7613ab901cc07f30898f832ac6ec78c545fc81209937a734269f891063f14d",
+    "bank-250/light_hls/route_metrics.txt": "bd2fe64858721ec199f3d44bd18dc4677cee6e9ca58c94306b9366cf9a1a7993",
+    "bank-250/light_hls/route_status.rpt": "c3c7dcd417bbf96cb2084a900982423d576a6cc8b504bf4be73b4c8d8df5429f",
+    "bank-250/light_hls/route_timing_summary.rpt": "44007560e7a776b3d83ec81e6e31361ab713bcdf0cc0fad6e37676f9fae3a59b",
+    "bank-250/light_hls/route_drc.rpt": "7777b16c3f86441139ca424480c43ea04017d0448487b83782ab5a75c4686cff",
+    "bank-250/light_hls/kernel_utilization.rpt": "e10ca7b48aa641296ad06a9ee0b387b5188f06f5a54983daffd197235760a0b6",
+    "bank-250/light_hls/hierarchical_utilization.rpt": "6476726f552d08639239ca85ff263ab43c01b0c054252366b3da0048a6dcaf65",
+    "bank-250/light_hls/clock_utilization.rpt": "c8a2a4b86d1340c529a6b27202dc72e256a0c42b5c5e590e3fe53f557e85c330",
+    "bank-250/light_hls/hold_paths.rpt": "800824fa2ea2a52110fb23a72f2817c5099fb8bf9a9b624e2c5208d76a7348ef",
+    "bank-250/light_hls/setup_paths.rpt": "8ade1b322c312a271982fa58a2c554d8a68174e1cb030c89c9c9fffa3a5e4fb6",
+    "bank-250/vitis_hls/netlist_verification.json": "e5e1206bb80b43c1011a1dbff16506794a33e6adeff33e4f46ac5cea804fe662",
+    "bank-250/vitis_hls/run.tcl": "3ca8302705ec2f9a1d23e979d79766a49e32998bf30437168059ee6ac24d73ab",
+    "bank-250/vitis_hls/constraints.xdc": "dc7613ab901cc07f30898f832ac6ec78c545fc81209937a734269f891063f14d",
+    "bank-250/vitis_hls/route_metrics.txt": "857547d3b9562843a87f1722c49e6cb5fdb46a026b98513d3cb6e22893286d4b",
+    "bank-250/vitis_hls/route_status.rpt": "589c32f32e74185cfa148fb8ab404611c465ef43d8a1ad5414f2dc3d58a6d847",
+    "bank-250/vitis_hls/route_timing_summary.rpt": "d394406d3cb3adc92ac26230dd9fc007ad88c26d324cfa6e3b780ccab8c51dfd",
+    "bank-250/vitis_hls/route_drc.rpt": "8bc929b8694efb2dbb426818b0d85172d7b62645910d6bf107fe539edfb84ea8",
+    "bank-250/vitis_hls/kernel_utilization.rpt": "ac68e15e0c5392d84baade3c298c109d8189c9c093e39e106588e057f5910fcf",
+    "bank-250/vitis_hls/hierarchical_utilization.rpt": "bf20cb192d2a878741e21a9a3eaf6ce1158b5d4cc5298aa9fc8bbe51413aec2e",
+    "bank-250/vitis_hls/clock_utilization.rpt": "49eda8fd2c017f3f24cc86cc41ddfb6ba0e0c9e5a7d2bac15c4b0a3c3363f6c4",
+    "bank-250/vitis_hls/hold_paths.rpt": "1c54511c10740a33fe9d54279e0a552fbb1ae83c823e8bb3fbe8bdf6d5fb0d0a",
+    "bank-250/vitis_hls/setup_paths.rpt": "4c2e550c59474ba4c4268f9c07ac5c2891c4ae1cb3292ce34f4b9488e1a3be55",
+    "dataflow-250/registered_context.json": "d68c638a7b380c3c229a43a95c5ed0200551b1bfe2ebcbec34f416e5796b89df",
+    "dataflow-250/source.cpp": "f00d0955fe4d078cbf42c0057a12afef7976e653b493e306b0218fa1545b88dd",
+    "dataflow-250/registered_shell.v": "6520230df1e205d26fa32ef969cc96d8e9db9ca3a82ac614650b9f4f1f6e0946",
+    "dataflow-250/light_hls/netlist_verification.json": "53246e02fc9df8386aeade0749193d73b78b0b298719431423de399ac2feb8bf",
+    "dataflow-250/light_hls/run.tcl": "876f190c4698ee5b4f4972f94786490cc1569d68e9d6d6c97fbe19c155c5299a",
+    "dataflow-250/light_hls/constraints.xdc": "dc7613ab901cc07f30898f832ac6ec78c545fc81209937a734269f891063f14d",
+    "dataflow-250/light_hls/route_metrics.txt": "e11fea0f5f0eda88a5763d5cbfc3946638fe0af655aefc5129083c62bd58dcbb",
+    "dataflow-250/light_hls/route_status.rpt": "0fba2c2e7c788f55d91d53381020486de11b090b7c76b1f4c5128a996cd25158",
+    "dataflow-250/light_hls/route_timing_summary.rpt": "9d418a934d250f5acd8654bd0e1e0673cca96c2cb01c2348f5b50a10ceb505b0",
+    "dataflow-250/light_hls/route_drc.rpt": "1d4814c4dc5e57c23e57b44c1676fe076bcfc692403456beffabd06d1496ef65",
+    "dataflow-250/light_hls/kernel_utilization.rpt": "62ef5eec47e69586ad3684a2540ddd0c5e2793540f0d07a284a45c63d9292635",
+    "dataflow-250/light_hls/hierarchical_utilization.rpt": "4aa81b6dd58c403d854b41de7d0d9bfea5f15bfa53f0ce15e9d6c3152a6be3aa",
+    "dataflow-250/light_hls/clock_utilization.rpt": "3cb489c402658ae23ba929cc4544e333df335e373aa2eb30adb49f95b575c0b5",
+    "dataflow-250/light_hls/hold_paths.rpt": "8dd788d0b7941dece42fdb513c87eca1616941b8f36ae06a341f93be449db07e",
+    "dataflow-250/light_hls/setup_paths.rpt": "ab9fdc76d2844334a748ae16885f0ef5b0418841c48787d69e2339203abbaa8a",
+    "dataflow-250/vitis_hls/netlist_verification.json": "a3809faf78f6e8447e7c4f73f4013323ac4c90a04127236421b9b478111a0649",
+    "dataflow-250/vitis_hls/run.tcl": "7e348e8b32519a0d4d5c27e0d105b5f858bdbc35e741df355b45c305845a1f3e",
+    "dataflow-250/vitis_hls/constraints.xdc": "dc7613ab901cc07f30898f832ac6ec78c545fc81209937a734269f891063f14d",
+    "dataflow-250/vitis_hls/route_metrics.txt": "0ab93da2788418e2f57a9ea6830a3221d8c2b97388e9f04660d1eecac6d7b3c4",
+    "dataflow-250/vitis_hls/route_status.rpt": "899a5641cecbfa9beedb8e9d65230c32d290f8eaab29dd8728d9ff2ff6e7adb4",
+    "dataflow-250/vitis_hls/route_timing_summary.rpt": "21c2c6e5ccf66dc527c1bfca415661cb432bf425528faa96b990e3c1fbfcdd71",
+    "dataflow-250/vitis_hls/route_drc.rpt": "4215530eb70db896c4244a29cece519c0a1b54cd32f45d2a48dff45bc0469c5b",
+    "dataflow-250/vitis_hls/kernel_utilization.rpt": "4e2b9395aad4e48812b2f34519a3c3fd3e7233a31781545089b306172bdad12f",
+    "dataflow-250/vitis_hls/hierarchical_utilization.rpt": "affc0e9c6004db902d8db2b4f67e3b3336114ab08f2fbd02f4aef2a4f4b861c7",
+    "dataflow-250/vitis_hls/clock_utilization.rpt": "8fa743ba1913ea3f43f561c74a8b12ca01955c9915128f3e15ea47155bb234c4",
+    "dataflow-250/vitis_hls/hold_paths.rpt": "ec944aee207988c3fb539cbdc389ea91e7cefa2e9f4f298303c88304e4788cee",
+    "dataflow-250/vitis_hls/setup_paths.rpt": "b60675bb9bca86d8e6c9054f3740f2386ee5882e2aa2bfff9c724893d9b21698",
+    "sustained-map-100.json": "14f60838dfeb3f38144326ad9d7ffc9c7db910d2a3b01b21b18160f2663ec884",
+    "sustained-dataflow-250.json": "3e7e3b8c218dcdf9d24c7d4741d3c8045ffd71ef5717a73c2392a0bde456913a"
+  },
+  "virtual_io_failure_waived": false,
+  "board_timing_signoff": false
+}

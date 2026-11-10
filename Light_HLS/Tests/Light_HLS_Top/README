@@ -1,0 +1,217 @@
+LightHLS
+========
+
+LightHLS runs the project pass sequence and estimates the latency and
+resource use of a C/C++ HLS design. The current executable is built and
+tested with LLVM 18.
+
+Build
+-----
+
+From the repository root:
+
+    Tests/Light_HLS_Top/Build.sh \
+        -DLLVM_DIR=/usr/local/lib/cmake/llvm \
+        -DPolly_DIR=/usr/local/lib/cmake/polly
+
+The executable is generated at:
+
+    Tests/Light_HLS_Top/build/Light_HLS_Top
+
+Run
+---
+
+    Tests/Light_HLS_Top/build/Light_HLS_Top \
+        <source.c-or-cc> <top-function> [config-file] \
+        --freq <frequency> [--board <board>] \
+        [--synthesis <enable-or-disable>] [--output <directory>]
+
+The config file is optional, but `--freq` is mandatory for every invocation.
+Neither a config `clock` entry, `HI_CLOCK_PERIOD`, nor the historical 10 ns
+default substitutes for this explicit command-line choice. Set
+`HI_HLS_LIB_PATH` when the repository's `HLS_Data_Lib` directory cannot be
+discovered from the source path.
+
+Use `--freq 100MHz` to request a 100 MHz target, which corresponds to a 10 ns
+clock period. `Hz`, `kHz`, `MHz`, and `GHz` units are accepted. The command-line
+frequency has priority over the config file and `HI_CLOCK_PERIOD`; `--fre` is
+rejected as an invalid spelling. Vivado
+post-RTL synthesis is disabled when `--synthesis` is omitted; enable it with
+`--synthesis enable`.
+
+Every run creates a `reports` directory. Without `--output`, it is created in
+the launch directory. With `--output <directory>`, reports are written under
+`<directory>/reports`. Human-readable Vitis-style `.rpt` files coexist with
+machine-readable JSON. All pass logs, rewritten `.cc` files, LLVM bitcode, and
+disassembled IR are always placed in `reports/.lighthls`; no `DEBUG` argument
+is needed.
+
+Vivado outputs are grouped under `reports/vivado_report`. The primary readable
+and machine-readable summaries are `vivado_report.rpt` and
+`vivado_report.json`; raw utilization, timing, log, Tcl, metrics, and checkpoint
+files remain in the same directory.
+
+Vivado synthesis uses an out-of-context kernel flow with rebuilt hierarchy. On
+Linux it uses one Vivado worker and pins the process to the first available CPU.
+These settings work around reproducible Vivado 2025.2 U250 crashes on the local
+Intel hybrid-core host and are recorded in the synthesis report.
+
+FPGA board libraries
+--------------------
+
+Instruction timing and resource data are selected independently for each FPGA
+board. The default is the legacy Artix-7 library (`artix7_a12t`, part
+`xa7a12tcsg325-1q`). Select the Alveo U250 library with:
+
+    Tests/Light_HLS_Top/build/Light_HLS_Top \
+        <source.c-or-cc> <top-function> --freq 100MHz --board u250
+
+The board can also be selected with `HI_HLS_BOARD=u250` or by adding
+`FPGA_board = u250` to the config file. Precedence is command line,
+environment, config file, then the `boards/default` library. `HLS_lib_path`
+may point either to the `HLS_Data_Lib` root or directly to one board library.
+The selected board and resolved library path are printed at startup.
+
+Board metadata and instruction tables live under `HLS_Data_Lib/boards`.
+`HLS_Data_Lib/tools/generate_vitis_library.py` regenerates a board library
+from Vitis HLS C-synthesis reports. Vitis project directories and reports are
+work products and should be written outside the repository.
+
+Source pragmas
+--------------
+
+LightHLS accepts a validated subset of these Vitis HLS pragmas directly in
+the input source. As in Vitis HLS, place PIPELINE and UNROLL inside the body
+of the target loop:
+
+    for (int i = 0; i < N; ++i) {
+        #pragma HLS PIPELINE II=1
+        #pragma HLS UNROLL factor=2
+        A[i] = B[i];
+    }
+
+Omit `II` to request the smallest feasible II under the clock, memory-port,
+and dependence constraints modeled by LightHLS:
+
+    for (int i = 0; i < N; ++i) {
+        #pragma HLS PIPELINE
+        A[i] = B[i];
+    }
+
+Omit `factor` to request a full unroll of a loop with a positive,
+compile-time constant trip count:
+
+    for (int i = 0; i < 8; ++i) {
+        #pragma HLS UNROLL
+        A[i] = B[i];
+    }
+
+As in Vitis HLS, pipelining an outer loop fully unrolls every loop nested
+below it. Each nested loop must therefore have a positive compile-time
+constant trip count. LightHLS reports an error if a required full unroll
+cannot be performed; successful outer-loop pipelining can substantially
+increase resource use.
+
+Place ARRAY_PARTITION within the function that defines the target array:
+
+    #pragma HLS ARRAY_PARTITION variable=A type=block factor=2 dim=1
+    #pragma HLS ARRAY_PARTITION variable=A type=cyclic factor=2 dim=1
+    #pragma HLS ARRAY_PARTITION variable=A type=complete dim=1
+
+The default partition type is `complete`, and the default dimension is 1.
+Use `dim=0` to partition every dimension. A factor is required for block and
+cyclic partitioning and must be omitted for complete partitioning.
+LightHLS rejects an unknown variable, an out-of-range dimension, or a factor
+larger than the selected dimension. Complete partitions are modeled as
+register storage rather than BRAM.
+
+Function-level DATAFLOW and FIFO STREAM channels are also supported. Place
+DATAFLOW inside the top function, before its canonical sequence of task calls:
+
+    #pragma HLS DATAFLOW
+    load_stage(input, loaded);
+    compute_stage(loaded, computed);
+    store_stage(computed, output);
+
+LightHLS requires at least two unconditional top-level task calls. Nested
+loops in a DATAFLOW region must be contained in task functions. The DATAFLOW
+II is estimated as the maximum task interval, and intermediate array or
+stream channels are included in the resource estimate.
+
+For stream-based tasks, include `<hls_stream.h>` and declare local
+`hls::stream<T>` channels. LightHLS supplies a small compatibility header
+for compilation and recognizes the Vitis HLS STREAM syntax:
+
+    hls::stream<int> loaded;
+    #pragma HLS STREAM variable=loaded depth=4 type=fifo
+
+`depth` defaults to 2 and `type` defaults to `fifo`. Native integer,
+floating-point, and fixed-width `<stdint.h>` element types are recognized
+for resource estimation. Stream arrays with positive integer literal
+dimensions are expanded into their individual FIFO instances for channel
+and resource accounting. Non-literal stream-array dimensions are rejected
+because their multiplicity cannot be determined reliably. The compatibility
+class models the blocking
+`read`, `write`, `operator<<`, and `operator>>` interfaces needed to build
+estimator IR; it is not a software FIFO implementation for C simulation.
+
+Loop-level DATAFLOW and `disable_start_propagation` are valid Vitis HLS
+forms but are not modeled. STREAM `type=shared`, `type=unsync`, nonblocking
+stream operations, and arbitrary user-defined stream element types are also
+not modeled. These cases produce explicit errors rather than silently using
+different semantics.
+
+`off` and `off=true` disable PIPELINE or UNROLL on the containing loop.
+`ARRAY_PARTITION off=true` disables the matching variable and dimension.
+Source directives override matching directives from the optional config file.
+
+PIPELINE `style=stp` is accepted. Function-level PIPELINE, `rewind`,
+`style=flp`, and `style=frp` are not modeled. UNROLL `skip_exit_check` and
+`region` are also not modeled. LightHLS reports these options as unsupported
+instead of silently applying different semantics.
+
+The RTL backend supports PIPELINE for canonical single-block loops with a
+positive compile-time trip count and integer operations. In a nested loop nest,
+PIPELINE may target the innermost loop, or it may target one outer loop while
+all descendant loops are fully unrolled. Applying PIPELINE to more than one
+loop in the same ancestor/descendant chain is rejected. The achieved II and its
+memory or recurrence limiting factor are reported in
+`reports/scheduling/pipeline_schedule.rpt` and `.json`.
+
+Run the self-checking Icarus pipeline regression after building LightHLS:
+
+    Tests/PipelineBackend/run_pipeline_tests.sh \
+        Tests/Light_HLS_Top/build/Light_HLS_Top
+
+App test matrix
+---------------
+
+Run three pragma configurations for every case under `App`:
+
+    python3 \
+        Tests/LLVM_exp14_HI_WithDirectiveTimingResourceEvaluation/run_source_pragma_variants.py \
+        --build Tests/Light_HLS_Top/build \
+        --executable Tests/Light_HLS_Top/build/Light_HLS_Top \
+        --freq 100MHz \
+        --output Tests/Light_HLS_Top/build/all_app_source_pragma_variants \
+        --timeout 120
+
+The three generated variants are pipeline with block partitioning, unroll
+with cyclic partitioning, and pipeline plus unroll with complete partitioning.
+Cases requiring `ap_int` are reported as `UNSUPPORTED_AP_INT` because `ap_int`
+support is outside the current scope. The CSV summary and per-run logs are
+written below the selected output directory, which is ignored by Git.
+
+Run the dedicated DATAFLOW/STREAM checks against the designs under
+`App/light_hls_dataflow`:
+
+    python3 Tests/Light_HLS_Top/run_dataflow_pragma_tests.py \
+        --executable Tests/Light_HLS_Top/build/Light_HLS_Top \
+        --freq 100MHz \
+        --output Tests/Light_HLS_Top/build/dataflow_pragma_tests \
+        --timeout 180
+
+This covers PIPO array channels, scalar and array FIFO STREAM pragmas, and a
+deeper FIFO configuration. The dedicated DataflowBackend regression also
+validates per-transaction rates, capacity, graph II, zero-token-cycle rejection,
+repeated PIPO bank reuse, and self-checking generated RTL simulation.

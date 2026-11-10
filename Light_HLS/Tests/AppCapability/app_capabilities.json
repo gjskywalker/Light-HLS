@@ -1,0 +1,264 @@
+{
+  "schema_version": "1.0",
+  "board": "u250",
+  "frequency": "100MHz",
+  "apps": [
+    {
+      "app": "2dloop1darray_notpl",
+      "source": "App/2dloop1darray_notpl/2dloop1darray_notpl.c",
+      "top": "f",
+      "expectation": "success",
+      "functional_regression": "AppCorrectness"
+    },
+    {
+      "app": "2dloop1darray_pl",
+      "source": "App/2dloop1darray_pl/2dloop1darray.cc",
+      "top": "f",
+      "expectation": "success"
+    },
+    {
+      "app": "2dloop2darray_ifinloop",
+      "source": "App/2dloop2darray_ifinloop/2dloop2darray_ifinloop.c",
+      "top": "f",
+      "expectation": "success"
+    },
+    {
+      "app": "2dloop2darray_notpl",
+      "source": "App/2dloop2darray_notpl/2dloop2darrary_notpl.c",
+      "top": "f",
+      "expectation": "success"
+    },
+    {
+      "app": "2dloop2darray_pl",
+      "source": "App/2dloop2darray_pl/2dloop2darray_pl.cc",
+      "top": "f",
+      "expectation": "failure",
+      "expected_diagnostics": ["BACKEND_MEMORY_DEPTH_TOO_SMALL"],
+      "unsupported_feature": "statically provable out-of-bounds source access"
+    },
+    {
+      "app": "2dloop2darray_pl_apint",
+      "source": "App/2dloop2darray_pl_apint/2dloop2darray_pl.cc",
+      "top": "f",
+      "expectation": "failure",
+      "unsupported_feature": "ap_int"
+    },
+    {
+      "app": "2dloop2darray_pl_brAccess",
+      "source": "App/2dloop2darray_pl_brAccess/2dloop2darray_pl_brAccess_a.cc",
+      "top": "f",
+      "expectation": "success"
+    },
+    {
+      "app": "2dloop2darray_pl_depCheck",
+      "source": "App/2dloop2darray_pl_depCheck/2dloop2darray_pl.cc",
+      "top": "f",
+      "expectation": "failure",
+      "expected_diagnostics": ["BACKEND_MEMORY_DEPTH_TOO_SMALL"],
+      "unsupported_feature": "statically provable out-of-bounds source access"
+    },
+    {
+      "app": "2dloop2darray_pl_functionAccess",
+      "source": "App/2dloop2darray_pl_functionAccess/2dloop2darray_pl_functionAccess.cc",
+      "top": "f3",
+      "expectation": "success"
+    },
+    {
+      "app": "2dloop2darray_pl_indeploop",
+      "source": "App/2dloop2darray_pl_indeploop/2dloop2darray_pl.cc",
+      "top": "f",
+      "expectation": "failure",
+      "expected_diagnostics": ["BACKEND_MEMORY_DEPTH_TOO_SMALL"],
+      "unsupported_feature": "statically provable out-of-bounds source access"
+    },
+    {
+      "app": "2dloop2darray_pl_moreAccess",
+      "source": "App/2dloop2darray_pl_moreAccess/2dloop2darray_pl_moreAccess.cc",
+      "top": "f",
+      "expectation": "success"
+    },
+    {
+      "app": "2dloop2darray_pl_multest",
+      "source": "App/2dloop2darray_pl_multest/2dloop2darray_pl.cc",
+      "top": "f",
+      "expectation": "failure",
+      "expected_diagnostics": ["BACKEND_MEMORY_DEPTH_TOO_SMALL"],
+      "unsupported_feature": "statically provable out-of-bounds source access"
+    },
+    {
+      "app": "2dloop2darray_pl_s",
+      "source": "App/2dloop2darray_pl_s/2dloop2darray_pl_s.c",
+      "top": "f",
+      "expectation": "success"
+    },
+    {
+      "app": "2dloop2darray_pl_subf",
+      "source": "App/2dloop2darray_pl_subf/2dloop2darray_pl.cc",
+      "top": "f",
+      "expectation": "success"
+    },
+    {
+      "app": "2dloop2darray_pl_subf2",
+      "source": "App/2dloop2darray_pl_subf2/2dloop2darray_pl_subf2.cc",
+      "top": "f",
+      "expectation": "success"
+    },
+    {
+      "app": "2dloop2darray_struct",
+      "source": "App/2dloop2darray_struct/2dloop2darray_struct.c",
+      "top": "f",
+      "expectation": "failure",
+      "unsupported_feature": "structure and floating-point memory element"
+    },
+    {
+      "app": "2dloop2darray_win_filter",
+      "source": "App/2dloop2darray_win_filter/2dloop2darray_pl.cc",
+      "top": "f",
+      "expectation": "failure",
+      "unsupported_feature": "hls::Window method calls"
+    },
+    {
+      "app": "2mm",
+      "source": "App/2mm/2mm_tiny.cc",
+      "top": "kernel_2mm",
+      "expectation": "success"
+    },
+    {
+      "app": "Subfunctions",
+      "source": "App/Subfunctions/Subfunctions.cc",
+      "top": "f1",
+      "expectation": "success"
+    },
+    {
+      "app": "allocation_free",
+      "source": "App/allocation_free/allocation_free.c",
+      "top": "f",
+      "expectation": "failure",
+      "unsupported_feature": "dynamic allocation and free"
+    },
+    {
+      "app": "backend_array_partition",
+      "source": "App/backend_array_partition/backend_array_partition_cyclic.cpp",
+      "top": "backend_array_partition_cyclic",
+      "expectation": "success",
+      "functional_regression": "ArrayPartitionBackend"
+    },
+    {
+      "app": "backend_dual_memory",
+      "source": "App/backend_dual_memory/backend_dual_memory.cpp",
+      "top": "backend_dual_memory",
+      "config": "App/backend_dual_memory/backend_dual_memory.cfg",
+      "expectation": "success",
+      "functional_regression": "RTL_Backend"
+    },
+    {
+      "app": "backend_local_memory",
+      "source": "App/backend_local_memory/backend_local_memory.cpp",
+      "top": "backend_local_memory",
+      "config": "App/backend_local_memory/backend_local_memory.cfg",
+      "expectation": "success",
+      "functional_regression": "RTL_Backend"
+    },
+    {
+      "app": "backend_memory_depth",
+      "source": "App/backend_memory_depth/backend_memory_depth.cpp",
+      "top": "backend_memory_depth",
+      "config": "App/backend_memory_depth/backend_memory_depth.cfg",
+      "expectation": "success",
+      "functional_regression": "RTL_Backend"
+    },
+    {
+      "app": "backend_pipeline",
+      "source": "App/backend_pipeline/backend_pipeline.cpp",
+      "top": "backend_pipeline",
+      "expectation": "success",
+      "functional_regression": "PipelineBackend"
+    },
+    {
+      "app": "backend_scalar",
+      "source": "App/backend_scalar/backend_scalar.c",
+      "top": "backend_scalar",
+      "expectation": "success",
+      "functional_regression": "RTL_Backend"
+    },
+    {
+      "app": "backend_storage_binding",
+      "source": "App/backend_storage_binding/backend_storage_binding.cpp",
+      "top": "backend_storage_binding",
+      "expectation": "success",
+      "functional_regression": "StorageBindingBackend"
+    },
+    {
+      "app": "backend_types",
+      "source": null,
+      "top": null,
+      "expectation": "not_applicable",
+      "unsupported_feature": "empty placeholder directory"
+    },
+    {
+      "app": "bin_conv",
+      "source": "App/bin_conv/bin_conv.cc",
+      "top": "bin_conv",
+      "config": "App/bin_conv/config_bin_conv.txt",
+      "expectation": "failure",
+      "unsupported_feature": "ap_int"
+    },
+    {
+      "app": "conv",
+      "source": "App/conv/conv_tiny.cc",
+      "top": "convs",
+      "expectation": "success"
+    },
+    {
+      "app": "correlation",
+      "source": "App/correlation/correlation.cpp",
+      "top": "kernel_correlation",
+      "expectation": "failure",
+      "expected_diagnostics": ["BACKEND_UNSUPPORTED_FLOATING_POINT"],
+      "unsupported_feature": "floating point"
+    },
+    {
+      "app": "deriche",
+      "source": "App/deriche/deriche_int.cc",
+      "top": "kernel_deriche",
+      "expectation": "success"
+    },
+    {
+      "app": "extremeLoop",
+      "source": "App/extremeLoop/extremeLoop.cpp",
+      "top": "extremeLoop",
+      "expectation": "success",
+      "functional_regression": "RTL_Backend"
+    },
+    {
+      "app": "fdtd2d",
+      "source": "App/fdtd2d/fdtd.cc",
+      "top": "kernel_fdtd_2d",
+      "expectation": "failure",
+      "expected_diagnostics": ["BACKEND_UNSUPPORTED_FLOATING_POINT"],
+      "unsupported_feature": "floating point"
+    },
+    {
+      "app": "jacobi",
+      "source": "App/jacobi/jacobi-2d.c",
+      "top": "kernel_jacobi_2d",
+      "expectation": "failure",
+      "expected_diagnostics": ["BACKEND_UNSUPPORTED_FLOATING_POINT"],
+      "unsupported_feature": "floating point"
+    },
+    {
+      "app": "light_hls_dataflow",
+      "source": "App/light_hls_dataflow/vector_stream_dataflow.cc",
+      "top": "vector_stream_dataflow",
+      "expectation": "success",
+      "functional_regression": "DataflowBackend"
+    },
+    {
+      "app": "spam-filter",
+      "source": "App/spam-filter/sgd.cpp",
+      "top": "compute",
+      "expectation": "success",
+      "functional_regression": "AppCorrectness"
+    }
+  ]
+}

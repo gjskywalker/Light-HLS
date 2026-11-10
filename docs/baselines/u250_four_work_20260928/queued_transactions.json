@@ -1,0 +1,1877 @@
+{
+  "valid": true,
+  "results": [
+    {
+      "frequency_mhz": 100,
+      "mode": "queued",
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 5,
+          "last_commit": 266,
+          "done": 267
+        },
+        {
+          "trial": 1,
+          "accepted": 6,
+          "last_commit": 526,
+          "done": 527
+        },
+        {
+          "trial": 2,
+          "accepted": 267,
+          "last_commit": 786,
+          "done": 787
+        },
+        {
+          "trial": 3,
+          "accepted": 527,
+          "last_commit": 1046,
+          "done": 1047
+        },
+        {
+          "trial": 4,
+          "accepted": 787,
+          "last_commit": 1306,
+          "done": 1307
+        },
+        {
+          "trial": 5,
+          "accepted": 1047,
+          "last_commit": 1566,
+          "done": 1567
+        },
+        {
+          "trial": 6,
+          "accepted": 1307,
+          "last_commit": 1826,
+          "done": 1827
+        },
+        {
+          "trial": 7,
+          "accepted": 1567,
+          "last_commit": 2086,
+          "done": 2087
+        },
+        {
+          "trial": 8,
+          "accepted": 1827,
+          "last_commit": 2346,
+          "done": 2347
+        },
+        {
+          "trial": 9,
+          "accepted": 2087,
+          "last_commit": 2606,
+          "done": 2607
+        },
+        {
+          "trial": 10,
+          "accepted": 2347,
+          "last_commit": 2866,
+          "done": 2867
+        },
+        {
+          "trial": 11,
+          "accepted": 2607,
+          "last_commit": 3126,
+          "done": 3127
+        },
+        {
+          "trial": 12,
+          "accepted": 2867,
+          "last_commit": 3386,
+          "done": 3387
+        },
+        {
+          "trial": 13,
+          "accepted": 3127,
+          "last_commit": 3646,
+          "done": 3647
+        },
+        {
+          "trial": 14,
+          "accepted": 3387,
+          "last_commit": 3906,
+          "done": 3907
+        },
+        {
+          "trial": 15,
+          "accepted": 3647,
+          "last_commit": 4166,
+          "done": 4167
+        },
+        {
+          "trial": 16,
+          "accepted": 3907,
+          "last_commit": 4426,
+          "done": 4427
+        },
+        {
+          "trial": 17,
+          "accepted": 4167,
+          "last_commit": 4686,
+          "done": 4687
+        },
+        {
+          "trial": 18,
+          "accepted": 4427,
+          "last_commit": 4946,
+          "done": 4947
+        },
+        {
+          "trial": 19,
+          "accepted": 4687,
+          "last_commit": 5206,
+          "done": 5207
+        },
+        {
+          "trial": 20,
+          "accepted": 4947,
+          "last_commit": 5466,
+          "done": 5467
+        },
+        {
+          "trial": 21,
+          "accepted": 5207,
+          "last_commit": 5726,
+          "done": 5727
+        },
+        {
+          "trial": 22,
+          "accepted": 5467,
+          "last_commit": 5986,
+          "done": 5987
+        },
+        {
+          "trial": 23,
+          "accepted": 5727,
+          "last_commit": 6246,
+          "done": 6247
+        },
+        {
+          "trial": 24,
+          "accepted": 5987,
+          "last_commit": 6506,
+          "done": 6507
+        },
+        {
+          "trial": 25,
+          "accepted": 6247,
+          "last_commit": 6766,
+          "done": 6767
+        },
+        {
+          "trial": 26,
+          "accepted": 6507,
+          "last_commit": 7026,
+          "done": 7027
+        },
+        {
+          "trial": 27,
+          "accepted": 6767,
+          "last_commit": 7286,
+          "done": 7287
+        },
+        {
+          "trial": 28,
+          "accepted": 7027,
+          "last_commit": 7546,
+          "done": 7547
+        },
+        {
+          "trial": 29,
+          "accepted": 7287,
+          "last_commit": 7806,
+          "done": 7807
+        },
+        {
+          "trial": 30,
+          "accepted": 7547,
+          "last_commit": 8066,
+          "done": 8067
+        },
+        {
+          "trial": 31,
+          "accepted": 7807,
+          "last_commit": 8326,
+          "done": 8327
+        }
+      ],
+      "done_intervals": [
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260
+      ],
+      "committed_writes": 8192,
+      "overlaps": 30,
+      "log_sha256": "7be522d0a807f6434c2d2e07a27a0c4a84aee562fddfbabd1084012a0621ea57"
+    },
+    {
+      "frequency_mhz": 100,
+      "mode": "queued_stalled",
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 5,
+          "last_commit": 371,
+          "done": 372
+        },
+        {
+          "trial": 1,
+          "accepted": 6,
+          "last_commit": 739,
+          "done": 740
+        },
+        {
+          "trial": 2,
+          "accepted": 372,
+          "last_commit": 1102,
+          "done": 1103
+        },
+        {
+          "trial": 3,
+          "accepted": 740,
+          "last_commit": 1470,
+          "done": 1471
+        },
+        {
+          "trial": 4,
+          "accepted": 1103,
+          "last_commit": 1833,
+          "done": 1834
+        },
+        {
+          "trial": 5,
+          "accepted": 1471,
+          "last_commit": 2201,
+          "done": 2202
+        },
+        {
+          "trial": 6,
+          "accepted": 1834,
+          "last_commit": 2564,
+          "done": 2565
+        },
+        {
+          "trial": 7,
+          "accepted": 2202,
+          "last_commit": 2932,
+          "done": 2933
+        },
+        {
+          "trial": 8,
+          "accepted": 2565,
+          "last_commit": 3295,
+          "done": 3296
+        },
+        {
+          "trial": 9,
+          "accepted": 2933,
+          "last_commit": 3663,
+          "done": 3664
+        },
+        {
+          "trial": 10,
+          "accepted": 3296,
+          "last_commit": 4026,
+          "done": 4027
+        },
+        {
+          "trial": 11,
+          "accepted": 3664,
+          "last_commit": 4394,
+          "done": 4395
+        },
+        {
+          "trial": 12,
+          "accepted": 4027,
+          "last_commit": 4757,
+          "done": 4758
+        },
+        {
+          "trial": 13,
+          "accepted": 4395,
+          "last_commit": 5125,
+          "done": 5126
+        },
+        {
+          "trial": 14,
+          "accepted": 4758,
+          "last_commit": 5488,
+          "done": 5489
+        },
+        {
+          "trial": 15,
+          "accepted": 5126,
+          "last_commit": 5856,
+          "done": 5857
+        },
+        {
+          "trial": 16,
+          "accepted": 5489,
+          "last_commit": 6219,
+          "done": 6220
+        },
+        {
+          "trial": 17,
+          "accepted": 5857,
+          "last_commit": 6587,
+          "done": 6588
+        },
+        {
+          "trial": 18,
+          "accepted": 6220,
+          "last_commit": 6950,
+          "done": 6951
+        },
+        {
+          "trial": 19,
+          "accepted": 6588,
+          "last_commit": 7318,
+          "done": 7319
+        },
+        {
+          "trial": 20,
+          "accepted": 6951,
+          "last_commit": 7681,
+          "done": 7682
+        },
+        {
+          "trial": 21,
+          "accepted": 7319,
+          "last_commit": 8049,
+          "done": 8050
+        },
+        {
+          "trial": 22,
+          "accepted": 7682,
+          "last_commit": 8412,
+          "done": 8413
+        },
+        {
+          "trial": 23,
+          "accepted": 8050,
+          "last_commit": 8780,
+          "done": 8781
+        },
+        {
+          "trial": 24,
+          "accepted": 8413,
+          "last_commit": 9143,
+          "done": 9144
+        },
+        {
+          "trial": 25,
+          "accepted": 8781,
+          "last_commit": 9511,
+          "done": 9512
+        },
+        {
+          "trial": 26,
+          "accepted": 9144,
+          "last_commit": 9874,
+          "done": 9875
+        },
+        {
+          "trial": 27,
+          "accepted": 9512,
+          "last_commit": 10242,
+          "done": 10243
+        },
+        {
+          "trial": 28,
+          "accepted": 9875,
+          "last_commit": 10605,
+          "done": 10606
+        },
+        {
+          "trial": 29,
+          "accepted": 10243,
+          "last_commit": 10973,
+          "done": 10974
+        },
+        {
+          "trial": 30,
+          "accepted": 10606,
+          "last_commit": 11336,
+          "done": 11337
+        },
+        {
+          "trial": 31,
+          "accepted": 10974,
+          "last_commit": 11704,
+          "done": 11705
+        }
+      ],
+      "done_intervals": [
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368
+      ],
+      "committed_writes": 8192,
+      "overlaps": 30,
+      "log_sha256": "75a320e80bcf90efe82454b19e7d8bf2666c7e30eca8220609580405d73c00fe"
+    },
+    {
+      "frequency_mhz": 150,
+      "mode": "queued",
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 5,
+          "last_commit": 266,
+          "done": 267
+        },
+        {
+          "trial": 1,
+          "accepted": 6,
+          "last_commit": 526,
+          "done": 527
+        },
+        {
+          "trial": 2,
+          "accepted": 267,
+          "last_commit": 786,
+          "done": 787
+        },
+        {
+          "trial": 3,
+          "accepted": 527,
+          "last_commit": 1046,
+          "done": 1047
+        },
+        {
+          "trial": 4,
+          "accepted": 787,
+          "last_commit": 1306,
+          "done": 1307
+        },
+        {
+          "trial": 5,
+          "accepted": 1047,
+          "last_commit": 1566,
+          "done": 1567
+        },
+        {
+          "trial": 6,
+          "accepted": 1307,
+          "last_commit": 1826,
+          "done": 1827
+        },
+        {
+          "trial": 7,
+          "accepted": 1567,
+          "last_commit": 2086,
+          "done": 2087
+        },
+        {
+          "trial": 8,
+          "accepted": 1827,
+          "last_commit": 2346,
+          "done": 2347
+        },
+        {
+          "trial": 9,
+          "accepted": 2087,
+          "last_commit": 2606,
+          "done": 2607
+        },
+        {
+          "trial": 10,
+          "accepted": 2347,
+          "last_commit": 2866,
+          "done": 2867
+        },
+        {
+          "trial": 11,
+          "accepted": 2607,
+          "last_commit": 3126,
+          "done": 3127
+        },
+        {
+          "trial": 12,
+          "accepted": 2867,
+          "last_commit": 3386,
+          "done": 3387
+        },
+        {
+          "trial": 13,
+          "accepted": 3127,
+          "last_commit": 3646,
+          "done": 3647
+        },
+        {
+          "trial": 14,
+          "accepted": 3387,
+          "last_commit": 3906,
+          "done": 3907
+        },
+        {
+          "trial": 15,
+          "accepted": 3647,
+          "last_commit": 4166,
+          "done": 4167
+        },
+        {
+          "trial": 16,
+          "accepted": 3907,
+          "last_commit": 4426,
+          "done": 4427
+        },
+        {
+          "trial": 17,
+          "accepted": 4167,
+          "last_commit": 4686,
+          "done": 4687
+        },
+        {
+          "trial": 18,
+          "accepted": 4427,
+          "last_commit": 4946,
+          "done": 4947
+        },
+        {
+          "trial": 19,
+          "accepted": 4687,
+          "last_commit": 5206,
+          "done": 5207
+        },
+        {
+          "trial": 20,
+          "accepted": 4947,
+          "last_commit": 5466,
+          "done": 5467
+        },
+        {
+          "trial": 21,
+          "accepted": 5207,
+          "last_commit": 5726,
+          "done": 5727
+        },
+        {
+          "trial": 22,
+          "accepted": 5467,
+          "last_commit": 5986,
+          "done": 5987
+        },
+        {
+          "trial": 23,
+          "accepted": 5727,
+          "last_commit": 6246,
+          "done": 6247
+        },
+        {
+          "trial": 24,
+          "accepted": 5987,
+          "last_commit": 6506,
+          "done": 6507
+        },
+        {
+          "trial": 25,
+          "accepted": 6247,
+          "last_commit": 6766,
+          "done": 6767
+        },
+        {
+          "trial": 26,
+          "accepted": 6507,
+          "last_commit": 7026,
+          "done": 7027
+        },
+        {
+          "trial": 27,
+          "accepted": 6767,
+          "last_commit": 7286,
+          "done": 7287
+        },
+        {
+          "trial": 28,
+          "accepted": 7027,
+          "last_commit": 7546,
+          "done": 7547
+        },
+        {
+          "trial": 29,
+          "accepted": 7287,
+          "last_commit": 7806,
+          "done": 7807
+        },
+        {
+          "trial": 30,
+          "accepted": 7547,
+          "last_commit": 8066,
+          "done": 8067
+        },
+        {
+          "trial": 31,
+          "accepted": 7807,
+          "last_commit": 8326,
+          "done": 8327
+        }
+      ],
+      "done_intervals": [
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260,
+        260
+      ],
+      "committed_writes": 8192,
+      "overlaps": 30,
+      "log_sha256": "7be522d0a807f6434c2d2e07a27a0c4a84aee562fddfbabd1084012a0621ea57"
+    },
+    {
+      "frequency_mhz": 150,
+      "mode": "queued_stalled",
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 5,
+          "last_commit": 371,
+          "done": 372
+        },
+        {
+          "trial": 1,
+          "accepted": 6,
+          "last_commit": 739,
+          "done": 740
+        },
+        {
+          "trial": 2,
+          "accepted": 372,
+          "last_commit": 1102,
+          "done": 1103
+        },
+        {
+          "trial": 3,
+          "accepted": 740,
+          "last_commit": 1470,
+          "done": 1471
+        },
+        {
+          "trial": 4,
+          "accepted": 1103,
+          "last_commit": 1833,
+          "done": 1834
+        },
+        {
+          "trial": 5,
+          "accepted": 1471,
+          "last_commit": 2201,
+          "done": 2202
+        },
+        {
+          "trial": 6,
+          "accepted": 1834,
+          "last_commit": 2564,
+          "done": 2565
+        },
+        {
+          "trial": 7,
+          "accepted": 2202,
+          "last_commit": 2932,
+          "done": 2933
+        },
+        {
+          "trial": 8,
+          "accepted": 2565,
+          "last_commit": 3295,
+          "done": 3296
+        },
+        {
+          "trial": 9,
+          "accepted": 2933,
+          "last_commit": 3663,
+          "done": 3664
+        },
+        {
+          "trial": 10,
+          "accepted": 3296,
+          "last_commit": 4026,
+          "done": 4027
+        },
+        {
+          "trial": 11,
+          "accepted": 3664,
+          "last_commit": 4394,
+          "done": 4395
+        },
+        {
+          "trial": 12,
+          "accepted": 4027,
+          "last_commit": 4757,
+          "done": 4758
+        },
+        {
+          "trial": 13,
+          "accepted": 4395,
+          "last_commit": 5125,
+          "done": 5126
+        },
+        {
+          "trial": 14,
+          "accepted": 4758,
+          "last_commit": 5488,
+          "done": 5489
+        },
+        {
+          "trial": 15,
+          "accepted": 5126,
+          "last_commit": 5856,
+          "done": 5857
+        },
+        {
+          "trial": 16,
+          "accepted": 5489,
+          "last_commit": 6219,
+          "done": 6220
+        },
+        {
+          "trial": 17,
+          "accepted": 5857,
+          "last_commit": 6587,
+          "done": 6588
+        },
+        {
+          "trial": 18,
+          "accepted": 6220,
+          "last_commit": 6950,
+          "done": 6951
+        },
+        {
+          "trial": 19,
+          "accepted": 6588,
+          "last_commit": 7318,
+          "done": 7319
+        },
+        {
+          "trial": 20,
+          "accepted": 6951,
+          "last_commit": 7681,
+          "done": 7682
+        },
+        {
+          "trial": 21,
+          "accepted": 7319,
+          "last_commit": 8049,
+          "done": 8050
+        },
+        {
+          "trial": 22,
+          "accepted": 7682,
+          "last_commit": 8412,
+          "done": 8413
+        },
+        {
+          "trial": 23,
+          "accepted": 8050,
+          "last_commit": 8780,
+          "done": 8781
+        },
+        {
+          "trial": 24,
+          "accepted": 8413,
+          "last_commit": 9143,
+          "done": 9144
+        },
+        {
+          "trial": 25,
+          "accepted": 8781,
+          "last_commit": 9511,
+          "done": 9512
+        },
+        {
+          "trial": 26,
+          "accepted": 9144,
+          "last_commit": 9874,
+          "done": 9875
+        },
+        {
+          "trial": 27,
+          "accepted": 9512,
+          "last_commit": 10242,
+          "done": 10243
+        },
+        {
+          "trial": 28,
+          "accepted": 9875,
+          "last_commit": 10605,
+          "done": 10606
+        },
+        {
+          "trial": 29,
+          "accepted": 10243,
+          "last_commit": 10973,
+          "done": 10974
+        },
+        {
+          "trial": 30,
+          "accepted": 10606,
+          "last_commit": 11336,
+          "done": 11337
+        },
+        {
+          "trial": 31,
+          "accepted": 10974,
+          "last_commit": 11704,
+          "done": 11705
+        }
+      ],
+      "done_intervals": [
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368
+      ],
+      "committed_writes": 8192,
+      "overlaps": 30,
+      "log_sha256": "75a320e80bcf90efe82454b19e7d8bf2666c7e30eca8220609580405d73c00fe"
+    },
+    {
+      "frequency_mhz": 200,
+      "mode": "queued",
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 5,
+          "last_commit": 267,
+          "done": 268
+        },
+        {
+          "trial": 1,
+          "accepted": 6,
+          "last_commit": 528,
+          "done": 529
+        },
+        {
+          "trial": 2,
+          "accepted": 268,
+          "last_commit": 789,
+          "done": 790
+        },
+        {
+          "trial": 3,
+          "accepted": 529,
+          "last_commit": 1050,
+          "done": 1051
+        },
+        {
+          "trial": 4,
+          "accepted": 790,
+          "last_commit": 1311,
+          "done": 1312
+        },
+        {
+          "trial": 5,
+          "accepted": 1051,
+          "last_commit": 1572,
+          "done": 1573
+        },
+        {
+          "trial": 6,
+          "accepted": 1312,
+          "last_commit": 1833,
+          "done": 1834
+        },
+        {
+          "trial": 7,
+          "accepted": 1573,
+          "last_commit": 2094,
+          "done": 2095
+        },
+        {
+          "trial": 8,
+          "accepted": 1834,
+          "last_commit": 2355,
+          "done": 2356
+        },
+        {
+          "trial": 9,
+          "accepted": 2095,
+          "last_commit": 2616,
+          "done": 2617
+        },
+        {
+          "trial": 10,
+          "accepted": 2356,
+          "last_commit": 2877,
+          "done": 2878
+        },
+        {
+          "trial": 11,
+          "accepted": 2617,
+          "last_commit": 3138,
+          "done": 3139
+        },
+        {
+          "trial": 12,
+          "accepted": 2878,
+          "last_commit": 3399,
+          "done": 3400
+        },
+        {
+          "trial": 13,
+          "accepted": 3139,
+          "last_commit": 3660,
+          "done": 3661
+        },
+        {
+          "trial": 14,
+          "accepted": 3400,
+          "last_commit": 3921,
+          "done": 3922
+        },
+        {
+          "trial": 15,
+          "accepted": 3661,
+          "last_commit": 4182,
+          "done": 4183
+        },
+        {
+          "trial": 16,
+          "accepted": 3922,
+          "last_commit": 4443,
+          "done": 4444
+        },
+        {
+          "trial": 17,
+          "accepted": 4183,
+          "last_commit": 4704,
+          "done": 4705
+        },
+        {
+          "trial": 18,
+          "accepted": 4444,
+          "last_commit": 4965,
+          "done": 4966
+        },
+        {
+          "trial": 19,
+          "accepted": 4705,
+          "last_commit": 5226,
+          "done": 5227
+        },
+        {
+          "trial": 20,
+          "accepted": 4966,
+          "last_commit": 5487,
+          "done": 5488
+        },
+        {
+          "trial": 21,
+          "accepted": 5227,
+          "last_commit": 5748,
+          "done": 5749
+        },
+        {
+          "trial": 22,
+          "accepted": 5488,
+          "last_commit": 6009,
+          "done": 6010
+        },
+        {
+          "trial": 23,
+          "accepted": 5749,
+          "last_commit": 6270,
+          "done": 6271
+        },
+        {
+          "trial": 24,
+          "accepted": 6010,
+          "last_commit": 6531,
+          "done": 6532
+        },
+        {
+          "trial": 25,
+          "accepted": 6271,
+          "last_commit": 6792,
+          "done": 6793
+        },
+        {
+          "trial": 26,
+          "accepted": 6532,
+          "last_commit": 7053,
+          "done": 7054
+        },
+        {
+          "trial": 27,
+          "accepted": 6793,
+          "last_commit": 7314,
+          "done": 7315
+        },
+        {
+          "trial": 28,
+          "accepted": 7054,
+          "last_commit": 7575,
+          "done": 7576
+        },
+        {
+          "trial": 29,
+          "accepted": 7315,
+          "last_commit": 7836,
+          "done": 7837
+        },
+        {
+          "trial": 30,
+          "accepted": 7576,
+          "last_commit": 8097,
+          "done": 8098
+        },
+        {
+          "trial": 31,
+          "accepted": 7837,
+          "last_commit": 8358,
+          "done": 8359
+        }
+      ],
+      "done_intervals": [
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261
+      ],
+      "committed_writes": 8192,
+      "overlaps": 30,
+      "log_sha256": "6aec538b2c3171a5e3c73ed9e654787eeeff993cbf7dc107ab79d46160c1adde"
+    },
+    {
+      "frequency_mhz": 200,
+      "mode": "queued_stalled",
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 5,
+          "last_commit": 372,
+          "done": 373
+        },
+        {
+          "trial": 1,
+          "accepted": 6,
+          "last_commit": 741,
+          "done": 742
+        },
+        {
+          "trial": 2,
+          "accepted": 373,
+          "last_commit": 1104,
+          "done": 1105
+        },
+        {
+          "trial": 3,
+          "accepted": 742,
+          "last_commit": 1472,
+          "done": 1473
+        },
+        {
+          "trial": 4,
+          "accepted": 1105,
+          "last_commit": 1835,
+          "done": 1836
+        },
+        {
+          "trial": 5,
+          "accepted": 1473,
+          "last_commit": 2203,
+          "done": 2204
+        },
+        {
+          "trial": 6,
+          "accepted": 1836,
+          "last_commit": 2566,
+          "done": 2567
+        },
+        {
+          "trial": 7,
+          "accepted": 2204,
+          "last_commit": 2934,
+          "done": 2935
+        },
+        {
+          "trial": 8,
+          "accepted": 2567,
+          "last_commit": 3297,
+          "done": 3298
+        },
+        {
+          "trial": 9,
+          "accepted": 2935,
+          "last_commit": 3665,
+          "done": 3666
+        },
+        {
+          "trial": 10,
+          "accepted": 3298,
+          "last_commit": 4028,
+          "done": 4029
+        },
+        {
+          "trial": 11,
+          "accepted": 3666,
+          "last_commit": 4396,
+          "done": 4397
+        },
+        {
+          "trial": 12,
+          "accepted": 4029,
+          "last_commit": 4759,
+          "done": 4760
+        },
+        {
+          "trial": 13,
+          "accepted": 4397,
+          "last_commit": 5127,
+          "done": 5128
+        },
+        {
+          "trial": 14,
+          "accepted": 4760,
+          "last_commit": 5490,
+          "done": 5491
+        },
+        {
+          "trial": 15,
+          "accepted": 5128,
+          "last_commit": 5858,
+          "done": 5859
+        },
+        {
+          "trial": 16,
+          "accepted": 5491,
+          "last_commit": 6221,
+          "done": 6222
+        },
+        {
+          "trial": 17,
+          "accepted": 5859,
+          "last_commit": 6589,
+          "done": 6590
+        },
+        {
+          "trial": 18,
+          "accepted": 6222,
+          "last_commit": 6952,
+          "done": 6953
+        },
+        {
+          "trial": 19,
+          "accepted": 6590,
+          "last_commit": 7320,
+          "done": 7321
+        },
+        {
+          "trial": 20,
+          "accepted": 6953,
+          "last_commit": 7683,
+          "done": 7684
+        },
+        {
+          "trial": 21,
+          "accepted": 7321,
+          "last_commit": 8051,
+          "done": 8052
+        },
+        {
+          "trial": 22,
+          "accepted": 7684,
+          "last_commit": 8414,
+          "done": 8415
+        },
+        {
+          "trial": 23,
+          "accepted": 8052,
+          "last_commit": 8782,
+          "done": 8783
+        },
+        {
+          "trial": 24,
+          "accepted": 8415,
+          "last_commit": 9145,
+          "done": 9146
+        },
+        {
+          "trial": 25,
+          "accepted": 8783,
+          "last_commit": 9513,
+          "done": 9514
+        },
+        {
+          "trial": 26,
+          "accepted": 9146,
+          "last_commit": 9876,
+          "done": 9877
+        },
+        {
+          "trial": 27,
+          "accepted": 9514,
+          "last_commit": 10244,
+          "done": 10245
+        },
+        {
+          "trial": 28,
+          "accepted": 9877,
+          "last_commit": 10607,
+          "done": 10608
+        },
+        {
+          "trial": 29,
+          "accepted": 10245,
+          "last_commit": 10975,
+          "done": 10976
+        },
+        {
+          "trial": 30,
+          "accepted": 10608,
+          "last_commit": 11338,
+          "done": 11339
+        },
+        {
+          "trial": 31,
+          "accepted": 10976,
+          "last_commit": 11706,
+          "done": 11707
+        }
+      ],
+      "done_intervals": [
+        369,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368
+      ],
+      "committed_writes": 8192,
+      "overlaps": 30,
+      "log_sha256": "fb1111726d115b60446b04b385b2c27052ab3b79881353a3a4100c07720757c3"
+    },
+    {
+      "frequency_mhz": 250,
+      "mode": "queued",
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 5,
+          "last_commit": 267,
+          "done": 268
+        },
+        {
+          "trial": 1,
+          "accepted": 6,
+          "last_commit": 528,
+          "done": 529
+        },
+        {
+          "trial": 2,
+          "accepted": 268,
+          "last_commit": 789,
+          "done": 790
+        },
+        {
+          "trial": 3,
+          "accepted": 529,
+          "last_commit": 1050,
+          "done": 1051
+        },
+        {
+          "trial": 4,
+          "accepted": 790,
+          "last_commit": 1311,
+          "done": 1312
+        },
+        {
+          "trial": 5,
+          "accepted": 1051,
+          "last_commit": 1572,
+          "done": 1573
+        },
+        {
+          "trial": 6,
+          "accepted": 1312,
+          "last_commit": 1833,
+          "done": 1834
+        },
+        {
+          "trial": 7,
+          "accepted": 1573,
+          "last_commit": 2094,
+          "done": 2095
+        },
+        {
+          "trial": 8,
+          "accepted": 1834,
+          "last_commit": 2355,
+          "done": 2356
+        },
+        {
+          "trial": 9,
+          "accepted": 2095,
+          "last_commit": 2616,
+          "done": 2617
+        },
+        {
+          "trial": 10,
+          "accepted": 2356,
+          "last_commit": 2877,
+          "done": 2878
+        },
+        {
+          "trial": 11,
+          "accepted": 2617,
+          "last_commit": 3138,
+          "done": 3139
+        },
+        {
+          "trial": 12,
+          "accepted": 2878,
+          "last_commit": 3399,
+          "done": 3400
+        },
+        {
+          "trial": 13,
+          "accepted": 3139,
+          "last_commit": 3660,
+          "done": 3661
+        },
+        {
+          "trial": 14,
+          "accepted": 3400,
+          "last_commit": 3921,
+          "done": 3922
+        },
+        {
+          "trial": 15,
+          "accepted": 3661,
+          "last_commit": 4182,
+          "done": 4183
+        },
+        {
+          "trial": 16,
+          "accepted": 3922,
+          "last_commit": 4443,
+          "done": 4444
+        },
+        {
+          "trial": 17,
+          "accepted": 4183,
+          "last_commit": 4704,
+          "done": 4705
+        },
+        {
+          "trial": 18,
+          "accepted": 4444,
+          "last_commit": 4965,
+          "done": 4966
+        },
+        {
+          "trial": 19,
+          "accepted": 4705,
+          "last_commit": 5226,
+          "done": 5227
+        },
+        {
+          "trial": 20,
+          "accepted": 4966,
+          "last_commit": 5487,
+          "done": 5488
+        },
+        {
+          "trial": 21,
+          "accepted": 5227,
+          "last_commit": 5748,
+          "done": 5749
+        },
+        {
+          "trial": 22,
+          "accepted": 5488,
+          "last_commit": 6009,
+          "done": 6010
+        },
+        {
+          "trial": 23,
+          "accepted": 5749,
+          "last_commit": 6270,
+          "done": 6271
+        },
+        {
+          "trial": 24,
+          "accepted": 6010,
+          "last_commit": 6531,
+          "done": 6532
+        },
+        {
+          "trial": 25,
+          "accepted": 6271,
+          "last_commit": 6792,
+          "done": 6793
+        },
+        {
+          "trial": 26,
+          "accepted": 6532,
+          "last_commit": 7053,
+          "done": 7054
+        },
+        {
+          "trial": 27,
+          "accepted": 6793,
+          "last_commit": 7314,
+          "done": 7315
+        },
+        {
+          "trial": 28,
+          "accepted": 7054,
+          "last_commit": 7575,
+          "done": 7576
+        },
+        {
+          "trial": 29,
+          "accepted": 7315,
+          "last_commit": 7836,
+          "done": 7837
+        },
+        {
+          "trial": 30,
+          "accepted": 7576,
+          "last_commit": 8097,
+          "done": 8098
+        },
+        {
+          "trial": 31,
+          "accepted": 7837,
+          "last_commit": 8358,
+          "done": 8359
+        }
+      ],
+      "done_intervals": [
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261,
+        261
+      ],
+      "committed_writes": 8192,
+      "overlaps": 30,
+      "log_sha256": "6aec538b2c3171a5e3c73ed9e654787eeeff993cbf7dc107ab79d46160c1adde"
+    },
+    {
+      "frequency_mhz": 250,
+      "mode": "queued_stalled",
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 5,
+          "last_commit": 372,
+          "done": 373
+        },
+        {
+          "trial": 1,
+          "accepted": 6,
+          "last_commit": 741,
+          "done": 742
+        },
+        {
+          "trial": 2,
+          "accepted": 373,
+          "last_commit": 1104,
+          "done": 1105
+        },
+        {
+          "trial": 3,
+          "accepted": 742,
+          "last_commit": 1472,
+          "done": 1473
+        },
+        {
+          "trial": 4,
+          "accepted": 1105,
+          "last_commit": 1835,
+          "done": 1836
+        },
+        {
+          "trial": 5,
+          "accepted": 1473,
+          "last_commit": 2203,
+          "done": 2204
+        },
+        {
+          "trial": 6,
+          "accepted": 1836,
+          "last_commit": 2566,
+          "done": 2567
+        },
+        {
+          "trial": 7,
+          "accepted": 2204,
+          "last_commit": 2934,
+          "done": 2935
+        },
+        {
+          "trial": 8,
+          "accepted": 2567,
+          "last_commit": 3297,
+          "done": 3298
+        },
+        {
+          "trial": 9,
+          "accepted": 2935,
+          "last_commit": 3665,
+          "done": 3666
+        },
+        {
+          "trial": 10,
+          "accepted": 3298,
+          "last_commit": 4028,
+          "done": 4029
+        },
+        {
+          "trial": 11,
+          "accepted": 3666,
+          "last_commit": 4396,
+          "done": 4397
+        },
+        {
+          "trial": 12,
+          "accepted": 4029,
+          "last_commit": 4759,
+          "done": 4760
+        },
+        {
+          "trial": 13,
+          "accepted": 4397,
+          "last_commit": 5127,
+          "done": 5128
+        },
+        {
+          "trial": 14,
+          "accepted": 4760,
+          "last_commit": 5490,
+          "done": 5491
+        },
+        {
+          "trial": 15,
+          "accepted": 5128,
+          "last_commit": 5858,
+          "done": 5859
+        },
+        {
+          "trial": 16,
+          "accepted": 5491,
+          "last_commit": 6221,
+          "done": 6222
+        },
+        {
+          "trial": 17,
+          "accepted": 5859,
+          "last_commit": 6589,
+          "done": 6590
+        },
+        {
+          "trial": 18,
+          "accepted": 6222,
+          "last_commit": 6952,
+          "done": 6953
+        },
+        {
+          "trial": 19,
+          "accepted": 6590,
+          "last_commit": 7320,
+          "done": 7321
+        },
+        {
+          "trial": 20,
+          "accepted": 6953,
+          "last_commit": 7683,
+          "done": 7684
+        },
+        {
+          "trial": 21,
+          "accepted": 7321,
+          "last_commit": 8051,
+          "done": 8052
+        },
+        {
+          "trial": 22,
+          "accepted": 7684,
+          "last_commit": 8414,
+          "done": 8415
+        },
+        {
+          "trial": 23,
+          "accepted": 8052,
+          "last_commit": 8782,
+          "done": 8783
+        },
+        {
+          "trial": 24,
+          "accepted": 8415,
+          "last_commit": 9145,
+          "done": 9146
+        },
+        {
+          "trial": 25,
+          "accepted": 8783,
+          "last_commit": 9513,
+          "done": 9514
+        },
+        {
+          "trial": 26,
+          "accepted": 9146,
+          "last_commit": 9876,
+          "done": 9877
+        },
+        {
+          "trial": 27,
+          "accepted": 9514,
+          "last_commit": 10244,
+          "done": 10245
+        },
+        {
+          "trial": 28,
+          "accepted": 9877,
+          "last_commit": 10607,
+          "done": 10608
+        },
+        {
+          "trial": 29,
+          "accepted": 10245,
+          "last_commit": 10975,
+          "done": 10976
+        },
+        {
+          "trial": 30,
+          "accepted": 10608,
+          "last_commit": 11338,
+          "done": 11339
+        },
+        {
+          "trial": 31,
+          "accepted": 10976,
+          "last_commit": 11706,
+          "done": 11707
+        }
+      ],
+      "done_intervals": [
+        369,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368,
+        363,
+        368
+      ],
+      "committed_writes": 8192,
+      "overlaps": 30,
+      "log_sha256": "fb1111726d115b60446b04b385b2c27052ab3b79881353a3a4100c07720757c3"
+    }
+  ]
+}

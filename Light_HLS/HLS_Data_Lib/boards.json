@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "default_board": "artix7_a12t",
+  "boards": {
+    "artix7_a12t": {
+      "part": "xa7a12tcsg325-1q",
+      "path": "boards/artix7_a12t"
+    },
+    "u250": {
+      "part": "xcu250-figd2104-2L-e",
+      "path": "boards/u250"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Tue Sep 29 13:38:29 2026
+| Host         : EE4F089 running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_utilization -hierarchical -file /tmp/lighthls-correctness-20260929.kZl9Xq/final-map-100/vitis_hls_context/hierarchical_utilization.rpt
+| Design       : registered_pressure_shell
+| Device       : xcu250-figd2104-2L-e
+| Speed File   : -2L
+| Design State : Routed
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++---------------------------+--------+------------+------------+---------+------+-----+--------+--------+------+------------+
+|          Instance         | Module | Total LUTs | Logic LUTs | LUTRAMs | SRLs | FFs | RAMB36 | RAMB18 | URAM | DSP Blocks |
++---------------------------+--------+------------+------------+---------+------+-----+--------+--------+------+------------+
+| registered_pressure_shell |  (top) |         32 |         32 |       0 |    0 | 126 |      0 |      0 |    0 |          0 |
++---------------------------+--------+------------+------------+---------+------+-----+--------+--------+------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

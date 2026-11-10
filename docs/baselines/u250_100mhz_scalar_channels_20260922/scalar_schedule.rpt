@@ -1,0 +1,101 @@
+================================================================
+== Light-HLS Operation Schedule
+================================================================
++----------------------+---------------------------------------------------------+
+| Field                | Value                                                   |
++----------------------+---------------------------------------------------------+
+| Design               | backend_scalar                                          |
+| Top Function         | backend_scalar                                          |
+| Target Board         | u250                                                    |
+| Target Frequency     | 100.000 MHz                                             |
+| Clock Period         | 10.000 ns                                               |
++----------------------+---------------------------------------------------------+
+Source: /home/eeuser/Desktop/DAPO_II/Light_HLS/App/backend_scalar/backend_scalar.c
+
++ Schedule Summary:
+
++------------------------------+----------------+----------------------------------------+
+| Metric                       | Value          | Description                            |
++------------------------------+----------------+----------------------------------------+
+| Valid                        | yes            | Scheduler status                       |
+| Latency                      | -              | dynamic control-flow cycle             |
+| Achieved II                  | 0              | cycles                                 |
+| FSM States                   | 2              | scheduled control states               |
+| Memory Port Conflicts        | 0              | conflicts                              |
+| Serialization Cycles         | 0              | cycles added for memory ports          |
+| Memory Ordering Cycles       | 0              | request-edge alias constraints         |
+| Forwarded Block Loads        | 0              | response-ready sampling without a c... |
+| Hardware Constants           | 0              | object-relative constants without s... |
+| Combinational Values         | 17             | SSA values without dedicated registers |
+| Ordinary Feedback Wires      | 1              | constant-step updates sampled at th... |
+| Backedge Bypasses            | 1              | same-edge operator-to-PHI paths; re... |
+| Shared Recurrence Registers  | 0              | PHI/result storage shared only with... |
+| Held Live-out PHIs           | 2              | old recurrence values preserved for... |
+| Fused Ordinary Returns       | 1              | timed combinational exits completed... |
+| Fused Ordinary Entry         | yes            | PHIs initialized from constants/liv... |
+| Read-to-PHI Bypasses         | 0              | response capture and successor PHI ... |
+| Chain Delay Budget (ns)      | 7.000000       | heuristic; verify post-synthesis ti... |
++------------------------------+----------------+----------------------------------------+
+
++ Ordinary Feedback Wires:
+
++----------------------------------+----------------------------------+------------+---------------------------+
+| Update                           | Held PHI                         | IR Bits    | Sampling Edge             |
++----------------------------------+----------------------------------+------------+---------------------------+
+| v_HI_incnew3                     | v_HI_index_014new1               | 3          | ordinary self-backedge    |
++----------------------------------+----------------------------------+------------+---------------------------+
+
++ Ordinary Backedge Bypasses:
+
++----------------------------------+----------------------------------+--------------------+--------------------+
+| Held PHI                         | Registered Update                | Issue/Sample Cycle | Update Register    |
++----------------------------------+----------------------------------+--------------------+--------------------+
+| v_accumulator_013                | v_v17                            | 0                  | retained           |
++----------------------------------+----------------------------------+--------------------+--------------------+
+
++ Ordinary Read-to-PHI Bypasses:
+
++--------------------------+----------------------------------+----------------------------------+----------------------+------------------+
+| Predecessor              | Successor PHI                    | Load                             | Capture/Sample Cycle | Load Register    |
++--------------------------+----------------------------------+----------------------------------+----------------------+------------------+
+| (none)                   |                                  |                                  |                      |                  |
++--------------------------+----------------------------------+----------------------------------+----------------------+------------------+
+
++ Basic-Block Schedule:
+
++----------------------------------+--------------+------------+--------------+
+| Block                            | First State  | States     | Operations   |
++----------------------------------+--------------+------------+--------------+
+| entry                            | 1            | 0          | 3            |
+| for_cond_cleanup                 | 1            | 0          | 7            |
+| for_body                         | 1            | 1          | 8            |
++----------------------------------+--------------+------------+--------------+
+
++ Operation Schedule:
+
++--------------------+--------------------------+--------------+----------+----------+----------+
+| Block              | Operation                | Opcode       | Start    | Latency  | Width    |
++--------------------+--------------------------+--------------+----------+----------+----------+
+| entry              | v_and_v                  | and          | 0        | 0        | 32       |
+| entry              | v_tobool_not             | icmp         | 0        | 0        | 1        |
+| entry              | v_cond                   | select       | 0        | 0        | 32       |
+| for_cond_cleanup   | v_and1                   | and          | 0        | 0        | 32       |
+| for_cond_cleanup   | v_tobool2_not            | icmp         | 0        | 0        | 1        |
+| for_cond_cleanup   | v_v5                     | sub          | 0        | 0        | 32       |
+| for_cond_cleanup   | v_accumulator_1_p        | select       | 0        | 0        | 32       |
+| for_cond_cleanup   | v_v7                     | add          | 0        | 0        | 32       |
+| for_cond_cleanup   | v_v8                     | add          | 0        | 0        | 32       |
+| for_cond_cleanup   | v_v9                     | add          | 0        | 0        | 32       |
+| for_body           | v_bcast1                 | zext         | 0        | 0        | 32       |
+| for_body           | v_mul_shl_0              | shl          | 0        | 0        | 32       |
+| for_body           | v_mul_shl_1              | shl          | 0        | 0        | 32       |
+| for_body           | v_HI_xornew2             | xor          | 0        | 0        | 32       |
+| for_body           | v_v16                    | add          | 0        | 0        | 32       |
+| for_body           | v_v17                    | add          | 0        | 1        | 32       |
+| for_body           | v_HI_incnew3             | add          | 0        | 0        | 3        |
+| for_body           | v_HI_exitcond_notnew4    | icmp         | 0        | 0        | 1        |
++--------------------+--------------------------+--------------+----------+----------+----------+
+
++ Diagnostics:
+
+WARNING [BACKEND_DYNAMIC_LATENCY] The top function contains a control-flow cycle. The schedule is valid, but a single static latency cannot be reported without loop-trip analysis.

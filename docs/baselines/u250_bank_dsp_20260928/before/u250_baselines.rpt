@@ -1,0 +1,13 @@
+DAPO-II U250 Ground-Truth Baseline Archive
+Part: xcu250-figd2104-2L-e
+QoR: common normalized-wrapper Vivado OOC synthesis
+
++------------------+------------------------+-----------+-----------+---------+---------+---------+---------+----------+----------+---------+
+| Suite            | Case                   | L-Cycles  | V-Cycles  | L-LUT   | V-LUT   | L-FF    | V-FF    | L-WNS    | V-WNS    | Reward  |
++------------------+------------------------+-----------+-----------+---------+---------+---------+---------+----------+----------+---------+
+| dsp_map_100      | qor_pressure           | 259.000   | 258.000   | 52      | 15      | 32      | 46      | 3.060    | 5.853    | yes     |
+| bram_banked_250  | qor_pressure           | 771.000   | 514.000   | 182     | 112     | 133     | 78      | 1.166    | 1.368    | yes     |
++------------------+------------------------+-----------+-----------+---------+---------+---------+---------+----------+----------+---------+
+
+Only functionally equivalent, normalized-interface-compatible cases
+are reward-eligible. Raw Vivado and Vitis projects stay outside Git.

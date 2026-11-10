@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "stage": "light_hls_local_regression_suite",
+  "valid": true,
+  "expected_suites": 1,
+  "completed_suites": 1,
+  "light_hls_executable": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_Top",
+  "light_hls_executable_sha256": "9c575f4231830e86a744bce8ef52f847e0566acf708b10b85ecec1d248d069fc",
+  "results": [
+    {
+      "suite": "QoRPressure",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 8.435778,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/QoRPressure/run_tests.py",
+      "script_sha256": "82f0a9361936d78b67cd280351b7dd286084ae72990b5ff6be576380ab2a1f8f",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/migration_20261110/qor_recheck/QoRPressure.log",
+      "result_directory": "/home/eeuser/Desktop/Light-HLS/runs/migration_20261110/qor_recheck/QoRPressure"
+    }
+  ]
+}

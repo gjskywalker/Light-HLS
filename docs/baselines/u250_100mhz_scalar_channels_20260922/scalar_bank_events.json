@@ -1,0 +1,66 @@
+{
+  "valid": true,
+  "results": [
+    {
+      "case": "ordinary_rw",
+      "read_latency": 0,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "ordinary_rw",
+      "read_latency": 1,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "ordinary_rw",
+      "read_latency": 2,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "pipeline_rw",
+      "read_latency": 0,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "pipeline_rw",
+      "read_latency": 1,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "pipeline_rw",
+      "read_latency": 2,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "pipeline_fanout",
+      "read_latency": 0,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "pipeline_fanout",
+      "read_latency": 1,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "pipeline_fanout",
+      "read_latency": 2,
+      "calls": 64,
+      "valid": true
+    }
+  ],
+  "calls": 576,
+  "executable_sha256": "6e4900d66e2009fafd99558653b72159eda880d571cc061451780d5cd9f8bfc3",
+  "test_sources_sha256": {
+    "events.cpp": "12e4615cf5fdadf5ae1847e5b392eda3b64b38dec2bfc421a7997b628de7b2e4",
+    "events_tb.v": "62840304cd288d625ba1acb81b971f381168eaea60b653a3a34e2a334a93088a",
+    "run_tests.py": "b86eba8a492712d29e0f0132a683f912b0fc3396a626690ddedb73edaca1cbed"
+  }
+}

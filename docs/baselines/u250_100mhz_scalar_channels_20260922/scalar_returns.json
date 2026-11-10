@@ -1,0 +1,54 @@
+{
+  "valid": true,
+  "results": [
+    {
+      "case": "exit_expression",
+      "frequency": "100MHz",
+      "calls": 64,
+      "total_cycles": 256,
+      "valid": true
+    },
+    {
+      "case": "exit_expression",
+      "frequency": "333.3333333333333MHz",
+      "calls": 64,
+      "total_cycles": 384,
+      "valid": true
+    },
+    {
+      "case": "dynamic_zero_trip",
+      "frequency": "100MHz",
+      "calls": 64,
+      "total_cycles": 1152,
+      "valid": true
+    },
+    {
+      "case": "dynamic_zero_trip",
+      "frequency": "333.3333333333333MHz",
+      "calls": 64,
+      "total_cycles": 1152,
+      "valid": true
+    },
+    {
+      "case": "old_and_new_liveouts",
+      "frequency": "100MHz",
+      "calls": 64,
+      "total_cycles": 256,
+      "valid": true
+    },
+    {
+      "case": "old_and_new_liveouts",
+      "frequency": "333.3333333333333MHz",
+      "calls": 64,
+      "total_cycles": 512,
+      "valid": true
+    }
+  ],
+  "calls": 384,
+  "executable_sha256": "6e4900d66e2009fafd99558653b72159eda880d571cc061451780d5cd9f8bfc3",
+  "test_sources_sha256": {
+    "returns.cpp": "50d2584fff9c0069526f82fb68018cc127efa609c2ec2736c831937d89826612",
+    "returns_tb.v": "7cfa56b753cc4561ef64d90e9383efd20e337d78615fd898443b20a127d1c018",
+    "run_tests.py": "1294b9622bd0b373bf6424c0f3816ac68cdebe58cab62692ec444921059200e0"
+  }
+}

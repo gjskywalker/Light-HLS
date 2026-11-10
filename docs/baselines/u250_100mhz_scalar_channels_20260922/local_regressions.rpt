@@ -1,0 +1,26 @@
+Light-HLS Unified Local Regression
+
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+
+| Suite                        | Status   | Runtime (s)  | Script SHA256    | Log                                                     |
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+
+| AppCorrectness               | PASS     | 7.282434     | fd31e7a5f00cd0fc | /tmp/lighthls-vitis-gap-20260922.3vMrGJ/release-regr... |
+| RTL_Backend                  | PASS     | 1.419234     | 9c10edc59c92514d | /tmp/lighthls-vitis-gap-20260922.3vMrGJ/release-regr... |
+| PipelineBackend              | PASS     | 1.170015     | 1e72af514281a249 | /tmp/lighthls-vitis-gap-20260922.3vMrGJ/release-regr... |
+| PipelineStorage              | PASS     | 1.419095     | e96453f957483479 | /tmp/lighthls-vitis-gap-20260922.3vMrGJ/release-regr... |
+| ArrayPartitionBackend        | PASS     | 1.116283     | aa96771d07abf904 | /tmp/lighthls-vitis-gap-20260922.3vMrGJ/release-regr... |
+| OrdinaryBankAnalysis         | PASS     | 4.66793      | 07c6b1e919716c49 | /tmp/lighthls-vitis-gap-20260922.3vMrGJ/release-regr... |
+| LocalWriteData               | PASS     | 2.334729     | 07c6b1e919716c49 | /tmp/lighthls-vitis-gap-20260922.3vMrGJ/release-regr... |
+| FIFOEvents                   | PASS     | 4.487646     | 87e7673ea19bc9dc | /tmp/lighthls-vitis-gap-20260922.3vMrGJ/release-regr... |
+| OrdinaryFeedback             | PASS     | 3.844869     | 7a4ff0bacb1987dd | /tmp/lighthls-vitis-gap-20260922.3vMrGJ/release-regr... |
+| OrdinaryBackedge             | PASS     | 5.75568      | da267ec51fbf787c | /tmp/lighthls-vitis-gap-20260922.3vMrGJ/release-regr... |
+| OrdinaryLoopEdges            | PASS     | 4.711795     | d89a2237695bcfa2 | /tmp/lighthls-vitis-gap-20260922.3vMrGJ/release-regr... |
+| TransactionEdges             | PASS     | 1.574986     | 4c311687b6049f78 | /tmp/lighthls-vitis-gap-20260922.3vMrGJ/release-regr... |
+| ScalarBankEvents             | PASS     | 2.031655     | b86eba8a492712d2 | /tmp/lighthls-vitis-gap-20260922.3vMrGJ/release-regr... |
+| ScalarReturns                | PASS     | 1.574459     | 1294b9622bd0b373 | /tmp/lighthls-vitis-gap-20260922.3vMrGJ/release-regr... |
+| PIPOBanks                    | PASS     | 0.919682     | e1dc03b8d1b423e1 | /tmp/lighthls-vitis-gap-20260922.3vMrGJ/release-regr... |
+| StorageBindingBackend        | PASS     | 0.164817     | d1f3e60b11fd09ea | /tmp/lighthls-vitis-gap-20260922.3vMrGJ/release-regr... |
+| DataflowBackend              | PASS     | 2.871228     | 0ccc96c66d688217 | /tmp/lighthls-vitis-gap-20260922.3vMrGJ/release-regr... |
+| FairComparisonInterface      | PASS     | 0.034364     | ee70546062d906f1 | /tmp/lighthls-vitis-gap-20260922.3vMrGJ/release-regr... |
+| AppCapability                | PASS     | 14.528627    | e1b101b2b74f1cac | /tmp/lighthls-vitis-gap-20260922.3vMrGJ/release-regr... |
+| FairComparisonQoR            | PASS     | 0.034789     | 03cf3a9a1059d072 | /tmp/lighthls-vitis-gap-20260922.3vMrGJ/release-regr... |
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+

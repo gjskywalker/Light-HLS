@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0",
+  "stage": "light_hls_local_regression_suite",
+  "valid": true,
+  "light_hls_executable": "/tmp/lighthls-feedback-qor-20260921.5am2BK/Light_HLS_Top-final",
+  "light_hls_executable_sha256": "068c78311810d08048ca0c49f867186cf628e426bcecc7852a72f75b6444daff",
+  "results": [
+    {
+      "suite": "AppCorrectness",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 7.481344,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/AppCorrectness/run_supported_apps.sh",
+      "script_sha256": "bc9bca0b5a23cf7a7308956375dca928c186c1888fbbbb2b6f167c10c800021f",
+      "log": "/tmp/lighthls-feedback-qor-20260921.5am2BK/regressions-release/AppCorrectness.log",
+      "result_directory": null
+    },
+    {
+      "suite": "RTL_Backend",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 1.522263,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/RTL_Backend/run_iverilog_test.sh",
+      "script_sha256": "2efc8e1d603b280599746adf9414b856e4dade2c164fdaa52c699e04785ffc9f",
+      "log": "/tmp/lighthls-feedback-qor-20260921.5am2BK/regressions-release/RTL_Backend.log",
+      "result_directory": null
+    },
+    {
+      "suite": "PipelineBackend",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 1.269156,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/PipelineBackend/run_pipeline_tests.sh",
+      "script_sha256": "1e72af514281a2492482aaa729284300c9d6c7046c3fd9224694582d9c93887f",
+      "log": "/tmp/lighthls-feedback-qor-20260921.5am2BK/regressions-release/PipelineBackend.log",
+      "result_directory": null
+    },
+    {
+      "suite": "PipelineStorage",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 1.518573,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/PipelineStorage/run_storage_tests.sh",
+      "script_sha256": "fa2e0cfeced688a7b426a1a03ca0492cdb523c88b4511f47f93f122c6f9f2ca1",
+      "log": "/tmp/lighthls-feedback-qor-20260921.5am2BK/regressions-release/PipelineStorage.log",
+      "result_directory": null
+    },
+    {
+      "suite": "ArrayPartitionBackend",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 1.167181,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/ArrayPartitionBackend/run_array_partition_tests.sh",
+      "script_sha256": "aa96771d07abf9043bd7173cb7a7b644fb83410f61fcd976628154f562e0cef4",
+      "log": "/tmp/lighthls-feedback-qor-20260921.5am2BK/regressions-release/ArrayPartitionBackend.log",
+      "result_directory": null
+    },
+    {
+      "suite": "OrdinaryBankAnalysis",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 4.756094,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/OrdinaryBankAnalysis/run_tests.sh",
+      "script_sha256": "07c6b1e919716c4954d3416cb42623af79a098539019fb138f26cc784ed2e6b3",
+      "log": "/tmp/lighthls-feedback-qor-20260921.5am2BK/regressions-release/OrdinaryBankAnalysis.log",
+      "result_directory": null
+    },
+    {
+      "suite": "LocalWriteData",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 2.328814,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/LocalWriteData/run_tests.sh",
+      "script_sha256": "07c6b1e919716c4954d3416cb42623af79a098539019fb138f26cc784ed2e6b3",
+      "log": "/tmp/lighthls-feedback-qor-20260921.5am2BK/regressions-release/LocalWriteData.log",
+      "result_directory": null
+    },
+    {
+      "suite": "FIFOEvents",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 3.729042,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/FIFOEvents/run_tests.py",
+      "script_sha256": "b1b40f025149c2081ef935e5ced37cb0e3e8fa64a9aba1439f16eec03a38f623",
+      "log": "/tmp/lighthls-feedback-qor-20260921.5am2BK/regressions-release/FIFOEvents.log",
+      "result_directory": "/tmp/lighthls-feedback-qor-20260921.5am2BK/regressions-release/FIFOEvents"
+    },
+    {
+      "suite": "OrdinaryFeedback",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 4.00139,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/OrdinaryFeedback/run_tests.py",
+      "script_sha256": "7a4ff0bacb1987dd54fd09358b0dcca3761b96f23a5b88b90f337daf57b1dc88",
+      "log": "/tmp/lighthls-feedback-qor-20260921.5am2BK/regressions-release/OrdinaryFeedback.log",
+      "result_directory": "/tmp/lighthls-feedback-qor-20260921.5am2BK/regressions-release/OrdinaryFeedback"
+    },
+    {
+      "suite": "StorageBindingBackend",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 0.214881,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/StorageBindingBackend/run_storage_binding_tests.sh",
+      "script_sha256": "d1f3e60b11fd09ea94aa18df8c8420216211b3045feceb691e5390bd79e946db",
+      "log": "/tmp/lighthls-feedback-qor-20260921.5am2BK/regressions-release/StorageBindingBackend.log",
+      "result_directory": null
+    },
+    {
+      "suite": "DataflowBackend",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 3.021822,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/DataflowBackend/run_dataflow_backend_tests.sh",
+      "script_sha256": "5d9dc84e5a6f03dfa271e6bf07a54efda6c02703c7713dbb735c18f5a16be326",
+      "log": "/tmp/lighthls-feedback-qor-20260921.5am2BK/regressions-release/DataflowBackend.log",
+      "result_directory": null
+    },
+    {
+      "suite": "FairComparisonInterface",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 0.034717,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/FairComparison/test_interface_normalization.py",
+      "script_sha256": "ee70546062d906f11a8694b086475cefa98a910f20bfe699b91e1b22ae54b668",
+      "log": "/tmp/lighthls-feedback-qor-20260921.5am2BK/regressions-release/FairComparisonInterface.log",
+      "result_directory": null
+    },
+    {
+      "suite": "AppCapability",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 15.122973,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/AppCapability/run_app_capability_matrix.py",
+      "script_sha256": "e1b101b2b74f1cac00e7ddd2b153837ee7bd4d47f2e787e28a46054d1fe9698c",
+      "log": "/tmp/lighthls-feedback-qor-20260921.5am2BK/regressions-release/AppCapability.log",
+      "result_directory": "/tmp/lighthls-feedback-qor-20260921.5am2BK/regressions-release/AppCapability"
+    },
+    {
+      "suite": "FairComparisonQoR",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 0.034524,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/FairComparison/test_qor_checkpoint.py",
+      "script_sha256": "03cf3a9a1059d07260100b056f13bf859935f8146d3aa1f588338016dfc6ed20",
+      "log": "/tmp/lighthls-feedback-qor-20260921.5am2BK/regressions-release/FairComparisonQoR.log",
+      "result_directory": null
+    }
+  ]
+}

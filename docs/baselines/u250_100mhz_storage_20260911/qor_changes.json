@@ -1,0 +1,692 @@
+{
+  "schema_version": "1.0",
+  "valid": true,
+  "stage": "u250_checkpoint_qor_change_audit",
+  "counts": {
+    "unchanged": 1,
+    "improved": 12,
+    "tradeoff": 7
+  },
+  "all_timing_met": true,
+  "no_metric_regressions": false,
+  "cases": [
+    {
+      "suite": "scalar",
+      "case": "backend_scalar",
+      "status": "unchanged",
+      "before": {
+        "cycles": 15.0,
+        "lut": 157,
+        "ff": 269,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 15.0,
+        "lut": 157,
+        "ff": 269,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": 0,
+        "ff": 0,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.129
+    },
+    {
+      "suite": "pipeline",
+      "case": "ii1",
+      "status": "improved",
+      "before": {
+        "cycles": 22.0,
+        "lut": 74,
+        "ff": 40,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 21.0,
+        "lut": 38,
+        "ff": 25,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -1.0,
+        "lut": -36,
+        "ff": -15,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "lut",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.917
+    },
+    {
+      "suite": "pipeline",
+      "case": "memory_ii",
+      "status": "tradeoff",
+      "before": {
+        "cycles": 39.0,
+        "lut": 134,
+        "ff": 42,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 38.0,
+        "lut": 91,
+        "ff": 71,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -1.0,
+        "lut": -43,
+        "ff": 29,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "lut"
+      ],
+      "worsened_metrics": [
+        "ff"
+      ],
+      "timing_met": true,
+      "worst_slack_ns": 8.96
+    },
+    {
+      "suite": "pipeline",
+      "case": "recurrence",
+      "status": "improved",
+      "before": {
+        "cycles": 22.0,
+        "lut": 141,
+        "ff": 200,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 21.0,
+        "lut": 53,
+        "ff": 121,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -1.0,
+        "lut": -88,
+        "ff": -79,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "lut",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 9.006
+    },
+    {
+      "suite": "pipeline",
+      "case": "memory_dependence",
+      "status": "improved",
+      "before": {
+        "cycles": 36.0,
+        "lut": 84,
+        "ff": 39,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 35.0,
+        "lut": 63,
+        "ff": 36,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -1.0,
+        "lut": -21,
+        "ff": -3,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "lut",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.977
+    },
+    {
+      "suite": "pipeline",
+      "case": "inner",
+      "status": "improved",
+      "before": {
+        "cycles": 24.0,
+        "lut": 94,
+        "ff": 40,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 23.0,
+        "lut": 57,
+        "ff": 25,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -1.0,
+        "lut": -37,
+        "ff": -15,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "lut",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.917
+    },
+    {
+      "suite": "pipeline",
+      "case": "outer",
+      "status": "improved",
+      "before": {
+        "cycles": 22.0,
+        "lut": 193,
+        "ff": 39,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 21.0,
+        "lut": 73,
+        "ff": 36,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -1.0,
+        "lut": -120,
+        "ff": -3,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "lut",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.962
+    },
+    {
+      "suite": "pipeline",
+      "case": "mixed_memory",
+      "status": "improved",
+      "before": {
+        "cycles": 23.0,
+        "lut": 69,
+        "ff": 38,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 21.0,
+        "lut": 38,
+        "ff": 25,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -2.0,
+        "lut": -31,
+        "ff": -13,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "lut",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 9.06
+    },
+    {
+      "suite": "array_partition",
+      "case": "cyclic",
+      "status": "improved",
+      "before": {
+        "cycles": 10.0,
+        "lut": 211,
+        "ff": 30,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 9.0,
+        "lut": 123,
+        "ff": 17,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -1.0,
+        "lut": -88,
+        "ff": -13,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "lut",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 9.106
+    },
+    {
+      "suite": "array_partition",
+      "case": "block",
+      "status": "improved",
+      "before": {
+        "cycles": 11.0,
+        "lut": 211,
+        "ff": 31,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 10.0,
+        "lut": 123,
+        "ff": 18,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -1.0,
+        "lut": -88,
+        "ff": -13,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "lut",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 9.1
+    },
+    {
+      "suite": "array_partition",
+      "case": "complete",
+      "status": "improved",
+      "before": {
+        "cycles": 5.0,
+        "lut": 110,
+        "ff": 135,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 3.0,
+        "lut": 110,
+        "ff": 5,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -2.0,
+        "lut": 0,
+        "ff": -130,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 9.419
+    },
+    {
+      "suite": "array_partition",
+      "case": "pipeline_complete",
+      "status": "tradeoff",
+      "before": {
+        "cycles": 10.0,
+        "lut": 125,
+        "ff": 30,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 10.0,
+        "lut": 92,
+        "ff": 52,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": -33,
+        "ff": 22,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "lut"
+      ],
+      "worsened_metrics": [
+        "ff"
+      ],
+      "timing_met": true,
+      "worst_slack_ns": 9.101
+    },
+    {
+      "suite": "array_partition",
+      "case": "complete_rw",
+      "status": "improved",
+      "before": {
+        "cycles": 20.0,
+        "lut": 206,
+        "ff": 47,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 16.0,
+        "lut": 206,
+        "ff": 47,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -4.0,
+        "lut": 0,
+        "ff": 0,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 9.263
+    },
+    {
+      "suite": "array_partition",
+      "case": "multidim",
+      "status": "tradeoff",
+      "before": {
+        "cycles": 8.0,
+        "lut": 271,
+        "ff": 25,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 8.0,
+        "lut": 183,
+        "ff": 143,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": -88,
+        "ff": 118,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "lut"
+      ],
+      "worsened_metrics": [
+        "ff"
+      ],
+      "timing_met": true,
+      "worst_slack_ns": 9.154
+    },
+    {
+      "suite": "array_partition",
+      "case": "multidim_cyclic",
+      "status": "tradeoff",
+      "before": {
+        "cycles": 10.0,
+        "lut": 215,
+        "ff": 28,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 9.0,
+        "lut": 133,
+        "ff": 89,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -1.0,
+        "lut": -82,
+        "ff": 61,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "lut"
+      ],
+      "worsened_metrics": [
+        "ff"
+      ],
+      "timing_met": true,
+      "worst_slack_ns": 9.064
+    },
+    {
+      "suite": "array_partition",
+      "case": "local",
+      "status": "tradeoff",
+      "before": {
+        "cycles": 96.0,
+        "lut": 587,
+        "ff": 342,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 60.0,
+        "lut": 589,
+        "ff": 310,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -36.0,
+        "lut": 2,
+        "ff": -32,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "ff"
+      ],
+      "worsened_metrics": [
+        "lut"
+      ],
+      "timing_met": true,
+      "worst_slack_ns": 8.391
+    },
+    {
+      "suite": "dataflow",
+      "case": "fifo_stream",
+      "status": "improved",
+      "before": {
+        "cycles": 267.0,
+        "lut": 216,
+        "ff": 262,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 137.0,
+        "lut": 215,
+        "ff": 168,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -130.0,
+        "lut": -1,
+        "ff": -94,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "lut",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.693
+    },
+    {
+      "suite": "dataflow",
+      "case": "pipo_array",
+      "status": "improved",
+      "before": {
+        "cycles": 780.0,
+        "lut": 395,
+        "ff": 369,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 396.0,
+        "lut": 377,
+        "ff": 273,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -384.0,
+        "lut": -18,
+        "ff": -96,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "lut",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.702
+    },
+    {
+      "suite": "dataflow",
+      "case": "pipeline_partition",
+      "status": "tradeoff",
+      "before": {
+        "cycles": 45.0,
+        "lut": 550,
+        "ff": 346,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 44.0,
+        "lut": 477,
+        "ff": 353,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -1.0,
+        "lut": -73,
+        "ff": 7,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "lut"
+      ],
+      "worsened_metrics": [
+        "ff"
+      ],
+      "timing_met": true,
+      "worst_slack_ns": 8.828
+    },
+    {
+      "suite": "dataflow_nested",
+      "case": "vector_pipeline_partition_dataflow",
+      "status": "tradeoff",
+      "before": {
+        "cycles": 47.0,
+        "lut": 546,
+        "ff": 346,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 46.0,
+        "lut": 484,
+        "ff": 353,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -1.0,
+        "lut": -62,
+        "ff": 7,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "lut"
+      ],
+      "worsened_metrics": [
+        "ff"
+      ],
+      "timing_met": true,
+      "worst_slack_ns": 8.809
+    }
+  ]
+}

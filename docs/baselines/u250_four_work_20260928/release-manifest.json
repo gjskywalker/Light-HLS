@@ -1,0 +1,128 @@
+{
+  "cases": [
+    {
+      "case": "array_partition/block",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-final-array/block/u250_fair_comparison.json"
+    },
+    {
+      "case": "array_partition/complete",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-final-array/complete/u250_fair_comparison.json"
+    },
+    {
+      "case": "array_partition/complete_rw",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-final-array/complete_rw/u250_fair_comparison.json"
+    },
+    {
+      "case": "array_partition/cyclic",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-final-array/cyclic/u250_fair_comparison.json"
+    },
+    {
+      "case": "array_partition/local",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-final-array/local/u250_fair_comparison.json"
+    },
+    {
+      "case": "array_partition/multidim",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-final-array/multidim/u250_fair_comparison.json"
+    },
+    {
+      "case": "array_partition/multidim_cyclic",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-final-array/multidim_cyclic/u250_fair_comparison.json"
+    },
+    {
+      "case": "array_partition/pipeline_complete",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-final-array/pipeline_complete/u250_fair_comparison.json"
+    },
+    {
+      "case": "dataflow/fifo_stream",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-final-dataflow/fifo_stream/u250_fair_comparison.json"
+    },
+    {
+      "case": "dataflow/pipeline_partition",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-final-dataflow/pipeline_partition/u250_fair_comparison.json"
+    },
+    {
+      "case": "dataflow/pipo_array",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-final-dataflow/pipo_array/u250_fair_comparison.json"
+    },
+    {
+      "case": "dataflow_nested",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-final-nested/u250_fair_comparison.json"
+    },
+    {
+      "case": "pipeline/ii1",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-final-pipeline/ii1/u250_fair_comparison.json"
+    },
+    {
+      "case": "pipeline/inner",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-final-pipeline/inner/u250_fair_comparison.json"
+    },
+    {
+      "case": "pipeline/memory_dependence",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-final-pipeline/memory_dependence/u250_fair_comparison.json"
+    },
+    {
+      "case": "pipeline/memory_ii",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-final-pipeline/memory_ii/u250_fair_comparison.json"
+    },
+    {
+      "case": "pipeline/mixed_memory",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-final-pipeline/mixed_memory/u250_fair_comparison.json"
+    },
+    {
+      "case": "pipeline/outer",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-final-pipeline/outer/u250_fair_comparison.json"
+    },
+    {
+      "case": "pipeline/recurrence",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-release-recurrence/u250_fair_comparison.json"
+    },
+    {
+      "case": "private",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-private-verified/u250_fair_comparison.json"
+    },
+    {
+      "case": "scalar",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/u250-final-scalar/u250_fair_comparison.json"
+    },
+    {
+      "case": "pressure/dsp_map_100MHz",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/pressure-verified2/dsp_map_100MHz/u250_fair_comparison.json"
+    },
+    {
+      "case": "pressure/dsp_map_150MHz",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/pressure-verified2/dsp_map_150MHz/u250_fair_comparison.json"
+    },
+    {
+      "case": "pressure/dsp_map_200MHz",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/pressure-verified2/dsp_map_200MHz/u250_fair_comparison.json"
+    },
+    {
+      "case": "pressure/dsp_map_250MHz",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/pressure-verified2/dsp_map_250MHz/u250_fair_comparison.json"
+    },
+    {
+      "case": "pressure/bram_permute_100MHz",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/pressure-verified2/bram_permute_100MHz/u250_fair_comparison.json"
+    },
+    {
+      "case": "pressure/bram_permute_250MHz",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/pressure-verified2/bram_permute_250MHz/u250_fair_comparison.json"
+    },
+    {
+      "case": "pressure/bram_banked_100MHz",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/pressure-verified2/bram_banked_100MHz/u250_fair_comparison.json"
+    },
+    {
+      "case": "pressure/bram_banked_250MHz",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/pressure-verified2/bram_banked_250MHz/u250_fair_comparison.json"
+    },
+    {
+      "case": "pressure/dsp_dataflow_100MHz",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/pressure-verified2/dsp_dataflow_100MHz/u250_fair_comparison.json"
+    },
+    {
+      "case": "pressure/dsp_dataflow_250MHz",
+      "after": "/tmp/lighthls-four-work-20260928.08r0cq/pressure-verified2/dsp_dataflow_250MHz/u250_fair_comparison.json"
+    }
+  ]
+}

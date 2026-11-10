@@ -1,0 +1,10 @@
+{
+  "valid": true,
+  "calls": 128,
+  "committed_writes": 10240,
+  "completion_tasks": [
+    "consume_tail_1",
+    "produce_tail_0"
+  ],
+  "executable_sha256": "33476041daf7d538bc444004f3c0181ce434ec80a13479614f1b8bced46cbc5b"
+}

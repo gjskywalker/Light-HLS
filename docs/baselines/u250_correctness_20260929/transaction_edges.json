@@ -1,0 +1,62 @@
+{
+  "valid": true,
+  "results": [
+    {
+      "case": "constant_phi",
+      "valid": true,
+      "calls": 192,
+      "held_and_gapped_calls": 128,
+      "reset_recovery": true,
+      "pulse_total_cycles": 2048
+    },
+    {
+      "case": "argument_phi",
+      "valid": true,
+      "calls": 192,
+      "held_and_gapped_calls": 128,
+      "reset_recovery": true,
+      "pulse_total_cycles": 2048
+    },
+    {
+      "case": "zero_trip",
+      "valid": true,
+      "calls": 192,
+      "held_and_gapped_calls": 128,
+      "reset_recovery": true,
+      "pulse_total_cycles": 1088
+    },
+    {
+      "case": "early_exit",
+      "valid": true,
+      "calls": 192,
+      "held_and_gapped_calls": 128,
+      "reset_recovery": true,
+      "pulse_total_cycles": 1088
+    },
+    {
+      "case": "signed_constant_shift",
+      "valid": true,
+      "calls": 192,
+      "held_and_gapped_calls": 128,
+      "reset_recovery": true,
+      "pulse_total_cycles": 2048
+    },
+    {
+      "case": "dynamic_shift",
+      "valid": true,
+      "calls": 192,
+      "held_and_gapped_calls": 128,
+      "reset_recovery": true,
+      "pulse_total_cycles": 2048
+    }
+  ],
+  "calls": 1152,
+  "executable_sha256": "3339196986828e95536405f2ff438b1ba7b464000829c45b17a3e66e33977f95",
+  "test_sources_sha256": {
+    "README.md": "44270d96f3bb878e9932a9831c8f6f5dde611528750354ceb4f4ff1d89653477",
+    "edges.cpp": "be2fe3496c0a604b40f7d59678498f843dfdbab00d3f1eedaa1bebee2bb3be55",
+    "edges_tb.v": "4398c00b448d8b99e4646e55471cc10493356b5d0cebe47de34c9ff41640ba9b",
+    "held_tb.v": "45abf21a9115b4787c01856ee54eb74b4cff80f107d4401fee81d75f8fa1f912",
+    "run_tests.py": "340052d2808c788194e36dfadcd8149ff6178500087e007dcaf853621231de3f"
+  }
+}

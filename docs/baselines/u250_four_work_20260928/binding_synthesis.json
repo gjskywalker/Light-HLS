@@ -1,0 +1,90 @@
+{
+  "valid": true,
+  "part": "xcu250-figd2104-2L-e",
+  "frequency_mhz": 250,
+  "source_sha256": "e17a28e69437ed388e5bb4fd9a1d928bc5e2864f92738d2a3e2dbad911e8a656",
+  "testbench_sha256": "058a4841eacba4501663450f33aab1bfb6db26326c7c85628bfd7d6cc4b6b8b4",
+  "results": {
+    "before": {
+      "executable_sha256": "6e4900d66e2009fafd99558653b72159eda880d571cc061451780d5cd9f8bfc3",
+      "rtl_sha256": "727b04ae324fde9bc41cc3da54e9066aa515f11aaba007ce6e9f821a80f805f8",
+      "functional_calls": 256,
+      "qor": {
+        "valid": true,
+        "qor_kind": "measured_post_rtl_common_flow",
+        "tool": "vivado",
+        "tool_version": "2025.2",
+        "part": "xcu250-figd2104-2L-e",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 144.591662,
+        "resources": {
+          "lut": 161,
+          "ff": 294,
+          "dsp": 6,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 0.263,
+          "critical_path_delay_ns": 3.737
+        },
+        "interface_signature": [
+          "ap_clk|IN|1",
+          "ap_done|OUT|1",
+          "ap_idle|OUT|1",
+          "ap_ready|OUT|1",
+          "ap_return|OUT|32",
+          "ap_rst|IN|1",
+          "ap_start|IN|1",
+          "a|IN|32",
+          "b|IN|32",
+          "x|IN|32",
+          "y|IN|32"
+        ]
+      }
+    },
+    "after": {
+      "executable_sha256": "34fe593e224841396fecd133192e136b67171b3e386d1aea3c662c21c61bcb07",
+      "rtl_sha256": "008a237e6d03df8eb3b64e87246a68479d3134784eb2ea7c9c1dab8312df370c",
+      "functional_calls": 256,
+      "qor": {
+        "valid": true,
+        "qor_kind": "measured_post_rtl_common_flow",
+        "tool": "vivado",
+        "tool_version": "2025.2",
+        "part": "xcu250-figd2104-2L-e",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 61.060438,
+        "resources": {
+          "lut": 129,
+          "ff": 230,
+          "dsp": 6,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 0.342,
+          "critical_path_delay_ns": 3.658
+        },
+        "interface_signature": [
+          "ap_clk|IN|1",
+          "ap_done|OUT|1",
+          "ap_idle|OUT|1",
+          "ap_ready|OUT|1",
+          "ap_return|OUT|32",
+          "ap_rst|IN|1",
+          "ap_start|IN|1",
+          "a|IN|32",
+          "b|IN|32",
+          "x|IN|32",
+          "y|IN|32"
+        ]
+      }
+    }
+  },
+  "notes": [
+    "Same native interface, testbench, and OOC synthesis flow.",
+    "Selector bit cost is a proxy, not a LUT estimate.",
+    "Post-synthesis timing is not post-route timing."
+  ]
+}

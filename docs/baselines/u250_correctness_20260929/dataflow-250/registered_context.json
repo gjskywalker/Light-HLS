@@ -1,0 +1,148 @@
+{
+  "valid": true,
+  "physical_valid": true,
+  "flow_id": "vivado_registered_pressure_context_v1",
+  "scope": "Closed on-chip pressure harness with a routed BUFG, registered scalar source, one-cycle RAM response, and retained output observers; not board IO signoff",
+  "baseline_comparison_sha256": "3c80f55af908e418fce251f948410af2751ca98586c8fc1c9c6ad68b14694f06",
+  "source_sha256": "f00d0955fe4d078cbf42c0057a12afef7976e653b493e306b0218fa1545b88dd",
+  "compiler_sha256": "3339196986828e95536405f2ff438b1ba7b464000829c45b17a3e66e33977f95",
+  "part": "xcu250-figd2104-2L-e",
+  "clock_period_ns": 4.0,
+  "source": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/QoRPressure/dsp_dataflow.cpp",
+  "output": "/tmp/lighthls-correctness-20260929.kZl9Xq/final-dataflow-250",
+  "results": {
+    "light_hls": {
+      "functional_valid": true,
+      "reference_outputs": 8192,
+      "rtl_sha256": {
+        "/tmp/lighthls-correctness-20260929.kZl9Xq/final-dataflow-250/light_hls/reports/rtl/top.v": "1ba8a68b3284ce7da9f67b5d9a7a85e76657228763317923cdae4889bb800af0",
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-dataflow-250-v3/interface_normalization/light_hls/normalized_wrapper.v": "bdc863b0adde6b318c0595f8beb9857839e0d7d4b6707432c0ed858b2a94e933",
+        "/tmp/lighthls-correctness-20260929.kZl9Xq/final-dataflow-250/registered_shell.v": "6520230df1e205d26fa32ef969cc96d8e9db9ca3a82ac614650b9f4f1f6e0946"
+      },
+      "post_route": {
+        "valid": true,
+        "qor_kind": "measured_registered_context",
+        "tool": "vivado",
+        "tool_version": "2025.2",
+        "part": "xcu250-figd2104-2L-e",
+        "flow_id": "vivado_registered_pressure_context_v1",
+        "runtime_seconds": 495.1697037510021,
+        "resources": {
+          "lut": 232,
+          "ff": 273,
+          "dsp": 1,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "constraints_before_synthesis": true,
+          "worst_slack_ns": 1.523,
+          "critical_path_delay_ns": 2.477,
+          "critical_path_delay_note": "Period minus routed WNS in the closed registered context; not a frequency sweep or board Fmax",
+          "worst_hold_slack_ns": 0.009
+        },
+        "interface_signature": [
+          "ap_clk|IN|1"
+        ],
+        "clock_scope": "Closed on-chip pressure harness with a routed BUFG, registered scalar source, one-cycle RAM response, and retained output observers; not board IO signoff",
+        "unrouted_nets": 0,
+        "routing_errors": 0,
+        "timing_coverage": {
+          "no_clock": 0,
+          "unconstrained_internal_endpoints": 0,
+          "no_input_delay": 0,
+          "no_output_delay": 0,
+          "partial_input_delay": 0,
+          "partial_output_delay": 0
+        },
+        "timing_met": true,
+        "kernel_resources": {
+          "lut": 201,
+          "ff": 147,
+          "dsp": 1,
+          "bram_tiles": 0.0
+        },
+        "shell_resources": {
+          "lut": 31,
+          "ff": 126,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        }
+      }
+    },
+    "vitis_hls": {
+      "functional_valid": true,
+      "reference_outputs": 8192,
+      "rtl_sha256": {
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-dataflow-250-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure.v": "17ab360632696cf1052a284184ca201a69006f1fbf576d7a9cdd3e2fbd5a0388",
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-dataflow-250-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_compute_pressure.v": "a064cf49d82b05a1ac2acadf5ce5ddf975c6dcb18d45e1b2b8f0f908de6041ab",
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-dataflow-250-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_compute_pressure_Pipeline_VITIS_LOOP_17_1.v": "e283447f3749c255c6c771a2db489a1ff936203875004c7e3add1ccdcd94e963",
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-dataflow-250-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_entry_proc.v": "ebfa22e1dcbca2fa8e59bd6433051558bd371fc42de2cb9298cd4a5a175c74f1",
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-dataflow-250-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_fifo_w32_d3_S.v": "30ff4f3ab79d6adcc5403a7fb7c6fff2631043280ba415af3ec267198cf0e95c",
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-dataflow-250-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_fifo_w32_d4_S.v": "578c1f4a66a9ddfaf16bb7862ff65dc6de1a985bb52cbf97b66c160f69dc4731",
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-dataflow-250-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_flow_control_loop_pipe.v": "1dc529306b4e287ba5494382c5f263af08186d2a8bb0662d7dd997f9ed6e9f3e",
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-dataflow-250-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_flow_control_loop_pipe_sequential_init.v": "04fd4335e9e9581c5586f46b98085ebb45d2d697162715c2779f22fd8aba9594",
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-dataflow-250-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_load_pressure.v": "8cdd0f3fcbcf6c0bce8858bb6b06cfd5839c15d33986313315dd0a16e063a0ce",
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-dataflow-250-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_mac_muladd_17ns_17ns_8ns_32_4_1.v": "b60db3b8e8f87069f6de5d55bef6fa13d7043b0c1cba81006ed1d20f12572a43",
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-dataflow-250-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_start_for_compute_pressure_U0.v": "382f9cc09c9bb95bf6bb35324e918b3d2783dabac92df624551232d27f7c7ca4",
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-dataflow-250-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_start_for_store_pressure_U0.v": "f27de232f3b8cae579d5e9f23d78ca00a4c94b2480aa5b5c2ec6286a80a6556f",
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-dataflow-250-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_store_pressure.v": "ebf9cfb35806dfc851136e208f022162259bfccefd47563e9835946786e1e19a",
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-dataflow-250-v3/interface_normalization/vitis_hls/normalized_wrapper.v": "1af047a669ed274a34f6fae859026003660bbcd25a70c895a5c1a9920462aa7c",
+        "/tmp/lighthls-correctness-20260929.kZl9Xq/final-dataflow-250/registered_shell.v": "6520230df1e205d26fa32ef969cc96d8e9db9ca3a82ac614650b9f4f1f6e0946"
+      },
+      "post_route": {
+        "valid": true,
+        "qor_kind": "measured_registered_context",
+        "tool": "vivado",
+        "tool_version": "2025.2",
+        "part": "xcu250-figd2104-2L-e",
+        "flow_id": "vivado_registered_pressure_context_v1",
+        "runtime_seconds": 490.570103873004,
+        "resources": {
+          "lut": 163,
+          "ff": 205,
+          "dsp": 1,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "constraints_before_synthesis": true,
+          "worst_slack_ns": 1.963,
+          "critical_path_delay_ns": 2.037,
+          "critical_path_delay_note": "Period minus routed WNS in the closed registered context; not a frequency sweep or board Fmax",
+          "worst_hold_slack_ns": 0.024
+        },
+        "interface_signature": [
+          "ap_clk|IN|1"
+        ],
+        "clock_scope": "Closed on-chip pressure harness with a routed BUFG, registered scalar source, one-cycle RAM response, and retained output observers; not board IO signoff",
+        "unrouted_nets": 0,
+        "routing_errors": 0,
+        "timing_coverage": {
+          "no_clock": 0,
+          "unconstrained_internal_endpoints": 0,
+          "no_input_delay": 0,
+          "no_output_delay": 0,
+          "partial_input_delay": 0,
+          "partial_output_delay": 0
+        },
+        "timing_met": true,
+        "kernel_resources": {
+          "lut": 132,
+          "ff": 79,
+          "dsp": 1,
+          "bram_tiles": 0.0
+        },
+        "shell_resources": {
+          "lut": 31,
+          "ff": 126,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        }
+      }
+    }
+  },
+  "not_interchangeable_with_virtual_io_qor": true,
+  "shell_sha256": "6520230df1e205d26fa32ef969cc96d8e9db9ca3a82ac614650b9f4f1f6e0946",
+  "testbench_sha256": "fa160e47d80775252ad4556a8fe617e89111141086d5aad50d20b4db8e95832d"
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "stage": "normalized_synthesis_register_attribution",
+  "note": "Counts of FD* primitive cells grouped by hierarchy and bus name. Raw primitive counts are not packed FPGA LUT utilization.",
+  "designs": {
+    "before": {
+      "checkpoint": "/tmp/lighthls-bank-qor-20260918.ZR3t1F/u250-final/local/normalized_synthesis/light_hls/post_synth.dcp",
+      "checkpoint_sha256": "cbac85a2e5aecb555ac4a4762a39294c3d73618605c7851a089356507f15aacb",
+      "cell_dump_sha256": "694c4d05aea9645c872fc7cdcb1db5272ae12e69b674c5b8c4b5199b80b38c3d",
+      "flip_flop_count": 184,
+      "register_groups": {
+        "native_instance/FSM_sequential_state_reg[]": 3,
+        "native_instance/FSM_sequential_state_reg[]_rep": 3,
+        "native_instance/ap_done_reg": 1,
+        "native_instance/ap_idle_reg": 1,
+        "native_instance/local_0_q0_reg[]": 32,
+        "native_instance/local_1_q0_reg[]": 32,
+        "native_instance/local_2_q0_reg[]": 32,
+        "native_instance/local_3_q0_reg[]": 32,
+        "native_instance/v_HI_lsr_iv12new1_reg[]": 5,
+        "native_instance/v_HI_lsr_iv2new4_reg[]": 3,
+        "native_instance/v_HI_lsr_iv_next13new2_reg[]": 5,
+        "native_instance/v_HI_lsr_iv_next3new5_reg[]": 3,
+        "native_instance/v_lsr_iv10_reg[]": 4,
+        "native_instance/v_lsr_iv5_reg[]": 4,
+        "native_instance/v_lsr_iv7_reg[]": 4,
+        "native_instance/v_lsr_iv_next11_reg[]": 4,
+        "native_instance/v_lsr_iv_next6_reg[]": 4,
+        "native_instance/v_lsr_iv_next8_reg[]": 4,
+        "native_instance/v_lsr_iv_next_reg[]": 4,
+        "native_instance/v_lsr_iv_reg[]": 4
+      }
+    },
+    "after": {
+      "checkpoint": "/tmp/lighthls-local-mux-qor-20260918.4T7n35/u250-final/local/normalized_synthesis/light_hls/post_synth.dcp",
+      "checkpoint_sha256": "02f195e0d918e4de5da8226c98bfe5de32f0f96ee5ae44d09f48cab405b89926",
+      "cell_dump_sha256": "c0881a4fc6f87ebc7503dcaa718942542c58599a7fb7d13acd50cdd3487f7392",
+      "flip_flop_count": 181,
+      "register_groups": {
+        "native_instance/FSM_sequential_state_reg[]": 3,
+        "native_instance/ap_done_reg": 1,
+        "native_instance/ap_idle_reg": 1,
+        "native_instance/local_0_q0_reg[]": 32,
+        "native_instance/local_1_q0_reg[]": 32,
+        "native_instance/local_2_q0_reg[]": 32,
+        "native_instance/local_3_q0_reg[]": 32,
+        "native_instance/v_HI_lsr_iv12new1_reg[]": 5,
+        "native_instance/v_HI_lsr_iv2new4_reg[]": 3,
+        "native_instance/v_HI_lsr_iv_next13new2_reg[]": 5,
+        "native_instance/v_HI_lsr_iv_next3new5_reg[]": 3,
+        "native_instance/v_lsr_iv10_reg[]": 4,
+        "native_instance/v_lsr_iv5_reg[]": 4,
+        "native_instance/v_lsr_iv7_reg[]": 4,
+        "native_instance/v_lsr_iv_next11_reg[]": 4,
+        "native_instance/v_lsr_iv_next6_reg[]": 4,
+        "native_instance/v_lsr_iv_next8_reg[]": 4,
+        "native_instance/v_lsr_iv_next_reg[]": 4,
+        "native_instance/v_lsr_iv_reg[]": 4
+      }
+    },
+    "vitis": {
+      "checkpoint": "/tmp/lighthls-local-mux-qor-20260918.4T7n35/u250-final/local/normalized_synthesis/vitis_hls/post_synth.dcp",
+      "checkpoint_sha256": "b68725e59ffb13e9370d6aa6db12ee8da43b1430ddeac9b3f6b35460e7ae8a98",
+      "cell_dump_sha256": "c52be2ba01879cbfd0fc51ab5fe8834ad32327519adbf1f27b54b733aff4bffb",
+      "flip_flop_count": 152,
+      "register_groups": {
+        "native_instance/add_ln8_reg_329_reg[]": 5,
+        "native_instance/ap_CS_fsm_reg[]": 5,
+        "native_instance/i_1_fu_92_reg[]": 3,
+        "native_instance/i_fu_72_reg[]": 5,
+        "native_instance/local_1_U/q0_reg[]": 32,
+        "native_instance/local_2_U/q0_reg[]": 32,
+        "native_instance/local_3_U/q0_reg[]": 32,
+        "native_instance/local_U/q0_reg[]": 32,
+        "native_instance/lshr_ln8_reg_339_reg[]": 2,
+        "native_instance/trunc_ln8_reg_334_reg[]": 2,
+        "native_instance/zext_ln11_reg_359_reg[]": 2
+      }
+    }
+  }
+}

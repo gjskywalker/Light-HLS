@@ -1,0 +1,9 @@
+****** Vivado v2025.2 (64-bit)
+WARNING: [Synth 8-6901] identifier 'v_HI_xornew2' is used before its declaration [/home/eeuser/Desktop/Light-HLS/runs/migration_20261110/scalar_synthesis/reports/rtl/top.v:37]
+WARNING: [Synth 8-6901] identifier 'v_mul_shl_0' is used before its declaration [/home/eeuser/Desktop/Light-HLS/runs/migration_20261110/scalar_synthesis/reports/rtl/top.v:37]
+WARNING: [Synth 8-6901] identifier 'v_mul_shl_1' is used before its declaration [/home/eeuser/Desktop/Light-HLS/runs/migration_20261110/scalar_synthesis/reports/rtl/top.v:38]
+WARNING: [Synth 8-6014] Unused sequential element v_v17_reg was removed.  [/home/eeuser/Desktop/Light-HLS/runs/migration_20261110/scalar_synthesis/reports/rtl/top.v:63]
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 3960.148 ; gain = 2348.617 ; free physical = 25254 ; free virtual = 108498
+WARNING: [Timing 38-242] The property HD.CLK_SRC of clock port "ap_clk" is not set. In out-of-context mode, this prevents timing estimation for clock delay/skew
+INFO: [Common 17-206] Exiting Vivado at Tue Nov 10 23:30:10 2026...

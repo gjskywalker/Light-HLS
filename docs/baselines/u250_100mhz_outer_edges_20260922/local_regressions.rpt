@@ -1,0 +1,22 @@
+Light-HLS Unified Local Regression
+
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+
+| Suite                        | Status   | Runtime (s)  | Script SHA256    | Log                                                     |
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+
+| AppCorrectness               | PASS     | 11.198441    | bc9bca0b5a23cf7a | /tmp/lighthls-outer-edges-20260922.nuyJGJ/regression... |
+| RTL_Backend                  | PASS     | 2.371286     | 2efc8e1d603b2805 | /tmp/lighthls-outer-edges-20260922.nuyJGJ/regression... |
+| PipelineBackend              | PASS     | 1.824623     | 1e72af514281a249 | /tmp/lighthls-outer-edges-20260922.nuyJGJ/regression... |
+| PipelineStorage              | PASS     | 1.620248     | fa2e0cfeced688a7 | /tmp/lighthls-outer-edges-20260922.nuyJGJ/regression... |
+| ArrayPartitionBackend        | PASS     | 1.319313     | aa96771d07abf904 | /tmp/lighthls-outer-edges-20260922.nuyJGJ/regression... |
+| OrdinaryBankAnalysis         | PASS     | 4.807469     | 07c6b1e919716c49 | /tmp/lighthls-outer-edges-20260922.nuyJGJ/regression... |
+| LocalWriteData               | PASS     | 2.484871     | 07c6b1e919716c49 | /tmp/lighthls-outer-edges-20260922.nuyJGJ/regression... |
+| FIFOEvents                   | PASS     | 3.633333     | b1b40f025149c208 | /tmp/lighthls-outer-edges-20260922.nuyJGJ/regression... |
+| OrdinaryFeedback             | PASS     | 4.095579     | 7a4ff0bacb1987dd | /tmp/lighthls-outer-edges-20260922.nuyJGJ/regression... |
+| OrdinaryBackedge             | PASS     | 5.949768     | 23eac8fdb13e8a57 | /tmp/lighthls-outer-edges-20260922.nuyJGJ/regression... |
+| OrdinaryLoopEdges            | PASS     | 5.047062     | d89a2237695bcfa2 | /tmp/lighthls-outer-edges-20260922.nuyJGJ/regression... |
+| StorageBindingBackend        | PASS     | 0.215203     | d1f3e60b11fd09ea | /tmp/lighthls-outer-edges-20260922.nuyJGJ/regression... |
+| DataflowBackend              | PASS     | 3.373697     | 5d9dc84e5a6f03df | /tmp/lighthls-outer-edges-20260922.nuyJGJ/regression... |
+| FairComparisonInterface      | PASS     | 0.03495      | ee70546062d906f1 | /tmp/lighthls-outer-edges-20260922.nuyJGJ/regression... |
+| AppCapability                | PASS     | 16.434556    | e1b101b2b74f1cac | /tmp/lighthls-outer-edges-20260922.nuyJGJ/regression... |
+| FairComparisonQoR            | PASS     | 0.034781     | 03cf3a9a1059d072 | /tmp/lighthls-outer-edges-20260922.nuyJGJ/regression... |
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+

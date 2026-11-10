@@ -1,0 +1,414 @@
+{
+  "valid": true,
+  "measurement_reports_rewritten": false,
+  "all_ooc_constraints_met": false,
+  "note": "OOC virtual IO and clock boundaries are not a board implementation. Failed hold checks remain failures.",
+  "cases": [
+    {
+      "case": "dsp_map_100",
+      "report_sha256": "8ec76b563c9a3268924d9935a7624a426c3c3ea40d5a75a276390a377f9803a2",
+      "clock_period_ns": 10.0,
+      "measurement_reward_eligible": false,
+      "results": {
+        "light_hls": {
+          "valid": true,
+          "qor_kind": "measured_post_route_ooc",
+          "tool": "vivado",
+          "tool_version": "2025.2",
+          "part": "xcu250-figd2104-2L-e",
+          "flow_id": "vivado_ooc_normalized_v3_pre_synth_io20",
+          "runtime_seconds": null,
+          "resources": {
+            "lut": 43,
+            "ff": 32,
+            "dsp": 1,
+            "bram_tiles": 0.0
+          },
+          "timing": {
+            "clock_constrained": true,
+            "constraints_before_synthesis": true,
+            "io_budget_fraction": 0.2,
+            "worst_slack_ns": 4.03,
+            "critical_path_delay_ns": 5.97,
+            "critical_path_delay_note": "Period minus WNS includes external IO budgets; it is not a routed Fmax measurement.",
+            "worst_hold_slack_ns": 0.0
+          },
+          "interface_signature": [
+            "ap_clk|IN|1",
+            "ap_done|OUT|1",
+            "ap_idle|OUT|1",
+            "ap_ready|OUT|1",
+            "ap_rst|IN|1",
+            "ap_start|IN|1",
+            "coefficient|IN|32",
+            "input_r_address0|OUT|8",
+            "input_r_ce0|OUT|1",
+            "input_r_q0|IN|32",
+            "output_r_address0|OUT|8",
+            "output_r_ce0|OUT|1",
+            "output_r_d0|OUT|32",
+            "output_r_we0|OUT|1"
+          ],
+          "runtime_note": "Included in the combined synthesis/implementation runtime",
+          "clock_scope": "Virtual OOC IO boundary: no board shell, physical port locations or clock tree contract",
+          "unrouted_nets": 0,
+          "routing_errors": 0,
+          "timing_coverage": {
+            "no_clock": 0,
+            "unconstrained_internal_endpoints": 0,
+            "no_input_delay": 0,
+            "no_output_delay": 0,
+            "partial_input_delay": 0,
+            "partial_output_delay": 0
+          },
+          "timing_met": true,
+          "artifact_sha256": {
+            "constraints.xdc": "3b249146bc3ffc65c1e01f8ec7dd6853474d81993b42001bf95e287ee87565d7",
+            "post_route.dcp": "b6572ee840072bf3b9bf78337a986577da8d841b39f16a42c936f0400a2a0cd9",
+            "route_metrics.txt": "53d87242ad34c2812e2650bf3d699f47b8104162b71481aa97d2fc1111b844a6",
+            "route_timing_summary.rpt": "1242ba374612238d5cf02579c643a977883c910d1a2275fda133d5abc529d794",
+            "route_status.rpt": "91120384e7586d2263063b613b79558afe47ff048e9d286ce36ba5e415e1d630"
+          }
+        },
+        "vitis_hls": {
+          "valid": true,
+          "qor_kind": "measured_post_route_ooc",
+          "tool": "vivado",
+          "tool_version": "2025.2",
+          "part": "xcu250-figd2104-2L-e",
+          "flow_id": "vivado_ooc_normalized_v3_pre_synth_io20",
+          "runtime_seconds": null,
+          "resources": {
+            "lut": 15,
+            "ff": 46,
+            "dsp": 1,
+            "bram_tiles": 0.0
+          },
+          "timing": {
+            "clock_constrained": true,
+            "constraints_before_synthesis": true,
+            "io_budget_fraction": 0.2,
+            "worst_slack_ns": 5.773,
+            "critical_path_delay_ns": 4.227,
+            "critical_path_delay_note": "Period minus WNS includes external IO budgets; it is not a routed Fmax measurement.",
+            "worst_hold_slack_ns": -0.076
+          },
+          "interface_signature": [
+            "ap_clk|IN|1",
+            "ap_done|OUT|1",
+            "ap_idle|OUT|1",
+            "ap_ready|OUT|1",
+            "ap_rst|IN|1",
+            "ap_start|IN|1",
+            "coefficient|IN|32",
+            "input_r_address0|OUT|8",
+            "input_r_ce0|OUT|1",
+            "input_r_q0|IN|32",
+            "output_r_address0|OUT|8",
+            "output_r_ce0|OUT|1",
+            "output_r_d0|OUT|32",
+            "output_r_we0|OUT|1"
+          ],
+          "runtime_note": "Included in the combined synthesis/implementation runtime",
+          "clock_scope": "Virtual OOC IO boundary: no board shell, physical port locations or clock tree contract",
+          "unrouted_nets": 0,
+          "routing_errors": 0,
+          "timing_coverage": {
+            "no_clock": 0,
+            "unconstrained_internal_endpoints": 0,
+            "no_input_delay": 0,
+            "no_output_delay": 0,
+            "partial_input_delay": 0,
+            "partial_output_delay": 0
+          },
+          "timing_met": false,
+          "artifact_sha256": {
+            "constraints.xdc": "3b249146bc3ffc65c1e01f8ec7dd6853474d81993b42001bf95e287ee87565d7",
+            "post_route.dcp": "77edbdc80d840ec34ce8f09fd47d1d925239ab6b1d2fe65c1d60e3c0986255db",
+            "route_metrics.txt": "da5b8f1f4db577dd7f4f3241815731da9b5027feccd9676c1779d5fd6d9c0565",
+            "route_timing_summary.rpt": "a3aa56f98847ceb9a238461186068cb05abc0b965b195eed0461576169127937",
+            "route_status.rpt": "0c03df1b637554b00f8f33a6ced5ccc2b9b5c4d11b6bac0f9bdce215ad2e84c7"
+          }
+        }
+      }
+    },
+    {
+      "case": "bram_banked_250",
+      "report_sha256": "342b15131c7af118ace4f76db1e989a05ee283f1cc5e2ca33664ca72681286d0",
+      "clock_period_ns": 4.0,
+      "measurement_reward_eligible": false,
+      "results": {
+        "light_hls": {
+          "valid": true,
+          "qor_kind": "measured_post_route_ooc",
+          "tool": "vivado",
+          "tool_version": "2025.2",
+          "part": "xcu250-figd2104-2L-e",
+          "flow_id": "vivado_ooc_normalized_v3_pre_synth_io20",
+          "runtime_seconds": null,
+          "resources": {
+            "lut": 125,
+            "ff": 91,
+            "dsp": 0,
+            "bram_tiles": 1.0
+          },
+          "timing": {
+            "clock_constrained": true,
+            "constraints_before_synthesis": true,
+            "io_budget_fraction": 0.2,
+            "worst_slack_ns": 0.911,
+            "critical_path_delay_ns": 3.089,
+            "critical_path_delay_note": "Period minus WNS includes external IO budgets; it is not a routed Fmax measurement.",
+            "worst_hold_slack_ns": -0.08
+          },
+          "interface_signature": [
+            "ap_clk|IN|1",
+            "ap_done|OUT|1",
+            "ap_idle|OUT|1",
+            "ap_ready|OUT|1",
+            "ap_rst|IN|1",
+            "ap_start|IN|1",
+            "coefficient|IN|32",
+            "input_r_address0|OUT|8",
+            "input_r_ce0|OUT|1",
+            "input_r_q0|IN|32",
+            "output_r_address0|OUT|8",
+            "output_r_ce0|OUT|1",
+            "output_r_d0|OUT|32",
+            "output_r_we0|OUT|1"
+          ],
+          "runtime_note": "Included in the combined synthesis/implementation runtime",
+          "clock_scope": "Virtual OOC IO boundary: no board shell, physical port locations or clock tree contract",
+          "unrouted_nets": 0,
+          "routing_errors": 0,
+          "timing_coverage": {
+            "no_clock": 0,
+            "unconstrained_internal_endpoints": 0,
+            "no_input_delay": 0,
+            "no_output_delay": 0,
+            "partial_input_delay": 0,
+            "partial_output_delay": 0
+          },
+          "timing_met": false,
+          "artifact_sha256": {
+            "constraints.xdc": "c139f42c947b168fbbdb04429e17e21d1083eaa874486ecd0dcd33c0abbf920a",
+            "post_route.dcp": "5be3eea7432319182221fbd89d71c56c5735dd96d6a86a95cbb87e9d988f5642",
+            "route_metrics.txt": "6860525f09effd046a69573cf2fda11f43fe9ff915f8e0cda34be90081474218",
+            "route_timing_summary.rpt": "e95b44a4db8fbafb55ff3c8a684140f7e1c5857e9ff7affec72b20a8c42ebcf2",
+            "route_status.rpt": "49ab1f042af555b4d6874c0c4af39b71c5075aa642e8ad5c429b85b9617b88f9"
+          },
+          "internal_register_timing_ns": {
+            "setup": 2.355,
+            "hold": 0.053
+          }
+        },
+        "vitis_hls": {
+          "valid": true,
+          "qor_kind": "measured_post_route_ooc",
+          "tool": "vivado",
+          "tool_version": "2025.2",
+          "part": "xcu250-figd2104-2L-e",
+          "flow_id": "vivado_ooc_normalized_v3_pre_synth_io20",
+          "runtime_seconds": null,
+          "resources": {
+            "lut": 96,
+            "ff": 78,
+            "dsp": 0,
+            "bram_tiles": 1.0
+          },
+          "timing": {
+            "clock_constrained": true,
+            "constraints_before_synthesis": true,
+            "io_budget_fraction": 0.2,
+            "worst_slack_ns": 1.143,
+            "critical_path_delay_ns": 2.857,
+            "critical_path_delay_note": "Period minus WNS includes external IO budgets; it is not a routed Fmax measurement.",
+            "worst_hold_slack_ns": -0.08
+          },
+          "interface_signature": [
+            "ap_clk|IN|1",
+            "ap_done|OUT|1",
+            "ap_idle|OUT|1",
+            "ap_ready|OUT|1",
+            "ap_rst|IN|1",
+            "ap_start|IN|1",
+            "coefficient|IN|32",
+            "input_r_address0|OUT|8",
+            "input_r_ce0|OUT|1",
+            "input_r_q0|IN|32",
+            "output_r_address0|OUT|8",
+            "output_r_ce0|OUT|1",
+            "output_r_d0|OUT|32",
+            "output_r_we0|OUT|1"
+          ],
+          "runtime_note": "Included in the combined synthesis/implementation runtime",
+          "clock_scope": "Virtual OOC IO boundary: no board shell, physical port locations or clock tree contract",
+          "unrouted_nets": 0,
+          "routing_errors": 0,
+          "timing_coverage": {
+            "no_clock": 0,
+            "unconstrained_internal_endpoints": 0,
+            "no_input_delay": 0,
+            "no_output_delay": 0,
+            "partial_input_delay": 0,
+            "partial_output_delay": 0
+          },
+          "timing_met": false,
+          "artifact_sha256": {
+            "constraints.xdc": "c139f42c947b168fbbdb04429e17e21d1083eaa874486ecd0dcd33c0abbf920a",
+            "post_route.dcp": "7e5053d307b6a9387af098f92759f8cc8b3e5ef84423d71bec4671e4b66497b3",
+            "route_metrics.txt": "ebdf2fb73894b1eb33629c8b25427fd78bea1458ae18afba962099314c0ef40f",
+            "route_timing_summary.rpt": "7ef8531b48a07ec80f63bd9f60121c0716ff5c9e62d47eca1ebe4a47b0692876",
+            "route_status.rpt": "f432057c083773de9fe146bb4e74c11c9861e8e0b6841c90cb93acfed921c78a"
+          },
+          "internal_register_timing_ns": {
+            "setup": 2.52,
+            "hold": 0.053
+          }
+        }
+      }
+    },
+    {
+      "case": "dsp_dataflow_250",
+      "report_sha256": "3c80f55af908e418fce251f948410af2751ca98586c8fc1c9c6ad68b14694f06",
+      "clock_period_ns": 4.0,
+      "measurement_reward_eligible": false,
+      "results": {
+        "light_hls": {
+          "valid": true,
+          "qor_kind": "measured_post_route_ooc",
+          "tool": "vivado",
+          "tool_version": "2025.2",
+          "part": "xcu250-figd2104-2L-e",
+          "flow_id": "vivado_ooc_normalized_v3_pre_synth_io20",
+          "runtime_seconds": null,
+          "resources": {
+            "lut": 205,
+            "ff": 147,
+            "dsp": 1,
+            "bram_tiles": 0.0
+          },
+          "timing": {
+            "clock_constrained": true,
+            "constraints_before_synthesis": true,
+            "io_budget_fraction": 0.2,
+            "worst_slack_ns": 1.756,
+            "critical_path_delay_ns": 2.244,
+            "critical_path_delay_note": "Period minus WNS includes external IO budgets; it is not a routed Fmax measurement.",
+            "worst_hold_slack_ns": -0.135
+          },
+          "interface_signature": [
+            "ap_clk|IN|1",
+            "ap_done|OUT|1",
+            "ap_idle|OUT|1",
+            "ap_ready|OUT|1",
+            "ap_rst|IN|1",
+            "ap_start|IN|1",
+            "coefficient|IN|32",
+            "input_r_address0|OUT|8",
+            "input_r_ce0|OUT|1",
+            "input_r_d0|OUT|32",
+            "input_r_q0|IN|32",
+            "input_r_we0|OUT|1",
+            "output_r_address0|OUT|8",
+            "output_r_ce0|OUT|1",
+            "output_r_d0|OUT|32",
+            "output_r_q0|IN|32",
+            "output_r_we0|OUT|1"
+          ],
+          "runtime_note": "Included in the combined synthesis/implementation runtime",
+          "clock_scope": "Virtual OOC IO boundary: no board shell, physical port locations or clock tree contract",
+          "unrouted_nets": 0,
+          "routing_errors": 0,
+          "timing_coverage": {
+            "no_clock": 0,
+            "unconstrained_internal_endpoints": 0,
+            "no_input_delay": 0,
+            "no_output_delay": 0,
+            "partial_input_delay": 0,
+            "partial_output_delay": 0
+          },
+          "timing_met": false,
+          "artifact_sha256": {
+            "constraints.xdc": "c139f42c947b168fbbdb04429e17e21d1083eaa874486ecd0dcd33c0abbf920a",
+            "post_route.dcp": "bf9050a2c7e76bbf0e21f676148b75f2099b0f3bfade68196969ff8d9083864c",
+            "route_metrics.txt": "5f7fb4ceecf174d14583ded5e6a4945802bc0808b8ef9cb4515c7d32dfcf9736",
+            "route_timing_summary.rpt": "88d5b73b93fe0c6630517a27bb5931c3bf6a43c47c7dfd5296717a33918065e8",
+            "route_status.rpt": "69b7c34a021c336f557b92d9d2260d6c78dde873de170c5077fc65eee226fa7a"
+          },
+          "internal_register_timing_ns": {
+            "setup": 1.756,
+            "hold": 0.041
+          }
+        },
+        "vitis_hls": {
+          "valid": true,
+          "qor_kind": "measured_post_route_ooc",
+          "tool": "vivado",
+          "tool_version": "2025.2",
+          "part": "xcu250-figd2104-2L-e",
+          "flow_id": "vivado_ooc_normalized_v3_pre_synth_io20",
+          "runtime_seconds": null,
+          "resources": {
+            "lut": 130,
+            "ff": 79,
+            "dsp": 1,
+            "bram_tiles": 0.0
+          },
+          "timing": {
+            "clock_constrained": true,
+            "constraints_before_synthesis": true,
+            "io_budget_fraction": 0.2,
+            "worst_slack_ns": 1.695,
+            "critical_path_delay_ns": 2.305,
+            "critical_path_delay_note": "Period minus WNS includes external IO budgets; it is not a routed Fmax measurement.",
+            "worst_hold_slack_ns": -0.136
+          },
+          "interface_signature": [
+            "ap_clk|IN|1",
+            "ap_done|OUT|1",
+            "ap_idle|OUT|1",
+            "ap_ready|OUT|1",
+            "ap_rst|IN|1",
+            "ap_start|IN|1",
+            "coefficient|IN|32",
+            "input_r_address0|OUT|8",
+            "input_r_ce0|OUT|1",
+            "input_r_d0|OUT|32",
+            "input_r_q0|IN|32",
+            "input_r_we0|OUT|1",
+            "output_r_address0|OUT|8",
+            "output_r_ce0|OUT|1",
+            "output_r_d0|OUT|32",
+            "output_r_q0|IN|32",
+            "output_r_we0|OUT|1"
+          ],
+          "runtime_note": "Included in the combined synthesis/implementation runtime",
+          "clock_scope": "Virtual OOC IO boundary: no board shell, physical port locations or clock tree contract",
+          "unrouted_nets": 0,
+          "routing_errors": 0,
+          "timing_coverage": {
+            "no_clock": 0,
+            "unconstrained_internal_endpoints": 0,
+            "no_input_delay": 0,
+            "no_output_delay": 0,
+            "partial_input_delay": 0,
+            "partial_output_delay": 0
+          },
+          "timing_met": false,
+          "artifact_sha256": {
+            "constraints.xdc": "c139f42c947b168fbbdb04429e17e21d1083eaa874486ecd0dcd33c0abbf920a",
+            "post_route.dcp": "402483625aff07f48890ebb59e92eb20367754336c49859de24db8544f33b834",
+            "route_metrics.txt": "3449b56d1ff2d518fff325cb24d12fae98c5e0a9e70628f031ffa9b5523afec7",
+            "route_timing_summary.rpt": "ba1b3171a347b4302b40d2868627f30ef530684f90f2c6c3750aa3f0a72d2d96",
+            "route_status.rpt": "ebe946663e43e4d36093c373ae7847220c7566954464227750355a643b47b991"
+          },
+          "internal_register_timing_ns": {
+            "setup": 2.351,
+            "hold": 0.041
+          }
+        }
+      }
+    }
+  ]
+}

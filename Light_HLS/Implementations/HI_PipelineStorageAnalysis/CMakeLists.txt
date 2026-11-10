@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.10)
+find_package(LLVM REQUIRED CONFIG)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fno-rtti -std=c++17")
+include_directories(${LLVM_INCLUDE_DIRS} ../HI_BackendCommon)
+add_definitions(${LLVM_DEFINITIONS})
+add_library(HI_PipelineStorageAnalysis HI_PipelineStorageAnalysis.cc)
+target_link_libraries(HI_PipelineStorageAnalysis PUBLIC HI_BackendCommon)

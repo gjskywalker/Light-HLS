@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.10)
+project(HI_DataflowRTLGeneration)
+
+add_library(HI_DataflowRTLGeneration HI_DataflowRTLGeneration.cc)
+target_link_libraries(HI_DataflowRTLGeneration PUBLIC HI_BackendCommon)

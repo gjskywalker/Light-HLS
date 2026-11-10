@@ -1,0 +1,11 @@
+{
+  "valid": false,
+  "comparison_sha256": "8ec76b563c9a3268924d9935a7624a426c3c3ea40d5a75a276390a377f9803a2",
+  "rtl_root": "/tmp/lighthls-next3-20260928.t1orVg/dsp-map-100-v3",
+  "source_sha256": "1386f273980d13fc7f56a7bb072fff224a616bbed05b9201fc6f584c8e95b4a3",
+  "testbench_sha256": "45a1b7d4cb75d56e35099cd26b3dd95ca52e8910f7ceef9133f70f11111a04de",
+  "contract": "32 held-start offers, changing coefficient, immutable input RAM, one-cycle reads, no output backpressure",
+  "note": "Ready is an acknowledgement, not necessarily the first execution edge. Throughput uses final commits.",
+  "results": {},
+  "error": "RTL simulator reported an error; see /tmp/lighthls-next3-20260928.t1orVg/known-scalar-held-start/light_hls/simulation.log"
+}

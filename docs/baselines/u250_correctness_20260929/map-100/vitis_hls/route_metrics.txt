@@ -1,0 +1,12 @@
+tool_version=2025.2
+lut=50
+ff=172
+dsp=1
+bram_tiles=0
+clock_constrained=1
+constraints_before_synthesis=1
+io_budget_fraction=0
+worst_slack_ns=7.735
+port=ap_clk|IN||
+worst_hold_slack_ns=0.048
+unrouted_nets=0

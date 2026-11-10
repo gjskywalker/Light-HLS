@@ -1,0 +1,33 @@
+Light-HLS Unified Local Regression
+
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+
+| Suite                        | Status   | Runtime (s)  | Script SHA256    | Log                                                     |
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+
+| AppCorrectness               | PASS     | 6.588515     | fd31e7a5f00cd0fc | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| RTL_Backend                  | PASS     | 1.56858      | 9c10edc59c92514d | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| PipelineBackend              | PASS     | 1.267025     | 1e72af514281a249 | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| PipelineStorage              | PASS     | 1.667725     | be47ce1012a6bbfa | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| ArrayPartitionBackend        | PASS     | 1.216604     | aa96771d07abf904 | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| OrdinaryBankAnalysis         | PASS     | 4.573945     | 07c6b1e919716c49 | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| LocalWriteData               | PASS     | 2.269337     | 07c6b1e919716c49 | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| FIFOEvents                   | PASS     | 4.627134     | 87e7673ea19bc9dc | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| OrdinaryFeedback             | PASS     | 4.022715     | 7a4ff0bacb1987dd | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| OrdinaryBackedge             | PASS     | 5.678445     | da267ec51fbf787c | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| OrdinaryLoopEdges            | PASS     | 4.576559     | d89a2237695bcfa2 | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| TransactionEdges             | PASS     | 1.920149     | 340052d2808c7881 | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| ScalarBankEvents             | PASS     | 2.069179     | b86eba8a492712d2 | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| ScalarReturns                | PASS     | 1.567382     | 1294b9622bd0b373 | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| PIPOBanks                    | PASS     | 0.915979     | e1dc03b8d1b423e1 | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| BindingCost                  | PASS     | 1.517605     | 2198f230d041f18d | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| QoRPressure                  | PASS     | 8.188841     | 82f0a9361936d78b | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| BankConflict                 | PASS     | 32.404246    | 4373105016a04d09 | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| ArithmeticMapping            | PASS     | 0.365065     | d5f0e22060394650 | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| DataflowCompletion           | PASS     | 1.017181     | ef9d6783f15e94e5 | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| StorageBindingBackend        | PASS     | 0.214281     | d1f3e60b11fd09ea | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| DataflowBackend              | PASS     | 3.020957     | 1b464099a4ce8402 | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| FairComparisonInterface      | PASS     | 0.031858     | ee70546062d906f1 | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| AppCapability                | PASS     | 13.754452    | e1b101b2b74f1cac | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| FairComparisonQoR            | PASS     | 0.03182      | 03cf3a9a1059d072 | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| TransactionEventMetrics      | PASS     | 0.031598     | 44ae1602b29e1431 | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
+| EvaluationContract           | PASS     | 0.031578     | 1e482f2fdddad2ee | /home/eeuser/Desktop/Light-HLS/runs/migration_202611... |
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+

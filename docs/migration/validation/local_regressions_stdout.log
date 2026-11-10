@@ -1,0 +1,54 @@
+[AppCorrectness] starting
+[AppCorrectness] PASS (6.6s)
+[RTL_Backend] starting
+[RTL_Backend] PASS (1.6s)
+[PipelineBackend] starting
+[PipelineBackend] PASS (1.3s)
+[PipelineStorage] starting
+[PipelineStorage] PASS (1.7s)
+[ArrayPartitionBackend] starting
+[ArrayPartitionBackend] PASS (1.2s)
+[OrdinaryBankAnalysis] starting
+[OrdinaryBankAnalysis] PASS (4.6s)
+[LocalWriteData] starting
+[LocalWriteData] PASS (2.3s)
+[FIFOEvents] starting
+[FIFOEvents] PASS (4.6s)
+[OrdinaryFeedback] starting
+[OrdinaryFeedback] PASS (4.0s)
+[OrdinaryBackedge] starting
+[OrdinaryBackedge] PASS (5.7s)
+[OrdinaryLoopEdges] starting
+[OrdinaryLoopEdges] PASS (4.6s)
+[TransactionEdges] starting
+[TransactionEdges] PASS (1.9s)
+[ScalarBankEvents] starting
+[ScalarBankEvents] PASS (2.1s)
+[ScalarReturns] starting
+[ScalarReturns] PASS (1.6s)
+[PIPOBanks] starting
+[PIPOBanks] PASS (0.9s)
+[BindingCost] starting
+[BindingCost] PASS (1.5s)
+[QoRPressure] starting
+[QoRPressure] PASS (8.2s)
+[BankConflict] starting
+[BankConflict] PASS (32.4s)
+[ArithmeticMapping] starting
+[ArithmeticMapping] PASS (0.4s)
+[DataflowCompletion] starting
+[DataflowCompletion] PASS (1.0s)
+[StorageBindingBackend] starting
+[StorageBindingBackend] PASS (0.2s)
+[DataflowBackend] starting
+[DataflowBackend] PASS (3.0s)
+[FairComparisonInterface] starting
+[FairComparisonInterface] PASS (0.0s)
+[AppCapability] starting
+[AppCapability] PASS (13.8s)
+[FairComparisonQoR] starting
+[FairComparisonQoR] PASS (0.0s)
+[TransactionEventMetrics] starting
+[TransactionEventMetrics] PASS (0.0s)
+[EvaluationContract] starting
+[EvaluationContract] PASS (0.0s)

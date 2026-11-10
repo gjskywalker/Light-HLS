@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "stage": "u250_fair_comparison",
+  "valid": false,
+  "reward_eligible": false,
+  "board": "u250",
+  "part": "xcu250-figd2104-2L-e",
+  "clock_period_ns": 10.0,
+  "top_function": "vector_pipeline_partition_dataflow",
+  "errors": [
+    {
+      "code": "FAIR_COMPARISON_FAILED",
+      "message": "Command failed with exit code -6; see /tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/dataflow_nested/light_hls/light_hls.log"
+    }
+  ],
+  "source": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/DataflowBackend/nested_pipeline_partition_dataflow.cc",
+  "source_sha256": "6e661e7df072032bb041b72a6828908fd116b9cbca2ed2836d677d025745bf9f",
+  "config_sha256": null,
+  "testbench_sha256": "ae5cee96a13ddcf76f8f5dace638303f356a279857ec11841caed1b84b216e8a",
+  "light_hls_executable_sha256": "9b68280ee523075a1a13074c6e71782070fcee2b3188e8eaddbbba96a81fc98d",
+  "comparison_id": "f9105b3ee1781dda3af8e10a9b1ac8d63beff03cf0c0eac1b01767716c01c26e",
+  "input_fingerprints": {
+    "source_sha256": "6e661e7df072032bb041b72a6828908fd116b9cbca2ed2836d677d025745bf9f",
+    "config_sha256": null,
+    "testbench_sha256": "ae5cee96a13ddcf76f8f5dace638303f356a279857ec11841caed1b84b216e8a",
+    "light_hls_executable_sha256": "9b68280ee523075a1a13074c6e71782070fcee2b3188e8eaddbbba96a81fc98d",
+    "top_function": "vector_pipeline_partition_dataflow",
+    "board": "u250",
+    "part": "xcu250-figd2104-2L-e",
+    "clock_period_ns": 10.0,
+    "flow_id": "vivado_ooc_normalized_v2",
+    "common_defines": [],
+    "vitis_only_defines": [
+      "DATAFLOW_VITIS_DUAL_PORT",
+      "DATAFLOW_VITIS_HOLD_START_UNTIL_DONE"
+    ]
+  },
+  "fairness_contract": {
+    "same_source": true,
+    "same_top_function": true,
+    "same_clock_period": true,
+    "same_fpga_part": true,
+    "same_vivado_ooc_flow": true,
+    "vitis_automatic_loop_pipelining": false,
+    "top_level_boundary": "normalized_ap_ctrl_hs_superset_wrapper",
+    "flow_id": "vivado_ooc_normalized_v2",
+    "simulation_adapter": {
+      "common_defines": [],
+      "vitis_only_defines": [
+        "DATAFLOW_VITIS_DUAL_PORT",
+        "DATAFLOW_VITIS_HOLD_START_UNTIL_DONE"
+      ]
+    }
+  }
+}

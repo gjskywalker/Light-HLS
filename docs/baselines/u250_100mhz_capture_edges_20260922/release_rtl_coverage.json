@@ -1,0 +1,226 @@
+{
+  "schema_version": "1.0",
+  "stage": "release_measured_rtl_coverage",
+  "valid": true,
+  "light_hls_executable_sha256": "d0b0d06f0be9d11446e5257f9cad9b5ea4412902faa96bbf5052e4d6b00eea25",
+  "case_count": 21,
+  "measurements_rewritten": false,
+  "note": "Select byte-identical measured RTL for each distinct historical source plus the private-buffer source. Exclude the superseded scalar entry candidate. Compiler fingerprints of measurements are not relabeled.",
+  "source_audits": [
+    "/tmp/lighthls-continuous-qor-20260922.g3KrQD/historical-release/rtl_identity_audit.json",
+    "/tmp/lighthls-continuous-qor-20260922.g3KrQD/entry-to-release/rtl_identity_audit.json",
+    "/tmp/lighthls-continuous-qor-20260922.g3KrQD/measured-release/rtl_identity_audit.json"
+  ],
+  "cases": [
+    {
+      "case": "array_partition/block",
+      "comparison_id": "b9cc876fc5feea4a2db7b40b251efe95195bd54ca9ee6eda44d639de2ae12feb",
+      "measured_executable_sha256": "9b68280ee523075a1a13074c6e71782070fcee2b3188e8eaddbbba96a81fc98d",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "fa637ff0d31ae862b1c065a25f888761ee27a8a481560e95fb87c44ab65d3234",
+      "regenerated_rtl_sha256": "fa637ff0d31ae862b1c065a25f888761ee27a8a481560e95fb87c44ab65d3234",
+      "evidence": "September 14 historical measurement"
+    },
+    {
+      "case": "array_partition/complete",
+      "comparison_id": "c52096a0548cc089b22c073d78a3993bb7e468d194d9f5e5290c4f0e6081483f",
+      "measured_executable_sha256": "9b68280ee523075a1a13074c6e71782070fcee2b3188e8eaddbbba96a81fc98d",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "7555cfa91b7bf171f209a8693979f908d3070f8a2742e021d35c9ed1156ba822",
+      "regenerated_rtl_sha256": "7555cfa91b7bf171f209a8693979f908d3070f8a2742e021d35c9ed1156ba822",
+      "evidence": "September 14 historical measurement"
+    },
+    {
+      "case": "array_partition/cyclic",
+      "comparison_id": "8ea703aea9032c571969831155eb190039421256e2a9bf8b73ee73a5a2c28825",
+      "measured_executable_sha256": "9b68280ee523075a1a13074c6e71782070fcee2b3188e8eaddbbba96a81fc98d",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "cc89d123e9e373000764b4353ab1d66f8a458335d7c9c3c2553e2bb31bc85fd5",
+      "regenerated_rtl_sha256": "cc89d123e9e373000764b4353ab1d66f8a458335d7c9c3c2553e2bb31bc85fd5",
+      "evidence": "September 14 historical measurement"
+    },
+    {
+      "case": "array_partition/multidim",
+      "comparison_id": "68e001682f81e6805acc2f6346fdf93e063134f529196210e338d63e51ba219d",
+      "measured_executable_sha256": "9b68280ee523075a1a13074c6e71782070fcee2b3188e8eaddbbba96a81fc98d",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "4bb5a4198ffb388d3648c3aa8929691254b65e0585a68d01843179bafb50a6c9",
+      "regenerated_rtl_sha256": "4bb5a4198ffb388d3648c3aa8929691254b65e0585a68d01843179bafb50a6c9",
+      "evidence": "September 14 historical measurement"
+    },
+    {
+      "case": "array_partition/multidim_cyclic",
+      "comparison_id": "5fbe5eadcf6181e5c1f1490f897e64f119bb32a5e0c872526fac0b2e347701bf",
+      "measured_executable_sha256": "9b68280ee523075a1a13074c6e71782070fcee2b3188e8eaddbbba96a81fc98d",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "73fc069709927e769a6191148ef8d3c6deb264910b4d6a8fcb241e37419bf871",
+      "regenerated_rtl_sha256": "73fc069709927e769a6191148ef8d3c6deb264910b4d6a8fcb241e37419bf871",
+      "evidence": "September 14 historical measurement"
+    },
+    {
+      "case": "array_partition/pipeline_complete",
+      "comparison_id": "99e17a9830307beb043726deed2196d0c06a9825361eedfee83862835355defd",
+      "measured_executable_sha256": "9b68280ee523075a1a13074c6e71782070fcee2b3188e8eaddbbba96a81fc98d",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "9d9a8609ba3dac21ada5a3a2265f332650e57015408600cc5a3056a7c2e90dca",
+      "regenerated_rtl_sha256": "9d9a8609ba3dac21ada5a3a2265f332650e57015408600cc5a3056a7c2e90dca",
+      "evidence": "September 14 historical measurement"
+    },
+    {
+      "case": "dataflow/pipeline_partition",
+      "comparison_id": "131cfd2e26320489906cb4c1a19095b3b4accd78c202937ce3c2aaa58cd78ba9",
+      "measured_executable_sha256": "9b68280ee523075a1a13074c6e71782070fcee2b3188e8eaddbbba96a81fc98d",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "b08db1cd55f10639acf17f1957718f5d77e94f8e20e375658b3672d9c2927218",
+      "regenerated_rtl_sha256": "b08db1cd55f10639acf17f1957718f5d77e94f8e20e375658b3672d9c2927218",
+      "evidence": "September 14 historical measurement"
+    },
+    {
+      "case": "pipeline/ii1",
+      "comparison_id": "2b91fa601a5b17b762fcceb9aeb9b0b2347487f66495066d599812826b976bfe",
+      "measured_executable_sha256": "9b68280ee523075a1a13074c6e71782070fcee2b3188e8eaddbbba96a81fc98d",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "8493e85d4a1aa1e0bb00ba68d88ddb7cbfeef1a899d3f0dd7b00683404a55dfb",
+      "regenerated_rtl_sha256": "8493e85d4a1aa1e0bb00ba68d88ddb7cbfeef1a899d3f0dd7b00683404a55dfb",
+      "evidence": "September 14 historical measurement"
+    },
+    {
+      "case": "pipeline/memory_dependence",
+      "comparison_id": "44868be404bf6ca6050e99d8fca2f5cd383db5797a8cd01b1740c62088333087",
+      "measured_executable_sha256": "9b68280ee523075a1a13074c6e71782070fcee2b3188e8eaddbbba96a81fc98d",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "f42aee18f42bd0730db94429390e2395dfcd9a798d7be6a16c9b1a8e98cf7f44",
+      "regenerated_rtl_sha256": "f42aee18f42bd0730db94429390e2395dfcd9a798d7be6a16c9b1a8e98cf7f44",
+      "evidence": "September 14 historical measurement"
+    },
+    {
+      "case": "pipeline/memory_ii",
+      "comparison_id": "e33b4817a4a461be33c0233d2fec262c325fd7758d12bbddbdfd65b0e25b9f32",
+      "measured_executable_sha256": "9b68280ee523075a1a13074c6e71782070fcee2b3188e8eaddbbba96a81fc98d",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "40bd21123aa727708402ecf2bca015b441fbf0b38337f694128ea56e14b0b525",
+      "regenerated_rtl_sha256": "40bd21123aa727708402ecf2bca015b441fbf0b38337f694128ea56e14b0b525",
+      "evidence": "September 14 historical measurement"
+    },
+    {
+      "case": "pipeline/mixed_memory",
+      "comparison_id": "b69c34338ceaaab5b675e37357061d9cc3916b124966cb6c9b76644d11726b25",
+      "measured_executable_sha256": "9b68280ee523075a1a13074c6e71782070fcee2b3188e8eaddbbba96a81fc98d",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "e3c6ed7331d97c6dba2482729e6441445fad9f4bdc2aebe99f29fda5d3846cc4",
+      "regenerated_rtl_sha256": "e3c6ed7331d97c6dba2482729e6441445fad9f4bdc2aebe99f29fda5d3846cc4",
+      "evidence": "September 14 historical measurement"
+    },
+    {
+      "case": "pipeline/outer",
+      "comparison_id": "82d3524fa84769eeba28a866e7db4d8dc515951798f4461b512b8cc03e82c19c",
+      "measured_executable_sha256": "9b68280ee523075a1a13074c6e71782070fcee2b3188e8eaddbbba96a81fc98d",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "28319572fccbcd0c596eb2697b74c7a6c41fdf4f5179e831925017c06126e69a",
+      "regenerated_rtl_sha256": "28319572fccbcd0c596eb2697b74c7a6c41fdf4f5179e831925017c06126e69a",
+      "evidence": "September 14 historical measurement"
+    },
+    {
+      "case": "pipeline/recurrence",
+      "comparison_id": "933b4db7fc70847cb297d81cb8b65cbace307f218c1a019ef45e86ba2bd1647e",
+      "measured_executable_sha256": "9b68280ee523075a1a13074c6e71782070fcee2b3188e8eaddbbba96a81fc98d",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "ba17a6a5506303f2c4b5ffdd16c7eb7eac7aa8acf656a8743bf77932bb35a2da",
+      "regenerated_rtl_sha256": "ba17a6a5506303f2c4b5ffdd16c7eb7eac7aa8acf656a8743bf77932bb35a2da",
+      "evidence": "September 14 historical measurement"
+    },
+    {
+      "case": "array_partition/complete_rw",
+      "comparison_id": "e99583244b7a556997d717befdc6c5bba43255e6c9ac39607c747ea46c835432",
+      "measured_executable_sha256": "573bb5db3a93fdbc88471d6e98d798235112cc8c9e4715c213364cf81853b6e8",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "6e217669da0b729d93d2623ba35af7bd412e6b60204df98d0231db92cb90f7bc",
+      "regenerated_rtl_sha256": "6e217669da0b729d93d2623ba35af7bd412e6b60204df98d0231db92cb90f7bc",
+      "evidence": "This checkpoint, entry candidate measurement"
+    },
+    {
+      "case": "array_partition/local",
+      "comparison_id": "981f48f7a2e7ac26d212643ae3814e0f04e1202d45fa5c4a27d153cd9da3963a",
+      "measured_executable_sha256": "573bb5db3a93fdbc88471d6e98d798235112cc8c9e4715c213364cf81853b6e8",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "976121508378844dcf6e036553ab7b5545ad5fcaee08ae0fa49d30956aa2d624",
+      "regenerated_rtl_sha256": "976121508378844dcf6e036553ab7b5545ad5fcaee08ae0fa49d30956aa2d624",
+      "evidence": "This checkpoint, entry candidate measurement"
+    },
+    {
+      "case": "dataflow/fifo_stream",
+      "comparison_id": "b1c453ff8449e147fb62977db6b07ea0a0d878785d536a251c6d9ef58fcc212e",
+      "measured_executable_sha256": "573bb5db3a93fdbc88471d6e98d798235112cc8c9e4715c213364cf81853b6e8",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "00efc16f8399321308571e210fe6b8847a81a815ab58230d90ad78090cd775d7",
+      "regenerated_rtl_sha256": "00efc16f8399321308571e210fe6b8847a81a815ab58230d90ad78090cd775d7",
+      "evidence": "This checkpoint, entry candidate measurement"
+    },
+    {
+      "case": "dataflow/pipo_array",
+      "comparison_id": "8e0ee94859aed7a6020ea7175e266c96a51b9777494ed1e1d083a6fa1c8d9dab",
+      "measured_executable_sha256": "573bb5db3a93fdbc88471d6e98d798235112cc8c9e4715c213364cf81853b6e8",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "b3107e7b2bf9af70aad8f4a71f62564f4451280812909daf98892a636ab1658a",
+      "regenerated_rtl_sha256": "b3107e7b2bf9af70aad8f4a71f62564f4451280812909daf98892a636ab1658a",
+      "evidence": "This checkpoint, entry candidate measurement"
+    },
+    {
+      "case": "dataflow_nested",
+      "comparison_id": "5ba74833365a4e01c1900ed0dbf93296fca3bb7ad8bbda0b3c08de0bd9b85eb0",
+      "measured_executable_sha256": "573bb5db3a93fdbc88471d6e98d798235112cc8c9e4715c213364cf81853b6e8",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "bbd1b80a6e606c4fae6267a64e90bc674dc69bd35e47e049031ee2f0beffd339",
+      "regenerated_rtl_sha256": "bbd1b80a6e606c4fae6267a64e90bc674dc69bd35e47e049031ee2f0beffd339",
+      "evidence": "This checkpoint, entry candidate measurement"
+    },
+    {
+      "case": "pipeline/inner",
+      "comparison_id": "d5a43b62138d2761bd476453475f95519db7491ba410d5de9cd39ed0cf54fd1d",
+      "measured_executable_sha256": "573bb5db3a93fdbc88471d6e98d798235112cc8c9e4715c213364cf81853b6e8",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "233ee0f4e48690067eb308a7ce04ea966fdc1083a80bbd780a829c014429e1bf",
+      "regenerated_rtl_sha256": "233ee0f4e48690067eb308a7ce04ea966fdc1083a80bbd780a829c014429e1bf",
+      "evidence": "This checkpoint, entry candidate measurement"
+    },
+    {
+      "case": "private",
+      "comparison_id": "73f3b921016aaa0ad38261be0643c5722e6b6b1fdd746797d335ded4375f9b80",
+      "measured_executable_sha256": "573bb5db3a93fdbc88471d6e98d798235112cc8c9e4715c213364cf81853b6e8",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "37529054926937a665c8a913e223c2844a3ce8bf35f63b07a8cfbfd04cd4bbae",
+      "regenerated_rtl_sha256": "37529054926937a665c8a913e223c2844a3ce8bf35f63b07a8cfbfd04cd4bbae",
+      "evidence": "This checkpoint, entry candidate measurement"
+    },
+    {
+      "case": "scalar",
+      "comparison_id": "3c5b9018b53610c1301ed37399797f243dcadaa4fa06466cddf7a1080c5f828d",
+      "measured_executable_sha256": "d0b0d06f0be9d11446e5257f9cad9b5ea4412902faa96bbf5052e4d6b00eea25",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "9a43973d5e10c9d6872058454bdbd780316a391bb8c577df501284e793643bbd",
+      "regenerated_rtl_sha256": "9a43973d5e10c9d6872058454bdbd780316a391bb8c577df501284e793643bbd",
+      "evidence": "This checkpoint, release executable measurement"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+Light-HLS Unified Local Regression
+
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+
+| Suite                        | Status   | Runtime (s)  | Script SHA256    | Log                                                     |
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+
+| AppCorrectness               | PASS     | 7.035557     | fd31e7a5f00cd0fc | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| RTL_Backend                  | PASS     | 1.669486     | 9c10edc59c92514d | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| PipelineBackend              | PASS     | 1.418464     | 1e72af514281a249 | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| PipelineStorage              | PASS     | 1.870025     | be47ce1012a6bbfa | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| ArrayPartitionBackend        | PASS     | 1.418433     | aa96771d07abf904 | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| OrdinaryBankAnalysis         | PASS     | 4.78042      | 07c6b1e919716c49 | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| LocalWriteData               | PASS     | 2.42067      | 07c6b1e919716c49 | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| FIFOEvents                   | PASS     | 5.180779     | 87e7673ea19bc9dc | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| OrdinaryFeedback             | PASS     | 4.177577     | 7a4ff0bacb1987dd | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| OrdinaryBackedge             | PASS     | 6.234993     | da267ec51fbf787c | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| OrdinaryLoopEdges            | PASS     | 4.779657     | d89a2237695bcfa2 | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| TransactionEdges             | PASS     | 1.969553     | 340052d2808c7881 | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| ScalarBankEvents             | PASS     | 2.572293     | b86eba8a492712d2 | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| ScalarReturns                | PASS     | 1.56851      | 1294b9622bd0b373 | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| PIPOBanks                    | PASS     | 0.966872     | e1dc03b8d1b423e1 | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| BindingCost                  | PASS     | 1.56852      | 2198f230d041f18d | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| QoRPressure                  | PASS     | 8.790401     | 82f0a9361936d78b | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| BankConflict                 | PASS     | 35.687672    | 4373105016a04d09 | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| ArithmeticMapping            | PASS     | 0.365006     | d5f0e22060394650 | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| DataflowCompletion           | PASS     | 1.117245     | ef9d6783f15e94e5 | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| StorageBindingBackend        | PASS     | 0.214233     | d1f3e60b11fd09ea | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| DataflowBackend              | PASS     | 3.272499     | 1b464099a4ce8402 | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| FairComparisonInterface      | PASS     | 0.06412      | ee70546062d906f1 | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| AppCapability                | PASS     | 15.013354    | e1b101b2b74f1cac | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| FairComparisonQoR            | PASS     | 0.031847     | 03cf3a9a1059d072 | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| TransactionEventMetrics      | PASS     | 0.031699     | 44ae1602b29e1431 | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
+| EvaluationContract           | PASS     | 0.063877     | 1e482f2fdddad2ee | /tmp/lighthls-correctness-20260929.kZl9Xq/release-ve... |
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+

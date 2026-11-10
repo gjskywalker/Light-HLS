@@ -1,0 +1,20 @@
+Light-HLS Unified Local Regression
+
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+
+| Suite                        | Status   | Runtime (s)  | Script SHA256    | Log                                                     |
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+
+| AppCorrectness               | PASS     | 7.481344     | bc9bca0b5a23cf7a | /tmp/lighthls-feedback-qor-20260921.5am2BK/regressio... |
+| RTL_Backend                  | PASS     | 1.522263     | 2efc8e1d603b2805 | /tmp/lighthls-feedback-qor-20260921.5am2BK/regressio... |
+| PipelineBackend              | PASS     | 1.269156     | 1e72af514281a249 | /tmp/lighthls-feedback-qor-20260921.5am2BK/regressio... |
+| PipelineStorage              | PASS     | 1.518573     | fa2e0cfeced688a7 | /tmp/lighthls-feedback-qor-20260921.5am2BK/regressio... |
+| ArrayPartitionBackend        | PASS     | 1.167181     | aa96771d07abf904 | /tmp/lighthls-feedback-qor-20260921.5am2BK/regressio... |
+| OrdinaryBankAnalysis         | PASS     | 4.756094     | 07c6b1e919716c49 | /tmp/lighthls-feedback-qor-20260921.5am2BK/regressio... |
+| LocalWriteData               | PASS     | 2.328814     | 07c6b1e919716c49 | /tmp/lighthls-feedback-qor-20260921.5am2BK/regressio... |
+| FIFOEvents                   | PASS     | 3.729042     | b1b40f025149c208 | /tmp/lighthls-feedback-qor-20260921.5am2BK/regressio... |
+| OrdinaryFeedback             | PASS     | 4.00139      | 7a4ff0bacb1987dd | /tmp/lighthls-feedback-qor-20260921.5am2BK/regressio... |
+| StorageBindingBackend        | PASS     | 0.214881     | d1f3e60b11fd09ea | /tmp/lighthls-feedback-qor-20260921.5am2BK/regressio... |
+| DataflowBackend              | PASS     | 3.021822     | 5d9dc84e5a6f03df | /tmp/lighthls-feedback-qor-20260921.5am2BK/regressio... |
+| FairComparisonInterface      | PASS     | 0.034717     | ee70546062d906f1 | /tmp/lighthls-feedback-qor-20260921.5am2BK/regressio... |
+| AppCapability                | PASS     | 15.122973    | e1b101b2b74f1cac | /tmp/lighthls-feedback-qor-20260921.5am2BK/regressio... |
+| FairComparisonQoR            | PASS     | 0.034524     | 03cf3a9a1059d072 | /tmp/lighthls-feedback-qor-20260921.5am2BK/regressio... |
++------------------------------+----------+--------------+------------------+---------------------------------------------------------+

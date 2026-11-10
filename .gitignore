@@ -1,0 +1,37 @@
+# Local agent configuration
+/.agents/
+/.aws/
+/.codex/
+/.vscode/
+
+# Reproducible builds and generated RTL/experiment outputs
+build/
+build_*/
+build-*/
+*.o
+*.a
+*.so
+*.bc
+*.vvp
+*.vcd
+*.wdb
+*.jou
+*.pb
+compile_commands.json
+# Historical generated files copied alongside upstream sources
+/Light_HLS/Implementations/HI_MuxInsertionArrayPartition/Makefile
+/Light_HLS/Implementations/HI_NoDirectiveTimingResourceEvaluation/Makefile
+/Light_HLS/App/2dloop2darray_pl_apint/test
+/Light_HLS/output/
+/runs/
+reports/
+.lighthls/
+.Xil/
+xsim.dir/
+
+# Python caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Keep regression runners, fixtures, board data, and archived evidence versioned.

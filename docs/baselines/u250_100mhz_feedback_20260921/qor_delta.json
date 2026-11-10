@@ -1,0 +1,210 @@
+{
+  "schema_version": "1.0",
+  "valid": true,
+  "stage": "u250_checkpoint_qor_change_audit",
+  "counts": {
+    "improved": 6
+  },
+  "all_timing_met": true,
+  "no_metric_regressions": true,
+  "cases": [
+    {
+      "suite": "array_partition",
+      "case": "backend_array_partition_complete_rw",
+      "status": "improved",
+      "before": {
+        "cycles": 15.0,
+        "lut": 207,
+        "ff": 47,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 15.0,
+        "lut": 203,
+        "ff": 42,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": -4,
+        "ff": -5,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "lut",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 9.264
+    },
+    {
+      "suite": "array_partition",
+      "case": "backend_array_partition_local",
+      "status": "improved",
+      "before": {
+        "cycles": 43.0,
+        "lut": 297,
+        "ff": 181,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 43.0,
+        "lut": 278,
+        "ff": 153,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": -19,
+        "ff": -28,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "lut",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.737
+    },
+    {
+      "suite": "dataflow",
+      "case": "vector_stream_dataflow",
+      "status": "improved",
+      "before": {
+        "cycles": 136.0,
+        "lut": 214,
+        "ff": 172,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 136.0,
+        "lut": 204,
+        "ff": 139,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": -10,
+        "ff": -33,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "lut",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.687
+    },
+    {
+      "suite": "dataflow",
+      "case": "vector_array_dataflow",
+      "status": "improved",
+      "before": {
+        "cycles": 393.0,
+        "lut": 375,
+        "ff": 279,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 393.0,
+        "lut": 360,
+        "ff": 222,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": -15,
+        "ff": -57,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "lut",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.703
+    },
+    {
+      "suite": "scalar",
+      "case": "backend_scalar",
+      "status": "improved",
+      "before": {
+        "cycles": 15.0,
+        "lut": 157,
+        "ff": 269,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 15.0,
+        "lut": 156,
+        "ff": 266,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": -1,
+        "ff": -3,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "lut",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.129
+    },
+    {
+      "suite": "private",
+      "case": "local_dataflow",
+      "status": "improved",
+      "before": {
+        "cycles": 760.0,
+        "lut": 354,
+        "ff": 522,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 760.0,
+        "lut": 345,
+        "ff": 510,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": -9,
+        "ff": -12,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "lut",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.717
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Tue Sep 29 13:34:53 2026
+| Host         : EE4F089 running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_drc -file /tmp/lighthls-correctness-20260929.kZl9Xq/final-dataflow-250/vitis_hls_context/route_drc.rpt
+| Design       : registered_pressure_shell
+| Device       : xcu250-figd2104-2L-e
+| Speed File   : -2L
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: registered_pressure_shell
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max checks: <unlimited>
+             Checks found: 1
++-----------+----------+-------------------+--------+
+| Rule      | Severity | Description       | Checks |
++-----------+----------+-------------------+--------+
+| RTSTAT-10 | Warning  | No routable loads | 1      |
++-----------+----------+-------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+RTSTAT-10#1 Warning
+No routable loads  
+69 net(s) have no routable loads. The problem bus(es) and/or net(s) are input_r_q0[17], input_r_q0[18], input_r_q0[19], input_r_q0[20],
+input_r_q0[21], input_r_q0[22], input_r_q0[23], input_r_q0[24],
+input_r_q0[25], input_r_q0[26], input_r_q0[27], input_r_q0[28],
+input_r_q0[29], input_r_q0[30], input_r_q0[31]
+ (the first 15 of 16 listed nets/buses).
+Related violations: <none>
+
+

@@ -1,0 +1,49 @@
+{
+  "valid": true,
+  "results": [
+    {
+      "case": "constant_phi",
+      "valid": true,
+      "calls": 64,
+      "total_cycles": 2048
+    },
+    {
+      "case": "argument_phi",
+      "valid": true,
+      "calls": 64,
+      "total_cycles": 2112
+    },
+    {
+      "case": "zero_trip",
+      "valid": true,
+      "calls": 64,
+      "total_cycles": 1088
+    },
+    {
+      "case": "early_exit",
+      "valid": true,
+      "calls": 64,
+      "total_cycles": 1088
+    },
+    {
+      "case": "signed_constant_shift",
+      "valid": true,
+      "calls": 64,
+      "total_cycles": 2048
+    },
+    {
+      "case": "dynamic_shift",
+      "valid": true,
+      "calls": 64,
+      "total_cycles": 2112
+    }
+  ],
+  "calls": 384,
+  "executable_sha256": "d0b0d06f0be9d11446e5257f9cad9b5ea4412902faa96bbf5052e4d6b00eea25",
+  "test_sources_sha256": {
+    "README.md": "aad9bd6346a2a22e2b7db734ef483c11f5c0ef423f87e8c8c3adf064d395a63c",
+    "edges.cpp": "be2fe3496c0a604b40f7d59678498f843dfdbab00d3f1eedaa1bebee2bb3be55",
+    "edges_tb.v": "4398c00b448d8b99e4646e55471cc10493356b5d0cebe47de34c9ff41640ba9b",
+    "run_tests.py": "c199a49d103d3426a4c99c1868667f4036209df3fc4142177e5df0618c7c4605"
+  }
+}

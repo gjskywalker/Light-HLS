@@ -1,0 +1,10 @@
+{
+  "valid": true,
+  "random_proofs": 20000,
+  "latency_two_calls": 8,
+  "frequency_mhz": 250,
+  "intervals": [
+    1,
+    1
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "valid": true,
+  "executable_sha256": "6e4900d66e2009fafd99558653b72159eda880d571cc061451780d5cd9f8bfc3",
+  "stream_header_sha256": "451d510379d8e869a611be66d23c617e82588adc3dadab374021f3b2320f7090",
+  "test_sources_sha256": {
+    "README.md": "0af5d58d42c4dc977152854858e9ff5ea9a35d29b59c88d7159525ca30127d97",
+    "events.cpp": "2e16036e09b762c14e0ce9b9e9a663dd83b17e9d6e06868e5b6770c39f7acd6e",
+    "events_tb.v": "57385f6c7c0dc02906c57622861bef3c1a50209677583524e4210d59c8a3dc80",
+    "run_tests.py": "87e7673ea19bc9dcaba6e3b57d62d3ac22110209f9008334c3df01fe91f9ad4d",
+    "stall_driver.v": "1fce4186e1256e6e202abaa9a9430718cf5b6d4f242c3e0da1e35f5141187f04"
+  },
+  "historical_reproducer_sha256": "0990c2ff707f5a619a9ee3035b76b293bf791a0df71d45e81c17f272c37379ae",
+  "calls": 384,
+  "outputs": 6144,
+  "injected_stall_calls": 384,
+  "injected_stall_outputs": 6144,
+  "negative_cases": [
+    "volatile_memory",
+    "volatile_memory_in_fifo_task"
+  ],
+  "results": [
+    {
+      "case": "ordinary_depth1",
+      "valid": true,
+      "source_sha256": "2e16036e09b762c14e0ce9b9e9a663dd83b17e9d6e06868e5b6770c39f7acd6e",
+      "calls": 64,
+      "outputs": 1024,
+      "channel_rates": {
+        "tokens": 64
+      },
+      "injected_stall_calls": 64,
+      "injected_stall_outputs": 1024,
+      "volatile_event_counts": {
+        "top.bc": 8,
+        "top_output_PM0.bc": 8,
+        "top_output_PM1.bc": 8,
+        "top_output_PM2.bc": 8,
+        "top_output_PM4.bc": 8,
+        "top_output.bc": 8
+      }
+    },
+    {
+      "case": "ordinary_depth4",
+      "valid": true,
+      "source_sha256": "11d72e646fc3be9d33e708cd40710997956433f308f6d430ac7904da7eed97cf",
+      "calls": 64,
+      "outputs": 1024,
+      "channel_rates": {
+        "tokens": 64
+      },
+      "injected_stall_calls": 64,
+      "injected_stall_outputs": 1024,
+      "volatile_event_counts": {
+        "top.bc": 8,
+        "top_output_PM0.bc": 8,
+        "top_output_PM1.bc": 8,
+        "top_output_PM2.bc": 8,
+        "top_output_PM4.bc": 8,
+        "top_output.bc": 8
+      }
+    },
+    {
+      "case": "ordinary_depth3",
+      "valid": true,
+      "source_sha256": "a5cf15dd2b73a387cb740ca2cc5f7033998b716b8caa4adec72792289f3e78d8",
+      "calls": 64,
+      "outputs": 1024,
+      "channel_rates": {
+        "tokens": 64
+      },
+      "injected_stall_calls": 64,
+      "injected_stall_outputs": 1024,
+      "volatile_event_counts": {
+        "top.bc": 8,
+        "top_output_PM0.bc": 8,
+        "top_output_PM1.bc": 8,
+        "top_output_PM2.bc": 8,
+        "top_output_PM4.bc": 8,
+        "top_output.bc": 8
+      }
+    },
+    {
+      "case": "pipeline_depth1",
+      "valid": true,
+      "source_sha256": "b3dc3fdcfa64bb67033d13b9693afabc424119cb054b4835b865aeebd4ae509d",
+      "calls": 64,
+      "outputs": 1024,
+      "channel_rates": {
+        "tokens": 64
+      },
+      "injected_stall_calls": 64,
+      "injected_stall_outputs": 1024,
+      "volatile_event_counts": {
+        "top.bc": 8,
+        "top_output_PM0.bc": 8,
+        "top_output_PM1.bc": 8,
+        "top_output_PM2.bc": 8,
+        "top_output_PM4.bc": 8,
+        "top_output.bc": 8
+      }
+    },
+    {
+      "case": "unroll2_depth1",
+      "valid": true,
+      "source_sha256": "245a9736c6ed719a301f7157c5a910544188af4eea076c463c102151e9f12f08",
+      "calls": 64,
+      "outputs": 1024,
+      "channel_rates": {
+        "tokens": 64
+      },
+      "injected_stall_calls": 64,
+      "injected_stall_outputs": 1024,
+      "volatile_event_counts": {
+        "top.bc": 8,
+        "top_output_PM0.bc": 8,
+        "top_output_PM1.bc": 16,
+        "top_output_PM2.bc": 16,
+        "top_output_PM4.bc": 16,
+        "top_output.bc": 16
+      }
+    },
+    {
+      "case": "private_buffer",
+      "valid": true,
+      "source_sha256": "0990c2ff707f5a619a9ee3035b76b293bf791a0df71d45e81c17f272c37379ae",
+      "calls": 64,
+      "outputs": 1024,
+      "channel_rates": {
+        "loaded": 32,
+        "computed": 16
+      },
+      "injected_stall_calls": 64,
+      "injected_stall_outputs": 1024,
+      "volatile_event_counts": {
+        "top.bc": 4,
+        "top_output_PM0.bc": 4,
+        "top_output_PM1.bc": 4,
+        "top_output_PM2.bc": 4,
+        "top_output_PM4.bc": 4,
+        "top_output.bc": 4
+      }
+    }
+  ]
+}

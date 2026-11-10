@@ -1,0 +1,175 @@
+{
+  "valid": true,
+  "results": [
+    {
+      "case": "nested",
+      "read_latency": 1,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 13440,
+      "baseline_total_cycles": 21632
+    },
+    {
+      "case": "nested",
+      "read_latency": 2,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 15488,
+      "baseline_total_cycles": 23680
+    },
+    {
+      "case": "dynamic_trip",
+      "read_latency": 1,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 9856,
+      "baseline_total_cycles": 14464
+    },
+    {
+      "case": "dynamic_trip",
+      "read_latency": 2,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 11904,
+      "baseline_total_cycles": 16512
+    },
+    {
+      "case": "simultaneous",
+      "read_latency": 1,
+      "valid": true,
+      "bypasses": 2,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 13440,
+      "baseline_total_cycles": 21632
+    },
+    {
+      "case": "simultaneous",
+      "read_latency": 2,
+      "valid": true,
+      "bypasses": 2,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 15488,
+      "baseline_total_cycles": 23680
+    },
+    {
+      "case": "load_dependent",
+      "read_latency": 1,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 21632,
+      "baseline_total_cycles": 29824
+    },
+    {
+      "case": "load_dependent",
+      "read_latency": 2,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 40064,
+      "baseline_total_cycles": 48256
+    },
+    {
+      "case": "late_transition",
+      "read_latency": 1,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 21632,
+      "baseline_total_cycles": 29824
+    },
+    {
+      "case": "late_transition",
+      "read_latency": 2,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 40064,
+      "baseline_total_cycles": 48256
+    },
+    {
+      "case": "pipeline",
+      "read_latency": 1,
+      "valid": true,
+      "bypasses": 0,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 14464,
+      "baseline_total_cycles": 14464
+    },
+    {
+      "case": "pipeline",
+      "read_latency": 2,
+      "valid": true,
+      "bypasses": 0,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 16512,
+      "baseline_total_cycles": 16512
+    },
+    {
+      "case": "narrow",
+      "read_latency": 1,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 21632,
+      "baseline_skipped_reason": "Prior compiler emits invalid cross-block integer IR"
+    },
+    {
+      "case": "narrow",
+      "read_latency": 2,
+      "valid": true,
+      "bypasses": 1,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 23680,
+      "baseline_skipped_reason": "Prior compiler emits invalid cross-block integer IR"
+    },
+    {
+      "case": "multicycle",
+      "read_latency": 1,
+      "valid": true,
+      "bypasses": 0,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 300160,
+      "baseline_total_cycles": 300160
+    },
+    {
+      "case": "multicycle",
+      "read_latency": 2,
+      "valid": true,
+      "bypasses": 0,
+      "calls": 64,
+      "outputs": 1024,
+      "total_cycles": 302208,
+      "baseline_total_cycles": 302208
+    }
+  ],
+  "calls": 1024,
+  "outputs": 16384,
+  "executable_sha256": "8db9a9f74bb67e570154bc242a0ec9d5e0cdbe8023b64fe5bac9728c2ae6e5c8",
+  "test_sources_sha256": {
+    "README.md": "f610a5c1e17a5dc5ffd0f559236bc6e43aa812370ac7fc6a0b0c25cd1aba71d2",
+    "recurrence.cpp": "69577cfb98a8de9eefb27b1b6fcf5707987f7a969c7131c289f7cfb2728c28f3",
+    "recurrence_tb.v": "862ebe6149348a5e6619a91c1b8608b3c103f12d41a416cec3bf468371d72979",
+    "run_tests.py": "23eac8fdb13e8a57168f9a13ac732f8baccf798cda145f47a1c85231085db260"
+  },
+  "baseline_executable_sha256": "068c78311810d08048ca0c49f867186cf628e426bcecc7852a72f75b6444daff"
+}

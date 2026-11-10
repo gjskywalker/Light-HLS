@@ -1,0 +1,677 @@
+{
+  "schema_version": "1.0",
+  "valid": true,
+  "stage": "u250_checkpoint_qor_change_audit",
+  "counts": {
+    "unchanged": 11,
+    "improved": 7,
+    "tradeoff": 3
+  },
+  "all_timing_met": true,
+  "no_metric_regressions": false,
+  "cases": [
+    {
+      "suite": "array_partition/block",
+      "case": "backend_array_partition_block",
+      "status": "unchanged",
+      "before": {
+        "cycles": 6.0,
+        "lut": 121,
+        "ff": 12,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 6.0,
+        "lut": 121,
+        "ff": 12,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": 0,
+        "ff": 0,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 9.012
+    },
+    {
+      "suite": "array_partition/complete",
+      "case": "backend_array_partition_complete",
+      "status": "unchanged",
+      "before": {
+        "cycles": 2.0,
+        "lut": 109,
+        "ff": 3,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 2.0,
+        "lut": 109,
+        "ff": 3,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": 0,
+        "ff": 0,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 9.607
+    },
+    {
+      "suite": "array_partition/complete_rw",
+      "case": "backend_array_partition_complete_rw",
+      "status": "unchanged",
+      "before": {
+        "cycles": 5.0,
+        "lut": 164,
+        "ff": 10,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 5.0,
+        "lut": 164,
+        "ff": 10,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": 0,
+        "ff": 0,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 9.324
+    },
+    {
+      "suite": "array_partition/cyclic",
+      "case": "backend_array_partition_cyclic",
+      "status": "unchanged",
+      "before": {
+        "cycles": 6.0,
+        "lut": 121,
+        "ff": 12,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 6.0,
+        "lut": 121,
+        "ff": 12,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": 0,
+        "ff": 0,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 9.012
+    },
+    {
+      "suite": "array_partition/local",
+      "case": "backend_array_partition_local",
+      "status": "unchanged",
+      "before": {
+        "cycles": 41.0,
+        "lut": 275,
+        "ff": 155,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 41.0,
+        "lut": 275,
+        "ff": 155,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": 0,
+        "ff": 0,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.895
+    },
+    {
+      "suite": "array_partition/multidim",
+      "case": "backend_array_partition_multidim",
+      "status": "unchanged",
+      "before": {
+        "cycles": 3.0,
+        "lut": 166,
+        "ff": 7,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 3.0,
+        "lut": 166,
+        "ff": 7,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": 0,
+        "ff": 0,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 9.362
+    },
+    {
+      "suite": "array_partition/multidim_cyclic",
+      "case": "backend_array_partition_multidim_cyclic",
+      "status": "improved",
+      "before": {
+        "cycles": 6.0,
+        "lut": 128,
+        "ff": 79,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 6.0,
+        "lut": 122,
+        "ff": 76,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": -6,
+        "ff": -3,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "lut",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 9.266
+    },
+    {
+      "suite": "array_partition/pipeline_complete",
+      "case": "backend_array_partition_pipeline_complete",
+      "status": "unchanged",
+      "before": {
+        "cycles": 5.0,
+        "lut": 89,
+        "ff": 9,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 5.0,
+        "lut": 89,
+        "ff": 9,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": 0,
+        "ff": 0,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 9.012
+    },
+    {
+      "suite": "dataflow/fifo_stream",
+      "case": "vector_stream_dataflow",
+      "status": "improved",
+      "before": {
+        "cycles": 132.0,
+        "lut": 198,
+        "ff": 64,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 131.0,
+        "lut": 198,
+        "ff": 63,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -1.0,
+        "lut": 0,
+        "ff": -1,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.295
+    },
+    {
+      "suite": "dataflow/pipeline_partition",
+      "case": "vector_pipeline_partition_dataflow",
+      "status": "tradeoff",
+      "before": {
+        "cycles": 37.0,
+        "lut": 233,
+        "ff": 174,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 36.0,
+        "lut": 234,
+        "ff": 173,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -1.0,
+        "lut": 1,
+        "ff": -1,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "ff"
+      ],
+      "worsened_metrics": [
+        "lut"
+      ],
+      "timing_met": true,
+      "worst_slack_ns": 8.619
+    },
+    {
+      "suite": "dataflow/pipo_array",
+      "case": "vector_array_dataflow",
+      "status": "improved",
+      "before": {
+        "cycles": 387.0,
+        "lut": 337,
+        "ff": 149,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 386.0,
+        "lut": 337,
+        "ff": 148,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -1.0,
+        "lut": 0,
+        "ff": -1,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.659
+    },
+    {
+      "suite": "dataflow_nested",
+      "case": "vector_pipeline_partition_dataflow",
+      "status": "improved",
+      "before": {
+        "cycles": 39.0,
+        "lut": 238,
+        "ff": 176,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 38.0,
+        "lut": 238,
+        "ff": 175,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -1.0,
+        "lut": 0,
+        "ff": -1,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.616
+    },
+    {
+      "suite": "pipeline/ii1",
+      "case": "backend_pipeline",
+      "status": "unchanged",
+      "before": {
+        "cycles": 18.0,
+        "lut": 34,
+        "ff": 18,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 18.0,
+        "lut": 34,
+        "ff": 18,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": 0,
+        "ff": 0,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.903
+    },
+    {
+      "suite": "pipeline/inner",
+      "case": "backend_pipeline_inner",
+      "status": "unchanged",
+      "before": {
+        "cycles": 20.0,
+        "lut": 36,
+        "ff": 20,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 20.0,
+        "lut": 36,
+        "ff": 20,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": 0,
+        "ff": 0,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.972
+    },
+    {
+      "suite": "pipeline/memory_dependence",
+      "case": "backend_pipeline_memory_dependence",
+      "status": "unchanged",
+      "before": {
+        "cycles": 32.0,
+        "lut": 56,
+        "ff": 23,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 32.0,
+        "lut": 56,
+        "ff": 23,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": 0,
+        "ff": 0,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 9.047
+    },
+    {
+      "suite": "pipeline/memory_ii",
+      "case": "backend_pipeline_memii",
+      "status": "improved",
+      "before": {
+        "cycles": 34.0,
+        "lut": 75,
+        "ff": 56,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 34.0,
+        "lut": 70,
+        "ff": 56,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": -5,
+        "ff": 0,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "lut"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.815
+    },
+    {
+      "suite": "pipeline/mixed_memory",
+      "case": "backend_pipeline_mixed_memory",
+      "status": "improved",
+      "before": {
+        "cycles": 17.0,
+        "lut": 36,
+        "ff": 19,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 17.0,
+        "lut": 36,
+        "ff": 16,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": 0,
+        "ff": -3,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.969
+    },
+    {
+      "suite": "pipeline/outer",
+      "case": "backend_pipeline_outer",
+      "status": "improved",
+      "before": {
+        "cycles": 18.0,
+        "lut": 63,
+        "ff": 23,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 18.0,
+        "lut": 55,
+        "ff": 23,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": -8,
+        "ff": 0,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "lut"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 9.063
+    },
+    {
+      "suite": "pipeline/recurrence",
+      "case": "backend_pipeline_recurrence",
+      "status": "tradeoff",
+      "before": {
+        "cycles": 19.0,
+        "lut": 49,
+        "ff": 87,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 18.0,
+        "lut": 51,
+        "ff": 80,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -1.0,
+        "lut": 2,
+        "ff": -7,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "ff"
+      ],
+      "worsened_metrics": [
+        "lut"
+      ],
+      "timing_met": true,
+      "worst_slack_ns": 9.007
+    },
+    {
+      "suite": "private",
+      "case": "local_dataflow",
+      "status": "tradeoff",
+      "before": {
+        "cycles": 391.0,
+        "lut": 300,
+        "ff": 324,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 390.0,
+        "lut": 310,
+        "ff": 330,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -1.0,
+        "lut": 10,
+        "ff": 6,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles"
+      ],
+      "worsened_metrics": [
+        "lut",
+        "ff"
+      ],
+      "timing_met": true,
+      "worst_slack_ns": 8.55
+    },
+    {
+      "suite": "scalar",
+      "case": "backend_scalar",
+      "status": "unchanged",
+      "before": {
+        "cycles": 4.0,
+        "lut": 137,
+        "ff": 135,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 4.0,
+        "lut": 137,
+        "ff": 135,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": 0.0,
+        "lut": 0,
+        "ff": 0,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.118
+    }
+  ]
+}

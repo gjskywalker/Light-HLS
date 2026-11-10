@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0",
+  "stage": "measured_rtl_identity_audit",
+  "valid": true,
+  "light_hls_executable_sha256": "8c03681db4a57cfa4ed67ddd3df5cfaea04564a4b32c115897918fa915053eeb",
+  "measurements_rewritten": false,
+  "cases": [
+    {
+      "case": "private",
+      "comparison_id": "2b64d0ced1af320bfb7619128fbca3c439432e695c467e2c6b332c38a2e29257",
+      "measured_executable_sha256": "8c03681db4a57cfa4ed67ddd3df5cfaea04564a4b32c115897918fa915053eeb",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "7dd5e5226e3add559b9644e60d667201cf542d8cb25cf9074ea6b15505cbe290",
+      "regenerated_rtl_sha256": "7dd5e5226e3add559b9644e60d667201cf542d8cb25cf9074ea6b15505cbe290"
+    }
+  ]
+}

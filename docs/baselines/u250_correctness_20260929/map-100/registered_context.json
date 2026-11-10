@@ -1,0 +1,138 @@
+{
+  "valid": true,
+  "physical_valid": true,
+  "flow_id": "vivado_registered_pressure_context_v1",
+  "scope": "Closed on-chip pressure harness with a routed BUFG, registered scalar source, one-cycle RAM response, and retained output observers; not board IO signoff",
+  "baseline_comparison_sha256": "8ec76b563c9a3268924d9935a7624a426c3c3ea40d5a75a276390a377f9803a2",
+  "source_sha256": "1386f273980d13fc7f56a7bb072fff224a616bbed05b9201fc6f584c8e95b4a3",
+  "compiler_sha256": "3339196986828e95536405f2ff438b1ba7b464000829c45b17a3e66e33977f95",
+  "part": "xcu250-figd2104-2L-e",
+  "clock_period_ns": 10.0,
+  "source": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/QoRPressure/dsp_map.cpp",
+  "output": "/tmp/lighthls-correctness-20260929.kZl9Xq/final-map-100",
+  "results": {
+    "light_hls": {
+      "functional_valid": true,
+      "reference_outputs": 8192,
+      "rtl_sha256": {
+        "/tmp/lighthls-correctness-20260929.kZl9Xq/final-map-100/light_hls/reports/rtl/top.v": "53985c89051a93d230407a3db6a211476b36ab6d0b840173eab7aa29e47104aa",
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-map-100-v3/interface_normalization/light_hls/normalized_wrapper.v": "3bc40ae5ab6ec73cbc6ff992ce9d00519481ad7ec63d06df6b90cd25f4e022dd",
+        "/tmp/lighthls-correctness-20260929.kZl9Xq/final-map-100/registered_shell.v": "d137e2cb01986e03a60bc826e9f41b118a97c26f8ae92aac9152bf7cad688210"
+      },
+      "post_route": {
+        "valid": true,
+        "qor_kind": "measured_registered_context",
+        "tool": "vivado",
+        "tool_version": "2025.2",
+        "part": "xcu250-figd2104-2L-e",
+        "flow_id": "vivado_registered_pressure_context_v1",
+        "runtime_seconds": 603.6008793759975,
+        "resources": {
+          "lut": 77,
+          "ff": 158,
+          "dsp": 1,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "constraints_before_synthesis": true,
+          "worst_slack_ns": 7.411,
+          "critical_path_delay_ns": 2.589,
+          "critical_path_delay_note": "Period minus routed WNS in the closed registered context; not a frequency sweep or board Fmax",
+          "worst_hold_slack_ns": 0.035
+        },
+        "interface_signature": [
+          "ap_clk|IN|1"
+        ],
+        "clock_scope": "Closed on-chip pressure harness with a routed BUFG, registered scalar source, one-cycle RAM response, and retained output observers; not board IO signoff",
+        "unrouted_nets": 0,
+        "routing_errors": 0,
+        "timing_coverage": {
+          "no_clock": 0,
+          "unconstrained_internal_endpoints": 0,
+          "no_input_delay": 0,
+          "no_output_delay": 0,
+          "partial_input_delay": 0,
+          "partial_output_delay": 0
+        },
+        "timing_met": true,
+        "kernel_resources": {
+          "lut": 46,
+          "ff": 32,
+          "dsp": 1,
+          "bram_tiles": 0.0
+        },
+        "shell_resources": {
+          "lut": 31,
+          "ff": 126,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        }
+      }
+    },
+    "vitis_hls": {
+      "functional_valid": true,
+      "reference_outputs": 8192,
+      "rtl_sha256": {
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-map-100-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure.v": "b63723dd84350e133ebd10750d7298e57a9ffcddabac6745aed6b32f17c37af9",
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-map-100-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_flow_control_loop_pipe.v": "1dc529306b4e287ba5494382c5f263af08186d2a8bb0662d7dd997f9ed6e9f3e",
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-map-100-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_mac_muladd_17ns_17ns_8ns_32_4_1.v": "b60db3b8e8f87069f6de5d55bef6fa13d7043b0c1cba81006ed1d20f12572a43",
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-map-100-v3/interface_normalization/vitis_hls/normalized_wrapper.v": "3bc40ae5ab6ec73cbc6ff992ce9d00519481ad7ec63d06df6b90cd25f4e022dd",
+        "/tmp/lighthls-correctness-20260929.kZl9Xq/final-map-100/registered_shell.v": "d137e2cb01986e03a60bc826e9f41b118a97c26f8ae92aac9152bf7cad688210"
+      },
+      "post_route": {
+        "valid": true,
+        "qor_kind": "measured_registered_context",
+        "tool": "vivado",
+        "tool_version": "2025.2",
+        "part": "xcu250-figd2104-2L-e",
+        "flow_id": "vivado_registered_pressure_context_v1",
+        "runtime_seconds": 608.7320543899987,
+        "resources": {
+          "lut": 50,
+          "ff": 172,
+          "dsp": 1,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "constraints_before_synthesis": true,
+          "worst_slack_ns": 7.735,
+          "critical_path_delay_ns": 2.265,
+          "critical_path_delay_note": "Period minus routed WNS in the closed registered context; not a frequency sweep or board Fmax",
+          "worst_hold_slack_ns": 0.048
+        },
+        "interface_signature": [
+          "ap_clk|IN|1"
+        ],
+        "clock_scope": "Closed on-chip pressure harness with a routed BUFG, registered scalar source, one-cycle RAM response, and retained output observers; not board IO signoff",
+        "unrouted_nets": 0,
+        "routing_errors": 0,
+        "timing_coverage": {
+          "no_clock": 0,
+          "unconstrained_internal_endpoints": 0,
+          "no_input_delay": 0,
+          "no_output_delay": 0,
+          "partial_input_delay": 0,
+          "partial_output_delay": 0
+        },
+        "timing_met": true,
+        "kernel_resources": {
+          "lut": 18,
+          "ff": 46,
+          "dsp": 1,
+          "bram_tiles": 0.0
+        },
+        "shell_resources": {
+          "lut": 32,
+          "ff": 126,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        }
+      }
+    }
+  },
+  "not_interchangeable_with_virtual_io_qor": true,
+  "shell_sha256": "d137e2cb01986e03a60bc826e9f41b118a97c26f8ae92aac9152bf7cad688210",
+  "testbench_sha256": "fa160e47d80775252ad4556a8fe617e89111141086d5aad50d20b4db8e95832d"
+}

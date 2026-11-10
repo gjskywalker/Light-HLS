@@ -1,0 +1,149 @@
+{
+  "valid": true,
+  "results": [
+    {
+      "case": "wrap",
+      "read_latency": 1,
+      "frequency": "100MHz",
+      "feedback_wires": 2,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "wrap",
+      "read_latency": 2,
+      "frequency": "100MHz",
+      "feedback_wires": 2,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "descending",
+      "read_latency": 1,
+      "frequency": "100MHz",
+      "feedback_wires": 2,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "descending",
+      "read_latency": 2,
+      "frequency": "100MHz",
+      "feedback_wires": 2,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "dynamic_count",
+      "read_latency": 1,
+      "frequency": "100MHz",
+      "feedback_wires": 2,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "dynamic_count",
+      "read_latency": 2,
+      "frequency": "100MHz",
+      "feedback_wires": 2,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "dynamic_step",
+      "read_latency": 1,
+      "frequency": "100MHz",
+      "feedback_wires": 2,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "dynamic_step",
+      "read_latency": 2,
+      "frequency": "100MHz",
+      "feedback_wires": 2,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "early_exit",
+      "read_latency": 1,
+      "frequency": "100MHz",
+      "feedback_wires": 1,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "early_exit",
+      "read_latency": 2,
+      "frequency": "100MHz",
+      "feedback_wires": 1,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "pipeline",
+      "read_latency": 1,
+      "frequency": "100MHz",
+      "feedback_wires": 0,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "pipeline",
+      "read_latency": 2,
+      "frequency": "100MHz",
+      "feedback_wires": 0,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "conditional_step",
+      "read_latency": 1,
+      "frequency": "100MHz",
+      "feedback_wires": 2,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "conditional_step",
+      "read_latency": 2,
+      "frequency": "100MHz",
+      "feedback_wires": 2,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "signed_return",
+      "read_latency": 1,
+      "frequency": "100MHz",
+      "feedback_wires": 2,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "signed_return",
+      "read_latency": 2,
+      "frequency": "100MHz",
+      "feedback_wires": 2,
+      "calls": 64,
+      "valid": true
+    },
+    {
+      "case": "constrained_clock",
+      "read_latency": 1,
+      "frequency": "333.3333333333333MHz",
+      "feedback_wires": 2,
+      "calls": 64,
+      "valid": true
+    }
+  ],
+  "calls": 1088,
+  "executable_sha256": "068c78311810d08048ca0c49f867186cf628e426bcecc7852a72f75b6444daff",
+  "test_sources_sha256": {
+    "README.md": "79e24122c7d4c468ffe707ac7904165496f53d305b8fa014cce59f6f2737b6b2",
+    "feedback.cpp": "4fcda459f40a546e332292dbd0db17d9fc064c6bdaa9de2e0e63d78ff1d43431",
+    "feedback_tb.v": "9ceacc8f78d995ec0e026ebd7e4e09d04f759c865757d6371464a6e283b13ec7",
+    "run_tests.py": "7a4ff0bacb1987dd54fd09358b0dcca3761b96f23a5b88b90f337daf57b1dc88"
+  }
+}

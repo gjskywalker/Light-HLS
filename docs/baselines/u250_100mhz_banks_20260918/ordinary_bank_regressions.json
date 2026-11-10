@@ -1,0 +1,148 @@
+{
+  "valid": true,
+  "executable_sha256": "fbe1e73f68f671f040aa636ac496511d4ce567ebeb231ef3550be870307de8cd",
+  "calls": 1280,
+  "outputs": 9664,
+  "results": [
+    {
+      "case": "cyclic_parallel",
+      "read_latency": 1,
+      "valid": true,
+      "calls": 64,
+      "outputs": 512
+    },
+    {
+      "case": "cyclic_parallel",
+      "read_latency": 2,
+      "valid": true,
+      "calls": 64,
+      "outputs": 512
+    },
+    {
+      "case": "block_parallel",
+      "read_latency": 1,
+      "valid": true,
+      "calls": 64,
+      "outputs": 512
+    },
+    {
+      "case": "block_parallel",
+      "read_latency": 2,
+      "valid": true,
+      "calls": 64,
+      "outputs": 512
+    },
+    {
+      "case": "same_bank",
+      "read_latency": 1,
+      "valid": true,
+      "calls": 64,
+      "outputs": 512
+    },
+    {
+      "case": "same_bank",
+      "read_latency": 2,
+      "valid": true,
+      "calls": 64,
+      "outputs": 512
+    },
+    {
+      "case": "dynamic_offset",
+      "read_latency": 1,
+      "valid": true,
+      "calls": 64,
+      "outputs": 512
+    },
+    {
+      "case": "dynamic_offset",
+      "read_latency": 2,
+      "valid": true,
+      "calls": 64,
+      "outputs": 512
+    },
+    {
+      "case": "dynamic_count",
+      "read_latency": 1,
+      "valid": true,
+      "calls": 64,
+      "outputs": 224
+    },
+    {
+      "case": "dynamic_count",
+      "read_latency": 2,
+      "valid": true,
+      "calls": 64,
+      "outputs": 224
+    },
+    {
+      "case": "unsigned_wrap",
+      "read_latency": 1,
+      "valid": true,
+      "calls": 64,
+      "outputs": 512
+    },
+    {
+      "case": "unsigned_wrap",
+      "read_latency": 2,
+      "valid": true,
+      "calls": 64,
+      "outputs": 512
+    },
+    {
+      "case": "signed_extension",
+      "read_latency": 1,
+      "valid": true,
+      "calls": 64,
+      "outputs": 512
+    },
+    {
+      "case": "signed_extension",
+      "read_latency": 2,
+      "valid": true,
+      "calls": 64,
+      "outputs": 512
+    },
+    {
+      "case": "descending",
+      "read_latency": 1,
+      "valid": true,
+      "calls": 64,
+      "outputs": 512
+    },
+    {
+      "case": "descending",
+      "read_latency": 2,
+      "valid": true,
+      "calls": 64,
+      "outputs": 512
+    },
+    {
+      "case": "mixed_hazards",
+      "read_latency": 1,
+      "valid": true,
+      "calls": 64,
+      "outputs": 512
+    },
+    {
+      "case": "mixed_hazards",
+      "read_latency": 2,
+      "valid": true,
+      "calls": 64,
+      "outputs": 512
+    },
+    {
+      "case": "nested_fallback",
+      "read_latency": 1,
+      "valid": true,
+      "calls": 64,
+      "outputs": 512
+    },
+    {
+      "case": "nested_fallback",
+      "read_latency": 2,
+      "valid": true,
+      "calls": 64,
+      "outputs": 512
+    }
+  ]
+}

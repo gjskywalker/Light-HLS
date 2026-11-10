@@ -1,0 +1,32 @@
+DAPO-II U250 Ground-Truth Baseline Archive
+Part: xcu250-figd2104-2L-e
+QoR: common normalized-wrapper Vivado OOC synthesis
+
++------------------+------------------------+-----------+-----------+---------+---------+---------+---------+----------+----------+---------+
+| Suite            | Case                   | L-Cycles  | V-Cycles  | L-LUT   | V-LUT   | L-FF    | V-FF    | L-WNS    | V-WNS    | Reward  |
++------------------+------------------------+-----------+-----------+---------+---------+---------+---------+----------+----------+---------+
+| array_partition/block | backend_array_partition_block | 6.000     | 4.000     | 121     | 96      | 12      | 7       | 9.012    | 9.614    | yes     |
+| array_partition/complete | backend_array_partition_complete | 2.000     | 0.000     | 109     | 92      | 3       | 0       | 9.607    | -        | yes     |
+| array_partition/complete_rw | backend_array_partition_complete_rw | 5.000     | 5.000     | 164     | 230     | 10      | 7       | 9.324    | 9.375    | yes     |
+| array_partition/cyclic | backend_array_partition_cyclic | 6.000     | 4.000     | 121     | 96      | 12      | 7       | 9.012    | 9.614    | yes     |
+| array_partition/local | backend_array_partition_local | 41.000    | 42.000    | 275     | 242     | 155     | 152     | 8.895    | 9.003    | yes     |
+| array_partition/multidim | backend_array_partition_multidim | 3.000     | 1.000     | 166     | 147     | 7       | 2       | 9.362    | 9.330    | yes     |
+| array_partition/multidim_cyclic | backend_array_partition_multidim_cyclic | 6.000     | 4.000     | 128     | 104     | 79      | 72      | 9.302    | 9.375    | yes     |
+| array_partition/pipeline_complete | backend_array_partition_pipeline_complete | 5.000     | 3.000     | 89      | 131     | 9       | 3       | 9.012    | 9.549    | yes     |
+| dataflow/fifo_stream | vector_stream_dataflow | 132.000   | 132.000   | 198     | 164     | 64      | 54      | 8.295    | 8.542    | yes     |
+| dataflow/pipeline_partition | vector_pipeline_partition_dataflow | 37.000    | 34.000    | 233     | 223     | 174     | 175     | 8.619    | 8.977    | yes     |
+| dataflow/pipo_array | vector_array_dataflow  | 387.000   | 388.000   | 337     | 275     | 149     | 126     | 8.659    | 8.861    | yes     |
+| dataflow_nested  | vector_pipeline_partition_dataflow | 39.000    | 34.000    | 238     | 237     | 176     | 184     | 8.616    | 8.977    | yes     |
+| pipeline/ii1     | backend_pipeline       | 18.000    | 16.000    | 34      | 9       | 18      | 11      | 8.903    | 9.318    | yes     |
+| pipeline/inner   | backend_pipeline_inner | 20.000    | 16.000    | 36      | 20      | 20      | 20      | 8.972    | 9.311    | yes     |
+| pipeline/memory_dependence | backend_pipeline_memory_dependence | 32.000    | 29.000    | 56      | 14      | 23      | 11      | 9.047    | 9.396    | yes     |
+| pipeline/memory_ii | backend_pipeline_memii | 34.000    | 32.000    | 75      | 53      | 56      | 47      | 8.822    | 9.305    | yes     |
+| pipeline/mixed_memory | backend_pipeline_mixed_memory | 17.000    | 15.000    | 36      | 11      | 19      | 9       | 9.007    | 9.454    | yes     |
+| pipeline/outer   | backend_pipeline_outer | 18.000    | 17.000    | 63      | 58      | 23      | 52      | 9.059    | 9.263    | yes     |
+| pipeline/recurrence | backend_pipeline_recurrence | 19.000    | 16.000    | 49      | 72      | 87      | 39      | 8.899    | 9.006    | yes     |
+| private          | local_dataflow         | 391.000   | 389.000   | 300     | 324     | 324     | 316     | 8.698    | 8.923    | yes     |
+| scalar           | backend_scalar         | 4.000     | 4.000     | 137     | 106     | 135     | 102     | 8.118    | 8.735    | yes     |
++------------------+------------------------+-----------+-----------+---------+---------+---------+---------+----------+----------+---------+
+
+Only functionally equivalent, normalized-interface-compatible cases
+are reward-eligible. Raw Vivado and Vitis projects stay outside Git.

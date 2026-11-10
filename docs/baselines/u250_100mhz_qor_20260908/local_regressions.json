@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0",
+  "stage": "light_hls_local_regression_suite",
+  "valid": true,
+  "light_hls_executable": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_Top",
+  "light_hls_executable_sha256": "243e9e01583fb510c81e80ddc9987d4c3a7d82b1f2347980bf7e967e0eef643a",
+  "results": [
+    {
+      "suite": "AppCorrectness",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 6.684864,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/AppCorrectness/run_supported_apps.sh",
+      "script_sha256": "bc9bca0b5a23cf7a7308956375dca928c186c1888fbbbb2b6f167c10c800021f",
+      "log": "/tmp/lighthls-qor-20260908.71Q3iI/regressions-final-deterministic/AppCorrectness.log",
+      "result_directory": null
+    },
+    {
+      "suite": "RTL_Backend",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 1.568274,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/RTL_Backend/run_iverilog_test.sh",
+      "script_sha256": "2efc8e1d603b280599746adf9414b856e4dade2c164fdaa52c699e04785ffc9f",
+      "log": "/tmp/lighthls-qor-20260908.71Q3iI/regressions-final-deterministic/RTL_Backend.log",
+      "result_directory": null
+    },
+    {
+      "suite": "PipelineBackend",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 1.317153,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/PipelineBackend/run_pipeline_tests.sh",
+      "script_sha256": "d3e57871352e97f15615cdee28c1155767a99cafb01f0bbe249ea8fb5c019b89",
+      "log": "/tmp/lighthls-qor-20260908.71Q3iI/regressions-final-deterministic/PipelineBackend.log",
+      "result_directory": null
+    },
+    {
+      "suite": "ArrayPartitionBackend",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 1.26707,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/ArrayPartitionBackend/run_array_partition_tests.sh",
+      "script_sha256": "b4814167179868233d0445c101c367ee954bb554c541b494f1150360c62f9273",
+      "log": "/tmp/lighthls-qor-20260908.71Q3iI/regressions-final-deterministic/ArrayPartitionBackend.log",
+      "result_directory": null
+    },
+    {
+      "suite": "StorageBindingBackend",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 0.214086,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/StorageBindingBackend/run_storage_binding_tests.sh",
+      "script_sha256": "d1f3e60b11fd09ea94aa18df8c8420216211b3045feceb691e5390bd79e946db",
+      "log": "/tmp/lighthls-qor-20260908.71Q3iI/regressions-final-deterministic/StorageBindingBackend.log",
+      "result_directory": null
+    },
+    {
+      "suite": "DataflowBackend",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 3.222096,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/DataflowBackend/run_dataflow_backend_tests.sh",
+      "script_sha256": "4ceee3ca94ba82da2585c3299929a8ec4ab498cf6dcc6602fa8130d9af0c7ac9",
+      "log": "/tmp/lighthls-qor-20260908.71Q3iI/regressions-final-deterministic/DataflowBackend.log",
+      "result_directory": null
+    },
+    {
+      "suite": "FairComparisonInterface",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 0.031596,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/FairComparison/test_interface_normalization.py",
+      "script_sha256": "ee70546062d906f11a8694b086475cefa98a910f20bfe699b91e1b22ae54b668",
+      "log": "/tmp/lighthls-qor-20260908.71Q3iI/regressions-final-deterministic/FairComparisonInterface.log",
+      "result_directory": null
+    },
+    {
+      "suite": "AppCapability",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 14.10144,
+      "script": "/home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/AppCapability/run_app_capability_matrix.py",
+      "script_sha256": "e1b101b2b74f1cac00e7ddd2b153837ee7bd4d47f2e787e28a46054d1fe9698c",
+      "log": "/tmp/lighthls-qor-20260908.71Q3iI/regressions-final-deterministic/AppCapability.log",
+      "result_directory": "/tmp/lighthls-qor-20260908.71Q3iI/regressions-final-deterministic/AppCapability"
+    }
+  ]
+}

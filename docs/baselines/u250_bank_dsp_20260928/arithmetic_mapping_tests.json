@@ -1,0 +1,8 @@
+{
+  "valid": true,
+  "calls": 2048,
+  "frequencies_mhz": [
+    100,
+    250
+  ]
+}

@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.10)
+project(HI_DataflowAnalysis)
+
+add_library(HI_DataflowAnalysis HI_DataflowAnalysis.cc)
+target_link_libraries(HI_DataflowAnalysis PUBLIC HI_BackendCommon)

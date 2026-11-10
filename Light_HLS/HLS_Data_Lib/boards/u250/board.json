@@ -1,0 +1,38 @@
+{
+  "board": "u250",
+  "clock_periods_ns": [
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "12.5",
+    "15",
+    "16",
+    "17.5",
+    "20",
+    "25",
+    "30"
+  ],
+  "generated_at": "2026-07-30T09:57:28.623908+00:00",
+  "integer_widths": [
+    8,
+    16,
+    32,
+    64
+  ],
+  "notes": [
+    "Each row was extracted from a Vitis HLS C-synthesis verbose report.",
+    "MAC rows are emitted only when Vitis binds the expression to a muladd core.",
+    "DMulAdd uses a pipelined hls::fma probe with target II=1.",
+    "Load/store rows retain LightHLS scheduler latency sentinels while using the measured RAM delay.",
+    "LightHLS uses its existing nearest-width fallback for other integer widths."
+  ],
+  "part": "xcu250-figd2104-2L-e",
+  "schema_version": 1,
+  "tool": "Vitis HLS",
+  "tool_version": "2025.2"
+}

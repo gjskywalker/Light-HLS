@@ -1,0 +1,56 @@
+================================================================
+== Light-HLS Vivado Post-RTL Synthesis
+================================================================
++----------------------+---------------------------------------------------------+
+| Field                | Value                                                   |
++----------------------+---------------------------------------------------------+
+| Design               | backend_scalar                                          |
+| Top Function         | backend_scalar                                          |
+| Target Board         | u250                                                    |
+| Target Frequency     | 100.000 MHz                                             |
+| Clock Period         | 10.000 ns                                               |
++----------------------+---------------------------------------------------------+
+Source: /home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_scalar/backend_scalar.c
+
++ Synthesis Summary:
+
++--------------------------+---------------------------+----------------------------------+
+| Field                    | Value                     | Description                      |
++--------------------------+---------------------------+----------------------------------+
+| Requested                | yes                       | --synthesis enable               |
+| Status                   | succeeded                 | Vivado execution status          |
+| Tool                     | vivado                    | synthesis tool                   |
+| Tool Version             | 2025.2                    | reported version                 |
+| FPGA Part                | xcu250-figd2104-2L-e      | target device                    |
+| Synthesis Mode           | out_of_context            | kernel-level comparison          |
+| Constraint Phase         | before synthesis          | clock and IO XDC                 |
+| IO Budget                | 20% of clock period       | input/output max; min = 0        |
+| Vivado Threads           | 1                         | stable U250 device loading       |
+| CPU Affinity             | CPU 0                     | Vivado process placement         |
+| Runtime                  | 44.710 s                  | tool wall time                   |
++--------------------------+---------------------------+----------------------------------+
+
++ Post-Synthesis Resources:
+
++--------------------------+--------------------+----------------------------------------+
+| Resource                 | Used               | QoR Kind                               |
++--------------------------+--------------------+----------------------------------------+
+| LUT                      | 138                | measured post-RTL synthesis            |
+| FF                       | 135                | measured post-RTL synthesis            |
+| DSP                      | 0                  | measured post-RTL synthesis            |
+| BRAM Tiles               | 0.0                | measured post-RTL synthesis            |
++--------------------------+--------------------+----------------------------------------+
+
++ Timing:
+
++------------------------------+--------------------+------------------------------------+
+| Metric                       | Value              | Requirement                        |
++------------------------------+--------------------+------------------------------------+
+| Target Period                | 10.000 ns          | selected Light-HLS clock           |
+| Worst Slack                  | 5.912 ns           | non-negative meets timing          |
+| Period Minus WNS             | 4.088 ns           | includes IO budget; not Fmax       |
++------------------------------+--------------------+------------------------------------+
+
++ Diagnostics:
+
+WARNING [BACKEND_DYNAMIC_LATENCY] The top function contains a control-flow cycle. The schedule is valid, but a single static latency cannot be reported without loop-trip analysis.

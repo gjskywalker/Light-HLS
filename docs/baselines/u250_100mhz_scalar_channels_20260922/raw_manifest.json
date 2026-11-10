@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "note": "The two repaired start/commit testbenches are used for freshly measured old-compiler baselines as well as candidates. Other benchmark and testbench sources are unchanged.",
+  "cases": [
+    {
+      "case": "array_partition/block",
+      "before": "/tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/array_partition/block/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/array_partition/block/u250_fair_comparison.json"
+    },
+    {
+      "case": "array_partition/complete",
+      "before": "/tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/array_partition/complete/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-vitis-gap-20260922.3vMrGJ/u250-validated/array_partition/complete/u250_fair_comparison.json"
+    },
+    {
+      "case": "array_partition/complete_rw",
+      "before": "/tmp/lighthls-continuous-qor-20260922.g3KrQD/u250-entry/array_partition/complete_rw/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-vitis-gap-20260922.3vMrGJ/u250-scalar-events/complete_rw/u250_fair_comparison.json"
+    },
+    {
+      "case": "array_partition/cyclic",
+      "before": "/tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/array_partition/cyclic/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/array_partition/cyclic/u250_fair_comparison.json"
+    },
+    {
+      "case": "array_partition/local",
+      "before": "/tmp/lighthls-continuous-qor-20260922.g3KrQD/u250-entry/array_partition/local/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-vitis-gap-20260922.3vMrGJ/u250-validated/array_partition/local/u250_fair_comparison.json"
+    },
+    {
+      "case": "array_partition/multidim",
+      "before": "/tmp/lighthls-vitis-gap-20260922.3vMrGJ/u250-before-final-bench/multidim/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-vitis-gap-20260922.3vMrGJ/u250-scalar-events-arrays/multidim/u250_fair_comparison.json"
+    },
+    {
+      "case": "array_partition/multidim_cyclic",
+      "before": "/tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/array_partition/multidim_cyclic/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/array_partition/multidim_cyclic/u250_fair_comparison.json"
+    },
+    {
+      "case": "array_partition/pipeline_complete",
+      "before": "/tmp/lighthls-vitis-gap-20260922.3vMrGJ/u250-before-final-bench/pipeline_complete/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-vitis-gap-20260922.3vMrGJ/u250-scalar-events-arrays/pipeline_complete/u250_fair_comparison.json"
+    },
+    {
+      "case": "dataflow/fifo_stream",
+      "before": "/tmp/lighthls-continuous-qor-20260922.g3KrQD/u250-entry/dataflow/fifo_stream/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-vitis-gap-20260922.3vMrGJ/u250-fifo-head/dataflow/fifo_stream/u250_fair_comparison.json"
+    },
+    {
+      "case": "dataflow/pipeline_partition",
+      "before": "/tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/dataflow/pipeline_partition/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-vitis-gap-20260922.3vMrGJ/u250-pipo-payload/dataflow/pipeline_partition/u250_fair_comparison.json"
+    },
+    {
+      "case": "dataflow/pipo_array",
+      "before": "/tmp/lighthls-continuous-qor-20260922.g3KrQD/u250-entry/dataflow/pipo_array/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-vitis-gap-20260922.3vMrGJ/u250-pipo-payload/dataflow/pipo_array/u250_fair_comparison.json"
+    },
+    {
+      "case": "dataflow_nested",
+      "before": "/tmp/lighthls-continuous-qor-20260922.g3KrQD/u250-entry/dataflow_nested/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-vitis-gap-20260922.3vMrGJ/u250-pipo-payload/dataflow_nested/u250_fair_comparison.json"
+    },
+    {
+      "case": "pipeline/ii1",
+      "before": "/tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/pipeline/ii1/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/pipeline/ii1/u250_fair_comparison.json"
+    },
+    {
+      "case": "pipeline/inner",
+      "before": "/tmp/lighthls-continuous-qor-20260922.g3KrQD/u250-entry/pipeline/inner/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-continuous-qor-20260922.g3KrQD/u250-entry/pipeline/inner/u250_fair_comparison.json"
+    },
+    {
+      "case": "pipeline/memory_dependence",
+      "before": "/tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/pipeline/memory_dependence/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/pipeline/memory_dependence/u250_fair_comparison.json"
+    },
+    {
+      "case": "pipeline/memory_ii",
+      "before": "/tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/pipeline/memory_ii/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/pipeline/memory_ii/u250_fair_comparison.json"
+    },
+    {
+      "case": "pipeline/mixed_memory",
+      "before": "/tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/pipeline/mixed_memory/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/pipeline/mixed_memory/u250_fair_comparison.json"
+    },
+    {
+      "case": "pipeline/outer",
+      "before": "/tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/pipeline/outer/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/pipeline/outer/u250_fair_comparison.json"
+    },
+    {
+      "case": "pipeline/recurrence",
+      "before": "/tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/pipeline/recurrence/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-boundary-qor-20260914.qyGycC/u250-final/pipeline/recurrence/u250_fair_comparison.json"
+    },
+    {
+      "case": "private",
+      "before": "/tmp/lighthls-continuous-qor-20260922.g3KrQD/u250-entry/private/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-vitis-gap-20260922.3vMrGJ/u250-fifo-head/private/u250_fair_comparison.json"
+    },
+    {
+      "case": "scalar",
+      "before": "/tmp/lighthls-continuous-qor-20260922.g3KrQD/u250-release/scalar/u250_fair_comparison.json",
+      "after": "/tmp/lighthls-vitis-gap-20260922.3vMrGJ/u250-entry-packed/scalar/u250_fair_comparison.json"
+    }
+  ]
+}

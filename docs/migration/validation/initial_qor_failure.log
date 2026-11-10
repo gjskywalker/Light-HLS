@@ -1,0 +1,13 @@
+PASS dsp_map at 100 MHz
+PASS bram_permute at 100 MHz
+PASS bram_banked at 100 MHz
+Traceback (most recent call last):
+  File "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/QoRPressure/run_tests.py", line 148, in <module>
+    main()
+  File "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/QoRPressure/run_tests.py", line 114, in main
+    run(["vvp", directory / label], directory, label + ".log")
+  File "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/QoRPressure/run_tests.py", line 25, in run
+    subprocess.run([str(item) for item in command], cwd=directory, env=environment,
+  File "/usr/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['vvp', '/home/eeuser/Desktop/Light-HLS/runs/migration_20261110/regressions/QoRPressure/dsp_dataflow_100MHz/queued']' died with <Signals.SIGSEGV: 11>.

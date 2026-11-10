@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "stage": "release_measured_rtl_coverage",
+  "valid": true,
+  "case_count": 4,
+  "light_hls_executable_sha256": "53d44a4998aee81d29d0782181aaae4a76bda53d682499342f21fe2f8e616067",
+  "measurements_rewritten": false,
+  "manifest_sha256": "b1d22d83855f43e2ba5fbdcad504b5f875cb21da5bdbeff35e08c9850297f322",
+  "cases": [
+    {
+      "case": "dsp_map_100",
+      "comparison_id": "8df194da990de14d482550cfa8244e117099d112acc2e50ca706acb5125c47b9",
+      "measurement_reward_eligible": false,
+      "measured_executable_sha256": "cdb6ec1c22be8161ab47335419f19411e65af2476b9797b5bd3f89651e4f3af2",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "f01378c62b254d6e9a9ba0ef3bc2f8204612de152de073af279a7fc1ca1b3c34",
+      "regenerated_rtl_sha256": "f01378c62b254d6e9a9ba0ef3bc2f8204612de152de073af279a7fc1ca1b3c34"
+    },
+    {
+      "case": "bram_banked_250",
+      "comparison_id": "c598a988785eb29f0f5ed05464209c0a44ae66019a0fcd4a6ed7756b07b94aa5",
+      "measurement_reward_eligible": false,
+      "measured_executable_sha256": "cdb6ec1c22be8161ab47335419f19411e65af2476b9797b5bd3f89651e4f3af2",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "9db2d5d4d755dc5ec4e96747628a0de73f6bcd2c20cc7633aa3516786be9f90f",
+      "regenerated_rtl_sha256": "9db2d5d4d755dc5ec4e96747628a0de73f6bcd2c20cc7633aa3516786be9f90f"
+    },
+    {
+      "case": "dsp_map_200",
+      "comparison_id": "2b88f3ded6ed06beda3ee05211fdada9a556bee6e652d8c4f4db3a7b491c3f9b",
+      "measurement_reward_eligible": true,
+      "measured_executable_sha256": "6bd9b896c155b130311153c3c2e80d03d7ee8652d8de82e456008668cf26633a",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "97de55118588dd72ecc7200227b215e3c4afa247e6027222b083dbe2ce1ae951",
+      "regenerated_rtl_sha256": "97de55118588dd72ecc7200227b215e3c4afa247e6027222b083dbe2ce1ae951"
+    },
+    {
+      "case": "dsp_dataflow_250",
+      "comparison_id": "06d31bd78bad1a0cd6f84dfda2a223f800b8e1abd263f1cb04d09946b8d9d76a",
+      "measurement_reward_eligible": false,
+      "measured_executable_sha256": "cdb6ec1c22be8161ab47335419f19411e65af2476b9797b5bd3f89651e4f3af2",
+      "rtl_identical": true,
+      "rtl_matches_modulo_zero_assignment_order": true,
+      "measured_rtl_sha256": "8ac3a065dee2b3fe208f1c0ab196841e115422556b15a129dc02476274d57263",
+      "regenerated_rtl_sha256": "8ac3a065dee2b3fe208f1c0ab196841e115422556b15a129dc02476274d57263"
+    }
+  ]
+}

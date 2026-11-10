@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0",
+  "valid": true,
+  "stage": "u250_checkpoint_qor_change_audit",
+  "counts": {
+    "improved": 1
+  },
+  "all_timing_met": true,
+  "no_metric_regressions": true,
+  "cases": [
+    {
+      "suite": "array_partition",
+      "case": "backend_array_partition_local",
+      "status": "improved",
+      "before": {
+        "cycles": 59.0,
+        "lut": 596,
+        "ff": 310,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "after": {
+        "cycles": 43.0,
+        "lut": 428,
+        "ff": 184,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "delta": {
+        "cycles": -16.0,
+        "lut": -168,
+        "ff": -126,
+        "dsp": 0,
+        "bram_tiles": 0.0
+      },
+      "improved_metrics": [
+        "cycles",
+        "lut",
+        "ff"
+      ],
+      "worsened_metrics": [],
+      "timing_met": true,
+      "worst_slack_ns": 8.664
+    }
+  ]
+}

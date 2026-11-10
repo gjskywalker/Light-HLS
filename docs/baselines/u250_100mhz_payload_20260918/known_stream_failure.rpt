@@ -1,0 +1,70 @@
+Known failure: private local buffer between two FIFO channels
+==========================================================
+
+Status: UNRESOLVED; excluded from positive regression counts.
+Reproducer: Light_HLS/Tests/LocalWriteData/known_failures/private_stream_buffer.cpp
+Top: local_dataflow
+Target: U250, 100 MHz
+
+The committed reproducer retains the failing source with an explanatory comment.
+Raw logs and generated intermediates preserve the original source paths/content.
+
+Event-loss evidence
+-------------------
+The local hls::stream stub represents read/write as ordinary load/store.
+The initial top.bc for private_buffer already contains:
+
+  entry:
+    load i32, ptr %loaded
+    add loaded_value, %seed
+    branch to initialization loop
+  initialization loop:
+    store the same value into each buffer element
+  exit:
+    load buffer[15]
+    load buffer[31]
+    store their sum to %computed
+
+The source instead requests 32 reads from loaded and 16 writes to computed.
+The two surrounding tasks retain 32 produced and 16 consumed items.
+This transformation happens before independent scheduling/binding/RTL generation.
+
+Previous compiler fbe1e73f68f671f040aa636ac496511d4ce567ebeb231ef3550be870307de8cd:
+  df-check-before: exit 1
+  BACKEND_DATAFLOW_RATE_MISMATCH: computed produces 1, consumes 16.
+  BACKEND_DATAFLOW_RATE_MISMATCH: loaded produces 32, consumes 1.
+
+Development assertion
+---------------------
+local-write-v4/local_dataflow and df-check-current abort with SIGABRT.
+The recorded caller chain includes:
+
+  llvm::dyn_cast<llvm::SCEVConstant>:
+    Assertion `detail::isPresent(Val) && "dyn_cast on a non-existent value"' failed.
+  llvm::ScalarEvolution::proveNoWrapViaConstantRanges
+  llvm::ScalarEvolution::createSimpleAffineAddRec
+  llvm::ScalarEvolution::createAddRecFromPHI
+  llvm::ScalarEvolution::computeExitLimitFromICmp
+  llvm::ScalarEvolution::computeBackedgeTakenCount
+  llvm::ScalarEvolution::getSmallConstantTripCount
+  dynamicExecutionCount
+  accessRate
+  HI_DataflowPerformanceAnalysis::runOnModule
+
+An isolated GDB run (df-gdb/gdb.log) instead returns the rate-mismatch errors.
+At each sampled accessRate call, the Function and ScalarEvolution::F addresses
+match, as do the LoopInfo and ScalarEvolution::LI addresses. This does not prove
+all analysis lifetimes are correct, but does not support a wrong-function-owner
+claim. The assertion's root cause and relationship to earlier intermittent
+assertions remain unproven. No assertion fix is claimed in this checkpoint.
+
+Retained artifacts
+------------------
+/tmp/lighthls-local-mux-qor-20260918.4T7n35/local-write-v4/local_dataflow/
+/tmp/lighthls-local-mux-qor-20260918.4T7n35/df-check-before/
+/tmp/lighthls-local-mux-qor-20260918.4T7n35/df-check-current/
+/tmp/lighthls-local-mux-qor-20260918.4T7n35/df-gdb/
+
+The final positive local_dataflow fixture is a different, explicitly documented
+PIPO-array design with private RAM and controlled task-clock stalls. Its passing
+result is not evidence that private-buffer FIFO event preservation works.

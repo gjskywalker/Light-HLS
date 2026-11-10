@@ -1,0 +1,7 @@
+// Exercise ordinary-loop bank coverage without pipeline directives.
+void block_parallel(unsigned input[256], unsigned output[8], unsigned count)
+{
+#pragma HLS ARRAY_PARTITION variable=input type=block factor=4 dim=1
+  for (unsigned i = 0; i < 8; ++i)
+    output[i] = input[i] + input[i+64] + input[i+128] + input[i+192];
+}

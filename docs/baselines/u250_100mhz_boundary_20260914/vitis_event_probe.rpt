@@ -1,0 +1,35 @@
+EDGE time=45000 read=1 read_addr= 0 write=0 write_addr= 0 done=0
+EDGE time=55000 read=1 read_addr= 1 write=1 write_addr= 0 done=0
+EDGE time=65000 read=1 read_addr= 2 write=1 write_addr= 1 done=0
+EDGE time=75000 read=1 read_addr= 3 write=1 write_addr= 2 done=0
+EDGE time=85000 read=1 read_addr= 4 write=1 write_addr= 3 done=0
+EDGE time=95000 read=1 read_addr= 5 write=1 write_addr= 4 done=0
+EDGE time=105000 read=1 read_addr= 6 write=1 write_addr= 5 done=0
+EDGE time=115000 read=1 read_addr= 7 write=1 write_addr= 6 done=0
+EDGE time=125000 read=1 read_addr= 8 write=1 write_addr= 7 done=0
+EDGE time=135000 read=1 read_addr= 9 write=1 write_addr= 8 done=0
+EDGE time=145000 read=1 read_addr=10 write=1 write_addr= 9 done=0
+EDGE time=155000 read=1 read_addr=11 write=1 write_addr=10 done=0
+EDGE time=165000 read=1 read_addr=12 write=1 write_addr=11 done=0
+EDGE time=175000 read=1 read_addr=13 write=1 write_addr=12 done=0
+EDGE time=185000 read=1 read_addr=14 write=1 write_addr=13 done=0
+EDGE time=195000 read=1 read_addr=15 write=1 write_addr=14 done=0
+DONE time=195000
+EDGE time=205000 read=0 read_addr= 0 write=1 write_addr=15 done=1
+RESULT 0 5
+RESULT 1 12
+RESULT 2 19
+RESULT 3 26
+RESULT 4 33
+RESULT 5 40
+RESULT 6 47
+RESULT 7 54
+RESULT 8 61
+RESULT 9 68
+RESULT 10 75
+RESULT 11 82
+RESULT 12 89
+RESULT 13 96
+RESULT 14 103
+RESULT 15 110
+ALL PIPELINE II=1 TESTS PASSED cycles=16

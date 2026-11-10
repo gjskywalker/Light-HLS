@@ -1,0 +1,711 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version      : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date              : Tue Sep 29 13:28:30 2026
+| Host              : EE4F089 running 64-bit Ubuntu 22.04.5 LTS
+| Command           : report_timing -delay_type max -max_paths 10 -file /tmp/lighthls-correctness-20260929.kZl9Xq/final-bank-250/light_hls_context/setup_paths.rpt
+| Design            : registered_pressure_shell
+| Device            : xcu250-figd2104
+| Speed File        : -2L  PRODUCTION 1.28 03-30-2022
+| Design State      : Routed
+| Temperature Grade : E
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Report
+
+Slack (MET) :             1.627ns  (required time - arrival time)
+  Source:                 kernel/native_instance/tile_0_storage_reg/CLKBWRCLK
+                            (rising edge-triggered cell RAMB18E2 clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            observed_outputs_reg[30]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (ap_clk rise@4.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.214ns  (logic 1.467ns (66.260%)  route 0.747ns (33.740%))
+  Logic Levels:           4  (CARRY8=2 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.149ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.858ns = ( 6.858 - 4.000 ) 
+    Source Clock Delay      (SCD):    3.313ns
+    Clock Pessimism Removal (CPR):    0.307ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.242ns (routing 2.228ns, distribution 1.014ns)
+  Clock Net Delay (Destination): 2.798ns (routing 2.023ns, distribution 0.775ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.043     0.043    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         3.242     3.313    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    RAMB18_X11Y342       RAMB18E2                                     r  kernel/native_instance/tile_0_storage_reg/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB18_X11Y342       RAMB18E2 (Prop_RAMB18E2_L_RAMB180_CLKBWRCLK_DOUTBDOUT[0])
+                                                      0.963     4.276 r  kernel/native_instance/tile_0_storage_reg/DOUTBDOUT[0]
+                         net (fo=2, routed)           0.511     4.787    kernel/native_instance/tile_0_q0[18]
+    SLICE_X178Y857       LUT2 (Prop_C6LUT_SLICEL_I0_O)
+                                                      0.088     4.875 r  kernel/native_instance/output_r_d00_carry__1_i_14/O
+                         net (fo=1, routed)           0.010     4.885    kernel/native_instance/output_r_d00_carry__1_i_14_n_0
+    SLICE_X178Y857       CARRY8 (Prop_CARRY8_SLICEL_S[2]_CO[7])
+                                                      0.155     5.040 r  kernel/native_instance/output_r_d00_carry__1/CO[7]
+                         net (fo=1, routed)           0.026     5.066    kernel/native_instance/output_r_d00_carry__1_n_0
+    SLICE_X178Y858       CARRY8 (Prop_CARRY8_SLICEL_CI_O[6])
+                                                      0.103     5.169 r  kernel/native_instance/output_r_d00_carry__2/O[6]
+                         net (fo=1, routed)           0.185     5.354    kernel/native_instance/output_r_d00[30]
+    SLICE_X178Y859       LUT4 (Prop_H5LUT_SLICEL_I0_O)
+                                                      0.158     5.512 r  kernel/native_instance/output_r_d0[30]_INST_0/O
+                         net (fo=1, routed)           0.015     5.527    output_r_d0[30]
+    SLICE_X178Y859       FDRE                                         r  observed_outputs_reg[30]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     4.000     4.000 r  
+                                                      0.000     4.000 r  ap_clk (IN)
+                         net (fo=0)                   0.036     4.036    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     4.060 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         2.798     6.858    kernel_clk
+    SLR Crossing[1->3]   
+    SLICE_X178Y859       FDRE                                         r  observed_outputs_reg[30]/C
+                         clock pessimism              0.307     7.164    
+                         clock uncertainty           -0.035     7.129    
+    SLICE_X178Y859       FDRE (Setup_HFF2_SLICEL_C_D)
+                                                      0.025     7.154    observed_outputs_reg[30]
+  -------------------------------------------------------------------
+                         required time                          7.154    
+                         arrival time                          -5.527    
+  -------------------------------------------------------------------
+                         slack                                  1.627    
+
+Slack (MET) :             1.636ns  (required time - arrival time)
+  Source:                 kernel/native_instance/tile_0_storage_reg/CLKBWRCLK
+                            (rising edge-triggered cell RAMB18E2 clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            observed_outputs_reg[26]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (ap_clk rise@4.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.166ns  (logic 1.410ns (65.097%)  route 0.756ns (34.903%))
+  Logic Levels:           4  (CARRY8=2 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.187ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.865ns = ( 6.865 - 4.000 ) 
+    Source Clock Delay      (SCD):    3.313ns
+    Clock Pessimism Removal (CPR):    0.261ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.242ns (routing 2.228ns, distribution 1.014ns)
+  Clock Net Delay (Destination): 2.805ns (routing 2.023ns, distribution 0.782ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.043     0.043    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         3.242     3.313    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    RAMB18_X11Y342       RAMB18E2                                     r  kernel/native_instance/tile_0_storage_reg/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB18_X11Y342       RAMB18E2 (Prop_RAMB18E2_L_RAMB180_CLKBWRCLK_DOUTBDOUT[0])
+                                                      0.963     4.276 r  kernel/native_instance/tile_0_storage_reg/DOUTBDOUT[0]
+                         net (fo=2, routed)           0.511     4.787    kernel/native_instance/tile_0_q0[18]
+    SLICE_X178Y857       LUT2 (Prop_C6LUT_SLICEL_I0_O)
+                                                      0.088     4.875 r  kernel/native_instance/output_r_d00_carry__1_i_14/O
+                         net (fo=1, routed)           0.010     4.885    kernel/native_instance/output_r_d00_carry__1_i_14_n_0
+    SLICE_X178Y857       CARRY8 (Prop_CARRY8_SLICEL_S[2]_CO[7])
+                                                      0.155     5.040 r  kernel/native_instance/output_r_d00_carry__1/CO[7]
+                         net (fo=1, routed)           0.026     5.066    kernel/native_instance/output_r_d00_carry__1_n_0
+    SLICE_X178Y858       CARRY8 (Prop_CARRY8_SLICEL_CI_O[2])
+                                                      0.067     5.133 r  kernel/native_instance/output_r_d00_carry__2/O[2]
+                         net (fo=1, routed)           0.182     5.315    kernel/native_instance/output_r_d00[26]
+    SLICE_X179Y857       LUT4 (Prop_C5LUT_SLICEM_I0_O)
+                                                      0.137     5.452 r  kernel/native_instance/output_r_d0[26]_INST_0/O
+                         net (fo=1, routed)           0.027     5.479    output_r_d0[26]
+    SLICE_X179Y857       FDRE                                         r  observed_outputs_reg[26]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     4.000     4.000 r  
+                                                      0.000     4.000 r  ap_clk (IN)
+                         net (fo=0)                   0.036     4.036    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     4.060 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         2.805     6.865    kernel_clk
+    SLR Crossing[1->3]   
+    SLICE_X179Y857       FDRE                                         r  observed_outputs_reg[26]/C
+                         clock pessimism              0.261     7.126    
+                         clock uncertainty           -0.035     7.091    
+    SLICE_X179Y857       FDRE (Setup_CFF2_SLICEM_C_D)
+                                                      0.025     7.116    observed_outputs_reg[26]
+  -------------------------------------------------------------------
+                         required time                          7.116    
+                         arrival time                          -5.479    
+  -------------------------------------------------------------------
+                         slack                                  1.636    
+
+Slack (MET) :             1.660ns  (required time - arrival time)
+  Source:                 kernel/native_instance/tile_0_storage_reg/CLKBWRCLK
+                            (rising edge-triggered cell RAMB18E2 clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            observed_outputs_reg[29]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (ap_clk rise@4.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.181ns  (logic 1.411ns (64.695%)  route 0.770ns (35.305%))
+  Logic Levels:           4  (CARRY8=2 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.149ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.858ns = ( 6.858 - 4.000 ) 
+    Source Clock Delay      (SCD):    3.313ns
+    Clock Pessimism Removal (CPR):    0.307ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.242ns (routing 2.228ns, distribution 1.014ns)
+  Clock Net Delay (Destination): 2.798ns (routing 2.023ns, distribution 0.775ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.043     0.043    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         3.242     3.313    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    RAMB18_X11Y342       RAMB18E2                                     r  kernel/native_instance/tile_0_storage_reg/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB18_X11Y342       RAMB18E2 (Prop_RAMB18E2_L_RAMB180_CLKBWRCLK_DOUTBDOUT[0])
+                                                      0.963     4.276 r  kernel/native_instance/tile_0_storage_reg/DOUTBDOUT[0]
+                         net (fo=2, routed)           0.511     4.787    kernel/native_instance/tile_0_q0[18]
+    SLICE_X178Y857       LUT2 (Prop_C6LUT_SLICEL_I0_O)
+                                                      0.088     4.875 r  kernel/native_instance/output_r_d00_carry__1_i_14/O
+                         net (fo=1, routed)           0.010     4.885    kernel/native_instance/output_r_d00_carry__1_i_14_n_0
+    SLICE_X178Y857       CARRY8 (Prop_CARRY8_SLICEL_S[2]_CO[7])
+                                                      0.155     5.040 r  kernel/native_instance/output_r_d00_carry__1/CO[7]
+                         net (fo=1, routed)           0.026     5.066    kernel/native_instance/output_r_d00_carry__1_n_0
+    SLICE_X178Y858       CARRY8 (Prop_CARRY8_SLICEL_CI_O[5])
+                                                      0.116     5.182 r  kernel/native_instance/output_r_d00_carry__2/O[5]
+                         net (fo=1, routed)           0.175     5.357    kernel/native_instance/output_r_d00[29]
+    SLICE_X178Y859       LUT4 (Prop_G6LUT_SLICEL_I0_O)
+                                                      0.089     5.446 r  kernel/native_instance/output_r_d0[29]_INST_0/O
+                         net (fo=1, routed)           0.048     5.494    output_r_d0[29]
+    SLICE_X178Y859       FDRE                                         r  observed_outputs_reg[29]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     4.000     4.000 r  
+                                                      0.000     4.000 r  ap_clk (IN)
+                         net (fo=0)                   0.036     4.036    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     4.060 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         2.798     6.858    kernel_clk
+    SLR Crossing[1->3]   
+    SLICE_X178Y859       FDRE                                         r  observed_outputs_reg[29]/C
+                         clock pessimism              0.307     7.164    
+                         clock uncertainty           -0.035     7.129    
+    SLICE_X178Y859       FDRE (Setup_GFF_SLICEL_C_D)
+                                                      0.025     7.154    observed_outputs_reg[29]
+  -------------------------------------------------------------------
+                         required time                          7.154    
+                         arrival time                          -5.494    
+  -------------------------------------------------------------------
+                         slack                                  1.660    
+
+Slack (MET) :             1.689ns  (required time - arrival time)
+  Source:                 kernel/native_instance/tile_0_storage_reg/CLKBWRCLK
+                            (rising edge-triggered cell RAMB18E2 clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            observed_outputs_reg[24]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (ap_clk rise@4.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.150ns  (logic 1.372ns (63.814%)  route 0.778ns (36.186%))
+  Logic Levels:           4  (CARRY8=2 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.151ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.856ns = ( 6.856 - 4.000 ) 
+    Source Clock Delay      (SCD):    3.313ns
+    Clock Pessimism Removal (CPR):    0.307ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.242ns (routing 2.228ns, distribution 1.014ns)
+  Clock Net Delay (Destination): 2.796ns (routing 2.023ns, distribution 0.773ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.043     0.043    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         3.242     3.313    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    RAMB18_X11Y342       RAMB18E2                                     r  kernel/native_instance/tile_0_storage_reg/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB18_X11Y342       RAMB18E2 (Prop_RAMB18E2_L_RAMB180_CLKBWRCLK_DOUTBDOUT[0])
+                                                      0.963     4.276 r  kernel/native_instance/tile_0_storage_reg/DOUTBDOUT[0]
+                         net (fo=2, routed)           0.511     4.787    kernel/native_instance/tile_0_q0[18]
+    SLICE_X178Y857       LUT2 (Prop_C6LUT_SLICEL_I0_O)
+                                                      0.088     4.875 r  kernel/native_instance/output_r_d00_carry__1_i_14/O
+                         net (fo=1, routed)           0.010     4.885    kernel/native_instance/output_r_d00_carry__1_i_14_n_0
+    SLICE_X178Y857       CARRY8 (Prop_CARRY8_SLICEL_S[2]_CO[7])
+                                                      0.155     5.040 r  kernel/native_instance/output_r_d00_carry__1/CO[7]
+                         net (fo=1, routed)           0.026     5.066    kernel/native_instance/output_r_d00_carry__1_n_0
+    SLICE_X178Y858       CARRY8 (Prop_CARRY8_SLICEL_CI_O[0])
+                                                      0.056     5.122 r  kernel/native_instance/output_r_d00_carry__2/O[0]
+                         net (fo=1, routed)           0.216     5.338    kernel/native_instance/output_r_d00[24]
+    SLICE_X178Y859       LUT4 (Prop_D5LUT_SLICEL_I0_O)
+                                                      0.110     5.448 r  kernel/native_instance/output_r_d0[24]_INST_0/O
+                         net (fo=1, routed)           0.015     5.463    output_r_d0[24]
+    SLICE_X178Y859       FDRE                                         r  observed_outputs_reg[24]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     4.000     4.000 r  
+                                                      0.000     4.000 r  ap_clk (IN)
+                         net (fo=0)                   0.036     4.036    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     4.060 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         2.796     6.856    kernel_clk
+    SLR Crossing[1->3]   
+    SLICE_X178Y859       FDRE                                         r  observed_outputs_reg[24]/C
+                         clock pessimism              0.307     7.162    
+                         clock uncertainty           -0.035     7.127    
+    SLICE_X178Y859       FDRE (Setup_DFF2_SLICEL_C_D)
+                                                      0.025     7.152    observed_outputs_reg[24]
+  -------------------------------------------------------------------
+                         required time                          7.152    
+                         arrival time                          -5.463    
+  -------------------------------------------------------------------
+                         slack                                  1.689    
+
+Slack (MET) :             1.718ns  (required time - arrival time)
+  Source:                 kernel/native_instance/tile_0_storage_reg/CLKBWRCLK
+                            (rising edge-triggered cell RAMB18E2 clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            observed_outputs_reg[31]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (ap_clk rise@4.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.123ns  (logic 1.389ns (65.426%)  route 0.734ns (34.574%))
+  Logic Levels:           4  (CARRY8=2 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.149ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.858ns = ( 6.858 - 4.000 ) 
+    Source Clock Delay      (SCD):    3.313ns
+    Clock Pessimism Removal (CPR):    0.307ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.242ns (routing 2.228ns, distribution 1.014ns)
+  Clock Net Delay (Destination): 2.798ns (routing 2.023ns, distribution 0.775ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.043     0.043    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         3.242     3.313    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    RAMB18_X11Y342       RAMB18E2                                     r  kernel/native_instance/tile_0_storage_reg/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB18_X11Y342       RAMB18E2 (Prop_RAMB18E2_L_RAMB180_CLKBWRCLK_DOUTBDOUT[0])
+                                                      0.963     4.276 r  kernel/native_instance/tile_0_storage_reg/DOUTBDOUT[0]
+                         net (fo=2, routed)           0.511     4.787    kernel/native_instance/tile_0_q0[18]
+    SLICE_X178Y857       LUT2 (Prop_C6LUT_SLICEL_I0_O)
+                                                      0.088     4.875 r  kernel/native_instance/output_r_d00_carry__1_i_14/O
+                         net (fo=1, routed)           0.010     4.885    kernel/native_instance/output_r_d00_carry__1_i_14_n_0
+    SLICE_X178Y857       CARRY8 (Prop_CARRY8_SLICEL_S[2]_CO[7])
+                                                      0.155     5.040 r  kernel/native_instance/output_r_d00_carry__1/CO[7]
+                         net (fo=1, routed)           0.026     5.066    kernel/native_instance/output_r_d00_carry__1_n_0
+    SLICE_X178Y858       CARRY8 (Prop_CARRY8_SLICEL_CI_O[7])
+                                                      0.116     5.182 r  kernel/native_instance/output_r_d00_carry__2/O[7]
+                         net (fo=1, routed)           0.171     5.353    kernel/native_instance/output_r_d00[31]
+    SLICE_X178Y859       LUT4 (Prop_G5LUT_SLICEL_I0_O)
+                                                      0.067     5.420 r  kernel/native_instance/output_r_d0[31]_INST_0/O
+                         net (fo=1, routed)           0.016     5.436    output_r_d0[31]
+    SLICE_X178Y859       FDRE                                         r  observed_outputs_reg[31]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     4.000     4.000 r  
+                                                      0.000     4.000 r  ap_clk (IN)
+                         net (fo=0)                   0.036     4.036    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     4.060 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         2.798     6.858    kernel_clk
+    SLR Crossing[1->3]   
+    SLICE_X178Y859       FDRE                                         r  observed_outputs_reg[31]/C
+                         clock pessimism              0.307     7.164    
+                         clock uncertainty           -0.035     7.129    
+    SLICE_X178Y859       FDRE (Setup_GFF2_SLICEL_C_D)
+                                                      0.025     7.154    observed_outputs_reg[31]
+  -------------------------------------------------------------------
+                         required time                          7.154    
+                         arrival time                          -5.436    
+  -------------------------------------------------------------------
+                         slack                                  1.718    
+
+Slack (MET) :             1.720ns  (required time - arrival time)
+  Source:                 kernel/native_instance/tile_1_storage_reg/CLKARDCLK
+                            (rising edge-triggered cell RAMB18E2 clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            observed_outputs_reg[14]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (ap_clk rise@4.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.089ns  (logic 1.403ns (67.161%)  route 0.686ns (32.839%))
+  Logic Levels:           4  (CARRY8=2 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.181ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.870ns = ( 6.870 - 4.000 ) 
+    Source Clock Delay      (SCD):    3.311ns
+    Clock Pessimism Removal (CPR):    0.261ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.240ns (routing 2.228ns, distribution 1.012ns)
+  Clock Net Delay (Destination): 2.810ns (routing 2.023ns, distribution 0.787ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.043     0.043    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         3.240     3.311    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    RAMB18_X11Y343       RAMB18E2                                     r  kernel/native_instance/tile_1_storage_reg/CLKARDCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB18_X11Y343       RAMB18E2 (Prop_RAMB18E2_U_RAMB181_CLKARDCLK_DOUTADOUT[4])
+                                                      0.900     4.211 r  kernel/native_instance/tile_1_storage_reg/DOUTADOUT[4]
+                         net (fo=2, routed)           0.368     4.579    kernel/native_instance/tile_1_q0[4]
+    SLICE_X178Y855       LUT2 (Prop_E6LUT_SLICEL_I1_O)
+                                                      0.147     4.726 r  kernel/native_instance/output_r_d00_carry_i_12/O
+                         net (fo=1, routed)           0.007     4.733    kernel/native_instance/output_r_d00_carry_i_12_n_0
+    SLICE_X178Y855       CARRY8 (Prop_CARRY8_SLICEL_S[4]_CO[7])
+                                                      0.153     4.886 r  kernel/native_instance/output_r_d00_carry/CO[7]
+                         net (fo=1, routed)           0.026     4.912    kernel/native_instance/output_r_d00_carry_n_0
+    SLICE_X178Y856       CARRY8 (Prop_CARRY8_SLICEL_CI_O[6])
+                                                      0.103     5.015 r  kernel/native_instance/output_r_d00_carry__0/O[6]
+                         net (fo=1, routed)           0.226     5.241    kernel/native_instance/output_r_d00[14]
+    SLICE_X179Y856       LUT4 (Prop_G6LUT_SLICEM_I0_O)
+                                                      0.100     5.341 r  kernel/native_instance/output_r_d0[14]_INST_0/O
+                         net (fo=1, routed)           0.059     5.400    output_r_d0[14]
+    SLICE_X179Y856       FDRE                                         r  observed_outputs_reg[14]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     4.000     4.000 r  
+                                                      0.000     4.000 r  ap_clk (IN)
+                         net (fo=0)                   0.036     4.036    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     4.060 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         2.810     6.870    kernel_clk
+    SLR Crossing[1->3]   
+    SLICE_X179Y856       FDRE                                         r  observed_outputs_reg[14]/C
+                         clock pessimism              0.261     7.131    
+                         clock uncertainty           -0.035     7.095    
+    SLICE_X179Y856       FDRE (Setup_GFF_SLICEM_C_D)
+                                                      0.025     7.120    observed_outputs_reg[14]
+  -------------------------------------------------------------------
+                         required time                          7.120    
+                         arrival time                          -5.400    
+  -------------------------------------------------------------------
+                         slack                                  1.720    
+
+Slack (MET) :             1.726ns  (required time - arrival time)
+  Source:                 kernel/native_instance/tile_1_storage_reg/CLKARDCLK
+                            (rising edge-triggered cell RAMB18E2 clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            observed_outputs_reg[12]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (ap_clk rise@4.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.074ns  (logic 1.436ns (69.238%)  route 0.638ns (30.762%))
+  Logic Levels:           4  (CARRY8=2 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.190ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.860ns = ( 6.860 - 4.000 ) 
+    Source Clock Delay      (SCD):    3.311ns
+    Clock Pessimism Removal (CPR):    0.261ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.240ns (routing 2.228ns, distribution 1.012ns)
+  Clock Net Delay (Destination): 2.800ns (routing 2.023ns, distribution 0.777ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.043     0.043    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         3.240     3.311    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    RAMB18_X11Y343       RAMB18E2                                     r  kernel/native_instance/tile_1_storage_reg/CLKARDCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB18_X11Y343       RAMB18E2 (Prop_RAMB18E2_U_RAMB181_CLKARDCLK_DOUTADOUT[4])
+                                                      0.900     4.211 r  kernel/native_instance/tile_1_storage_reg/DOUTADOUT[4]
+                         net (fo=2, routed)           0.368     4.579    kernel/native_instance/tile_1_q0[4]
+    SLICE_X178Y855       LUT2 (Prop_E6LUT_SLICEL_I1_O)
+                                                      0.147     4.726 r  kernel/native_instance/output_r_d00_carry_i_12/O
+                         net (fo=1, routed)           0.007     4.733    kernel/native_instance/output_r_d00_carry_i_12_n_0
+    SLICE_X178Y855       CARRY8 (Prop_CARRY8_SLICEL_S[4]_CO[7])
+                                                      0.153     4.886 r  kernel/native_instance/output_r_d00_carry/CO[7]
+                         net (fo=1, routed)           0.026     4.912    kernel/native_instance/output_r_d00_carry_n_0
+    SLICE_X178Y856       CARRY8 (Prop_CARRY8_SLICEL_CI_O[4])
+                                                      0.086     4.998 r  kernel/native_instance/output_r_d00_carry__0/O[4]
+                         net (fo=1, routed)           0.186     5.184    kernel/native_instance/output_r_d00[12]
+    SLICE_X177Y857       LUT4 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.150     5.334 r  kernel/native_instance/output_r_d0[12]_INST_0/O
+                         net (fo=1, routed)           0.051     5.385    output_r_d0[12]
+    SLICE_X177Y857       FDRE                                         r  observed_outputs_reg[12]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     4.000     4.000 r  
+                                                      0.000     4.000 r  ap_clk (IN)
+                         net (fo=0)                   0.036     4.036    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     4.060 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         2.800     6.860    kernel_clk
+    SLR Crossing[1->3]   
+    SLICE_X177Y857       FDRE                                         r  observed_outputs_reg[12]/C
+                         clock pessimism              0.261     7.121    
+                         clock uncertainty           -0.035     7.086    
+    SLICE_X177Y857       FDRE (Setup_HFF_SLICEL_C_D)
+                                                      0.025     7.111    observed_outputs_reg[12]
+  -------------------------------------------------------------------
+                         required time                          7.111    
+                         arrival time                          -5.385    
+  -------------------------------------------------------------------
+                         slack                                  1.726    
+
+Slack (MET) :             1.734ns  (required time - arrival time)
+  Source:                 kernel/native_instance/tile_1_storage_reg/CLKARDCLK
+                            (rising edge-triggered cell RAMB18E2 clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            observed_outputs_reg[17]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (ap_clk rise@4.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.070ns  (logic 1.357ns (65.556%)  route 0.713ns (34.444%))
+  Logic Levels:           5  (CARRY8=3 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.185ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.865ns = ( 6.865 - 4.000 ) 
+    Source Clock Delay      (SCD):    3.311ns
+    Clock Pessimism Removal (CPR):    0.261ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.240ns (routing 2.228ns, distribution 1.012ns)
+  Clock Net Delay (Destination): 2.805ns (routing 2.023ns, distribution 0.782ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.043     0.043    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         3.240     3.311    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    RAMB18_X11Y343       RAMB18E2                                     r  kernel/native_instance/tile_1_storage_reg/CLKARDCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB18_X11Y343       RAMB18E2 (Prop_RAMB18E2_U_RAMB181_CLKARDCLK_DOUTADOUT[4])
+                                                      0.900     4.211 r  kernel/native_instance/tile_1_storage_reg/DOUTADOUT[4]
+                         net (fo=2, routed)           0.368     4.579    kernel/native_instance/tile_1_q0[4]
+    SLICE_X178Y855       LUT2 (Prop_E6LUT_SLICEL_I1_O)
+                                                      0.147     4.726 r  kernel/native_instance/output_r_d00_carry_i_12/O
+                         net (fo=1, routed)           0.007     4.733    kernel/native_instance/output_r_d00_carry_i_12_n_0
+    SLICE_X178Y855       CARRY8 (Prop_CARRY8_SLICEL_S[4]_CO[7])
+                                                      0.153     4.886 r  kernel/native_instance/output_r_d00_carry/CO[7]
+                         net (fo=1, routed)           0.026     4.912    kernel/native_instance/output_r_d00_carry_n_0
+    SLICE_X178Y856       CARRY8 (Prop_CARRY8_SLICEL_CI_CO[7])
+                                                      0.015     4.927 r  kernel/native_instance/output_r_d00_carry__0/CO[7]
+                         net (fo=1, routed)           0.026     4.953    kernel/native_instance/output_r_d00_carry__0_n_0
+    SLICE_X178Y857       CARRY8 (Prop_CARRY8_SLICEL_CI_O[1])
+                                                      0.076     5.029 r  kernel/native_instance/output_r_d00_carry__1/O[1]
+                         net (fo=1, routed)           0.256     5.285    kernel/native_instance/output_r_d00[17]
+    SLICE_X179Y857       LUT4 (Prop_D5LUT_SLICEM_I0_O)
+                                                      0.066     5.351 r  kernel/native_instance/output_r_d0[17]_INST_0/O
+                         net (fo=1, routed)           0.030     5.381    output_r_d0[17]
+    SLICE_X179Y857       FDRE                                         r  observed_outputs_reg[17]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     4.000     4.000 r  
+                                                      0.000     4.000 r  ap_clk (IN)
+                         net (fo=0)                   0.036     4.036    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     4.060 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         2.805     6.865    kernel_clk
+    SLR Crossing[1->3]   
+    SLICE_X179Y857       FDRE                                         r  observed_outputs_reg[17]/C
+                         clock pessimism              0.261     7.126    
+                         clock uncertainty           -0.035     7.091    
+    SLICE_X179Y857       FDRE (Setup_DFF2_SLICEM_C_D)
+                                                      0.025     7.116    observed_outputs_reg[17]
+  -------------------------------------------------------------------
+                         required time                          7.116    
+                         arrival time                          -5.381    
+  -------------------------------------------------------------------
+                         slack                                  1.734    
+
+Slack (MET) :             1.742ns  (required time - arrival time)
+  Source:                 kernel/native_instance/tile_1_storage_reg/CLKARDCLK
+                            (rising edge-triggered cell RAMB18E2 clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            observed_outputs_reg[15]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (ap_clk rise@4.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.068ns  (logic 1.461ns (70.648%)  route 0.607ns (29.352%))
+  Logic Levels:           4  (CARRY8=2 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.180ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.871ns = ( 6.871 - 4.000 ) 
+    Source Clock Delay      (SCD):    3.311ns
+    Clock Pessimism Removal (CPR):    0.261ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.240ns (routing 2.228ns, distribution 1.012ns)
+  Clock Net Delay (Destination): 2.811ns (routing 2.023ns, distribution 0.788ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.043     0.043    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         3.240     3.311    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    RAMB18_X11Y343       RAMB18E2                                     r  kernel/native_instance/tile_1_storage_reg/CLKARDCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB18_X11Y343       RAMB18E2 (Prop_RAMB18E2_U_RAMB181_CLKARDCLK_DOUTADOUT[4])
+                                                      0.900     4.211 r  kernel/native_instance/tile_1_storage_reg/DOUTADOUT[4]
+                         net (fo=2, routed)           0.368     4.579    kernel/native_instance/tile_1_q0[4]
+    SLICE_X178Y855       LUT2 (Prop_E6LUT_SLICEL_I1_O)
+                                                      0.147     4.726 r  kernel/native_instance/output_r_d00_carry_i_12/O
+                         net (fo=1, routed)           0.007     4.733    kernel/native_instance/output_r_d00_carry_i_12_n_0
+    SLICE_X178Y855       CARRY8 (Prop_CARRY8_SLICEL_S[4]_CO[7])
+                                                      0.153     4.886 r  kernel/native_instance/output_r_d00_carry/CO[7]
+                         net (fo=1, routed)           0.026     4.912    kernel/native_instance/output_r_d00_carry_n_0
+    SLICE_X178Y856       CARRY8 (Prop_CARRY8_SLICEL_CI_O[7])
+                                                      0.116     5.028 r  kernel/native_instance/output_r_d00_carry__0/O[7]
+                         net (fo=1, routed)           0.134     5.162    kernel/native_instance/output_r_d00[15]
+    SLICE_X179Y856       LUT4 (Prop_D6LUT_SLICEM_I0_O)
+                                                      0.145     5.307 r  kernel/native_instance/output_r_d0[15]_INST_0/O
+                         net (fo=1, routed)           0.072     5.379    output_r_d0[15]
+    SLICE_X179Y856       FDRE                                         r  observed_outputs_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     4.000     4.000 r  
+                                                      0.000     4.000 r  ap_clk (IN)
+                         net (fo=0)                   0.036     4.036    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     4.060 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         2.811     6.871    kernel_clk
+    SLR Crossing[1->3]   
+    SLICE_X179Y856       FDRE                                         r  observed_outputs_reg[15]/C
+                         clock pessimism              0.261     7.132    
+                         clock uncertainty           -0.035     7.096    
+    SLICE_X179Y856       FDRE (Setup_DFF_SLICEM_C_D)
+                                                      0.025     7.121    observed_outputs_reg[15]
+  -------------------------------------------------------------------
+                         required time                          7.121    
+                         arrival time                          -5.379    
+  -------------------------------------------------------------------
+                         slack                                  1.742    
+
+Slack (MET) :             1.743ns  (required time - arrival time)
+  Source:                 kernel/native_instance/tile_0_storage_reg/CLKBWRCLK
+                            (rising edge-triggered cell RAMB18E2 clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Destination:            observed_outputs_reg[28]/D
+                            (rising edge-triggered cell FDRE clocked by ap_clk  {rise@0.000ns fall@2.000ns period=4.000ns})
+  Path Group:             ap_clk
+  Path Type:              Setup (Max at Slow Process Corner)
+  Requirement:            4.000ns  (ap_clk rise@4.000ns - ap_clk rise@0.000ns)
+  Data Path Delay:        2.098ns  (logic 1.382ns (65.872%)  route 0.716ns (34.128%))
+  Logic Levels:           4  (CARRY8=2 LUT2=1 LUT4=1)
+  Clock Path Skew:        -0.149ns (DCD - SCD + CPR)
+    Destination Clock Delay (DCD):    2.858ns = ( 6.858 - 4.000 ) 
+    Source Clock Delay      (SCD):    3.313ns
+    Clock Pessimism Removal (CPR):    0.307ns
+  Clock Uncertainty:      0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter     (TSJ):    0.071ns
+    Total Input Jitter      (TIJ):    0.000ns
+    Discrete Jitter          (DJ):    0.000ns
+    Phase Error              (PE):    0.000ns
+  Clock Net Delay (Source):      3.242ns (routing 2.228ns, distribution 1.014ns)
+  Clock Net Delay (Destination): 2.798ns (routing 2.023ns, distribution 0.775ns)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+                         (clock ap_clk rise edge)     0.000     0.000 r  
+                                                      0.000     0.000 r  ap_clk (IN)
+                         net (fo=0)                   0.043     0.043    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.028     0.071 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         3.242     3.313    kernel/native_instance/ap_clk
+    SLR Crossing[1->3]   
+    RAMB18_X11Y342       RAMB18E2                                     r  kernel/native_instance/tile_0_storage_reg/CLKBWRCLK
+  -------------------------------------------------------------------    -------------------
+    RAMB18_X11Y342       RAMB18E2 (Prop_RAMB18E2_L_RAMB180_CLKBWRCLK_DOUTBDOUT[0])
+                                                      0.963     4.276 r  kernel/native_instance/tile_0_storage_reg/DOUTBDOUT[0]
+                         net (fo=2, routed)           0.511     4.787    kernel/native_instance/tile_0_q0[18]
+    SLICE_X178Y857       LUT2 (Prop_C6LUT_SLICEL_I0_O)
+                                                      0.088     4.875 r  kernel/native_instance/output_r_d00_carry__1_i_14/O
+                         net (fo=1, routed)           0.010     4.885    kernel/native_instance/output_r_d00_carry__1_i_14_n_0
+    SLICE_X178Y857       CARRY8 (Prop_CARRY8_SLICEL_S[2]_CO[7])
+                                                      0.155     5.040 r  kernel/native_instance/output_r_d00_carry__1/CO[7]
+                         net (fo=1, routed)           0.026     5.066    kernel/native_instance/output_r_d00_carry__1_n_0
+    SLICE_X178Y858       CARRY8 (Prop_CARRY8_SLICEL_CI_O[4])
+                                                      0.086     5.152 r  kernel/native_instance/output_r_d00_carry__2/O[4]
+                         net (fo=1, routed)           0.118     5.270    kernel/native_instance/output_r_d00[28]
+    SLICE_X178Y859       LUT4 (Prop_H6LUT_SLICEL_I0_O)
+                                                      0.090     5.360 r  kernel/native_instance/output_r_d0[28]_INST_0/O
+                         net (fo=1, routed)           0.051     5.411    output_r_d0[28]
+    SLICE_X178Y859       FDRE                                         r  observed_outputs_reg[28]/D
+  -------------------------------------------------------------------    -------------------
+
+                         (clock ap_clk rise edge)     4.000     4.000 r  
+                                                      0.000     4.000 r  ap_clk (IN)
+                         net (fo=0)                   0.036     4.036    ap_clk
+    BUFGCE_X0Y183        BUFGCE (Prop_BUFCE_BUFGCE_I_O)
+                                                      0.024     4.060 r  clock_buffer/O
+    X5Y14 (CLOCK_ROOT)   net (fo=221, routed)         2.798     6.858    kernel_clk
+    SLR Crossing[1->3]   
+    SLICE_X178Y859       FDRE                                         r  observed_outputs_reg[28]/C
+                         clock pessimism              0.307     7.164    
+                         clock uncertainty           -0.035     7.129    
+    SLICE_X178Y859       FDRE (Setup_HFF_SLICEL_C_D)
+                                                      0.025     7.154    observed_outputs_reg[28]
+  -------------------------------------------------------------------
+                         required time                          7.154    
+                         arrival time                          -5.411    
+  -------------------------------------------------------------------
+                         slack                                  1.743    
+
+
+
+

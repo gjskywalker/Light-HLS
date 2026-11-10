@@ -1,0 +1,626 @@
+{
+  "valid": true,
+  "comparison_sha256": "8ec76b563c9a3268924d9935a7624a426c3c3ea40d5a75a276390a377f9803a2",
+  "rtl_root": "/tmp/lighthls-next3-20260928.t1orVg/dsp-map-100-v3",
+  "light_rtl_override": "/tmp/lighthls-correctness-20260929.kZl9Xq/final-map-100/light_hls/reports/rtl/top.v",
+  "source_sha256": "1386f273980d13fc7f56a7bb072fff224a616bbed05b9201fc6f584c8e95b4a3",
+  "testbench_sha256": "d069529173043bf5c9d1b2000853bf3ff5b71680f6d8299fcffd00c23737c02f",
+  "contract": "32 held-start offers, changing coefficient, immutable input RAM, one-cycle reads, no output backpressure",
+  "note": "Ready is an acknowledgement, not necessarily the first execution edge. Throughput uses final commits.",
+  "results": {
+    "light_hls": {
+      "rtl_sha256": {
+        "/tmp/lighthls-correctness-20260929.kZl9Xq/final-map-100/light_hls/reports/rtl/top.v": "53985c89051a93d230407a3db6a211476b36ab6d0b840173eab7aa29e47104aa"
+      },
+      "reference_outputs": 8192,
+      "events": [
+        {
+          "trial": 0,
+          "acknowledged": 5,
+          "last_commit": 264,
+          "done": 265
+        },
+        {
+          "trial": 1,
+          "acknowledged": 265,
+          "last_commit": 524,
+          "done": 525
+        },
+        {
+          "trial": 2,
+          "acknowledged": 525,
+          "last_commit": 784,
+          "done": 785
+        },
+        {
+          "trial": 3,
+          "acknowledged": 785,
+          "last_commit": 1044,
+          "done": 1045
+        },
+        {
+          "trial": 4,
+          "acknowledged": 1045,
+          "last_commit": 1304,
+          "done": 1305
+        },
+        {
+          "trial": 5,
+          "acknowledged": 1305,
+          "last_commit": 1564,
+          "done": 1565
+        },
+        {
+          "trial": 6,
+          "acknowledged": 1565,
+          "last_commit": 1824,
+          "done": 1825
+        },
+        {
+          "trial": 7,
+          "acknowledged": 1825,
+          "last_commit": 2084,
+          "done": 2085
+        },
+        {
+          "trial": 8,
+          "acknowledged": 2085,
+          "last_commit": 2344,
+          "done": 2345
+        },
+        {
+          "trial": 9,
+          "acknowledged": 2345,
+          "last_commit": 2604,
+          "done": 2605
+        },
+        {
+          "trial": 10,
+          "acknowledged": 2605,
+          "last_commit": 2864,
+          "done": 2865
+        },
+        {
+          "trial": 11,
+          "acknowledged": 2865,
+          "last_commit": 3124,
+          "done": 3125
+        },
+        {
+          "trial": 12,
+          "acknowledged": 3125,
+          "last_commit": 3384,
+          "done": 3385
+        },
+        {
+          "trial": 13,
+          "acknowledged": 3385,
+          "last_commit": 3644,
+          "done": 3645
+        },
+        {
+          "trial": 14,
+          "acknowledged": 3645,
+          "last_commit": 3904,
+          "done": 3905
+        },
+        {
+          "trial": 15,
+          "acknowledged": 3905,
+          "last_commit": 4164,
+          "done": 4165
+        },
+        {
+          "trial": 16,
+          "acknowledged": 4165,
+          "last_commit": 4424,
+          "done": 4425
+        },
+        {
+          "trial": 17,
+          "acknowledged": 4425,
+          "last_commit": 4684,
+          "done": 4685
+        },
+        {
+          "trial": 18,
+          "acknowledged": 4685,
+          "last_commit": 4944,
+          "done": 4945
+        },
+        {
+          "trial": 19,
+          "acknowledged": 4945,
+          "last_commit": 5204,
+          "done": 5205
+        },
+        {
+          "trial": 20,
+          "acknowledged": 5205,
+          "last_commit": 5464,
+          "done": 5465
+        },
+        {
+          "trial": 21,
+          "acknowledged": 5465,
+          "last_commit": 5724,
+          "done": 5725
+        },
+        {
+          "trial": 22,
+          "acknowledged": 5725,
+          "last_commit": 5984,
+          "done": 5985
+        },
+        {
+          "trial": 23,
+          "acknowledged": 5985,
+          "last_commit": 6244,
+          "done": 6245
+        },
+        {
+          "trial": 24,
+          "acknowledged": 6245,
+          "last_commit": 6504,
+          "done": 6505
+        },
+        {
+          "trial": 25,
+          "acknowledged": 6505,
+          "last_commit": 6764,
+          "done": 6765
+        },
+        {
+          "trial": 26,
+          "acknowledged": 6765,
+          "last_commit": 7024,
+          "done": 7025
+        },
+        {
+          "trial": 27,
+          "acknowledged": 7025,
+          "last_commit": 7284,
+          "done": 7285
+        },
+        {
+          "trial": 28,
+          "acknowledged": 7285,
+          "last_commit": 7544,
+          "done": 7545
+        },
+        {
+          "trial": 29,
+          "acknowledged": 7545,
+          "last_commit": 7804,
+          "done": 7805
+        },
+        {
+          "trial": 30,
+          "acknowledged": 7805,
+          "last_commit": 8064,
+          "done": 8065
+        },
+        {
+          "trial": 31,
+          "acknowledged": 8065,
+          "last_commit": 8324,
+          "done": 8325
+        }
+      ],
+      "intervals": {
+        "acknowledged": [
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260
+        ],
+        "last_commit": [
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260
+        ],
+        "done": [
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260,
+          260
+        ]
+      },
+      "warmup_intervals": 4,
+      "steady_commit_interval_cycles": 260.0,
+      "steady_commit_interval_min": 260,
+      "steady_commit_interval_max": 260,
+      "steady_outputs_per_cycle": 0.9846153846153847
+    },
+    "vitis_hls": {
+      "rtl_sha256": {
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-map-100-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure.v": "b63723dd84350e133ebd10750d7298e57a9ffcddabac6745aed6b32f17c37af9",
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-map-100-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_flow_control_loop_pipe.v": "1dc529306b4e287ba5494382c5f263af08186d2a8bb0662d7dd997f9ed6e9f3e",
+        "/tmp/lighthls-next3-20260928.t1orVg/dsp-map-100-v3/vitis_hls/vitis_project/solution/syn/verilog/qor_pressure_mac_muladd_17ns_17ns_8ns_32_4_1.v": "b60db3b8e8f87069f6de5d55bef6fa13d7043b0c1cba81006ed1d20f12572a43"
+      },
+      "reference_outputs": 8192,
+      "events": [
+        {
+          "trial": 0,
+          "acknowledged": 260,
+          "last_commit": 264,
+          "done": 264
+        },
+        {
+          "trial": 1,
+          "acknowledged": 516,
+          "last_commit": 520,
+          "done": 520
+        },
+        {
+          "trial": 2,
+          "acknowledged": 772,
+          "last_commit": 776,
+          "done": 776
+        },
+        {
+          "trial": 3,
+          "acknowledged": 1028,
+          "last_commit": 1032,
+          "done": 1032
+        },
+        {
+          "trial": 4,
+          "acknowledged": 1284,
+          "last_commit": 1288,
+          "done": 1288
+        },
+        {
+          "trial": 5,
+          "acknowledged": 1540,
+          "last_commit": 1544,
+          "done": 1544
+        },
+        {
+          "trial": 6,
+          "acknowledged": 1796,
+          "last_commit": 1800,
+          "done": 1800
+        },
+        {
+          "trial": 7,
+          "acknowledged": 2052,
+          "last_commit": 2056,
+          "done": 2056
+        },
+        {
+          "trial": 8,
+          "acknowledged": 2308,
+          "last_commit": 2312,
+          "done": 2312
+        },
+        {
+          "trial": 9,
+          "acknowledged": 2564,
+          "last_commit": 2568,
+          "done": 2568
+        },
+        {
+          "trial": 10,
+          "acknowledged": 2820,
+          "last_commit": 2824,
+          "done": 2824
+        },
+        {
+          "trial": 11,
+          "acknowledged": 3076,
+          "last_commit": 3080,
+          "done": 3080
+        },
+        {
+          "trial": 12,
+          "acknowledged": 3332,
+          "last_commit": 3336,
+          "done": 3336
+        },
+        {
+          "trial": 13,
+          "acknowledged": 3588,
+          "last_commit": 3592,
+          "done": 3592
+        },
+        {
+          "trial": 14,
+          "acknowledged": 3844,
+          "last_commit": 3848,
+          "done": 3848
+        },
+        {
+          "trial": 15,
+          "acknowledged": 4100,
+          "last_commit": 4104,
+          "done": 4104
+        },
+        {
+          "trial": 16,
+          "acknowledged": 4356,
+          "last_commit": 4360,
+          "done": 4360
+        },
+        {
+          "trial": 17,
+          "acknowledged": 4612,
+          "last_commit": 4616,
+          "done": 4616
+        },
+        {
+          "trial": 18,
+          "acknowledged": 4868,
+          "last_commit": 4872,
+          "done": 4872
+        },
+        {
+          "trial": 19,
+          "acknowledged": 5124,
+          "last_commit": 5128,
+          "done": 5128
+        },
+        {
+          "trial": 20,
+          "acknowledged": 5380,
+          "last_commit": 5384,
+          "done": 5384
+        },
+        {
+          "trial": 21,
+          "acknowledged": 5636,
+          "last_commit": 5640,
+          "done": 5640
+        },
+        {
+          "trial": 22,
+          "acknowledged": 5892,
+          "last_commit": 5896,
+          "done": 5896
+        },
+        {
+          "trial": 23,
+          "acknowledged": 6148,
+          "last_commit": 6152,
+          "done": 6152
+        },
+        {
+          "trial": 24,
+          "acknowledged": 6404,
+          "last_commit": 6408,
+          "done": 6408
+        },
+        {
+          "trial": 25,
+          "acknowledged": 6660,
+          "last_commit": 6664,
+          "done": 6664
+        },
+        {
+          "trial": 26,
+          "acknowledged": 6916,
+          "last_commit": 6920,
+          "done": 6920
+        },
+        {
+          "trial": 27,
+          "acknowledged": 7172,
+          "last_commit": 7176,
+          "done": 7176
+        },
+        {
+          "trial": 28,
+          "acknowledged": 7428,
+          "last_commit": 7432,
+          "done": 7432
+        },
+        {
+          "trial": 29,
+          "acknowledged": 7684,
+          "last_commit": 7688,
+          "done": 7688
+        },
+        {
+          "trial": 30,
+          "acknowledged": 7940,
+          "last_commit": 7944,
+          "done": 7944
+        },
+        {
+          "trial": 31,
+          "acknowledged": 8196,
+          "last_commit": 8200,
+          "done": 8200
+        }
+      ],
+      "intervals": {
+        "acknowledged": [
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256
+        ],
+        "last_commit": [
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256
+        ],
+        "done": [
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256,
+          256
+        ]
+      },
+      "warmup_intervals": 4,
+      "steady_commit_interval_cycles": 256.0,
+      "steady_commit_interval_min": 256,
+      "steady_commit_interval_max": 256,
+      "steady_outputs_per_cycle": 1.0
+    }
+  }
+}

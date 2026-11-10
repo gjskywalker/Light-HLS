@@ -1,0 +1,31 @@
+DAPO-II U250 Ground-Truth Baseline Archive
+Part: xcu250-figd2104-2L-e
+QoR: common normalized-wrapper Vivado OOC synthesis
+
++------------------+------------------------+-----------+-----------+---------+---------+---------+---------+----------+----------+---------+
+| Suite            | Case                   | L-Cycles  | V-Cycles  | L-LUT   | V-LUT   | L-FF    | V-FF    | L-WNS    | V-WNS    | Reward  |
++------------------+------------------------+-----------+-----------+---------+---------+---------+---------+----------+----------+---------+
+| scalar           | backend_scalar         | 15.000    | 4.000     | 157     | 106     | 269     | 102     | 8.129    | 8.735    | yes     |
+| pipeline         | ii1                    | 21.000    | 16.000    | 38      | 9       | 25      | 11      | 8.917    | 9.318    | yes     |
+| pipeline         | memory_ii              | 38.000    | 32.000    | 91      | 53      | 71      | 47      | 8.960    | 9.305    | yes     |
+| pipeline         | recurrence             | 21.000    | 16.000    | 53      | 72      | 121     | 39      | 9.006    | 9.006    | yes     |
+| pipeline         | memory_dependence      | 35.000    | 29.000    | 63      | 14      | 36      | 11      | 8.977    | 9.396    | yes     |
+| pipeline         | inner                  | 23.000    | 16.000    | 57      | 20      | 25      | 20      | 8.917    | 9.311    | yes     |
+| pipeline         | outer                  | 21.000    | 17.000    | 73      | 58      | 36      | 52      | 8.962    | 9.263    | yes     |
+| pipeline         | mixed_memory           | 21.000    | 15.000    | 38      | 11      | 25      | 9       | 9.060    | 9.454    | yes     |
+| array_partition  | cyclic                 | 9.000     | 4.000     | 123     | 96      | 17      | 7       | 9.106    | 9.614    | yes     |
+| array_partition  | block                  | 10.000    | 4.000     | 123     | 96      | 18      | 7       | 9.100    | 9.614    | yes     |
+| array_partition  | complete               | 3.000     | 0.000     | 110     | 92      | 5       | 0       | 9.419    | -        | yes     |
+| array_partition  | pipeline_complete      | 10.000    | 3.000     | 92      | 131     | 52      | 3       | 9.101    | 9.549    | yes     |
+| array_partition  | complete_rw            | 16.000    | 5.000     | 206     | 230     | 47      | 7       | 9.263    | 9.375    | yes     |
+| array_partition  | multidim               | 8.000     | 1.000     | 183     | 147     | 143     | 2       | 9.154    | 9.330    | yes     |
+| array_partition  | multidim_cyclic        | 9.000     | 4.000     | 133     | 104     | 89      | 72      | 9.064    | 9.375    | yes     |
+| array_partition  | local                  | 60.000    | 42.000    | 589     | 242     | 310     | 152     | 8.391    | 9.003    | yes     |
+| dataflow         | fifo_stream            | 137.000   | 132.000   | 215     | 164     | 168     | 54      | 8.693    | 8.542    | yes     |
+| dataflow         | pipo_array             | 396.000   | 388.000   | 377     | 275     | 273     | 126     | 8.702    | 8.861    | yes     |
+| dataflow         | pipeline_partition     | 44.000    | 34.000    | 477     | 223     | 353     | 175     | 8.828    | 8.977    | yes     |
+| dataflow_nested  | vector_pipeline_partition_dataflow | 46.000    | 34.000    | 484     | 237     | 353     | 184     | 8.809    | 8.977    | yes     |
++------------------+------------------------+-----------+-----------+---------+---------+---------+---------+----------+----------+---------+
+
+Only functionally equivalent, normalized-interface-compatible cases
+are reward-eligible. Raw Vivado and Vitis projects stay outside Git.

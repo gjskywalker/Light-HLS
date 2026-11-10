@@ -1,0 +1,6 @@
+{
+  "skill": "constraint-sweep",
+  "tested_points": [100, 200, 250],
+  "best_point": null,
+  "notes": "MHz values are actual measured design-specific points, not a complete common-design sweep. The generated planning grid was not fully executed. Three representative OOC routed comparisons retain IO hold failures; no globally optimal frequency or complete timing closure is claimed."
+}

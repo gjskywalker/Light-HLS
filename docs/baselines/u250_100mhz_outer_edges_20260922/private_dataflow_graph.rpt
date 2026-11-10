@@ -1,0 +1,59 @@
+================================================================
+== Light-HLS DATAFLOW Task Graph
+================================================================
++----------------------+---------------------------------------------------------+
+| Field                | Value                                                   |
++----------------------+---------------------------------------------------------+
+| Design               | private_stream_buffer                                   |
+| Top Function         | local_dataflow                                          |
+| Target Board         | u250                                                    |
+| Target Frequency     | 100.000 MHz                                             |
+| Clock Period         | 10.000 ns                                               |
++----------------------+---------------------------------------------------------+
+Source: /home/eeuser/Desktop/DAPO_II/Light_HLS/Tests/LocalWriteData/known_failures/private_stream_buffer.cpp
+
++ Graph Summary:
+
++--------------------------+------------------+----------------------------------------+
+| Metric                   | Value            | Description                            |
++--------------------------+------------------+----------------------------------------+
+| Valid                    | yes              | task graph status                      |
+| Performance Valid        | yes              | rate, capacity, II, and deadlock ch... |
+| Rates Balanced           | yes              | equal transaction production/consum... |
+| Deadlock Free            | yes              | static zero-token graph check          |
+| Cyclic                   | no               | directed channel cycle                 |
+| Zero-token Cycle         | no               | startup-deadlocking directed cycle     |
+| Graph II                 | 227              | maximum generated task reacceptance... |
+| Execution Model          | persistent bo... | generated DATAFLOW top controller      |
+| Outstanding Capacity     | 2                | accepted top transactions              |
+| Minimum Acceptance II    | 1                | burst-mode ap_start acceptance         |
+| Measured Acceptance II   | not measured     | RTL testbench measurement              |
+| First-Transaction Lat... | 227..487         | controller-aware structural bounds;... |
+| PIPO Handoff             | 1 cycle          | commit/release look-ahead controller   |
+| Retirement               | 1 cycle          | terminal done to top-level ap_done     |
+| Tasks                    | 3                | concurrent RTL modules                 |
+| Channels                 | 2                | bounded internal channels              |
++--------------------------+------------------+----------------------------------------+
+
++ Tasks:
+
++--------------------------+----------------------------------------+-----------+---------+----------------------------------------------+-----------+------------+----------+
+| Task                     | LLVM Function                          | Latency   | Exact   | Source                                       | Txn II    | Pipelines  | Loop II  |
++--------------------------+----------------------------------------+-----------+---------+----------------------------------------------+-----------+------------+----------+
+| load_slow_0              | _ZL9load_slowPKjRN3hls6streamIjLi2EEE  | 226       | yes     | generated RTL FSM with static loop trips     | 227       | 0          | -        |
+| private_buffer_1         | _ZL14private_bufferRN3hls6streamIjL... | 82        | yes     | generated RTL FSM with static loop trips     | 83        | 1          | 1        |
+| store_slow_2             | _ZL10store_slowRN3hls6streamIjLi2EEEPj | 178       | yes     | generated RTL FSM with static loop trips     | 179       | 0          | -        |
++--------------------------+----------------------------------------+-----------+---------+----------------------------------------------+-----------+------------+----------+
+
++ Channels:
+
++------------------+--------------------+--------------------+----------+--------+---------+-----------+------------+---------+------------+----------+----------+--------------+--------------+---------------+---------------+-----------+---------+------------+--------+
+| Channel          | Producer           | Consumer           | Type     | Bits   | Depth   | Instances | Partition  | Banks   | Bank Depth | Initial  | Rate     | Produce      | Consume      | Prod First/II | Cons First/II | Min Depth | Buffers | Broadcast  | Safe   |
++------------------+--------------------+--------------------+----------+--------+---------+-----------+------------+---------+------------+----------+----------+--------------+--------------+---------------+---------------+-----------+---------+------------+--------+
+| computed         | private_buffer_1   | store_slow_2       | fifo     | 32     | 1       | 1         | none       | 1       | 1          | 0        | exact    | 16..16       | 16..16       | unknown       | 2/2           | 1         | 1       | no         | yes    |
+| loaded           | load_slow_0        | private_buffer_1   | fifo     | 32     | 1       | 1         | none       | 1       | 1          | 0        | exact    | 32..32       | 32..32       | unknown       | 1/1           | 1         | 1       | no         | yes    |
++------------------+--------------------+--------------------+----------+--------+---------+-----------+------------+---------+------------+----------+----------+--------------+--------------+---------------+---------------+-----------+---------+------------+--------+
+
++ Diagnostics:
+
+No warnings or errors.

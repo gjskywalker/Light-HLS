@@ -1,0 +1,1207 @@
+{
+  "valid": true,
+  "expected_results": 16,
+  "results": [
+    {
+      "case": "dsp_map",
+      "frequency_mhz": 100.0,
+      "valid": true,
+      "calls": 8,
+      "outputs": 2048,
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 4,
+          "first_read": 7,
+          "first_write": 8,
+          "last_commit": 263,
+          "done": 263
+        },
+        {
+          "trial": 1,
+          "accepted": 267,
+          "first_read": 270,
+          "first_write": 271,
+          "last_commit": 526,
+          "done": 526
+        },
+        {
+          "trial": 2,
+          "accepted": 530,
+          "first_read": 533,
+          "first_write": 534,
+          "last_commit": 789,
+          "done": 789
+        },
+        {
+          "trial": 3,
+          "accepted": 793,
+          "first_read": 796,
+          "first_write": 797,
+          "last_commit": 1052,
+          "done": 1052
+        },
+        {
+          "trial": 4,
+          "accepted": 1056,
+          "first_read": 1059,
+          "first_write": 1060,
+          "last_commit": 1315,
+          "done": 1315
+        },
+        {
+          "trial": 5,
+          "accepted": 1319,
+          "first_read": 1322,
+          "first_write": 1323,
+          "last_commit": 1578,
+          "done": 1578
+        },
+        {
+          "trial": 6,
+          "accepted": 1582,
+          "first_read": 1585,
+          "first_write": 1586,
+          "last_commit": 1841,
+          "done": 1841
+        },
+        {
+          "trial": 7,
+          "accepted": 1845,
+          "first_read": 1848,
+          "first_write": 1849,
+          "last_commit": 2104,
+          "done": 2104
+        }
+      ],
+      "source_sha256": "1386f273980d13fc7f56a7bb072fff224a616bbed05b9201fc6f584c8e95b4a3",
+      "rtl_sha256": "f72712c22605d91d8bb1b138502c25ca07b3e5d44c2a893c6c08a000e81c83b5"
+    },
+    {
+      "case": "bram_permute",
+      "frequency_mhz": 100.0,
+      "valid": true,
+      "calls": 8,
+      "outputs": 2048,
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 4,
+          "first_read": 5,
+          "first_write": 264,
+          "last_commit": 519,
+          "done": 519
+        },
+        {
+          "trial": 1,
+          "accepted": 523,
+          "first_read": 524,
+          "first_write": 783,
+          "last_commit": 1038,
+          "done": 1038
+        },
+        {
+          "trial": 2,
+          "accepted": 1042,
+          "first_read": 1043,
+          "first_write": 1302,
+          "last_commit": 1557,
+          "done": 1557
+        },
+        {
+          "trial": 3,
+          "accepted": 1561,
+          "first_read": 1562,
+          "first_write": 1821,
+          "last_commit": 2076,
+          "done": 2076
+        },
+        {
+          "trial": 4,
+          "accepted": 2080,
+          "first_read": 2081,
+          "first_write": 2340,
+          "last_commit": 2595,
+          "done": 2595
+        },
+        {
+          "trial": 5,
+          "accepted": 2599,
+          "first_read": 2600,
+          "first_write": 2859,
+          "last_commit": 3114,
+          "done": 3114
+        },
+        {
+          "trial": 6,
+          "accepted": 3118,
+          "first_read": 3119,
+          "first_write": 3378,
+          "last_commit": 3633,
+          "done": 3633
+        },
+        {
+          "trial": 7,
+          "accepted": 3637,
+          "first_read": 3638,
+          "first_write": 3897,
+          "last_commit": 4152,
+          "done": 4152
+        }
+      ],
+      "source_sha256": "4531ea2a2c9bbabcd8d1e850cd8fde5408a1b7c66e68d04c8d63eb2b1cfbd88f",
+      "rtl_sha256": "8fc7461d9171fd62b88dd0194adc7f10d085a7565d47a62cdccd466c00a2c304"
+    },
+    {
+      "case": "bram_banked",
+      "frequency_mhz": 100.0,
+      "valid": true,
+      "calls": 8,
+      "outputs": 2048,
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 4,
+          "first_read": 5,
+          "first_write": 265,
+          "last_commit": 775,
+          "done": 775
+        },
+        {
+          "trial": 1,
+          "accepted": 779,
+          "first_read": 780,
+          "first_write": 1040,
+          "last_commit": 1550,
+          "done": 1550
+        },
+        {
+          "trial": 2,
+          "accepted": 1554,
+          "first_read": 1555,
+          "first_write": 1815,
+          "last_commit": 2325,
+          "done": 2325
+        },
+        {
+          "trial": 3,
+          "accepted": 2329,
+          "first_read": 2330,
+          "first_write": 2590,
+          "last_commit": 3100,
+          "done": 3100
+        },
+        {
+          "trial": 4,
+          "accepted": 3104,
+          "first_read": 3105,
+          "first_write": 3365,
+          "last_commit": 3875,
+          "done": 3875
+        },
+        {
+          "trial": 5,
+          "accepted": 3879,
+          "first_read": 3880,
+          "first_write": 4140,
+          "last_commit": 4650,
+          "done": 4650
+        },
+        {
+          "trial": 6,
+          "accepted": 4654,
+          "first_read": 4655,
+          "first_write": 4915,
+          "last_commit": 5425,
+          "done": 5425
+        },
+        {
+          "trial": 7,
+          "accepted": 5429,
+          "first_read": 5430,
+          "first_write": 5690,
+          "last_commit": 6200,
+          "done": 6200
+        }
+      ],
+      "source_sha256": "7610e6ca4ebf3874740c3b8269c87362434958ee2e39074e5a53913fa41730f0",
+      "rtl_sha256": "f61791bd390771ab1e8f94e743428aff10d5bed11bfd798afc8cdbb19639b289"
+    },
+    {
+      "case": "dsp_dataflow",
+      "frequency_mhz": 100.0,
+      "valid": true,
+      "calls": 8,
+      "outputs": 2048,
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 4,
+          "first_read": 5,
+          "first_write": 10,
+          "last_commit": 265,
+          "done": 265
+        },
+        {
+          "trial": 1,
+          "accepted": 269,
+          "first_read": 270,
+          "first_write": 275,
+          "last_commit": 530,
+          "done": 530
+        },
+        {
+          "trial": 2,
+          "accepted": 534,
+          "first_read": 535,
+          "first_write": 540,
+          "last_commit": 795,
+          "done": 795
+        },
+        {
+          "trial": 3,
+          "accepted": 799,
+          "first_read": 800,
+          "first_write": 805,
+          "last_commit": 1060,
+          "done": 1060
+        },
+        {
+          "trial": 4,
+          "accepted": 1064,
+          "first_read": 1065,
+          "first_write": 1070,
+          "last_commit": 1325,
+          "done": 1325
+        },
+        {
+          "trial": 5,
+          "accepted": 1329,
+          "first_read": 1330,
+          "first_write": 1335,
+          "last_commit": 1590,
+          "done": 1590
+        },
+        {
+          "trial": 6,
+          "accepted": 1594,
+          "first_read": 1595,
+          "first_write": 1600,
+          "last_commit": 1855,
+          "done": 1855
+        },
+        {
+          "trial": 7,
+          "accepted": 1859,
+          "first_read": 1860,
+          "first_write": 1865,
+          "last_commit": 2120,
+          "done": 2120
+        }
+      ],
+      "source_sha256": "f00d0955fe4d078cbf42c0057a12afef7976e653b493e306b0218fa1545b88dd",
+      "rtl_sha256": "687023f0d0da539d1a83b839593c753e7f92e8eefd397d41bd0b9496ec2e2406"
+    },
+    {
+      "case": "dsp_map",
+      "frequency_mhz": 150.0,
+      "valid": true,
+      "calls": 8,
+      "outputs": 2048,
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 4,
+          "first_read": 7,
+          "first_write": 8,
+          "last_commit": 263,
+          "done": 263
+        },
+        {
+          "trial": 1,
+          "accepted": 267,
+          "first_read": 270,
+          "first_write": 271,
+          "last_commit": 526,
+          "done": 526
+        },
+        {
+          "trial": 2,
+          "accepted": 530,
+          "first_read": 533,
+          "first_write": 534,
+          "last_commit": 789,
+          "done": 789
+        },
+        {
+          "trial": 3,
+          "accepted": 793,
+          "first_read": 796,
+          "first_write": 797,
+          "last_commit": 1052,
+          "done": 1052
+        },
+        {
+          "trial": 4,
+          "accepted": 1056,
+          "first_read": 1059,
+          "first_write": 1060,
+          "last_commit": 1315,
+          "done": 1315
+        },
+        {
+          "trial": 5,
+          "accepted": 1319,
+          "first_read": 1322,
+          "first_write": 1323,
+          "last_commit": 1578,
+          "done": 1578
+        },
+        {
+          "trial": 6,
+          "accepted": 1582,
+          "first_read": 1585,
+          "first_write": 1586,
+          "last_commit": 1841,
+          "done": 1841
+        },
+        {
+          "trial": 7,
+          "accepted": 1845,
+          "first_read": 1848,
+          "first_write": 1849,
+          "last_commit": 2104,
+          "done": 2104
+        }
+      ],
+      "source_sha256": "1386f273980d13fc7f56a7bb072fff224a616bbed05b9201fc6f584c8e95b4a3",
+      "rtl_sha256": "f72712c22605d91d8bb1b138502c25ca07b3e5d44c2a893c6c08a000e81c83b5"
+    },
+    {
+      "case": "bram_permute",
+      "frequency_mhz": 150.0,
+      "valid": true,
+      "calls": 8,
+      "outputs": 2048,
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 4,
+          "first_read": 5,
+          "first_write": 264,
+          "last_commit": 519,
+          "done": 519
+        },
+        {
+          "trial": 1,
+          "accepted": 523,
+          "first_read": 524,
+          "first_write": 783,
+          "last_commit": 1038,
+          "done": 1038
+        },
+        {
+          "trial": 2,
+          "accepted": 1042,
+          "first_read": 1043,
+          "first_write": 1302,
+          "last_commit": 1557,
+          "done": 1557
+        },
+        {
+          "trial": 3,
+          "accepted": 1561,
+          "first_read": 1562,
+          "first_write": 1821,
+          "last_commit": 2076,
+          "done": 2076
+        },
+        {
+          "trial": 4,
+          "accepted": 2080,
+          "first_read": 2081,
+          "first_write": 2340,
+          "last_commit": 2595,
+          "done": 2595
+        },
+        {
+          "trial": 5,
+          "accepted": 2599,
+          "first_read": 2600,
+          "first_write": 2859,
+          "last_commit": 3114,
+          "done": 3114
+        },
+        {
+          "trial": 6,
+          "accepted": 3118,
+          "first_read": 3119,
+          "first_write": 3378,
+          "last_commit": 3633,
+          "done": 3633
+        },
+        {
+          "trial": 7,
+          "accepted": 3637,
+          "first_read": 3638,
+          "first_write": 3897,
+          "last_commit": 4152,
+          "done": 4152
+        }
+      ],
+      "source_sha256": "4531ea2a2c9bbabcd8d1e850cd8fde5408a1b7c66e68d04c8d63eb2b1cfbd88f",
+      "rtl_sha256": "8fc7461d9171fd62b88dd0194adc7f10d085a7565d47a62cdccd466c00a2c304"
+    },
+    {
+      "case": "bram_banked",
+      "frequency_mhz": 150.0,
+      "valid": true,
+      "calls": 8,
+      "outputs": 2048,
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 4,
+          "first_read": 5,
+          "first_write": 265,
+          "last_commit": 775,
+          "done": 775
+        },
+        {
+          "trial": 1,
+          "accepted": 779,
+          "first_read": 780,
+          "first_write": 1040,
+          "last_commit": 1550,
+          "done": 1550
+        },
+        {
+          "trial": 2,
+          "accepted": 1554,
+          "first_read": 1555,
+          "first_write": 1815,
+          "last_commit": 2325,
+          "done": 2325
+        },
+        {
+          "trial": 3,
+          "accepted": 2329,
+          "first_read": 2330,
+          "first_write": 2590,
+          "last_commit": 3100,
+          "done": 3100
+        },
+        {
+          "trial": 4,
+          "accepted": 3104,
+          "first_read": 3105,
+          "first_write": 3365,
+          "last_commit": 3875,
+          "done": 3875
+        },
+        {
+          "trial": 5,
+          "accepted": 3879,
+          "first_read": 3880,
+          "first_write": 4140,
+          "last_commit": 4650,
+          "done": 4650
+        },
+        {
+          "trial": 6,
+          "accepted": 4654,
+          "first_read": 4655,
+          "first_write": 4915,
+          "last_commit": 5425,
+          "done": 5425
+        },
+        {
+          "trial": 7,
+          "accepted": 5429,
+          "first_read": 5430,
+          "first_write": 5690,
+          "last_commit": 6200,
+          "done": 6200
+        }
+      ],
+      "source_sha256": "7610e6ca4ebf3874740c3b8269c87362434958ee2e39074e5a53913fa41730f0",
+      "rtl_sha256": "f61791bd390771ab1e8f94e743428aff10d5bed11bfd798afc8cdbb19639b289"
+    },
+    {
+      "case": "dsp_dataflow",
+      "frequency_mhz": 150.0,
+      "valid": true,
+      "calls": 8,
+      "outputs": 2048,
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 4,
+          "first_read": 5,
+          "first_write": 10,
+          "last_commit": 265,
+          "done": 265
+        },
+        {
+          "trial": 1,
+          "accepted": 269,
+          "first_read": 270,
+          "first_write": 275,
+          "last_commit": 530,
+          "done": 530
+        },
+        {
+          "trial": 2,
+          "accepted": 534,
+          "first_read": 535,
+          "first_write": 540,
+          "last_commit": 795,
+          "done": 795
+        },
+        {
+          "trial": 3,
+          "accepted": 799,
+          "first_read": 800,
+          "first_write": 805,
+          "last_commit": 1060,
+          "done": 1060
+        },
+        {
+          "trial": 4,
+          "accepted": 1064,
+          "first_read": 1065,
+          "first_write": 1070,
+          "last_commit": 1325,
+          "done": 1325
+        },
+        {
+          "trial": 5,
+          "accepted": 1329,
+          "first_read": 1330,
+          "first_write": 1335,
+          "last_commit": 1590,
+          "done": 1590
+        },
+        {
+          "trial": 6,
+          "accepted": 1594,
+          "first_read": 1595,
+          "first_write": 1600,
+          "last_commit": 1855,
+          "done": 1855
+        },
+        {
+          "trial": 7,
+          "accepted": 1859,
+          "first_read": 1860,
+          "first_write": 1865,
+          "last_commit": 2120,
+          "done": 2120
+        }
+      ],
+      "source_sha256": "f00d0955fe4d078cbf42c0057a12afef7976e653b493e306b0218fa1545b88dd",
+      "rtl_sha256": "687023f0d0da539d1a83b839593c753e7f92e8eefd397d41bd0b9496ec2e2406"
+    },
+    {
+      "case": "dsp_map",
+      "frequency_mhz": 200.0,
+      "valid": true,
+      "calls": 8,
+      "outputs": 2048,
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 4,
+          "first_read": 7,
+          "first_write": 9,
+          "last_commit": 264,
+          "done": 264
+        },
+        {
+          "trial": 1,
+          "accepted": 268,
+          "first_read": 271,
+          "first_write": 273,
+          "last_commit": 528,
+          "done": 528
+        },
+        {
+          "trial": 2,
+          "accepted": 532,
+          "first_read": 535,
+          "first_write": 537,
+          "last_commit": 792,
+          "done": 792
+        },
+        {
+          "trial": 3,
+          "accepted": 796,
+          "first_read": 799,
+          "first_write": 801,
+          "last_commit": 1056,
+          "done": 1056
+        },
+        {
+          "trial": 4,
+          "accepted": 1060,
+          "first_read": 1063,
+          "first_write": 1065,
+          "last_commit": 1320,
+          "done": 1320
+        },
+        {
+          "trial": 5,
+          "accepted": 1324,
+          "first_read": 1327,
+          "first_write": 1329,
+          "last_commit": 1584,
+          "done": 1584
+        },
+        {
+          "trial": 6,
+          "accepted": 1588,
+          "first_read": 1591,
+          "first_write": 1593,
+          "last_commit": 1848,
+          "done": 1848
+        },
+        {
+          "trial": 7,
+          "accepted": 1852,
+          "first_read": 1855,
+          "first_write": 1857,
+          "last_commit": 2112,
+          "done": 2112
+        }
+      ],
+      "source_sha256": "1386f273980d13fc7f56a7bb072fff224a616bbed05b9201fc6f584c8e95b4a3",
+      "rtl_sha256": "a71a3ec57be81393275bfe84ab04ecf63e1cee5a3018381cebf11110c968617c"
+    },
+    {
+      "case": "bram_permute",
+      "frequency_mhz": 200.0,
+      "valid": true,
+      "calls": 8,
+      "outputs": 2048,
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 4,
+          "first_read": 5,
+          "first_write": 264,
+          "last_commit": 519,
+          "done": 519
+        },
+        {
+          "trial": 1,
+          "accepted": 523,
+          "first_read": 524,
+          "first_write": 783,
+          "last_commit": 1038,
+          "done": 1038
+        },
+        {
+          "trial": 2,
+          "accepted": 1042,
+          "first_read": 1043,
+          "first_write": 1302,
+          "last_commit": 1557,
+          "done": 1557
+        },
+        {
+          "trial": 3,
+          "accepted": 1561,
+          "first_read": 1562,
+          "first_write": 1821,
+          "last_commit": 2076,
+          "done": 2076
+        },
+        {
+          "trial": 4,
+          "accepted": 2080,
+          "first_read": 2081,
+          "first_write": 2340,
+          "last_commit": 2595,
+          "done": 2595
+        },
+        {
+          "trial": 5,
+          "accepted": 2599,
+          "first_read": 2600,
+          "first_write": 2859,
+          "last_commit": 3114,
+          "done": 3114
+        },
+        {
+          "trial": 6,
+          "accepted": 3118,
+          "first_read": 3119,
+          "first_write": 3378,
+          "last_commit": 3633,
+          "done": 3633
+        },
+        {
+          "trial": 7,
+          "accepted": 3637,
+          "first_read": 3638,
+          "first_write": 3897,
+          "last_commit": 4152,
+          "done": 4152
+        }
+      ],
+      "source_sha256": "4531ea2a2c9bbabcd8d1e850cd8fde5408a1b7c66e68d04c8d63eb2b1cfbd88f",
+      "rtl_sha256": "8fc7461d9171fd62b88dd0194adc7f10d085a7565d47a62cdccd466c00a2c304"
+    },
+    {
+      "case": "bram_banked",
+      "frequency_mhz": 200.0,
+      "valid": true,
+      "calls": 8,
+      "outputs": 2048,
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 4,
+          "first_read": 5,
+          "first_write": 265,
+          "last_commit": 775,
+          "done": 775
+        },
+        {
+          "trial": 1,
+          "accepted": 779,
+          "first_read": 780,
+          "first_write": 1040,
+          "last_commit": 1550,
+          "done": 1550
+        },
+        {
+          "trial": 2,
+          "accepted": 1554,
+          "first_read": 1555,
+          "first_write": 1815,
+          "last_commit": 2325,
+          "done": 2325
+        },
+        {
+          "trial": 3,
+          "accepted": 2329,
+          "first_read": 2330,
+          "first_write": 2590,
+          "last_commit": 3100,
+          "done": 3100
+        },
+        {
+          "trial": 4,
+          "accepted": 3104,
+          "first_read": 3105,
+          "first_write": 3365,
+          "last_commit": 3875,
+          "done": 3875
+        },
+        {
+          "trial": 5,
+          "accepted": 3879,
+          "first_read": 3880,
+          "first_write": 4140,
+          "last_commit": 4650,
+          "done": 4650
+        },
+        {
+          "trial": 6,
+          "accepted": 4654,
+          "first_read": 4655,
+          "first_write": 4915,
+          "last_commit": 5425,
+          "done": 5425
+        },
+        {
+          "trial": 7,
+          "accepted": 5429,
+          "first_read": 5430,
+          "first_write": 5690,
+          "last_commit": 6200,
+          "done": 6200
+        }
+      ],
+      "source_sha256": "7610e6ca4ebf3874740c3b8269c87362434958ee2e39074e5a53913fa41730f0",
+      "rtl_sha256": "f61791bd390771ab1e8f94e743428aff10d5bed11bfd798afc8cdbb19639b289"
+    },
+    {
+      "case": "dsp_dataflow",
+      "frequency_mhz": 200.0,
+      "valid": true,
+      "calls": 8,
+      "outputs": 2048,
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 4,
+          "first_read": 5,
+          "first_write": 11,
+          "last_commit": 266,
+          "done": 266
+        },
+        {
+          "trial": 1,
+          "accepted": 270,
+          "first_read": 271,
+          "first_write": 277,
+          "last_commit": 532,
+          "done": 532
+        },
+        {
+          "trial": 2,
+          "accepted": 536,
+          "first_read": 537,
+          "first_write": 543,
+          "last_commit": 798,
+          "done": 798
+        },
+        {
+          "trial": 3,
+          "accepted": 802,
+          "first_read": 803,
+          "first_write": 809,
+          "last_commit": 1064,
+          "done": 1064
+        },
+        {
+          "trial": 4,
+          "accepted": 1068,
+          "first_read": 1069,
+          "first_write": 1075,
+          "last_commit": 1330,
+          "done": 1330
+        },
+        {
+          "trial": 5,
+          "accepted": 1334,
+          "first_read": 1335,
+          "first_write": 1341,
+          "last_commit": 1596,
+          "done": 1596
+        },
+        {
+          "trial": 6,
+          "accepted": 1600,
+          "first_read": 1601,
+          "first_write": 1607,
+          "last_commit": 1862,
+          "done": 1862
+        },
+        {
+          "trial": 7,
+          "accepted": 1866,
+          "first_read": 1867,
+          "first_write": 1873,
+          "last_commit": 2128,
+          "done": 2128
+        }
+      ],
+      "source_sha256": "f00d0955fe4d078cbf42c0057a12afef7976e653b493e306b0218fa1545b88dd",
+      "rtl_sha256": "047eccdd580600444057f345f992ca7424dd91cf1021ac092f9d29de02ffae9f"
+    },
+    {
+      "case": "dsp_map",
+      "frequency_mhz": 250.0,
+      "valid": true,
+      "calls": 8,
+      "outputs": 2048,
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 4,
+          "first_read": 7,
+          "first_write": 9,
+          "last_commit": 264,
+          "done": 264
+        },
+        {
+          "trial": 1,
+          "accepted": 268,
+          "first_read": 271,
+          "first_write": 273,
+          "last_commit": 528,
+          "done": 528
+        },
+        {
+          "trial": 2,
+          "accepted": 532,
+          "first_read": 535,
+          "first_write": 537,
+          "last_commit": 792,
+          "done": 792
+        },
+        {
+          "trial": 3,
+          "accepted": 796,
+          "first_read": 799,
+          "first_write": 801,
+          "last_commit": 1056,
+          "done": 1056
+        },
+        {
+          "trial": 4,
+          "accepted": 1060,
+          "first_read": 1063,
+          "first_write": 1065,
+          "last_commit": 1320,
+          "done": 1320
+        },
+        {
+          "trial": 5,
+          "accepted": 1324,
+          "first_read": 1327,
+          "first_write": 1329,
+          "last_commit": 1584,
+          "done": 1584
+        },
+        {
+          "trial": 6,
+          "accepted": 1588,
+          "first_read": 1591,
+          "first_write": 1593,
+          "last_commit": 1848,
+          "done": 1848
+        },
+        {
+          "trial": 7,
+          "accepted": 1852,
+          "first_read": 1855,
+          "first_write": 1857,
+          "last_commit": 2112,
+          "done": 2112
+        }
+      ],
+      "source_sha256": "1386f273980d13fc7f56a7bb072fff224a616bbed05b9201fc6f584c8e95b4a3",
+      "rtl_sha256": "8b2cd0c4883a66acec6a740bb9da6e28af98901bc016ab8a3aa70090a84ce496"
+    },
+    {
+      "case": "bram_permute",
+      "frequency_mhz": 250.0,
+      "valid": true,
+      "calls": 8,
+      "outputs": 2048,
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 4,
+          "first_read": 5,
+          "first_write": 264,
+          "last_commit": 519,
+          "done": 519
+        },
+        {
+          "trial": 1,
+          "accepted": 523,
+          "first_read": 524,
+          "first_write": 783,
+          "last_commit": 1038,
+          "done": 1038
+        },
+        {
+          "trial": 2,
+          "accepted": 1042,
+          "first_read": 1043,
+          "first_write": 1302,
+          "last_commit": 1557,
+          "done": 1557
+        },
+        {
+          "trial": 3,
+          "accepted": 1561,
+          "first_read": 1562,
+          "first_write": 1821,
+          "last_commit": 2076,
+          "done": 2076
+        },
+        {
+          "trial": 4,
+          "accepted": 2080,
+          "first_read": 2081,
+          "first_write": 2340,
+          "last_commit": 2595,
+          "done": 2595
+        },
+        {
+          "trial": 5,
+          "accepted": 2599,
+          "first_read": 2600,
+          "first_write": 2859,
+          "last_commit": 3114,
+          "done": 3114
+        },
+        {
+          "trial": 6,
+          "accepted": 3118,
+          "first_read": 3119,
+          "first_write": 3378,
+          "last_commit": 3633,
+          "done": 3633
+        },
+        {
+          "trial": 7,
+          "accepted": 3637,
+          "first_read": 3638,
+          "first_write": 3897,
+          "last_commit": 4152,
+          "done": 4152
+        }
+      ],
+      "source_sha256": "4531ea2a2c9bbabcd8d1e850cd8fde5408a1b7c66e68d04c8d63eb2b1cfbd88f",
+      "rtl_sha256": "8fc7461d9171fd62b88dd0194adc7f10d085a7565d47a62cdccd466c00a2c304"
+    },
+    {
+      "case": "bram_banked",
+      "frequency_mhz": 250.0,
+      "valid": true,
+      "calls": 8,
+      "outputs": 2048,
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 4,
+          "first_read": 5,
+          "first_write": 265,
+          "last_commit": 775,
+          "done": 775
+        },
+        {
+          "trial": 1,
+          "accepted": 779,
+          "first_read": 780,
+          "first_write": 1040,
+          "last_commit": 1550,
+          "done": 1550
+        },
+        {
+          "trial": 2,
+          "accepted": 1554,
+          "first_read": 1555,
+          "first_write": 1815,
+          "last_commit": 2325,
+          "done": 2325
+        },
+        {
+          "trial": 3,
+          "accepted": 2329,
+          "first_read": 2330,
+          "first_write": 2590,
+          "last_commit": 3100,
+          "done": 3100
+        },
+        {
+          "trial": 4,
+          "accepted": 3104,
+          "first_read": 3105,
+          "first_write": 3365,
+          "last_commit": 3875,
+          "done": 3875
+        },
+        {
+          "trial": 5,
+          "accepted": 3879,
+          "first_read": 3880,
+          "first_write": 4140,
+          "last_commit": 4650,
+          "done": 4650
+        },
+        {
+          "trial": 6,
+          "accepted": 4654,
+          "first_read": 4655,
+          "first_write": 4915,
+          "last_commit": 5425,
+          "done": 5425
+        },
+        {
+          "trial": 7,
+          "accepted": 5429,
+          "first_read": 5430,
+          "first_write": 5690,
+          "last_commit": 6200,
+          "done": 6200
+        }
+      ],
+      "source_sha256": "7610e6ca4ebf3874740c3b8269c87362434958ee2e39074e5a53913fa41730f0",
+      "rtl_sha256": "f61791bd390771ab1e8f94e743428aff10d5bed11bfd798afc8cdbb19639b289"
+    },
+    {
+      "case": "dsp_dataflow",
+      "frequency_mhz": 250.0,
+      "valid": true,
+      "calls": 8,
+      "outputs": 2048,
+      "events": [
+        {
+          "trial": 0,
+          "accepted": 4,
+          "first_read": 5,
+          "first_write": 11,
+          "last_commit": 266,
+          "done": 266
+        },
+        {
+          "trial": 1,
+          "accepted": 270,
+          "first_read": 271,
+          "first_write": 277,
+          "last_commit": 532,
+          "done": 532
+        },
+        {
+          "trial": 2,
+          "accepted": 536,
+          "first_read": 537,
+          "first_write": 543,
+          "last_commit": 798,
+          "done": 798
+        },
+        {
+          "trial": 3,
+          "accepted": 802,
+          "first_read": 803,
+          "first_write": 809,
+          "last_commit": 1064,
+          "done": 1064
+        },
+        {
+          "trial": 4,
+          "accepted": 1068,
+          "first_read": 1069,
+          "first_write": 1075,
+          "last_commit": 1330,
+          "done": 1330
+        },
+        {
+          "trial": 5,
+          "accepted": 1334,
+          "first_read": 1335,
+          "first_write": 1341,
+          "last_commit": 1596,
+          "done": 1596
+        },
+        {
+          "trial": 6,
+          "accepted": 1600,
+          "first_read": 1601,
+          "first_write": 1607,
+          "last_commit": 1862,
+          "done": 1862
+        },
+        {
+          "trial": 7,
+          "accepted": 1866,
+          "first_read": 1867,
+          "first_write": 1873,
+          "last_commit": 2128,
+          "done": 2128
+        }
+      ],
+      "source_sha256": "f00d0955fe4d078cbf42c0057a12afef7976e653b493e306b0218fa1545b88dd",
+      "rtl_sha256": "15282ef499263fdf9290076abc36bd4fc3790d0e09ef85683ca053ba35044fbe"
+    }
+  ],
+  "executable_sha256": "33476041daf7d538bc444004f3c0181ce434ec80a13479614f1b8bced46cbc5b"
+}

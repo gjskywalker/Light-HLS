@@ -1,0 +1,101 @@
+{
+  "recorded_at": "2026-11-10T23:26:00.356698+08:00",
+  "build_kind": "fresh local build; no source-tree build artifacts copied",
+  "build_command": "Light_HLS/Tests/Light_HLS_Top/Build.sh -DLLVM_DIR=/usr/local/lib/cmake/llvm -DPolly_DIR=/usr/local/lib/cmake/polly -DHI_USE_LLD=ON -DHI_LEARNER_BUILD_JOBS=8",
+  "executable": "Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_Top",
+  "executable_sha256": "9c575f4231830e86a744bce8ef52f847e0566acf708b10b85ecec1d248d069fc",
+  "build_log": "runs/migration_20261110/build.log",
+  "build_log_sha256": "2235400f83134e57228d622334c5265de5ae483297b24f47265a8c2f6a32dc96",
+  "versions": {
+    "llvm_config": {
+      "command": [
+        "llvm-config",
+        "--version"
+      ],
+      "version": "18.0.0git",
+      "returncode": 0
+    },
+    "clang": {
+      "command": [
+        "clang",
+        "--version"
+      ],
+      "version": "clang version 18.0.0 (git@github.com:llvm/llvm-project.git bde5717d4638c27614d9d4a2e53df27087a69841)",
+      "returncode": 0
+    },
+    "cxx": {
+      "command": [
+        "c++",
+        "--version"
+      ],
+      "version": "c++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+      "returncode": 0
+    },
+    "cmake": {
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "version": "cmake version 3.22.1",
+      "returncode": 0
+    },
+    "python": {
+      "command": [
+        "python3",
+        "--version"
+      ],
+      "version": "Python 3.10.12",
+      "returncode": 0
+    },
+    "iverilog": {
+      "command": [
+        "iverilog",
+        "-V"
+      ],
+      "version": "Icarus Verilog version 11.0 (stable) ()",
+      "returncode": 0
+    },
+    "vvp": {
+      "command": [
+        "vvp",
+        "-V"
+      ],
+      "version": "Icarus Verilog runtime version 11.0 (stable) ()",
+      "returncode": 0
+    },
+    "jq": {
+      "command": [
+        "jq",
+        "--version"
+      ],
+      "version": "jq-1.6",
+      "returncode": 0
+    },
+    "vivado": {
+      "command": [
+        "vivado",
+        "-version"
+      ],
+      "version": "vivado v2025.2 (64-bit)",
+      "returncode": 0
+    }
+  },
+  "build_warnings": [
+    "gmake[3]: warning: -j8 forced in submake: resetting jobserver mode.",
+    "/home/eeuser/Desktop/Light-HLS/Light_HLS/Implementations/HI_ArrayAccessPattern/HI_ArrayAccessPattern.cc:190:1: warning: control reaches end of non-void function [-Wreturn-type]",
+    "/home/eeuser/Desktop/Light-HLS/Light_HLS/Implementations/HI_NoDirectiveTimingResourceEvaluation/HI_NoDirectiveTimingResourceEvaluation_BramAccessTracer.cc:306:1: warning: control reaches end of non-void function [-Wreturn-type]",
+    "/home/eeuser/Desktop/Light-HLS/Light_HLS/Implementations/HI_PragmaTargetExtraction/HI_PragmaTargetExtraction_LoopCheck.cc:30:1: warning: no return statement in function returning non-void [-Wreturn-type]"
+  ],
+  "validation_scope": "C/C++ to LLVM IR to generated RTL, Icarus simulation, compiler/report contracts; separate scalar Vivado synthesis smoke.",
+  "dynamic_link_dependencies": [
+    "\tlinux-vdso.so.1 (0x00007fff5fbe7000)",
+    "\tlibz.so.1 => /lib/x86_64-linux-gnu/libz.so.1 (0x00007ed7b5486000)",
+    "\tlibzstd.so.1 => /lib/x86_64-linux-gnu/libzstd.so.1 (0x00007ed7ab931000)",
+    "\tlibtinfo.so.6 => /lib/x86_64-linux-gnu/libtinfo.so.6 (0x00007ed7b5454000)",
+    "\tlibstdc++.so.6 => /lib/x86_64-linux-gnu/libstdc++.so.6 (0x00007ed7ab600000)",
+    "\tlibm.so.6 => /lib/x86_64-linux-gnu/libm.so.6 (0x00007ed7ab84a000)",
+    "\tlibgcc_s.so.1 => /lib/x86_64-linux-gnu/libgcc_s.so.1 (0x00007ed7b5432000)",
+    "\tlibc.so.6 => /lib/x86_64-linux-gnu/libc.so.6 (0x00007ed7ab200000)",
+    "\t/lib64/ld-linux-x86-64.so.2 (0x00007ed7b54b8000)"
+  ]
+}

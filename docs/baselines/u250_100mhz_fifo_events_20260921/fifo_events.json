@@ -1,0 +1,111 @@
+{
+  "valid": true,
+  "executable_sha256": "8c03681db4a57cfa4ed67ddd3df5cfaea04564a4b32c115897918fa915053eeb",
+  "stream_header_sha256": "451d510379d8e869a611be66d23c617e82588adc3dadab374021f3b2320f7090",
+  "test_sources_sha256": {
+    "README.md": "a18125461bdc88e7d1b5edcf1d6c7583ce2a25179a52a718e03ddec90c717abc",
+    "events.cpp": "2e16036e09b762c14e0ce9b9e9a663dd83b17e9d6e06868e5b6770c39f7acd6e",
+    "events_tb.v": "57385f6c7c0dc02906c57622861bef3c1a50209677583524e4210d59c8a3dc80",
+    "run_tests.py": "b1b40f025149c2081ef935e5ced37cb0e3e8fa64a9aba1439f16eec03a38f623"
+  },
+  "historical_reproducer_sha256": "0990c2ff707f5a619a9ee3035b76b293bf791a0df71d45e81c17f272c37379ae",
+  "calls": 320,
+  "outputs": 5120,
+  "negative_cases": [
+    "volatile_memory",
+    "volatile_memory_in_fifo_task"
+  ],
+  "results": [
+    {
+      "case": "ordinary_depth1",
+      "valid": true,
+      "source_sha256": "2e16036e09b762c14e0ce9b9e9a663dd83b17e9d6e06868e5b6770c39f7acd6e",
+      "calls": 64,
+      "outputs": 1024,
+      "channel_rates": {
+        "tokens": 64
+      },
+      "volatile_event_counts": {
+        "top.bc": 8,
+        "top_output_PM0.bc": 8,
+        "top_output_PM1.bc": 8,
+        "top_output_PM2.bc": 8,
+        "top_output_PM4.bc": 8,
+        "top_output.bc": 8
+      }
+    },
+    {
+      "case": "ordinary_depth4",
+      "valid": true,
+      "source_sha256": "11d72e646fc3be9d33e708cd40710997956433f308f6d430ac7904da7eed97cf",
+      "calls": 64,
+      "outputs": 1024,
+      "channel_rates": {
+        "tokens": 64
+      },
+      "volatile_event_counts": {
+        "top.bc": 8,
+        "top_output_PM0.bc": 8,
+        "top_output_PM1.bc": 8,
+        "top_output_PM2.bc": 8,
+        "top_output_PM4.bc": 8,
+        "top_output.bc": 8
+      }
+    },
+    {
+      "case": "pipeline_depth1",
+      "valid": true,
+      "source_sha256": "b3dc3fdcfa64bb67033d13b9693afabc424119cb054b4835b865aeebd4ae509d",
+      "calls": 64,
+      "outputs": 1024,
+      "channel_rates": {
+        "tokens": 64
+      },
+      "volatile_event_counts": {
+        "top.bc": 8,
+        "top_output_PM0.bc": 8,
+        "top_output_PM1.bc": 8,
+        "top_output_PM2.bc": 8,
+        "top_output_PM4.bc": 8,
+        "top_output.bc": 8
+      }
+    },
+    {
+      "case": "unroll2_depth1",
+      "valid": true,
+      "source_sha256": "245a9736c6ed719a301f7157c5a910544188af4eea076c463c102151e9f12f08",
+      "calls": 64,
+      "outputs": 1024,
+      "channel_rates": {
+        "tokens": 64
+      },
+      "volatile_event_counts": {
+        "top.bc": 8,
+        "top_output_PM0.bc": 8,
+        "top_output_PM1.bc": 16,
+        "top_output_PM2.bc": 16,
+        "top_output_PM4.bc": 16,
+        "top_output.bc": 16
+      }
+    },
+    {
+      "case": "private_buffer",
+      "valid": true,
+      "source_sha256": "0990c2ff707f5a619a9ee3035b76b293bf791a0df71d45e81c17f272c37379ae",
+      "calls": 64,
+      "outputs": 1024,
+      "channel_rates": {
+        "loaded": 32,
+        "computed": 16
+      },
+      "volatile_event_counts": {
+        "top.bc": 4,
+        "top_output_PM0.bc": 4,
+        "top_output_PM1.bc": 4,
+        "top_output_PM2.bc": 4,
+        "top_output_PM4.bc": 4,
+        "top_output.bc": 4
+      }
+    }
+  ]
+}

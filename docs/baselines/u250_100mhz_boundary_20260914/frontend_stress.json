@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "stage": "nested_fixture_generation_stress",
+  "successful_generations": 100,
+  "rtl_hashes": [
+    "1fa8823b9fdf51be3ae6c18889b028cb5a340f6099d1a94eaf7a9f47d4c147da"
+  ],
+  "all_rtl_byte_identical": true,
+  "light_hls_executable_sha256": "9b68280ee523075a1a13074c6e71782070fcee2b3188e8eaddbbba96a81fc98d",
+  "original_assertion_fixed": false,
+  "scope": "Generation and RTL identity only; the separate regression suite checks functionality.",
+  "raw_root": "/tmp/lighthls-boundary-qor-20260914.qyGycC/frontend-stress"
+}

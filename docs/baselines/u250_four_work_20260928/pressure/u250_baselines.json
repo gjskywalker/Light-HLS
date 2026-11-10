@@ -1,0 +1,2972 @@
+{
+  "schema_version": "1.0",
+  "stage": "u250_ground_truth_baseline_archive",
+  "generated_at_utc": "2026-09-28T07:32:57.123506+00:00",
+  "valid": true,
+  "reward_eligible": true,
+  "board": "u250",
+  "part": "xcu250-figd2104-2L-e",
+  "clock_period_ns": [
+    4.0,
+    5.0,
+    6.666666666666667,
+    10.0
+  ],
+  "flow": "vivado_ooc_normalized_v2",
+  "inputs": [
+    {
+      "suite": "pressure/dsp_map_100MHz",
+      "report": "u250_fair_comparison.json",
+      "report_sha256": "771281597e6af50e179e3b9770c066c74d9533e17c6f49ae26aae66511fad6d7",
+      "stage": "u250_fair_comparison",
+      "clock_period_ns": 10.0
+    },
+    {
+      "suite": "pressure/dsp_map_150MHz",
+      "report": "u250_fair_comparison.json",
+      "report_sha256": "71916e08673336a1370fbb17fd025169f94efe7a211c722a08c3c1805ea6b925",
+      "stage": "u250_fair_comparison",
+      "clock_period_ns": 6.666666666666667
+    },
+    {
+      "suite": "pressure/dsp_map_200MHz",
+      "report": "u250_fair_comparison.json",
+      "report_sha256": "671f2daa5474de6b960a65dc400a535e48acd6d8ac7cb88fbe4cf7b184e30ccb",
+      "stage": "u250_fair_comparison",
+      "clock_period_ns": 5.0
+    },
+    {
+      "suite": "pressure/dsp_map_250MHz",
+      "report": "u250_fair_comparison.json",
+      "report_sha256": "344b269fc7a872e024cfbb0399e4eb07f9dd1f7c008a4c6bce68c70494eaf35c",
+      "stage": "u250_fair_comparison",
+      "clock_period_ns": 4.0
+    },
+    {
+      "suite": "pressure/bram_permute_100MHz",
+      "report": "u250_fair_comparison.json",
+      "report_sha256": "87db99ac5873bc340b4b7668a4edad3f18ca228c6741038f96ba5251bd8e1335",
+      "stage": "u250_fair_comparison",
+      "clock_period_ns": 10.0
+    },
+    {
+      "suite": "pressure/bram_permute_250MHz",
+      "report": "u250_fair_comparison.json",
+      "report_sha256": "186c7503d08f9b5ae3667592e7c22c25393431c99d18622e300185e89066c9d0",
+      "stage": "u250_fair_comparison",
+      "clock_period_ns": 4.0
+    },
+    {
+      "suite": "pressure/bram_banked_100MHz",
+      "report": "u250_fair_comparison.json",
+      "report_sha256": "dc5aaac3796ee02e5a76e059d01152e77a69720afc88f2cc073a003d349fd0ee",
+      "stage": "u250_fair_comparison",
+      "clock_period_ns": 10.0
+    },
+    {
+      "suite": "pressure/bram_banked_250MHz",
+      "report": "u250_fair_comparison.json",
+      "report_sha256": "168fab8014c2add25d2d0c3f2cad11b952da9a5358e3a661cb729c4da99dfa32",
+      "stage": "u250_fair_comparison",
+      "clock_period_ns": 4.0
+    },
+    {
+      "suite": "pressure/dsp_dataflow_100MHz",
+      "report": "u250_fair_comparison.json",
+      "report_sha256": "0ee0cfb6729e92cd4e6da6da81e979892342fa9118609b083bdcac7a443c4886",
+      "stage": "u250_fair_comparison",
+      "clock_period_ns": 10.0
+    },
+    {
+      "suite": "pressure/dsp_dataflow_250MHz",
+      "report": "u250_fair_comparison.json",
+      "report_sha256": "ec5e15c68fc6a71bd9c5dff030643c43d5edfc1b0bf4a5885bfd620ed48d665a",
+      "stage": "u250_fair_comparison",
+      "clock_period_ns": 4.0
+    }
+  ],
+  "cases": [
+    {
+      "suite": "pressure/dsp_map_100MHz",
+      "case": "qor_pressure",
+      "top": "qor_pressure",
+      "comparison_id": "1f8810aaa3f14408747e022124708bced9a0c14e74e62ad607f5912fa6bf6758",
+      "source": "Light_HLS/Tests/QoRPressure/dsp_map.cpp",
+      "source_sha256": "1386f273980d13fc7f56a7bb072fff224a616bbed05b9201fc6f584c8e95b4a3",
+      "config_sha256": null,
+      "testbench_sha256": "942c4cdd119038e4a6c4e3ba2c44af744c3a49e4f5158d84645be0d382473c99",
+      "light_hls_executable_sha256": "34fe593e224841396fecd133192e136b67171b3e386d1aea3c662c21c61bcb07",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 2048,
+      "simulation_cycles": {
+        "light_hls": 259.0,
+        "vitis_hls": 258.0
+      },
+      "simulation_events": {
+        "light_hls": {
+          "transaction_events": [
+            {
+              "trial": 0,
+              "accepted": 4,
+              "first_read": 7,
+              "first_write": 8,
+              "last_commit": 263,
+              "done": 263
+            },
+            {
+              "trial": 1,
+              "accepted": 267,
+              "first_read": 270,
+              "first_write": 271,
+              "last_commit": 526,
+              "done": 526
+            },
+            {
+              "trial": 2,
+              "accepted": 530,
+              "first_read": 533,
+              "first_write": 534,
+              "last_commit": 789,
+              "done": 789
+            },
+            {
+              "trial": 3,
+              "accepted": 793,
+              "first_read": 796,
+              "first_write": 797,
+              "last_commit": 1052,
+              "done": 1052
+            },
+            {
+              "trial": 4,
+              "accepted": 1056,
+              "first_read": 1059,
+              "first_write": 1060,
+              "last_commit": 1315,
+              "done": 1315
+            },
+            {
+              "trial": 5,
+              "accepted": 1319,
+              "first_read": 1322,
+              "first_write": 1323,
+              "last_commit": 1578,
+              "done": 1578
+            },
+            {
+              "trial": 6,
+              "accepted": 1582,
+              "first_read": 1585,
+              "first_write": 1586,
+              "last_commit": 1841,
+              "done": 1841
+            },
+            {
+              "trial": 7,
+              "accepted": 1845,
+              "first_read": 1848,
+              "first_write": 1849,
+              "last_commit": 2104,
+              "done": 2104
+            }
+          ],
+          "final_commit_cycles": [
+            259,
+            259,
+            259,
+            259,
+            259,
+            259,
+            259,
+            259
+          ],
+          "completion_signal_cycles": [
+            259,
+            259,
+            259,
+            259,
+            259,
+            259,
+            259,
+            259
+          ],
+          "observed_acceptance_intervals": [
+            263,
+            263,
+            263,
+            263,
+            263,
+            263,
+            263
+          ]
+        },
+        "vitis_hls": {
+          "transaction_events": [
+            {
+              "trial": 0,
+              "accepted": 4,
+              "first_read": 4,
+              "first_write": 8,
+              "last_commit": 263,
+              "done": 262
+            },
+            {
+              "trial": 1,
+              "accepted": 267,
+              "first_read": 267,
+              "first_write": 271,
+              "last_commit": 526,
+              "done": 525
+            },
+            {
+              "trial": 2,
+              "accepted": 530,
+              "first_read": 530,
+              "first_write": 534,
+              "last_commit": 789,
+              "done": 788
+            },
+            {
+              "trial": 3,
+              "accepted": 793,
+              "first_read": 793,
+              "first_write": 797,
+              "last_commit": 1052,
+              "done": 1051
+            },
+            {
+              "trial": 4,
+              "accepted": 1056,
+              "first_read": 1056,
+              "first_write": 1060,
+              "last_commit": 1315,
+              "done": 1314
+            },
+            {
+              "trial": 5,
+              "accepted": 1319,
+              "first_read": 1319,
+              "first_write": 1323,
+              "last_commit": 1578,
+              "done": 1577
+            },
+            {
+              "trial": 6,
+              "accepted": 1582,
+              "first_read": 1582,
+              "first_write": 1586,
+              "last_commit": 1841,
+              "done": 1840
+            },
+            {
+              "trial": 7,
+              "accepted": 1845,
+              "first_read": 1845,
+              "first_write": 1849,
+              "last_commit": 2104,
+              "done": 2103
+            }
+          ],
+          "final_commit_cycles": [
+            259,
+            259,
+            259,
+            259,
+            259,
+            259,
+            259,
+            259
+          ],
+          "completion_signal_cycles": [
+            258,
+            258,
+            258,
+            258,
+            258,
+            258,
+            258,
+            258
+          ],
+          "observed_acceptance_intervals": [
+            263,
+            263,
+            263,
+            263,
+            263,
+            263,
+            263
+          ]
+        }
+      },
+      "initiation_interval": {
+        "light_hls": 1,
+        "light_hls_loops": [
+          {
+            "loop": "Loop_qor_pressure_1",
+            "achieved_ii": 1,
+            "limiting_factor": "requested initiation interval",
+            "pipeline_latency": 1,
+            "memory_mii": 1,
+            "recurrence_mii": 1
+          }
+        ],
+        "light_hls_dataflow_graph": 0,
+        "vitis_hls_loops": [
+          1
+        ],
+        "vitis_hls_top": {
+          "minimum": 256,
+          "maximum": 256
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 81.31294,
+        "resources": {
+          "lut": 52,
+          "ff": 32,
+          "dsp": 2,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.867,
+          "critical_path_delay_ns": 1.133
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 76.750419,
+        "resources": {
+          "lut": 15,
+          "ff": 46,
+          "dsp": 1,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.059,
+          "critical_path_delay_ns": 0.941
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 37,
+          "ff": -14,
+          "dsp": 1,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.1919999999999984
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 3.46666667,
+            "ff": 0.69565217,
+            "dsp": 2.0,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 1.20403826
+        }
+      }
+    },
+    {
+      "suite": "pressure/dsp_map_150MHz",
+      "case": "qor_pressure",
+      "top": "qor_pressure",
+      "comparison_id": "d6bbdf7535226f38d5b69cfef6c838339f670ad271d6ab40213e1f9312f02844",
+      "source": "Light_HLS/Tests/QoRPressure/dsp_map.cpp",
+      "source_sha256": "1386f273980d13fc7f56a7bb072fff224a616bbed05b9201fc6f584c8e95b4a3",
+      "config_sha256": null,
+      "testbench_sha256": "942c4cdd119038e4a6c4e3ba2c44af744c3a49e4f5158d84645be0d382473c99",
+      "light_hls_executable_sha256": "34fe593e224841396fecd133192e136b67171b3e386d1aea3c662c21c61bcb07",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 2048,
+      "simulation_cycles": {
+        "light_hls": 259.0,
+        "vitis_hls": 258.0
+      },
+      "simulation_events": {
+        "light_hls": {
+          "transaction_events": [
+            {
+              "trial": 0,
+              "accepted": 4,
+              "first_read": 7,
+              "first_write": 8,
+              "last_commit": 263,
+              "done": 263
+            },
+            {
+              "trial": 1,
+              "accepted": 267,
+              "first_read": 270,
+              "first_write": 271,
+              "last_commit": 526,
+              "done": 526
+            },
+            {
+              "trial": 2,
+              "accepted": 530,
+              "first_read": 533,
+              "first_write": 534,
+              "last_commit": 789,
+              "done": 789
+            },
+            {
+              "trial": 3,
+              "accepted": 793,
+              "first_read": 796,
+              "first_write": 797,
+              "last_commit": 1052,
+              "done": 1052
+            },
+            {
+              "trial": 4,
+              "accepted": 1056,
+              "first_read": 1059,
+              "first_write": 1060,
+              "last_commit": 1315,
+              "done": 1315
+            },
+            {
+              "trial": 5,
+              "accepted": 1319,
+              "first_read": 1322,
+              "first_write": 1323,
+              "last_commit": 1578,
+              "done": 1578
+            },
+            {
+              "trial": 6,
+              "accepted": 1582,
+              "first_read": 1585,
+              "first_write": 1586,
+              "last_commit": 1841,
+              "done": 1841
+            },
+            {
+              "trial": 7,
+              "accepted": 1845,
+              "first_read": 1848,
+              "first_write": 1849,
+              "last_commit": 2104,
+              "done": 2104
+            }
+          ],
+          "final_commit_cycles": [
+            259,
+            259,
+            259,
+            259,
+            259,
+            259,
+            259,
+            259
+          ],
+          "completion_signal_cycles": [
+            259,
+            259,
+            259,
+            259,
+            259,
+            259,
+            259,
+            259
+          ],
+          "observed_acceptance_intervals": [
+            263,
+            263,
+            263,
+            263,
+            263,
+            263,
+            263
+          ]
+        },
+        "vitis_hls": {
+          "transaction_events": [
+            {
+              "trial": 0,
+              "accepted": 4,
+              "first_read": 4,
+              "first_write": 8,
+              "last_commit": 263,
+              "done": 262
+            },
+            {
+              "trial": 1,
+              "accepted": 267,
+              "first_read": 267,
+              "first_write": 271,
+              "last_commit": 526,
+              "done": 525
+            },
+            {
+              "trial": 2,
+              "accepted": 530,
+              "first_read": 530,
+              "first_write": 534,
+              "last_commit": 789,
+              "done": 788
+            },
+            {
+              "trial": 3,
+              "accepted": 793,
+              "first_read": 793,
+              "first_write": 797,
+              "last_commit": 1052,
+              "done": 1051
+            },
+            {
+              "trial": 4,
+              "accepted": 1056,
+              "first_read": 1056,
+              "first_write": 1060,
+              "last_commit": 1315,
+              "done": 1314
+            },
+            {
+              "trial": 5,
+              "accepted": 1319,
+              "first_read": 1319,
+              "first_write": 1323,
+              "last_commit": 1578,
+              "done": 1577
+            },
+            {
+              "trial": 6,
+              "accepted": 1582,
+              "first_read": 1582,
+              "first_write": 1586,
+              "last_commit": 1841,
+              "done": 1840
+            },
+            {
+              "trial": 7,
+              "accepted": 1845,
+              "first_read": 1845,
+              "first_write": 1849,
+              "last_commit": 2104,
+              "done": 2103
+            }
+          ],
+          "final_commit_cycles": [
+            259,
+            259,
+            259,
+            259,
+            259,
+            259,
+            259,
+            259
+          ],
+          "completion_signal_cycles": [
+            258,
+            258,
+            258,
+            258,
+            258,
+            258,
+            258,
+            258
+          ],
+          "observed_acceptance_intervals": [
+            263,
+            263,
+            263,
+            263,
+            263,
+            263,
+            263
+          ]
+        }
+      },
+      "initiation_interval": {
+        "light_hls": 1,
+        "light_hls_loops": [
+          {
+            "loop": "Loop_qor_pressure_1",
+            "achieved_ii": 1,
+            "limiting_factor": "requested initiation interval",
+            "pipeline_latency": 1,
+            "memory_mii": 1,
+            "recurrence_mii": 1
+          }
+        ],
+        "light_hls_dataflow_graph": 0,
+        "vitis_hls_loops": [
+          1
+        ],
+        "vitis_hls_top": {
+          "minimum": 256,
+          "maximum": 256
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 79.719498,
+        "resources": {
+          "lut": 52,
+          "ff": 32,
+          "dsp": 2,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 5.534,
+          "critical_path_delay_ns": 1.132667
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 75.842906,
+        "resources": {
+          "lut": 15,
+          "ff": 46,
+          "dsp": 1,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 5.726,
+          "critical_path_delay_ns": 0.940667
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 37,
+          "ff": -14,
+          "dsp": 1,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.19200000000000017
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 3.46666667,
+            "ff": 0.69565217,
+            "dsp": 2.0,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 1.20411049
+        }
+      }
+    },
+    {
+      "suite": "pressure/dsp_map_200MHz",
+      "case": "qor_pressure",
+      "top": "qor_pressure",
+      "comparison_id": "00e037332b6670418b04c0b98bcd8476da4b90e7f5efbc83912033c7e3e66bf3",
+      "source": "Light_HLS/Tests/QoRPressure/dsp_map.cpp",
+      "source_sha256": "1386f273980d13fc7f56a7bb072fff224a616bbed05b9201fc6f584c8e95b4a3",
+      "config_sha256": null,
+      "testbench_sha256": "942c4cdd119038e4a6c4e3ba2c44af744c3a49e4f5158d84645be0d382473c99",
+      "light_hls_executable_sha256": "34fe593e224841396fecd133192e136b67171b3e386d1aea3c662c21c61bcb07",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 2048,
+      "simulation_cycles": {
+        "light_hls": 260.0,
+        "vitis_hls": 258.0
+      },
+      "simulation_events": {
+        "light_hls": {
+          "transaction_events": [
+            {
+              "trial": 0,
+              "accepted": 4,
+              "first_read": 7,
+              "first_write": 9,
+              "last_commit": 264,
+              "done": 264
+            },
+            {
+              "trial": 1,
+              "accepted": 268,
+              "first_read": 271,
+              "first_write": 273,
+              "last_commit": 528,
+              "done": 528
+            },
+            {
+              "trial": 2,
+              "accepted": 532,
+              "first_read": 535,
+              "first_write": 537,
+              "last_commit": 792,
+              "done": 792
+            },
+            {
+              "trial": 3,
+              "accepted": 796,
+              "first_read": 799,
+              "first_write": 801,
+              "last_commit": 1056,
+              "done": 1056
+            },
+            {
+              "trial": 4,
+              "accepted": 1060,
+              "first_read": 1063,
+              "first_write": 1065,
+              "last_commit": 1320,
+              "done": 1320
+            },
+            {
+              "trial": 5,
+              "accepted": 1324,
+              "first_read": 1327,
+              "first_write": 1329,
+              "last_commit": 1584,
+              "done": 1584
+            },
+            {
+              "trial": 6,
+              "accepted": 1588,
+              "first_read": 1591,
+              "first_write": 1593,
+              "last_commit": 1848,
+              "done": 1848
+            },
+            {
+              "trial": 7,
+              "accepted": 1852,
+              "first_read": 1855,
+              "first_write": 1857,
+              "last_commit": 2112,
+              "done": 2112
+            }
+          ],
+          "final_commit_cycles": [
+            260,
+            260,
+            260,
+            260,
+            260,
+            260,
+            260,
+            260
+          ],
+          "completion_signal_cycles": [
+            260,
+            260,
+            260,
+            260,
+            260,
+            260,
+            260,
+            260
+          ],
+          "observed_acceptance_intervals": [
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ]
+        },
+        "vitis_hls": {
+          "transaction_events": [
+            {
+              "trial": 0,
+              "accepted": 4,
+              "first_read": 4,
+              "first_write": 8,
+              "last_commit": 263,
+              "done": 262
+            },
+            {
+              "trial": 1,
+              "accepted": 267,
+              "first_read": 267,
+              "first_write": 271,
+              "last_commit": 526,
+              "done": 525
+            },
+            {
+              "trial": 2,
+              "accepted": 530,
+              "first_read": 530,
+              "first_write": 534,
+              "last_commit": 789,
+              "done": 788
+            },
+            {
+              "trial": 3,
+              "accepted": 793,
+              "first_read": 793,
+              "first_write": 797,
+              "last_commit": 1052,
+              "done": 1051
+            },
+            {
+              "trial": 4,
+              "accepted": 1056,
+              "first_read": 1056,
+              "first_write": 1060,
+              "last_commit": 1315,
+              "done": 1314
+            },
+            {
+              "trial": 5,
+              "accepted": 1319,
+              "first_read": 1319,
+              "first_write": 1323,
+              "last_commit": 1578,
+              "done": 1577
+            },
+            {
+              "trial": 6,
+              "accepted": 1582,
+              "first_read": 1582,
+              "first_write": 1586,
+              "last_commit": 1841,
+              "done": 1840
+            },
+            {
+              "trial": 7,
+              "accepted": 1845,
+              "first_read": 1845,
+              "first_write": 1849,
+              "last_commit": 2104,
+              "done": 2103
+            }
+          ],
+          "final_commit_cycles": [
+            259,
+            259,
+            259,
+            259,
+            259,
+            259,
+            259,
+            259
+          ],
+          "completion_signal_cycles": [
+            258,
+            258,
+            258,
+            258,
+            258,
+            258,
+            258,
+            258
+          ],
+          "observed_acceptance_intervals": [
+            263,
+            263,
+            263,
+            263,
+            263,
+            263,
+            263
+          ]
+        }
+      },
+      "initiation_interval": {
+        "light_hls": 1,
+        "light_hls_loops": [
+          {
+            "loop": "Loop_qor_pressure_1",
+            "achieved_ii": 1,
+            "limiting_factor": "requested initiation interval",
+            "pipeline_latency": 2,
+            "memory_mii": 1,
+            "recurrence_mii": 1
+          }
+        ],
+        "light_hls_dataflow_graph": 0,
+        "vitis_hls_loops": [
+          1
+        ],
+        "vitis_hls_top": {
+          "minimum": 256,
+          "maximum": 256
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 44.801546,
+        "resources": {
+          "lut": 93,
+          "ff": 74,
+          "dsp": 2,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 2.77,
+          "critical_path_delay_ns": 2.23
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 41.949239,
+        "resources": {
+          "lut": 15,
+          "ff": 46,
+          "dsp": 1,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 4.059,
+          "critical_path_delay_ns": 0.941
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 78,
+          "ff": 28,
+          "dsp": 1,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -1.2890000000000001
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 6.2,
+            "ff": 1.60869565,
+            "dsp": 2.0,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 2.36981934
+        }
+      }
+    },
+    {
+      "suite": "pressure/dsp_map_250MHz",
+      "case": "qor_pressure",
+      "top": "qor_pressure",
+      "comparison_id": "f6f42ffd014fb18cc40ed2719798effba5510cbdf3019a0d7860e7b31520597f",
+      "source": "Light_HLS/Tests/QoRPressure/dsp_map.cpp",
+      "source_sha256": "1386f273980d13fc7f56a7bb072fff224a616bbed05b9201fc6f584c8e95b4a3",
+      "config_sha256": null,
+      "testbench_sha256": "942c4cdd119038e4a6c4e3ba2c44af744c3a49e4f5158d84645be0d382473c99",
+      "light_hls_executable_sha256": "34fe593e224841396fecd133192e136b67171b3e386d1aea3c662c21c61bcb07",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 2048,
+      "simulation_cycles": {
+        "light_hls": 260.0,
+        "vitis_hls": 258.0
+      },
+      "simulation_events": {
+        "light_hls": {
+          "transaction_events": [
+            {
+              "trial": 0,
+              "accepted": 4,
+              "first_read": 7,
+              "first_write": 9,
+              "last_commit": 264,
+              "done": 264
+            },
+            {
+              "trial": 1,
+              "accepted": 268,
+              "first_read": 271,
+              "first_write": 273,
+              "last_commit": 528,
+              "done": 528
+            },
+            {
+              "trial": 2,
+              "accepted": 532,
+              "first_read": 535,
+              "first_write": 537,
+              "last_commit": 792,
+              "done": 792
+            },
+            {
+              "trial": 3,
+              "accepted": 796,
+              "first_read": 799,
+              "first_write": 801,
+              "last_commit": 1056,
+              "done": 1056
+            },
+            {
+              "trial": 4,
+              "accepted": 1060,
+              "first_read": 1063,
+              "first_write": 1065,
+              "last_commit": 1320,
+              "done": 1320
+            },
+            {
+              "trial": 5,
+              "accepted": 1324,
+              "first_read": 1327,
+              "first_write": 1329,
+              "last_commit": 1584,
+              "done": 1584
+            },
+            {
+              "trial": 6,
+              "accepted": 1588,
+              "first_read": 1591,
+              "first_write": 1593,
+              "last_commit": 1848,
+              "done": 1848
+            },
+            {
+              "trial": 7,
+              "accepted": 1852,
+              "first_read": 1855,
+              "first_write": 1857,
+              "last_commit": 2112,
+              "done": 2112
+            }
+          ],
+          "final_commit_cycles": [
+            260,
+            260,
+            260,
+            260,
+            260,
+            260,
+            260,
+            260
+          ],
+          "completion_signal_cycles": [
+            260,
+            260,
+            260,
+            260,
+            260,
+            260,
+            260,
+            260
+          ],
+          "observed_acceptance_intervals": [
+            264,
+            264,
+            264,
+            264,
+            264,
+            264,
+            264
+          ]
+        },
+        "vitis_hls": {
+          "transaction_events": [
+            {
+              "trial": 0,
+              "accepted": 4,
+              "first_read": 4,
+              "first_write": 8,
+              "last_commit": 263,
+              "done": 262
+            },
+            {
+              "trial": 1,
+              "accepted": 267,
+              "first_read": 267,
+              "first_write": 271,
+              "last_commit": 526,
+              "done": 525
+            },
+            {
+              "trial": 2,
+              "accepted": 530,
+              "first_read": 530,
+              "first_write": 534,
+              "last_commit": 789,
+              "done": 788
+            },
+            {
+              "trial": 3,
+              "accepted": 793,
+              "first_read": 793,
+              "first_write": 797,
+              "last_commit": 1052,
+              "done": 1051
+            },
+            {
+              "trial": 4,
+              "accepted": 1056,
+              "first_read": 1056,
+              "first_write": 1060,
+              "last_commit": 1315,
+              "done": 1314
+            },
+            {
+              "trial": 5,
+              "accepted": 1319,
+              "first_read": 1319,
+              "first_write": 1323,
+              "last_commit": 1578,
+              "done": 1577
+            },
+            {
+              "trial": 6,
+              "accepted": 1582,
+              "first_read": 1582,
+              "first_write": 1586,
+              "last_commit": 1841,
+              "done": 1840
+            },
+            {
+              "trial": 7,
+              "accepted": 1845,
+              "first_read": 1845,
+              "first_write": 1849,
+              "last_commit": 2104,
+              "done": 2103
+            }
+          ],
+          "final_commit_cycles": [
+            259,
+            259,
+            259,
+            259,
+            259,
+            259,
+            259,
+            259
+          ],
+          "completion_signal_cycles": [
+            258,
+            258,
+            258,
+            258,
+            258,
+            258,
+            258,
+            258
+          ],
+          "observed_acceptance_intervals": [
+            263,
+            263,
+            263,
+            263,
+            263,
+            263,
+            263
+          ]
+        }
+      },
+      "initiation_interval": {
+        "light_hls": 1,
+        "light_hls_loops": [
+          {
+            "loop": "Loop_qor_pressure_1",
+            "achieved_ii": 1,
+            "limiting_factor": "requested initiation interval",
+            "pipeline_latency": 2,
+            "memory_mii": 1,
+            "recurrence_mii": 1
+          }
+        ],
+        "light_hls_dataflow_graph": 0,
+        "vitis_hls_loops": [
+          1
+        ],
+        "vitis_hls_top": {
+          "minimum": 256,
+          "maximum": 256
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 44.654967,
+        "resources": {
+          "lut": 53,
+          "ff": 58,
+          "dsp": 2,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 1.77,
+          "critical_path_delay_ns": 2.23
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 41.847345,
+        "resources": {
+          "lut": 15,
+          "ff": 46,
+          "dsp": 1,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 3.059,
+          "critical_path_delay_ns": 0.941
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 38,
+          "ff": 12,
+          "dsp": 1,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -1.2890000000000001
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 3.53333333,
+            "ff": 1.26086957,
+            "dsp": 2.0,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 2.36981934
+        }
+      }
+    },
+    {
+      "suite": "pressure/bram_permute_100MHz",
+      "case": "qor_pressure",
+      "top": "qor_pressure",
+      "comparison_id": "34dddaeabf0cf14d05f89b8412af9e84fa5f2336b6f29de9ff597c071d8fc1da",
+      "source": "Light_HLS/Tests/QoRPressure/bram_permute.cpp",
+      "source_sha256": "4531ea2a2c9bbabcd8d1e850cd8fde5408a1b7c66e68d04c8d63eb2b1cfbd88f",
+      "config_sha256": null,
+      "testbench_sha256": "942c4cdd119038e4a6c4e3ba2c44af744c3a49e4f5158d84645be0d382473c99",
+      "light_hls_executable_sha256": "34fe593e224841396fecd133192e136b67171b3e386d1aea3c662c21c61bcb07",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 2048,
+      "simulation_cycles": {
+        "light_hls": 515.0,
+        "vitis_hls": 514.0
+      },
+      "simulation_events": {
+        "light_hls": {
+          "transaction_events": [
+            {
+              "trial": 0,
+              "accepted": 4,
+              "first_read": 5,
+              "first_write": 264,
+              "last_commit": 519,
+              "done": 519
+            },
+            {
+              "trial": 1,
+              "accepted": 523,
+              "first_read": 524,
+              "first_write": 783,
+              "last_commit": 1038,
+              "done": 1038
+            },
+            {
+              "trial": 2,
+              "accepted": 1042,
+              "first_read": 1043,
+              "first_write": 1302,
+              "last_commit": 1557,
+              "done": 1557
+            },
+            {
+              "trial": 3,
+              "accepted": 1561,
+              "first_read": 1562,
+              "first_write": 1821,
+              "last_commit": 2076,
+              "done": 2076
+            },
+            {
+              "trial": 4,
+              "accepted": 2080,
+              "first_read": 2081,
+              "first_write": 2340,
+              "last_commit": 2595,
+              "done": 2595
+            },
+            {
+              "trial": 5,
+              "accepted": 2599,
+              "first_read": 2600,
+              "first_write": 2859,
+              "last_commit": 3114,
+              "done": 3114
+            },
+            {
+              "trial": 6,
+              "accepted": 3118,
+              "first_read": 3119,
+              "first_write": 3378,
+              "last_commit": 3633,
+              "done": 3633
+            },
+            {
+              "trial": 7,
+              "accepted": 3637,
+              "first_read": 3638,
+              "first_write": 3897,
+              "last_commit": 4152,
+              "done": 4152
+            }
+          ],
+          "final_commit_cycles": [
+            515,
+            515,
+            515,
+            515,
+            515,
+            515,
+            515,
+            515
+          ],
+          "completion_signal_cycles": [
+            515,
+            515,
+            515,
+            515,
+            515,
+            515,
+            515,
+            515
+          ],
+          "observed_acceptance_intervals": [
+            519,
+            519,
+            519,
+            519,
+            519,
+            519,
+            519
+          ]
+        },
+        "vitis_hls": {
+          "transaction_events": [
+            {
+              "trial": 0,
+              "accepted": 4,
+              "first_read": 5,
+              "first_write": 264,
+              "last_commit": 519,
+              "done": 518
+            },
+            {
+              "trial": 1,
+              "accepted": 523,
+              "first_read": 524,
+              "first_write": 783,
+              "last_commit": 1038,
+              "done": 1037
+            },
+            {
+              "trial": 2,
+              "accepted": 1042,
+              "first_read": 1043,
+              "first_write": 1302,
+              "last_commit": 1557,
+              "done": 1556
+            },
+            {
+              "trial": 3,
+              "accepted": 1561,
+              "first_read": 1562,
+              "first_write": 1821,
+              "last_commit": 2076,
+              "done": 2075
+            },
+            {
+              "trial": 4,
+              "accepted": 2080,
+              "first_read": 2081,
+              "first_write": 2340,
+              "last_commit": 2595,
+              "done": 2594
+            },
+            {
+              "trial": 5,
+              "accepted": 2599,
+              "first_read": 2600,
+              "first_write": 2859,
+              "last_commit": 3114,
+              "done": 3113
+            },
+            {
+              "trial": 6,
+              "accepted": 3118,
+              "first_read": 3119,
+              "first_write": 3378,
+              "last_commit": 3633,
+              "done": 3632
+            },
+            {
+              "trial": 7,
+              "accepted": 3637,
+              "first_read": 3638,
+              "first_write": 3897,
+              "last_commit": 4152,
+              "done": 4151
+            }
+          ],
+          "final_commit_cycles": [
+            515,
+            515,
+            515,
+            515,
+            515,
+            515,
+            515,
+            515
+          ],
+          "completion_signal_cycles": [
+            514,
+            514,
+            514,
+            514,
+            514,
+            514,
+            514,
+            514
+          ],
+          "observed_acceptance_intervals": [
+            519,
+            519,
+            519,
+            519,
+            519,
+            519,
+            519
+          ]
+        }
+      },
+      "initiation_interval": {
+        "light_hls": 1,
+        "light_hls_loops": [
+          {
+            "loop": "Loop_qor_pressure_1",
+            "achieved_ii": 1,
+            "limiting_factor": "requested initiation interval",
+            "pipeline_latency": 1,
+            "memory_mii": 1,
+            "recurrence_mii": 1
+          },
+          {
+            "loop": "Loop_qor_pressure_2",
+            "achieved_ii": 1,
+            "limiting_factor": "requested initiation interval",
+            "pipeline_latency": 1,
+            "memory_mii": 1,
+            "recurrence_mii": 1
+          }
+        ],
+        "light_hls_dataflow_graph": 0,
+        "vitis_hls_loops": [],
+        "vitis_hls_top": {
+          "minimum": 520,
+          "maximum": 520
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": null,
+        "resources": {
+          "lut": 117,
+          "ff": 91,
+          "dsp": 0,
+          "bram_tiles": 0.5
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.816,
+          "critical_path_delay_ns": 1.184
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": null,
+        "resources": {
+          "lut": 94,
+          "ff": 86,
+          "dsp": 0,
+          "bram_tiles": 0.5
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.895,
+          "critical_path_delay_ns": 1.105
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 23,
+          "ff": 5,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.07899999999999885
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 1.24468085,
+            "ff": 1.05813953,
+            "dsp": null,
+            "bram_tiles": 1.0
+          },
+          "critical_path_delay": 1.07149321
+        }
+      }
+    },
+    {
+      "suite": "pressure/bram_permute_250MHz",
+      "case": "qor_pressure",
+      "top": "qor_pressure",
+      "comparison_id": "3b5d2dc1b455e6c5e0556d823c47137be538490047a9913c8cf4d3467379e7d6",
+      "source": "Light_HLS/Tests/QoRPressure/bram_permute.cpp",
+      "source_sha256": "4531ea2a2c9bbabcd8d1e850cd8fde5408a1b7c66e68d04c8d63eb2b1cfbd88f",
+      "config_sha256": null,
+      "testbench_sha256": "942c4cdd119038e4a6c4e3ba2c44af744c3a49e4f5158d84645be0d382473c99",
+      "light_hls_executable_sha256": "34fe593e224841396fecd133192e136b67171b3e386d1aea3c662c21c61bcb07",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 2048,
+      "simulation_cycles": {
+        "light_hls": 515.0,
+        "vitis_hls": 514.0
+      },
+      "simulation_events": {
+        "light_hls": {
+          "transaction_events": [
+            {
+              "trial": 0,
+              "accepted": 4,
+              "first_read": 5,
+              "first_write": 264,
+              "last_commit": 519,
+              "done": 519
+            },
+            {
+              "trial": 1,
+              "accepted": 523,
+              "first_read": 524,
+              "first_write": 783,
+              "last_commit": 1038,
+              "done": 1038
+            },
+            {
+              "trial": 2,
+              "accepted": 1042,
+              "first_read": 1043,
+              "first_write": 1302,
+              "last_commit": 1557,
+              "done": 1557
+            },
+            {
+              "trial": 3,
+              "accepted": 1561,
+              "first_read": 1562,
+              "first_write": 1821,
+              "last_commit": 2076,
+              "done": 2076
+            },
+            {
+              "trial": 4,
+              "accepted": 2080,
+              "first_read": 2081,
+              "first_write": 2340,
+              "last_commit": 2595,
+              "done": 2595
+            },
+            {
+              "trial": 5,
+              "accepted": 2599,
+              "first_read": 2600,
+              "first_write": 2859,
+              "last_commit": 3114,
+              "done": 3114
+            },
+            {
+              "trial": 6,
+              "accepted": 3118,
+              "first_read": 3119,
+              "first_write": 3378,
+              "last_commit": 3633,
+              "done": 3633
+            },
+            {
+              "trial": 7,
+              "accepted": 3637,
+              "first_read": 3638,
+              "first_write": 3897,
+              "last_commit": 4152,
+              "done": 4152
+            }
+          ],
+          "final_commit_cycles": [
+            515,
+            515,
+            515,
+            515,
+            515,
+            515,
+            515,
+            515
+          ],
+          "completion_signal_cycles": [
+            515,
+            515,
+            515,
+            515,
+            515,
+            515,
+            515,
+            515
+          ],
+          "observed_acceptance_intervals": [
+            519,
+            519,
+            519,
+            519,
+            519,
+            519,
+            519
+          ]
+        },
+        "vitis_hls": {
+          "transaction_events": [
+            {
+              "trial": 0,
+              "accepted": 4,
+              "first_read": 5,
+              "first_write": 264,
+              "last_commit": 519,
+              "done": 518
+            },
+            {
+              "trial": 1,
+              "accepted": 523,
+              "first_read": 524,
+              "first_write": 783,
+              "last_commit": 1038,
+              "done": 1037
+            },
+            {
+              "trial": 2,
+              "accepted": 1042,
+              "first_read": 1043,
+              "first_write": 1302,
+              "last_commit": 1557,
+              "done": 1556
+            },
+            {
+              "trial": 3,
+              "accepted": 1561,
+              "first_read": 1562,
+              "first_write": 1821,
+              "last_commit": 2076,
+              "done": 2075
+            },
+            {
+              "trial": 4,
+              "accepted": 2080,
+              "first_read": 2081,
+              "first_write": 2340,
+              "last_commit": 2595,
+              "done": 2594
+            },
+            {
+              "trial": 5,
+              "accepted": 2599,
+              "first_read": 2600,
+              "first_write": 2859,
+              "last_commit": 3114,
+              "done": 3113
+            },
+            {
+              "trial": 6,
+              "accepted": 3118,
+              "first_read": 3119,
+              "first_write": 3378,
+              "last_commit": 3633,
+              "done": 3632
+            },
+            {
+              "trial": 7,
+              "accepted": 3637,
+              "first_read": 3638,
+              "first_write": 3897,
+              "last_commit": 4152,
+              "done": 4151
+            }
+          ],
+          "final_commit_cycles": [
+            515,
+            515,
+            515,
+            515,
+            515,
+            515,
+            515,
+            515
+          ],
+          "completion_signal_cycles": [
+            514,
+            514,
+            514,
+            514,
+            514,
+            514,
+            514,
+            514
+          ],
+          "observed_acceptance_intervals": [
+            519,
+            519,
+            519,
+            519,
+            519,
+            519,
+            519
+          ]
+        }
+      },
+      "initiation_interval": {
+        "light_hls": 1,
+        "light_hls_loops": [
+          {
+            "loop": "Loop_qor_pressure_1",
+            "achieved_ii": 1,
+            "limiting_factor": "requested initiation interval",
+            "pipeline_latency": 1,
+            "memory_mii": 1,
+            "recurrence_mii": 1
+          },
+          {
+            "loop": "Loop_qor_pressure_2",
+            "achieved_ii": 1,
+            "limiting_factor": "requested initiation interval",
+            "pipeline_latency": 1,
+            "memory_mii": 1,
+            "recurrence_mii": 1
+          }
+        ],
+        "light_hls_dataflow_graph": 0,
+        "vitis_hls_loops": [],
+        "vitis_hls_top": {
+          "minimum": 520,
+          "maximum": 520
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 41.945723,
+        "resources": {
+          "lut": 117,
+          "ff": 91,
+          "dsp": 0,
+          "bram_tiles": 0.5
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 2.816,
+          "critical_path_delay_ns": 1.184
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 43.100505,
+        "resources": {
+          "lut": 94,
+          "ff": 86,
+          "dsp": 0,
+          "bram_tiles": 0.5
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 2.895,
+          "critical_path_delay_ns": 1.105
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 23,
+          "ff": 5,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.07900000000000018
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 1.24468085,
+            "ff": 1.05813953,
+            "dsp": null,
+            "bram_tiles": 1.0
+          },
+          "critical_path_delay": 1.07149321
+        }
+      }
+    },
+    {
+      "suite": "pressure/bram_banked_100MHz",
+      "case": "qor_pressure",
+      "top": "qor_pressure",
+      "comparison_id": "2fb28955fc037c9fa1f55665c1dc8931ca759248b3d9c97316b841279011adc3",
+      "source": "Light_HLS/Tests/QoRPressure/bram_banked.cpp",
+      "source_sha256": "7610e6ca4ebf3874740c3b8269c87362434958ee2e39074e5a53913fa41730f0",
+      "config_sha256": null,
+      "testbench_sha256": "942c4cdd119038e4a6c4e3ba2c44af744c3a49e4f5158d84645be0d382473c99",
+      "light_hls_executable_sha256": "34fe593e224841396fecd133192e136b67171b3e386d1aea3c662c21c61bcb07",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 2048,
+      "simulation_cycles": {
+        "light_hls": 771.0,
+        "vitis_hls": 514.0
+      },
+      "simulation_events": {
+        "light_hls": {
+          "transaction_events": [
+            {
+              "trial": 0,
+              "accepted": 4,
+              "first_read": 5,
+              "first_write": 265,
+              "last_commit": 775,
+              "done": 775
+            },
+            {
+              "trial": 1,
+              "accepted": 779,
+              "first_read": 780,
+              "first_write": 1040,
+              "last_commit": 1550,
+              "done": 1550
+            },
+            {
+              "trial": 2,
+              "accepted": 1554,
+              "first_read": 1555,
+              "first_write": 1815,
+              "last_commit": 2325,
+              "done": 2325
+            },
+            {
+              "trial": 3,
+              "accepted": 2329,
+              "first_read": 2330,
+              "first_write": 2590,
+              "last_commit": 3100,
+              "done": 3100
+            },
+            {
+              "trial": 4,
+              "accepted": 3104,
+              "first_read": 3105,
+              "first_write": 3365,
+              "last_commit": 3875,
+              "done": 3875
+            },
+            {
+              "trial": 5,
+              "accepted": 3879,
+              "first_read": 3880,
+              "first_write": 4140,
+              "last_commit": 4650,
+              "done": 4650
+            },
+            {
+              "trial": 6,
+              "accepted": 4654,
+              "first_read": 4655,
+              "first_write": 4915,
+              "last_commit": 5425,
+              "done": 5425
+            },
+            {
+              "trial": 7,
+              "accepted": 5429,
+              "first_read": 5430,
+              "first_write": 5690,
+              "last_commit": 6200,
+              "done": 6200
+            }
+          ],
+          "final_commit_cycles": [
+            771,
+            771,
+            771,
+            771,
+            771,
+            771,
+            771,
+            771
+          ],
+          "completion_signal_cycles": [
+            771,
+            771,
+            771,
+            771,
+            771,
+            771,
+            771,
+            771
+          ],
+          "observed_acceptance_intervals": [
+            775,
+            775,
+            775,
+            775,
+            775,
+            775,
+            775
+          ]
+        },
+        "vitis_hls": {
+          "transaction_events": [
+            {
+              "trial": 0,
+              "accepted": 4,
+              "first_read": 5,
+              "first_write": 264,
+              "last_commit": 519,
+              "done": 518
+            },
+            {
+              "trial": 1,
+              "accepted": 523,
+              "first_read": 524,
+              "first_write": 783,
+              "last_commit": 1038,
+              "done": 1037
+            },
+            {
+              "trial": 2,
+              "accepted": 1042,
+              "first_read": 1043,
+              "first_write": 1302,
+              "last_commit": 1557,
+              "done": 1556
+            },
+            {
+              "trial": 3,
+              "accepted": 1561,
+              "first_read": 1562,
+              "first_write": 1821,
+              "last_commit": 2076,
+              "done": 2075
+            },
+            {
+              "trial": 4,
+              "accepted": 2080,
+              "first_read": 2081,
+              "first_write": 2340,
+              "last_commit": 2595,
+              "done": 2594
+            },
+            {
+              "trial": 5,
+              "accepted": 2599,
+              "first_read": 2600,
+              "first_write": 2859,
+              "last_commit": 3114,
+              "done": 3113
+            },
+            {
+              "trial": 6,
+              "accepted": 3118,
+              "first_read": 3119,
+              "first_write": 3378,
+              "last_commit": 3633,
+              "done": 3632
+            },
+            {
+              "trial": 7,
+              "accepted": 3637,
+              "first_read": 3638,
+              "first_write": 3897,
+              "last_commit": 4152,
+              "done": 4151
+            }
+          ],
+          "final_commit_cycles": [
+            515,
+            515,
+            515,
+            515,
+            515,
+            515,
+            515,
+            515
+          ],
+          "completion_signal_cycles": [
+            514,
+            514,
+            514,
+            514,
+            514,
+            514,
+            514,
+            514
+          ],
+          "observed_acceptance_intervals": [
+            519,
+            519,
+            519,
+            519,
+            519,
+            519,
+            519
+          ]
+        }
+      },
+      "initiation_interval": {
+        "light_hls": 1,
+        "light_hls_loops": [
+          {
+            "loop": "Loop_qor_pressure_1",
+            "achieved_ii": 1,
+            "limiting_factor": "requested initiation interval",
+            "pipeline_latency": 1,
+            "memory_mii": 1,
+            "recurrence_mii": 1
+          },
+          {
+            "loop": "Loop_qor_pressure_2",
+            "achieved_ii": 2,
+            "limiting_factor": "memory port capacity",
+            "pipeline_latency": 2,
+            "memory_mii": 2,
+            "recurrence_mii": 1
+          }
+        ],
+        "light_hls_dataflow_graph": 0,
+        "vitis_hls_loops": [],
+        "vitis_hls_top": {
+          "minimum": 520,
+          "maximum": 520
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": null,
+        "resources": {
+          "lut": 166,
+          "ff": 133,
+          "dsp": 0,
+          "bram_tiles": 1.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.639,
+          "critical_path_delay_ns": 1.361
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": null,
+        "resources": {
+          "lut": 111,
+          "ff": 78,
+          "dsp": 0,
+          "bram_tiles": 1.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.892,
+          "critical_path_delay_ns": 1.108
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 55,
+          "ff": 55,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.2530000000000001
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 1.4954955,
+            "ff": 1.70512821,
+            "dsp": null,
+            "bram_tiles": 1.0
+          },
+          "critical_path_delay": 1.22833935
+        }
+      }
+    },
+    {
+      "suite": "pressure/bram_banked_250MHz",
+      "case": "qor_pressure",
+      "top": "qor_pressure",
+      "comparison_id": "bf87f65c7e1abb2f294bc75c20885a928348eaf16e14a597b7beaf96d708ae49",
+      "source": "Light_HLS/Tests/QoRPressure/bram_banked.cpp",
+      "source_sha256": "7610e6ca4ebf3874740c3b8269c87362434958ee2e39074e5a53913fa41730f0",
+      "config_sha256": null,
+      "testbench_sha256": "942c4cdd119038e4a6c4e3ba2c44af744c3a49e4f5158d84645be0d382473c99",
+      "light_hls_executable_sha256": "34fe593e224841396fecd133192e136b67171b3e386d1aea3c662c21c61bcb07",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 2048,
+      "simulation_cycles": {
+        "light_hls": 771.0,
+        "vitis_hls": 514.0
+      },
+      "simulation_events": {
+        "light_hls": {
+          "transaction_events": [
+            {
+              "trial": 0,
+              "accepted": 4,
+              "first_read": 5,
+              "first_write": 265,
+              "last_commit": 775,
+              "done": 775
+            },
+            {
+              "trial": 1,
+              "accepted": 779,
+              "first_read": 780,
+              "first_write": 1040,
+              "last_commit": 1550,
+              "done": 1550
+            },
+            {
+              "trial": 2,
+              "accepted": 1554,
+              "first_read": 1555,
+              "first_write": 1815,
+              "last_commit": 2325,
+              "done": 2325
+            },
+            {
+              "trial": 3,
+              "accepted": 2329,
+              "first_read": 2330,
+              "first_write": 2590,
+              "last_commit": 3100,
+              "done": 3100
+            },
+            {
+              "trial": 4,
+              "accepted": 3104,
+              "first_read": 3105,
+              "first_write": 3365,
+              "last_commit": 3875,
+              "done": 3875
+            },
+            {
+              "trial": 5,
+              "accepted": 3879,
+              "first_read": 3880,
+              "first_write": 4140,
+              "last_commit": 4650,
+              "done": 4650
+            },
+            {
+              "trial": 6,
+              "accepted": 4654,
+              "first_read": 4655,
+              "first_write": 4915,
+              "last_commit": 5425,
+              "done": 5425
+            },
+            {
+              "trial": 7,
+              "accepted": 5429,
+              "first_read": 5430,
+              "first_write": 5690,
+              "last_commit": 6200,
+              "done": 6200
+            }
+          ],
+          "final_commit_cycles": [
+            771,
+            771,
+            771,
+            771,
+            771,
+            771,
+            771,
+            771
+          ],
+          "completion_signal_cycles": [
+            771,
+            771,
+            771,
+            771,
+            771,
+            771,
+            771,
+            771
+          ],
+          "observed_acceptance_intervals": [
+            775,
+            775,
+            775,
+            775,
+            775,
+            775,
+            775
+          ]
+        },
+        "vitis_hls": {
+          "transaction_events": [
+            {
+              "trial": 0,
+              "accepted": 4,
+              "first_read": 5,
+              "first_write": 264,
+              "last_commit": 519,
+              "done": 518
+            },
+            {
+              "trial": 1,
+              "accepted": 523,
+              "first_read": 524,
+              "first_write": 783,
+              "last_commit": 1038,
+              "done": 1037
+            },
+            {
+              "trial": 2,
+              "accepted": 1042,
+              "first_read": 1043,
+              "first_write": 1302,
+              "last_commit": 1557,
+              "done": 1556
+            },
+            {
+              "trial": 3,
+              "accepted": 1561,
+              "first_read": 1562,
+              "first_write": 1821,
+              "last_commit": 2076,
+              "done": 2075
+            },
+            {
+              "trial": 4,
+              "accepted": 2080,
+              "first_read": 2081,
+              "first_write": 2340,
+              "last_commit": 2595,
+              "done": 2594
+            },
+            {
+              "trial": 5,
+              "accepted": 2599,
+              "first_read": 2600,
+              "first_write": 2859,
+              "last_commit": 3114,
+              "done": 3113
+            },
+            {
+              "trial": 6,
+              "accepted": 3118,
+              "first_read": 3119,
+              "first_write": 3378,
+              "last_commit": 3633,
+              "done": 3632
+            },
+            {
+              "trial": 7,
+              "accepted": 3637,
+              "first_read": 3638,
+              "first_write": 3897,
+              "last_commit": 4152,
+              "done": 4151
+            }
+          ],
+          "final_commit_cycles": [
+            515,
+            515,
+            515,
+            515,
+            515,
+            515,
+            515,
+            515
+          ],
+          "completion_signal_cycles": [
+            514,
+            514,
+            514,
+            514,
+            514,
+            514,
+            514,
+            514
+          ],
+          "observed_acceptance_intervals": [
+            519,
+            519,
+            519,
+            519,
+            519,
+            519,
+            519
+          ]
+        }
+      },
+      "initiation_interval": {
+        "light_hls": 1,
+        "light_hls_loops": [
+          {
+            "loop": "Loop_qor_pressure_1",
+            "achieved_ii": 1,
+            "limiting_factor": "requested initiation interval",
+            "pipeline_latency": 1,
+            "memory_mii": 1,
+            "recurrence_mii": 1
+          },
+          {
+            "loop": "Loop_qor_pressure_2",
+            "achieved_ii": 2,
+            "limiting_factor": "memory port capacity",
+            "pipeline_latency": 2,
+            "memory_mii": 2,
+            "recurrence_mii": 1
+          }
+        ],
+        "light_hls_dataflow_graph": 0,
+        "vitis_hls_loops": [],
+        "vitis_hls_top": {
+          "minimum": 520,
+          "maximum": 520
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 43.050737,
+        "resources": {
+          "lut": 166,
+          "ff": 133,
+          "dsp": 0,
+          "bram_tiles": 1.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 2.639,
+          "critical_path_delay_ns": 1.361
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 58.291862,
+        "resources": {
+          "lut": 111,
+          "ff": 78,
+          "dsp": 0,
+          "bram_tiles": 1.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 2.892,
+          "critical_path_delay_ns": 1.108
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 55,
+          "ff": 55,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.2530000000000001
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 1.4954955,
+            "ff": 1.70512821,
+            "dsp": null,
+            "bram_tiles": 1.0
+          },
+          "critical_path_delay": 1.22833935
+        }
+      }
+    },
+    {
+      "suite": "pressure/dsp_dataflow_100MHz",
+      "case": "qor_pressure",
+      "top": "qor_pressure",
+      "comparison_id": "5b8d8db6132988a34012d475e2891675e4aac8e52d928dbe5ab3b274bccff5df",
+      "source": "Light_HLS/Tests/QoRPressure/dsp_dataflow.cpp",
+      "source_sha256": "f00d0955fe4d078cbf42c0057a12afef7976e653b493e306b0218fa1545b88dd",
+      "config_sha256": null,
+      "testbench_sha256": "942c4cdd119038e4a6c4e3ba2c44af744c3a49e4f5158d84645be0d382473c99",
+      "light_hls_executable_sha256": "34fe593e224841396fecd133192e136b67171b3e386d1aea3c662c21c61bcb07",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": false,
+      "normalized_interface_equivalence": true,
+      "trace_count": 2048,
+      "simulation_cycles": {
+        "light_hls": 261.0,
+        "vitis_hls": 260.0
+      },
+      "simulation_events": {
+        "light_hls": {
+          "transaction_events": [
+            {
+              "trial": 0,
+              "accepted": 4,
+              "first_read": 5,
+              "first_write": 10,
+              "last_commit": 265,
+              "done": 265
+            },
+            {
+              "trial": 1,
+              "accepted": 269,
+              "first_read": 270,
+              "first_write": 275,
+              "last_commit": 530,
+              "done": 530
+            },
+            {
+              "trial": 2,
+              "accepted": 534,
+              "first_read": 535,
+              "first_write": 540,
+              "last_commit": 795,
+              "done": 795
+            },
+            {
+              "trial": 3,
+              "accepted": 799,
+              "first_read": 800,
+              "first_write": 805,
+              "last_commit": 1060,
+              "done": 1060
+            },
+            {
+              "trial": 4,
+              "accepted": 1064,
+              "first_read": 1065,
+              "first_write": 1070,
+              "last_commit": 1325,
+              "done": 1325
+            },
+            {
+              "trial": 5,
+              "accepted": 1329,
+              "first_read": 1330,
+              "first_write": 1335,
+              "last_commit": 1590,
+              "done": 1590
+            },
+            {
+              "trial": 6,
+              "accepted": 1594,
+              "first_read": 1595,
+              "first_write": 1600,
+              "last_commit": 1855,
+              "done": 1855
+            },
+            {
+              "trial": 7,
+              "accepted": 1859,
+              "first_read": 1860,
+              "first_write": 1865,
+              "last_commit": 2120,
+              "done": 2120
+            }
+          ],
+          "final_commit_cycles": [
+            261,
+            261,
+            261,
+            261,
+            261,
+            261,
+            261,
+            261
+          ],
+          "completion_signal_cycles": [
+            261,
+            261,
+            261,
+            261,
+            261,
+            261,
+            261,
+            261
+          ],
+          "observed_acceptance_intervals": [
+            265,
+            265,
+            265,
+            265,
+            265,
+            265,
+            265
+          ]
+        },
+        "vitis_hls": {
+          "transaction_events": [
+            {
+              "trial": 0,
+              "accepted": 4,
+              "first_read": 4,
+              "first_write": 10,
+              "last_commit": 265,
+              "done": 264
+            },
+            {
+              "trial": 1,
+              "accepted": 269,
+              "first_read": 269,
+              "first_write": 275,
+              "last_commit": 530,
+              "done": 529
+            },
+            {
+              "trial": 2,
+              "accepted": 534,
+              "first_read": 534,
+              "first_write": 540,
+              "last_commit": 795,
+              "done": 794
+            },
+            {
+              "trial": 3,
+              "accepted": 799,
+              "first_read": 799,
+              "first_write": 805,
+              "last_commit": 1060,
+              "done": 1059
+            },
+            {
+              "trial": 4,
+              "accepted": 1064,
+              "first_read": 1064,
+              "first_write": 1070,
+              "last_commit": 1325,
+              "done": 1324
+            },
+            {
+              "trial": 5,
+              "accepted": 1329,
+              "first_read": 1329,
+              "first_write": 1335,
+              "last_commit": 1590,
+              "done": 1589
+            },
+            {
+              "trial": 6,
+              "accepted": 1594,
+              "first_read": 1594,
+              "first_write": 1600,
+              "last_commit": 1855,
+              "done": 1854
+            },
+            {
+              "trial": 7,
+              "accepted": 1859,
+              "first_read": 1859,
+              "first_write": 1865,
+              "last_commit": 2120,
+              "done": 2119
+            }
+          ],
+          "final_commit_cycles": [
+            261,
+            261,
+            261,
+            261,
+            261,
+            261,
+            261,
+            261
+          ],
+          "completion_signal_cycles": [
+            260,
+            260,
+            260,
+            260,
+            260,
+            260,
+            260,
+            260
+          ],
+          "observed_acceptance_intervals": [
+            265,
+            265,
+            265,
+            265,
+            265,
+            265,
+            265
+          ]
+        }
+      },
+      "initiation_interval": {
+        "light_hls": 260,
+        "light_hls_loops": [],
+        "light_hls_dataflow_graph": 260,
+        "vitis_hls_loops": [],
+        "vitis_hls_top": {
+          "minimum": 262,
+          "maximum": 262
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": null,
+        "resources": {
+          "lut": 222,
+          "ff": 138,
+          "dsp": 2,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 6.656,
+          "critical_path_delay_ns": 3.344
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": null,
+        "resources": {
+          "lut": 167,
+          "ff": 79,
+          "dsp": 1,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.823,
+          "critical_path_delay_ns": 1.177
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 55,
+          "ff": 59,
+          "dsp": 1,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -2.1670000000000007
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 1.32934132,
+            "ff": 1.74683544,
+            "dsp": 2.0,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 2.8411215
+        }
+      }
+    },
+    {
+      "suite": "pressure/dsp_dataflow_250MHz",
+      "case": "qor_pressure",
+      "top": "qor_pressure",
+      "comparison_id": "5bb86308aa4a15bcd9d7492c0f17574d02e38a6c98a58376a036d3b01f496493",
+      "source": "Light_HLS/Tests/QoRPressure/dsp_dataflow.cpp",
+      "source_sha256": "f00d0955fe4d078cbf42c0057a12afef7976e653b493e306b0218fa1545b88dd",
+      "config_sha256": null,
+      "testbench_sha256": "942c4cdd119038e4a6c4e3ba2c44af744c3a49e4f5158d84645be0d382473c99",
+      "light_hls_executable_sha256": "34fe593e224841396fecd133192e136b67171b3e386d1aea3c662c21c61bcb07",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": false,
+      "normalized_interface_equivalence": true,
+      "trace_count": 2048,
+      "simulation_cycles": {
+        "light_hls": 262.0,
+        "vitis_hls": 260.0
+      },
+      "simulation_events": {
+        "light_hls": {
+          "transaction_events": [
+            {
+              "trial": 0,
+              "accepted": 4,
+              "first_read": 5,
+              "first_write": 11,
+              "last_commit": 266,
+              "done": 266
+            },
+            {
+              "trial": 1,
+              "accepted": 270,
+              "first_read": 271,
+              "first_write": 277,
+              "last_commit": 532,
+              "done": 532
+            },
+            {
+              "trial": 2,
+              "accepted": 536,
+              "first_read": 537,
+              "first_write": 543,
+              "last_commit": 798,
+              "done": 798
+            },
+            {
+              "trial": 3,
+              "accepted": 802,
+              "first_read": 803,
+              "first_write": 809,
+              "last_commit": 1064,
+              "done": 1064
+            },
+            {
+              "trial": 4,
+              "accepted": 1068,
+              "first_read": 1069,
+              "first_write": 1075,
+              "last_commit": 1330,
+              "done": 1330
+            },
+            {
+              "trial": 5,
+              "accepted": 1334,
+              "first_read": 1335,
+              "first_write": 1341,
+              "last_commit": 1596,
+              "done": 1596
+            },
+            {
+              "trial": 6,
+              "accepted": 1600,
+              "first_read": 1601,
+              "first_write": 1607,
+              "last_commit": 1862,
+              "done": 1862
+            },
+            {
+              "trial": 7,
+              "accepted": 1866,
+              "first_read": 1867,
+              "first_write": 1873,
+              "last_commit": 2128,
+              "done": 2128
+            }
+          ],
+          "final_commit_cycles": [
+            262,
+            262,
+            262,
+            262,
+            262,
+            262,
+            262,
+            262
+          ],
+          "completion_signal_cycles": [
+            262,
+            262,
+            262,
+            262,
+            262,
+            262,
+            262,
+            262
+          ],
+          "observed_acceptance_intervals": [
+            266,
+            266,
+            266,
+            266,
+            266,
+            266,
+            266
+          ]
+        },
+        "vitis_hls": {
+          "transaction_events": [
+            {
+              "trial": 0,
+              "accepted": 4,
+              "first_read": 4,
+              "first_write": 10,
+              "last_commit": 265,
+              "done": 264
+            },
+            {
+              "trial": 1,
+              "accepted": 269,
+              "first_read": 269,
+              "first_write": 275,
+              "last_commit": 530,
+              "done": 529
+            },
+            {
+              "trial": 2,
+              "accepted": 534,
+              "first_read": 534,
+              "first_write": 540,
+              "last_commit": 795,
+              "done": 794
+            },
+            {
+              "trial": 3,
+              "accepted": 799,
+              "first_read": 799,
+              "first_write": 805,
+              "last_commit": 1060,
+              "done": 1059
+            },
+            {
+              "trial": 4,
+              "accepted": 1064,
+              "first_read": 1064,
+              "first_write": 1070,
+              "last_commit": 1325,
+              "done": 1324
+            },
+            {
+              "trial": 5,
+              "accepted": 1329,
+              "first_read": 1329,
+              "first_write": 1335,
+              "last_commit": 1590,
+              "done": 1589
+            },
+            {
+              "trial": 6,
+              "accepted": 1594,
+              "first_read": 1594,
+              "first_write": 1600,
+              "last_commit": 1855,
+              "done": 1854
+            },
+            {
+              "trial": 7,
+              "accepted": 1859,
+              "first_read": 1859,
+              "first_write": 1865,
+              "last_commit": 2120,
+              "done": 2119
+            }
+          ],
+          "final_commit_cycles": [
+            261,
+            261,
+            261,
+            261,
+            261,
+            261,
+            261,
+            261
+          ],
+          "completion_signal_cycles": [
+            260,
+            260,
+            260,
+            260,
+            260,
+            260,
+            260,
+            260
+          ],
+          "observed_acceptance_intervals": [
+            265,
+            265,
+            265,
+            265,
+            265,
+            265,
+            265
+          ]
+        }
+      },
+      "initiation_interval": {
+        "light_hls": 261,
+        "light_hls_loops": [],
+        "light_hls_dataflow_graph": 261,
+        "vitis_hls_loops": [],
+        "vitis_hls_top": {
+          "minimum": 262,
+          "maximum": 262
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": null,
+        "resources": {
+          "lut": 223,
+          "ff": 164,
+          "dsp": 2,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 1.77,
+          "critical_path_delay_ns": 2.23
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": null,
+        "resources": {
+          "lut": 167,
+          "ff": 79,
+          "dsp": 1,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 2.823,
+          "critical_path_delay_ns": 1.177
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 56,
+          "ff": 85,
+          "dsp": 1,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -1.053
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 1.33532934,
+            "ff": 2.07594937,
+            "dsp": 2.0,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 1.89464741
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,1676 @@
+{
+  "schema_version": "1.0",
+  "stage": "u250_ground_truth_baseline_archive",
+  "generated_at_utc": "2026-09-11T05:47:43.090568+00:00",
+  "valid": true,
+  "reward_eligible": true,
+  "board": "u250",
+  "part": "xcu250-figd2104-2L-e",
+  "clock_period_ns": [
+    10.0
+  ],
+  "flow": "vivado_ooc_normalized_v2",
+  "inputs": [
+    {
+      "suite": "scalar",
+      "report": "u250_fair_comparison.json",
+      "report_sha256": "63e3cd682a4b36ea6362b016a51529ede4fc26712e6f2a9efd9b4fac823a61f9",
+      "stage": "u250_fair_comparison",
+      "clock_period_ns": 10.0
+    },
+    {
+      "suite": "pipeline",
+      "report": "u250_pipeline_comparison.json",
+      "report_sha256": "4168ca7931d0534b4b567a567768f051ebdcaa8f4fdccc3d632478f9daa4f533",
+      "stage": "u250_pipeline_fair_comparison_batch",
+      "clock_period_ns": 10.0
+    },
+    {
+      "suite": "array_partition",
+      "report": "u250_array_partition_comparison.json",
+      "report_sha256": "c675f1f8a551dfa0ce6472f9532c8ceec22cd71dc7f52b564de1d23e864fafb3",
+      "stage": "u250_array_partition_fair_comparison_batch",
+      "clock_period_ns": 10.0
+    },
+    {
+      "suite": "dataflow",
+      "report": "u250_dataflow_comparison.json",
+      "report_sha256": "3b6c6b3fc3e593b10f8e87c6df4e83ed3a5ad86833b97b1c4d62669a31f65d41",
+      "stage": "u250_dataflow_fair_comparison_batch",
+      "clock_period_ns": 10.0
+    },
+    {
+      "suite": "dataflow_nested",
+      "report": "u250_fair_comparison.json",
+      "report_sha256": "77bcd4549a2dcc6be3e67260febabb3190bfb0823b08fe7b9a106eda6327a840",
+      "stage": "u250_fair_comparison",
+      "clock_period_ns": 10.0
+    }
+  ],
+  "cases": [
+    {
+      "suite": "scalar",
+      "case": "backend_scalar",
+      "top": "backend_scalar",
+      "comparison_id": "e4b099cb79200f4a7da7893b46551d6b5a5dcc6193e132ac5c7ab57e6dca2e57",
+      "source": "Light_HLS/App/backend_scalar/backend_scalar.c",
+      "source_sha256": "6a128cb5d89c0c32d37362a9b0dee6c3808f231bc0db90b884581433cc67b40f",
+      "config_sha256": null,
+      "testbench_sha256": "3437287475b81d2b8c8d36c415e58935d52e6ea9a6d78cb2bf025205113d3d9b",
+      "light_hls_executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 4,
+      "simulation_cycles": {
+        "light_hls": 15.0,
+        "vitis_hls": 4.0
+      },
+      "initiation_interval": {
+        "light_hls": 0,
+        "light_hls_dataflow_graph": 0,
+        "vitis_hls_loops": [],
+        "vitis_hls_top": {
+          "minimum": 6,
+          "maximum": 6
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 99.487379,
+        "resources": {
+          "lut": 157,
+          "ff": 269,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.129,
+          "critical_path_delay_ns": 1.871
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 98.64744,
+        "resources": {
+          "lut": 106,
+          "ff": 102,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.735,
+          "critical_path_delay_ns": 1.265
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 51,
+          "ff": 167,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.6059999999999999
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 1.48113208,
+            "ff": 2.6372549,
+            "dsp": null,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 1.47905138
+        }
+      }
+    },
+    {
+      "suite": "pipeline",
+      "case": "ii1",
+      "top": "backend_pipeline",
+      "comparison_id": "8bf7cd00c05c2583fdddd06ad51643f801ff84a02ef232399018fd42a24ba74d",
+      "source": "Light_HLS/App/backend_pipeline/backend_pipeline.cpp",
+      "source_sha256": "ce4e337f72ab65f5acf7fd14c757951b0036bcfe8bf156072e8257eedde10901",
+      "config_sha256": null,
+      "testbench_sha256": "e8a1c8e29510b498c13e1ccee8a3c9442d49e7091746c0a55216a625892f8c95",
+      "light_hls_executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 16,
+      "simulation_cycles": {
+        "light_hls": 21.0,
+        "vitis_hls": 16.0
+      },
+      "initiation_interval": {
+        "light_hls": 1,
+        "light_hls_dataflow_graph": null,
+        "vitis_hls_loops": [
+          1
+        ],
+        "vitis_hls_top": {
+          "minimum": 16,
+          "maximum": 16
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 113.408715,
+        "resources": {
+          "lut": 38,
+          "ff": 25,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.917,
+          "critical_path_delay_ns": 1.083
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 113.268047,
+        "resources": {
+          "lut": 9,
+          "ff": 11,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.318,
+          "critical_path_delay_ns": 0.682
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 29,
+          "ff": 14,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.4009999999999998
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 4.22222222,
+            "ff": 2.27272727,
+            "dsp": null,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 1.58797654
+        }
+      }
+    },
+    {
+      "suite": "pipeline",
+      "case": "memory_ii",
+      "top": "backend_pipeline_memii",
+      "comparison_id": "0e928100f00993d87c0e42ece91e278419d638e9070017e5a6d9e7fee25ed620",
+      "source": "Light_HLS/App/backend_pipeline/backend_pipeline_memii.cpp",
+      "source_sha256": "fce7116328559c3f653d465ebd4f40453d3eb5b2f328d6950ff616cbaf4a7065",
+      "config_sha256": null,
+      "testbench_sha256": "286abe6f30bb451242bb5d41a2a78e98316ed3aa0ced0a35e901a86c6ebfb422",
+      "light_hls_executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 16,
+      "simulation_cycles": {
+        "light_hls": 38.0,
+        "vitis_hls": 32.0
+      },
+      "initiation_interval": {
+        "light_hls": 2,
+        "light_hls_dataflow_graph": null,
+        "vitis_hls_loops": [
+          2
+        ],
+        "vitis_hls_top": {
+          "minimum": 32,
+          "maximum": 32
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 122.154079,
+        "resources": {
+          "lut": 91,
+          "ff": 71,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.96,
+          "critical_path_delay_ns": 1.04
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 119.137793,
+        "resources": {
+          "lut": 53,
+          "ff": 47,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.305,
+          "critical_path_delay_ns": 0.695
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 38,
+          "ff": 24,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.34499999999999886
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 1.71698113,
+            "ff": 1.5106383,
+            "dsp": null,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 1.49640288
+        }
+      }
+    },
+    {
+      "suite": "pipeline",
+      "case": "recurrence",
+      "top": "backend_pipeline_recurrence",
+      "comparison_id": "21711090591836c11f4f1a82d33f45ec13c4e8f1e5bf9dc0e084b08b2774536b",
+      "source": "Light_HLS/App/backend_pipeline/backend_pipeline_recurrence.cpp",
+      "source_sha256": "fa5e906fbf5a6f9e0935daccde3fc07e255ca4b599453986fa044c5b01ab1e9b",
+      "config_sha256": null,
+      "testbench_sha256": "19518701a37eb4c128d523d076458b9dfd6acd7ea6f4ad550c2a61e7a8c97cdb",
+      "light_hls_executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 1,
+      "simulation_cycles": {
+        "light_hls": 21.0,
+        "vitis_hls": 16.0
+      },
+      "initiation_interval": {
+        "light_hls": 1,
+        "light_hls_dataflow_graph": null,
+        "vitis_hls_loops": [
+          1
+        ],
+        "vitis_hls_top": {
+          "minimum": 16,
+          "maximum": 16
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 106.707238,
+        "resources": {
+          "lut": 53,
+          "ff": 121,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.006,
+          "critical_path_delay_ns": 0.994
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 107.587112,
+        "resources": {
+          "lut": 72,
+          "ff": 39,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.006,
+          "critical_path_delay_ns": 0.994
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": -19,
+          "ff": 82,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": 0.0
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 0.73611111,
+            "ff": 3.1025641,
+            "dsp": null,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 1.0
+        }
+      }
+    },
+    {
+      "suite": "pipeline",
+      "case": "memory_dependence",
+      "top": "backend_pipeline_memory_dependence",
+      "comparison_id": "d4f1c6d68bd52ae09c5aee905aa34438d529982e3db7f15ffbcf2a9af987c66b",
+      "source": "Light_HLS/App/backend_pipeline/backend_pipeline_memory_dependence.cpp",
+      "source_sha256": "830df15b3832f31047ace5b81ade88d6d446b4e2a1a4c2667b7af0ab34aade81",
+      "config_sha256": null,
+      "testbench_sha256": "87142b9d9916afeab66a1a48278894f38934ada605c39324f1bbc1cb9ac334ab",
+      "light_hls_executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 1,
+      "simulation_cycles": {
+        "light_hls": 35.0,
+        "vitis_hls": 29.0
+      },
+      "initiation_interval": {
+        "light_hls": 2,
+        "light_hls_dataflow_graph": null,
+        "vitis_hls_loops": [
+          2
+        ],
+        "vitis_hls_top": {
+          "minimum": 30,
+          "maximum": 30
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 123.860836,
+        "resources": {
+          "lut": 63,
+          "ff": 36,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.977,
+          "critical_path_delay_ns": 1.023
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 120.639192,
+        "resources": {
+          "lut": 14,
+          "ff": 11,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.396,
+          "critical_path_delay_ns": 0.604
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 49,
+          "ff": 25,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.4190000000000005
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 4.5,
+            "ff": 3.27272727,
+            "dsp": null,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 1.69370861
+        }
+      }
+    },
+    {
+      "suite": "pipeline",
+      "case": "inner",
+      "top": "backend_pipeline_inner",
+      "comparison_id": "224f74b16b65dcc8d93c607663fd99c9a30c5d975999223927288a49499dfb2d",
+      "source": "Light_HLS/App/backend_pipeline/backend_pipeline_inner.cpp",
+      "source_sha256": "fa3ba4ef626149a697218717d6546f41e76cef2e7aa73b9a7dd12bcdd8b19de4",
+      "config_sha256": null,
+      "testbench_sha256": "877a262968946b931cafb06e0690012b8f37f02a187d2269bb178a390c501ecc",
+      "light_hls_executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 16,
+      "simulation_cycles": {
+        "light_hls": 23.0,
+        "vitis_hls": 16.0
+      },
+      "initiation_interval": {
+        "light_hls": 1,
+        "light_hls_dataflow_graph": null,
+        "vitis_hls_loops": [
+          1
+        ],
+        "vitis_hls_top": {
+          "minimum": 16,
+          "maximum": 16
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 123.659715,
+        "resources": {
+          "lut": 57,
+          "ff": 25,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.917,
+          "critical_path_delay_ns": 1.083
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 120.594525,
+        "resources": {
+          "lut": 20,
+          "ff": 20,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.311,
+          "critical_path_delay_ns": 0.689
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 37,
+          "ff": 5,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.39400000000000013
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 2.85,
+            "ff": 1.25,
+            "dsp": null,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 1.57184325
+        }
+      }
+    },
+    {
+      "suite": "pipeline",
+      "case": "outer",
+      "top": "backend_pipeline_outer",
+      "comparison_id": "d8d48cc80c17488068919b80588399b499800dc5aa563363e858615e7026aa9d",
+      "source": "Light_HLS/App/backend_pipeline/backend_pipeline_outer.cpp",
+      "source_sha256": "861e379a04ca39d11d14d3bf1b516698fdc2f9c756068c8b87a2907b2f407e94",
+      "config_sha256": null,
+      "testbench_sha256": "877a262968946b931cafb06e0690012b8f37f02a187d2269bb178a390c501ecc",
+      "light_hls_executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 16,
+      "simulation_cycles": {
+        "light_hls": 21.0,
+        "vitis_hls": 17.0
+      },
+      "initiation_interval": {
+        "light_hls": 4,
+        "light_hls_dataflow_graph": null,
+        "vitis_hls_loops": [
+          4
+        ],
+        "vitis_hls_top": {
+          "minimum": 16,
+          "maximum": 16
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 99.259621,
+        "resources": {
+          "lut": 73,
+          "ff": 36,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.962,
+          "critical_path_delay_ns": 1.038
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 99.321821,
+        "resources": {
+          "lut": 58,
+          "ff": 52,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.263,
+          "critical_path_delay_ns": 0.737
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 15,
+          "ff": -16,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.30100000000000016
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 1.25862069,
+            "ff": 0.69230769,
+            "dsp": null,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 1.40841248
+        }
+      }
+    },
+    {
+      "suite": "pipeline",
+      "case": "mixed_memory",
+      "top": "backend_pipeline_mixed_memory",
+      "comparison_id": "90d74c339f973828082ea376bebf8d1084319963875e64a2ed63b93af85eecd1",
+      "source": "Light_HLS/App/backend_pipeline/backend_pipeline_mixed_memory.cpp",
+      "source_sha256": "f5058e8d3841622fbc79e229d12c1eaf3f5a26fc6e2a5163f6dae35791b2af84",
+      "config_sha256": null,
+      "testbench_sha256": "b46c44b829e702aa14e47e72acc1ebc668800674a81882bddc354eedbe3434f8",
+      "light_hls_executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 8,
+      "simulation_cycles": {
+        "light_hls": 21.0,
+        "vitis_hls": 15.0
+      },
+      "initiation_interval": {
+        "light_hls": 2,
+        "light_hls_dataflow_graph": null,
+        "vitis_hls_loops": [
+          2
+        ],
+        "vitis_hls_top": {
+          "minimum": 16,
+          "maximum": 16
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 100.919727,
+        "resources": {
+          "lut": 38,
+          "ff": 25,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.06,
+          "critical_path_delay_ns": 0.94
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 99.42422,
+        "resources": {
+          "lut": 11,
+          "ff": 9,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.454,
+          "critical_path_delay_ns": 0.546
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 27,
+          "ff": 16,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.39400000000000013
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 3.45454545,
+            "ff": 2.77777778,
+            "dsp": null,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 1.72161172
+        }
+      }
+    },
+    {
+      "suite": "array_partition",
+      "case": "cyclic",
+      "top": "backend_array_partition_cyclic",
+      "comparison_id": "b51cb377d185caaebcf6c76cab5b3e3e6a069951c5cfc1115694cc992f0f5195",
+      "source": "Light_HLS/App/backend_array_partition/backend_array_partition_cyclic.cpp",
+      "source_sha256": "5eae5212b10fe3538747b9f38cf2356cf00a63280377666daef3df7b99796370",
+      "config_sha256": null,
+      "testbench_sha256": "b0444161a7e37e858fee4abbf0251b78809c96d80d04e027f15383c61715f925",
+      "light_hls_executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 4,
+      "simulation_cycles": {
+        "light_hls": 9.0,
+        "vitis_hls": 4.0
+      },
+      "initiation_interval": {
+        "light_hls": 1,
+        "light_hls_dataflow_graph": 0,
+        "vitis_hls_loops": [
+          1
+        ],
+        "vitis_hls_top": {
+          "minimum": 4,
+          "maximum": 4
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 113.428104,
+        "resources": {
+          "lut": 123,
+          "ff": 17,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.106,
+          "critical_path_delay_ns": 0.894
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 113.163857,
+        "resources": {
+          "lut": 96,
+          "ff": 7,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.614,
+          "critical_path_delay_ns": 0.386
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 27,
+          "ff": 10,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.5080000000000009
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 1.28125,
+            "ff": 2.42857143,
+            "dsp": null,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 2.31606218
+        }
+      }
+    },
+    {
+      "suite": "array_partition",
+      "case": "block",
+      "top": "backend_array_partition_block",
+      "comparison_id": "f64d7e5eed4ce28bc85a40a24999283dc49984aba8bc7847e002affa9ef30a2e",
+      "source": "Light_HLS/App/backend_array_partition/backend_array_partition_block.cpp",
+      "source_sha256": "da4df1a9e1dab29a4fe021f1f7502c0044e528e759809c70af4770b8a539c6c8",
+      "config_sha256": null,
+      "testbench_sha256": "f4334831de80db7549bce756e5d26247ea1acbad275ce8bcad4dfff6aa88df76",
+      "light_hls_executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 4,
+      "simulation_cycles": {
+        "light_hls": 10.0,
+        "vitis_hls": 4.0
+      },
+      "initiation_interval": {
+        "light_hls": 1,
+        "light_hls_dataflow_graph": 0,
+        "vitis_hls_loops": [
+          1
+        ],
+        "vitis_hls_top": {
+          "minimum": 4,
+          "maximum": 4
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 122.341537,
+        "resources": {
+          "lut": 123,
+          "ff": 18,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.1,
+          "critical_path_delay_ns": 0.9
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 118.342418,
+        "resources": {
+          "lut": 96,
+          "ff": 7,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.614,
+          "critical_path_delay_ns": 0.386
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 27,
+          "ff": 11,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.5140000000000011
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 1.28125,
+            "ff": 2.57142857,
+            "dsp": null,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 2.33160622
+        }
+      }
+    },
+    {
+      "suite": "array_partition",
+      "case": "complete",
+      "top": "backend_array_partition_complete",
+      "comparison_id": "0b1f923e5fd491f2f8a190d1850441c7d24c177dcbbf776803de8958776beea3",
+      "source": "Light_HLS/App/backend_array_partition/backend_array_partition_complete.cpp",
+      "source_sha256": "e84520c51d9b18b04d3d7d3b332fb7986ed8b6f134299e0f7ac139ad94e2fa73",
+      "config_sha256": null,
+      "testbench_sha256": "ae20be9fea0133dd5c28cd6d4161edb90a280bbe2a47fe6b92d7804ec0632335",
+      "light_hls_executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": false,
+      "normalized_interface_equivalence": true,
+      "trace_count": 1,
+      "simulation_cycles": {
+        "light_hls": 3.0,
+        "vitis_hls": 0.0
+      },
+      "initiation_interval": {
+        "light_hls": 0,
+        "light_hls_dataflow_graph": 0,
+        "vitis_hls_loops": [],
+        "vitis_hls_top": {
+          "minimum": 1,
+          "maximum": 1
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 100.73413,
+        "resources": {
+          "lut": 110,
+          "ff": 5,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.419,
+          "critical_path_delay_ns": 0.581
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 101.78781,
+        "resources": {
+          "lut": 92,
+          "ff": 0,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": null,
+          "critical_path_delay_ns": null
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 18,
+          "ff": 5,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": null
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 1.19565217,
+            "ff": null,
+            "dsp": null,
+            "bram_tiles": null
+          },
+          "critical_path_delay": null
+        }
+      }
+    },
+    {
+      "suite": "array_partition",
+      "case": "pipeline_complete",
+      "top": "backend_array_partition_pipeline_complete",
+      "comparison_id": "898fb6d2c7db0ceda195c10f04e5d379d751167dc370dab263b6643a056d66a4",
+      "source": "Light_HLS/App/backend_array_partition/backend_array_partition_pipeline_complete.cpp",
+      "source_sha256": "38fa359ad63edba9de768a9c2321d3f5295d23119d036a3cf9d93bf8966434c7",
+      "config_sha256": null,
+      "testbench_sha256": "a643499ea891f8d5f892218e9232efdc228e738d1a19f71a6d779c97515dedaf",
+      "light_hls_executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 4,
+      "simulation_cycles": {
+        "light_hls": 10.0,
+        "vitis_hls": 3.0
+      },
+      "initiation_interval": {
+        "light_hls": 1,
+        "light_hls_dataflow_graph": 0,
+        "vitis_hls_loops": [
+          1
+        ],
+        "vitis_hls_top": {
+          "minimum": 4,
+          "maximum": 4
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 101.159087,
+        "resources": {
+          "lut": 92,
+          "ff": 52,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.101,
+          "critical_path_delay_ns": 0.899
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 99.585959,
+        "resources": {
+          "lut": 131,
+          "ff": 3,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.549,
+          "critical_path_delay_ns": 0.451
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": -39,
+          "ff": 49,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.4479999999999986
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 0.70229008,
+            "ff": 17.33333333,
+            "dsp": null,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 1.99334812
+        }
+      }
+    },
+    {
+      "suite": "array_partition",
+      "case": "complete_rw",
+      "top": "backend_array_partition_complete_rw",
+      "comparison_id": "ea53c77a07b5cc4263156922a42a94737751c608c9d56e012373155f88d7e9ea",
+      "source": "Light_HLS/App/backend_array_partition/backend_array_partition_complete_rw.cpp",
+      "source_sha256": "93b849f3f8b53af12e6501023e2c25c240cfd90687c658060eaad13d00791430",
+      "config_sha256": null,
+      "testbench_sha256": "07430038260f23d6b3e102612800fe40b006d2b998498ec65a04620aad59d6fb",
+      "light_hls_executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 4,
+      "simulation_cycles": {
+        "light_hls": 16.0,
+        "vitis_hls": 5.0
+      },
+      "initiation_interval": {
+        "light_hls": 0,
+        "light_hls_dataflow_graph": 0,
+        "vitis_hls_loops": [],
+        "vitis_hls_top": {
+          "minimum": 6,
+          "maximum": 6
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 99.338526,
+        "resources": {
+          "lut": 206,
+          "ff": 47,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.263,
+          "critical_path_delay_ns": 0.737
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 99.491348,
+        "resources": {
+          "lut": 230,
+          "ff": 7,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.375,
+          "critical_path_delay_ns": 0.625
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": -24,
+          "ff": 40,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.1120000000000001
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 0.89565217,
+            "ff": 6.71428571,
+            "dsp": null,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 1.1792
+        }
+      }
+    },
+    {
+      "suite": "array_partition",
+      "case": "multidim",
+      "top": "backend_array_partition_multidim",
+      "comparison_id": "740d2dd6bc5116238f16c431a65dc9af2cc24de38dabba9eb2fa03f496b8430a",
+      "source": "Light_HLS/App/backend_array_partition/backend_array_partition_multidim.cpp",
+      "source_sha256": "c4396ffccd7306f46f1a137b8e03d0b84615664bbaacef91ce8cfe5527c6afe0",
+      "config_sha256": null,
+      "testbench_sha256": "36d256311f380aaf5694f016ba6333b684f671f14e0a77fa1e7bad95bafac85f",
+      "light_hls_executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": false,
+      "normalized_interface_equivalence": true,
+      "trace_count": 2,
+      "simulation_cycles": {
+        "light_hls": 8.0,
+        "vitis_hls": 1.0
+      },
+      "initiation_interval": {
+        "light_hls": 1,
+        "light_hls_dataflow_graph": 0,
+        "vitis_hls_loops": [
+          1
+        ],
+        "vitis_hls_top": {
+          "minimum": 2,
+          "maximum": 2
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 102.033646,
+        "resources": {
+          "lut": 183,
+          "ff": 143,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.154,
+          "critical_path_delay_ns": 0.846
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 101.291176,
+        "resources": {
+          "lut": 147,
+          "ff": 2,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.33,
+          "critical_path_delay_ns": 0.67
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 36,
+          "ff": 141,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.17600000000000016
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 1.24489796,
+            "ff": 71.5,
+            "dsp": null,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 1.26268657
+        }
+      }
+    },
+    {
+      "suite": "array_partition",
+      "case": "multidim_cyclic",
+      "top": "backend_array_partition_multidim_cyclic",
+      "comparison_id": "ad73ffa116e9314ec89bf98abff9a63bb5788ca9de725a530582f76abf2e54d6",
+      "source": "Light_HLS/App/backend_array_partition/backend_array_partition_multidim_cyclic.cpp",
+      "source_sha256": "eb3284c75ac0c8a955b159aaf10db38c38322f8171ce013f6652473c72cb27cd",
+      "config_sha256": null,
+      "testbench_sha256": "ccf661ab4940800c60a13013447954a0424323c718eea2d2b39086445ee37c1c",
+      "light_hls_executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 2,
+      "simulation_cycles": {
+        "light_hls": 9.0,
+        "vitis_hls": 4.0
+      },
+      "initiation_interval": {
+        "light_hls": 2,
+        "light_hls_dataflow_graph": 0,
+        "vitis_hls_loops": [
+          2
+        ],
+        "vitis_hls_top": {
+          "minimum": 4,
+          "maximum": 4
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 104.065681,
+        "resources": {
+          "lut": 133,
+          "ff": 89,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.064,
+          "critical_path_delay_ns": 0.936
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 116.472859,
+        "resources": {
+          "lut": 104,
+          "ff": 72,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.375,
+          "critical_path_delay_ns": 0.625
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 29,
+          "ff": 17,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.31099999999999994
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 1.27884615,
+            "ff": 1.23611111,
+            "dsp": null,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 1.4976
+        }
+      }
+    },
+    {
+      "suite": "array_partition",
+      "case": "local",
+      "top": "backend_array_partition_local",
+      "comparison_id": "17629a92c6ecd1bd634ef8ea51402a16c450ddedca3faa9ea458769c8df08481",
+      "source": "Light_HLS/App/backend_array_partition/backend_array_partition_local.cpp",
+      "source_sha256": "82f58d84996b297af0978aa0c703d5accab16b107b383a7b597d476aaf5b266a",
+      "config_sha256": null,
+      "testbench_sha256": "1745d94bf79703746e3834266146611b09ce3fe1e9ce9f18486bede421e77cbb",
+      "light_hls_executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": true,
+      "normalized_interface_equivalence": true,
+      "trace_count": 4,
+      "simulation_cycles": {
+        "light_hls": 60.0,
+        "vitis_hls": 42.0
+      },
+      "initiation_interval": {
+        "light_hls": 0,
+        "light_hls_dataflow_graph": 0,
+        "vitis_hls_loops": [],
+        "vitis_hls_top": {
+          "minimum": 43,
+          "maximum": 43
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 101.280652,
+        "resources": {
+          "lut": 589,
+          "ff": 310,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.391,
+          "critical_path_delay_ns": 1.609
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 101.433799,
+        "resources": {
+          "lut": 242,
+          "ff": 152,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 9.003,
+          "critical_path_delay_ns": 0.997
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 347,
+          "ff": 158,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.6120000000000001
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 2.4338843,
+            "ff": 2.03947368,
+            "dsp": null,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 1.61384152
+        }
+      }
+    },
+    {
+      "suite": "dataflow",
+      "case": "fifo_stream",
+      "top": "vector_stream_dataflow",
+      "comparison_id": "f495020d5bf37eb0d19dac1c90f0480b69f4437a8ad31ee37fd19d3eb3e3e9e7",
+      "source": "Light_HLS/App/light_hls_dataflow/vector_stream_dataflow.cc",
+      "source_sha256": "388b713c40e6439eeeaca84a1ecb38b08d9913e809a1c0676472fac15683f0fb",
+      "config_sha256": null,
+      "testbench_sha256": "e71a725883b9d63eb837c0d9eb208fd08d2bcac133bd27ce8e3bc7f4e771446d",
+      "light_hls_executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": false,
+      "normalized_interface_equivalence": true,
+      "trace_count": 64,
+      "simulation_cycles": {
+        "light_hls": 137.0,
+        "vitis_hls": 132.0
+      },
+      "initiation_interval": {
+        "light_hls": 132,
+        "light_hls_dataflow_graph": 132,
+        "vitis_hls_loops": [],
+        "vitis_hls_top": {
+          "minimum": 130,
+          "maximum": 130
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 102.578354,
+        "resources": {
+          "lut": 215,
+          "ff": 168,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.693,
+          "critical_path_delay_ns": 1.307
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 102.842778,
+        "resources": {
+          "lut": 164,
+          "ff": 54,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.542,
+          "critical_path_delay_ns": 1.458
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 51,
+          "ff": 114,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": 0.1509999999999998
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 1.31097561,
+            "ff": 3.11111111,
+            "dsp": null,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 0.89643347
+        }
+      }
+    },
+    {
+      "suite": "dataflow",
+      "case": "pipo_array",
+      "top": "vector_array_dataflow",
+      "comparison_id": "58edc13a4336223ce8eb33d602ca87569522f4906027dced744cbe9baa2ae060",
+      "source": "Light_HLS/App/light_hls_dataflow/vector_array_dataflow.cc",
+      "source_sha256": "445f3d4dd0ccce03bcb55d93a4282ea81bded4d4705d13e3559f84ec0848ff23",
+      "config_sha256": null,
+      "testbench_sha256": "24e09db23b7a6aa5e5efd09c20e077745240162be11bae4250e4f91821632258",
+      "light_hls_executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": false,
+      "normalized_interface_equivalence": true,
+      "trace_count": 128,
+      "simulation_cycles": {
+        "light_hls": 396.0,
+        "vitis_hls": 388.0
+      },
+      "initiation_interval": {
+        "light_hls": 132,
+        "light_hls_dataflow_graph": 132,
+        "vitis_hls_loops": [],
+        "vitis_hls_top": {
+          "minimum": 130,
+          "maximum": 130
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 110.832256,
+        "resources": {
+          "lut": 377,
+          "ff": 273,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.702,
+          "critical_path_delay_ns": 1.298
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 109.769596,
+        "resources": {
+          "lut": 275,
+          "ff": 126,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.861,
+          "critical_path_delay_ns": 1.139
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 102,
+          "ff": 147,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.1590000000000007
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 1.37090909,
+            "ff": 2.16666667,
+            "dsp": null,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 1.13959614
+        }
+      }
+    },
+    {
+      "suite": "dataflow",
+      "case": "pipeline_partition",
+      "top": "vector_pipeline_partition_dataflow",
+      "comparison_id": "b8f0d4dd12af13585352ce88ba70bdf1571154796314b988b6382259fedc3e82",
+      "source": "Light_HLS/App/light_hls_dataflow/vector_pipeline_partition_dataflow.cc",
+      "source_sha256": "be0be9b05c6e5ea65c63246e565c7bb985b06f3f778443183431c7dec719fc6e",
+      "config_sha256": null,
+      "testbench_sha256": "ae5cee96a13ddcf76f8f5dace638303f356a279857ec11841caed1b84b216e8a",
+      "light_hls_executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": false,
+      "normalized_interface_equivalence": true,
+      "trace_count": 16,
+      "simulation_cycles": {
+        "light_hls": 44.0,
+        "vitis_hls": 34.0
+      },
+      "initiation_interval": {
+        "light_hls": 22,
+        "light_hls_dataflow_graph": 22,
+        "vitis_hls_loops": [],
+        "vitis_hls_top": {
+          "minimum": 16,
+          "maximum": 16
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 100.248055,
+        "resources": {
+          "lut": 477,
+          "ff": 353,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.828,
+          "critical_path_delay_ns": 1.172
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 99.697902,
+        "resources": {
+          "lut": 223,
+          "ff": 175,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.977,
+          "critical_path_delay_ns": 1.023
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 254,
+          "ff": 178,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.1490000000000009
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 2.13901345,
+            "ff": 2.01714286,
+            "dsp": null,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 1.14565005
+        }
+      }
+    },
+    {
+      "suite": "dataflow_nested",
+      "case": "vector_pipeline_partition_dataflow",
+      "top": "vector_pipeline_partition_dataflow",
+      "comparison_id": "549bb45deda46b2577c6b823804509420fc6a912e4c55f218d98fb9600fdc24d",
+      "source": "Light_HLS/Tests/DataflowBackend/nested_pipeline_partition_dataflow.cc",
+      "source_sha256": "6e661e7df072032bb041b72a6828908fd116b9cbca2ed2836d677d025745bf9f",
+      "config_sha256": null,
+      "testbench_sha256": "ae5cee96a13ddcf76f8f5dace638303f356a279857ec11841caed1b84b216e8a",
+      "light_hls_executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+      "valid": true,
+      "reward_eligible": true,
+      "functional_equivalence": true,
+      "native_interface_equivalence": false,
+      "normalized_interface_equivalence": true,
+      "trace_count": 16,
+      "simulation_cycles": {
+        "light_hls": 46.0,
+        "vitis_hls": 34.0
+      },
+      "initiation_interval": {
+        "light_hls": 23,
+        "light_hls_dataflow_graph": 23,
+        "vitis_hls_loops": [],
+        "vitis_hls_top": {
+          "minimum": 16,
+          "maximum": 16
+        }
+      },
+      "light_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 107.787686,
+        "resources": {
+          "lut": 484,
+          "ff": 353,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.809,
+          "critical_path_delay_ns": 1.191
+        }
+      },
+      "vitis_hls": {
+        "tool_version": "2025.2",
+        "flow_id": "vivado_ooc_normalized_v2",
+        "runtime_seconds": 104.030103,
+        "resources": {
+          "lut": 237,
+          "ff": 184,
+          "dsp": 0,
+          "bram_tiles": 0.0
+        },
+        "timing": {
+          "clock_constrained": true,
+          "worst_slack_ns": 8.977,
+          "critical_path_delay_ns": 1.023
+        }
+      },
+      "deltas": {
+        "light_hls_minus_vitis_hls": {
+          "lut": 247,
+          "ff": 169,
+          "dsp": 0,
+          "bram_tiles": 0.0,
+          "worst_slack_ns": -0.16800000000000104
+        },
+        "light_hls_over_vitis_hls": {
+          "resources": {
+            "lut": 2.04219409,
+            "ff": 1.91847826,
+            "dsp": null,
+            "bram_tiles": null
+          },
+          "critical_path_delay": 1.16422287
+        }
+      }
+    }
+  ]
+}

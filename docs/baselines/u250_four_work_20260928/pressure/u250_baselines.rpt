@@ -1,0 +1,21 @@
+DAPO-II U250 Ground-Truth Baseline Archive
+Part: xcu250-figd2104-2L-e
+QoR: common normalized-wrapper Vivado OOC synthesis
+
++------------------+------------------------+-----------+-----------+---------+---------+---------+---------+----------+----------+---------+
+| Suite            | Case                   | L-Cycles  | V-Cycles  | L-LUT   | V-LUT   | L-FF    | V-FF    | L-WNS    | V-WNS    | Reward  |
++------------------+------------------------+-----------+-----------+---------+---------+---------+---------+----------+----------+---------+
+| pressure/dsp_map_100MHz | qor_pressure           | 259.000   | 258.000   | 52      | 15      | 32      | 46      | 8.867    | 9.059    | yes     |
+| pressure/dsp_map_150MHz | qor_pressure           | 259.000   | 258.000   | 52      | 15      | 32      | 46      | 5.534    | 5.726    | yes     |
+| pressure/dsp_map_200MHz | qor_pressure           | 260.000   | 258.000   | 93      | 15      | 74      | 46      | 2.770    | 4.059    | yes     |
+| pressure/dsp_map_250MHz | qor_pressure           | 260.000   | 258.000   | 53      | 15      | 58      | 46      | 1.770    | 3.059    | yes     |
+| pressure/bram_permute_100MHz | qor_pressure           | 515.000   | 514.000   | 117     | 94      | 91      | 86      | 8.816    | 8.895    | yes     |
+| pressure/bram_permute_250MHz | qor_pressure           | 515.000   | 514.000   | 117     | 94      | 91      | 86      | 2.816    | 2.895    | yes     |
+| pressure/bram_banked_100MHz | qor_pressure           | 771.000   | 514.000   | 166     | 111     | 133     | 78      | 8.639    | 8.892    | yes     |
+| pressure/bram_banked_250MHz | qor_pressure           | 771.000   | 514.000   | 166     | 111     | 133     | 78      | 2.639    | 2.892    | yes     |
+| pressure/dsp_dataflow_100MHz | qor_pressure           | 261.000   | 260.000   | 222     | 167     | 138     | 79      | 6.656    | 8.823    | yes     |
+| pressure/dsp_dataflow_250MHz | qor_pressure           | 262.000   | 260.000   | 223     | 167     | 164     | 79      | 1.770    | 2.823    | yes     |
++------------------+------------------------+-----------+-----------+---------+---------+---------+---------+----------+----------+---------+
+
+Only functionally equivalent, normalized-interface-compatible cases
+are reward-eligible. Raw Vivado and Vitis projects stay outside Git.

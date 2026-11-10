@@ -1,0 +1,8 @@
+{
+  "valid": true,
+  "measured_rtl_sha256": "008a237e6d03df8eb3b64e87246a68479d3134784eb2ea7c9c1dab8312df370c",
+  "release_rtl_sha256": "008a237e6d03df8eb3b64e87246a68479d3134784eb2ea7c9c1dab8312df370c",
+  "measured_executable_sha256": "34fe593e224841396fecd133192e136b67171b3e386d1aea3c662c21c61bcb07",
+  "release_executable_sha256": "33476041daf7d538bc444004f3c0181ce434ec80a13479614f1b8bced46cbc5b",
+  "original_measurement_preserved": true
+}

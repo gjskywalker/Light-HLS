@@ -1,0 +1,133 @@
+{
+  "valid": true,
+  "executable_sha256": "3f53e58e7b21392af4e047adea2fd4742bb801820c71657dafbcbb8998cfd972",
+  "results": [
+    {
+      "case": "backend_pipeline/ii1",
+      "valid": true,
+      "cycles": [
+        21
+      ]
+    },
+    {
+      "case": "backend_pipeline/memory_ii",
+      "valid": true,
+      "cycles": [
+        38
+      ]
+    },
+    {
+      "case": "backend_pipeline/recurrence",
+      "valid": true,
+      "cycles": [
+        21
+      ]
+    },
+    {
+      "case": "backend_pipeline/memory_dependence",
+      "valid": true,
+      "cycles": [
+        35
+      ]
+    },
+    {
+      "case": "backend_pipeline/inner",
+      "valid": true,
+      "cycles": [
+        23
+      ]
+    },
+    {
+      "case": "backend_pipeline/outer",
+      "valid": true,
+      "cycles": [
+        21
+      ]
+    },
+    {
+      "case": "backend_pipeline/mixed_memory",
+      "valid": true,
+      "cycles": [
+        21
+      ]
+    },
+    {
+      "case": "backend_array_partition/cyclic",
+      "valid": true,
+      "cycles": [
+        9
+      ]
+    },
+    {
+      "case": "backend_array_partition/block",
+      "valid": true,
+      "cycles": [
+        10
+      ]
+    },
+    {
+      "case": "backend_array_partition/complete",
+      "valid": true,
+      "cycles": [
+        3
+      ]
+    },
+    {
+      "case": "backend_array_partition/pipeline_complete",
+      "valid": true,
+      "cycles": [
+        10
+      ]
+    },
+    {
+      "case": "backend_array_partition/complete_rw",
+      "valid": true,
+      "cycles": [
+        16
+      ]
+    },
+    {
+      "case": "backend_array_partition/multidim",
+      "valid": true,
+      "cycles": [
+        8
+      ]
+    },
+    {
+      "case": "backend_array_partition/multidim_cyclic",
+      "valid": true,
+      "cycles": [
+        9
+      ]
+    },
+    {
+      "case": "backend_array_partition/local",
+      "valid": true,
+      "cycles": [
+        60
+      ]
+    },
+    {
+      "case": "light_hls_dataflow/fifo_stream",
+      "valid": true,
+      "cycles": [
+        137
+      ]
+    },
+    {
+      "case": "light_hls_dataflow/pipo_array",
+      "valid": true,
+      "cycles": [
+        396,
+        396
+      ]
+    },
+    {
+      "case": "light_hls_dataflow/pipeline_partition",
+      "valid": true,
+      "cycles": [
+        44
+      ]
+    }
+  ]
+}

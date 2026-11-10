@@ -1,0 +1,50 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Tue Sep 29 13:26:36 2026
+| Host         : EE4F089 running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_drc -file /tmp/lighthls-correctness-20260929.kZl9Xq/final-dataflow-250/light_hls_context/route_drc.rpt
+| Design       : registered_pressure_shell
+| Device       : xcu250-figd2104-2L-e
+| Speed File   : -2L
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: registered_pressure_shell
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max checks: <unlimited>
+             Checks found: 2
++-----------+----------+------------------------+--------+
+| Rule      | Severity | Description            | Checks |
++-----------+----------+------------------------+--------+
+| DPOP-3    | Warning  | PREG Output pipelining | 1      |
+| RTSTAT-10 | Warning  | No routable loads      | 1      |
++-----------+----------+------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+DPOP-3#1 Warning
+PREG Output pipelining  
+DSP kernel/native_instance/compute_pressure_1_instance/results_d00 output kernel/native_instance/compute_pressure_1_instance/results_d00/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+RTSTAT-10#1 Warning
+No routable loads  
+68 net(s) have no routable loads. The problem bus(es) and/or net(s) are input_r_q0[18], input_r_q0[19], input_r_q0[20], input_r_q0[21],
+input_r_q0[22], input_r_q0[23], input_r_q0[24], input_r_q0[25],
+input_r_q0[26], input_r_q0[27], input_r_q0[28], input_r_q0[29],
+input_r_q0[30], input_r_q0[31].
+Related violations: <none>
+
+

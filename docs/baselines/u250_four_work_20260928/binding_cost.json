@@ -1,0 +1,51 @@
+{
+  "valid": true,
+  "results": [
+    {
+      "frequency_mhz": 100,
+      "valid": true,
+      "calls": 256,
+      "ordinal_cost": 0,
+      "selected_cost": 0,
+      "rebound_groups": 0,
+      "invariant_operands": 0
+    },
+    {
+      "frequency_mhz": 150,
+      "valid": true,
+      "calls": 256,
+      "ordinal_cost": 0,
+      "selected_cost": 0,
+      "rebound_groups": 0,
+      "invariant_operands": 0
+    },
+    {
+      "frequency_mhz": 200,
+      "valid": true,
+      "calls": 256,
+      "ordinal_cost": 0,
+      "selected_cost": 0,
+      "rebound_groups": 0,
+      "invariant_operands": 0
+    },
+    {
+      "frequency_mhz": 250,
+      "valid": true,
+      "calls": 256,
+      "ordinal_cost": 256,
+      "selected_cost": 128,
+      "rebound_groups": 1,
+      "invariant_operands": 2
+    },
+    {
+      "frequency_mhz": 333,
+      "valid": true,
+      "calls": 256,
+      "ordinal_cost": 256,
+      "selected_cost": 128,
+      "rebound_groups": 1,
+      "invariant_operands": 2
+    }
+  ],
+  "executable_sha256": "33476041daf7d538bc444004f3c0181ce434ec80a13479614f1b8bced46cbc5b"
+}
