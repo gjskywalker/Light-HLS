@@ -1,5 +1,7 @@
 #ifndef HI_BACKEND_CONTEXT_H
 #define HI_BACKEND_CONTEXT_H
+#include "HI_FloatingPoint.h"
+#include "HI_MemoryOperation.h"
 
 #include "llvm/IR/BasicBlock.h"
 #include "llvm/IR/Function.h"
@@ -67,7 +69,7 @@ struct BackendCapabilities
     bool loopPipeline = true;
     bool arrayPartition = true;
     bool dataflow = false;
-    bool floatingPoint = false;
+    bool floatingPoint = true;
     bool memoryInterface = true;
     bool streamInterface = false;
 };
@@ -470,12 +472,16 @@ struct MemoryObject
     const llvm::Value *base = nullptr;
     const llvm::Argument *argument = nullptr;
     const llvm::AllocaInst *allocation = nullptr;
+    // Power-up contents for static/global FPGA storage; not transaction resets.
+    std::vector<std::string> initialWords;
     std::string name;
     std::string portName;
     unsigned elementWidth = 0;
     unsigned addressWidth = 64;
     unsigned long long depth = 0;
     unsigned long long inferredMinimumDepth = 0;
+    // A provably attained address, unlike the conservative inferred upper bound.
+    unsigned long long provenMinimumDepth = 0;
     MemoryDepthSource depthSource = MemoryDepthSource::Unknown;
     bool depthExact = false;
     unsigned readLatency = 1;
@@ -615,6 +621,7 @@ struct DataflowTaskImplementation
     std::string task;
     std::string moduleName;
     std::string verilog;
+    std::string floatingResourceEstimate;
     std::vector<MemoryObject> memories;
     std::vector<DataflowTaskPortAccess> portAccesses;
     long long latencyCycles = -1;
@@ -655,6 +662,7 @@ struct OrdinaryReadPhiBypass
 
 struct HLSBackendContext
 {
+    unsigned predicatedPipelineLoops = 0;
     BackendConfiguration configuration;
     BackendCapabilities capabilities;
     RequiredFeatures requiredFeatures;
@@ -719,6 +727,8 @@ unsigned partitionBankForAddress(const MemoryObject &memory,
 unsigned long long partitionLocalAddressForAddress(
     const MemoryObject &memory, unsigned long long address);
 std::string stableFileHash(const std::string &path);
+// Measured isolated-operator costs, separate from whole-design resource QoR.
+std::string floatingResourceEstimateJSON(const HLSBackendContext &context);
 bool emitBackendArtifacts(const HLSBackendContext &context,
                           std::string &errorMessage);
 // Delay of a pure entry expression evaluated from live ports on start acceptance.

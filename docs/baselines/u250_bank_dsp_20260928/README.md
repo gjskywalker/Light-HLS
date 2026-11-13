@@ -1,6 +1,6 @@
 # U250 bank/DSP follow-up evidence
 
-See [the implementation notes](../../RTL_BANK_DSP_EVALUATION_20260928.md) for
+See [the implementation notes](../../logs/RTL_BANK_DSP_EVALUATION_20260928.md) for
 algorithms, measured results, reproduction paths and known limitations.
 
 - `before/`: two frozen-old-compiler comparisons rerun under the new

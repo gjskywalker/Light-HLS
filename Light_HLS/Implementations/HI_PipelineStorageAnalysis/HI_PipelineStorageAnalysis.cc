@@ -60,7 +60,7 @@ bool HI_PipelineStorageAnalysis::runOnModule(Module &module)
             if (scheduled == context->schedule.instructionMap.end())
                 continue;
             int writeCycle = scheduled->second->startCycle - iterationShift;
-            if (isa<LoadInst>(producer))
+            if (isBackendLoad(producer) || isIterativeFloating(*producer))
                 writeCycle += scheduled->second->latency - 1;
             std::set<int> samplingCycles;
             bool retirementOnly = false;
@@ -119,7 +119,7 @@ bool HI_PipelineStorageAnalysis::runOnModule(Module &module)
                 }
                 alternativeSlots[value] = slots;
                 payloadSavings += (static_cast<long long>(pipelineValueStorageSlots(pipeline, value)) -
-                    slots) * value->getType()->getIntegerBitWidth();
+                    slots) * scalarBitWidth(value->getType());
             }
             unsigned iterationWidth = 1;
             for (unsigned long long maximum = pipeline.tripCount - 1; maximum > 1; maximum >>= 1)
@@ -189,7 +189,7 @@ bool HI_PipelineStorageAnalysis::runOnModule(Module &module)
                 for (const Use &operand : operation.first->operands())
                     sampleValue(operand.get(), operation.second);
                 const auto access = context->memoryAccesses.find(operation.first);
-                if (isa<LoadInst>(operation.first) && access != context->memoryAccesses.end())
+                if (isBackendLoad(operation.first) && access != context->memoryAccesses.end())
                     for (const MemoryObject &memory : context->memoryObjects)
                         if (memory.name == access->second.memory && memory.banks > 1 &&
                             access->second.possibleBanks.size() != 1)

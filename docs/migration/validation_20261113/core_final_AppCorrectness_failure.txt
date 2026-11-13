@@ -1,0 +1,2 @@
+ALL PRAGMA-FREE ARRAY TESTS PASSED cycles=10602
+Preserving failed test artifacts: /tmp/light-hls-app-correctness.zdgrCa

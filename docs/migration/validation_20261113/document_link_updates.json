@@ -1,0 +1,227 @@
+[
+  {
+    "file": "README.md",
+    "old": "docs/RTL_BACKEND_DESIGN.md",
+    "new": "docs/logs/RTL_BACKEND_DESIGN.md"
+  },
+  {
+    "file": "README.md",
+    "old": "docs/SOURCE_PROVENANCE.md",
+    "new": "docs/logs/SOURCE_PROVENANCE.md"
+  },
+  {
+    "file": "docs/baselines/u250_100mhz_backedge_20260921/README.md",
+    "old": "../../ORDINARY_BACKEDGE_BYPASS_20260921.md",
+    "new": "../../logs/ORDINARY_BACKEDGE_BYPASS_20260921.md"
+  },
+  {
+    "file": "docs/baselines/u250_100mhz_banks_20260918/README.md",
+    "old": "../../ORDINARY_BANK_OPTIMIZATION_20260918.md",
+    "new": "../../logs/ORDINARY_BANK_OPTIMIZATION_20260918.md"
+  },
+  {
+    "file": "docs/baselines/u250_100mhz_boundary_20260914/README.md",
+    "old": "../../RTL_BOUNDARY_OPTIMIZATION_20260914.md",
+    "new": "../../logs/RTL_BOUNDARY_OPTIMIZATION_20260914.md"
+  },
+  {
+    "file": "docs/baselines/u250_100mhz_capture_edges_20260922/README.md",
+    "old": "../../FIFO_CAPTURE_AND_TRANSACTION_EDGES_20260922.md",
+    "new": "../../logs/FIFO_CAPTURE_AND_TRANSACTION_EDGES_20260922.md"
+  },
+  {
+    "file": "docs/baselines/u250_100mhz_feedback_20260921/README.md",
+    "old": "../../ORDINARY_FEEDBACK_OPTIMIZATION_20260921.md",
+    "new": "../../logs/ORDINARY_FEEDBACK_OPTIMIZATION_20260921.md"
+  },
+  {
+    "file": "docs/baselines/u250_100mhz_fifo_events_20260921/README.md",
+    "old": "../../FIFO_EVENT_PRESERVATION_20260921.md",
+    "new": "../../logs/FIFO_EVENT_PRESERVATION_20260921.md"
+  },
+  {
+    "file": "docs/baselines/u250_100mhz_outer_edges_20260922/README.md",
+    "old": "../../ORDINARY_OUTER_EDGES_20260922.md",
+    "new": "../../logs/ORDINARY_OUTER_EDGES_20260922.md"
+  },
+  {
+    "file": "docs/baselines/u250_100mhz_payload_20260918/README.md",
+    "old": "../../LOCAL_MEMORY_PAYLOAD_OPTIMIZATION_20260918.md",
+    "new": "../../logs/LOCAL_MEMORY_PAYLOAD_OPTIMIZATION_20260918.md"
+  },
+  {
+    "file": "docs/baselines/u250_100mhz_qor_20260908/README.md",
+    "old": "../../QOR_OPTIMIZATION_20260908.md",
+    "new": "../../logs/QOR_OPTIMIZATION_20260908.md"
+  },
+  {
+    "file": "docs/baselines/u250_100mhz_scalar_channels_20260922/README.md",
+    "old": "../../RTL_SCALAR_AND_CHANNEL_OPTIMIZATION_20260922.md",
+    "new": "../../logs/RTL_SCALAR_AND_CHANNEL_OPTIMIZATION_20260922.md"
+  },
+  {
+    "file": "docs/baselines/u250_100mhz_storage_20260911/README.md",
+    "old": "../../RTL_STORAGE_OPTIMIZATION_20260911.md",
+    "new": "../../logs/RTL_STORAGE_OPTIMIZATION_20260911.md"
+  },
+  {
+    "file": "docs/baselines/u250_bank_dsp_20260928/README.md",
+    "old": "../../RTL_BANK_DSP_EVALUATION_20260928.md",
+    "new": "../../logs/RTL_BANK_DSP_EVALUATION_20260928.md"
+  },
+  {
+    "file": "docs/baselines/u250_correctness_20260929/README.md",
+    "old": "../../RTL_CORRECTNESS_CLOSURE_20260929.md",
+    "new": "../../logs/RTL_CORRECTNESS_CLOSURE_20260929.md"
+  },
+  {
+    "file": "docs/baselines/u250_four_work_20260928/README.md",
+    "old": "../../RTL_FOUR_WORK_CHECKPOINT_20260928.md",
+    "new": "../../logs/RTL_FOUR_WORK_CHECKPOINT_20260928.md"
+  },
+  {
+    "file": "docs/logs/FIFO_CAPTURE_AND_TRANSACTION_EDGES_20260922.md",
+    "old": "baselines/u250_100mhz_capture_edges_20260922/README.md",
+    "new": "../baselines/u250_100mhz_capture_edges_20260922/README.md"
+  },
+  {
+    "file": "docs/logs/FIFO_EVENT_PRESERVATION_20260921.md",
+    "old": "../Light_HLS/Tests/FIFOEvents/README.md",
+    "new": "../../Light_HLS/Tests/FIFOEvents/README.md"
+  },
+  {
+    "file": "docs/logs/FIFO_EVENT_PRESERVATION_20260921.md",
+    "old": "baselines/u250_100mhz_fifo_events_20260921/README.md",
+    "new": "../baselines/u250_100mhz_fifo_events_20260921/README.md"
+  },
+  {
+    "file": "docs/logs/LOCAL_MEMORY_PAYLOAD_OPTIMIZATION_20260918.md",
+    "old": "../Light_HLS/Tests/LocalWriteData/README.md",
+    "new": "../../Light_HLS/Tests/LocalWriteData/README.md"
+  },
+  {
+    "file": "docs/logs/LOCAL_MEMORY_PAYLOAD_OPTIMIZATION_20260918.md",
+    "old": "baselines/u250_100mhz_payload_20260918/README.md",
+    "new": "../baselines/u250_100mhz_payload_20260918/README.md"
+  },
+  {
+    "file": "docs/logs/ORDINARY_BACKEDGE_BYPASS_20260921.md",
+    "old": "../Light_HLS/Tests/OrdinaryBackedge/README.md",
+    "new": "../../Light_HLS/Tests/OrdinaryBackedge/README.md"
+  },
+  {
+    "file": "docs/logs/ORDINARY_BACKEDGE_BYPASS_20260921.md",
+    "old": "baselines/u250_100mhz_backedge_20260921/README.md",
+    "new": "../baselines/u250_100mhz_backedge_20260921/README.md"
+  },
+  {
+    "file": "docs/logs/ORDINARY_BANK_OPTIMIZATION_20260918.md",
+    "old": "../Light_HLS/Tests/OrdinaryBankAnalysis/README.md",
+    "new": "../../Light_HLS/Tests/OrdinaryBankAnalysis/README.md"
+  },
+  {
+    "file": "docs/logs/ORDINARY_BANK_OPTIMIZATION_20260918.md",
+    "old": "baselines/u250_100mhz_banks_20260918/README.md",
+    "new": "../baselines/u250_100mhz_banks_20260918/README.md"
+  },
+  {
+    "file": "docs/logs/ORDINARY_FEEDBACK_OPTIMIZATION_20260921.md",
+    "old": "../Light_HLS/Tests/OrdinaryFeedback/README.md",
+    "new": "../../Light_HLS/Tests/OrdinaryFeedback/README.md"
+  },
+  {
+    "file": "docs/logs/ORDINARY_FEEDBACK_OPTIMIZATION_20260921.md",
+    "old": "baselines/u250_100mhz_feedback_20260921/README.md",
+    "new": "../baselines/u250_100mhz_feedback_20260921/README.md"
+  },
+  {
+    "file": "docs/logs/ORDINARY_OUTER_EDGES_20260922.md",
+    "old": "../Light_HLS/Tests/OrdinaryLoopEdges/README.md",
+    "new": "../../Light_HLS/Tests/OrdinaryLoopEdges/README.md"
+  },
+  {
+    "file": "docs/logs/ORDINARY_OUTER_EDGES_20260922.md",
+    "old": "baselines/u250_100mhz_outer_edges_20260922/README.md",
+    "new": "../baselines/u250_100mhz_outer_edges_20260922/README.md"
+  },
+  {
+    "file": "docs/logs/QOR_OPTIMIZATION_20260908.md",
+    "old": "baselines/u250_100mhz_qor_20260908/README.md",
+    "new": "../baselines/u250_100mhz_qor_20260908/README.md"
+  },
+  {
+    "file": "docs/logs/RTL_BOUNDARY_OPTIMIZATION_20260914.md",
+    "old": "baselines/u250_100mhz_boundary_20260914/tool_failure_notes.md",
+    "new": "../baselines/u250_100mhz_boundary_20260914/tool_failure_notes.md"
+  },
+  {
+    "file": "docs/logs/RTL_BOUNDARY_OPTIMIZATION_20260914.md",
+    "old": "baselines/u250_100mhz_boundary_20260914/README.md",
+    "new": "../baselines/u250_100mhz_boundary_20260914/README.md"
+  },
+  {
+    "file": "docs/logs/RTL_CORRECTNESS_CLOSURE_20260929.md",
+    "old": "baselines/u250_correctness_20260929/README.md",
+    "new": "../baselines/u250_correctness_20260929/README.md"
+  },
+  {
+    "file": "docs/logs/RTL_FOUR_WORK_CHECKPOINT_20260928.md",
+    "old": "baselines/u250_four_work_20260928/app/u250_baselines.csv",
+    "new": "../baselines/u250_four_work_20260928/app/u250_baselines.csv"
+  },
+  {
+    "file": "docs/logs/RTL_FOUR_WORK_CHECKPOINT_20260928.md",
+    "old": "baselines/u250_four_work_20260928/pressure/u250_baselines.json",
+    "new": "../baselines/u250_four_work_20260928/pressure/u250_baselines.json"
+  },
+  {
+    "file": "docs/logs/RTL_FOUR_WORK_CHECKPOINT_20260928.md",
+    "old": "baselines/u250_four_work_20260928/README.md",
+    "new": "../baselines/u250_four_work_20260928/README.md"
+  },
+  {
+    "file": "docs/logs/RTL_FOUR_WORK_CHECKPOINT_20260928.md",
+    "old": "../Light_HLS/Tests/QoRPressure/README.md",
+    "new": "../../Light_HLS/Tests/QoRPressure/README.md"
+  },
+  {
+    "file": "docs/logs/RTL_FOUR_WORK_CHECKPOINT_20260928.md",
+    "old": "../Light_HLS/Tests/BindingCost/README.md",
+    "new": "../../Light_HLS/Tests/BindingCost/README.md"
+  },
+  {
+    "file": "docs/logs/RTL_FOUR_WORK_CHECKPOINT_20260928.md",
+    "old": "../Light_HLS/Tests/DataflowCompletion/README.md",
+    "new": "../../Light_HLS/Tests/DataflowCompletion/README.md"
+  },
+  {
+    "file": "docs/logs/RTL_SCALAR_AND_CHANNEL_OPTIMIZATION_20260922.md",
+    "old": "baselines/u250_100mhz_scalar_channels_20260922/after.csv",
+    "new": "../baselines/u250_100mhz_scalar_channels_20260922/after.csv"
+  },
+  {
+    "file": "docs/logs/RTL_STORAGE_OPTIMIZATION_20260911.md",
+    "old": "baselines/u250_100mhz_storage_20260911/README.md",
+    "new": "../baselines/u250_100mhz_storage_20260911/README.md"
+  },
+  {
+    "file": "docs/logs/SOURCE_PROVENANCE.md",
+    "old": "migration/source_manifest.csv",
+    "new": "../migration/source_manifest.csv"
+  },
+  {
+    "file": "docs/logs/SOURCE_PROVENANCE.md",
+    "old": "migration/MIGRATION_20261110.md",
+    "new": "../migration/MIGRATION_20261110.md"
+  },
+  {
+    "file": "docs/migration/MIGRATION_20261110.md",
+    "old": "../SOURCE_PROVENANCE.md",
+    "new": "../logs/SOURCE_PROVENANCE.md"
+  },
+  {
+    "file": "docs/research/01_hls_scheduling_2024_2026.md",
+    "old": "../RTL_BACKEND_DESIGN.md",
+    "new": "../logs/RTL_BACKEND_DESIGN.md"
+  }
+]

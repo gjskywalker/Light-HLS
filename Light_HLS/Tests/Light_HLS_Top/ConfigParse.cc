@@ -386,6 +386,8 @@ int builtinTypeBitwidth(std::string type)
     while (!type.empty() && type.back() == ' ')
         type.pop_back();
     const std::string normalized = lowerCopy(type);
+    if (normalized == "_float16" || normalized == "__fp16")
+        return 16;
     if (normalized == "bool")
         return 1;
     if (normalized == "char" || normalized == "signed char" ||

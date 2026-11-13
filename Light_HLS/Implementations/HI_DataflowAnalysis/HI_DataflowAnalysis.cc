@@ -110,8 +110,8 @@ std::pair<bool, bool> argumentAccess(const Function &function,
 
 unsigned scalarWidth(const Type *type)
 {
-    if (const auto *integer = dyn_cast<IntegerType>(type))
-        return integer->getBitWidth();
+    if (scalarBitWidth(type))
+        return scalarBitWidth(type);
     if (const auto *array = dyn_cast<ArrayType>(type))
         return scalarWidth(array->getElementType());
     if (const auto *structure = dyn_cast<StructType>(type))
@@ -272,7 +272,7 @@ bool HI_DataflowAnalysis::runOnModule(Module &module)
         if (stream)
         {
             channel.type = stream->type;
-            channel.width = stream->bitWidth;
+            channel.width = stream->bitWidth ? stream->bitWidth : scalarWidth(allocation->getAllocatedType());
             channel.depth = stream->depth;
             channel.instances = stream->instances;
             channel.initialTokens = stream->initialTokens;

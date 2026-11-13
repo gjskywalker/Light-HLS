@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "stage": "light_hls_local_regression_suite",
+  "valid": false,
+  "expected_suites": 2,
+  "completed_suites": 2,
+  "light_hls_executable": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_Top",
+  "light_hls_executable_sha256": "4aa373774864d1fb2b3784fc79bc68f11840722e8d37414a718ddca72a9b96f7",
+  "results": [
+    {
+      "suite": "AppCorrectness",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 7.078509,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/AppCorrectness/run_supported_apps.sh",
+      "script_sha256": "56e5f12b86561db9f53e2f6887309a418d24cacf13620b94188a473dbe2a93d0",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_rechecks/AppCorrectness.log",
+      "result_directory": null
+    },
+    {
+      "suite": "RTL_Backend",
+      "status": "FAIL",
+      "returncode": 1,
+      "elapsed_seconds": 1.165862,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/RTL_Backend/run_iverilog_test.sh",
+      "script_sha256": "13326e730e8ba3b34516889411e6b274f7085bf37e068222fb3bb4f685f2309a",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_rechecks/RTL_Backend.log",
+      "result_directory": null
+    }
+  ]
+}

@@ -1,0 +1,448 @@
+[
+  {
+    "width": 16,
+    "kernel": "pipeline",
+    "passed": true,
+    "measured_cycles": [
+      501,
+      501,
+      501,
+      501
+    ],
+    "estimated_cycles": {
+      "constant": true,
+      "maximum": 501,
+      "minimum": 501
+    },
+    "resources": {
+      "complete": true,
+      "implementation": "hardfloat_release1_scalar_ce_v2",
+      "matched_instances": 7,
+      "matched_operator_resources": {
+        "dsp": 2,
+        "ff": 232,
+        "lut": 3174
+      },
+      "matched_units": [
+        {
+          "instance": "op_fadd_32_32_32_0",
+          "key": "fadd|32|32,32"
+        },
+        {
+          "instance": "op_fdiv_32_32_32_v_div_0",
+          "key": "fdiv|32|32,32"
+        },
+        {
+          "instance": "op_fmul_32_32_32_0",
+          "key": "fmul|32|32,32"
+        },
+        {
+          "instance": "op_fpext_32_16_0",
+          "key": "fpext|32|16"
+        },
+        {
+          "instance": "op_fpext_32_16_1",
+          "key": "fpext|32|16"
+        },
+        {
+          "instance": "op_fptrunc_16_32_0",
+          "key": "fptrunc|16|32"
+        },
+        {
+          "instance": "op_llvm_sqrt_f32_32_32_v_v10_0",
+          "key": "llvm.sqrt.f32|32|32"
+        }
+      ],
+      "missing_keys": [],
+      "model_hash": "fnv1a64:22244939de5d798c",
+      "model_path": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Implementations/HI_BackendCommon/../../RTL/floating_resources_u250.cfg",
+      "note": "Additive bound-FU costs; excludes memory, controller, muxes, context storage, CE overhead, and cross-operator optimization.",
+      "requested_instances": 7,
+      "schema_version": 1,
+      "scope": "isolated_floating_operators_only",
+      "status": "covered",
+      "tasks": [],
+      "whole_design_calibrated": false
+    }
+  },
+  {
+    "width": 16,
+    "kernel": "recurrence",
+    "passed": true,
+    "measured_cycles": [
+      81,
+      81,
+      81,
+      81
+    ],
+    "estimated_cycles": {
+      "constant": true,
+      "maximum": 81,
+      "minimum": 81
+    },
+    "resources": {
+      "complete": true,
+      "implementation": "hardfloat_release1_scalar_ce_v2",
+      "matched_instances": 4,
+      "matched_operator_resources": {
+        "dsp": 2,
+        "ff": 0,
+        "lut": 1852
+      },
+      "matched_units": [
+        {
+          "instance": "op_fadd_32_32_32_0",
+          "key": "fadd|32|32,32"
+        },
+        {
+          "instance": "op_fmul_32_32_32_0",
+          "key": "fmul|32|32,32"
+        },
+        {
+          "instance": "op_fpext_32_16_0",
+          "key": "fpext|32|16"
+        },
+        {
+          "instance": "op_fptrunc_16_32_0",
+          "key": "fptrunc|16|32"
+        }
+      ],
+      "missing_keys": [],
+      "model_hash": "fnv1a64:22244939de5d798c",
+      "model_path": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Implementations/HI_BackendCommon/../../RTL/floating_resources_u250.cfg",
+      "note": "Additive bound-FU costs; excludes memory, controller, muxes, context storage, CE overhead, and cross-operator optimization.",
+      "requested_instances": 4,
+      "schema_version": 1,
+      "scope": "isolated_floating_operators_only",
+      "status": "covered",
+      "tasks": [],
+      "whole_design_calibrated": false
+    }
+  },
+  {
+    "width": 16,
+    "kernel": "fma_recurrence",
+    "passed": true,
+    "measured_cycles": [
+      19,
+      19,
+      19,
+      19
+    ],
+    "estimated_cycles": {
+      "constant": true,
+      "maximum": 19,
+      "minimum": 19
+    },
+    "resources": {
+      "complete": true,
+      "implementation": "hardfloat_release1_scalar_ce_v2",
+      "matched_instances": 1,
+      "matched_operator_resources": {
+        "dsp": 1,
+        "ff": 0,
+        "lut": 729
+      },
+      "matched_units": [
+        {
+          "instance": "op_llvm_fma_f16_16_16_16_16_0",
+          "key": "llvm.fma.f16|16|16,16,16"
+        }
+      ],
+      "missing_keys": [],
+      "model_hash": "fnv1a64:22244939de5d798c",
+      "model_path": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Implementations/HI_BackendCommon/../../RTL/floating_resources_u250.cfg",
+      "note": "Additive bound-FU costs; excludes memory, controller, muxes, context storage, CE overhead, and cross-operator optimization.",
+      "requested_instances": 1,
+      "schema_version": 1,
+      "scope": "isolated_floating_operators_only",
+      "status": "covered",
+      "tasks": [],
+      "whole_design_calibrated": false
+    }
+  },
+  {
+    "width": 32,
+    "kernel": "pipeline",
+    "passed": true,
+    "measured_cycles": [
+      497,
+      497,
+      497,
+      497
+    ],
+    "estimated_cycles": {
+      "constant": true,
+      "maximum": 497,
+      "minimum": 497
+    },
+    "resources": {
+      "complete": true,
+      "implementation": "hardfloat_release1_scalar_ce_v2",
+      "matched_instances": 4,
+      "matched_operator_resources": {
+        "dsp": 2,
+        "ff": 232,
+        "lut": 2796
+      },
+      "matched_units": [
+        {
+          "instance": "op_fadd_32_32_32_0",
+          "key": "fadd|32|32,32"
+        },
+        {
+          "instance": "op_fdiv_32_32_32_v_div_0",
+          "key": "fdiv|32|32,32"
+        },
+        {
+          "instance": "op_fmul_32_32_32_0",
+          "key": "fmul|32|32,32"
+        },
+        {
+          "instance": "op_llvm_sqrt_f32_32_32_v_v6_0",
+          "key": "llvm.sqrt.f32|32|32"
+        }
+      ],
+      "missing_keys": [],
+      "model_hash": "fnv1a64:22244939de5d798c",
+      "model_path": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Implementations/HI_BackendCommon/../../RTL/floating_resources_u250.cfg",
+      "note": "Additive bound-FU costs; excludes memory, controller, muxes, context storage, CE overhead, and cross-operator optimization.",
+      "requested_instances": 4,
+      "schema_version": 1,
+      "scope": "isolated_floating_operators_only",
+      "status": "covered",
+      "tasks": [],
+      "whole_design_calibrated": false
+    }
+  },
+  {
+    "width": 32,
+    "kernel": "recurrence",
+    "passed": true,
+    "measured_cycles": [
+      19,
+      19,
+      19,
+      19
+    ],
+    "estimated_cycles": {
+      "constant": true,
+      "maximum": 19,
+      "minimum": 19
+    },
+    "resources": {
+      "complete": true,
+      "implementation": "hardfloat_release1_scalar_ce_v2",
+      "matched_instances": 2,
+      "matched_operator_resources": {
+        "dsp": 2,
+        "ff": 0,
+        "lut": 1527
+      },
+      "matched_units": [
+        {
+          "instance": "op_fadd_32_32_32_0",
+          "key": "fadd|32|32,32"
+        },
+        {
+          "instance": "op_fmul_32_32_32_0",
+          "key": "fmul|32|32,32"
+        }
+      ],
+      "missing_keys": [],
+      "model_hash": "fnv1a64:22244939de5d798c",
+      "model_path": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Implementations/HI_BackendCommon/../../RTL/floating_resources_u250.cfg",
+      "note": "Additive bound-FU costs; excludes memory, controller, muxes, context storage, CE overhead, and cross-operator optimization.",
+      "requested_instances": 2,
+      "schema_version": 1,
+      "scope": "isolated_floating_operators_only",
+      "status": "covered",
+      "tasks": [],
+      "whole_design_calibrated": false
+    }
+  },
+  {
+    "width": 32,
+    "kernel": "fma_recurrence",
+    "passed": true,
+    "measured_cycles": [
+      19,
+      19,
+      19,
+      19
+    ],
+    "estimated_cycles": {
+      "constant": true,
+      "maximum": 19,
+      "minimum": 19
+    },
+    "resources": {
+      "complete": true,
+      "implementation": "hardfloat_release1_scalar_ce_v2",
+      "matched_instances": 1,
+      "matched_operator_resources": {
+        "dsp": 2,
+        "ff": 0,
+        "lut": 1620
+      },
+      "matched_units": [
+        {
+          "instance": "op_llvm_fma_f32_32_32_32_32_0",
+          "key": "llvm.fma.f32|32|32,32,32"
+        }
+      ],
+      "missing_keys": [],
+      "model_hash": "fnv1a64:22244939de5d798c",
+      "model_path": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Implementations/HI_BackendCommon/../../RTL/floating_resources_u250.cfg",
+      "note": "Additive bound-FU costs; excludes memory, controller, muxes, context storage, CE overhead, and cross-operator optimization.",
+      "requested_instances": 1,
+      "schema_version": 1,
+      "scope": "isolated_floating_operators_only",
+      "status": "covered",
+      "tasks": [],
+      "whole_design_calibrated": false
+    }
+  },
+  {
+    "width": 64,
+    "kernel": "pipeline",
+    "passed": true,
+    "measured_cycles": [
+      990,
+      990,
+      990,
+      990
+    ],
+    "estimated_cycles": {
+      "constant": true,
+      "maximum": 990,
+      "minimum": 990
+    },
+    "resources": {
+      "complete": true,
+      "implementation": "hardfloat_release1_scalar_ce_v2",
+      "matched_instances": 4,
+      "matched_operator_resources": {
+        "dsp": 9,
+        "ff": 449,
+        "lut": 6437
+      },
+      "matched_units": [
+        {
+          "instance": "op_fadd_64_64_64_0",
+          "key": "fadd|64|64,64"
+        },
+        {
+          "instance": "op_fdiv_64_64_64_v_div_0",
+          "key": "fdiv|64|64,64"
+        },
+        {
+          "instance": "op_fmul_64_64_64_0",
+          "key": "fmul|64|64,64"
+        },
+        {
+          "instance": "op_llvm_sqrt_f64_64_64_v_v6_0",
+          "key": "llvm.sqrt.f64|64|64"
+        }
+      ],
+      "missing_keys": [],
+      "model_hash": "fnv1a64:22244939de5d798c",
+      "model_path": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Implementations/HI_BackendCommon/../../RTL/floating_resources_u250.cfg",
+      "note": "Additive bound-FU costs; excludes memory, controller, muxes, context storage, CE overhead, and cross-operator optimization.",
+      "requested_instances": 4,
+      "schema_version": 1,
+      "scope": "isolated_floating_operators_only",
+      "status": "covered",
+      "tasks": [],
+      "whole_design_calibrated": false
+    }
+  },
+  {
+    "width": 64,
+    "kernel": "recurrence",
+    "passed": true,
+    "measured_cycles": [
+      19,
+      19,
+      19,
+      19
+    ],
+    "estimated_cycles": {
+      "constant": true,
+      "maximum": 19,
+      "minimum": 19
+    },
+    "resources": {
+      "complete": true,
+      "implementation": "hardfloat_release1_scalar_ce_v2",
+      "matched_instances": 2,
+      "matched_operator_resources": {
+        "dsp": 9,
+        "ff": 0,
+        "lut": 3562
+      },
+      "matched_units": [
+        {
+          "instance": "op_fadd_64_64_64_0",
+          "key": "fadd|64|64,64"
+        },
+        {
+          "instance": "op_fmul_64_64_64_0",
+          "key": "fmul|64|64,64"
+        }
+      ],
+      "missing_keys": [],
+      "model_hash": "fnv1a64:22244939de5d798c",
+      "model_path": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Implementations/HI_BackendCommon/../../RTL/floating_resources_u250.cfg",
+      "note": "Additive bound-FU costs; excludes memory, controller, muxes, context storage, CE overhead, and cross-operator optimization.",
+      "requested_instances": 2,
+      "schema_version": 1,
+      "scope": "isolated_floating_operators_only",
+      "status": "covered",
+      "tasks": [],
+      "whole_design_calibrated": false
+    }
+  },
+  {
+    "width": 64,
+    "kernel": "fma_recurrence",
+    "passed": true,
+    "measured_cycles": [
+      19,
+      19,
+      19,
+      19
+    ],
+    "estimated_cycles": {
+      "constant": true,
+      "maximum": 19,
+      "minimum": 19
+    },
+    "resources": {
+      "complete": true,
+      "implementation": "hardfloat_release1_scalar_ce_v2",
+      "matched_instances": 1,
+      "matched_operator_resources": {
+        "dsp": 9,
+        "ff": 0,
+        "lut": 3986
+      },
+      "matched_units": [
+        {
+          "instance": "op_llvm_fma_f64_64_64_64_64_0",
+          "key": "llvm.fma.f64|64|64,64,64"
+        }
+      ],
+      "missing_keys": [],
+      "model_hash": "fnv1a64:22244939de5d798c",
+      "model_path": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Implementations/HI_BackendCommon/../../RTL/floating_resources_u250.cfg",
+      "note": "Additive bound-FU costs; excludes memory, controller, muxes, context storage, CE overhead, and cross-operator optimization.",
+      "requested_instances": 1,
+      "schema_version": 1,
+      "scope": "isolated_floating_operators_only",
+      "status": "covered",
+      "tasks": [],
+      "whole_design_calibrated": false
+    }
+  }
+]

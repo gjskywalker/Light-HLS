@@ -1,4 +1,5 @@
 #include "HI_RTLGeneration.h"
+#include "HI_FloatingPointRTL.h"
 #include "HI_PipelineValueLifetime.h"
 
 #include "llvm/ADT/SmallString.h"
@@ -21,8 +22,7 @@ namespace
 
 unsigned integerWidth(const Type *type)
 {
-    const auto *integerType = dyn_cast<IntegerType>(type);
-    return integerType ? integerType->getBitWidth() : 0;
+    return scalarBitWidth(type);
 }
 
 std::string rangeForWidth(unsigned width)
@@ -62,13 +62,28 @@ std::string constantExpression(const ConstantInt &constant)
     return std::to_string(constant.getBitWidth()) + "'h" + digits.str().str();
 }
 
+std::string constantExpression(const ConstantFP &constant)
+{
+    const APInt bits = constant.getValueAPF().bitcastToAPInt();
+    SmallString<64> digits;
+    bits.toString(digits, 16, false, false);
+    return std::to_string(bits.getBitWidth()) + "'h" + digits.str().str();
+}
+
 std::string valueExpression(const Value *value,
                             const HLSBackendContext &context)
 {
+    if (const auto *constant = dyn_cast<Constant>(value))
+        if (const auto *type = dyn_cast<FixedVectorType>(constant->getType()))
+            if (type->getNumElements() == 1)
+                if (Constant *lane = constant->getAggregateElement(0U))
+                    return valueExpression(lane, context);
     const auto folded = context.constantValues.find(value);
     if (folded != context.constantValues.end())
         return constantExpression(*folded->second);
     if (const auto *constant = dyn_cast<ConstantInt>(value))
+        return constantExpression(*constant);
+    if (const auto *constant = dyn_cast<ConstantFP>(value))
         return constantExpression(*constant);
     if (isa<UndefValue>(value) || isa<PoisonValue>(value))
         return std::to_string(std::max(1U, integerWidth(value->getType()))) + "'d0";
@@ -854,10 +869,14 @@ std::string boundInstructionExpression(
     const Instruction &instruction, const std::vector<std::string> &operands,
     bool narrowMultiply = true)
 {
+    if (isa<ExtractElementInst>(instruction)) return operands.at(0);
+    if (isa<InsertElementInst>(instruction)) return operands.at(1);
     if (const auto *binary = dyn_cast<BinaryOperator>(&instruction))
     {
-        const std::string &lhs = operands.at(0);
-        const std::string &rhs = operands.at(1);
+        // Inlined pipeline values can be compound expressions, not RTL names.
+        // Keep each LLVM operand grouped before composing its consumer.
+        const std::string lhs = "(" + operands.at(0) + ")";
+        const std::string rhs = "(" + operands.at(1) + ")";
         switch (binary->getOpcode())
         {
         case Instruction::Add:
@@ -897,8 +916,8 @@ std::string boundInstructionExpression(
     }
     if (const auto *comparison = dyn_cast<ICmpInst>(&instruction))
     {
-        std::string lhs = operands.at(0);
-        std::string rhs = operands.at(1);
+        std::string lhs = "(" + operands.at(0) + ")";
+        std::string rhs = "(" + operands.at(1) + ")";
         if (comparison->isSigned())
         {
             lhs = signedExpression(lhs);
@@ -936,7 +955,8 @@ std::string boundInstructionExpression(
         return lhs + " " + operation + " " + rhs;
     }
     if (isa<SelectInst>(instruction))
-        return operands.at(0) + " ? " + operands.at(1) + " : " + operands.at(2);
+        return "(" + operands.at(0) + ") ? (" + operands.at(1) + ") : (" +
+               operands.at(2) + ")";
     if (const auto *cast = dyn_cast<CastInst>(&instruction))
     {
         const unsigned sourceWidth = integerWidth(cast->getSrcTy());
@@ -977,7 +997,7 @@ std::string pipelineInstructionExpression(
     std::vector<std::string> operands;
     for (const Use &operandUse : instruction.operands())
     {
-        if (!operandUse->getType()->isIntegerTy())
+        if (!scalarBitWidth(operandUse->getType()))
             continue;
         operands.push_back(pipelineValueExpression(
             operandUse.get(), slotExpression, context, pipeline, samplingCycle));
@@ -996,7 +1016,7 @@ std::string affinePhiExpression(const PipelinePhiInfo &phiInfo,
     const std::string initial = pipelineValueExpression(
         phiInfo.initialValue, "0", context, pipeline);
     if (phiInfo.affineStep == 0)
-        return initial;
+        return "$unsigned(" + std::to_string(width) + "'(" + initial + "))";
     const unsigned long long magnitude =
         phiInfo.affineStep < 0
             ? static_cast<unsigned long long>(-(phiInfo.affineStep + 1)) + 1
@@ -1004,7 +1024,10 @@ std::string affinePhiExpression(const PipelinePhiInfo &phiInfo,
     const std::string delta = "(" + iterationExpression + " * " +
                               std::to_string(width) + "'d" +
                               std::to_string(magnitude) + ")";
-    return initial + (phiInfo.affineStep < 0 ? " - " : " + ") + delta;
+    // A derived PHI must retain its LLVM bit width even in a wider consumer
+    // (e.g. GEP or sign extension). Signed consumers add an explicit $signed.
+    return "$unsigned(" + std::to_string(width) + "'((" + initial + ")" +
+           (phiInfo.affineStep < 0 ? " - " : " + ") + delta + "))";
 }
 
 const ScalarRecurrenceDependence *findScalarRecurrence(
@@ -1291,7 +1314,7 @@ void emitPipelineState(
     for (const InstructionSchedule &schedule : blockSchedule.instructions)
     {
         if (!schedule.instruction || schedule.resultWidth == 0 ||
-            isa<LoadInst>(schedule.instruction))
+            isBackendLoad(schedule.instruction))
         {
             continue;
         }
@@ -1299,8 +1322,10 @@ void emitPipelineState(
         if (destination == context.valueNames.end() ||
             !pipelineStoresValue(pipeline, schedule.instruction))
             continue;
+        const int captureCycle = schedule.startCycle +
+            (isIterativeFloating(*schedule.instruction) ? schedule.latency - 1 : 0);
         const std::string slotExpression =
-            prefix + "_slot_age[" + std::to_string(schedule.startCycle) + "]";
+            prefix + "_slot_age[" + std::to_string(captureCycle) + "]";
         std::string resultExpression;
         const auto binding = operationBindings.find(schedule.instruction);
         if (binding != operationBindings.end())
@@ -1310,7 +1335,7 @@ void emitPipelineState(
                 *schedule.instruction, slotExpression, context, pipeline, schedule.startCycle);
         if (!pipeline.storageAliases.count(schedule.instruction))
             output << "            if (" << prefix << "_valid["
-               << schedule.startCycle << "])\n"
+               << captureCycle << "])\n"
                << "              " << pipelineStorageExpression(
                       context, pipeline, schedule.instruction, slotExpression)
                << " <= " << resultExpression << ";\n";
@@ -1326,7 +1351,7 @@ void emitPipelineState(
             if (phiName == context.valueNames.end())
                 continue;
             output << "            if (" << prefix << "_valid["
-                   << schedule.startCycle << "])\n"
+                   << captureCycle << "])\n"
                    << "              " << pipelineStorageExpression(context, pipeline, dependence.phi,
                         feedbackSlotExpression(slotExpression, dependence.distance, pipeline.contextSlots))
                    << " <= " << resultExpression << ";\n";
@@ -1335,8 +1360,8 @@ void emitPipelineState(
 
     for (const InstructionSchedule &schedule : blockSchedule.instructions)
     {
-        const auto *load = dyn_cast_or_null<LoadInst>(schedule.instruction);
-        if (!load || pipeline.forwardedLoads.count(load))
+        const Instruction *load = schedule.instruction;
+        if (!isBackendLoad(load) || pipeline.forwardedLoads.count(load))
             continue;
         const auto access = context.memoryAccesses.find(load);
         const auto binding = memoryBindings.find(load);
@@ -1608,7 +1633,7 @@ bool HI_RTLGeneration::runOnModule(Module &module)
     unsigned argumentIndex = 0;
     for (const Argument &argument : top.args())
     {
-        if (!argument.getType()->isIntegerTy())
+        if (!scalarBitWidth(argument.getType()))
         {
             ++argumentIndex;
             continue;
@@ -1749,7 +1774,7 @@ bool HI_RTLGeneration::runOnModule(Module &module)
                   "output reg ap_idle", "output wire ap_ready"});
     for (const Argument &argument : top.args())
     {
-        if (argument.getType()->isIntegerTy())
+        if (scalarBitWidth(argument.getType()))
         {
             ports.push_back("input wire " +
                             rangeForWidth(integerWidth(argument.getType())) +
@@ -1857,7 +1882,7 @@ bool HI_RTLGeneration::runOnModule(Module &module)
     std::ostringstream output;
     output << "`timescale 1ns/1ps\n"
            << "// Generated by the Light-HLS experimental RTL backend.\n"
-           << "// Current scope: integer scalar, partitioned local RAM, and direction-aware banked ap_memory interfaces.\n"
+           << "// Scalar integer/IEEE FP16/FP32/FP64 datapaths, local RAM, and direction-aware ap_memory interfaces.\n"
            << "module " << context->rtl.moduleName << " (\n";
     for (std::size_t index = 0; index < ports.size(); ++index)
     {
@@ -1889,6 +1914,16 @@ bool HI_RTLGeneration::runOnModule(Module &module)
                    << rangeForWidth(memory.elementWidth)
                    << prefix << "storage [0:" << (memory.bankDepth - 1)
                    << "];\n";
+            if (!memory.initialWords.empty())
+            {
+                output << "  initial begin\n";
+                for (unsigned long long index = 0; index < memory.initialWords.size(); ++index)
+                    if (partitionBankForAddress(memory, index) == bank)
+                        output << "    " << prefix << "storage["
+                               << partitionLocalAddressForAddress(memory, index) << "] = "
+                               << memory.elementWidth << "'h" << memory.initialWords[index] << ";\n";
+                output << "  end\n";
+            }
             for (unsigned port = 0; port < memory.ports; ++port)
             {
                 const std::string ordinal = std::to_string(port);
@@ -1915,7 +1950,7 @@ bool HI_RTLGeneration::runOnModule(Module &module)
 
     for (const Argument &argument : top.args())
     {
-        if (!argument.getType()->isIntegerTy())
+        if (!scalarBitWidth(argument.getType()))
             continue;
         output << "  reg " << rangeForWidth(integerWidth(argument.getType()))
                << context->valueNames.at(&argument) << ";\n";
@@ -1927,7 +1962,7 @@ bool HI_RTLGeneration::runOnModule(Module &module)
             entryExpressions[port.first] = port.second;
         for (const Instruction &instruction : top.getEntryBlock())
         {
-            if (!instruction.getType()->isIntegerTy() || context->constantValues.count(&instruction))
+            if (!scalarBitWidth(instruction.getType()) || context->constantValues.count(&instruction))
                 continue;
             std::vector<std::string> operands;
             for (const Use &operand : instruction.operands())
@@ -2041,7 +2076,7 @@ bool HI_RTLGeneration::runOnModule(Module &module)
         const bool direct = directOperators.count(instance.name);
         std::vector<const Value *> integerOperands;
         for (const Value *operand : instruction->operand_values())
-            if (operand->getType()->isIntegerTy())
+            if (scalarBitWidth(operand->getType()))
                 integerOperands.push_back(operand);
         for (std::size_t operandIndex = 0;
              operandIndex < instance.operandWidths.size(); ++operandIndex)
@@ -2086,6 +2121,21 @@ bool HI_RTLGeneration::runOnModule(Module &module)
             operandNames.push_back(instance.name + "_in" +
                                    std::to_string(operandIndex));
         }
+        const InstructionSchedule *fpSchedule = context->schedule.instructionMap.at(instruction);
+        unsigned fpIssueState = 0;
+        for (const BlockSchedule &block : context->schedule.blocks)
+            if (block.block == instruction->getParent())
+                fpIssueState = block.firstState + fpSchedule->startCycle;
+        std::string fpStart = "(state == " + std::to_string(fpIssueState) + ")";
+        if (const LoopPipelineInfo *pipeline = findPipeline(*context, instruction->getParent()))
+        {
+            const BlockSchedule *block = findBlockSchedule(*context, instruction->getParent());
+            fpStart = "(state == " + std::to_string(block->firstState) + " && " +
+                pipelinePrefix(*pipeline) + "_valid[" + std::to_string(fpSchedule->startCycle) + "])";
+        }
+        if (emitFloatingOperator(output, *instruction, instance.name, fpStart,
+                context->configuration.rtlClockEnable ? "ap_ce" : "1'b1"))
+            continue;
         output << "  assign " << instance.name << "_out = "
                << boundInstructionExpression(
                       *representativeInstructions.at(instance.name), operandNames, false)
@@ -2210,7 +2260,7 @@ bool HI_RTLGeneration::runOnModule(Module &module)
                 std::size_t operandIndex = 0;
                 for (const Use &operandUse : instruction.operands())
                 {
-                    if (!operandUse->getType()->isIntegerTy())
+                    if (!scalarBitWidth(operandUse->getType()))
                         continue;
                     if (invariantOperands.at(binding->instance).count(operandIndex))
                     {
@@ -2246,7 +2296,7 @@ bool HI_RTLGeneration::runOnModule(Module &module)
                 std::size_t operandIndex = 0;
                 for (const Use &operandUse : schedule.instruction->operands())
                 {
-                    if (!operandUse->getType()->isIntegerTy())
+                    if (!scalarBitWidth(operandUse->getType()))
                         continue;
                     if (invariantOperands.at(binding->second->instance).count(operandIndex))
                     {
@@ -2393,9 +2443,14 @@ bool HI_RTLGeneration::runOnModule(Module &module)
                 const std::string slotExpression =
                     pipelineName + "_slot_age[" +
                     std::to_string(schedule.startCycle) + "]";
+                const Value *predicate = backendMemoryPredicate(schedule.instruction);
                 output << "    if (state == " << fsmWidth << "'d"
                        << blockSchedule.firstState << " && " << pipelineName
-                       << "_valid[" << schedule.startCycle << "]) begin\n";
+                       << "_valid[" << schedule.startCycle << "]";
+                if (predicate)
+                    output << " && (" << pipelineValueExpression(predicate, slotExpression,
+                        *context, *pipeline, schedule.startCycle) << ")";
+                output << ") begin\n";
                 const std::string flatAddress =
                     pipelinePointerOffsetExpression(
                         access->second.pointerOperand, *memory, *context,
@@ -2457,7 +2512,7 @@ bool HI_RTLGeneration::runOnModule(Module &module)
            << "            ap_idle <= 1'b0;\n";
     for (const Argument &argument : top.args())
     {
-        if (!argument.getType()->isIntegerTy())
+        if (!scalarBitWidth(argument.getType()))
             continue;
         output << "            " << context->valueNames.at(&argument) << " <= "
                << inputPorts.at(&argument) << ";\n";
@@ -2496,12 +2551,15 @@ bool HI_RTLGeneration::runOnModule(Module &module)
             for (const InstructionSchedule &schedule :
                  blockSchedule.instructions)
             {
-                if (schedule.startCycle != static_cast<int>(cycle) ||
+                const int captureCycle = schedule.startCycle +
+                    (schedule.instruction && isIterativeFloating(*schedule.instruction)
+                         ? schedule.latency - 1 : 0);
+                if (captureCycle != static_cast<int>(cycle) ||
                     !schedule.instruction || schedule.resultWidth == 0)
                 {
                     continue;
                 }
-                if (isa<LoadInst>(schedule.instruction))
+                if (isBackendLoad(schedule.instruction))
                     continue;
                 if (context->combinationalValues.count(schedule.instruction))
                     continue;
@@ -2522,7 +2580,7 @@ bool HI_RTLGeneration::runOnModule(Module &module)
                  blockSchedule.instructions)
             {
                 if (!schedule.instruction ||
-                    !isa<LoadInst>(schedule.instruction) ||
+                    !isBackendLoad(schedule.instruction) ||
                     context->forwardedLoads.count(schedule.instruction))
                 {
                     continue;
@@ -2568,6 +2626,8 @@ bool HI_RTLGeneration::runOnModule(Module &module)
            << "  end\n"
            << "endmodule\n";
 
+    if (context->requiredFeatures.floatingPoint)
+        emitHardFloatLibrary(output);
     context->rtl.verilog = output.str();
     context->rtl.valid = true;
     return false;

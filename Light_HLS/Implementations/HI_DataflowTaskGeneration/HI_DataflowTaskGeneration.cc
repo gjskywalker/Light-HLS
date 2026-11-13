@@ -556,6 +556,7 @@ bool HI_DataflowTaskGeneration::runOnModule(Module &module)
         child->latencyModel = context->latencyModel;
         child->delayModel = context->delayModel;
         legacy::PassManager manager;
+        manager.add(new HI_PredicatedLoopLowering(child));
         manager.add(new HI_BackendValidation(child, ValidationStage::PreBackend));
         manager.add(new HI_MemoryObjectAnalysis(child));
         manager.add(new HI_LoopPipelineAnalysis(child));
@@ -589,6 +590,7 @@ bool HI_DataflowTaskGeneration::runOnModule(Module &module)
         implementation.task = task.name;
         implementation.moduleName = child->rtl.moduleName;
         implementation.verilog = child->rtl.verilog;
+        implementation.floatingResourceEstimate = floatingResourceEstimateJSON(*child);
         implementation.memories = child->memoryObjects;
         implementation.pipelineCount =
             static_cast<unsigned>(child->schedule.pipelines.size());

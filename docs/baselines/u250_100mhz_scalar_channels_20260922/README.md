@@ -1,6 +1,6 @@
 # U250 scalar/channel optimization evidence
 
-See the [implementation and measured-results report](../../RTL_SCALAR_AND_CHANNEL_OPTIMIZATION_20260922.md).
+See the [implementation and measured-results report](../../logs/RTL_SCALAR_AND_CHANNEL_OPTIMIZATION_20260922.md).
 
 - `before.*` and `after.*`: all 21 cases, preserving original comparison IDs,
   source/testbench/compiler fingerprints, and measurement validity.

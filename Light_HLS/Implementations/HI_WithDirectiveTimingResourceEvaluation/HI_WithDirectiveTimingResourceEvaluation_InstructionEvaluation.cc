@@ -1552,6 +1552,11 @@ HI_WithDirectiveTimingResourceEvaluation::FF_Evaluate(
 
                 Value_FFAssigned.insert(I_Pred);
             }
+            else if (I_Pred->getType()->isHalfTy())
+            {
+                res.FF += 16;
+                Value_FFAssigned.insert(I_Pred);
+            }
             else if (I_Pred->getType()->isFloatTy())
             {
                 res.FF += 32;

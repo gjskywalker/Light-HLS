@@ -1,0 +1,22 @@
+[
+  {
+    "format": "_Float16",
+    "cases": 2431,
+    "failures": [],
+    "scheduled_cycles": {
+      "constant": false,
+      "maximum": 22,
+      "minimum": 6
+    },
+    "native_half": true,
+    "oracle": "LLVM APFloat",
+    "driver": "ir",
+    "measured_cycles": [
+      6,
+      7,
+      8,
+      9,
+      22
+    ]
+  }
+]

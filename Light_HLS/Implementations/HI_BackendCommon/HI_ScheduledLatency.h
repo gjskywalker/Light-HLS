@@ -8,6 +8,7 @@
 #include "llvm/Analysis/ScalarEvolutionExpressions.h"
 #include "llvm/Analysis/TargetLibraryInfo.h"
 #include "llvm/IR/CFG.h"
+#include "llvm/IR/ConstantRange.h"
 #include "llvm/IR/Dominators.h"
 #include "llvm/TargetParser/Triple.h"
 #include <limits>
@@ -29,6 +30,9 @@ struct ScheduledLoopLatency {
     ScheduledLatencyRange repeat;
     ScheduledLatencyRange exit;
     ScheduledLatencyRange total;
+    long long minimumBackedges = 0;
+    bool constantBackedges = true;
+    std::string backedgeBoundSource;
 };
 
 struct ScheduledLatencyResult {
@@ -86,8 +90,68 @@ class ScheduledLatencyAnalysis {
         return child;
     }
 
+    // Prove a ranking bound for i.next = (i | mask) + 1. This is not an
+    // exact trip count: the mask may skip values. Require a nonnegative,
+    // nonwrapping domain and a latch comparison against a constant limit.
+    bool monotoneOrBackedgeBound(llvm::Loop *loop, long long &bound) {
+        using namespace llvm;
+        BasicBlock *latch = loop->getLoopLatch(), *preheader = loop->getLoopPreheader();
+        if (!latch || !preheader) return false;
+        auto *branch = dyn_cast<BranchInst>(latch->getTerminator());
+        auto *compare = branch && branch->isConditional() ? dyn_cast<ICmpInst>(branch->getCondition()) : nullptr;
+        if (!compare || branch->getSuccessor(0) != loop->getHeader() ||
+            loop->contains(branch->getSuccessor(1)) ||
+            (compare->getPredicate() != ICmpInst::ICMP_SLT && compare->getPredicate() != ICmpInst::ICMP_ULT)) return false;
+        auto *limit = dyn_cast<ConstantInt>(compare->getOperand(1));
+        auto *increment = dyn_cast<llvm::BinaryOperator>(compare->getOperand(0));
+        if (!limit || !increment || increment->getOpcode() != Instruction::Add ||
+            !isa<ConstantInt>(increment->getOperand(1)) ||
+            !cast<ConstantInt>(increment->getOperand(1))->isOne()) return false;
+        auto *combine = dyn_cast<llvm::BinaryOperator>(increment->getOperand(0));
+        if (!combine || combine->getOpcode() != Instruction::Or) return false;
+        PHINode *phi = dyn_cast<PHINode>(combine->getOperand(0));
+        Value *mask = combine->getOperand(1);
+        if (!phi || phi->getParent() != loop->getHeader()) {
+            phi = dyn_cast<PHINode>(combine->getOperand(1)); mask = combine->getOperand(0);
+        }
+        if (!phi || phi->getParent() != loop->getHeader() || phi->getNumIncomingValues() != 2 ||
+            phi->getIncomingValueForBlock(latch) != increment) return false;
+        auto *start = dyn_cast_or_null<ConstantInt>(phi->getIncomingValueForBlock(preheader));
+        if (!start || start->isNegative() || limit->isNegative() ||
+            start->getValue().getActiveBits() > 62 || limit->getValue().getActiveBits() > 62) return false;
+        const uint64_t initial = start->getZExtValue(), end = limit->getZExtValue();
+        if (end <= initial) return false;
+        APInt maskMaximum = evolution.getUnsignedRange(evolution.getSCEV(mask)).getUnsignedMax();
+        if (auto *maskPhi = dyn_cast<PHINode>(mask)) {
+            // A constant-seeded PHI with only self right-shifts preserves the
+            // unsigned seed upper bound, including across enclosing loops.
+            APInt seed(maskMaximum.getBitWidth(), 0);
+            bool valid = true, seeded = false;
+            for (Value *incoming : maskPhi->incoming_values()) {
+                if (auto *constant = dyn_cast<ConstantInt>(incoming)) {
+                    if (constant->isNegative()) { valid = false; break; }
+                    seed = APIntOps::umax(seed, constant->getValue()); seeded = true;
+                } else {
+                    auto *shift = dyn_cast<llvm::BinaryOperator>(incoming);
+                    auto *amount = shift ? dyn_cast<ConstantInt>(shift->getOperand(1)) : nullptr;
+                    if (!shift || (shift->getOpcode() != Instruction::LShr && shift->getOpcode() != Instruction::AShr) ||
+                        shift->getOperand(0) != maskPhi || !amount || amount->getValue().uge(maskMaximum.getBitWidth()))
+                        { valid = false; break; }
+                }
+            }
+            if (valid && seeded) maskMaximum = seed;
+        }
+        const unsigned bits = phi->getType()->getIntegerBitWidth();
+        const APInt largest = APIntOps::umax(maskMaximum, APInt(bits, std::max(initial, end - 1)));
+        // Leave a spare sign bit even for unsigned comparisons, so +1 cannot
+        // wrap and the monotonic ranking is valid without relying on poison.
+        if (largest.getActiveBits() >= bits - 1) return false;
+        bound = static_cast<long long>(end - initial - 1);
+        return true;
+    }
+
     // Collapse child loops and pipelines; stop before the current loop header
-    // on backedges, and before its unique exit on outgoing edges. Thus the
+    // on backedges, and before any loop exit on outgoing edges. Thus the
     // terminating header visit is charged separately from repeated iterations.
     Paths walk(const llvm::BasicBlock *block, const llvm::Loop *scope,
                std::map<const llvm::BasicBlock *, Paths> &memo,
@@ -108,7 +172,9 @@ class ScheduledLatencyAnalysis {
             next.push_back(pipeline->second->exit);
         } else if (llvm::Loop *child = childAt(block, scope)) {
             cost = loopCost(child);
-            next.push_back(child->getExitBlock());
+            llvm::SmallVector<llvm::BasicBlock *, 4> exits;
+            child->getExitBlocks(exits);
+            next.insert(next.end(), exits.begin(), exits.end());
         } else {
             const auto *branch = llvm::dyn_cast<llvm::BranchInst>(block->getTerminator());
             const auto *condition = branch && branch->isConditional() ?
@@ -129,8 +195,6 @@ class ScheduledLatencyAnalysis {
             if (scope && successor == scope->getHeader()) {
                 merge(paths.repeat, cost);
             } else if (scope && !scope->contains(successor)) {
-                if (successor != scope->getExitBlock())
-                    throw std::runtime_error("Multiple loop exit destinations");
                 merge(paths.exit, cost);
             } else {
                 const Paths suffix = walk(successor, scope, memo, active);
@@ -146,12 +210,21 @@ class ScheduledLatencyAnalysis {
     Range loopCost(llvm::Loop *loop) {
         auto cached = loopMemo.find(loop);
         if (cached != loopMemo.end()) return cached->second;
-        if (!loop->getLoopLatch() || !loop->getExitBlock())
-            throw std::runtime_error("Loop requires a unique latch and exit: " + loop->getName().str());
-        const auto *count = llvm::dyn_cast<llvm::SCEVConstant>(evolution.getBackedgeTakenCount(loop));
-        if (!count || count->getAPInt().getActiveBits() > 63)
+        llvm::SmallVector<llvm::BasicBlock *, 4> exits;
+        loop->getExitBlocks(exits);
+        if (exits.empty())
+            throw std::runtime_error("Loop has no terminating exit: " + loop->getName().str());
+        const auto *exact = llvm::dyn_cast<llvm::SCEVConstant>(evolution.getBackedgeTakenCount(loop));
+        const auto *count = exact ? exact : llvm::dyn_cast<llvm::SCEVConstant>(evolution.getConstantMaxBackedgeTakenCount(loop));
+        long long backedges = 0;
+        std::string boundSource = exact ? "scalar-evolution-exact" : "scalar-evolution-upper-bound";
+        if (count && count->getAPInt().getActiveBits() <= 63)
+            backedges = count->getAPInt().getZExtValue();
+        else if (monotoneOrBackedgeBound(loop, backedges))
+            boundSource = "monotone-or-ranking";
+        else
             throw std::runtime_error("Nonconstant or unrepresentable backedge count: " + loop->getName().str());
-        const long long backedges = count->getAPInt().getZExtValue();
+        const long long minimumBackedges = exact ? backedges : 0;
         std::map<const llvm::BasicBlock *, Paths> memo;
         std::set<const llvm::BasicBlock *> active;
         const Paths paths = walk(loop->getHeader(), loop, memo, active);
@@ -159,9 +232,9 @@ class ScheduledLatencyAnalysis {
             throw std::runtime_error("Missing loop exit or repeat path");
         Range total = paths.exit;
         if (backedges)
-            total = sum({multiply(backedges, paths.repeat.minimum),
+            total = sum({multiply(minimumBackedges, paths.repeat.minimum),
                          multiply(backedges, paths.repeat.maximum), true}, total);
-        result.loops.push_back({loop->getName().str(), backedges, paths.repeat, paths.exit, total});
+        result.loops.push_back({loop->getName().str(), backedges, paths.repeat, paths.exit, total, minimumBackedges, exact != nullptr, boundSource});
         loopMemo[loop] = total;
         return total;
     }

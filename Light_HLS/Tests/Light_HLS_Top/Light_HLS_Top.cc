@@ -1,4 +1,6 @@
 #include "Light_HLS_Top.h"
+#include "HI_ConstantMemoryLowering.h"
+#include "HI_BackendIRLegalization.h"
 #include "ConfigParse.h"
 #include "llvm/Support/Signals.h"
 #include "llvm/Transforms/Utils/Cloning.h"
@@ -1033,6 +1035,16 @@ int main(int argc, const char **argv)
         PM4.add(CFGSimplification_pass1_eval);
         print_status("Start LLVM processing");
         PM4.run(*Mod_tmp);
+        // Canonical DATAFLOW task calls must survive until task extraction.
+        // Inlining them here recreates parent loops and invalidates the
+        // frontend array metadata collected before this legalization step.
+        if (!dataflowApplied)
+            light_hls::backend::inlineDirectBackendCalls(*Mod_tmp);
+        light_hls::backend::materializeBackendConstantExpressions(*Mod_tmp);
+        light_hls::backend::lowerConstantMemoryInitializers(*Mod_tmp);
+        light_hls::backend::lowerSameBasePointerPhis(*Mod_tmp);
+        light_hls::backend::lowerFloatingMathCalls(*Mod_tmp);
+        light_hls::backend::lowerOptionalFloatingContraction(*Mod_tmp);
         print_status("Accomplished LLVM processing");
 
         if (debugFlag)
@@ -1250,6 +1262,7 @@ int main(int argc, const char **argv)
         {
             backendConfiguration.passSequence = {
                 "HI_WithDirectiveTimingResourceEvaluation",
+                "HI_PredicatedLoopLowering",
                 "HI_BackendValidation(pre_backend)",
                 "HI_MemoryObjectAnalysis",
                 "HI_LoopPipelineAnalysis",
@@ -1315,6 +1328,7 @@ int main(int argc, const char **argv)
         }
         else
         {
+            PM_backend.add(new HI_PredicatedLoopLowering(backendContext));
             PM_backend.add(new HI_BackendValidation(
                 backendContext,
                 light_hls::backend::ValidationStage::PreBackend));

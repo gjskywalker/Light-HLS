@@ -140,7 +140,9 @@ Instruction *HI_HLSDuplicateInstRm::checkDuplicationInBlock(BasicBlock *B, Instr
         {
             // check if they are the same
 
-            bool sameOpcode = tmpI->getOpcode() == I->getOpcode();
+            // Opcode/operands alone miss comparison predicates, cast result
+            // types, arithmetic flags, and exact floating constant bit patterns.
+            bool sameOpcode = tmpI->isIdenticalTo(I);
             bool sameOperands = 1;
             bool PHI_SameIncome = 1;
             if (tmpI->getNumOperands() != I->getNumOperands() || !sameOpcode)

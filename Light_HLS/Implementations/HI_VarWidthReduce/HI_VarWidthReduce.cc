@@ -218,6 +218,8 @@ unsigned int HI_VarWidthReduce::HI_getBidwith(Value *I)
     }
     else
     {
+        if (I->getType()->isHalfTy())
+            return 16;
         if (I->getType()->isFloatTy())
             return 32;
         if (I->getType()->isDoubleTy())

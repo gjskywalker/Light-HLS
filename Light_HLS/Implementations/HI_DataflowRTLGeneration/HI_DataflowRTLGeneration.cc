@@ -278,6 +278,11 @@ std::string channelBankName(const std::string &channel, unsigned bank,
 
 std::string constantConnection(const Value *value)
 {
+    if (const auto *floating = dyn_cast<ConstantFP>(value))
+    {
+        const APInt bits = floating->getValueAPF().bitcastToAPInt();
+        return std::to_string(bits.getBitWidth()) + "'d" + std::to_string(bits.getZExtValue());
+    }
     const auto *constant = dyn_cast<ConstantInt>(value);
     if (!constant)
         return "1'b0";
@@ -579,7 +584,7 @@ bool HI_DataflowRTLGeneration::runOnModule(Module &module)
     const bool multipleTerminalTasks = terminalTasks.size() > 1;
     bool hasScalarTransactionArguments = false;
     for (const Argument &argument : context->top->args())
-        hasScalarTransactionArguments |= argument.getType()->isIntegerTy();
+        hasScalarTransactionArguments |= scalarBitWidth(argument.getType()) != 0;
     std::set<std::string> scalarTransactionTasks;
     for (const DataflowTask &task : graph.tasks)
     {
@@ -587,7 +592,7 @@ bool HI_DataflowRTLGeneration::runOnModule(Module &module)
             continue;
         for (unsigned index = 0; index < task.call->arg_size(); ++index)
         {
-            if (task.call->getArgOperand(index)->getType()->isIntegerTy() &&
+            if (scalarBitWidth(task.call->getArgOperand(index)->getType()) &&
                 isa<Argument>(task.call->getArgOperand(index)))
             {
                 scalarTransactionTasks.insert(task.name);
@@ -607,12 +612,11 @@ bool HI_DataflowRTLGeneration::runOnModule(Module &module)
         "output wire ap_done", "output wire ap_idle", "output wire ap_ready"};
     for (const Argument &argument : context->top->args())
     {
-        if (argument.getType()->isIntegerTy())
+        if (scalarBitWidth(argument.getType()))
         {
             ports.push_back(
                 "input wire " +
-                rangeForWidth(cast<IntegerType>(argument.getType())
-                                  ->getBitWidth()) +
+                rangeForWidth(scalarBitWidth(argument.getType())) +
                 sanitizeVerilogPortIdentifier(argument.getName().str(),
                                               "argument"));
             continue;
@@ -746,13 +750,12 @@ bool HI_DataflowRTLGeneration::runOnModule(Module &module)
 
     for (const Argument &argument : context->top->args())
     {
-        if (!argument.getType()->isIntegerTy())
+        if (!scalarBitWidth(argument.getType()))
             continue;
         const std::string name = sanitizeVerilogPortIdentifier(
             argument.getName().str(), "argument");
         output << "  reg "
-               << rangeForWidth(cast<IntegerType>(argument.getType())
-                                    ->getBitWidth())
+               << rangeForWidth(scalarBitWidth(argument.getType()))
                << name << "_transaction_queue [0:1];\n";
     }
 
@@ -1256,7 +1259,7 @@ bool HI_DataflowRTLGeneration::runOnModule(Module &module)
         {
             const Argument *childArgument = task.functionValue->getArg(index);
             const Value *rootOperand = task.call->getArgOperand(index);
-            if (childArgument->getType()->isIntegerTy())
+            if (scalarBitWidth(childArgument->getType()))
             {
                 const std::string port = sanitizeVerilogPortIdentifier(
                     childArgument->getName().str(),
@@ -1446,7 +1449,7 @@ bool HI_DataflowRTLGeneration::runOnModule(Module &module)
            << "      if (accept_transaction) begin\n";
     for (const Argument &argument : context->top->args())
     {
-        if (!argument.getType()->isIntegerTy())
+        if (!scalarBitWidth(argument.getType()))
             continue;
         const std::string name = sanitizeVerilogPortIdentifier(
             argument.getName().str(), "argument");
@@ -1526,11 +1529,11 @@ bool HI_DataflowRTLGeneration::runOnModule(Module &module)
         ++context->binding.registerBits;
         for (const Argument &argument : context->top->args())
         {
-            if (!argument.getType()->isIntegerTy())
+            if (!scalarBitWidth(argument.getType()))
                 continue;
             context->binding.registerCount += 2;
             context->binding.registerBits +=
-                2 * cast<IntegerType>(argument.getType())->getBitWidth();
+                2 * scalarBitWidth(argument.getType());
         }
     }
     if (multipleTerminalTasks)

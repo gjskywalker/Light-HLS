@@ -98,7 +98,8 @@ Instruction *HI_DuplicateInstRm::checkDuplicationInBlock(BasicBlock *B, Instruct
         {
             // check if they are the same
 
-            bool sameOpcode = tmpI->getOpcode() == I->getOpcode();
+            // Preserve predicates, types, flags, and exact constant semantics.
+            bool sameOpcode = tmpI->isIdenticalTo(I);
             bool sameOperands = 1;
             bool PHI_SameIncome = 1;
             if (tmpI->getNumOperands() != I->getNumOperands() || !sameOpcode)

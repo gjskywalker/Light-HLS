@@ -1,0 +1,8 @@
+tool_version=2025.2
+lut=1921
+ff=473
+dsp=0
+bram_tiles=0
+worst_slack_ns=0.561
+flow_id=vivado_ooc_native_v3_pre_synth_io20
+io_budget_fraction=0.2

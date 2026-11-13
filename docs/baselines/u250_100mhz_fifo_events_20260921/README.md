@@ -2,7 +2,7 @@
 
 This archive records one fresh comparison: the previously failing private-buffer
 FIFO source, top `local_dataflow`. See
-[the checkpoint notes](../../FIFO_EVENT_PRESERVATION_20260921.md) for the safety
+[the checkpoint notes](../../logs/FIFO_EVENT_PRESERVATION_20260921.md) for the safety
 contract, reproduction commands, remaining gaps, and comparison conditions.
 
 - `u250_baselines.{json,csv,rpt}`: fresh common normalized-wrapper U250

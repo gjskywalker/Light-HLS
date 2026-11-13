@@ -1,6 +1,6 @@
 # U250 FIFO capture and transaction-edge evidence
 
-See the [checkpoint notes](../../FIFO_CAPTURE_AND_TRANSACTION_EDGES_20260922.md)
+See the [checkpoint notes](../../logs/FIFO_CAPTURE_AND_TRANSACTION_EDGES_20260922.md)
 for implementation contracts, results, and limitations.
 
 - `before.json/csv`: latest preceding measurement for each of eight cases.

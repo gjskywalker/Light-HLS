@@ -47,7 +47,7 @@ remain unchanged. These measurements do not establish universal Vitis parity.
 
 The simple pipeline's reported 18 versus 16 cycles includes a difference in
 done timing. Its final memory write is one cycle later than Vitis, not two.
-See [the implementation and event-semantics notes](../../RTL_BOUNDARY_OPTIMIZATION_20260914.md)
+See [the implementation and event-semantics notes](../../logs/RTL_BOUNDARY_OPTIMIZATION_20260914.md)
 before interpreting completion cycles as intrinsic scheduler quality.
 
 Raw projects, logs, checkpoints, immutable compiler snapshots, failed attempts,

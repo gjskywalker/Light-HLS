@@ -39,5 +39,5 @@ Raw logs and immutable compiler snapshots are under
 `/tmp/lighthls-bank-qor-20260918.ZR3t1F/`. The earlier intermittent estimator and
 linker failures remain unresolved; this change adds crash stack traces but does
 not claim to fix either. Development runs are kept separately from final
-validation. See [the implementation notes](../../ORDINARY_BANK_OPTIMIZATION_20260918.md)
+validation. See [the implementation notes](../../logs/ORDINARY_BANK_OPTIMIZATION_20260918.md)
 for proof boundaries, reproduction, and next steps.

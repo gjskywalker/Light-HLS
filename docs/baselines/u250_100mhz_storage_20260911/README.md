@@ -45,5 +45,5 @@ and synthesis runtimes from concurrent runs are not speed comparisons.
 The Vitis combinational complete-partition case has no registered timing path;
 missing WNS is not a measured Fmax. Previous archives remain unchanged.
 
-See [the implementation notes](../../RTL_STORAGE_OPTIMIZATION_20260911.md)
+See [the implementation notes](../../logs/RTL_STORAGE_OPTIMIZATION_20260911.md)
 for proof restrictions, resource tradeoffs, and remaining priorities.

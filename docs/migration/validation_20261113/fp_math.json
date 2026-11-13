@@ -1,0 +1,32 @@
+[
+  {
+    "width": 16,
+    "cases": 5352,
+    "failures": [],
+    "bounds": {
+      "constant": false,
+      "maximum": 19,
+      "minimum": 4
+    }
+  },
+  {
+    "width": 32,
+    "cases": 5352,
+    "failures": [],
+    "bounds": {
+      "constant": false,
+      "maximum": 32,
+      "minimum": 4
+    }
+  },
+  {
+    "width": 64,
+    "cases": 5352,
+    "failures": [],
+    "bounds": {
+      "constant": false,
+      "maximum": 61,
+      "minimum": 4
+    }
+  }
+]

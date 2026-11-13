@@ -1,6 +1,6 @@
 # Four-workstream release evidence
 
-See [the checkpoint report](../../RTL_FOUR_WORK_CHECKPOINT_20260928.md) for
+See [the checkpoint report](../../logs/RTL_FOUR_WORK_CHECKPOINT_20260928.md) for
 implementation, safety contracts, results, limitations, and reproduction.
 
 | Artifact | Meaning |

@@ -1,0 +1,178 @@
+{
+  "binary": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+  "binary_sha256": "ce7620cad8f23b5b4ee0f8fcbd26b3012bbf8b00ec3d8cbeda25af02c4685d1a",
+  "results": [
+    {
+      "name": "backend_expression_bitwise",
+      "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_expression_bitwise.cpp",
+      "status": "passed",
+      "generated": true,
+      "verification_status": "passed",
+      "native_ir_equivalence": "passed",
+      "measured_cycles": [
+        17,
+        17,
+        17,
+        17
+      ],
+      "estimated_cycles": {
+        "constant": true,
+        "maximum": 17,
+        "minimum": 17
+      }
+    },
+    {
+      "name": "backend_expression_decreasing",
+      "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_expression_decreasing.cpp",
+      "status": "passed",
+      "generated": true,
+      "verification_status": "passed",
+      "native_ir_equivalence": "passed",
+      "measured_cycles": [
+        17,
+        17,
+        17,
+        17
+      ],
+      "estimated_cycles": {
+        "constant": true,
+        "maximum": 17,
+        "minimum": 17
+      }
+    },
+    {
+      "name": "backend_expression_negative",
+      "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_expression_negative.cpp",
+      "status": "passed",
+      "generated": true,
+      "verification_status": "passed",
+      "native_ir_equivalence": "passed",
+      "measured_cycles": [
+        9,
+        9,
+        9,
+        9
+      ],
+      "estimated_cycles": {
+        "constant": true,
+        "maximum": 9,
+        "minimum": 9
+      }
+    },
+    {
+      "name": "backend_expression_nonzero",
+      "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_expression_nonzero.cpp",
+      "status": "passed",
+      "generated": true,
+      "verification_status": "passed",
+      "native_ir_equivalence": "passed",
+      "measured_cycles": [
+        9,
+        9,
+        9,
+        9
+      ],
+      "estimated_cycles": {
+        "constant": true,
+        "maximum": 9,
+        "minimum": 9
+      }
+    },
+    {
+      "name": "backend_expression_reverse",
+      "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_expression_reverse.cpp",
+      "status": "passed",
+      "generated": true,
+      "verification_status": "passed",
+      "native_ir_equivalence": "passed",
+      "measured_cycles": [
+        17,
+        17,
+        17,
+        17
+      ],
+      "estimated_cycles": {
+        "constant": true,
+        "maximum": 17,
+        "minimum": 17
+      }
+    },
+    {
+      "name": "backend_expression_shift",
+      "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_expression_shift.cpp",
+      "status": "passed",
+      "generated": true,
+      "verification_status": "passed",
+      "native_ir_equivalence": "passed",
+      "measured_cycles": [
+        9,
+        9,
+        9,
+        9
+      ],
+      "estimated_cycles": {
+        "constant": true,
+        "maximum": 9,
+        "minimum": 9
+      }
+    },
+    {
+      "name": "backend_pipeline",
+      "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_pipeline/backend_pipeline.cpp",
+      "status": "passed",
+      "generated": true,
+      "verification_status": "passed",
+      "native_ir_equivalence": "passed",
+      "measured_cycles": [
+        17,
+        17,
+        17,
+        17
+      ],
+      "estimated_cycles": {
+        "constant": true,
+        "maximum": 17,
+        "minimum": 17
+      }
+    },
+    {
+      "name": "backend_pipeline_recurrence",
+      "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_pipeline/backend_pipeline_recurrence.cpp",
+      "status": "passed",
+      "generated": true,
+      "verification_status": "passed",
+      "native_ir_equivalence": "passed",
+      "measured_cycles": [
+        17,
+        17,
+        17,
+        17
+      ],
+      "estimated_cycles": {
+        "constant": true,
+        "maximum": 17,
+        "minimum": 17
+      }
+    },
+    {
+      "name": "backend_pipeline_mixed_memory",
+      "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_pipeline/backend_pipeline_mixed_memory.cpp",
+      "status": "passed",
+      "generated": true,
+      "verification_status": "passed",
+      "native_ir_equivalence": "passed",
+      "measured_cycles": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "estimated_cycles": {
+        "constant": true,
+        "maximum": 16,
+        "minimum": 16
+      }
+    }
+  ],
+  "binary_unchanged": true
+}

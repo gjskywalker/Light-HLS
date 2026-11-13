@@ -11,7 +11,7 @@ The Light-HLS component from `/home/eeuser/Desktop/DAPO_II/Light_HLS` is now ava
 - Build trees, static libraries, old compiler binaries, generated RTL/run outputs, and local agent/editor configuration are excluded from Git. Two historical CMake-generated Makefiles and the compiled `App/2dloop2darray_pl_apint/test` example are also excluded. They can be regenerated rather than depending on old absolute paths.
 - DAPO's RL/GNN training stack and experiment controller remain in the original repository. Some historical DAPO integration tests depend on that external workspace; they are not part of the standalone regression claim.
 
-The inherited GPL-3.0 license, upstream README, and root `HLS_Data_Lib -> Light_HLS/HLS_Data_Lib` alias are preserved. [Source provenance](../SOURCE_PROVENANCE.md) distinguishes this extraction from the earlier DAPO-II integration.
+The inherited GPL-3.0 license, upstream README, and root `HLS_Data_Lib -> Light_HLS/HLS_Data_Lib` alias are preserved. [Source provenance](../logs/SOURCE_PROVENANCE.md) distinguishes this extraction from the earlier DAPO-II integration.
 
 ## Build portability
 

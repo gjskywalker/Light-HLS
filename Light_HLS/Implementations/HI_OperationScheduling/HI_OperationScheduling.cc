@@ -68,9 +68,7 @@ std::vector<unsigned> accessBanks(const MemoryObject &memory,
 
 unsigned getResultWidth(const Instruction &instruction)
 {
-    if (const auto *integerType = dyn_cast<IntegerType>(instruction.getType()))
-        return integerType->getBitWidth();
-    return 0;
+    return scalarBitWidth(instruction.getType());
 }
 
 void discoverHardwareConstants(HLSBackendContext &context)
@@ -84,7 +82,7 @@ void discoverHardwareConstants(HLSBackendContext &context)
             for (Instruction &instruction : block)
             {
                 if (!instruction.getType()->isIntegerTy() || isa<PHINode>(instruction) ||
-                    instruction.mayHaveSideEffects() || isa<LoadInst>(instruction) ||
+                    instruction.mayHaveSideEffects() || isBackendLoad(&instruction) ||
                     context.constantValues.count(&instruction))
                     continue;
                 ConstantInt *constant = nullptr;
@@ -127,11 +125,13 @@ void discoverHardwareConstants(HLSBackendContext &context)
 
 int getLatency(const HLSBackendContext &context, const Instruction &instruction)
 {
+    if (isFloatingOperator(instruction))
+        return floatingLatency(instruction);
     if (context.combinationalValues.count(&instruction) ||
         isa<GetElementPtrInst>(instruction) || isa<IntToPtrInst>(instruction) ||
         isa<AddrSpaceCastInst>(instruction))
         return 0;
-    if (isa<LoadInst>(instruction))
+    if (isBackendLoad(&instruction))
     {
         auto access = context.memoryAccesses.find(&instruction);
         if (access != context.memoryAccesses.end())
@@ -148,7 +148,7 @@ int getLatency(const HLSBackendContext &context, const Instruction &instruction)
         }
         return 2;
     }
-    if (isa<StoreInst>(instruction))
+    if (isBackendStore(&instruction))
         return 1;
     if (isa<ICmpInst>(instruction) || isa<SelectInst>(instruction) ||
         isa<CastInst>(instruction) || isa<FreezeInst>(instruction))
@@ -165,7 +165,7 @@ bool canForwardMemoryResponse(const HLSBackendContext &context,
                                const Instruction &instruction,
                                bool pipelineAddressLifetime = false)
 {
-    if (!isa<LoadInst>(instruction))
+    if (!isBackendLoad(&instruction))
         return false;
     const auto access = context.memoryAccesses.find(&instruction);
     if (access == context.memoryAccesses.end())
@@ -295,11 +295,13 @@ void selectCombinationalValues(HLSBackendContext &context, const LoopInfo &loops
         for (Instruction &instruction : block)
         {
             const bool wiring = isa<CastInst>(instruction) ||
+                                isa<ExtractElementInst, InsertElementInst>(instruction) ||
                                 isa<FreezeInst>(instruction);
             const bool arithmetic = isa<BinaryOperator>(instruction) ||
                                     isa<ICmpInst>(instruction) ||
                                     isa<SelectInst>(instruction);
-            if (!instruction.getType()->isIntegerTy() || (!wiring && !arithmetic))
+            if (!scalarBitWidth(instruction.getType()) || isFloatingOperator(instruction) ||
+                (!wiring && !arithmetic))
                 continue;
             const PHINode *feedback = ordinaryFeedbackPhi(context, instruction, loops);
             std::set<const PHINode *> heldRoots;
@@ -551,11 +553,11 @@ void discoverPipelineHardwareValues(const HLSBackendContext &context,
         if (context.constantValues.count(&instruction))
             continue;
         const auto event = context.memoryAccesses.find(&instruction);
-        if (isa<StoreInst>(instruction) ||
+        if (isBackendStore(&instruction) ||
             (event != context.memoryAccesses.end() && event->second.isFIFO))
             worklist.push_back(&instruction);
 
-        if (!instruction.getType()->isIntegerTy())
+        if (!scalarBitWidth(instruction.getType()))
             continue;
         for (const User *user : instruction.users())
         {
@@ -622,7 +624,7 @@ void discoverPipelineHardwareValues(const HLSBackendContext &context,
                 pipeline.derivedValues.insert(phi);
                 continue;
             }
-            if (phi->getType()->isIntegerTy())
+            if (scalarBitWidth(phi->getType()))
                 pipeline.contextValues.insert(phi);
             const ScalarRecurrenceDependence *dependence =
                 findScalarRecurrence(pipeline, phi);
@@ -638,7 +640,7 @@ void discoverPipelineHardwareValues(const HLSBackendContext &context,
             context.constantValues.count(instruction))
             continue;
         liveOperations.insert(const_cast<Instruction *>(instruction));
-        if (instruction->getType()->isIntegerTy() &&
+        if (scalarBitWidth(instruction->getType()) &&
             !context.combinationalValues.count(instruction))
             pipeline.contextValues.insert(instruction);
         for (const Use &operandUse : instruction->operands())
@@ -707,6 +709,13 @@ bool schedulePipelineBlock(HLSBackendContext &context, BasicBlock &block,
 
     int candidateII = std::max(
         1, std::max(pipeline.requestedII, pipeline.memoryMII));
+    // Each iterative FP instruction owns a non-pipelined functional unit.
+    // It cannot accept another iteration until its fixed completion slot.
+    pipeline.resourceMII = 1;
+    for (Instruction *instruction : operations)
+        if (isIterativeFloating(*instruction))
+            pipeline.resourceMII = std::max(pipeline.resourceMII, getLatency(context, *instruction));
+    candidateII = std::max(candidateII, pipeline.resourceMII);
     pipeline.forwardedLoads.clear();
     for (Instruction *instruction : operations)
     {
@@ -912,7 +921,6 @@ bool schedulePipelineBlock(HLSBackendContext &context, BasicBlock &block,
     pipeline.achievedII = candidateII;
     for (const Instruction *load : pipeline.forwardedLoads)
         pipeline.contextValues.erase(load);
-    pipeline.resourceMII = 1;
     const auto *terminalReturn = pipeline.exit ? dyn_cast<ReturnInst>(pipeline.exit->getTerminator()) : nullptr;
     const Value *returnValue = terminalReturn ? terminalReturn->getReturnValue() : nullptr;
     const auto *returnPhi = dyn_cast_or_null<PHINode>(returnValue);
@@ -941,7 +949,8 @@ bool schedulePipelineBlock(HLSBackendContext &context, BasicBlock &block,
     for (Instruction *instruction : operations)
     {
         int writeCycle = selectedStart.at(instruction);
-        if (isa<LoadInst>(instruction) && !pipeline.forwardedLoads.count(instruction))
+        if ((isBackendLoad(instruction) && !pipeline.forwardedLoads.count(instruction)) ||
+            isIterativeFloating(*instruction))
             writeCycle += getLatency(context, *instruction) - 1;
         retirementCycle = std::max(retirementCycle, writeCycle);
         // A final side effect may coincide with done. An exported registered
@@ -967,7 +976,14 @@ bool schedulePipelineBlock(HLSBackendContext &context, BasicBlock &block,
             std::max(pipeline.contextSlots, dependence.distance + 1);
     }
     pipeline.operationStartCycle = selectedStart;
-    if (pipeline.conservativeMemoryDependence &&
+    if (pipeline.resourceMII > pipeline.requestedII &&
+        pipeline.resourceMII >= pipeline.memoryDependenceMII &&
+        pipeline.resourceMII >= pipeline.memoryMII &&
+        pipeline.resourceMII >= pipeline.recurrenceMII)
+    {
+        pipeline.limitingFactor = "iterative operator occupancy";
+    }
+    else if (pipeline.conservativeMemoryDependence &&
         pipeline.memoryDependenceMII > pipeline.requestedII &&
         pipeline.memoryDependenceMII >= pipeline.memoryMII &&
         pipeline.memoryDependenceMII >= pipeline.recurrenceMII)
@@ -1095,7 +1111,7 @@ bool HI_OperationScheduling::runOnModule(Module &module)
     unsigned argumentIndex = 0;
     for (Argument &argument : top.args())
     {
-        if (!argument.getType()->isIntegerTy())
+        if (!scalarBitWidth(argument.getType()))
         {
             ++argumentIndex;
             continue;
@@ -1115,7 +1131,7 @@ bool HI_OperationScheduling::runOnModule(Module &module)
     {
         for (Instruction &instruction : block)
         {
-            if (!instruction.getType()->isIntegerTy())
+            if (!scalarBitWidth(instruction.getType()))
                 continue;
             const std::string sourceName = instruction.hasName()
                                                ? instruction.getName().str()

@@ -1,11 +1,22 @@
 #include "HI_MemoryObjectAnalysis.h"
 
 #include "llvm/Analysis/ScalarEvolution.h"
+#include "llvm/Analysis/LoopInfo.h"
 #include "llvm/Analysis/ScalarEvolutionExpressions.h"
+#include "llvm/Analysis/LazyValueInfo.h"
+#include "llvm/Analysis/AssumptionCache.h"
+#include "llvm/Analysis/TargetLibraryInfo.h"
+#include "llvm/Analysis/ConstantFolding.h"
+#include "llvm/ADT/SmallString.h"
+#include "llvm/TargetParser/Triple.h"
+#include "llvm/IR/ConstantRange.h"
+#include "llvm/IR/Dominators.h"
 #include "llvm/IR/Instructions.h"
 #include "llvm/Support/raw_ostream.h"
 
 #include <algorithm>
+#include <climits>
+#include <functional>
 #include <limits>
 #include <map>
 #include <set>
@@ -340,9 +351,120 @@ OffsetRange evaluateSCEVRange(const SCEV *expression,
     return OffsetRange();
 }
 
+using PredicateFacts = std::vector<std::pair<const Value *, ConstantRange>>;
+
+void collectPredicateFacts(const Value *predicate, bool truth, PredicateFacts &facts,
+                           unsigned depth = 0)
+{
+    if (!predicate || depth > 64) return;
+    if (auto *comparison = dyn_cast<ICmpInst>(predicate))
+    {
+        const Value *value = comparison->getOperand(0);
+        auto *constant = dyn_cast<ConstantInt>(comparison->getOperand(1));
+        auto operation = comparison->getPredicate();
+        if (!constant) { value = comparison->getOperand(1); constant = dyn_cast<ConstantInt>(comparison->getOperand(0)); operation = CmpInst::getSwappedPredicate(operation); }
+        if (!truth) operation = CmpInst::getInversePredicate(operation);
+        if (constant) facts.emplace_back(value, ConstantRange::makeExactICmpRegion(operation, constant->getValue()));
+    }
+    else if (auto *binary = dyn_cast<BinaryOperator>(predicate))
+    {
+        auto *constant = dyn_cast<ConstantInt>(binary->getOperand(1));
+        if (binary->getOpcode() == Instruction::Xor && constant && constant->isOne())
+            collectPredicateFacts(binary->getOperand(0), !truth, facts, depth + 1);
+        else if ((binary->getOpcode() == Instruction::And && truth) ||
+                 (binary->getOpcode() == Instruction::Or && !truth))
+            for (const Value *operand : binary->operand_values()) collectPredicateFacts(operand, truth, facts, depth + 1);
+    }
+    else if (auto *select = dyn_cast<SelectInst>(predicate))
+    {
+        const auto *yes = dyn_cast<ConstantInt>(select->getTrueValue());
+        const auto *no = dyn_cast<ConstantInt>(select->getFalseValue());
+        if (no && no->isZero() && truth) {
+            collectPredicateFacts(select->getCondition(), true, facts, depth + 1);
+            collectPredicateFacts(select->getTrueValue(), true, facts, depth + 1);
+        } else if (yes && yes->isZero() && truth) {
+            collectPredicateFacts(select->getCondition(), false, facts, depth + 1);
+            collectPredicateFacts(select->getFalseValue(), true, facts, depth + 1);
+        }
+    }
+}
+
+OffsetRange contextualIntegerRange(const Value *value, const Value *base,
+                                   const HLSBackendContext &context,
+                                   ScalarEvolution &evolution, LazyValueInfo &constraints,
+                                   Instruction *where, const PredicateFacts &facts, unsigned depth = 0)
+{
+    if (depth > 32 || !value->getType()->isIntegerTy()) return OffsetRange();
+    OffsetRange result = evaluateSCEVRange(evolution.getSCEV(const_cast<Value *>(value)), base, context, evolution);
+    auto intersect = [&](OffsetRange range) {
+        if (!range.valid) return;
+        if (!result.valid) result = range;
+        else {
+            result.minimum = std::max(result.minimum, range.minimum);
+            result.maximum = std::min(result.maximum, range.maximum);
+            if (result.minimum > result.maximum) result = OffsetRange();
+        }
+    };
+    auto interval = [](const ConstantRange &range) -> OffsetRange {
+        if (range.isEmptySet() || !range.getSignedMin().isSignedIntN(64) ||
+            !range.getSignedMax().isSignedIntN(64)) return OffsetRange();
+        return {true, range.getSignedMin().getSExtValue(), range.getSignedMax().getSExtValue()};
+    };
+    intersect(interval(constraints.getConstantRange(const_cast<Value *>(value), where, false)));
+    for (const auto &fact : facts) if (fact.first == value) intersect(interval(fact.second));
+    if (auto *phi = dyn_cast<PHINode>(value))
+    {
+        // A PHI is the union of actual incoming edges, not the Cartesian
+        // product of a variable start and the maximum trip count of its loop.
+        OffsetRange merged;
+        for (unsigned i = 0; i < phi->getNumIncomingValues(); ++i)
+        {
+            OffsetRange edge = interval(constraints.getConstantRangeOnEdge(
+                phi->getIncomingValue(i), phi->getIncomingBlock(i), const_cast<BasicBlock *>(phi->getParent()), where));
+            if (!edge.valid) { merged = OffsetRange(); break; }
+            if (!merged.valid) merged = edge;
+            else { merged.minimum = std::min(merged.minimum, edge.minimum);
+                   merged.maximum = std::max(merged.maximum, edge.maximum); }
+        }
+        intersect(merged);
+    }
+    else if (auto *binary = dyn_cast<BinaryOperator>(value))
+    {
+        OffsetRange a = contextualIntegerRange(binary->getOperand(0), base, context, evolution, constraints, where, facts, depth + 1);
+        OffsetRange b = contextualIntegerRange(binary->getOperand(1), base, context, evolution, constraints, where, facts, depth + 1);
+        OffsetRange computed;
+        if (binary->getOpcode() == Instruction::Add) computed = addRanges(a, b);
+        if (binary->getOpcode() == Instruction::Sub && b.valid && b.minimum != LLONG_MIN && b.maximum != LLONG_MIN)
+            computed = addRanges(a, {true, -b.maximum, -b.minimum});
+        if (binary->getOpcode() == Instruction::Mul) computed = multiplyRanges(a, b);
+        intersect(signedWidthRange(computed, value->getType()->getIntegerBitWidth()));
+    }
+    else if (auto *cast = dyn_cast<CastInst>(value))
+    {
+        OffsetRange source = contextualIntegerRange(cast->getOperand(0), base, context, evolution, constraints, where, facts, depth + 1);
+        if (source.valid && (isa<SExtInst>(cast) || isa<ZExtInst>(cast) || isa<TruncInst>(cast)))
+        {
+            source = signedWidthRange(source, cast->getSrcTy()->getIntegerBitWidth());
+            if (isa<ZExtInst>(cast) && source.minimum < 0)
+            {
+                unsigned width = cast->getSrcTy()->getIntegerBitWidth();
+                if (width < 63) {
+                    long long modulus = 1LL << width;
+                    source = source.maximum < 0 ? OffsetRange{true, source.minimum + modulus, source.maximum + modulus} : OffsetRange{true, 0, modulus - 1};
+                } else source = OffsetRange();
+            }
+            if (isa<TruncInst>(cast)) source = signedWidthRange(source, cast->getDestTy()->getIntegerBitWidth());
+            intersect(source);
+        }
+    }
+    return result;
+}
+
 OffsetRange inferPointerRange(const Value *pointer, const MemoryObject &memory,
                               const HLSBackendContext &context,
                               ScalarEvolution &scalarEvolution,
+                              LazyValueInfo &constraints,
+                              Instruction *accessInstruction,
                               std::set<const Value *> &visiting)
 {
     if (!pointer || !visiting.insert(pointer).second)
@@ -362,12 +484,12 @@ OffsetRange inferPointerRange(const Value *pointer, const MemoryObject &memory,
     else if (const auto *cast = dyn_cast<BitCastInst>(pointer))
     {
         result = inferPointerRange(cast->getOperand(0), memory, context,
-                                   scalarEvolution, visiting);
+                                   scalarEvolution, constraints, accessInstruction, visiting);
     }
     else if (const auto *gep = dyn_cast<GetElementPtrInst>(pointer))
     {
         result = inferPointerRange(gep->getPointerOperand(), memory, context,
-                                   scalarEvolution, visiting);
+                                   scalarEvolution, constraints, accessInstruction, visiting);
         Type *indexedType = gep->getSourceElementType();
         unsigned indexOrdinal = 0;
         for (const Use &indexUse : gep->indices())
@@ -391,9 +513,30 @@ OffsetRange inferPointerRange(const Value *pointer, const MemoryObject &memory,
                 result = OffsetRange();
                 break;
             }
-            OffsetRange indexRange = evaluateSCEVRange(
-                scalarEvolution.getSCEV(indexUse.get()), memory.base,
-                context, scalarEvolution);
+            PredicateFacts facts;
+            collectPredicateFacts(backendMemoryPredicate(accessInstruction), true, facts);
+            OffsetRange indexRange = contextualIntegerRange(indexUse.get(), memory.base,
+                context, scalarEvolution, constraints, accessInstruction, facts);
+            // A loop-wide interval includes paths where this access is not
+            // executed. Intersect it with the actual load/store's CFG guards.
+            const ConstantRange constrained = constraints.getConstantRange(
+                const_cast<Value *>(indexUse.get()), accessInstruction, false);
+            if (!constrained.isEmptySet() &&
+                constrained.getSignedMin().isSignedIntN(64) &&
+                constrained.getSignedMax().isSignedIntN(64))
+            {
+                const OffsetRange local{true, constrained.getSignedMin().getSExtValue(),
+                    constrained.getSignedMax().getSExtValue()};
+                if (!indexRange.valid)
+                    indexRange = local;
+                else
+                {
+                    indexRange.minimum = std::max(indexRange.minimum, local.minimum);
+                    indexRange.maximum = std::min(indexRange.maximum, local.maximum);
+                    if (indexRange.minimum > indexRange.maximum)
+                        indexRange = OffsetRange();
+                }
+            }
             result = addRanges(
                 result,
                 multiplyRanges(indexRange,
@@ -408,9 +551,63 @@ OffsetRange inferPointerRange(const Value *pointer, const MemoryObject &memory,
 
 unsigned long long inferMinimumDepth(const MemoryObject &memory,
                                      const HLSBackendContext &context,
-                                     ScalarEvolution &scalarEvolution)
+                                     ScalarEvolution &scalarEvolution,
+                                     LazyValueInfo &constraints,
+                                     unsigned long long &provenMinimumDepth)
 {
+    DominatorTree dominators(*context.top);
+    // Prove endpoint reachability only for an unguarded constant-trip affine
+    // loop nest. An inner loop must execute on every enclosing iteration;
+    // interval maxima for correlated or conditionally executed loops are not
+    // sufficient to reject a declared depth.
+    std::function<bool(const SCEV *, const Instruction *, const Loop *)>
+        attainedAffineNest = [&](const SCEV *expression,
+                                 const Instruction *access,
+                                 const Loop *inner) -> bool {
+        if (isa<SCEVConstant>(expression))
+            return true;
+        if (const auto *cast = dyn_cast<SCEVPtrToIntExpr>(expression))
+            return attainedAffineNest(cast->getOperand(), access, inner);
+        if (const auto *unknown = dyn_cast<SCEVUnknown>(expression))
+        {
+            const Value *value = unknown->getValue();
+            if (const auto *cast = dyn_cast<PtrToIntInst>(value))
+                value = cast->getPointerOperand()->stripPointerCasts();
+            return value == memory.base;
+        }
+        if (const auto *sum = dyn_cast<SCEVAddExpr>(expression))
+        {
+            unsigned origins = 0;
+            for (const SCEV *operand : sum->operands())
+                if (!isa<SCEVConstant>(operand))
+                {
+                    if (++origins > 1 ||
+                        (!isa<SCEVUnknown>(operand) && !isa<SCEVPtrToIntExpr>(operand)) ||
+                        !attainedAffineNest(operand, access, inner))
+                        return false;
+                }
+            return true;
+        }
+        const auto *recurrence = dyn_cast<SCEVAddRecExpr>(expression);
+        if (!recurrence || !recurrence->isAffine() ||
+            !isa<SCEVConstant>(recurrence->getStepRecurrence(scalarEvolution)))
+            return false;
+        const Loop *loop = recurrence->getLoop();
+        if (!loop->contains(access->getParent()) ||
+            !isa<SCEVConstant>(scalarEvolution.getBackedgeTakenCount(loop)))
+            return false;
+        if (inner)
+        {
+            if (inner->getParentLoop() != loop || !loop->getLoopLatch() ||
+                !dominators.dominates(inner->getHeader(), loop->getLoopLatch()))
+                return false;
+        }
+        else if (loop->getNumBlocks() != 1 || loop->getHeader() != access->getParent())
+            return false;
+        return attainedAffineNest(recurrence->getStart(), access, loop);
+    };
     bool foundAccess = false;
+    bool complete = true;
     long long maximumAddress = -1;
     for (const auto &entry : context.memoryAccesses)
     {
@@ -420,12 +617,29 @@ unsigned long long inferMinimumDepth(const MemoryObject &memory,
         foundAccess = true;
         std::set<const Value *> visiting;
         OffsetRange range = inferPointerRange(
-            access.pointerOperand, memory, context, scalarEvolution, visiting);
+            access.pointerOperand, memory, context, scalarEvolution, constraints,
+            const_cast<Instruction *>(entry.first), visiting);
         if (!range.valid || range.minimum < 0)
-            return 0;
+        { complete = false; continue; }
         maximumAddress = std::max(maximumAddress, range.maximum);
+        // An interval is an overapproximation, not evidence that its largest
+        // address is reachable. Only exact constant/affine unguarded accesses
+        // establish a mandatory capacity. Correlated/dynamic inputs retain
+        // their declared interface contract and an explicit warning instead.
+        const Value *predicate = backendMemoryPredicate(entry.first);
+        if (predicate && (!isa<ConstantInt>(predicate) || cast<ConstantInt>(predicate)->isZero())) continue;
+        // Frontend lowering expresses addresses as element-index arithmetic
+        // followed by inttoptr; SCEV treats inttoptr itself as opaque.
+        const Value *address = access.pointerOperand;
+        if (const auto *cast = dyn_cast<IntToPtrInst>(address))
+            address = cast->getOperand(0);
+        const SCEV *offset = scalarEvolution.getSCEV(const_cast<Value *>(address));
+        bool attained = attainedAffineNest(offset, entry.first, nullptr);
+        if (attained)
+            provenMinimumDepth = std::max(provenMinimumDepth,
+                static_cast<unsigned long long>(range.maximum) + 1);
     }
-    if (!foundAccess || maximumAddress < 0 ||
+    if (!complete || !foundAccess || maximumAddress < 0 ||
         static_cast<unsigned long long>(maximumAddress) ==
             std::numeric_limits<unsigned long long>::max())
     {
@@ -457,7 +671,7 @@ bool HI_MemoryObjectAnalysis::runOnModule(Module &module)
     unsigned argumentIndex = 0;
     for (Argument &argument : context->top->args())
     {
-        if (argument.getType()->isPointerTy())
+        if (argument.getType()->isPointerTy() && !argument.use_empty())
         {
             MemoryObject memory;
             memory.base = &argument;
@@ -482,6 +696,66 @@ bool HI_MemoryObjectAnalysis::runOnModule(Module &module)
     }
 
     unsigned allocationIndex = 0;
+    // Static storage has module lifetime, unlike an automatic stack array.
+    // Model its actual initializer rather than recreating it on each ap_start.
+    for (GlobalVariable &global : module.globals())
+    {
+        if (!global.hasInitializer() || global.isThreadLocal() ||
+            global.isExternallyInitialized() || global.use_empty()) continue;
+        std::function<Type *(Type *)> leafType = [&](Type *type) -> Type * {
+            if (auto *array = dyn_cast<ArrayType>(type)) return leafType(array->getElementType());
+            if (auto *structure = dyn_cast<StructType>(type))
+            {
+                Type *leaf = nullptr;
+                for (Type *field : structure->elements())
+                {
+                    Type *next = leafType(field);
+                    if (!next || (leaf && leaf != next)) return nullptr;
+                    leaf = next;
+                }
+                return leaf;
+            }
+            return scalarBitWidth(type) ? type : nullptr;
+        };
+        Type *element = leafType(global.getValueType());
+        if (!element || scalarBitWidth(element) % 8) continue;
+        const DataLayout &layout = module.getDataLayout();
+        const uint64_t stride = layout.getTypeAllocSize(element);
+        const uint64_t bytes = layout.getTypeAllocSize(global.getValueType());
+        if (!stride || bytes % stride || bytes > 1048576) continue;
+        MemoryObject memory;
+        memory.base = &global;
+        memory.name = global.getName().str();
+        memory.portName = sanitizeVerilogIdentifier(memory.name, "static_memory");
+        memory.storage = MemoryStorageKind::LocalRAM;
+        memory.depth = bytes / stride;
+        memory.depthSource = MemoryDepthSource::Allocation;
+        memory.depthExact = true;
+        memory.elementWidth = scalarBitWidth(element);
+        for (uint64_t index = 0; index < memory.depth; ++index)
+        {
+            Constant *value = ConstantFoldLoadFromConst(global.getInitializer(), element,
+                APInt(layout.getIndexTypeSizeInBits(global.getType()), index * stride), layout);
+            APInt bits(memory.elementWidth, 0);
+            if (auto *integer = dyn_cast_or_null<ConstantInt>(value)) bits = integer->getValue();
+            else if (auto *floating = dyn_cast_or_null<ConstantFP>(value)) bits = floating->getValueAPF().bitcastToAPInt();
+            else break;
+            SmallString<64> digits;
+            bits.toString(digits, 16, false, false);
+            memory.initialWords.push_back(digits.str().str());
+        }
+        if (memory.initialWords.size() != memory.depth) continue;
+        const Type *type = global.getValueType();
+        while (auto *array = dyn_cast<ArrayType>(type))
+        {
+            memory.dimensions.push_back(array->getNumElements());
+            type = array->getElementType();
+        }
+        if (!type->isIntegerTy() && !type->isFloatingPointTy())
+            memory.dimensions = {memory.depth};
+        context->memoryObjects.push_back(std::move(memory));
+        provenance[&global].insert(&global);
+    }
     for (BasicBlock &block : *context->top)
     {
         for (Instruction &instruction : block)
@@ -542,16 +816,16 @@ bool HI_MemoryObjectAnalysis::runOnModule(Module &module)
             const Value *writeValue = nullptr;
             unsigned width = 0;
             bool isWrite = false;
-            if (const auto *load = dyn_cast<LoadInst>(&instruction))
+            if (isBackendLoad(&instruction))
             {
-                pointer = load->getPointerOperand();
-                width = cast<IntegerType>(load->getType())->getBitWidth();
+                pointer = backendMemoryPointer(&instruction);
+                width = scalarBitWidth(instruction.getType());
             }
-            else if (const auto *store = dyn_cast<StoreInst>(&instruction))
+            else if (isBackendStore(&instruction))
             {
-                pointer = store->getPointerOperand();
-                writeValue = store->getValueOperand();
-                width = cast<IntegerType>(writeValue->getType())->getBitWidth();
+                pointer = backendMemoryPointer(&instruction);
+                writeValue = backendStoredValue(&instruction);
+                width = scalarBitWidth(writeValue->getType());
                 isWrite = true;
             }
             else
@@ -603,9 +877,9 @@ bool HI_MemoryObjectAnalysis::runOnModule(Module &module)
             const auto *argument = dyn_cast<Argument>(memoryBase);
             access.isFIFO = argument &&
                 context->configuration.fifoArguments.count(argument->getArgNo());
-            const bool isVolatile = isWrite
-                ? cast<StoreInst>(instruction).isVolatile()
-                : cast<LoadInst>(instruction).isVolatile();
+            const auto *load = dyn_cast<LoadInst>(&instruction);
+            const auto *store = dyn_cast<StoreInst>(&instruction);
+            const bool isVolatile = (load && load->isVolatile()) || (store && store->isVolatile());
             if (isVolatile && !access.isFIFO)
             {
                 context->addError(
@@ -641,6 +915,11 @@ bool HI_MemoryObjectAnalysis::runOnModule(Module &module)
 
     ScalarEvolution &scalarEvolution =
         getAnalysis<ScalarEvolutionWrapperPass>(*context->top).getSE();
+    // Keep both function analyses alive together inside this module pass.
+    AssumptionCache assumptions(*context->top);
+    TargetLibraryInfoImpl libraryImpl(Triple(module.getTargetTriple()));
+    TargetLibraryInfo library(libraryImpl);
+    LazyValueInfo constraints(&assumptions, &module.getDataLayout(), &library);
     std::set<std::string> memoryNames;
     for (MemoryObject &memory : context->memoryObjects)
     {
@@ -681,7 +960,7 @@ bool HI_MemoryObjectAnalysis::runOnModule(Module &module)
         }
 
         memory.inferredMinimumDepth =
-            inferMinimumDepth(memory, *context, scalarEvolution);
+            inferMinimumDepth(memory, *context, scalarEvolution, constraints, memory.provenMinimumDepth);
         auto frontend =
             context->configuration.frontendMemoryDepths.find(memory.name);
         auto configured =
@@ -747,17 +1026,21 @@ bool HI_MemoryObjectAnalysis::runOnModule(Module &module)
                 memory.name);
         }
 
-        if (memory.depth != 0 && memory.inferredMinimumDepth != 0 &&
-            memory.depth < memory.inferredMinimumDepth)
+        if (memory.depth != 0 && memory.depth < memory.provenMinimumDepth)
         {
             context->addError(
                 "BACKEND_MEMORY_DEPTH_TOO_SMALL",
                 "Declared depth " + std::to_string(memory.depth) +
                     " for memory '" + memory.name +
-                    "' is smaller than the inferred minimum depth " +
-                    std::to_string(memory.inferredMinimumDepth) + ".",
+                    "' is smaller than the proven minimum depth " +
+                    std::to_string(memory.provenMinimumDepth) + ".",
                 memory.name);
         }
+        else if (memory.depth != 0 && (memory.inferredMinimumDepth == 0 ||
+                                     memory.depth < memory.inferredMinimumDepth))
+            context->addWarning("BACKEND_MEMORY_RANGE_UNPROVEN",
+                "Access bounds for memory '" + memory.name +
+                "' are not proven within its declared depth; the caller must satisfy the source contract.", memory.name);
         memory.addressWidth = addressWidthForDepth(memory.depth);
         if (memory.dimensions.empty() && memory.depth != 0)
             memory.dimensions.push_back(memory.depth);

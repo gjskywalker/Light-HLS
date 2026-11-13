@@ -33,5 +33,5 @@ remain under `/tmp/lighthls-qor-20260908.71Q3iI/`. Failed intermediate experimen
 are kept separately and are not included in this archive. The immutable
 Phase-1 archive in `../u250_100mhz/` is not modified.
 
-See [the optimization notes](../../QOR_OPTIMIZATION_20260908.md) for scope,
+See [the optimization notes](../../logs/QOR_OPTIMIZATION_20260908.md) for scope,
 comparison conventions, measured improvements, and remaining performance gaps.

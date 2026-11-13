@@ -1,6 +1,8 @@
-# 用 AI agent 反复改进传统算法：三篇优先阅读论文与 Light-HLS 实验建议
+# 用 AI agent 反复改进传统算法：代表论文、HLS 调度先例与实验建议
 
 检索截止：2026-11-10（Asia/Hong_Kong）。供 2026-11-11 review。本文是有选择的文献简报，不是系统综述；“优先”依据代表性、原始实验证据以及与调度启发式发现的相关性，没有把引用数作为排名。
+
+**2026-11-11 补充核查：已有工作直接让 LLM agent 生成并迭代改进 HLS 调度启发式。** 最相关的两篇是 HeuriGym（2025 年预印本，ICLR 2026）和 RKHS（2026 年预印本／workshop 报告），详见第 5 节。下面三篇提供一般算法发现的方法背景，不能用来推断 HLS 调度方向尚无人涉足。
 
 **判断：这个方向有很强的先例。真正值得复制的是“模型提出代码 → 执行器评价 → 保留并组合有效候选 → 带着失败证据继续搜索”，而不是只在同一段对话中不断说“再好一点”。** 最建议读 AlphaEvolve、FunSearch、ReEvo 三篇：分别回答工程规模闭环、最小可行搜索框架、如何利用反思提高有限评估预算的效率。
 
@@ -105,3 +107,41 @@ agent 从历史候选中提出“假设 + 调度代码修改”
 3. 哪些 kernel 家族用于开发，哪些只用于最终测试？在启动自动搜索之前冻结划分与评价脚本。
 
 **证据状态：** 本文已通过论文原文、出版社/会议页面和作者项目核验文献身份及上述核心机制；没有在本地复现这些论文的完整搜索，也没有在本次迁移工作中运行 agent 调度发现实验。文中的 HLS 闭环、预算和研究判断均是待验证建议。
+
+## 5. 补充核查：有没有 agent 直接改进 HLS scheduling 的先例？
+
+核查日期：**2026-11-11（Asia/Hong_Kong）**。结论是**有**；必须区分生成调度算法代码、学习调度策略、调整 HLS 输入程序，以及提出未来愿景。
+
+### 5.1 HeuriGym：已发表研究中的直接先例
+
+Hongzheng Chen 等，**HeuriGym: An Agentic Benchmark for LLM-Crafted Heuristics in Combinatorial Optimization**。2025-06-09 首次发布，已被 **ICLR 2026** 接收；发表身份可由 [arXiv 记录](https://arxiv.org/abs/2506.07972)和 [ICLR 官方列表](https://iclr.cc/Downloads/2026)交叉核对。
+
+它明确纳入 **HLS operator scheduling**：agent 编写启发式程序，执行后获得正确性检查、目标分数和错误日志，再迭代修改。目标是在数据依赖和运算器资源约束下缩短调度长度。论文附录 D.1 和官方 `operator_scheduling` 目录都能确认这一点。[论文 §3、附录 D.1](https://arxiv.org/html/2506.07972v2)、[官方代码](https://github.com/cornell-zhang/heurigym/tree/main/operator_scheduling)
+
+**与本项目的关系：** 已覆盖“agent 通过执行反馈反复改进调度启发式”的基本思路。其主要贡献是评测框架，不能据此认定已在完整 HLS→RTL→物理实现流程中超越成熟编译器，也不能将整个 benchmark 的总体得分当成 HLS 调度收益。
+
+### 5.2 RKHS：与优先级规则搜索最直接重叠
+
+Shiva Ahir、Alex Doboli，**RAG-Enhanced Kernel-Based Heuristic Synthesis (RKHS): A Structured Methodology Using Large Language Models for Hardware Design**，2026-04-28 发布。作者注明曾在 UCLA 的 NSF Workshop on Agents for Chip Design Automation 展示；本文按**预印本／workshop 报告**引用，不标为已核验的主流会议正式论文。[原始记录](https://arxiv.org/abs/2604.26153)
+
+它固定 resource-constrained list scheduling 的主体，让 LLM 根据检索到的图结构模板生成 **ready operations 的优先级函数代码**，再用调度质量和失败案例反馈迭代。原文 Algorithm 1 明确包含生成、评估、记录历史和下一轮反馈。[方法与实验原文](https://arxiv.org/html/2604.26153v1)
+
+**与本项目的关系：** 第 3 节提出的“保留合法性框架，只搜索优先级函数”，已与该方法重叠。该原型的比较范围有限，作者将更全面的先进调度器比较与下游综合优化列为后续工作。因此，它是必须比较的先例，也仍留下端到端验证和实测 QoR 的研究问题。
+
+### 5.3 相关但应分开看待的工作
+
+| 工作与身份 | 与当前问题的关系 |
+|---|---|
+| **[NeuroSchedule](https://proceedings.neurips.cc/paper_files/paper/2022/hash/964b1c8dd5667fd647c09c8772829fd1-Abstract-Conference.html)**，NeurIPS 2022 | 用 GNN 学习 HLS 调度优先级；属于学习型调度器，与 coding agent 反复修改算法代码有区别。 |
+| **[MoSAIC](https://arxiv.org/abs/2610.15205)**，2026-10-10 预印本 | 结合最优解监督、启发式恢复和 LLM 策略学习。原文模型是含处理器分配与通信代价的异构 DAG 任务调度，不能直接等同于完整 HLS operation scheduling 后端。[问题定义与方法](https://arxiv.org/html/2610.15205v1) |
+| **[From Pragmas to Partners: A Symbiotic Evolution of Agentic High-Level Synthesis](https://capra.cs.cornell.edu/latte26/paper/latte26-final5.pdf)**，LATTE 2026 position paper | 明确将改进编译器 passes、scheduling heuristics 和 codegen 列为 agent 的未来能力；这属于研究愿景，不能当成已完成的调度算法实现。 |
+| **[HLSPilot](https://github.com/xcw-1010/HLSPilot)**，2024 | 官方流程围绕源代码变换、任务流水、pragma 和 DSE 展开；不能仅凭优化后 latency 降低，就认定它改进了编译器内部的 scheduling algorithm。 |
+| **[AlphaEvolve-XLS](https://github.com/alexIllI/alphaevolve-xls)**，公开代码项目 | README 明确描述用 Codex／LLM 演化 XLS 的 `AgentGeneratedScheduler()`，编译并评估候选。实现思路高度接近你的设想；本次未核验到对应正式论文，也未复现其性能，不能将其当成已发表学术成果。 |
+
+### 5.4 对 Light-HLS 立题的修正
+
+**不宜声称“首次把 agent 用于 HLS scheduling”或“首次让 LLM 迭代生成调度优先级规则”。** 前述直接先例已覆盖这些宽泛表述。上一轮建议的静态 heuristic 原型仍适合作为工程起点，但其存在本身不足以构成研究新意。
+
+可以进一步检验的贡献包括：支持带跨迭代依赖与 bank／port 限制的模调度；联合考虑调度、binding 和寄存器寿命；以 RTL 差分／形式检查及物理实现结果驱动算法搜索；最终得到跨 kernel 家族有效、脱离 agent 后仍可独立执行的调度规则。这些是**候选研究问题，不是已经确认的新颖性结论**，仍需与具体已有机制和同预算搜索基线比较。
+
+本次通过论文全文、正式会议记录及作者代码做针对性核查，未在本地复现外部实验，也不声称已穷尽所有 2026 工作。检索词覆盖 `HLS scheduling agent LLM`、`HLS scheduling heuristic synthesis`、`high-level synthesis scheduling AlphaEvolve`，并沿 HeuriGym、RKHS 的精确题名、参考文献和官方项目继续核验。

@@ -1,0 +1,40 @@
+[ 72%] Built target HI_BackendValidation
+Consolidate compiler generated dependencies of target HI_MemoryObjectAnalysis
+[ 73%] Building CXX object building/HI_MemoryObjectAnalysis/CMakeFiles/HI_MemoryObjectAnalysis.dir/HI_MemoryObjectAnalysis.cc.o
+[ 77%] Built target HI_PragmaTargetExtraction
+Consolidate compiler generated dependencies of target HI_ArrayPartitionAnalysis
+[ 79%] Built target HI_ArrayPartitionAnalysis
+Consolidate compiler generated dependencies of target HI_StorageBindingAnalysis
+Consolidate compiler generated dependencies of target HI_DataflowAnalysis
+[ 81%] Built target HI_DataflowAnalysis
+[ 83%] Built target HI_StorageBindingAnalysis
+Consolidate compiler generated dependencies of target HI_RTLGeneration
+Consolidate compiler generated dependencies of target HI_BackendDependenceAnalysis
+[ 85%] Built target HI_RTLGeneration
+[ 87%] Built target HI_BackendDependenceAnalysis
+Consolidate compiler generated dependencies of target HI_OperationScheduling
+Consolidate compiler generated dependencies of target HI_ResourceBinding
+Consolidate compiler generated dependencies of target HI_PipelineStorageAnalysis
+[ 88%] Built target HI_OperationScheduling
+[ 89%] Built target HI_ResourceBinding
+[ 91%] Built target HI_PipelineStorageAnalysis
+Consolidate compiler generated dependencies of target HI_DataflowPerformanceAnalysis
+Consolidate compiler generated dependencies of target HI_VerilogEmission
+Consolidate compiler generated dependencies of target HI_DataflowRTLGeneration
+[ 93%] Built target HI_DataflowRTLGeneration
+[ 94%] Built target HI_DataflowPerformanceAnalysis
+[ 96%] Built target HI_VerilogEmission
+Consolidate compiler generated dependencies of target HI_RTLSynthesis
+[ 98%] Built target HI_RTLSynthesis
+[ 99%] Linking CXX static library libHI_MemoryObjectAnalysis.a
+[ 99%] Built target HI_MemoryObjectAnalysis
+Consolidate compiler generated dependencies of target HI_DataflowTaskGeneration
+[100%] Built target HI_DataflowTaskGeneration
+[ 20%] Built target HI_Learner_Libs_Build
+Consolidate compiler generated dependencies of target Light_HLS_Top
+[ 40%] Linking CXX executable Light_HLS_Top
+[100%] Built target Light_HLS_Top
+[ 20%] Built target HI_Learner_Libs_Build
+Consolidate compiler generated dependencies of target Light_HLS_DAPO
+[ 40%] Linking CXX executable Light_HLS_DAPO
+[100%] Built target Light_HLS_DAPO

@@ -1,6 +1,8 @@
 #include "Light_HLS_Top.h"
 #include "ConfigParse.h"
 #include "HI_ScheduledLatency.h"
+#include "HI_ConstantMemoryLowering.h"
+#include "HI_BackendIRLegalization.h"
 #include "llvm/IR/Verifier.h"
 #include "llvm/Support/Program.h"
 #include "llvm/Support/Signals.h"
@@ -368,7 +370,9 @@ JSON prepare(const Options &options, const fs::path &reports,
         {"preparation_passes", {"clang-O0-disable-optnone", "mem2reg", "simplifycfg",
            "loop-simplify", "loop-rotate", "lcssa", "source-pragma-unroll",
            "simplifycfg", "loop-simplify", "lcssa"}},
-        {"post_search_legalization", {"mem2reg", "lower-switch", "loop-simplify", "lcssa"}}
+        {"post_search_legalization", {"direct-helper-inlining-v1", "constant-expression-materialization-v1",
+                                      "constant-memory-initializers-v1", "same-base-pointer-phi-v1", "scalar-libm-no-errno-v1", "optional-fmuladd-unfused-v1",
+                                      "mem2reg", "lower-switch", "loop-simplify", "lcssa"}}
     };
     writeJSON(reports / "dapo_manifest.json", manifest);
     return manifest;
@@ -388,6 +392,12 @@ int generate(const Options &options, JSON manifest, const fs::path &reports,
     auto module = loadIR(options.input, context);
     const std::string inputHash = stableFileHash(options.input);
     writeIR(*module, intermediate / "input.bc");
+    const unsigned helperCalls = inlineDirectBackendCalls(*module);
+    const unsigned constantExpressions = materializeBackendConstantExpressions(*module);
+    const unsigned constantInitializers = lowerConstantMemoryInitializers(*module);
+    const unsigned pointerPhis = lowerSameBasePointerPhis(*module);
+    const unsigned mathCalls = lowerFloatingMathCalls(*module);
+    const unsigned optionalContractions = lowerOptionalFloatingContraction(*module);
     legacy::PassManager legalization;
     addTargetAnalyses(legalization, *module);
     legalization.add(createPromoteMemoryToRegisterPass());
@@ -400,9 +410,17 @@ int generate(const Options &options, JSON manifest, const fs::path &reports,
     JSON audit = {
         {"schema", "dapo_ir_audit_v1"}, {"input", options.input}, {"input_hash", inputHash},
         {"legalized_ir_hash", stableFileHash((intermediate / "legalized.bc").string())},
+        {"same_base_pointer_phis_lowered", pointerPhis},
+        {"helper_calls_inlined", helperCalls},
+        {"constant_expressions_materialized", constantExpressions},
         {"manifest", options.manifest}, {"manifest_hash", stableFileHash(options.manifest)},
         {"config_hash", manifest.at("config_hash")}, {"llvm_version", LLVM_VERSION_STRING},
-        {"post_search_legalization", manifest.at("post_search_legalization")},
+        {"post_search_legalization", {"direct-helper-inlining-v1", "constant-expression-materialization-v1",
+                                      "constant-memory-initializers-v1", "same-base-pointer-phi-v1", "scalar-libm-no-errno-v1", "optional-fmuladd-unfused-v1",
+                                      "mem2reg", "lower-switch", "loop-simplify", "lcssa"}},
+        {"constant_initializers_lowered", constantInitializers},
+        {"scalar_math_calls_lowered", mathCalls},
+        {"optional_fmuladd_expanded", optionalContractions},
         {"optional_optimization_passes", JSON::array()}, {"status", "legalized"}
     };
     writeJSON(reports / "dapo_ir_audit.json", audit);
@@ -437,10 +455,21 @@ int generate(const Options &options, JSON manifest, const fs::path &reports,
     preflightConfiguration.sourceHash = manifest.at("source_hash");
     preflightConfiguration.board = options.board;
     preflightConfiguration.clockPeriodNs = options.period;
+    if (manifest.contains("pipeline"))
+        for (const auto &entry : manifest.at("pipeline").items())
+            preflightConfiguration.pragmas.pipeline.emplace_back(entry.key(), entry.value().get<int>());
     auto preflight = createBackendContext(*module, preflightConfiguration);
     legacy::PassManager validation;
     validation.add(new HI_BackendValidation(preflight, ValidationStage::PreBackend));
     validation.run(*module);
+    const bool floatingPoint = preflight->requiredFeatures.floatingPoint;
+    estimate["floating_point"] = {
+        {"present", floatingPoint}, {"implementation", "hardfloat_release1_scalar_ce_v2"},
+        {"formats", {"binary16", "binary32", "binary64"}}, {"rounding", "nearest_ties_even"},
+        {"half_resource_model", "uncharacterized; legacy FP32 operator-cost surrogate, not FP16 calibration"},
+        {"integer_conversion_rounding", "toward_zero"},
+        {"clock_characterized", false}, {"resource_estimate_calibrated", false},
+        {"note", "Cycle counts use the emitted schedule; combinational FP timing and resources require synthesis validation."}};
     if (preflight->hasErrors()) {
         std::string artifactError;
         emitBackendArtifacts(*preflight, artifactError);
@@ -523,11 +552,18 @@ int generate(const Options &options, JSON manifest, const fs::path &reports,
     estimate["estimated_ir_hash"] = stableFileHash((intermediate / "estimated.bc").string());
     writeJSON(estimatePath, estimate);
     if (options.estimateOnly && options.latencyModel == "heuristic") {
+        if (floatingPoint) {
+            estimate["valid"] = false;
+            estimate["status"] = "unsupported_floating_heuristic";
+            writeJSON(estimatePath, estimate);
+            require(false, "Floating-point RL estimation requires scheduled latency; heuristic rewards are not calibrated for HardFloat");
+        }
         audit["status"] = estimate.at("status");
         audit["estimated_ir_hash"] = estimate.at("estimated_ir_hash");
         audit["loop_labels"] = labels;
         audit["loop_trip_counts"] = trips;
-        audit["pass_sequence"] = {"mem2reg(legalization)", "lower-switch(legalization)",
+        audit["pass_sequence"] = {"constant-memory-initializers-v1", "scalar-libm-no-errno-v1", "optional-fmuladd-unfused-v1",
+            "mem2reg(legalization)", "lower-switch(legalization)",
             "loop-simplify(legalization)", "lcssa(legalization)",
             "HI_BackendValidation(preflight)", "HI_IR2SourceCode", "HI_ArrayInfo",
             "HI_WithDirectiveTimingResourceEvaluation"};
@@ -605,9 +641,11 @@ int generate(const Options &options, JSON manifest, const fs::path &reports,
         configuration.arrayPartitions.push_back({entry.first, entry.second.first, PartitionKind::Complete,
             static_cast<unsigned>(entry.second.second), 0});
     configuration.pragmas.arrayPartitionCount = configuration.arrayPartitions.size();
-    configuration.passSequence = {"mem2reg(legalization)", "lower-switch(legalization)",
+    configuration.passSequence = {"direct-helper-inlining-v1", "constant-expression-materialization-v1",
+        "constant-memory-initializers-v1", "same-base-pointer-phi-v1", "scalar-libm-no-errno-v1", "optional-fmuladd-unfused-v1",
+        "mem2reg(legalization)", "lower-switch(legalization)",
         "loop-simplify(legalization)", "lcssa(legalization)", "HI_IR2SourceCode", "HI_ArrayInfo",
-        "HI_WithDirectiveTimingResourceEvaluation", "HI_BackendValidation(pre_backend)",
+        "HI_WithDirectiveTimingResourceEvaluation", "HI_PredicatedLoopLowering", "HI_BackendValidation(pre_backend)",
         "HI_MemoryObjectAnalysis", "HI_LoopPipelineAnalysis", "HI_ArrayPartitionAnalysis",
         "HI_StorageBindingAnalysis", "HI_BackendDependenceAnalysis", "HI_OperationScheduling",
         "HI_PipelineStorageAnalysis", "HI_ResourceBinding", "HI_RTLGeneration",
@@ -633,6 +671,7 @@ int generate(const Options &options, JSON manifest, const fs::path &reports,
     audit["status"] = "backend_started";
     writeJSON(reports / "dapo_ir_audit.json", audit);
     legacy::PassManager passes;
+    passes.add(new HI_PredicatedLoopLowering(backend));
     passes.add(new HI_BackendValidation(backend, ValidationStage::PreBackend));
     passes.add(new HI_MemoryObjectAnalysis(backend));
     passes.add(new HI_LoopPipelineAnalysis(backend));
@@ -641,6 +680,8 @@ int generate(const Options &options, JSON manifest, const fs::path &reports,
     passes.add(new HI_BackendDependenceAnalysis(backend));
     passes.add(new HI_OperationScheduling(backend));
     passes.run(*module);
+    writeIR(*module, intermediate / "backend_lowered.bc");
+    estimate["predicated_pipeline_loops"] = backend->predicatedPipelineLoops;
     if (options.latencyModel != "heuristic") {
         require(backend->top != nullptr, "Scheduled estimator could not resolve the top function");
         auto scheduled = ScheduledLatencyAnalysis(*backend, *backend->top).run();
@@ -655,6 +696,8 @@ int generate(const Options &options, JSON manifest, const fs::path &reports,
             {"assumptions", "Fixed-latency backend memory protocol; no external backpressure. Bounds do not model correlations between input-dependent branches."}};
         for (const auto &loop : scheduled.loops)
             details["loops"].push_back({{"header", loop.header}, {"backedges", loop.backedges},
+                {"minimum_backedges", loop.minimumBackedges}, {"constant_backedges", loop.constantBackedges},
+                {"backedge_bound_source", loop.backedgeBoundSource},
                 {"repeat", rangeJSON(loop.repeat)}, {"exit", rangeJSON(loop.exit)},
                 {"total", rangeJSON(loop.total)}});
         for (const auto &block : backend->schedule.blocks)
@@ -672,18 +715,35 @@ int generate(const Options &options, JSON manifest, const fs::path &reports,
             estimate["valid"] = true;
             estimate["status"] = "estimate_completed";
         }
-        if (backend->hasErrors() || (!scheduled.valid && options.latencyModel == "scheduled")) {
+        if (backend->hasErrors() || (!scheduled.valid && (options.latencyModel == "scheduled" || floatingPoint))) {
             estimate["valid"] = false;
             estimate["status"] = "invalid_scheduled_estimate";
             estimate["selected_latency_cycles"] = nullptr;
         }
         writeJSON(estimatePath, estimate);
     }
+    if (backend->hasErrors()) {
+        std::string artifactError;
+        require(emitBackendArtifacts(*backend, artifactError), artifactError);
+        for (const auto &diagnostic : backend->diagnostics)
+            if (diagnostic.severity == light_hls::backend::DiagnosticSeverity::Error)
+                errs() << "Light-HLS DAPO error [" << diagnostic.code << "]: " << diagnostic.message << '\n';
+    }
     if (options.estimateOnly) {
+        legacy::PassManager bindingPasses;
+        bindingPasses.add(new HI_PipelineStorageAnalysis(backend));
+        bindingPasses.add(new HI_ResourceBinding(backend));
+        bindingPasses.run(*module);
+        estimate["floating_operator_resources"] = JSON::parse(floatingResourceEstimateJSON(*backend));
+        if (backend->hasErrors()) {
+            estimate["valid"] = false;
+            estimate["status"] = "resource_binding_failed";
+        }
+        writeJSON(estimatePath, estimate);
         audit["pass_sequence"] = JSON::array();
         for (const auto &pass : configuration.passSequence) {
             audit["pass_sequence"].push_back(pass);
-            if (pass == "HI_OperationScheduling") break;
+            if (pass == "HI_ResourceBinding") break;
         }
         audit["status"] = estimate.at("valid").get<bool>() ? "estimate_completed" : "invalid_scheduled_estimate";
         writeJSON(reports / "dapo_ir_audit.json", audit);
@@ -702,6 +762,8 @@ int generate(const Options &options, JSON manifest, const fs::path &reports,
     remaining.add(new HI_VerilogEmission(backend));
     remaining.add(new HI_RTLSynthesis(backend));
     remaining.run(*module);
+    estimate["floating_operator_resources"] = JSON::parse(floatingResourceEstimateJSON(*backend));
+    writeJSON(estimatePath, estimate);
     audit["status"] = backend->hasErrors() ? "backend_failed" : "rtl_generated";
     writeJSON(reports / "dapo_ir_audit.json", audit);
     for (const auto &diagnostic : backend->diagnostics)

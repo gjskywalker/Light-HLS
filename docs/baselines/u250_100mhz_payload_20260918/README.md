@@ -33,4 +33,4 @@ Final compiler SHA256:
 
 Raw projects, logs, RTL, checkpoints, and compiler snapshots remain under
 `/tmp/lighthls-local-mux-qor-20260918.4T7n35/`. Earlier archives are untouched.
-See [implementation and limitations](../../LOCAL_MEMORY_PAYLOAD_OPTIMIZATION_20260918.md).
+See [implementation and limitations](../../logs/LOCAL_MEMORY_PAYLOAD_OPTIMIZATION_20260918.md).

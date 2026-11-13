@@ -50,7 +50,7 @@ class ScheduledLatencyTests(unittest.TestCase):
             command.append("--estimate-only")
         return run(command, target)
 
-    def test_frozen_ir_predictions_and_unchanged_rtl(self):
+    def test_frozen_ir_predictions_and_fresh_rtl(self):
         points = [(name, variant, REFERENCE) for name in ("substring", "getTanh", "bnn")
                   for variant in ("baseline", "rl_seed_0")]
         points.append(("substring", "rl_seed_0", OLD))
@@ -65,8 +65,18 @@ class ScheduledLatencyTests(unittest.TestCase):
                 report = read(target / "reports/estimate/dapo_estimate.json")
                 prior = read(reference / "reports/estimate/pre_backend_estimate.json")
                 self.assertEqual(report["latency_cycles"], prior["latency_cycles"])
-                self.assertEqual(sha(target / "reports/rtl/top.v"), sha(reference / "reports/rtl/top.v"))
-                cycles = [item["cycles"] for item in read(reference / "validation/verification.json")["cases"]]
+                # Frozen IR remains a regression input, not a byte-exact RTL
+                # snapshot across compiler revisions. Recheck actual behavior
+                # against source and native IR whenever emission changes.
+                validation = target / "fresh_validation"
+                checked = run(["python3", ROOT / "Light_HLS/Tests/DAPOII/verify_rtl.py",
+                    "--design", name, "--reports", target / "reports", "--ir", candidate["ir"],
+                    "--output", validation, "--cases", "4"], target, "verify")
+                self.assertEqual(checked.returncode, 0, checked.stdout[-3000:] + checked.stderr[-3000:])
+                checked_report = read(validation / "verification.json")
+                self.assertTrue(checked_report["rtl_correct"])
+                self.assertEqual(checked_report["native_ir_equivalence"], "passed")
+                cycles = [item["cycles"] for item in checked_report["cases"]]
                 scheduled = report["scheduled_latency"]
                 if scheduled["valid"]:
                     bounds = scheduled["cycles"]
@@ -91,7 +101,7 @@ class ScheduledLatencyTests(unittest.TestCase):
         self.assertLess(older["scheduled"]["cycles"]["maximum"], newer["scheduled"]["cycles"]["maximum"])
         self.assertLess(older["rtl_cycles"][0], newer["rtl_cycles"][0])
 
-    def test_estimate_only_stops_before_binding_and_rtl(self):
+    def test_estimate_only_binds_resources_without_emitting_rtl(self):
         for name in ("substring", "bnn", "getTanh"):
             with self.subTest(name=name):
                 candidate = read(REFERENCE / name / "baseline/candidate.json")
@@ -99,7 +109,7 @@ class ScheduledLatencyTests(unittest.TestCase):
                 result = self.invoke(candidate["ir"], candidate["backend_manifest"], target, estimate=True)
                 self.assertEqual(result.returncode, 0, result.stderr[-3000:])
                 audit = read(target / "reports/dapo_ir_audit.json")
-                self.assertEqual(audit["pass_sequence"][-1], "HI_OperationScheduling")
+                self.assertEqual(audit["pass_sequence"][-1], "HI_ResourceBinding")
                 self.assertFalse((target / "reports/rtl/top.v").exists())
                 report = read(target / "reports/estimate/dapo_estimate.json")
                 self.assertIn("scheduled_latency", report)
@@ -116,8 +126,25 @@ class ScheduledLatencyTests(unittest.TestCase):
         manifest = prepared / "reports/dapo_manifest.json"
         return target, manifest, read(manifest)["ir"]
 
-    def test_unknown_trip_count_is_not_presented_as_exact(self):
+    def test_bounded_dynamic_trip_count_is_an_interval(self):
         root, manifest, ir = self.fixture("unknown", "unsigned n=x&7; for(unsigned i=0;i<n;++i) x=x*3+1; return x;")
+        strict = root / "strict"
+        result = self.invoke(ir, manifest, strict, model="scheduled", estimate=True)
+        self.assertEqual(result.returncode, 0, result.stderr[-2000:])
+        report = read(strict / "reports/estimate/dapo_estimate.json")
+        self.assertTrue(report["valid"])
+        self.assertTrue(report["scheduled_latency"]["valid"])
+        self.assertFalse(report["scheduled_latency"]["cycles"]["constant"])
+        self.assertEqual(report["selected_latency_cycles"], report["scheduled_latency"]["cycles"]["maximum"])
+        fallback = root / "hybrid"
+        result = self.invoke(ir, manifest, fallback, estimate=True)
+        self.assertEqual(result.returncode, 0, result.stderr[-2000:])
+        report = read(fallback / "reports/estimate/dapo_estimate.json")
+        self.assertEqual(report["selected_latency_model"], "scheduled_cfg_v1")
+        self.assertTrue(report["scheduled_latency"]["valid"])
+
+    def test_unproven_termination_is_still_rejected(self):
+        root, manifest, ir = self.fixture("unbounded", "while(x!=1) x=x*3+1; return x;")
         strict = root / "strict"
         result = self.invoke(ir, manifest, strict, model="scheduled", estimate=True)
         self.assertNotEqual(result.returncode, 0)
@@ -125,12 +152,6 @@ class ScheduledLatencyTests(unittest.TestCase):
         self.assertFalse(report["valid"])
         self.assertIsNone(report["selected_latency_cycles"])
         self.assertIn("Nonconstant", report["scheduled_latency"]["reason"])
-        fallback = root / "hybrid"
-        result = self.invoke(ir, manifest, fallback, estimate=True)
-        self.assertEqual(result.returncode, 0, result.stderr[-2000:])
-        report = read(fallback / "reports/estimate/dapo_estimate.json")
-        self.assertEqual(report["selected_latency_model"], "heuristic_fallback")
-        self.assertFalse(report["scheduled_latency"]["valid"])
 
     def test_loop_shapes_against_fresh_iverilog(self):
         fixtures = {

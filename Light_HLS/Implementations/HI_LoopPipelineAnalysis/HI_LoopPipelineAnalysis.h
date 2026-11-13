@@ -4,6 +4,16 @@
 #include "HI_BackendContext.h"
 #include "llvm/Pass.h"
 
+class HI_PredicatedLoopLowering : public llvm::ModulePass
+{
+public:
+    static char ID;
+    explicit HI_PredicatedLoopLowering(light_hls::backend::HLSBackendContextPtr context);
+    bool runOnModule(llvm::Module &module) override;
+private:
+    light_hls::backend::HLSBackendContextPtr context;
+};
+
 class HI_LoopPipelineAnalysis : public llvm::ModulePass
 {
 public:

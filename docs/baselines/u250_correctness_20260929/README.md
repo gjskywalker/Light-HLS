@@ -1,7 +1,7 @@
 # U250 correctness checkpoint, September 29
 
 This archive records bounded correctness closure, not RL results or board
-timing signoff. See [the engineering notes](../../RTL_CORRECTNESS_CLOSURE_20260929.md)
+timing signoff. See [the engineering notes](../../logs/RTL_CORRECTNESS_CLOSURE_20260929.md)
 for interface semantics, limitations, and reproduction commands.
 
 - `manifest.json`: release compiler fingerprint, checked artifact hashes,

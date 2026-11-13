@@ -9,3 +9,5 @@ add_definitions(${LLVM_DEFINITIONS})
 
 aux_source_directory(. DIR_HI_BACKEND_COMMON_SRCS)
 add_library(HI_BackendCommon ${DIR_HI_BACKEND_COMMON_SRCS})
+target_compile_definitions(HI_BackendCommon PRIVATE
+    LIGHT_HLS_FP_RESOURCE_MODEL="${CMAKE_CURRENT_SOURCE_DIR}/../../RTL/floating_resources_u250.cfg")

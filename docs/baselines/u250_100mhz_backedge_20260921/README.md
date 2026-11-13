@@ -1,6 +1,6 @@
 # September 21 same-edge backedge evidence
 
-See the [checkpoint notes](../../ORDINARY_BACKEDGE_BYPASS_20260921.md) for the
+See the [checkpoint notes](../../logs/ORDINARY_BACKEDGE_BYPASS_20260921.md) for the
 safety contract, measured improvement, remaining gaps, and reproduction.
 
 The seventeen generated files in this directory are byte-identical copies:

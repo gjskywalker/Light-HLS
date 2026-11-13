@@ -1,0 +1,179 @@
+{
+  "valid": false,
+  "expected_suites": 9,
+  "results": [
+    {
+      "name": "floating_ir",
+      "command": [
+        "taskset",
+        "-c",
+        "1",
+        "/usr/bin/python3",
+        "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/DAPOII/verify_floating.py",
+        "--binary",
+        "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+        "--random-cases",
+        "100",
+        "--output",
+        "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/floating_ir"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "elapsed_seconds": 13.302,
+      "script_sha256": "f9461e90c1d7fe28062faf8ec9999c618365a763d6d36ef4ea583155e45deccb"
+    },
+    {
+      "name": "floating_classic",
+      "command": [
+        "taskset",
+        "-c",
+        "1",
+        "/usr/bin/python3",
+        "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/DAPOII/verify_floating.py",
+        "--binary",
+        "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+        "--classic-binary",
+        "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_Top",
+        "--random-cases",
+        "100",
+        "--output",
+        "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/floating_classic"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "elapsed_seconds": 13.853,
+      "script_sha256": "f9461e90c1d7fe28062faf8ec9999c618365a763d6d36ef4ea583155e45deccb"
+    },
+    {
+      "name": "native_half",
+      "command": [
+        "taskset",
+        "-c",
+        "1",
+        "/usr/bin/python3",
+        "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/DAPOII/verify_floating.py",
+        "--binary",
+        "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+        "--formats",
+        "16",
+        "--native-half",
+        "--random-cases",
+        "100",
+        "--output",
+        "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/native_half"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "elapsed_seconds": 10.527,
+      "script_sha256": "f9461e90c1d7fe28062faf8ec9999c618365a763d6d36ef4ea583155e45deccb"
+    },
+    {
+      "name": "fp_conversions",
+      "command": [
+        "taskset",
+        "-c",
+        "1",
+        "/usr/bin/python3",
+        "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/DAPOII/verify_fp_conversions.py",
+        "--binary",
+        "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+        "--output",
+        "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/fp_conversions"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "elapsed_seconds": 10.977,
+      "script_sha256": "913cd115f71278e8d94ad3a724b12f364b47fbd1902cc5fedda68cdd3876f2e1"
+    },
+    {
+      "name": "fp_math",
+      "command": [
+        "taskset",
+        "-c",
+        "1",
+        "/usr/bin/python3",
+        "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/DAPOII/verify_fp_math.py",
+        "--binary",
+        "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+        "--random-cases",
+        "1000",
+        "--output",
+        "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/fp_math"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "elapsed_seconds": 2.417,
+      "script_sha256": "4f1f68148312ee44cc5322d2d3b8de2df9f95228dde5027bc4130251363ce503"
+    },
+    {
+      "name": "fp_scheduled",
+      "command": [
+        "taskset",
+        "-c",
+        "1",
+        "/usr/bin/python3",
+        "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/DAPOII/verify_fp_scheduled.py",
+        "--binary",
+        "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+        "--output",
+        "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/fp_scheduled"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "elapsed_seconds": 119.632,
+      "script_sha256": "58cd351229c5dd8e9b48fabe2ce50ee516af6a889329a3d70239487616006ed0"
+    },
+    {
+      "name": "fp_fifo",
+      "command": [
+        "taskset",
+        "-c",
+        "1",
+        "/usr/bin/python3",
+        "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/DAPOII/verify_fp_fifo.py",
+        "--binary",
+        "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_Top",
+        "--output",
+        "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/fp_fifo"
+      ],
+      "returncode": 1,
+      "status": "FAIL",
+      "elapsed_seconds": 0.164,
+      "script_sha256": "91828e6863704a2226de8645fe280d3ddb27cc619ac5e2f5d1683f7011771ece"
+    },
+    {
+      "name": "expression_grouping",
+      "command": [
+        "taskset",
+        "-c",
+        "1",
+        "/usr/bin/python3",
+        "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/DAPOII/verify_expression_grouping.py",
+        "--binary",
+        "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+        "--output",
+        "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/expression_grouping"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "elapsed_seconds": 92.596,
+      "script_sha256": "c9c369219040c0e95b4edf734460afeb820afcbf822f8cac94d6d9dd2d36dd94"
+    },
+    {
+      "name": "source_repairs",
+      "command": [
+        "taskset",
+        "-c",
+        "1",
+        "/usr/bin/python3",
+        "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/DAPOII/verify_source_repairs.py",
+        "--output",
+        "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs"
+      ],
+      "returncode": 0,
+      "status": "PASS",
+      "elapsed_seconds": 76.454,
+      "script_sha256": "3ecdb4a403903b74bfce256a8777c6805169b1513e6fdb13ad6c07541c52cce4"
+    }
+  ]
+}

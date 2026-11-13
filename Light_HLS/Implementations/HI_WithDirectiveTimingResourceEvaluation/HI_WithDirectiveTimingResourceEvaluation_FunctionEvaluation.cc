@@ -635,6 +635,8 @@ void HI_WithDirectiveTimingResourceEvaluation::functionDataflowCheck(Function *F
             {
                 if (info.elementType->isIntegerTy())
                     bitwidth = info.elementType->getIntegerBitWidth();
+                else if (info.elementType->isHalfTy())
+                    bitwidth = 16;
                 else if (info.elementType->isFloatTy())
                     bitwidth = 32;
                 else if (info.elementType->isDoubleTy())

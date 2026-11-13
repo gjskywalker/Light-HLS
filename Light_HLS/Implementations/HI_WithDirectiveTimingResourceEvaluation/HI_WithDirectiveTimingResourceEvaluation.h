@@ -2181,7 +2181,7 @@ public:
         }
         else
         {
-            if (lhs.opI->getType()->isDoubleTy() != rhs.opI->getType()->isDoubleTy())
+            if (lhs.opI->getType() != rhs.opI->getType())
                 return false;
         }
 

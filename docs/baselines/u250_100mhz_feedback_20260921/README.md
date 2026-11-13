@@ -1,6 +1,6 @@
 # September 21 ordinary-feedback optimization evidence
 
-See the [checkpoint notes](../../ORDINARY_FEEDBACK_OPTIMIZATION_20260921.md)
+See the [checkpoint notes](../../logs/ORDINARY_FEEDBACK_OPTIMIZATION_20260921.md)
 for implementation boundaries, interpretation, reproduction, and remaining work.
 
 All twelve generated files below are byte-identical copies of raw outputs:

@@ -1,0 +1,11 @@
+RESULT 5 2 0 362
+PASS: a=5 b=2 mode=0 result=362 cycles=6
+RESULT 7 3 1 832
+PASS: a=7 b=3 mode=1 result=832 cycles=6
+RESULT 9 4 2 678
+PASS: a=9 b=4 mode=2 result=678 cycles=6
+RESULT 11 6 3 1307
+PASS: a=11 b=6 mode=3 result=1307 cycles=6
+ALL BACKEND SCALAR TESTS PASSED
+ALL AP_MEMORY TESTS PASSED cycles=24
+Preserving failed test artifacts: /tmp/light-hls-rtl-test.UrKXeH

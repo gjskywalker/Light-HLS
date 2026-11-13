@@ -1,0 +1,50 @@
+Light-HLS App Capability Matrix
+One representative compilation per App directory
+
++---------------------------------+----------------+-------------------------+-------+------------+-----------+------------------------------------------+
+| App                             | Expected       | Actual                  | RTL   | Functional | Training  | Reason                                   |
++---------------------------------+----------------+-------------------------+-------+------------+-----------+------------------------------------------+
+| 2dloop1darray_notpl             | success        | PASS                    | yes   | yes        | yes       |                                          |
+| 2dloop1darray_pl                | success        | PASS                    | yes   | no         | no        |                                          |
+| 2dloop2darray_ifinloop          | success        | PASS                    | yes   | no         | no        |                                          |
+| 2dloop2darray_notpl             | success        | PASS                    | yes   | no         | no        |                                          |
+| 2dloop2darray_pl                | failure        | EXPECTED_REJECTION      | no    | no         | no        | statically provable out-of-bounds sou... |
+| 2dloop2darray_pl_apint          | failure        | EXPECTED_REJECTION      | no    | no         | no        | ap_int                                   |
+| 2dloop2darray_pl_brAccess       | success        | PASS                    | yes   | no         | no        |                                          |
+| 2dloop2darray_pl_depCheck       | failure        | EXPECTED_REJECTION      | no    | no         | no        | statically provable out-of-bounds sou... |
+| 2dloop2darray_pl_functionAccess | success        | PASS                    | yes   | no         | no        |                                          |
+| 2dloop2darray_pl_indeploop      | failure        | EXPECTED_REJECTION      | no    | no         | no        | statically provable out-of-bounds sou... |
+| 2dloop2darray_pl_moreAccess     | success        | PASS                    | yes   | no         | no        |                                          |
+| 2dloop2darray_pl_multest        | failure        | EXPECTED_REJECTION      | no    | no         | no        | statically provable out-of-bounds sou... |
+| 2dloop2darray_pl_s              | success        | PASS                    | yes   | no         | no        |                                          |
+| 2dloop2darray_pl_subf           | success        | PASS                    | yes   | no         | no        |                                          |
+| 2dloop2darray_pl_subf2          | success        | PASS                    | yes   | no         | no        |                                          |
+| 2dloop2darray_struct            | failure        | EXPECTED_REJECTION      | no    | no         | no        | structure and floating-point memory e... |
+| 2dloop2darray_win_filter        | failure        | EXPECTED_REJECTION      | no    | no         | no        | hls::Window method calls                 |
+| 2mm                             | success        | PASS                    | yes   | no         | no        |                                          |
+| Subfunctions                    | success        | PASS                    | yes   | no         | no        |                                          |
+| allocation_free                 | failure        | EXPECTED_REJECTION      | no    | no         | no        | dynamic allocation and free              |
+| backend_array_partition         | success        | PASS                    | yes   | yes        | yes       |                                          |
+| backend_dual_memory             | success        | PASS                    | yes   | yes        | yes       |                                          |
+| backend_expression              | success        | PASS                    | yes   | no         | no        |                                          |
+| backend_floating                | success        | PASS                    | yes   | no         | no        |                                          |
+| backend_local_memory            | success        | PASS                    | yes   | yes        | yes       |                                          |
+| backend_memory_depth            | success        | PASS                    | yes   | yes        | yes       |                                          |
+| backend_pipeline                | success        | PASS                    | yes   | yes        | yes       |                                          |
+| backend_scalar                  | success        | PASS                    | yes   | yes        | yes       |                                          |
+| backend_storage_binding         | success        | PASS                    | yes   | yes        | yes       |                                          |
+| backend_types                   | not_applicable | NOT_APPLICABLE          | no    | no         | no        | empty placeholder directory              |
+| bin_conv                        | failure        | EXPECTED_REJECTION      | no    | no         | no        | ap_int                                   |
+| conv                            | success        | PASS                    | yes   | no         | no        |                                          |
+| correlation                     | failure        | EXPECTED_REJECTION      | no    | no         | no        | nonstandard sqrtf0/sqrtf1 declaration... |
+| deriche                         | success        | PASS                    | yes   | no         | no        |                                          |
+| extremeLoop                     | success        | PASS                    | yes   | yes        | yes       |                                          |
+| fdtd2d                          | success        | PASS                    | yes   | no         | no        |                                          |
+| jacobi                          | success        | PASS                    | yes   | no         | no        |                                          |
+| light_hls_dataflow              | success        | PASS                    | yes   | yes        | yes       |                                          |
+| spam-filter                     | success        | PASS                    | yes   | yes        | yes       |                                          |
++---------------------------------+----------------+-------------------------+-------+------------+-----------+------------------------------------------+
+
+PASS means RTL generation and Icarus syntax validation succeeded.
+Training eligibility additionally requires a passing functional regression.
+EXPECTED_REJECTION identifies a documented unsupported feature.

@@ -1,6 +1,6 @@
 # U250 ordinary outer-edge checkpoint
 
-See [the implementation and results](../../ORDINARY_OUTER_EDGES_20260922.md).
+See [the implementation and results](../../logs/ORDINARY_OUTER_EDGES_20260922.md).
 All 19 generated evidence files beside this README are byte-for-byte copies
 of their raw reports, verified with `cmp`; measurements were not hand-edited.
 

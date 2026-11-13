@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-13",
+  "timezone": "Asia/Hong_Kong",
+  "source_root": "/home/eeuser/Desktop/DAPO_II",
+  "source_head": "024e088d4f53f863e9cf1b4558d222927232963c",
+  "input_snapshot": "uncommitted_worktree_with_per_file_hashes",
+  "llvm": "18.0.0git",
+  "clang": "clang version 18.0.0 (git@github.com:llvm/llvm-project.git bde5717d4638c27614d9d4a2e53df27087a69841)",
+  "cmake": "cmake version 3.22.1",
+  "linker": "GNU ld (GNU Binutils for Ubuntu) 2.38",
+  "iverilog": "Icarus Verilog version 11.0 (stable) ()",
+  "vivado": "2025.2",
+  "binaries": {
+    "Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_Top": "4aa373774864d1fb2b3784fc79bc68f11840722e8d37414a718ddca72a9b96f7",
+    "Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO": "ce7620cad8f23b5b4ee0f8fcbd26b3012bbf8b00ec3d8cbeda25af02c4685d1a"
+  },
+  "build_command": "taskset -c 2 Light_HLS/Tests/Light_HLS_Top/Build.sh -DLLVM_DIR=/usr/local/lib/cmake/llvm -DPolly_DIR=/usr/local/lib/cmake/polly -DHI_USE_LLD=OFF -DHI_LEARNER_BUILD_JOBS=4",
+  "library_path": "/home/eeuser/Desktop/Light-HLS/Light_HLS/HLS_Data_Lib",
+  "evidence_note": "核心汇总合并完整运行和两组定向复验，保留失败记录；source_repairs 为本次同步早期运行，输入哈希未变，不依赖编译器二进制。",
+  "selected_source_entries": 891,
+  "status_counts": {
+    "identical": 882,
+    "standalone_build": 2,
+    "reject_unsupported_ap_int_interface": 1,
+    "attainable_fixed_trip_bounds": 1,
+    "updated_capability_contract": 1,
+    "iverilog_explicit_top": 1,
+    "new_report_fields": 2,
+    "dataflow_task_boundaries": 1
+  }
+}

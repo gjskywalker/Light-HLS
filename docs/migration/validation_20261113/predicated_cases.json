@@ -1,0 +1,1293 @@
+{
+  "binary": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+  "binary_sha256": "ce7620cad8f23b5b4ee0f8fcbd26b3012bbf8b00ec3d8cbeda25af02c4685d1a",
+  "binary_unchanged": true,
+  "results": [
+    {
+      "name": "backend_guarded_address",
+      "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_guarded_address.cc",
+      "source_sha256": "4cb9249b878fd05297eace3c57102a0125d4d81c0b3d8dc1123652567894ac67",
+      "commands": [
+        {
+          "label": "prepare",
+          "command": [
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+            "--prepare-source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_guarded_address.cc",
+            "dut",
+            "--board",
+            "u250",
+            "--freq",
+            "100MHz",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_guarded_address/prepared"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "generate",
+          "command": [
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_guarded_address/prepared/reports/.lighthls/prepared.bc",
+            "dut",
+            "--manifest",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_guarded_address/prepared/reports/dapo_manifest.json",
+            "--board",
+            "u250",
+            "--freq",
+            "100MHz",
+            "--latency-model",
+            "scheduled",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_guarded_address/generated"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "verify",
+          "command": [
+            "/usr/bin/python3",
+            "/home/eeuser/Desktop/Light-HLS/experiments/dapo_ii_cross_validation/verify_design.py",
+            "--source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_guarded_address.cc",
+            "--reports",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_guarded_address/generated/reports",
+            "--ir",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_guarded_address/prepared/reports/.lighthls/prepared.bc",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_guarded_address/verification",
+            "--cases",
+            "4"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "verify_lowered",
+          "command": [
+            "/usr/bin/python3",
+            "/home/eeuser/Desktop/Light-HLS/experiments/dapo_ii_cross_validation/verify_design.py",
+            "--source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_guarded_address.cc",
+            "--reports",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_guarded_address/generated/reports",
+            "--ir",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_guarded_address/generated/reports/.lighthls/backend_lowered.bc",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_guarded_address/verification_lowered",
+            "--cases",
+            "4"
+          ],
+          "returncode": 0
+        }
+      ],
+      "prepared": true,
+      "compiled": true,
+      "verified": true,
+      "verification": {
+        "cases": [
+          {
+            "cycles": 22,
+            "input_sha256": "5d89f056865052bcb89c910d2d62872e029fb273c3db03f8968a52a41593c1b5",
+            "last_write_cycle": -1,
+            "reads": 16,
+            "reference_sha256": "d904e1f1e028ba9058a128a6fd724f0f9892ae8fe49c8f7dc2613183f7f8bbca",
+            "return": 0,
+            "trial": 0,
+            "writes": 0
+          },
+          {
+            "cycles": 22,
+            "input_sha256": "70c4404b556709021e66d0be0af8d6f21c5f0dd12a2354ffe7cd2f10879a5d11",
+            "last_write_cycle": -1,
+            "reads": 16,
+            "reference_sha256": "38f503ad1a45e742d532675c3b296392ef3ec95ef74213d47fe27a061a971611",
+            "return": 0,
+            "trial": 1,
+            "writes": 0
+          },
+          {
+            "cycles": 22,
+            "input_sha256": "32e0a24c37ee5e68c480e4bdc91647f3139047c1f01ce22639c3f645bd7c5930",
+            "last_write_cycle": 21,
+            "reads": 21,
+            "reference_sha256": "0e9ea7a1a1ae3e34f090845709b73c958507529d80cf5ee4ac08348b08c0f34a",
+            "return": 0,
+            "trial": 2,
+            "writes": 5
+          },
+          {
+            "cycles": 22,
+            "input_sha256": "9fa7261c17d35763768a781ec63660ab2a1d52c3fdc884c53e52272ce4816565",
+            "last_write_cycle": 20,
+            "reads": 22,
+            "reference_sha256": "de049fc560909a76e2e033fc652fd4cdc555edd0ba8a600d62d555013d52c6cc",
+            "return": 0,
+            "trial": 3,
+            "writes": 6
+          }
+        ],
+        "coverage": "Four bounded deterministic input patterns, with audited kernel-specific domain constraints. No exhaustive equivalence claim; no cross-argument aliasing; ASan/UBSan do not prove absence of all UB.",
+        "interface": {
+          "arguments": [
+            {
+              "base": "int",
+              "const": false,
+              "depth": 16,
+              "dimensions": [
+                16
+              ],
+              "name": "input",
+              "type": "int *"
+            },
+            {
+              "base": "int",
+              "const": false,
+              "depth": 16,
+              "dimensions": [
+                16
+              ],
+              "name": "indices",
+              "type": "int *"
+            },
+            {
+              "base": "int",
+              "const": false,
+              "depth": 16,
+              "dimensions": [
+                16
+              ],
+              "name": "output",
+              "type": "int *"
+            }
+          ],
+          "return_type": "void",
+          "symbol": "_Z3dutPiS_S_"
+        },
+        "ir": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_guarded_address/prepared/reports/.lighthls/prepared.bc",
+        "ir_sha256": "0a91d125803640b7978a523bcafced1a33553bbb2c5ce042a573df8a62c48cce",
+        "latency_definition": "Rising edges from accepted ap_start&&ap_ready to observed ap_done; final memory write reported separately.",
+        "memory_contract": "Independent typed scalar arrays, one-cycle read-first RAM, same-address simultaneous writes rejected; NaN payloads may differ, all other bits must match.",
+        "native_ir_equivalence": "passed",
+        "reference_asan_ubsan": true,
+        "requested_cases": 4,
+        "reset_protocol": "Warm second call; reset between subsequent pairs; no reset-abort coverage.",
+        "rtl_correct": true,
+        "rtl_sha256": "a23a41cb0fc5e30c3c6af14fc145b0ea91947214bdd335071d5ad6db86403ecb",
+        "sanitizer_options": {
+          "ASAN_OPTIONS": "detect_leaks=0",
+          "reason": "LeakSanitizer is incompatible with ptrace; address and undefined-behavior checks remain enabled."
+        },
+        "schema_version": "cv_verification_v1",
+        "seed": 17,
+        "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_guarded_address.cc",
+        "source_sha256": "4cb9249b878fd05297eace3c57102a0125d4d81c0b3d8dc1123652567894ac67",
+        "status": "passed"
+      },
+      "lowered_ir_verified": true,
+      "cycle_envelope": {
+        "constant": true,
+        "maximum": 22,
+        "minimum": 22
+      },
+      "cycles_in_envelope": true
+    },
+    {
+      "name": "backend_pointer_phi",
+      "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_pointer_phi.cc",
+      "source_sha256": "063ff6f5bdc6e6fecb259a3985e055e9ea453f7b0c6c86cfd49057bec01477df",
+      "commands": [
+        {
+          "label": "prepare",
+          "command": [
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+            "--prepare-source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_pointer_phi.cc",
+            "dut",
+            "--board",
+            "u250",
+            "--freq",
+            "100MHz",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_pointer_phi/prepared"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "generate",
+          "command": [
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_pointer_phi/prepared/reports/.lighthls/prepared.bc",
+            "dut",
+            "--manifest",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_pointer_phi/prepared/reports/dapo_manifest.json",
+            "--board",
+            "u250",
+            "--freq",
+            "100MHz",
+            "--latency-model",
+            "scheduled",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_pointer_phi/generated"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "verify",
+          "command": [
+            "/usr/bin/python3",
+            "/home/eeuser/Desktop/Light-HLS/experiments/dapo_ii_cross_validation/verify_design.py",
+            "--source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_pointer_phi.cc",
+            "--reports",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_pointer_phi/generated/reports",
+            "--ir",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_pointer_phi/prepared/reports/.lighthls/prepared.bc",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_pointer_phi/verification",
+            "--cases",
+            "4"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "verify_lowered",
+          "command": [
+            "/usr/bin/python3",
+            "/home/eeuser/Desktop/Light-HLS/experiments/dapo_ii_cross_validation/verify_design.py",
+            "--source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_pointer_phi.cc",
+            "--reports",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_pointer_phi/generated/reports",
+            "--ir",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_pointer_phi/generated/reports/.lighthls/backend_lowered.bc",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_pointer_phi/verification_lowered",
+            "--cases",
+            "4"
+          ],
+          "returncode": 0
+        }
+      ],
+      "prepared": true,
+      "compiled": true,
+      "verified": true,
+      "verification": {
+        "cases": [
+          {
+            "cycles": 32,
+            "input_sha256": "38723a2e5e8a17aa7950dc008209944e898f69a7bd10a23c839d341e935fd5ca",
+            "last_write_cycle": 32,
+            "reads": 16,
+            "reference_sha256": "115bad14f1c9f2c027a84de21b107015722cb76be8d0abf3760ad8e00d6c24a5",
+            "return": 0,
+            "trial": 0,
+            "writes": 16
+          },
+          {
+            "cycles": 32,
+            "input_sha256": "f91db59bf0e1e12ed43b683cacbc590310a5b88e2d31b3d7ee24b8634776a9e5",
+            "last_write_cycle": 32,
+            "reads": 16,
+            "reference_sha256": "4ce954cf8975ff89cdbc3e3b1fe5ca22b806a405ffc3706e10e4c14c1877a4a7",
+            "return": 0,
+            "trial": 1,
+            "writes": 16
+          },
+          {
+            "cycles": 32,
+            "input_sha256": "61ed824116d1f7220018f965f36655289d46ec4412607ec9f178bf9dc20a27b4",
+            "last_write_cycle": 32,
+            "reads": 16,
+            "reference_sha256": "7ef5bf56147c24bd9c55c737be2e00bdea9aa1048bc3cd4c12d377c339ff79e3",
+            "return": 0,
+            "trial": 2,
+            "writes": 16
+          },
+          {
+            "cycles": 32,
+            "input_sha256": "2af48b6f0d4a18108a2a414e39c023afcd7b9e58496b8019e96c31162e437939",
+            "last_write_cycle": 32,
+            "reads": 16,
+            "reference_sha256": "7f4ba735a1f26745247cc63a39cb9be9f9ef6b52f033f21324e493cd0168ac3f",
+            "return": 0,
+            "trial": 3,
+            "writes": 16
+          }
+        ],
+        "coverage": "Four bounded deterministic input patterns, with audited kernel-specific domain constraints. No exhaustive equivalence claim; no cross-argument aliasing; ASan/UBSan do not prove absence of all UB.",
+        "interface": {
+          "arguments": [
+            {
+              "base": "int",
+              "const": false,
+              "depth": 16,
+              "dimensions": [
+                16
+              ],
+              "name": "input",
+              "type": "int *"
+            },
+            {
+              "base": "int",
+              "const": false,
+              "depth": 16,
+              "dimensions": [
+                16
+              ],
+              "name": "output",
+              "type": "int *"
+            }
+          ],
+          "return_type": "void",
+          "symbol": "_Z3dutPiS_"
+        },
+        "ir": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_pointer_phi/prepared/reports/.lighthls/prepared.bc",
+        "ir_sha256": "a10d9df890aee3349d70f188af034540c8c61974498befd7d02fda2bb4eabbb3",
+        "latency_definition": "Rising edges from accepted ap_start&&ap_ready to observed ap_done; final memory write reported separately.",
+        "memory_contract": "Independent typed scalar arrays, one-cycle read-first RAM, same-address simultaneous writes rejected; NaN payloads may differ, all other bits must match.",
+        "native_ir_equivalence": "passed",
+        "reference_asan_ubsan": true,
+        "requested_cases": 4,
+        "reset_protocol": "Warm second call; reset between subsequent pairs; no reset-abort coverage.",
+        "rtl_correct": true,
+        "rtl_sha256": "98a8b9703309b241eb161b4199f5e007aeba45fa97c05ba35909cf9f46a252fe",
+        "sanitizer_options": {
+          "ASAN_OPTIONS": "detect_leaks=0",
+          "reason": "LeakSanitizer is incompatible with ptrace; address and undefined-behavior checks remain enabled."
+        },
+        "schema_version": "cv_verification_v1",
+        "seed": 17,
+        "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_pointer_phi.cc",
+        "source_sha256": "063ff6f5bdc6e6fecb259a3985e055e9ea453f7b0c6c86cfd49057bec01477df",
+        "status": "passed"
+      },
+      "lowered_ir_verified": true,
+      "cycle_envelope": {
+        "constant": true,
+        "maximum": 32,
+        "minimum": 32
+      },
+      "cycles_in_envelope": true
+    },
+    {
+      "name": "backend_predicated_fp16",
+      "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_predicated_fp16.cc",
+      "source_sha256": "f393869e78101fb1b6246fe8d884270610c77b84ba28e86acf7e4641421c0553",
+      "commands": [
+        {
+          "label": "prepare",
+          "command": [
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+            "--prepare-source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_predicated_fp16.cc",
+            "dut",
+            "--board",
+            "u250",
+            "--freq",
+            "100MHz",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp16/prepared"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "generate",
+          "command": [
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp16/prepared/reports/.lighthls/prepared.bc",
+            "dut",
+            "--manifest",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp16/prepared/reports/dapo_manifest.json",
+            "--board",
+            "u250",
+            "--freq",
+            "100MHz",
+            "--latency-model",
+            "scheduled",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp16/generated"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "verify",
+          "command": [
+            "/usr/bin/python3",
+            "/home/eeuser/Desktop/Light-HLS/experiments/dapo_ii_cross_validation/verify_design.py",
+            "--source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_predicated_fp16.cc",
+            "--reports",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp16/generated/reports",
+            "--ir",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp16/prepared/reports/.lighthls/prepared.bc",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp16/verification",
+            "--cases",
+            "4"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "verify_lowered",
+          "command": [
+            "/usr/bin/python3",
+            "/home/eeuser/Desktop/Light-HLS/experiments/dapo_ii_cross_validation/verify_design.py",
+            "--source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_predicated_fp16.cc",
+            "--reports",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp16/generated/reports",
+            "--ir",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp16/generated/reports/.lighthls/backend_lowered.bc",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp16/verification_lowered",
+            "--cases",
+            "4"
+          ],
+          "returncode": 0
+        }
+      ],
+      "prepared": true,
+      "compiled": true,
+      "verified": true,
+      "verification": {
+        "cases": [
+          {
+            "cycles": 25,
+            "input_sha256": "38723a2e5e8a17aa7950dc008209944e898f69a7bd10a23c839d341e935fd5ca",
+            "last_write_cycle": -1,
+            "reads": 16,
+            "reference_sha256": "115bad14f1c9f2c027a84de21b107015722cb76be8d0abf3760ad8e00d6c24a5",
+            "return": 0,
+            "trial": 0,
+            "writes": 0
+          },
+          {
+            "cycles": 25,
+            "input_sha256": "00e6a0db0efcffd05e4b4135cd7f939fafb182adf94b985342552dd68911b5ff",
+            "last_write_cycle": 25,
+            "reads": 32,
+            "reference_sha256": "d64133c43ba18e8a967fd039cafe0d08029d64dc9e45c78072770db93499bb25",
+            "return": 0,
+            "trial": 1,
+            "writes": 16
+          },
+          {
+            "cycles": 25,
+            "input_sha256": "64265f7c9ad6f9bf8783fc42c5a1211d053a3c6a4e46ee86ebe85124eaf421b8",
+            "last_write_cycle": 24,
+            "reads": 26,
+            "reference_sha256": "41ed0190d877b1f1ad7ad21b882fd92c0f4d90e91f17a26a2ed4ceee55849466",
+            "return": 0,
+            "trial": 2,
+            "writes": 10
+          },
+          {
+            "cycles": 25,
+            "input_sha256": "5c2bc0cd8042478d908f5b73e9cab3eee8cbbe3dca54adea77c3144e109743df",
+            "last_write_cycle": 23,
+            "reads": 26,
+            "reference_sha256": "b144c9dbd7b97e3bee6147aa3545a2e0884c0bad83b4e06bf1649bd7b33873af",
+            "return": 0,
+            "trial": 3,
+            "writes": 10
+          }
+        ],
+        "coverage": "Four bounded deterministic input patterns, with audited kernel-specific domain constraints. No exhaustive equivalence claim; no cross-argument aliasing; ASan/UBSan do not prove absence of all UB.",
+        "interface": {
+          "arguments": [
+            {
+              "base": "_Float16",
+              "const": false,
+              "depth": 16,
+              "dimensions": [
+                16
+              ],
+              "name": "input",
+              "type": "_Float16 *"
+            },
+            {
+              "base": "int",
+              "const": false,
+              "depth": 16,
+              "dimensions": [
+                16
+              ],
+              "name": "enabled",
+              "type": "int *"
+            },
+            {
+              "base": "_Float16",
+              "const": false,
+              "depth": 16,
+              "dimensions": [
+                16
+              ],
+              "name": "output",
+              "type": "_Float16 *"
+            }
+          ],
+          "return_type": "void",
+          "symbol": "_Z3dutPDF16_PiS_"
+        },
+        "ir": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp16/prepared/reports/.lighthls/prepared.bc",
+        "ir_sha256": "24509bda1c3aa08df9f14676d391a933899ef2d618b514396bd4105a1a7bf2c6",
+        "latency_definition": "Rising edges from accepted ap_start&&ap_ready to observed ap_done; final memory write reported separately.",
+        "memory_contract": "Independent typed scalar arrays, one-cycle read-first RAM, same-address simultaneous writes rejected; NaN payloads may differ, all other bits must match.",
+        "native_ir_equivalence": "passed",
+        "reference_asan_ubsan": true,
+        "requested_cases": 4,
+        "reset_protocol": "Warm second call; reset between subsequent pairs; no reset-abort coverage.",
+        "rtl_correct": true,
+        "rtl_sha256": "09212d00983329933b4b8a47bd7ac20330506e9d9b1604b452adee4abaeb8e5b",
+        "sanitizer_options": {
+          "ASAN_OPTIONS": "detect_leaks=0",
+          "reason": "LeakSanitizer is incompatible with ptrace; address and undefined-behavior checks remain enabled."
+        },
+        "schema_version": "cv_verification_v1",
+        "seed": 17,
+        "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_predicated_fp16.cc",
+        "source_sha256": "f393869e78101fb1b6246fe8d884270610c77b84ba28e86acf7e4641421c0553",
+        "status": "passed"
+      },
+      "lowered_ir_verified": true,
+      "cycle_envelope": {
+        "constant": true,
+        "maximum": 25,
+        "minimum": 25
+      },
+      "cycles_in_envelope": true
+    },
+    {
+      "name": "backend_predicated_fp32",
+      "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_predicated_fp32.cc",
+      "source_sha256": "7b9bee739fd82ec94fd958592589f7ae4d20979648fdaf242c9c6f190abdd91f",
+      "commands": [
+        {
+          "label": "prepare",
+          "command": [
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+            "--prepare-source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_predicated_fp32.cc",
+            "dut",
+            "--board",
+            "u250",
+            "--freq",
+            "100MHz",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp32/prepared"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "generate",
+          "command": [
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp32/prepared/reports/.lighthls/prepared.bc",
+            "dut",
+            "--manifest",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp32/prepared/reports/dapo_manifest.json",
+            "--board",
+            "u250",
+            "--freq",
+            "100MHz",
+            "--latency-model",
+            "scheduled",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp32/generated"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "verify",
+          "command": [
+            "/usr/bin/python3",
+            "/home/eeuser/Desktop/Light-HLS/experiments/dapo_ii_cross_validation/verify_design.py",
+            "--source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_predicated_fp32.cc",
+            "--reports",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp32/generated/reports",
+            "--ir",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp32/prepared/reports/.lighthls/prepared.bc",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp32/verification",
+            "--cases",
+            "4"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "verify_lowered",
+          "command": [
+            "/usr/bin/python3",
+            "/home/eeuser/Desktop/Light-HLS/experiments/dapo_ii_cross_validation/verify_design.py",
+            "--source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_predicated_fp32.cc",
+            "--reports",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp32/generated/reports",
+            "--ir",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp32/generated/reports/.lighthls/backend_lowered.bc",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp32/verification_lowered",
+            "--cases",
+            "4"
+          ],
+          "returncode": 0
+        }
+      ],
+      "prepared": true,
+      "compiled": true,
+      "verified": true,
+      "verification": {
+        "cases": [
+          {
+            "cycles": 23,
+            "input_sha256": "5d89f056865052bcb89c910d2d62872e029fb273c3db03f8968a52a41593c1b5",
+            "last_write_cycle": -1,
+            "reads": 16,
+            "reference_sha256": "d904e1f1e028ba9058a128a6fd724f0f9892ae8fe49c8f7dc2613183f7f8bbca",
+            "return": 0,
+            "trial": 0,
+            "writes": 0
+          },
+          {
+            "cycles": 23,
+            "input_sha256": "f9c0e89d76468a0b4a3562fa104283e5e81a0671fb3465a8275a97831f582554",
+            "last_write_cycle": 23,
+            "reads": 32,
+            "reference_sha256": "5dc371a05f7d90aee30e293337d6cd8d7cc117eb87768c8831600e24e3b77c6e",
+            "return": 0,
+            "trial": 1,
+            "writes": 16
+          },
+          {
+            "cycles": 23,
+            "input_sha256": "3ac5865c560a807af7151e68a9d8bafd781bcd47f5876b2fe1969a6e909a7285",
+            "last_write_cycle": 22,
+            "reads": 26,
+            "reference_sha256": "ce2fba8637ad2dd0d95168b75ac15ad091a0427e3398c94e89d7ab5d3db7531e",
+            "return": 0,
+            "trial": 2,
+            "writes": 10
+          },
+          {
+            "cycles": 23,
+            "input_sha256": "eacf16f3e8887e2cae16f550768748129da8f46b0eeebb982515ba04ca485c67",
+            "last_write_cycle": 21,
+            "reads": 26,
+            "reference_sha256": "ec7bc02a98845423dddfa9e3104cbd3fb276f0dba182bbe1e907ae4d0326c7dd",
+            "return": 0,
+            "trial": 3,
+            "writes": 10
+          }
+        ],
+        "coverage": "Four bounded deterministic input patterns, with audited kernel-specific domain constraints. No exhaustive equivalence claim; no cross-argument aliasing; ASan/UBSan do not prove absence of all UB.",
+        "interface": {
+          "arguments": [
+            {
+              "base": "float",
+              "const": false,
+              "depth": 16,
+              "dimensions": [
+                16
+              ],
+              "name": "input",
+              "type": "float *"
+            },
+            {
+              "base": "int",
+              "const": false,
+              "depth": 16,
+              "dimensions": [
+                16
+              ],
+              "name": "enabled",
+              "type": "int *"
+            },
+            {
+              "base": "float",
+              "const": false,
+              "depth": 16,
+              "dimensions": [
+                16
+              ],
+              "name": "output",
+              "type": "float *"
+            }
+          ],
+          "return_type": "void",
+          "symbol": "_Z3dutPfPiS_"
+        },
+        "ir": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_fp32/prepared/reports/.lighthls/prepared.bc",
+        "ir_sha256": "f719facaba6df7012a3d3056102c5d71fe17c8ef8243fc9f5f1fc1e6abcdfed7",
+        "latency_definition": "Rising edges from accepted ap_start&&ap_ready to observed ap_done; final memory write reported separately.",
+        "memory_contract": "Independent typed scalar arrays, one-cycle read-first RAM, same-address simultaneous writes rejected; NaN payloads may differ, all other bits must match.",
+        "native_ir_equivalence": "passed",
+        "reference_asan_ubsan": true,
+        "requested_cases": 4,
+        "reset_protocol": "Warm second call; reset between subsequent pairs; no reset-abort coverage.",
+        "rtl_correct": true,
+        "rtl_sha256": "80c29ee183c0183bc9f81fedaa1b6896bd68ffa0302b6828fe80dc2aa54fe279",
+        "sanitizer_options": {
+          "ASAN_OPTIONS": "detect_leaks=0",
+          "reason": "LeakSanitizer is incompatible with ptrace; address and undefined-behavior checks remain enabled."
+        },
+        "schema_version": "cv_verification_v1",
+        "seed": 17,
+        "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_predicated_fp32.cc",
+        "source_sha256": "7b9bee739fd82ec94fd958592589f7ae4d20979648fdaf242c9c6f190abdd91f",
+        "status": "passed"
+      },
+      "lowered_ir_verified": true,
+      "cycle_envelope": {
+        "constant": true,
+        "maximum": 23,
+        "minimum": 23
+      },
+      "cycles_in_envelope": true
+    },
+    {
+      "name": "backend_predicated_memory",
+      "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_predicated_memory.cc",
+      "source_sha256": "550173d6b4a10519ca767d8959ce17ad5e3881288d06f11101675e9232d38fe4",
+      "commands": [
+        {
+          "label": "prepare",
+          "command": [
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+            "--prepare-source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_predicated_memory.cc",
+            "dut",
+            "--board",
+            "u250",
+            "--freq",
+            "100MHz",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_memory/prepared"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "generate",
+          "command": [
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_memory/prepared/reports/.lighthls/prepared.bc",
+            "dut",
+            "--manifest",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_memory/prepared/reports/dapo_manifest.json",
+            "--board",
+            "u250",
+            "--freq",
+            "100MHz",
+            "--latency-model",
+            "scheduled",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_memory/generated"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "verify",
+          "command": [
+            "/usr/bin/python3",
+            "/home/eeuser/Desktop/Light-HLS/experiments/dapo_ii_cross_validation/verify_design.py",
+            "--source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_predicated_memory.cc",
+            "--reports",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_memory/generated/reports",
+            "--ir",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_memory/prepared/reports/.lighthls/prepared.bc",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_memory/verification",
+            "--cases",
+            "4"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "verify_lowered",
+          "command": [
+            "/usr/bin/python3",
+            "/home/eeuser/Desktop/Light-HLS/experiments/dapo_ii_cross_validation/verify_design.py",
+            "--source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_predicated_memory.cc",
+            "--reports",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_memory/generated/reports",
+            "--ir",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_memory/generated/reports/.lighthls/backend_lowered.bc",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_memory/verification_lowered",
+            "--cases",
+            "4"
+          ],
+          "returncode": 0
+        }
+      ],
+      "prepared": true,
+      "compiled": true,
+      "verified": true,
+      "verification": {
+        "cases": [
+          {
+            "cycles": 21,
+            "input_sha256": "5d89f056865052bcb89c910d2d62872e029fb273c3db03f8968a52a41593c1b5",
+            "last_write_cycle": -1,
+            "reads": 16,
+            "reference_sha256": "d904e1f1e028ba9058a128a6fd724f0f9892ae8fe49c8f7dc2613183f7f8bbca",
+            "return": 0,
+            "trial": 0,
+            "writes": 0
+          },
+          {
+            "cycles": 21,
+            "input_sha256": "70c4404b556709021e66d0be0af8d6f21c5f0dd12a2354ffe7cd2f10879a5d11",
+            "last_write_cycle": 21,
+            "reads": 32,
+            "reference_sha256": "664a9802c1d3e3b92da267b8faa47b42a224ef473969d6ac2bf9d2a6d7cb02d3",
+            "return": 0,
+            "trial": 1,
+            "writes": 16
+          },
+          {
+            "cycles": 21,
+            "input_sha256": "32e0a24c37ee5e68c480e4bdc91647f3139047c1f01ce22639c3f645bd7c5930",
+            "last_write_cycle": 20,
+            "reads": 26,
+            "reference_sha256": "26acff983a8f5043f20ce05678f52708a36b88636f041da37d96c1d1c8066b4c",
+            "return": 0,
+            "trial": 2,
+            "writes": 10
+          },
+          {
+            "cycles": 21,
+            "input_sha256": "9fa7261c17d35763768a781ec63660ab2a1d52c3fdc884c53e52272ce4816565",
+            "last_write_cycle": 19,
+            "reads": 26,
+            "reference_sha256": "229b484549669adfc0e381e65326a8280a64fd72f329f9561e81a8954adcc125",
+            "return": 0,
+            "trial": 3,
+            "writes": 10
+          }
+        ],
+        "coverage": "Four bounded deterministic input patterns, with audited kernel-specific domain constraints. No exhaustive equivalence claim; no cross-argument aliasing; ASan/UBSan do not prove absence of all UB.",
+        "interface": {
+          "arguments": [
+            {
+              "base": "int",
+              "const": false,
+              "depth": 16,
+              "dimensions": [
+                16
+              ],
+              "name": "input",
+              "type": "int *"
+            },
+            {
+              "base": "int",
+              "const": false,
+              "depth": 16,
+              "dimensions": [
+                16
+              ],
+              "name": "enabled",
+              "type": "int *"
+            },
+            {
+              "base": "int",
+              "const": false,
+              "depth": 16,
+              "dimensions": [
+                16
+              ],
+              "name": "output",
+              "type": "int *"
+            }
+          ],
+          "return_type": "void",
+          "symbol": "_Z3dutPiS_S_"
+        },
+        "ir": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_predicated_memory/prepared/reports/.lighthls/prepared.bc",
+        "ir_sha256": "889cf6589a8df4eff593bb50845ac6f00f09c5283a9fd8700e7589ca40965a33",
+        "latency_definition": "Rising edges from accepted ap_start&&ap_ready to observed ap_done; final memory write reported separately.",
+        "memory_contract": "Independent typed scalar arrays, one-cycle read-first RAM, same-address simultaneous writes rejected; NaN payloads may differ, all other bits must match.",
+        "native_ir_equivalence": "passed",
+        "reference_asan_ubsan": true,
+        "requested_cases": 4,
+        "reset_protocol": "Warm second call; reset between subsequent pairs; no reset-abort coverage.",
+        "rtl_correct": true,
+        "rtl_sha256": "8b411834d92e66740eca2a086223dd236525883a5a105109e891178f5bffe32d",
+        "sanitizer_options": {
+          "ASAN_OPTIONS": "detect_leaks=0",
+          "reason": "LeakSanitizer is incompatible with ptrace; address and undefined-behavior checks remain enabled."
+        },
+        "schema_version": "cv_verification_v1",
+        "seed": 17,
+        "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_predicated_memory.cc",
+        "source_sha256": "550173d6b4a10519ca767d8959ce17ad5e3881288d06f11101675e9232d38fe4",
+        "status": "passed"
+      },
+      "lowered_ir_verified": true,
+      "cycle_envelope": {
+        "constant": true,
+        "maximum": 21,
+        "minimum": 21
+      },
+      "cycles_in_envelope": true
+    },
+    {
+      "name": "backend_static_lookup",
+      "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_static_lookup.cc",
+      "source_sha256": "6883cd6f194ac726d154c0be0446dc67186a2ce48ab6bc4042a0cfbe2211715d",
+      "commands": [
+        {
+          "label": "prepare",
+          "command": [
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+            "--prepare-source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_static_lookup.cc",
+            "dut",
+            "--board",
+            "u250",
+            "--freq",
+            "100MHz",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_static_lookup/prepared"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "generate",
+          "command": [
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_static_lookup/prepared/reports/.lighthls/prepared.bc",
+            "dut",
+            "--manifest",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_static_lookup/prepared/reports/dapo_manifest.json",
+            "--board",
+            "u250",
+            "--freq",
+            "100MHz",
+            "--latency-model",
+            "scheduled",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_static_lookup/generated"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "verify",
+          "command": [
+            "/usr/bin/python3",
+            "/home/eeuser/Desktop/Light-HLS/experiments/dapo_ii_cross_validation/verify_design.py",
+            "--source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_static_lookup.cc",
+            "--reports",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_static_lookup/generated/reports",
+            "--ir",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_static_lookup/prepared/reports/.lighthls/prepared.bc",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_static_lookup/verification",
+            "--cases",
+            "4"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "verify_lowered",
+          "command": [
+            "/usr/bin/python3",
+            "/home/eeuser/Desktop/Light-HLS/experiments/dapo_ii_cross_validation/verify_design.py",
+            "--source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_static_lookup.cc",
+            "--reports",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_static_lookup/generated/reports",
+            "--ir",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_static_lookup/generated/reports/.lighthls/backend_lowered.bc",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_static_lookup/verification_lowered",
+            "--cases",
+            "4"
+          ],
+          "returncode": 0
+        }
+      ],
+      "prepared": true,
+      "compiled": true,
+      "verified": true,
+      "verification": {
+        "cases": [
+          {
+            "cycles": 48,
+            "input_sha256": "38723a2e5e8a17aa7950dc008209944e898f69a7bd10a23c839d341e935fd5ca",
+            "last_write_cycle": 48,
+            "reads": 16,
+            "reference_sha256": "a8481dbbcd75884e74c6da0de5d1a2da1de58cdfaf127016bb07e93df35fd224",
+            "return": 0,
+            "trial": 0,
+            "writes": 16
+          },
+          {
+            "cycles": 48,
+            "input_sha256": "f91db59bf0e1e12ed43b683cacbc590310a5b88e2d31b3d7ee24b8634776a9e5",
+            "last_write_cycle": 48,
+            "reads": 16,
+            "reference_sha256": "aded937c0041274c44a7e3a05beef901366d6ac907218b3498f1bd68dc4b4c34",
+            "return": 0,
+            "trial": 1,
+            "writes": 16
+          },
+          {
+            "cycles": 48,
+            "input_sha256": "61ed824116d1f7220018f965f36655289d46ec4412607ec9f178bf9dc20a27b4",
+            "last_write_cycle": 48,
+            "reads": 16,
+            "reference_sha256": "701a73ee676e587514d3ed74290421daaebfb7751f7bc06de0bc39496e2836d0",
+            "return": 0,
+            "trial": 2,
+            "writes": 16
+          },
+          {
+            "cycles": 48,
+            "input_sha256": "2af48b6f0d4a18108a2a414e39c023afcd7b9e58496b8019e96c31162e437939",
+            "last_write_cycle": 48,
+            "reads": 16,
+            "reference_sha256": "91f3f66f805b060598db8d9b294ef5420b2c6329e14a35a3ca4eb025725e9e14",
+            "return": 0,
+            "trial": 3,
+            "writes": 16
+          }
+        ],
+        "coverage": "Four bounded deterministic input patterns, with audited kernel-specific domain constraints. No exhaustive equivalence claim; no cross-argument aliasing; ASan/UBSan do not prove absence of all UB.",
+        "interface": {
+          "arguments": [
+            {
+              "base": "int",
+              "const": false,
+              "depth": 16,
+              "dimensions": [
+                16
+              ],
+              "name": "indices",
+              "type": "int *"
+            },
+            {
+              "base": "int",
+              "const": false,
+              "depth": 16,
+              "dimensions": [
+                16
+              ],
+              "name": "output",
+              "type": "int *"
+            }
+          ],
+          "return_type": "void",
+          "symbol": "_Z3dutPiS_"
+        },
+        "ir": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_static_lookup/prepared/reports/.lighthls/prepared.bc",
+        "ir_sha256": "22f13be216fe0780a4f7b14f1b9aca3ea6154ac91b97f02f7bd8db07e0b17856",
+        "latency_definition": "Rising edges from accepted ap_start&&ap_ready to observed ap_done; final memory write reported separately.",
+        "memory_contract": "Independent typed scalar arrays, one-cycle read-first RAM, same-address simultaneous writes rejected; NaN payloads may differ, all other bits must match.",
+        "native_ir_equivalence": "passed",
+        "reference_asan_ubsan": true,
+        "requested_cases": 4,
+        "reset_protocol": "Warm second call; reset between subsequent pairs; no reset-abort coverage.",
+        "rtl_correct": true,
+        "rtl_sha256": "faeaf82f3e3244faafbee9ff74bde634cb5aa754cb80391bc48f5b323b2b1187",
+        "sanitizer_options": {
+          "ASAN_OPTIONS": "detect_leaks=0",
+          "reason": "LeakSanitizer is incompatible with ptrace; address and undefined-behavior checks remain enabled."
+        },
+        "schema_version": "cv_verification_v1",
+        "seed": 17,
+        "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_static_lookup.cc",
+        "source_sha256": "6883cd6f194ac726d154c0be0446dc67186a2ce48ab6bc4042a0cfbe2211715d",
+        "status": "passed"
+      },
+      "lowered_ir_verified": true,
+      "cycle_envelope": {
+        "constant": true,
+        "maximum": 48,
+        "minimum": 48
+      },
+      "cycles_in_envelope": true
+    },
+    {
+      "name": "backend_triangular_bounds",
+      "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_triangular_bounds.cc",
+      "source_sha256": "99b1d3a6d69825a3b3987e9647ec22a027f5d73213e413b6da4b1b638aef57a5",
+      "commands": [
+        {
+          "label": "prepare",
+          "command": [
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+            "--prepare-source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_triangular_bounds.cc",
+            "dut",
+            "--board",
+            "u250",
+            "--freq",
+            "100MHz",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_triangular_bounds/prepared"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "generate",
+          "command": [
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_triangular_bounds/prepared/reports/.lighthls/prepared.bc",
+            "dut",
+            "--manifest",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_triangular_bounds/prepared/reports/dapo_manifest.json",
+            "--board",
+            "u250",
+            "--freq",
+            "100MHz",
+            "--latency-model",
+            "scheduled",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_triangular_bounds/generated"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "verify",
+          "command": [
+            "/usr/bin/python3",
+            "/home/eeuser/Desktop/Light-HLS/experiments/dapo_ii_cross_validation/verify_design.py",
+            "--source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_triangular_bounds.cc",
+            "--reports",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_triangular_bounds/generated/reports",
+            "--ir",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_triangular_bounds/prepared/reports/.lighthls/prepared.bc",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_triangular_bounds/verification",
+            "--cases",
+            "4"
+          ],
+          "returncode": 0
+        },
+        {
+          "label": "verify_lowered",
+          "command": [
+            "/usr/bin/python3",
+            "/home/eeuser/Desktop/Light-HLS/experiments/dapo_ii_cross_validation/verify_design.py",
+            "--source",
+            "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_triangular_bounds.cc",
+            "--reports",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_triangular_bounds/generated/reports",
+            "--ir",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_triangular_bounds/generated/reports/.lighthls/backend_lowered.bc",
+            "--output",
+            "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_triangular_bounds/verification_lowered",
+            "--cases",
+            "4"
+          ],
+          "returncode": 0
+        }
+      ],
+      "prepared": true,
+      "compiled": true,
+      "verified": true,
+      "verification": {
+        "cases": [
+          {
+            "cycles": 88,
+            "input_sha256": "076a27c79e5ace2a3d47f9dd2e83e4ff6ea8872b3c2218f66c92b89b55f36560",
+            "last_write_cycle": 87,
+            "reads": 36,
+            "reference_sha256": "b6e25fca7ca3af6935b115f8c03638d8a477f152de54ec668a66b9d81078506f",
+            "return": 0,
+            "trial": 0,
+            "writes": 36
+          },
+          {
+            "cycles": 88,
+            "input_sha256": "d585e10d1e2240e9af79fc1cf8d11e11420b5306480b469b587e85630fcb0c9f",
+            "last_write_cycle": 87,
+            "reads": 36,
+            "reference_sha256": "f7e55c5a98d5bad3a16859d1c1668c7931fdd6d9408ed9d26a0aab6ee344f86d",
+            "return": 0,
+            "trial": 1,
+            "writes": 36
+          },
+          {
+            "cycles": 88,
+            "input_sha256": "12f451d5b7720d2cb64daa86d53a2bc73fd687d35cb935a3819bfadebbec10c1",
+            "last_write_cycle": 87,
+            "reads": 36,
+            "reference_sha256": "8c4d12369271baf1af09cf1a95c3f5a24ba6d6f4d13fc236b94a9b1ee285edde",
+            "return": 0,
+            "trial": 2,
+            "writes": 36
+          },
+          {
+            "cycles": 88,
+            "input_sha256": "ee139842ef7635bf48aaa5a18e60cf7fd6872589f8fa476f87db1ecaa17d04c0",
+            "last_write_cycle": 87,
+            "reads": 36,
+            "reference_sha256": "2602065088e5b4843b738fb96f76d1a38776af0469c48924dfb57ec6490ab5b3",
+            "return": 0,
+            "trial": 3,
+            "writes": 36
+          }
+        ],
+        "coverage": "Four bounded deterministic input patterns, with audited kernel-specific domain constraints. No exhaustive equivalence claim; no cross-argument aliasing; ASan/UBSan do not prove absence of all UB.",
+        "interface": {
+          "arguments": [
+            {
+              "base": "int",
+              "const": false,
+              "depth": 64,
+              "dimensions": [
+                64
+              ],
+              "name": "input",
+              "type": "int *"
+            },
+            {
+              "base": "int",
+              "const": false,
+              "depth": 64,
+              "dimensions": [
+                64
+              ],
+              "name": "output",
+              "type": "int *"
+            }
+          ],
+          "return_type": "void",
+          "symbol": "_Z3dutPiS_"
+        },
+        "ir": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/predicated_cases/backend_triangular_bounds/prepared/reports/.lighthls/prepared.bc",
+        "ir_sha256": "58920ca7ade366d460849d80d5db3100cd462de6547b3a5fde9c5a9207008554",
+        "latency_definition": "Rising edges from accepted ap_start&&ap_ready to observed ap_done; final memory write reported separately.",
+        "memory_contract": "Independent typed scalar arrays, one-cycle read-first RAM, same-address simultaneous writes rejected; NaN payloads may differ, all other bits must match.",
+        "native_ir_equivalence": "passed",
+        "reference_asan_ubsan": true,
+        "requested_cases": 4,
+        "reset_protocol": "Warm second call; reset between subsequent pairs; no reset-abort coverage.",
+        "rtl_correct": true,
+        "rtl_sha256": "07e0e996736c61ac1b3cfe64f8256828f11e0b1a438ae22f54925cd481e81e0a",
+        "sanitizer_options": {
+          "ASAN_OPTIONS": "detect_leaks=0",
+          "reason": "LeakSanitizer is incompatible with ptrace; address and undefined-behavior checks remain enabled."
+        },
+        "schema_version": "cv_verification_v1",
+        "seed": 17,
+        "source": "/home/eeuser/Desktop/Light-HLS/Light_HLS/App/backend_expression/backend_triangular_bounds.cc",
+        "source_sha256": "99b1d3a6d69825a3b3987e9647ec22a027f5d73213e413b6da4b1b638aef57a5",
+        "status": "passed"
+      },
+      "lowered_ir_verified": true,
+      "cycle_envelope": {
+        "constant": false,
+        "maximum": 144,
+        "minimum": 32
+      },
+      "cycles_in_envelope": true
+    }
+  ]
+}

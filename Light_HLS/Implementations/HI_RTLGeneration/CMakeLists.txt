@@ -8,4 +8,6 @@ add_definitions(${LLVM_DEFINITIONS})
 
 aux_source_directory(. DIR_HI_RTL_GENERATION_SRCS)
 add_library(HI_RTLGeneration ${DIR_HI_RTL_GENERATION_SRCS})
+target_compile_definitions(HI_RTLGeneration PRIVATE
+    LIGHT_HLS_HARDFLOAT_DIR="${CMAKE_CURRENT_SOURCE_DIR}/../../RTL/HardFloat/source")
 target_link_libraries(HI_RTLGeneration PUBLIC HI_BackendCommon)

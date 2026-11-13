@@ -1,0 +1,23 @@
+[
+  {
+    "width": 16,
+    "passed": true,
+    "trials": 4,
+    "reset_abort": true,
+    "output": "PASS trial=0 cycles=1638\nPASS trial=1 cycles=1600\nPASS trial=2 cycles=1600\nPASS trial=3 cycles=1600\nFIFO VERIFICATION PASSED stalls=4934 arithmetic_stalls=3333\n"
+  },
+  {
+    "width": 32,
+    "passed": true,
+    "trials": 4,
+    "reset_abort": true,
+    "output": "PASS trial=0 cycles=1638\nPASS trial=1 cycles=1600\nPASS trial=2 cycles=1600\nPASS trial=3 cycles=1600\nFIFO VERIFICATION PASSED stalls=4934 arithmetic_stalls=3339\n"
+  },
+  {
+    "width": 64,
+    "passed": true,
+    "trials": 4,
+    "reset_abort": true,
+    "output": "PASS trial=0 cycles=1638\nPASS trial=1 cycles=1701\nPASS trial=2 cycles=1701\nPASS trial=3 cycles=1701\nFIFO VERIFICATION PASSED stalls=5162 arithmetic_stalls=2067\n"
+  }
+]

@@ -1,0 +1,250 @@
+[
+  {
+    "name": "random5",
+    "source": "/home/eeuser/Desktop/Light-HLS/Dataset/Testbenches/random5.cc",
+    "source_sha256": "0d01e2f5bae164710ccbfe29a0ebf6e74a8b1e23c52536c8beede72ca250698b",
+    "status": "passed",
+    "commands": [
+      {
+        "stage": "compile",
+        "command": [
+          "/usr/local/bin/clang++",
+          "-std=c++17",
+          "-O1",
+          "-g",
+          "-ffp-contract=off",
+          "-fsanitize=address,undefined",
+          "-fno-sanitize-recover=all",
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random5/oracle.cpp",
+          "-o",
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random5/oracle"
+        ],
+        "returncode": 0
+      },
+      {
+        "stage": "run",
+        "command": [
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random5/oracle"
+        ],
+        "returncode": 0
+      }
+    ]
+  },
+  {
+    "name": "random23",
+    "source": "/home/eeuser/Desktop/Light-HLS/Dataset/Testbenches/random23.cc",
+    "source_sha256": "e77b443e7f23f7362c163b3ccd86884758a1ef6892bc918594ca837bde8d0345",
+    "status": "passed",
+    "commands": [
+      {
+        "stage": "compile",
+        "command": [
+          "/usr/local/bin/clang++",
+          "-std=c++17",
+          "-O1",
+          "-g",
+          "-ffp-contract=off",
+          "-fsanitize=address,undefined",
+          "-fno-sanitize-recover=all",
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random23/oracle.cpp",
+          "-o",
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random23/oracle"
+        ],
+        "returncode": 0
+      },
+      {
+        "stage": "run",
+        "command": [
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random23/oracle"
+        ],
+        "returncode": 0
+      }
+    ]
+  },
+  {
+    "name": "random30",
+    "source": "/home/eeuser/Desktop/Light-HLS/Dataset/Testbenches/random30.cc",
+    "source_sha256": "8b208fde2871786a957b6aaabbbcc93b515c6a32b8f893b15e9c94febc478ac6",
+    "status": "passed",
+    "commands": [
+      {
+        "stage": "compile",
+        "command": [
+          "/usr/local/bin/clang++",
+          "-std=c++17",
+          "-O1",
+          "-g",
+          "-ffp-contract=off",
+          "-fsanitize=address,undefined",
+          "-fno-sanitize-recover=all",
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random30/oracle.cpp",
+          "-o",
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random30/oracle"
+        ],
+        "returncode": 0
+      },
+      {
+        "stage": "run",
+        "command": [
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random30/oracle"
+        ],
+        "returncode": 0
+      }
+    ]
+  },
+  {
+    "name": "random35",
+    "source": "/home/eeuser/Desktop/Light-HLS/Dataset/Testbenches/random35.cc",
+    "source_sha256": "d03b1fefe3bc1d942a54a628d369cca362f1129689814e3effbb0753b1c47781",
+    "status": "passed",
+    "commands": [
+      {
+        "stage": "compile",
+        "command": [
+          "/usr/local/bin/clang++",
+          "-std=c++17",
+          "-O1",
+          "-g",
+          "-ffp-contract=off",
+          "-fsanitize=address,undefined",
+          "-fno-sanitize-recover=all",
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random35/oracle.cpp",
+          "-o",
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random35/oracle"
+        ],
+        "returncode": 0
+      },
+      {
+        "stage": "run",
+        "command": [
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random35/oracle"
+        ],
+        "returncode": 0
+      }
+    ]
+  },
+  {
+    "name": "random57",
+    "source": "/home/eeuser/Desktop/Light-HLS/Dataset/Testbenches/random57.cc",
+    "source_sha256": "e8b069d047e51d61565299ac0140d12b55694cda32f63b3ab1ee1dfb82134f90",
+    "status": "passed",
+    "commands": [
+      {
+        "stage": "compile",
+        "command": [
+          "/usr/local/bin/clang++",
+          "-std=c++17",
+          "-O1",
+          "-g",
+          "-ffp-contract=off",
+          "-fsanitize=address,undefined",
+          "-fno-sanitize-recover=all",
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random57/oracle.cpp",
+          "-o",
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random57/oracle"
+        ],
+        "returncode": 0
+      },
+      {
+        "stage": "run",
+        "command": [
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random57/oracle"
+        ],
+        "returncode": 0
+      }
+    ]
+  },
+  {
+    "name": "random58",
+    "source": "/home/eeuser/Desktop/Light-HLS/Dataset/Testbenches/random58.cc",
+    "source_sha256": "239d33d8a15c4da2c995cf635e4898bb2a7e6c6541c61a01e7ae3a0b1d6d87e4",
+    "status": "passed",
+    "commands": [
+      {
+        "stage": "compile",
+        "command": [
+          "/usr/local/bin/clang++",
+          "-std=c++17",
+          "-O1",
+          "-g",
+          "-ffp-contract=off",
+          "-fsanitize=address,undefined",
+          "-fno-sanitize-recover=all",
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random58/oracle.cpp",
+          "-o",
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random58/oracle"
+        ],
+        "returncode": 0
+      },
+      {
+        "stage": "run",
+        "command": [
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random58/oracle"
+        ],
+        "returncode": 0
+      }
+    ]
+  },
+  {
+    "name": "random66",
+    "source": "/home/eeuser/Desktop/Light-HLS/Dataset/Testbenches/random66.cc",
+    "source_sha256": "55700fe85ddf878c412c41b3757d9445a113c9abe38c979c1ab807c19964264d",
+    "status": "passed",
+    "commands": [
+      {
+        "stage": "compile",
+        "command": [
+          "/usr/local/bin/clang++",
+          "-std=c++17",
+          "-O1",
+          "-g",
+          "-ffp-contract=off",
+          "-fsanitize=address,undefined",
+          "-fno-sanitize-recover=all",
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random66/oracle.cpp",
+          "-o",
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random66/oracle"
+        ],
+        "returncode": 0
+      },
+      {
+        "stage": "run",
+        "command": [
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random66/oracle"
+        ],
+        "returncode": 0
+      }
+    ]
+  },
+  {
+    "name": "random68",
+    "source": "/home/eeuser/Desktop/Light-HLS/Dataset/Testbenches/random68.cc",
+    "source_sha256": "9db620154eefd72f0d67955bb330fe7944014a40b6ca271edd95e14db8e58dca",
+    "status": "passed",
+    "commands": [
+      {
+        "stage": "compile",
+        "command": [
+          "/usr/local/bin/clang++",
+          "-std=c++17",
+          "-O1",
+          "-g",
+          "-ffp-contract=off",
+          "-fsanitize=address,undefined",
+          "-fno-sanitize-recover=all",
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random68/oracle.cpp",
+          "-o",
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random68/oracle"
+        ],
+        "returncode": 0
+      },
+      {
+        "stage": "run",
+        "command": [
+          "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/source_repairs/random68/oracle"
+        ],
+        "returncode": 0
+      }
+    ]
+  }
+]

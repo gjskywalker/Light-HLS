@@ -1,0 +1,60 @@
+[
+  {
+    "format": "_Float16",
+    "cases": 2431,
+    "failures": [],
+    "scheduled_cycles": {
+      "constant": false,
+      "maximum": 37,
+      "minimum": 5
+    },
+    "native_half": false,
+    "oracle": "LLVM APFloat",
+    "driver": "ir",
+    "measured_cycles": [
+      7,
+      8,
+      9,
+      37
+    ]
+  },
+  {
+    "format": "float",
+    "cases": 1893,
+    "failures": [],
+    "scheduled_cycles": {
+      "constant": false,
+      "maximum": 34,
+      "minimum": 5
+    },
+    "native_half": false,
+    "oracle": "native C++",
+    "driver": "ir",
+    "measured_cycles": [
+      6,
+      7,
+      8,
+      9,
+      34
+    ]
+  },
+  {
+    "format": "double",
+    "cases": 2162,
+    "failures": [],
+    "scheduled_cycles": {
+      "constant": false,
+      "maximum": 64,
+      "minimum": 5
+    },
+    "native_half": false,
+    "oracle": "native C++",
+    "driver": "ir",
+    "measured_cycles": [
+      6,
+      7,
+      8,
+      64
+    ]
+  }
+]

@@ -46,20 +46,45 @@ bool isIgnoredIntrinsic(const Instruction &instruction)
 
 bool isSupportedCast(const CastInst &cast)
 {
+    if (isa<FPTruncInst, FPExtInst>(cast))
+        return isSupportedFloat(cast.getSrcTy()) && isSupportedFloat(cast.getDestTy());
+    if (isa<SIToFPInst, UIToFPInst>(cast))
+        return isSupportedFloat(cast.getDestTy()) &&
+            cast.getSrcTy()->isIntegerTy() && scalarBitWidth(cast.getSrcTy()) >= 2 &&
+            scalarBitWidth(cast.getSrcTy()) <= 64;
+    if (isa<FPToSIInst, FPToUIInst>(cast))
+        return isSupportedFloat(cast.getSrcTy()) &&
+            cast.getDestTy()->isIntegerTy() && scalarBitWidth(cast.getDestTy()) >= 2 &&
+            scalarBitWidth(cast.getDestTy()) <= 64;
+    if (isa<BitCastInst>(cast))
+        return scalarBitWidth(cast.getSrcTy()) &&
+            scalarBitWidth(cast.getSrcTy()) == scalarBitWidth(cast.getDestTy());
     return cast.getSrcTy()->isIntegerTy() && cast.getDestTy()->isIntegerTy() &&
            (isa<TruncInst>(cast) || isa<ZExtInst>(cast) || isa<SExtInst>(cast));
 }
 
 bool isSupportedInstruction(const Instruction &instruction)
 {
+    if (isa<ExtractElementInst>(instruction) || isa<InsertElementInst>(instruction))
+    {
+        const auto *type = dyn_cast<FixedVectorType>(instruction.getOperand(0)->getType());
+        const auto *index = dyn_cast<ConstantInt>(instruction.getOperand(instruction.getNumOperands() - 1));
+        return type && type->getNumElements() == 1 && index && index->isZero() && scalarBitWidth(type);
+    }
     if (isIgnoredIntrinsic(instruction))
         return true;
+    if (const auto *intrinsic = dyn_cast<IntrinsicInst>(&instruction))
+        return isSupportedFloatingIntrinsic(intrinsic->getIntrinsicID()) && isSupportedFloat(instruction.getType());
     if (const auto *phi = dyn_cast<PHINode>(&instruction))
-        return phi->getType()->isIntegerTy();
+        return scalarBitWidth(phi->getType()) != 0;
+    if (const auto *comparison = dyn_cast<FCmpInst>(&instruction))
+        return isSupportedFloat(comparison->getOperand(0)->getType());
+    if (instruction.getOpcode() == Instruction::FNeg)
+        return isSupportedFloat(instruction.getType());
     if (const auto *comparison = dyn_cast<ICmpInst>(&instruction))
         return comparison->getOperand(0)->getType()->isIntegerTy();
     if (const auto *select = dyn_cast<SelectInst>(&instruction))
-        return select->getType()->isIntegerTy();
+        return scalarBitWidth(select->getType()) != 0;
     if (isa<BranchInst>(instruction) || isa<ReturnInst>(instruction) ||
         isa<FreezeInst>(instruction))
     {
@@ -69,6 +94,11 @@ bool isSupportedInstruction(const Instruction &instruction)
     {
         switch (binary->getOpcode())
         {
+        case Instruction::FAdd:
+        case Instruction::FSub:
+        case Instruction::FMul:
+        case Instruction::FDiv:
+            return isSupportedFloat(binary->getType());
         case Instruction::Add:
         case Instruction::Sub:
         case Instruction::Mul:
@@ -95,6 +125,21 @@ bool isSupportedInstruction(const Instruction &instruction)
 bool isSupportedMemoryInstruction(const Instruction &instruction,
                                   bool hasFIFOArguments)
 {
+    if (isMaskedMemory(&instruction, Intrinsic::masked_load) ||
+        isMaskedMemory(&instruction, Intrinsic::masked_store))
+    {
+        const Value *value = isBackendLoad(&instruction) ? static_cast<const Value *>(&instruction) : backendStoredValue(&instruction);
+        const auto *type = dyn_cast<FixedVectorType>(value->getType());
+        const Value *predicate = backendMemoryPredicate(&instruction);
+        // Predication emits an undefined inactive load result that is consumed
+        // only on its active path. Defined passthrough values need separate
+        // datapath support; do not silently accept those external IR forms.
+        if (isBackendLoad(&instruction) &&
+            !isa<UndefValue>(cast<CallBase>(instruction).getArgOperand(3)))
+            return false;
+        return type && type->getNumElements() == 1 && scalarBitWidth(type) &&
+               predicate && predicate->getType()->isIntegerTy(1);
+    }
     if (const auto *allocation = dyn_cast<AllocaInst>(&instruction))
     {
         const Type *type = allocation->getAllocatedType();
@@ -102,15 +147,15 @@ bool isSupportedMemoryInstruction(const Instruction &instruction,
             type = array->getElementType();
         const auto *arraySize =
             dyn_cast<ConstantInt>(allocation->getArraySize());
-        return type->isIntegerTy() && arraySize &&
+        return scalarBitWidth(type) && arraySize &&
                !arraySize->isZero();
     }
     if (const auto *load = dyn_cast<LoadInst>(&instruction))
         return (!load->isVolatile() || hasFIFOArguments) && !load->isAtomic() &&
-               load->getType()->isIntegerTy();
+               scalarBitWidth(load->getType());
     if (const auto *store = dyn_cast<StoreInst>(&instruction))
         return (!store->isVolatile() || hasFIFOArguments) && !store->isAtomic() &&
-               store->getValueOperand()->getType()->isIntegerTy();
+               scalarBitWidth(store->getValueOperand()->getType());
     if (const auto *gep = dyn_cast<GetElementPtrInst>(&instruction))
     {
         Type *indexedType = gep->getSourceElementType();
@@ -166,7 +211,7 @@ bool hasUnsupportedConstantOperand(const Instruction &instruction)
         const Value *operand = operandUse.get();
         if (!isa<Constant>(operand))
             continue;
-        if (isa<ConstantInt>(operand) || isa<UndefValue>(operand) ||
+        if (isa<ConstantInt>(operand) || isa<ConstantFP>(operand) || isa<UndefValue>(operand) ||
             isa<PoisonValue>(operand))
         {
             continue;
@@ -633,6 +678,20 @@ bool HI_BackendValidation::runOnModule(Module &module)
         context->configuration.pragmas.streamCount != 0;
 
     Function &top = *context->top;
+    // Do not admit formats without a matching RTL implementation.
+    for (const BasicBlock &block : top)
+        for (const Instruction &instruction : block)
+        {
+            if (instruction.getType()->isFloatingPointTy() &&
+                !isSupportedFloat(instruction.getType()))
+                context->addError("BACKEND_FLOAT_FORMAT_UNSUPPORTED",
+                    "Only IEEE binary16, binary32 and binary64 are implemented.");
+        }
+    if (top.getReturnType()->isFloatingPointTy() && !isSupportedFloat(top.getReturnType()))
+        context->addError("BACKEND_FLOAT_FORMAT_UNSUPPORTED", "Unsupported floating-point return format.");
+    for (const Argument &argument : top.args())
+        if (argument.getType()->isFloatingPointTy() && !isSupportedFloat(argument.getType()))
+            context->addError("BACKEND_FLOAT_FORMAT_UNSUPPORTED", "Unsupported floating-point argument format.");
     if (!top.getReturnType()->isVoidTy() && !top.getReturnType()->isIntegerTy())
     {
         if (top.getReturnType()->isFloatingPointTy())
@@ -676,6 +735,7 @@ bool HI_BackendValidation::runOnModule(Module &module)
             }
 
             const bool isMemoryInstruction =
+                isBackendLoad(&instruction) || isBackendStore(&instruction) ||
                 isa<LoadInst>(instruction) || isa<StoreInst>(instruction) ||
                 isa<GetElementPtrInst>(instruction) ||
                 isa<AllocaInst>(instruction) || isa<AtomicRMWInst>(instruction) ||
@@ -692,9 +752,10 @@ bool HI_BackendValidation::runOnModule(Module &module)
                 {
                     context->addError(
                         "BACKEND_UNSUPPORTED_MEMORY_OPERATION",
-                        "Only static integer local arrays, non-volatile integer "
-                        "loads/stores (or verified FIFO events), integer GEP indices, and ptrtoint/inttoptr "
-                        "address conversion are supported.",
+                        "Supported forms are static integer/IEEE scalar arrays, non-volatile scalar "
+                        "loads/stores, verified FIFO events, integer address arithmetic, and one-lane "
+                        "predicated memory. Atomics, wider vectors and defined masked-load passthrough "
+                        "values are not supported.",
                         instructionLocation(instruction));
                 }
                 continue;
@@ -720,6 +781,9 @@ bool HI_BackendValidation::runOnModule(Module &module)
     requireSupportedFeature(*context, context->requiredFeatures.loopPipeline,
                             context->capabilities.loopPipeline,
                             "BACKEND_UNSUPPORTED_PIPELINE", "Loop pipelining");
+    if (context->requiredFeatures.floatingPoint)
+        context->addWarning("BACKEND_FLOAT_TIMING_UNCHARACTERIZED",
+            "FP cycle counts follow the RTL implementation; target clock timing and resource estimates require synthesis validation.");
     requireSupportedFeature(*context, context->requiredFeatures.arrayPartition,
                             context->capabilities.arrayPartition,
                             "BACKEND_UNSUPPORTED_ARRAY_PARTITION", "Array partitioning");

@@ -1489,7 +1489,7 @@ static std::string pipelineStorageJSONFields(const HLSBackendContext &context,
             output << ',';
         first = false;
         const unsigned slots = pipelineValueStorageSlots(pipeline, &instruction);
-        const unsigned width = instruction.getType()->getIntegerBitWidth();
+        const unsigned width = scalarBitWidth(instruction.getType());
         const auto alias = pipeline.storageAliases.find(&instruction);
         if (alias == pipeline.storageAliases.end())
             allocatedBits += static_cast<unsigned long long>(slots) * width;
@@ -1555,7 +1555,7 @@ std::string makeScheduleJSON(const HLSBackendContext &context, bool detailed)
                 firstFeedback = false;
                 output << "{\"operation\":" << jsonString(context.valueNames.at(&instruction))
                        << ",\"phi\":" << jsonString(context.valueNames.at(feedback->second))
-                       << ",\"bit_width\":" << instruction.getType()->getIntegerBitWidth()
+                       << ",\"bit_width\":" << scalarBitWidth(instruction.getType())
                        << ",\"sample_edge\":" << jsonString(feedback->second->getParent() == &block ?
                             "ordinary_self_backedge" : "ordinary_loop_latch") << '}';
             }
@@ -1882,6 +1882,7 @@ std::string makeBindingJSON(const HLSBackendContext &context, bool detailed)
     output << directPorts.first
            << ",\"direct_internal_pipo_write_port_count\":" << directPorts.second
            << ",\"note\":\"These are structural counts, not synthesized LUT/FF results.\"";
+    output << ",\"floating_operator_resources\":" << floatingResourceEstimateJSON(context);
     if (detailed)
     {
         output << ",\"operator_instances\":[";
@@ -1957,12 +1958,16 @@ std::string makeBindingJSON(const HLSBackendContext &context, bool detailed)
                    << jsonString(memoryDepthSourceName(memory.depthSource))
                    << ",\"depth_exact\":"
                    << (memory.depthExact ? "true" : "false")
+                   << ",\"static_initializer_words\":" << memory.initialWords.size()
+                   << ",\"persistent_static_storage\":" << (memory.initialWords.empty() ? "false" : "true")
                    << ",\"inferred_minimum_depth\":";
             if (memory.inferredMinimumDepth == 0)
                 output << "null";
             else
                 output << memory.inferredMinimumDepth;
             output
+                   << ",\"proven_minimum_depth\":" << memory.provenMinimumDepth
+                   << ",\"inferred_depth_is_conservative_upper_bound\":true"
                    << ",\"partition_kind\":"
                    << jsonString(partitionKindName(memory.partition))
                    << ",\"dimensions\":[";

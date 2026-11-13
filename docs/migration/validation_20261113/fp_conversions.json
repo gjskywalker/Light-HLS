@@ -1,0 +1,41 @@
+{
+  "cases": 3224,
+  "failures": [],
+  "oracle": "LLVM APFloat",
+  "directions": [
+    [
+      16,
+      32
+    ],
+    [
+      16,
+      64
+    ],
+    [
+      32,
+      16
+    ],
+    [
+      32,
+      64
+    ],
+    [
+      64,
+      16
+    ],
+    [
+      64,
+      32
+    ]
+  ],
+  "scheduled_cycles": {
+    "constant": false,
+    "maximum": 13,
+    "minimum": 7
+  },
+  "measured_cycles": [
+    11,
+    12,
+    13
+  ]
+}

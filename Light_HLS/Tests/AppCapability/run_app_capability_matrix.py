@@ -233,7 +233,8 @@ def main() -> int:
                 syntax_log = case_root / "iverilog.log"
                 with syntax_log.open("w", encoding="utf-8") as log:
                     syntax = subprocess.run(
-                        ["iverilog", "-g2012", "-Wall", "-tnull", str(rtl)],
+                        ["iverilog", "-g2012", "-Wall", "-s", entry["top"],
+                         "-tnull", str(rtl)],
                         stdout=log,
                         stderr=subprocess.STDOUT,
                         text=True,

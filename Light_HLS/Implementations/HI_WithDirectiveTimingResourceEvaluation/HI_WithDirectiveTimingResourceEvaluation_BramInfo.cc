@@ -1134,6 +1134,13 @@ HI_WithDirectiveTimingResourceEvaluation::getAccessInfoFor(Value *target, Instru
 
     for (int i = 0; i < res.num_dims; i++) // initial access indice
     {
+        // Opaque pointers and optimized-away arguments can lack dimensions.
+        // Unknown geometry must remain conservative, never divide by zero.
+        if (res.sub_element_num[i] <= 0 || res.dim_size[i] <= 0)
+        {
+            res.unpredictable = true;
+            return res;
+        }
         res.index[i] = (initial_offset / res.sub_element_num[i]) % res.dim_size[i];
     }
 

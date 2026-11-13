@@ -1,0 +1,281 @@
+{
+  "schema_version": "1.0",
+  "stage": "light_hls_local_regression_suite",
+  "valid": false,
+  "expected_suites": 27,
+  "completed_suites": 27,
+  "light_hls_executable": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_Top",
+  "light_hls_executable_sha256": "95078f258d03f17f022029f3ab0eb4a4a374f7b447ba5ec931b504e6303d24cc",
+  "results": [
+    {
+      "suite": "AppCorrectness",
+      "status": "FAIL",
+      "returncode": 1,
+      "elapsed_seconds": 4.82336,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/AppCorrectness/run_supported_apps.sh",
+      "script_sha256": "fd31e7a5f00cd0fc1b0cf4185814d2d07591e882373dabae388875461c0d8877",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/AppCorrectness.log",
+      "result_directory": null
+    },
+    {
+      "suite": "RTL_Backend",
+      "status": "FAIL",
+      "returncode": 1,
+      "elapsed_seconds": 1.068944,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/RTL_Backend/run_iverilog_test.sh",
+      "script_sha256": "9c10edc59c92514dc5d800de7e1ce29fb442d65c67298ab712e2e40c439bd850",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/RTL_Backend.log",
+      "result_directory": null
+    },
+    {
+      "suite": "PipelineBackend",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 1.620417,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/PipelineBackend/run_pipeline_tests.sh",
+      "script_sha256": "1e72af514281a2492482aaa729284300c9d6c7046c3fd9224694582d9c93887f",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/PipelineBackend.log",
+      "result_directory": null
+    },
+    {
+      "suite": "PipelineStorage",
+      "status": "FAIL",
+      "returncode": 1,
+      "elapsed_seconds": 1.519846,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/PipelineStorage/run_storage_tests.sh",
+      "script_sha256": "be47ce1012a6bbfa29a76fce7744080163bd7e32899a7158ae2317e0a5e22744",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/PipelineStorage.log",
+      "result_directory": null
+    },
+    {
+      "suite": "ArrayPartitionBackend",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 1.467121,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/ArrayPartitionBackend/run_array_partition_tests.sh",
+      "script_sha256": "aa96771d07abf9043bd7173cb7a7b644fb83410f61fcd976628154f562e0cef4",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/ArrayPartitionBackend.log",
+      "result_directory": null
+    },
+    {
+      "suite": "OrdinaryBankAnalysis",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 5.604218,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/OrdinaryBankAnalysis/run_tests.sh",
+      "script_sha256": "07c6b1e919716c4954d3416cb42623af79a098539019fb138f26cc784ed2e6b3",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/OrdinaryBankAnalysis.log",
+      "result_directory": null
+    },
+    {
+      "suite": "LocalWriteData",
+      "status": "FAIL",
+      "returncode": 1,
+      "elapsed_seconds": 2.727133,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/LocalWriteData/run_tests.sh",
+      "script_sha256": "07c6b1e919716c4954d3416cb42623af79a098539019fb138f26cc784ed2e6b3",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/LocalWriteData.log",
+      "result_directory": null
+    },
+    {
+      "suite": "FIFOEvents",
+      "status": "FAIL",
+      "returncode": 1,
+      "elapsed_seconds": 0.367601,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/FIFOEvents/run_tests.py",
+      "script_sha256": "87e7673ea19bc9dcaba6e3b57d62d3ac22110209f9008334c3df01fe91f9ad4d",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/FIFOEvents.log",
+      "result_directory": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/FIFOEvents"
+    },
+    {
+      "suite": "OrdinaryFeedback",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 5.016774,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/OrdinaryFeedback/run_tests.py",
+      "script_sha256": "7a4ff0bacb1987dd54fd09358b0dcca3761b96f23a5b88b90f337daf57b1dc88",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/OrdinaryFeedback.log",
+      "result_directory": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/OrdinaryFeedback"
+    },
+    {
+      "suite": "OrdinaryBackedge",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 8.676871,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/OrdinaryBackedge/run_tests.py",
+      "script_sha256": "da267ec51fbf787c26d730582c5615331b871127ed5a0bd6626038a37251ef6d",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/OrdinaryBackedge.log",
+      "result_directory": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/OrdinaryBackedge"
+    },
+    {
+      "suite": "OrdinaryLoopEdges",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 6.623579,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/OrdinaryLoopEdges/run_tests.py",
+      "script_sha256": "d89a2237695bcfa2cf0fbd72301d8a6ea07e781ce2a02e738c7e788bdb82714f",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/OrdinaryLoopEdges.log",
+      "result_directory": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/OrdinaryLoopEdges"
+    },
+    {
+      "suite": "TransactionEdges",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 2.126262,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/TransactionEdges/run_tests.py",
+      "script_sha256": "340052d2808c788194e36dfadcd8149ff6178500087e007dcaf853621231de3f",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/TransactionEdges.log",
+      "result_directory": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/TransactionEdges"
+    },
+    {
+      "suite": "ScalarBankEvents",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 2.74097,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/ScalarBankEvents/run_tests.py",
+      "script_sha256": "b86eba8a492712d29e0f0132a683f912b0fc3396a626690ddedb73edaca1cbed",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/ScalarBankEvents.log",
+      "result_directory": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/ScalarBankEvents"
+    },
+    {
+      "suite": "ScalarReturns",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 1.720687,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/ScalarReturns/run_tests.py",
+      "script_sha256": "1294b9622bd0b373bf6424c0f3816ac68cdebe58cab62692ec444921059200e0",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/ScalarReturns.log",
+      "result_directory": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/ScalarReturns"
+    },
+    {
+      "suite": "PIPOBanks",
+      "status": "FAIL",
+      "returncode": 1,
+      "elapsed_seconds": 0.318402,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/PIPOBanks/run_tests.py",
+      "script_sha256": "e1dc03b8d1b423e1c3e6789d6b54238f46acbe29beda21dff1432449d9296ac9",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/PIPOBanks.log",
+      "result_directory": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/PIPOBanks"
+    },
+    {
+      "suite": "BindingCost",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 1.678733,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/BindingCost/run_tests.py",
+      "script_sha256": "2198f230d041f18deaea32fe3f0b0db254d47c98608ae732aed73c6b9ff065eb",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/BindingCost.log",
+      "result_directory": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/BindingCost"
+    },
+    {
+      "suite": "QoRPressure",
+      "status": "FAIL",
+      "returncode": 1,
+      "elapsed_seconds": 6.790132,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/QoRPressure/run_tests.py",
+      "script_sha256": "82f0a9361936d78b67cd280351b7dd286084ae72990b5ff6be576380ab2a1f8f",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/QoRPressure.log",
+      "result_directory": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/QoRPressure"
+    },
+    {
+      "suite": "BankConflict",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 92.220199,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/BankConflict/run_tests.py",
+      "script_sha256": "4373105016a04d0976bc37be40b472efbde4713152d27253e985d4425fa693cc",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/BankConflict.log",
+      "result_directory": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/BankConflict"
+    },
+    {
+      "suite": "ArithmeticMapping",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 0.36821,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/ArithmeticMapping/run_tests.py",
+      "script_sha256": "d5f0e2206039465090e36bb8be5b77c2d6c98b77d1ba9d1bc11a405a05516f24",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/ArithmeticMapping.log",
+      "result_directory": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/ArithmeticMapping"
+    },
+    {
+      "suite": "DataflowCompletion",
+      "status": "FAIL",
+      "returncode": 1,
+      "elapsed_seconds": 0.318841,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/DataflowCompletion/run_tests.py",
+      "script_sha256": "ef9d6783f15e94e59714d6a52a449923e0479ff712d6f8ee81913640238cc594",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/DataflowCompletion.log",
+      "result_directory": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/DataflowCompletion"
+    },
+    {
+      "suite": "StorageBindingBackend",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 0.215157,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/StorageBindingBackend/run_storage_binding_tests.sh",
+      "script_sha256": "d1f3e60b11fd09ea94aa18df8c8420216211b3045feceb691e5390bd79e946db",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/StorageBindingBackend.log",
+      "result_directory": null
+    },
+    {
+      "suite": "DataflowBackend",
+      "status": "FAIL",
+      "returncode": 1,
+      "elapsed_seconds": 0.21491,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/DataflowBackend/run_dataflow_backend_tests.sh",
+      "script_sha256": "1b464099a4ce84028a88cff98ddcb816b8e577ad1e518898b1083a38db879e94",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/DataflowBackend.log",
+      "result_directory": null
+    },
+    {
+      "suite": "FairComparisonInterface",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 0.067053,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/FairComparison/test_interface_normalization.py",
+      "script_sha256": "ee70546062d906f11a8694b086475cefa98a910f20bfe699b91e1b22ae54b668",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/FairComparisonInterface.log",
+      "result_directory": null
+    },
+    {
+      "suite": "AppCapability",
+      "status": "FAIL",
+      "returncode": 1,
+      "elapsed_seconds": 19.923463,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/AppCapability/run_app_capability_matrix.py",
+      "script_sha256": "e1b101b2b74f1cac00e7ddd2b153837ee7bd4d47f2e787e28a46054d1fe9698c",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/AppCapability.log",
+      "result_directory": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/AppCapability"
+    },
+    {
+      "suite": "FairComparisonQoR",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 0.066785,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/FairComparison/test_qor_checkpoint.py",
+      "script_sha256": "03cf3a9a1059d07260100b056f13bf859935f8146d3aa1f588338016dfc6ed20",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/FairComparisonQoR.log",
+      "result_directory": null
+    },
+    {
+      "suite": "TransactionEventMetrics",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 0.066551,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/FairComparison/test_transaction_events.py",
+      "script_sha256": "44ae1602b29e143150820011e88f96b824df0fe6dfaf3b03833452c9fa7973c2",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/TransactionEventMetrics.log",
+      "result_directory": null
+    },
+    {
+      "suite": "EvaluationContract",
+      "status": "PASS",
+      "returncode": 0,
+      "elapsed_seconds": 0.066559,
+      "script": "/home/eeuser/Desktop/Light-HLS/Light_HLS/Tests/FairComparison/test_evaluation_contract.py",
+      "script_sha256": "1e482f2fdddad2ee1fb2452ae81efaf023433042db1978c5a5d85a4267d0d44f",
+      "log": "/home/eeuser/Desktop/Light-HLS/runs/sync_20261113/core_initial/EvaluationContract.log",
+      "result_directory": null
+    }
+  ]
+}

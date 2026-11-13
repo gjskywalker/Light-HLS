@@ -28,7 +28,7 @@ std::vector<const Value *> integerOperands(const Instruction &instruction)
 {
     std::vector<const Value *> values;
     for (const Use &operand : instruction.operands())
-        if (operand->getType()->isIntegerTy())
+        if (scalarBitWidth(operand->getType()))
             values.push_back(operand.get());
     return values;
 }
@@ -49,7 +49,7 @@ unsigned long long operandSelectionCost(const std::vector<InstructionSchedule *>
         const bool invariant = sources.size() == 1 &&
             (isa<ConstantInt>(*sources.begin()) || isa<Argument>(*sources.begin()));
         if (!invariant)
-            cost += static_cast<unsigned long long>(representative[index]->getType()->getIntegerBitWidth()) *
+            cost += static_cast<unsigned long long>(scalarBitWidth(representative[index]->getType())) *
                     operations.size();
     }
     return cost;
@@ -110,9 +110,11 @@ OperatorAllocation selectAllocation(
 
 std::string bindingOpcode(const Instruction &instruction)
 {
-    if (const auto *comparison = dyn_cast<ICmpInst>(&instruction))
+    if (const auto *call = dyn_cast<IntrinsicInst>(&instruction))
+        return call->getCalledFunction()->getName().str();
+    if (const auto *comparison = dyn_cast<CmpInst>(&instruction))
     {
-        return "icmp_" +
+        return std::string(isa<FCmpInst>(instruction) ? "fcmp_" : "icmp_") +
                CmpInst::getPredicateName(comparison->getPredicate()).str();
     }
     return instruction.getOpcodeName();
@@ -123,12 +125,12 @@ std::string operandWidthSignature(const Instruction &instruction)
     std::string signature;
     for (const Use &operandUse : instruction.operands())
     {
-        const auto *type = dyn_cast<IntegerType>(operandUse->getType());
+        const unsigned type = scalarBitWidth(operandUse->getType());
         if (!type)
             continue;
         if (!signature.empty())
             signature += '_';
-        signature += std::to_string(type->getBitWidth());
+        signature += std::to_string(type);
     }
     return signature.empty() ? "none" : signature;
 }
@@ -171,7 +173,7 @@ unsigned operandMuxCount(const Instruction &instruction)
 
 bool isMemoryAddressInstruction(const Instruction &instruction)
 {
-    return isa<LoadInst>(instruction) || isa<StoreInst>(instruction) ||
+    return isBackendLoad(&instruction) || isBackendStore(&instruction) ||
            isa<GetElementPtrInst>(instruction) || isa<PtrToIntInst>(instruction) ||
            isa<IntToPtrInst>(instruction) || isa<AddrSpaceCastInst>(instruction);
 }
@@ -303,7 +305,9 @@ bool HI_ResourceBinding::runOnModule(Module &module)
                 continue;
             const OperatorKey key(bindingOpcode(*schedule.instruction),
                                   schedule.resultWidth,
-                                  operandWidthSignature(*schedule.instruction));
+                                  operandWidthSignature(*schedule.instruction) +
+                                  (isIterativeFloating(*schedule.instruction)
+                                       ? "_" + schedule.name : ""));
             operationsByTime[key][TimeKey(
                 block.name, bindingTime(*context, block, schedule.startCycle))]
                 .push_back(&schedule);
@@ -332,10 +336,9 @@ bool HI_ResourceBinding::runOnModule(Module &module)
             for (const Use &operandUse :
                  representative->instruction->operands())
             {
-                const auto *operandType =
-                    dyn_cast<IntegerType>(operandUse->getType());
+                const unsigned operandType = scalarBitWidth(operandUse->getType());
                 if (operandType)
-                    instance.operandWidths.push_back(operandType->getBitWidth());
+                    instance.operandWidths.push_back(operandType);
             }
             // Shared multipliers must accommodate every operation in the group,
             // not just the representative. Scheduling and latency are unchanged.
@@ -482,21 +485,21 @@ bool HI_ResourceBinding::runOnModule(Module &module)
 
     for (const Argument &argument : context->top->args())
     {
-        if (const auto *type = dyn_cast<IntegerType>(argument.getType()))
+        if (const unsigned type = scalarBitWidth(argument.getType()))
         {
             ++context->binding.registerCount;
-            context->binding.registerBits += type->getBitWidth();
+            context->binding.registerBits += type;
         }
     }
     for (const BasicBlock &block : *context->top)
     {
         for (const Instruction &instruction : block)
         {
-            if (const auto *type = dyn_cast<IntegerType>(instruction.getType());
+            if (const unsigned type = scalarBitWidth(instruction.getType());
                 type && needsGlobalRegister(*context, instruction))
             {
                 ++context->binding.registerCount;
-                context->binding.registerBits += type->getBitWidth();
+                context->binding.registerBits += type;
             }
         }
     }
@@ -508,14 +511,14 @@ bool HI_ResourceBinding::runOnModule(Module &module)
         {
             if (pipeline.storageAliases.count(value))
                 continue;
-            const auto *type = dyn_cast<IntegerType>(value->getType());
+            const unsigned type = scalarBitWidth(value->getType());
             if (!type)
                 continue;
             const unsigned slots = pipelineValueStorageSlots(pipeline, value);
             context->binding.registerCount += slots;
             context->binding.registerBits +=
                 static_cast<unsigned long long>(slots) *
-                type->getBitWidth();
+                type;
         }
         if (pipeline.stageIndexedController || !pipeline.derivedValues.empty())
         {
@@ -553,11 +556,10 @@ bool HI_ResourceBinding::runOnModule(Module &module)
                 static_cast<unsigned>(pipeline.achievedII - 1));
         }
     }
-    if (const auto *returnType =
-            dyn_cast<IntegerType>(context->top->getReturnType()))
+    if (const unsigned returnType = scalarBitWidth(context->top->getReturnType()))
     {
         ++context->binding.registerCount;
-        context->binding.registerBits += returnType->getBitWidth();
+        context->binding.registerBits += returnType;
     }
 
     context->binding.stateRegisterBits =

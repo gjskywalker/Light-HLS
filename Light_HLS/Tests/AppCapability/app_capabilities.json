@@ -33,7 +33,9 @@
       "source": "App/2dloop2darray_pl/2dloop2darray_pl.cc",
       "top": "f",
       "expectation": "failure",
-      "expected_diagnostics": ["BACKEND_MEMORY_DEPTH_TOO_SMALL"],
+      "expected_diagnostics": [
+        "BACKEND_MEMORY_DEPTH_TOO_SMALL"
+      ],
       "unsupported_feature": "statically provable out-of-bounds source access"
     },
     {
@@ -54,7 +56,9 @@
       "source": "App/2dloop2darray_pl_depCheck/2dloop2darray_pl.cc",
       "top": "f",
       "expectation": "failure",
-      "expected_diagnostics": ["BACKEND_MEMORY_DEPTH_TOO_SMALL"],
+      "expected_diagnostics": [
+        "BACKEND_MEMORY_DEPTH_TOO_SMALL"
+      ],
       "unsupported_feature": "statically provable out-of-bounds source access"
     },
     {
@@ -68,7 +72,9 @@
       "source": "App/2dloop2darray_pl_indeploop/2dloop2darray_pl.cc",
       "top": "f",
       "expectation": "failure",
-      "expected_diagnostics": ["BACKEND_MEMORY_DEPTH_TOO_SMALL"],
+      "expected_diagnostics": [
+        "BACKEND_MEMORY_DEPTH_TOO_SMALL"
+      ],
       "unsupported_feature": "statically provable out-of-bounds source access"
     },
     {
@@ -82,7 +88,9 @@
       "source": "App/2dloop2darray_pl_multest/2dloop2darray_pl.cc",
       "top": "f",
       "expectation": "failure",
-      "expected_diagnostics": ["BACKEND_MEMORY_DEPTH_TOO_SMALL"],
+      "expected_diagnostics": [
+        "BACKEND_MEMORY_DEPTH_TOO_SMALL"
+      ],
       "unsupported_feature": "statically provable out-of-bounds source access"
     },
     {
@@ -152,6 +160,18 @@
       "functional_regression": "RTL_Backend"
     },
     {
+      "app": "backend_expression",
+      "source": "App/backend_expression/backend_expression_nonzero.cpp",
+      "top": "dut",
+      "expectation": "success"
+    },
+    {
+      "app": "backend_floating",
+      "source": "App/backend_floating/backend_floating.cpp",
+      "top": "backend_floating",
+      "expectation": "success"
+    },
+    {
       "app": "backend_local_memory",
       "source": "App/backend_local_memory/backend_local_memory.cpp",
       "top": "backend_local_memory",
@@ -214,8 +234,10 @@
       "source": "App/correlation/correlation.cpp",
       "top": "kernel_correlation",
       "expectation": "failure",
-      "expected_diagnostics": ["BACKEND_UNSUPPORTED_FLOATING_POINT"],
-      "unsupported_feature": "floating point"
+      "expected_diagnostics": [
+        "BACKEND_UNSUPPORTED_INSTRUCTION"
+      ],
+      "unsupported_feature": "nonstandard sqrtf0/sqrtf1 declarations; not signature-checked libm"
     },
     {
       "app": "deriche",
@@ -234,17 +256,13 @@
       "app": "fdtd2d",
       "source": "App/fdtd2d/fdtd.cc",
       "top": "kernel_fdtd_2d",
-      "expectation": "failure",
-      "expected_diagnostics": ["BACKEND_UNSUPPORTED_FLOATING_POINT"],
-      "unsupported_feature": "floating point"
+      "expectation": "success"
     },
     {
       "app": "jacobi",
       "source": "App/jacobi/jacobi-2d.c",
       "top": "kernel_jacobi_2d",
-      "expectation": "failure",
-      "expected_diagnostics": ["BACKEND_UNSUPPORTED_FLOATING_POINT"],
-      "unsupported_feature": "floating point"
+      "expectation": "success"
     },
     {
       "app": "light_hls_dataflow",

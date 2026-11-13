@@ -90,6 +90,25 @@ public:
             DeclarationName DeclName = f->getNameInfo().getName();
             std::string FuncName = DeclName.getAsString();
 
+            // A legacy ap_int alias can desugar to ordinary int on this Clang
+            // build. Reject it before silently emitting a 32-bit interface.
+            if (FuncName == topFunctioName)
+            {
+                auto rejectUnsupportedAPInt = [&](QualType type) {
+                    const std::string spelling = type.getAsString();
+                    if (spelling.find("ap_int<") == std::string::npos &&
+                        spelling.find("ap_uint<") == std::string::npos)
+                        return;
+                    unsigned diagnostic = CI.getDiagnostics().getCustomDiagID(
+                        DiagnosticsEngine::Error,
+                        "BACKEND_UNSUPPORTED_AP_INT: arbitrary-precision template interfaces are not supported");
+                    CI.getDiagnostics().Report(f->getLocation(), diagnostic);
+                };
+                rejectUnsupportedAPInt(QT);
+                for (ParmVarDecl *parameter : f->parameters())
+                    rejectUnsupportedAPInt(parameter->getOriginalType());
+            }
+
             // Add comment before
             SourceLocation ST = f->getSourceRange().getBegin();
             FullSourceLoc FSL(ST, CI.getSourceManager());
