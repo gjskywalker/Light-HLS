@@ -340,6 +340,8 @@ def testbench_source(spec: dict, memories: list[dict], rtl: str, cases: list[dic
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--design", choices=SPECS, required=True)
+    parser.add_argument("--project-root", type=Path, default=ROOT,
+                        help="Root containing Dataset/HLSDesigns (set to the DAPO-II checkout when used as a submodule)")
     parser.add_argument("--reports", type=Path)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--ir", type=Path)
@@ -357,13 +359,17 @@ def main(argv: list[str] | None = None) -> int:
         parser.error("Cases, timeout and maximum cycles must be positive")
     if not args.reference_only and args.reports is None:
         parser.error("--reports is required unless --reference-only is selected")
+    project_root = args.project_root.resolve()
+    spec = SPECS[args.design]
+    source = project_root / spec["source"]
+    if not source.is_file():
+        parser.error(f"Benchmark source does not exist: {source}; set --project-root to the DAPO-II checkout")
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=True)
     if (output / "verification.json").exists():
         parser.error(f"Refusing to overwrite previous validation results: {output}")
-    spec = SPECS[args.design]
-    source = ROOT / spec["source"]
     result = {"schema_version": "1.0", "design": args.design, "status": "running",
+              "project_root": str(project_root),
               "source": str(source), "source_sha256": sha256(source), "seed": args.seed,
               "case_count": args.cases, "coverage": spec["coverage"],
               "cross_argument_aliasing": False, "reference_ubsan": False,
