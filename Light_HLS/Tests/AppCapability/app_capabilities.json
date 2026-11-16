@@ -213,7 +213,7 @@
       "source": null,
       "top": null,
       "expectation": "not_applicable",
-      "unsupported_feature": "empty placeholder directory"
+      "unsupported_feature": "placeholder directory without a source fixture"
     },
     {
       "app": "bin_conv",
