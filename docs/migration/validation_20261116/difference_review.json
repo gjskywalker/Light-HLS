@@ -1,0 +1,101 @@
+{
+  "source_head": "40eb950d1af686e30e9c30fc1cd335949256d3b3",
+  "standalone_before": "8c40f30c18766163d6598d4d239fe9b2f0e9d5b6",
+  "source_component_entries": 805,
+  "standalone_component_entries": 805,
+  "new_upstream_compiler_changes_since_snapshot": 0,
+  "preserved_local_adaptations": [
+    {
+      "path": "Light_HLS/BuildLibs.sh",
+      "status": "local_adaptation",
+      "source_sha256": "b199e0fd062de42002daac735cc43ab69109ac9f826e12040edc6d0ddbcf3a35",
+      "target_sha256": "8d73b12f8457f44c31acfb6ffed31954f196aedbf4c700facf2360f499946e78",
+      "baseline_source": "b199e0fd062de42002daac735cc43ab69109ac9f826e12040edc6d0ddbcf3a35",
+      "baseline_target": "8d73b12f8457f44c31acfb6ffed31954f196aedbf4c700facf2360f499946e78"
+    },
+    {
+      "path": "Light_HLS/Implementations/HI_FunctionInterfaceInfo/HI_FunctionInterfaceInfo.h",
+      "status": "local_adaptation",
+      "source_sha256": "1b7ab417cf381a7d4a4154354c880eabcff77e0d6273d3eb26236bf13459dd26",
+      "target_sha256": "f00a75c28354578402700f8d14b55aa768477647f90452e394a62905d493af69",
+      "baseline_source": "1b7ab417cf381a7d4a4154354c880eabcff77e0d6273d3eb26236bf13459dd26",
+      "baseline_target": "f00a75c28354578402700f8d14b55aa768477647f90452e394a62905d493af69"
+    },
+    {
+      "path": "Light_HLS/Implementations/HI_MemoryObjectAnalysis/HI_MemoryObjectAnalysis.cc",
+      "status": "local_adaptation",
+      "source_sha256": "4cf0ee74e407583156d08c5802d742338a6b9b002dbb72468530b422c0e60941",
+      "target_sha256": "2ea11d390b2ffd684cd9ad49dd8eb2af06fc86a9be4b52160bcac207e13236cd",
+      "baseline_source": "4cf0ee74e407583156d08c5802d742338a6b9b002dbb72468530b422c0e60941",
+      "baseline_target": "2ea11d390b2ffd684cd9ad49dd8eb2af06fc86a9be4b52160bcac207e13236cd"
+    },
+    {
+      "path": "Light_HLS/Tests/AppCapability/app_capabilities.json",
+      "status": "local_adaptation",
+      "source_sha256": "dd4d601c1a9708f2ab9f9125c55609e79d02002e437d89f06cd1109b9582b426",
+      "target_sha256": "6a11cdd1ebca00232821f198ba97ecd3e3dcc85d2c1232cc05c42cdd469b3a1a",
+      "baseline_source": "dd4d601c1a9708f2ab9f9125c55609e79d02002e437d89f06cd1109b9582b426",
+      "baseline_target": "6a11cdd1ebca00232821f198ba97ecd3e3dcc85d2c1232cc05c42cdd469b3a1a"
+    },
+    {
+      "path": "Light_HLS/Tests/AppCapability/run_app_capability_matrix.py",
+      "status": "local_adaptation",
+      "source_sha256": "e1b101b2b74f1cac00e7ddd2b153837ee7bd4d47f2e787e28a46054d1fe9698c",
+      "target_sha256": "d5c73001e4c35a794da036d144eedb501fd9d58e0a36696b8d4a80dbb4aa4823",
+      "baseline_source": "e1b101b2b74f1cac00e7ddd2b153837ee7bd4d47f2e787e28a46054d1fe9698c",
+      "baseline_target": "d5c73001e4c35a794da036d144eedb501fd9d58e0a36696b8d4a80dbb4aa4823"
+    },
+    {
+      "path": "Light_HLS/Tests/AppCorrectness/run_supported_apps.sh",
+      "status": "local_adaptation",
+      "source_sha256": "fd31e7a5f00cd0fc1b0cf4185814d2d07591e882373dabae388875461c0d8877",
+      "target_sha256": "56e5f12b86561db9f53e2f6887309a418d24cacf13620b94188a473dbe2a93d0",
+      "baseline_source": "fd31e7a5f00cd0fc1b0cf4185814d2d07591e882373dabae388875461c0d8877",
+      "baseline_target": "56e5f12b86561db9f53e2f6887309a418d24cacf13620b94188a473dbe2a93d0"
+    },
+    {
+      "path": "Light_HLS/Tests/Light_HLS_Top/CMakeLists.txt",
+      "status": "local_adaptation",
+      "source_sha256": "51f9adb9c746140723a85cb6b6f7beae637c980d3bf3aa2d4e116f2d4eb29ba1",
+      "target_sha256": "1713d2ea86fdf5d4c4cdf931a413dd639b1155b610878fb3e46136bcb35b040a",
+      "baseline_source": "51f9adb9c746140723a85cb6b6f7beae637c980d3bf3aa2d4e116f2d4eb29ba1",
+      "baseline_target": "1713d2ea86fdf5d4c4cdf931a413dd639b1155b610878fb3e46136bcb35b040a"
+    },
+    {
+      "path": "Light_HLS/Tests/Light_HLS_Top/Light_HLS_Top.cc",
+      "status": "local_adaptation",
+      "source_sha256": "c2b4a0ad9683f584ee1e9110f020a0e81093012da98f227d8c8ef372a9781be6",
+      "target_sha256": "40e50beb26dc745c04ebca40074e2ca4456c07c9ae637658f0bf26607eb53b24",
+      "baseline_source": "c2b4a0ad9683f584ee1e9110f020a0e81093012da98f227d8c8ef372a9781be6",
+      "baseline_target": "40e50beb26dc745c04ebca40074e2ca4456c07c9ae637658f0bf26607eb53b24"
+    },
+    {
+      "path": "Light_HLS/Tests/RTL_Backend/run_iverilog_test.sh",
+      "status": "local_adaptation",
+      "source_sha256": "9c10edc59c92514dc5d800de7e1ce29fb442d65c67298ab712e2e40c439bd850",
+      "target_sha256": "f66ecaa5f2035182a8160ac298dd8a2bbdb54cb755a7f58b5add5a167cf077f2",
+      "baseline_source": "9c10edc59c92514dc5d800de7e1ce29fb442d65c67298ab712e2e40c439bd850",
+      "baseline_target": "f66ecaa5f2035182a8160ac298dd8a2bbdb54cb755a7f58b5add5a167cf077f2"
+    }
+  ],
+  "updated_supporting_metadata": [
+    "Dataset/Testbenches/SOURCE_FIXES.md",
+    "Dataset/Testbenches/source_fixes.cfg"
+  ],
+  "new_integration_changes": [
+    "verify_rtl.py --project-root explicitly locates DAPO benchmarks",
+    "Tracked README preserves App/backend_types in fresh checkouts"
+  ],
+  "manifest_status_counts": {
+    "identical": 881,
+    "standalone_build": 2,
+    "reject_unsupported_ap_int_interface": 1,
+    "attainable_fixed_trip_bounds": 1,
+    "updated_capability_contract": 1,
+    "iverilog_explicit_top": 1,
+    "new_report_fields": 2,
+    "explicit_dataset_root": 1,
+    "dataflow_task_boundaries": 1,
+    "new_checkout_placeholder": 1
+  }
+}

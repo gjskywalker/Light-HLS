@@ -1,0 +1,35 @@
+{
+  "case_count": 2,
+  "cases": [
+    {
+      "case": 0,
+      "input_sha256": "fa43239bcee7b97ca62f007cc68487560a39e19f74f3dde7486db3f98df8e471",
+      "reference_sha256": "1215d346158e9a351457198d6da53678bd6005ef90d1870e7685ae9a27b76acf",
+      "return": 0,
+      "trial": 0
+    },
+    {
+      "case": 1,
+      "input_sha256": "480213451e8c6d6128134311b1cc83d2540444f7c02cab03589a6cd91fbedf79",
+      "reference_sha256": "47e810a57153e2fe9854597a3b372cbdcaea3d425c5d86d3a3e6366d86f19cce",
+      "return": 9556,
+      "trial": 1
+    }
+  ],
+  "clang_version": "clang version 18.0.0 (git@github.com:llvm/llvm-project.git bde5717d4638c27614d9d4a2e53df27087a69841)\nTarget: x86_64-unknown-linux-gnu\nThread model: posix\nInstalledDir: /usr/local/bin\n",
+  "coverage": "Exact _opt source, including its unusual first loop; bounded values, boundary-spanning matches and random data.",
+  "cross_argument_aliasing": false,
+  "design": "substring",
+  "latency_definition": "Clock edges from accepted ap_start && ap_ready to observed ap_done; final write latency is reported separately.",
+  "native_ir_equivalence": "not_requested",
+  "project_root": "/home/eeuser/Desktop/DAPO_II",
+  "read_during_write": "One-cycle synchronous read-first memory; same-address dual writes rejected.",
+  "reference_ubsan": true,
+  "reset_protocol": "Warm second transaction; synchronous reset between each subsequent pair; no reset-abort coverage.",
+  "rtl_correct": null,
+  "schema_version": "1.0",
+  "seed": 17,
+  "source": "/home/eeuser/Desktop/DAPO_II/Dataset/HLSDesigns/substring/substring_opt.cc",
+  "source_sha256": "bb181c08711270e3014734b4bbbe64728016edcb69e0375e3231d121a88f91ac",
+  "status": "passed"
+}

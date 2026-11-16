@@ -1,0 +1,732 @@
+{
+  "designs": [
+    {
+      "backend_manifest": "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/prepared/reports/dapo_manifest.json",
+      "backend_manifest_sha256": "a3cf23fe375e11c76973ec7826d88f669de41bf4e21946f38cd77d8e82757e25",
+      "baseline_estimate": {
+        "board": "u250",
+        "clock_period_ns": 10.0,
+        "config": "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/prepared/reports/.lighthls/effective_config.cfg",
+        "config_hash": "fnv1a64:d770845b4255c38e",
+        "dataflow_ii": 0,
+        "estimated_ir_hash": "fnv1a64:a7647318e0efb5a0",
+        "estimated_resources": {
+          "bram": 13,
+          "dsp": 15,
+          "ff": 824,
+          "lut": 989
+        },
+        "evaluator": "HI_WithDirectiveTimingResourceEvaluation",
+        "evaluator_clock_period_ns": 10.0,
+        "floating_operator_resources": {
+          "complete": true,
+          "implementation": "hardfloat_release1_scalar_ce_v2",
+          "matched_instances": 0,
+          "matched_operator_resources": {
+            "dsp": 0,
+            "ff": 0,
+            "lut": 0
+          },
+          "matched_units": [],
+          "missing_keys": [],
+          "model_hash": "fnv1a64:22244939de5d798c",
+          "model_path": "/home/eeuser/Desktop/DAPO_II/third_party/Light-HLS/Light_HLS/Implementations/HI_BackendCommon/../../RTL/floating_resources_u250.cfg",
+          "note": "Additive bound-FU costs; excludes memory, controller, muxes, context storage, CE overhead, and cross-operator optimization.",
+          "requested_instances": 0,
+          "schema_version": 1,
+          "scope": "isolated_floating_operators_only",
+          "status": "covered",
+          "tasks": [],
+          "whole_design_calibrated": false
+        },
+        "floating_point": {
+          "clock_characterized": false,
+          "formats": [
+            "binary16",
+            "binary32",
+            "binary64"
+          ],
+          "half_resource_model": "uncharacterized; legacy FP32 operator-cost surrogate, not FP16 calibration",
+          "implementation": "hardfloat_release1_scalar_ce_v2",
+          "integer_conversion_rounding": "toward_zero",
+          "note": "Cycle counts use the emitted schedule; combinational FP timing and resources require synthesis validation.",
+          "present": false,
+          "resource_estimate_calibrated": false,
+          "rounding": "nearest_ties_even"
+        },
+        "heuristic_valid": true,
+        "input": "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/prepared/reports/.lighthls/prepared.bc",
+        "input_hash": "fnv1a64:dbcaee6e45cea1a4",
+        "latency_cycles": 42086,
+        "legalized_ir_hash": "fnv1a64:a7647318e0efb5a0",
+        "library": "/home/eeuser/Desktop/DAPO_II/third_party/Light-HLS/Light_HLS/HLS_Data_Lib/boards/u250/",
+        "llvm_version": "18.0.0git",
+        "loop_iteration_latency": {
+          "Loop_dut_1": 1315,
+          "Loop_dut_2": 41
+        },
+        "loop_labels": {
+          "_Z3dutPA32_iS0_S0_S0_S0_S0_-for.body3": "Loop_dut_2",
+          "_Z3dutPA32_iS0_S0_S0_S0_S0_-for.cond1.preheader": "Loop_dut_1"
+        },
+        "loop_smallest_ii": {
+          "Loop_dut_2": 5
+        },
+        "loop_trip_counts": {
+          "_Z3dutPA32_iS0_S0_S0_S0_S0_-for.body3": 32,
+          "_Z3dutPA32_iS0_S0_S0_S0_S0_-for.cond1.preheader": 32
+        },
+        "manifest": "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/prepared/reports/dapo_manifest.json",
+        "manifest_hash": "fnv1a64:8c6d20f6018ce285",
+        "note": "Heuristic pre-backend estimate with fixed source directives and the selected board library; not RTL simulation or measured synthesis QoR.",
+        "post_search_legalization": [
+          "direct-helper-inlining-v1",
+          "constant-expression-materialization-v1",
+          "constant-memory-initializers-v1",
+          "same-base-pointer-phi-v1",
+          "scalar-libm-no-errno-v1",
+          "optional-fmuladd-unfused-v1",
+          "mem2reg",
+          "lower-switch",
+          "loop-simplify",
+          "lcssa"
+        ],
+        "pragma_configuration": {
+          "applied_unroll": [],
+          "block_partitions": [],
+          "complete_partitions": [],
+          "cyclic_partitions": [],
+          "fixed_unroll": {},
+          "pipeline": {},
+          "unroll": {}
+        },
+        "predicated_pipeline_loops": 0,
+        "requested_latency_model": "scheduled",
+        "scheduled_latency": {
+          "assumptions": "Fixed-latency backend memory protocol; no external backpressure. Bounds do not model correlations between input-dependent branches.",
+          "blocks": [
+            {
+              "cycles": 5,
+              "name": "entry",
+              "pipelined": false
+            },
+            {
+              "cycles": 1,
+              "name": "for_cond1_preheader",
+              "pipelined": false
+            },
+            {
+              "cycles": 42,
+              "name": "for_body3",
+              "pipelined": false
+            },
+            {
+              "cycles": 1,
+              "name": "for_inc38",
+              "pipelined": false
+            },
+            {
+              "cycles": 0,
+              "name": "for_end40",
+              "pipelined": false
+            }
+          ],
+          "cycles": {
+            "constant": true,
+            "maximum": 43077,
+            "minimum": 43077
+          },
+          "loops": [
+            {
+              "backedge_bound_source": "scalar-evolution-exact",
+              "backedges": 31,
+              "constant_backedges": true,
+              "exit": {
+                "constant": true,
+                "maximum": 42,
+                "minimum": 42
+              },
+              "header": "for.body3",
+              "minimum_backedges": 31,
+              "repeat": {
+                "constant": true,
+                "maximum": 42,
+                "minimum": 42
+              },
+              "total": {
+                "constant": true,
+                "maximum": 1344,
+                "minimum": 1344
+              }
+            },
+            {
+              "backedge_bound_source": "scalar-evolution-exact",
+              "backedges": 31,
+              "constant_backedges": true,
+              "exit": {
+                "constant": true,
+                "maximum": 1346,
+                "minimum": 1346
+              },
+              "header": "for.cond1.preheader",
+              "minimum_backedges": 31,
+              "repeat": {
+                "constant": true,
+                "maximum": 1346,
+                "minimum": 1346
+              },
+              "total": {
+                "constant": true,
+                "maximum": 43072,
+                "minimum": 43072
+              }
+            }
+          ],
+          "model": "scheduled_cfg_v1",
+          "reason": "Constant schedule-derived transaction cycles",
+          "valid": true
+        },
+        "schema_version": "1.0",
+        "selected_latency_cycles": 43077,
+        "selected_latency_model": "scheduled_cfg_v1",
+        "source": "/home/eeuser/Desktop/DAPO_II/Dataset/Testbenches/random24.cc",
+        "source_hash": "fnv1a64:f42d696ae9ea5d94",
+        "status": "estimate_completed",
+        "target_frequency_mhz": 100.0,
+        "top_function": "dut",
+        "valid": true,
+        "validation": {
+          "array_partition_directives_valid": true,
+          "clock_matches_manifest": true,
+          "dataflow_directives_valid": true,
+          "library_matches_manifest": true,
+          "nonnegative_resources": true,
+          "pipeline_directives_valid": true,
+          "positive_unsaturated_latency": true,
+          "top_function_found": true
+        }
+      },
+      "baseline_ir": "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/prepared/reports/.lighthls/prepared.bc",
+      "baseline_ir_sha256": "e27382ba12a97382c907d28e3b68f6bed169416d71fcd076709b3231406fb84c",
+      "cpu": 1,
+      "ended_utc": "2026-11-16T13:53:59.313598+00:00",
+      "estimate_receipt": {
+        "command": [
+          "taskset",
+          "-c",
+          "1",
+          "/home/eeuser/Desktop/DAPO_II/third_party/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+          "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/prepared/reports/.lighthls/prepared.bc",
+          "dut",
+          "--manifest",
+          "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/prepared/reports/dapo_manifest.json",
+          "--board",
+          "u250",
+          "--freq",
+          "100MHz",
+          "--latency-model",
+          "scheduled",
+          "--output",
+          "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/baseline_estimate",
+          "--estimate-only"
+        ],
+        "cwd": "/home/eeuser/Desktop/DAPO_II",
+        "elapsed_seconds": 5.0084631480276585,
+        "ended_utc": "2026-11-16T13:53:39.270962+00:00",
+        "exit_code": 0,
+        "heartbeat_utc": "2026-11-16T13:53:34.266207+00:00",
+        "log": "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/estimate.log",
+        "log_sha256": "b25b13cab68f9cca567649e9afa34768c581507d16d4223f0726bca9e9025e68",
+        "output_stall_advisory": false,
+        "pid": 3892633,
+        "started_utc": "2026-11-16T13:53:34.262514+00:00",
+        "status": "completed",
+        "timeout_seconds": 600
+      },
+      "name": "Testbenches_random24",
+      "pragma_lines": [],
+      "preparation_receipt": {
+        "command": [
+          "taskset",
+          "-c",
+          "1",
+          "/home/eeuser/Desktop/DAPO_II/third_party/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+          "--prepare-source",
+          "/home/eeuser/Desktop/DAPO_II/Dataset/Testbenches/random24.cc",
+          "dut",
+          "--board",
+          "u250",
+          "--freq",
+          "100MHz",
+          "--output",
+          "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/prepared"
+        ],
+        "cwd": "/home/eeuser/Desktop/DAPO_II",
+        "elapsed_seconds": 5.008921370841563,
+        "ended_utc": "2026-11-16T13:53:34.261956+00:00",
+        "exit_code": 0,
+        "heartbeat_utc": "2026-11-16T13:53:29.257201+00:00",
+        "log": "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/prepare.log",
+        "log_sha256": "69fcd5617d6dc2109af270e32e2214b470575c908b46e2fc6aa5ecb2fceb9a8c",
+        "output_stall_advisory": false,
+        "pid": 3892562,
+        "started_utc": "2026-11-16T13:53:29.253048+00:00",
+        "status": "completed",
+        "timeout_seconds": 600
+      },
+      "source": "/home/eeuser/Desktop/DAPO_II/Dataset/Testbenches/random24.cc",
+      "source_sha256": "47fd83a41c60fb94c125c658bceea74ffc642808f94af561231ea887dc4d362d",
+      "source_unchanged": true,
+      "split": "Testbenches",
+      "started_utc": "2026-11-16T13:53:29.252871+00:00",
+      "status": "completed",
+      "variants": [
+        {
+          "all_equal_to_selected": true,
+          "classification": "scheduled_exact",
+          "estimate": {
+            "board": "u250",
+            "clock_period_ns": 10.0,
+            "config": "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/prepared/reports/.lighthls/effective_config.cfg",
+            "config_hash": "fnv1a64:d770845b4255c38e",
+            "dataflow_ii": 0,
+            "estimated_ir_hash": "fnv1a64:a7647318e0efb5a0",
+            "estimated_resources": {
+              "bram": 13,
+              "dsp": 15,
+              "ff": 824,
+              "lut": 989
+            },
+            "evaluator": "HI_WithDirectiveTimingResourceEvaluation",
+            "evaluator_clock_period_ns": 10.0,
+            "floating_operator_resources": {
+              "complete": true,
+              "implementation": "hardfloat_release1_scalar_ce_v2",
+              "matched_instances": 0,
+              "matched_operator_resources": {
+                "dsp": 0,
+                "ff": 0,
+                "lut": 0
+              },
+              "matched_units": [],
+              "missing_keys": [],
+              "model_hash": "fnv1a64:22244939de5d798c",
+              "model_path": "/home/eeuser/Desktop/DAPO_II/third_party/Light-HLS/Light_HLS/Implementations/HI_BackendCommon/../../RTL/floating_resources_u250.cfg",
+              "note": "Additive bound-FU costs; excludes memory, controller, muxes, context storage, CE overhead, and cross-operator optimization.",
+              "requested_instances": 0,
+              "schema_version": 1,
+              "scope": "isolated_floating_operators_only",
+              "status": "covered",
+              "tasks": [],
+              "whole_design_calibrated": false
+            },
+            "floating_point": {
+              "clock_characterized": false,
+              "formats": [
+                "binary16",
+                "binary32",
+                "binary64"
+              ],
+              "half_resource_model": "uncharacterized; legacy FP32 operator-cost surrogate, not FP16 calibration",
+              "implementation": "hardfloat_release1_scalar_ce_v2",
+              "integer_conversion_rounding": "toward_zero",
+              "note": "Cycle counts use the emitted schedule; combinational FP timing and resources require synthesis validation.",
+              "present": false,
+              "resource_estimate_calibrated": false,
+              "rounding": "nearest_ties_even"
+            },
+            "heuristic_valid": true,
+            "input": "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/prepared/reports/.lighthls/prepared.bc",
+            "input_hash": "fnv1a64:dbcaee6e45cea1a4",
+            "latency_cycles": 42086,
+            "legalized_ir_hash": "fnv1a64:a7647318e0efb5a0",
+            "library": "/home/eeuser/Desktop/DAPO_II/third_party/Light-HLS/Light_HLS/HLS_Data_Lib/boards/u250/",
+            "llvm_version": "18.0.0git",
+            "loop_iteration_latency": {
+              "Loop_dut_1": 1315,
+              "Loop_dut_2": 41
+            },
+            "loop_labels": {
+              "_Z3dutPA32_iS0_S0_S0_S0_S0_-for.body3": "Loop_dut_2",
+              "_Z3dutPA32_iS0_S0_S0_S0_S0_-for.cond1.preheader": "Loop_dut_1"
+            },
+            "loop_smallest_ii": {
+              "Loop_dut_2": 5
+            },
+            "loop_trip_counts": {
+              "_Z3dutPA32_iS0_S0_S0_S0_S0_-for.body3": 32,
+              "_Z3dutPA32_iS0_S0_S0_S0_S0_-for.cond1.preheader": 32
+            },
+            "manifest": "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/prepared/reports/dapo_manifest.json",
+            "manifest_hash": "fnv1a64:8c6d20f6018ce285",
+            "note": "Heuristic pre-backend estimate with fixed source directives and the selected board library; not RTL simulation or measured synthesis QoR.",
+            "post_search_legalization": [
+              "direct-helper-inlining-v1",
+              "constant-expression-materialization-v1",
+              "constant-memory-initializers-v1",
+              "same-base-pointer-phi-v1",
+              "scalar-libm-no-errno-v1",
+              "optional-fmuladd-unfused-v1",
+              "mem2reg",
+              "lower-switch",
+              "loop-simplify",
+              "lcssa"
+            ],
+            "pragma_configuration": {
+              "applied_unroll": [],
+              "block_partitions": [],
+              "complete_partitions": [],
+              "cyclic_partitions": [],
+              "fixed_unroll": {},
+              "pipeline": {},
+              "unroll": {}
+            },
+            "predicated_pipeline_loops": 0,
+            "requested_latency_model": "scheduled",
+            "scheduled_latency": {
+              "assumptions": "Fixed-latency backend memory protocol; no external backpressure. Bounds do not model correlations between input-dependent branches.",
+              "blocks": [
+                {
+                  "cycles": 5,
+                  "name": "entry",
+                  "pipelined": false
+                },
+                {
+                  "cycles": 1,
+                  "name": "for_cond1_preheader",
+                  "pipelined": false
+                },
+                {
+                  "cycles": 42,
+                  "name": "for_body3",
+                  "pipelined": false
+                },
+                {
+                  "cycles": 1,
+                  "name": "for_inc38",
+                  "pipelined": false
+                },
+                {
+                  "cycles": 0,
+                  "name": "for_end40",
+                  "pipelined": false
+                }
+              ],
+              "cycles": {
+                "constant": true,
+                "maximum": 43077,
+                "minimum": 43077
+              },
+              "loops": [
+                {
+                  "backedge_bound_source": "scalar-evolution-exact",
+                  "backedges": 31,
+                  "constant_backedges": true,
+                  "exit": {
+                    "constant": true,
+                    "maximum": 42,
+                    "minimum": 42
+                  },
+                  "header": "for.body3",
+                  "minimum_backedges": 31,
+                  "repeat": {
+                    "constant": true,
+                    "maximum": 42,
+                    "minimum": 42
+                  },
+                  "total": {
+                    "constant": true,
+                    "maximum": 1344,
+                    "minimum": 1344
+                  }
+                },
+                {
+                  "backedge_bound_source": "scalar-evolution-exact",
+                  "backedges": 31,
+                  "constant_backedges": true,
+                  "exit": {
+                    "constant": true,
+                    "maximum": 1346,
+                    "minimum": 1346
+                  },
+                  "header": "for.cond1.preheader",
+                  "minimum_backedges": 31,
+                  "repeat": {
+                    "constant": true,
+                    "maximum": 1346,
+                    "minimum": 1346
+                  },
+                  "total": {
+                    "constant": true,
+                    "maximum": 43072,
+                    "minimum": 43072
+                  }
+                }
+              ],
+              "model": "scheduled_cfg_v1",
+              "reason": "Constant schedule-derived transaction cycles",
+              "valid": true
+            },
+            "schema_version": "1.0",
+            "selected_latency_cycles": 43077,
+            "selected_latency_model": "scheduled_cfg_v1",
+            "source": "/home/eeuser/Desktop/DAPO_II/Dataset/Testbenches/random24.cc",
+            "source_hash": "fnv1a64:f42d696ae9ea5d94",
+            "status": "estimate_completed",
+            "target_frequency_mhz": 100.0,
+            "top_function": "dut",
+            "valid": true,
+            "validation": {
+              "array_partition_directives_valid": true,
+              "clock_matches_manifest": true,
+              "dataflow_directives_valid": true,
+              "library_matches_manifest": true,
+              "nonnegative_resources": true,
+              "pipeline_directives_valid": true,
+              "positive_unsaturated_latency": true,
+              "top_function_found": true
+            }
+          },
+          "generation_receipt": {
+            "command": [
+              "taskset",
+              "-c",
+              "1",
+              "/home/eeuser/Desktop/DAPO_II/third_party/Light-HLS/Light_HLS/Tests/Light_HLS_Top/build/Light_HLS_DAPO",
+              "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/prepared/reports/.lighthls/prepared.bc",
+              "dut",
+              "--manifest",
+              "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/prepared/reports/dapo_manifest.json",
+              "--board",
+              "u250",
+              "--freq",
+              "100MHz",
+              "--latency-model",
+              "scheduled",
+              "--output",
+              "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/baseline"
+            ],
+            "cwd": "/home/eeuser/Desktop/DAPO_II",
+            "elapsed_seconds": 5.016480250284076,
+            "ended_utc": "2026-11-16T13:53:44.288119+00:00",
+            "exit_code": 0,
+            "heartbeat_utc": "2026-11-16T13:53:39.275119+00:00",
+            "log": "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/baseline_generate.log",
+            "log_sha256": "11730d335a6dcec7bca0f7cce56306828185fa9f688a6345c2e379372eea19c7",
+            "output_stall_advisory": false,
+            "pid": 3892670,
+            "started_utc": "2026-11-16T13:53:39.271655+00:00",
+            "status": "completed",
+            "timeout_seconds": 600
+          },
+          "ir": "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/prepared/reports/.lighthls/prepared.bc",
+          "ir_sha256": "e27382ba12a97382c907d28e3b68f6bed169416d71fcd076709b3231406fb84c",
+          "passes": [],
+          "relative_errors": [
+            0.0,
+            0.0
+          ],
+          "rtl": "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/baseline/reports/rtl/top.v",
+          "rtl_cycles": [
+            43077,
+            43077
+          ],
+          "rtl_generated": true,
+          "rtl_sha256": "1442804b73a0c3cb323181c13d53f8c2a4033ee66915a13329d09db0abb9f166",
+          "scheduled_bounds": {
+            "constant": true,
+            "maximum": 43077,
+            "minimum": 43077
+          },
+          "search_estimate_cycles": 43077,
+          "search_estimate_matches_generation": true,
+          "selected_estimate_cycles": 43077,
+          "selected_latency_model": "scheduled_cfg_v1",
+          "signed_errors": [
+            0,
+            0
+          ],
+          "status": "verified",
+          "variant": "baseline",
+          "verification": {
+            "cases": [
+              {
+                "cycles": 43077,
+                "input_sha256": "de676bae28a480011d3d012db14bef539324e62a841a9627863c689bea168af3",
+                "last_write_cycle": 43076,
+                "reads": 5120,
+                "reference_sha256": "819d9e0d9434be66aa1d4746575d8278bbb7220591420ea2d37438e0c665ac5f",
+                "return": 0,
+                "trial": 0,
+                "writes": 1024
+              },
+              {
+                "cycles": 43077,
+                "input_sha256": "143a2146217a94084544a5ead241c3c6cbb17425fe7ca71cc0c811bf5bab97d5",
+                "last_write_cycle": 43076,
+                "reads": 5120,
+                "reference_sha256": "4da8abc132952653b144c56474dac60add2f0f102e44373c9feecbbb499c0928",
+                "return": 0,
+                "trial": 1,
+                "writes": 1024
+              }
+            ],
+            "coverage": "Four bounded deterministic input patterns, with audited kernel-specific domain constraints. No exhaustive equivalence claim; no cross-argument aliasing; ASan/UBSan do not prove absence of all UB.",
+            "interface": {
+              "arguments": [
+                {
+                  "base": "int",
+                  "const": false,
+                  "depth": 1024,
+                  "dimensions": [
+                    32,
+                    32
+                  ],
+                  "name": "frame1",
+                  "type": "int (*)[32]"
+                },
+                {
+                  "base": "int",
+                  "const": false,
+                  "depth": 1024,
+                  "dimensions": [
+                    32,
+                    32
+                  ],
+                  "name": "frame2",
+                  "type": "int (*)[32]"
+                },
+                {
+                  "base": "int",
+                  "const": false,
+                  "depth": 1024,
+                  "dimensions": [
+                    32,
+                    32
+                  ],
+                  "name": "frame3",
+                  "type": "int (*)[32]"
+                },
+                {
+                  "base": "int",
+                  "const": false,
+                  "depth": 1024,
+                  "dimensions": [
+                    32,
+                    32
+                  ],
+                  "name": "frame4",
+                  "type": "int (*)[32]"
+                },
+                {
+                  "base": "int",
+                  "const": false,
+                  "depth": 1024,
+                  "dimensions": [
+                    32,
+                    32
+                  ],
+                  "name": "frame5",
+                  "type": "int (*)[32]"
+                },
+                {
+                  "base": "int",
+                  "const": false,
+                  "depth": 1024,
+                  "dimensions": [
+                    32,
+                    32
+                  ],
+                  "name": "gradient_z",
+                  "type": "int (*)[32]"
+                }
+              ],
+              "return_type": "void",
+              "symbol": "_Z3dutPA32_iS0_S0_S0_S0_S0_"
+            },
+            "ir": "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/prepared/reports/.lighthls/prepared.bc",
+            "ir_sha256": "e27382ba12a97382c907d28e3b68f6bed169416d71fcd076709b3231406fb84c",
+            "latency_definition": "Rising edges from accepted ap_start&&ap_ready to observed ap_done; final memory write reported separately.",
+            "memory_contract": "Independent typed scalar arrays, one-cycle read-first RAM, same-address simultaneous writes rejected; NaN payloads may differ, all other bits must match.",
+            "native_ir_equivalence": "passed",
+            "reference_asan_ubsan": true,
+            "requested_cases": 2,
+            "reset_protocol": "Warm second call; reset between subsequent pairs; no reset-abort coverage.",
+            "rtl_correct": true,
+            "rtl_sha256": "1442804b73a0c3cb323181c13d53f8c2a4033ee66915a13329d09db0abb9f166",
+            "sanitizer_options": {
+              "ASAN_OPTIONS": "detect_leaks=0",
+              "reason": "LeakSanitizer is incompatible with ptrace; address and undefined-behavior checks remain enabled."
+            },
+            "schema_version": "cv_verification_v1",
+            "seed": 17,
+            "source": "/home/eeuser/Desktop/DAPO_II/Dataset/Testbenches/random24.cc",
+            "source_sha256": "47fd83a41c60fb94c125c658bceea74ffc642808f94af561231ea887dc4d362d",
+            "status": "passed"
+          },
+          "verification_receipt": {
+            "command": [
+              "taskset",
+              "-c",
+              "1",
+              "/usr/bin/python3",
+              "/home/eeuser/Desktop/DAPO_II/experiments/dapo_ii_cross_validation/verify_design.py",
+              "--source",
+              "/home/eeuser/Desktop/DAPO_II/Dataset/Testbenches/random24.cc",
+              "--reports",
+              "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/baseline/reports",
+              "--ir",
+              "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/prepared/reports/.lighthls/prepared.bc",
+              "--output",
+              "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/baseline/validation",
+              "--cases",
+              "2",
+              "--seed",
+              "17",
+              "--timeout-seconds",
+              "300",
+              "--max-cycles",
+              "5000000"
+            ],
+            "cwd": "/home/eeuser/Desktop/DAPO_II",
+            "elapsed_seconds": 15.023099568672478,
+            "ended_utc": "2026-11-16T13:53:59.311952+00:00",
+            "exit_code": 0,
+            "heartbeat_utc": "2026-11-16T13:53:54.306946+00:00",
+            "log": "/home/eeuser/Desktop/DAPO_II/runs/submodule_20261116/batch_smoke/designs/Testbenches_random24/baseline_verify.log",
+            "log_sha256": "acfaadc75092a1f44cfb1cdaf8f56c6d281e64b645a68b9676cebc3cfadebfd6",
+            "output_stall_advisory": false,
+            "pid": 3892674,
+            "started_utc": "2026-11-16T13:53:44.288861+00:00",
+            "status": "completed",
+            "timeout_seconds": 1800
+          },
+          "within_bounds": [
+            true,
+            true
+          ]
+        }
+      ]
+    }
+  ],
+  "schema_version": 1,
+  "status": "completed",
+  "status_counts": {
+    "completed": 1
+  },
+  "tools_unchanged": {
+    "backend": true,
+    "batch_runner": true,
+    "checkpoint": true,
+    "feature_extractor": true,
+    "floating_resource_model": true,
+    "gnn_source": true,
+    "opt": true,
+    "rl_runner": true,
+    "source_repairs_registry": true,
+    "verifier": true,
+    "verifier_helpers": true
+  },
+  "total_designs": 1,
+  "updated_utc": "2026-11-16T13:53:59.870006+00:00"
+}

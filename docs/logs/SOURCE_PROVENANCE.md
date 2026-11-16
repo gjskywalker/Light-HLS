@@ -1,5 +1,9 @@
 # Source provenance
 
+## 2026-11-16 子模块改造
+
+核查 DAPO-II 的 `40eb950` 后，确认编译器源码与上次同步输入一致；保留独立仓库的构建及集成修复，同步两份更新后的 Testbench 元数据。DAPO-II 改为通过 `third_party/Light-HLS` 的固定 gitlink 引用本仓库，并保留相对链接兼容原有入口。差异清单和验证结果见 [改造报告](../migration/SUBMODULE_20261116.md)，开发规则见 [版本管理说明](../migration/SUBMODULE_WORKFLOW.md)。下文为此前同步快照的历史记录。
+
 ## 2026-11-13 增量同步
 
 本次从 `/home/eeuser/Desktop/DAPO_II` 的实际工作区同步 Light-HLS 更新。源仓库 HEAD 仍为 `024e088d4f53f863e9cf1b4558d222927232963c`，新增功能主要存在于未提交修改及未跟踪文件中，因此以 [本次哈希清单](../migration/sync_20261113_manifest.csv)记录实际输入与最终文件，不能仅用源 Git 提交复现。

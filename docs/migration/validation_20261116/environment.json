@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-16",
+  "timezone": "Asia/Hong_Kong",
+  "compiler_build_code_commit": "665ed92c4332ad88ca2dc679005abe343fcc27ff",
+  "capability_metadata_commit": "43a11bf62fddf869bb122434ba7fd0e9fbd7be89",
+  "build_command": "taskset -c 2-9 Light_HLS/Tests/Light_HLS_Top/Build.sh -DLLVM_DIR=/usr/local/lib/cmake/llvm -DPolly_DIR=/usr/local/lib/cmake/polly -DHI_USE_LLD=OFF -DHI_LEARNER_BUILD_JOBS=8",
+  "build_working_directory": "/home/eeuser/Desktop/DAPO_II",
+  "binaries": {
+    "Light_HLS_Top": "c6197d4bd2dca7a771cebbe58a1ac3284660f4987ec24bcc813f9d0d57545714",
+    "Light_HLS_DAPO": "f34cd0c5e1f57ed6f160c4e31d02ea375c2ce35ba2dafd19a975876d23fbd02c"
+  },
+  "source_directory_backup": "/home/eeuser/Desktop/DAPO_II/.local_backups/light_hls_before_submodule_20261116",
+  "note": "证据生成时父仓库的子模块迁移尚未提交，protocol 中保留此前父提交及 staged gitlink 标记；最终版本以父仓库提交内的 gitlink 为准。"
+}

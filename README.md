@@ -100,4 +100,6 @@ These notes distinguish published results from proposed experiments. An automate
 
 For DAPO-II integration, see the [pinned submodule workflow](docs/migration/SUBMODULE_WORKFLOW.md). The compiler is maintained here; DAPO-II selects a tested commit and retains its legacy `Light_HLS/` entry point through a relative link.
 
+The [November 16 integration report](docs/migration/SUBMODULE_20261116.md) records the directory comparison, preserved fixes, fresh submodule build, and compatibility validation.
+
 See [source provenance](docs/logs/SOURCE_PROVENANCE.md), the [migration report](docs/migration/MIGRATION_20261110.md), the [November 13 synchronization report](docs/migration/SYNC_20261113.md), and the preserved [upstream README](Light_HLS/README_UPSTREAM.md). Compiler source remains under the inherited [GPL-3.0 license](LICENSE); vendored Berkeley HardFloat retains its [BSD-3-Clause license and provenance](Light_HLS/RTL/HardFloat/PROVENANCE.md). Dated optimization notes and baseline archives describe historical experiments; they are separate from fresh validation.

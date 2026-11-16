@@ -1,0 +1,30 @@
+[ 94%] Built target HI_VerilogEmission
+[ 95%] Linking CXX static library libHI_PipelineStorageAnalysis.a
+[ 95%] Built target HI_PipelineStorageAnalysis
+[ 96%] Linking CXX static library libHI_RTLGeneration.a
+[ 96%] Built target HI_RTLGeneration
+[ 97%] Linking CXX static library libHI_ResourceBinding.a
+[ 97%] Linking CXX static library libHI_DataflowPerformanceAnalysis.a
+[ 97%] Built target HI_DataflowPerformanceAnalysis
+[ 97%] Built target HI_ResourceBinding
+[ 98%] Linking CXX static library libHI_DataflowRTLGeneration.a
+[ 98%] Built target HI_DataflowRTLGeneration
+[ 99%] Linking CXX static library libHI_RTLSynthesis.a
+[ 99%] Built target HI_RTLSynthesis
+[ 99%] Linking CXX static library libHI_OperationScheduling.a
+[ 99%] Built target HI_OperationScheduling
+[100%] Building CXX object building/HI_DataflowTaskGeneration/CMakeFiles/HI_DataflowTaskGeneration.dir/HI_DataflowTaskGeneration.cc.o
+[100%] Linking CXX static library libHI_DataflowTaskGeneration.a
+[100%] Built target HI_DataflowTaskGeneration
+[ 20%] Built target HI_Learner_Libs_Build
+[ 40%] Building CXX object CMakeFiles/Light_HLS_Top.dir/Light_HLS_Top.cc.o
+[ 80%] Building CXX object CMakeFiles/Light_HLS_Top.dir/Pre_Process.cc.o
+[ 80%] Building CXX object CMakeFiles/Light_HLS_Top.dir/ConfigParse.cc.o
+[100%] Linking CXX executable Light_HLS_Top
+[100%] Built target Light_HLS_Top
+[ 20%] Built target HI_Learner_Libs_Build
+[ 40%] Building CXX object CMakeFiles/Light_HLS_DAPO.dir/ConfigParse.cc.o
+[ 60%] Building CXX object CMakeFiles/Light_HLS_DAPO.dir/Light_HLS_DAPO.cc.o
+[ 80%] Building CXX object CMakeFiles/Light_HLS_DAPO.dir/Pre_Process.cc.o
+[100%] Linking CXX executable Light_HLS_DAPO
+[100%] Built target Light_HLS_DAPO
