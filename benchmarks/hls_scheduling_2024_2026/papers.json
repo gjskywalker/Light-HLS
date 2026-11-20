@@ -1,0 +1,664 @@
+[
+  {
+    "id": "hyperblock_pldi2024",
+    "title": "Hyperblock Scheduling for Verified High-Level Synthesis",
+    "year": 2024,
+    "venue": "PLDI / PACMPL 8(PLDI), Article 225",
+    "doi": "10.1145/3656455",
+    "paper_url": "https://yannherklotz.com/papers/pldi24_hsvhls.pdf",
+    "artifact_url": "https://zenodo.org/records/10808233",
+    "scheduling_track": "static_operation_hyperblock",
+    "inclusion": "Direct operation/hyperblock scheduling with chaining and a verified validator.",
+    "benchmark_evidence": {
+      "locator": "Paper §8; artifact README §5 Compiling the benchmark with all synthesis tools",
+      "paraphrase": "The evaluation explicitly uses the 27 programs in benchmarks/polybench-syn. Other directories in the artifact are not automatically included.",
+      "evidence_url": "https://zenodo.org/records/10808233/files/README.md?download=1"
+    },
+    "paper_case_count": 27,
+    "collected_case_count": 27,
+    "unavailable_cases": [],
+    "collected_cases": [
+      "vericert24_covariance",
+      "vericert24_gemm",
+      "vericert24_gemver",
+      "vericert24_gesummv",
+      "vericert24_symm",
+      "vericert24_syr2k",
+      "vericert24_syrk",
+      "vericert24_trmm",
+      "vericert24_2mm",
+      "vericert24_3mm",
+      "vericert24_atas",
+      "vericert24_bicg",
+      "vericert24_doitgen",
+      "vericert24_mvt",
+      "vericert24_cholesky",
+      "vericert24_durbin",
+      "vericert24_lu",
+      "vericert24_ludcmp",
+      "vericert24_trisolv",
+      "vericert24_floyd_warshall",
+      "vericert24_nussinov",
+      "vericert24_adi",
+      "vericert24_fdtd_2d",
+      "vericert24_heat_3d",
+      "vericert24_jacobi_1d",
+      "vericert24_jacobi_2d",
+      "vericert24_seidel_2d"
+    ],
+    "artifact_ids": [
+      "vericert_pldi2024_archive"
+    ]
+  },
+  {
+    "id": "stream_hls_fpga2025",
+    "title": "Stream-HLS: Towards Automatic Dataflow Acceleration",
+    "year": 2025,
+    "venue": "ACM/SIGDA FPGA 2025",
+    "doi": "10.1145/3706628.3708878",
+    "paper_url": "https://arxiv.org/html/2501.09118v1",
+    "artifact_url": "https://github.com/UCLA-VAST/Stream-HLS",
+    "scheduling_track": "static_global_loop_task_dataflow",
+    "inclusion": "Joint global loop order, graph/node pipelining and parallelism; not a drop-in operation scheduler.",
+    "benchmark_evidence": {
+      "locator": "Paper §5.1; Tables 7 and 10; FPGA2025_Artificats/README.md",
+      "paraphrase": "15 applications: seven PolyBench kernels, two transformers, two CNN blocks, two MLP networks and two serial 7mm synthetic parameterizations. Current extra Decoder/DenseDecoder/MNIST/tree examples are excluded.",
+      "evidence_url": "https://arxiv.org/html/2501.09118v1#S5.SS1"
+    },
+    "paper_case_count": 15,
+    "collected_case_count": 15,
+    "unavailable_cases": [],
+    "configuration_warning": "Paper Table 10 describes a 2560-DSP limit; collected synthetic opt5 reports actually have a 512-DSP limit. Preserve this difference and do not claim exact result reproduction.",
+    "collected_cases": [
+      "stream25_gemm",
+      "stream25_k2mm",
+      "stream25_k3mm",
+      "stream25_atax",
+      "stream25_bicg",
+      "stream25_mvt",
+      "stream25_gesummv",
+      "stream25_autoencoder",
+      "stream25_resmlp",
+      "stream25_residualblock",
+      "stream25_depthwiseseparableconvblock",
+      "stream25_feedforward",
+      "stream25_multiheadselfattention1",
+      "stream25_k7mmseq_balanced",
+      "stream25_k7mmseq_unbalanced"
+    ],
+    "artifact_ids": [
+      "stream_hls_official"
+    ]
+  },
+  {
+    "id": "isdc_date2024",
+    "title": "Subgraph Extraction-based Feedback-guided Iterative Scheduling for HLS",
+    "year": 2024,
+    "venue": "DATE 2024",
+    "doi": "10.23919/DATE58400.2024.10546877",
+    "paper_url": "https://past.date-conference.com/proceedings-archive/2024/DATA/175_pdf_upload.pdf",
+    "artifact_url": "https://github.com/google/xls",
+    "scheduling_track": "static_pipeline_feedback_guided_sdc",
+    "inclusion": "Direct pipeline scheduling with low-level synthesis/timing feedback.",
+    "benchmark_evidence": {
+      "locator": "Paper §IV.B and Table I",
+      "paraphrase": "17 XLS designs, including named public algorithms and industrial ML/video/internal datapaths. Paper points to google/xls but gives no benchmark snapshot commit or exact source-file map.",
+      "evidence_url": "https://past.date-conference.com/proceedings-archive/2024/DATA/175_pdf_upload.pdf"
+    },
+    "paper_case_count": 17,
+    "collected_case_count": 5,
+    "collection_scope": "Only current public counterparts of five named algorithms were collected; no exact paper source/version equivalence established.",
+    "unavailable_cases": [
+      {
+        "name": "ML-core datapath1",
+        "clock_period_ps": 2500,
+        "status": "no_verified_public_source_mapping",
+        "reason": "Industrial datapath source not identified in the referenced public repo."
+      },
+      {
+        "name": "ML-core datapath0 opcode4",
+        "clock_period_ps": 5000,
+        "status": "no_verified_public_source_mapping",
+        "reason": "Industrial datapath source not identified in the referenced public repo."
+      },
+      {
+        "name": "rrot",
+        "clock_period_ps": 2500,
+        "status": "no_verified_public_source_mapping",
+        "reason": "Paper gives an algorithm label, but no precise source file/wrapper was verified; no substitute silently promoted to an exact case."
+      },
+      {
+        "name": "ML-core datapath0 opcode3",
+        "clock_period_ps": 5000,
+        "status": "no_verified_public_source_mapping",
+        "reason": "Industrial datapath source not identified in the referenced public repo."
+      },
+      {
+        "name": "binary_divide",
+        "clock_period_ps": 2500,
+        "status": "no_verified_public_source_mapping",
+        "reason": "Paper gives an algorithm label, but no precise source file/wrapper was verified; no substitute silently promoted to an exact case."
+      },
+      {
+        "name": "ML-core datapath0 opcode0",
+        "clock_period_ps": 5000,
+        "status": "no_verified_public_source_mapping",
+        "reason": "Industrial datapath source not identified in the referenced public repo."
+      },
+      {
+        "name": "ML-core datapath0 opcode1",
+        "clock_period_ps": 5000,
+        "status": "no_verified_public_source_mapping",
+        "reason": "Industrial datapath source not identified in the referenced public repo."
+      },
+      {
+        "name": "ML-core datapath0 opcode2",
+        "clock_period_ps": 5000,
+        "status": "no_verified_public_source_mapping",
+        "reason": "Industrial datapath source not identified in the referenced public repo."
+      },
+      {
+        "name": "ML-core datapath0 (all opcodes)",
+        "clock_period_ps": 5000,
+        "status": "no_verified_public_source_mapping",
+        "reason": "Industrial datapath source not identified in the referenced public repo."
+      },
+      {
+        "name": "ML-core datapath2",
+        "clock_period_ps": 2500,
+        "status": "no_verified_public_source_mapping",
+        "reason": "Industrial datapath source not identified in the referenced public repo."
+      },
+      {
+        "name": "video-core datapath",
+        "clock_period_ps": 2500,
+        "status": "no_verified_public_source_mapping",
+        "reason": "Industrial datapath source not identified in the referenced public repo."
+      },
+      {
+        "name": "internal datapath",
+        "clock_period_ps": 2500,
+        "status": "no_verified_public_source_mapping",
+        "reason": "Industrial datapath source not identified in the referenced public repo."
+      }
+    ],
+    "evaluation_settings": {
+      "technology": "SKY130",
+      "downstream_tools": [
+        "Yosys",
+        "OpenSTA"
+      ],
+      "iterations": 15,
+      "subgraphs_per_iteration": 16,
+      "default_clock_period_ps": 2500,
+      "slow_operation_clock_period_ps": 5000
+    },
+    "collected_cases": [
+      "isdc24_public_crc32",
+      "isdc24_public_sha256",
+      "isdc24_public_hsv2rgb",
+      "isdc24_public_float32_fast_rsqrt",
+      "isdc24_public_fpexp_32"
+    ],
+    "artifact_ids": [
+      "xls_public_counterparts"
+    ]
+  },
+  {
+    "id": "spurious_dynamism_2024",
+    "title": "Suppressing Spurious Dynamism of Dataflow Circuits via Latency and Occupancy Balancing",
+    "year": 2024,
+    "venue": "FPGA 2024",
+    "doi": "10.1145/3626202.3637570",
+    "url": "https://dynamo.ethz.ch/wp-content/uploads/2024/04/Xu_FPGA24_SuppressingSpuriousDynamism.pdf",
+    "local_paper": "runs/benchmark_collection_20261119/dynamic/spurious24.pdf",
+    "track": "dynamic",
+    "benchmark_evidence": "Section 8.2 and Table 3 name eight HLS kernels. Artifact fpga24_experiments/step1_experiments_reproduce_table3.sh lists fir iir matvec if_loop_add gsum gsumif kernel_2mm kernel_3mm, resolving paper aliases if_loop/2mm/3mm.",
+    "artifact_ids": [
+      "dynamic_spurious24"
+    ],
+    "expected_program_count": 8,
+    "collected_configuration_count": 8,
+    "platform": {
+      "target_clock_period_ns": 6,
+      "device": "Xilinx Kintex-7; part not confirmed",
+      "tools": [
+        "Dynamatic author fork",
+        "Vivado 2019.1",
+        "ModelSim",
+        "Gurobi 10.0.3",
+        "nuXmv"
+      ]
+    },
+    "original_flow_run": "not_run",
+    "source_mapping_confidence": "exact",
+    "collected_cases": [
+      "dynamic_spurious24__latency_occupancy__fir",
+      "dynamic_spurious24__latency_occupancy__iir",
+      "dynamic_spurious24__latency_occupancy__matvec",
+      "dynamic_spurious24__latency_occupancy__if_loop_add",
+      "dynamic_spurious24__latency_occupancy__gsum",
+      "dynamic_spurious24__latency_occupancy__gsumif",
+      "dynamic_spurious24__latency_occupancy__kernel_2mm",
+      "dynamic_spurious24__latency_occupancy__kernel_3mm"
+    ],
+    "paper_url": "https://dynamo.ethz.ch/wp-content/uploads/2024/04/Xu_FPGA24_SuppressingSpuriousDynamism.pdf"
+  },
+  {
+    "id": "crush_2025",
+    "title": "CRUSH: A Credit-Based Approach for Functional Unit Sharing in Dynamically Scheduled HLS",
+    "year": 2025,
+    "venue": "ASPLOS 2025",
+    "doi": "10.1145/3669940.3707273",
+    "url": "https://dynamo.ethz.ch/wp-content/uploads/2025/06/Xu_ASPLOS25_CRUSH.pdf",
+    "local_paper": "runs/benchmark_collection_20261119/dynamic/crush25.pdf",
+    "track": "dynamic_resource_sharing",
+    "benchmark_evidence": "Section 6.1 lists nine PolyBench kernels plus gsum/gsumif; artifact README maps benchmarks/ to Table 2, benchmarks-fast-token/ to Table 3, benchmarks-mlir/gesummv_float_unroll to Table 1. define.py and manual gsumif scripts constrain the exact configuration set.",
+    "artifact_ids": [
+      "dynamic_crush25"
+    ],
+    "expected_base_kernel_count": 11,
+    "collected_configuration_count": 23,
+    "configuration_warning": "11 Table2 + 11 Table3 + 1 unrolled variant; these are 23 configuration records, not 23 independent algorithm families.",
+    "platform": {
+      "target_clock_period_ns": 6,
+      "unrolled_example_target_clock_ns": 8,
+      "device": "Xilinx Kintex-7; part not confirmed",
+      "tools": [
+        "Dynamatic author forks",
+        "Vivado 2019.1",
+        "ModelSim 20.1",
+        "Gurobi 11.0.3"
+      ]
+    },
+    "original_flow_run": "not_run",
+    "source_mapping_confidence": "exact",
+    "collected_cases": [
+      "dynamic_crush25__bb_organized_table2__atax_float",
+      "dynamic_crush25__bb_organized_table2__bicg_float",
+      "dynamic_crush25__bb_organized_table2__gemm_float",
+      "dynamic_crush25__bb_organized_table2__gesummv_float",
+      "dynamic_crush25__bb_organized_table2__symm_float",
+      "dynamic_crush25__bb_organized_table2__gsum",
+      "dynamic_crush25__bb_organized_table2__gsumif",
+      "dynamic_crush25__bb_organized_table2__kernel_2mm_float",
+      "dynamic_crush25__bb_organized_table2__kernel_3mm_float",
+      "dynamic_crush25__bb_organized_table2__mvt_float",
+      "dynamic_crush25__bb_organized_table2__syr2k_float",
+      "dynamic_crush25__fast_token_table3__atax_float",
+      "dynamic_crush25__fast_token_table3__bicg_float",
+      "dynamic_crush25__fast_token_table3__gemm_float",
+      "dynamic_crush25__fast_token_table3__gesummv_float",
+      "dynamic_crush25__fast_token_table3__symm_float",
+      "dynamic_crush25__fast_token_table3__gsum",
+      "dynamic_crush25__fast_token_table3__gsumif",
+      "dynamic_crush25__fast_token_table3__kernel_2mm_float",
+      "dynamic_crush25__fast_token_table3__kernel_3mm_float",
+      "dynamic_crush25__fast_token_table3__mvt_float",
+      "dynamic_crush25__fast_token_table3__syr2k_float",
+      "dynamic_crush25__unrolled_table1__gesummv_float_unroll"
+    ],
+    "paper_url": "https://dynamo.ethz.ch/wp-content/uploads/2025/06/Xu_ASPLOS25_CRUSH.pdf"
+  },
+  {
+    "id": "out_with_lsqs_2026",
+    "title": "Out with LSQs: Custom Circuits for Memory Access Reordering in Dynamic HLS",
+    "year": 2026,
+    "venue": "FPGA 2026",
+    "doi": "10.1145/3748173.3779204",
+    "url": "https://www.epfl.ch/labs/lap/wp-content/uploads/2026/03/PirayadiFeb26-Out-with-LSQs-Custom-Circuits-for-Memory-Access-Reordering-in-Dynamic-HLS-FPGA26.pdf",
+    "track": "dynamic_memory",
+    "benchmark_evidence": "Section 7 reports eleven Dynamatic kernels; reference [34] points to artifact concept DOI 10.5281/zenodo.17975149. Version 17975150 README prescribes replace-lsq branch and skip/all-inputs.txt for reproducing all results; that list contains exactly eleven names and window N values.",
+    "artifact_ids": [
+      "dynamic_outlsq26"
+    ],
+    "expected_program_count": 11,
+    "collected_configuration_count": 11,
+    "platform": {
+      "target_clock_protocol": "empirical buffering and CP sweep; skip/common.py MAX_CP=15 ns, MAX_FIFO_SIZE=15",
+      "tools": [
+        "Dynamatic replace-lsq branch",
+        "Vivado 2024.2",
+        "ModelSim 20.1",
+        "Gurobi 12.0.0",
+        "Python 3.12.3",
+        "Ubuntu 24.04.3"
+      ]
+    },
+    "original_flow_run": "not_run",
+    "source_mapping_confidence": "exact_names_artifact_linked_git_snapshot",
+    "snapshot_limit": "Git branch snapshot pinned; exact archive contents not downloaded or cross-hashed.",
+    "collected_cases": [
+      "dynamic_outlsq26__best_N__bicg",
+      "dynamic_outlsq26__best_N__gaussian",
+      "dynamic_outlsq26__best_N__matrix_power",
+      "dynamic_outlsq26__best_N__get_tanh",
+      "dynamic_outlsq26__best_N__histogram",
+      "dynamic_outlsq26__best_N__atax",
+      "dynamic_outlsq26__best_N__jacobi_1d_imper",
+      "dynamic_outlsq26__best_N__triangular",
+      "dynamic_outlsq26__best_N__mvt_float",
+      "dynamic_outlsq26__best_N__kernel_2mm",
+      "dynamic_outlsq26__best_N__kernel_3mm"
+    ],
+    "paper_url": "https://www.epfl.ch/labs/lap/wp-content/uploads/2026/03/PirayadiFeb26-Out-with-LSQs-Custom-Circuits-for-Memory-Access-Reordering-in-Dynamic-HLS-FPGA26.pdf"
+  },
+  {
+    "id": "resource_phase_2025",
+    "title": "Resource and Phase Awareness for Dynamically Scheduled High-Level Synthesis",
+    "year": 2025,
+    "venue": "HEART 2025",
+    "doi": "10.1145/3728179.3728194",
+    "url": "https://dynamo.ethz.ch/wp-content/uploads/2025/06/Bouilloud_HEART25_ResourceAndPhaseAwareness.pdf",
+    "local_paper": "runs/benchmark_collection_20261119/dynamic/phase25.pdf",
+    "track": "dynamic_buffer_phase",
+    "benchmark_evidence": "Section 5.1 says four benchmarks, some manually composed to introduce explicit phases; Tables 1/2 identify Comb1, Fdtd, Gemver, Comb2. Runtime reconfiguration is simulated.",
+    "artifact_ids": [],
+    "expected_program_count": 4,
+    "expected_cases": [
+      "Comb1",
+      "Fdtd",
+      "Gemver",
+      "Comb2"
+    ],
+    "collected_configuration_count": 0,
+    "artifact_status": "not_found_in_checked_public_sources",
+    "unavailable_reason": "Paper and author/institution pages searched; no paper-specific repository/archive or composed source listing found. Current Dynamatic same-name kernels would not establish identity of the manual phase-composed programs.",
+    "searches": [
+      "exact title + github",
+      "Mathias Bouilloud phase Dynamatic github",
+      "exact title + code"
+    ],
+    "platform": {
+      "target_clock_period_ns": 5,
+      "device": "xcvu19p-fsva3824-2-e",
+      "runtime_reconfiguration": "simulated"
+    },
+    "original_flow_run": "not_run",
+    "collected_cases": [],
+    "paper_url": "https://dynamo.ethz.ch/wp-content/uploads/2025/06/Bouilloud_HEART25_ResourceAndPhaseAwareness.pdf"
+  },
+  {
+    "id": "rhls_2024",
+    "title": "R-HLS: An IR for Dynamic High-Level Synthesis and Memory Disambiguation based on Regions and State Edges",
+    "year": 2024,
+    "venue": "ICCAD 2024",
+    "doi": "10.1145/3676536.3676671",
+    "paper_url": "https://www.sjalander.com/research/pdf/sjalander-iccad2024-rhls.pdf",
+    "classification": "dynamic IR and distributed memory disambiguation",
+    "evidence": {
+      "locator": "Section 5 Methodology; Table 1 (page 8 of author PDF)",
+      "paraphrase_zh": "§5明确采用 Straight to the Queue 的同一组基准。Table1列出2mm、3mm、atax、covariance、getTanh、histogram、jacobi_1d、triangular。",
+      "expected_benchmarks": [
+        "2mm",
+        "3mm",
+        "atax",
+        "covariance",
+        "getTanh",
+        "histogram",
+        "jacobi_1d",
+        "triangular"
+      ]
+    },
+    "toolchain": "Clang16 -> JLM/R-HLS -> CIRCT FIRRTL -> firtool -> Verilator/Vivado; Kintex-7 with top-level BRAM and AXI-Lite",
+    "artifact_ids": [
+      "hybrid_stoq_baselines",
+      "hybrid_jlm",
+      "hybrid_jlm_test_suite"
+    ],
+    "artifact_status": "cited_baseline_inputs_collected; R-HLS experiment-specific revision not established",
+    "limitations": [
+      "Exact named paper membership is confirmed; inputs are collected from cited StoQ repository, not claimed to be the exact transformed R-HLS variants.",
+      "JLM native test-suite is a broader auxiliary suite with no root license found, so it is not proposed for redistribution."
+    ],
+    "collected_cases": [
+      "rhls_kernel_2mm",
+      "rhls_kernel_3mm",
+      "rhls_atax",
+      "rhls_covariance",
+      "rhls_getTanh",
+      "rhls_histogram",
+      "rhls_jacobi_1d",
+      "rhls_triangular"
+    ]
+  },
+  {
+    "id": "dynamic_loop_fusion_2025",
+    "title": "Dynamic Loop Fusion in High-Level Synthesis",
+    "year": 2025,
+    "venue": "FPGA 2025",
+    "doi": "10.1145/3706628.3708871",
+    "paper_url": "https://arxiv.org/html/2501.14631v1",
+    "classification": "dynamic loop fusion with compiler/hardware memory co-design",
+    "evidence": {
+      "locator": "Sections 7.1–7.2; Table 1; archived experiments/build_fusion_test.py",
+      "paraphrase_zh": "作者主页code链接指向Zenodo14383450。归档构建脚本启用9个kernel，匹配Table1与§7.2。§7.1文字提到10项，但归档changelog说明删除gemver；按实际9项记录。",
+      "expected_benchmarks": [
+        "RAWloop",
+        "WARloop",
+        "WAWloop",
+        "bnn",
+        "pagerank",
+        "fft",
+        "matpower",
+        "hist+add",
+        "tanh+spmv"
+      ]
+    },
+    "artifact_ids": [
+      "hybrid_dlf_zenodo14383450"
+    ],
+    "artifact_status": "author_archived_benchmarks_collected",
+    "toolchain": "Intel oneAPI/SYCL FPGA, Altera Arria10 GX1150 with two DDR4 banks; Quartus19.2 place and route",
+    "limitations": [
+      "SYCL kernels include host execution and checking; they are not drop-in plain C kernels for Light-HLS.",
+      "The archived page-rank simulation command names test2-web-NotreDame.txt, which is absent in the archive; the hardware web-NotreDame.txt file is present.",
+      "No Intel compiler, simulation, FPGA execution or paper PPA reproduction was run during collection."
+    ],
+    "collected_cases": [
+      "dlf_raw_loop",
+      "dlf_war_loop",
+      "dlf_waw_loop",
+      "dlf_fft2x_dram",
+      "dlf_bnn_dram",
+      "dlf_matrix_power_dram",
+      "dlf_page_rank_dram",
+      "dlf_hist2x_dram",
+      "dlf_tanh_spmv_dram"
+    ]
+  },
+  {
+    "id": "pca_hybrid_2025",
+    "title": "A Source-to-Source Compiler to Enable Hybrid Scheduling for High-Level Synthesis",
+    "year": 2025,
+    "venue": "Electronics 14(23):4578",
+    "doi": "10.3390/electronics14234578",
+    "paper_url": "https://www.mdpi.com/2079-9292/14/23/4578",
+    "classification": "source-to-source pseudo-cycle-accurate hybrid scheduling",
+    "evidence": {
+      "locator": "Sections 6.1–6.2, Table 1–2, reference 46 and Data Availability Statement",
+      "paraphrase_zh": "§6.2/Table1–2列出9项并引用HLS-benchmarks初版Zenodo3561115。该2019归档只含7个DSS目录，其中5个与论文名称直接吻合，sparseMatrix名称/语义需核查；其余相关候选从同作者当前库补收，但不冒充论文精确版本。Data Availability Statement仅说文章包含原始贡献，未给可下载PCA变换器/变换结果。",
+      "expected_benchmarks": [
+        "sparseMatrix",
+        "gSum",
+        "vecNormTrans",
+        "getTanh",
+        "gSumIf",
+        "histogram",
+        "BNNKernel",
+        "gesummv",
+        "covariance"
+      ]
+    },
+    "artifact_ids": [
+      "hybrid_hls_v1_zenodo3561115",
+      "hybrid_hls_benchmarks_current"
+    ],
+    "artifact_status": "cited_original_suite_collected; transformed_PCA_artifact_unavailable",
+    "toolchain": "Vitis HLS2022.2, xc7z020clg484-1, target250MHz, targetII1, no unroll; xsim; Vivado2022.2 post-implementation",
+    "limitations": [
+      "Authors’ particular runtime input-vector distribution and transformed PCA sources are not publicly recovered.",
+      "Current-repository substitutes and sparseMatrixPower alias are explicitly marked broader_suite."
+    ],
+    "missing_materials": [
+      {
+        "name": "vecNormTrans",
+        "status": "missing_exact_paper_variant",
+        "related_source_status": "broader current-upstream candidate downloaded; not a recovered paper variant"
+      },
+      {
+        "name": "gesummv",
+        "status": "missing_exact_paper_variant",
+        "related_source_status": "broader current-upstream candidate downloaded; not a recovered paper variant"
+      },
+      {
+        "name": "covariance",
+        "status": "missing_exact_paper_variant",
+        "related_source_status": "broader current-upstream candidate downloaded; not a recovered paper variant"
+      },
+      {
+        "name": "PCA compiler and transformed sources plus author input vectors",
+        "status": "unavailable",
+        "license": "not_established_for_unpublished_transformed_artifact",
+        "reason": "Article does not link a source archive; its Data Availability Statement refers to the article and correspondence. No author contact was attempted."
+      }
+    ],
+    "collected_cases": [
+      "pca_gSum",
+      "pca_gSumIf",
+      "pca_getTanh",
+      "pca_histogram",
+      "pca_BNNKernel",
+      "pca_sparseMatrix",
+      "pca_vecNormTrans",
+      "pca_gesummv",
+      "pca_covariance"
+    ]
+  },
+  {
+    "id": "diffsched_2024",
+    "title": "Differentiable Combinatorial Scheduling at Scale",
+    "year": 2024,
+    "venue": "ICML / PMLR 235",
+    "doi": "10.48550/arXiv.2406.06593",
+    "url": "https://proceedings.mlr.press/v235/liu24al.html",
+    "track": "graph_auxiliary",
+    "evidence_locator": "§4.1/Table 1; official README Directory Structure",
+    "benchmark_evidence": "论文含合成随机图和6个EPFL设计的两种形式。官方仓库实际提供18个GML随机图；README将el/el_mapped标为TBD，没有收集到论文的EPFL edgelist。",
+    "artifact_ids": [
+      "diffsched_icml24"
+    ],
+    "status": "partial_artifact_collected",
+    "missing": [
+      "EPFL el/el_mapped graph files",
+      "source C/C++ and RTL functional testbench"
+    ],
+    "collected_cases": [
+      "diffsched__rand_graph_10000_1",
+      "diffsched__rand_graph_10000_2",
+      "diffsched__rand_graph_10000_3",
+      "diffsched__rand_graph_1000_1",
+      "diffsched__rand_graph_1000_2",
+      "diffsched__rand_graph_1000_3",
+      "diffsched__rand_graph_5000_1",
+      "diffsched__rand_graph_5000_2",
+      "diffsched__rand_graph_5000_3",
+      "diffsched__rand_graph_sparse_10000_1",
+      "diffsched__rand_graph_sparse_10000_2",
+      "diffsched__rand_graph_sparse_10000_3",
+      "diffsched__rand_graph_sparse_1000_1",
+      "diffsched__rand_graph_sparse_1000_2",
+      "diffsched__rand_graph_sparse_1000_3",
+      "diffsched__rand_graph_sparse_5000_1",
+      "diffsched__rand_graph_sparse_5000_2",
+      "diffsched__rand_graph_sparse_5000_3"
+    ],
+    "paper_url": "https://proceedings.mlr.press/v235/liu24al.html"
+  },
+  {
+    "id": "heurigym_2026",
+    "title": "HeuriGym: An Agentic Benchmark for LLM-Crafted Heuristics in Combinatorial Optimization",
+    "year": 2026,
+    "preprint_year": 2025,
+    "venue": "ICLR 2026",
+    "doi": "10.48550/arXiv.2506.07972",
+    "url": "https://arxiv.org/abs/2506.07972",
+    "track": "graph_auxiliary",
+    "evidence_locator": "Appendix D.1 and Tables 25–26; official operator_scheduling README",
+    "benchmark_evidence": "Operator Scheduling 数据集含24个JSON DAG，分5 demo/19 eval；固定延迟和资源容量。论文数据来源为EXPRESS，不提供可恢复的完整C/RTL执行接口。",
+    "artifact_ids": [
+      "heurigym_dataset",
+      "heurigym_tools"
+    ],
+    "status": "artifact_collected",
+    "missing": [
+      "original C/C++ programs and RTL-level oracle"
+    ],
+    "collected_cases": [
+      "heurigym__demo",
+      "heurigym__ewf",
+      "heurigym__hal",
+      "heurigym__horner",
+      "heurigym__motion",
+      "heurigym__arf",
+      "heurigym__collapse",
+      "heurigym__cosine1",
+      "heurigym__cosine2",
+      "heurigym__dag_1000",
+      "heurigym__dag_1500",
+      "heurigym__dag_500",
+      "heurigym__feedback",
+      "heurigym__fir1",
+      "heurigym__fir2",
+      "heurigym__h2v2",
+      "heurigym__idctcol",
+      "heurigym__interpolate",
+      "heurigym__invert",
+      "heurigym__jpeg_fdct",
+      "heurigym__jpeg_idct",
+      "heurigym__matmul",
+      "heurigym__smooth",
+      "heurigym__write"
+    ],
+    "paper_url": "https://arxiv.org/abs/2506.07972"
+  },
+  {
+    "id": "rkhs_2026",
+    "title": "RAG-Enhanced Kernel-Based Heuristic Synthesis (RKHS): A Structured Methodology Using Large Language Models for Hardware Design",
+    "year": 2026,
+    "venue": "arXiv preprint / workshop report",
+    "doi": "10.48550/arXiv.2604.26153",
+    "url": "https://arxiv.org/abs/2604.26153",
+    "track": "graph_auxiliary",
+    "evidence_locator": "Algorithm 1; §1.6 Tables 1–2",
+    "benchmark_evidence": "报告200个训练图和50个验证图，表中只以G1–G4标识代表图；本次全文未发现可下载图数据、生成器、随机种子或公开artifact链接。",
+    "artifact_ids": [],
+    "status": "benchmark_unavailable",
+    "missing": [
+      "graph identities",
+      "graph files or exact generator+seeds",
+      "public code artifact"
+    ],
+    "collected_cases": [],
+    "paper_url": "https://arxiv.org/abs/2604.26153"
+  },
+  {
+    "id": "neuroschedule2_2026",
+    "title": "NeuroSchedule2.0: A Novel GNN-Based Scheduling Method With RL-Based Preprocessing Optimization for High-Level Synthesis",
+    "year": 2026,
+    "venue": "IEEE TCAD 45(10):4734–4747",
+    "doi": "10.1109/TCAD.2026.3661431",
+    "url": "https://ieeexplore.ieee.org/document/11372709/",
+    "track": "static",
+    "evidence_locator": "IEEE publisher metadata and abstract; full experimental section not obtained",
+    "benchmark_evidence": "出版信息可核验；本次未取得可核查完整实验章节及公开benchmark链接，不能确定测试图清单。",
+    "artifact_ids": [],
+    "status": "metadata_only",
+    "missing": [
+      "accessible full experimental section",
+      "public benchmark artifact"
+    ],
+    "collected_cases": [],
+    "paper_url": "https://ieeexplore.ieee.org/document/11372709/"
+  }
+]

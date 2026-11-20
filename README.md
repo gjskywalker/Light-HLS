@@ -16,6 +16,7 @@ Light_HLS/
   BuildLibs.sh            Learner-library build entry point
 HLS_Data_Lib -> Light_HLS/HLS_Data_Lib
 Dataset/Testbenches/       Repaired compiler/verification fixtures
+benchmarks/                Scheduling inputs, paper provenance, and validation tools
 experiments/
   dapo_ii_cross_validation/verify_design.py
                           Typed source/IR/RTL verifier; no RL training dependency
@@ -95,6 +96,8 @@ Two Chinese reading notes were prepared for review on 2026-11-11:
 - [Agent-driven algorithm discovery](docs/research/02_agent_algorithm_discovery.md): AlphaEvolve, FunSearch, ReEvo, and a proposed evaluation-driven scheduling search loop.
 
 These notes distinguish published results from proposed experiments. An automated algorithm-discovery run has not been started as part of the migration.
+
+The [HLS scheduling benchmark collection](benchmarks/hls_scheduling_2024_2026/README.md) contains 42 graph inputs and 115 HLS source configurations with pinned provenance and integrity checks. The HeuriGym inputs provide the initial resource-constrained DAG workload for scheduler development.
 
 ## Provenance and license
 

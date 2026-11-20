@@ -1,0 +1,340 @@
+{
+  "exact_primary_source_groups": [
+    {
+      "sha256": "be4b363293cf4f3e37113c0117a4f6a9a05d620ab677673dc03a303e50ed38a8",
+      "case_ids": [
+        "dynamic_crush25__bb_organized_table2__bicg_float",
+        "dynamic_crush25__fast_token_table3__bicg_float"
+      ]
+    },
+    {
+      "sha256": "cde75eb565bbd2fd69152dff1ea8c39c7a928037547b31dfe696a17278a9b687",
+      "case_ids": [
+        "dynamic_crush25__bb_organized_table2__gsum",
+        "dynamic_crush25__fast_token_table3__gsum"
+      ]
+    }
+  ],
+  "family_groups": {
+    "arf": [
+      "heurigym__arf"
+    ],
+    "atax": [
+      "stream25_atax",
+      "dynamic_crush25__bb_organized_table2__atax_float",
+      "dynamic_crush25__fast_token_table3__atax_float",
+      "dynamic_outlsq26__best_N__atax",
+      "rhls_atax"
+    ],
+    "bicg": [
+      "vericert24_bicg",
+      "stream25_bicg",
+      "dynamic_crush25__bb_organized_table2__bicg_float",
+      "dynamic_crush25__fast_token_table3__bicg_float",
+      "dynamic_outlsq26__best_N__bicg"
+    ],
+    "bnn": [
+      "dlf_bnn_dram",
+      "pca_BNNKernel"
+    ],
+    "collapse": [
+      "heurigym__collapse"
+    ],
+    "conditional_accumulation": [
+      "dynamic_spurious24__latency_occupancy__if_loop_add"
+    ],
+    "conditional_sum": [
+      "dynamic_spurious24__latency_occupancy__gsumif",
+      "dynamic_crush25__bb_organized_table2__gsumif",
+      "dynamic_crush25__fast_token_table3__gsumif",
+      "pca_gSumIf"
+    ],
+    "cosine1": [
+      "heurigym__cosine1"
+    ],
+    "cosine2": [
+      "heurigym__cosine2"
+    ],
+    "covariance": [
+      "vericert24_covariance",
+      "rhls_covariance",
+      "pca_covariance"
+    ],
+    "crc32": [
+      "isdc24_public_crc32"
+    ],
+    "dag_1000": [
+      "heurigym__dag_1000"
+    ],
+    "dag_1500": [
+      "heurigym__dag_1500"
+    ],
+    "dag_500": [
+      "heurigym__dag_500"
+    ],
+    "demo": [
+      "heurigym__demo"
+    ],
+    "dense_matmul_family": [
+      "vericert24_gemm",
+      "vericert24_2mm",
+      "vericert24_3mm",
+      "stream25_gemm",
+      "stream25_k2mm",
+      "stream25_k3mm",
+      "stream25_k7mmseq_balanced",
+      "stream25_k7mmseq_unbalanced",
+      "dynamic_spurious24__latency_occupancy__kernel_2mm",
+      "dynamic_spurious24__latency_occupancy__kernel_3mm",
+      "dynamic_crush25__bb_organized_table2__gemm_float",
+      "dynamic_crush25__bb_organized_table2__kernel_2mm_float",
+      "dynamic_crush25__bb_organized_table2__kernel_3mm_float",
+      "dynamic_crush25__fast_token_table3__gemm_float",
+      "dynamic_crush25__fast_token_table3__kernel_2mm_float",
+      "dynamic_crush25__fast_token_table3__kernel_3mm_float",
+      "dynamic_outlsq26__best_N__matrix_power",
+      "dynamic_outlsq26__best_N__kernel_2mm",
+      "dynamic_outlsq26__best_N__kernel_3mm",
+      "rhls_kernel_2mm",
+      "rhls_kernel_3mm",
+      "dlf_matrix_power_dram",
+      "heurigym__matmul"
+    ],
+    "ewf": [
+      "heurigym__ewf"
+    ],
+    "fdtd_stencil": [
+      "vericert24_fdtd_2d"
+    ],
+    "feedback": [
+      "heurigym__feedback"
+    ],
+    "fft": [
+      "dlf_fft2x_dram"
+    ],
+    "fir_filter": [
+      "dynamic_spurious24__latency_occupancy__fir",
+      "heurigym__fir1",
+      "heurigym__fir2"
+    ],
+    "gaussian": [
+      "dynamic_outlsq26__best_N__gaussian"
+    ],
+    "gesummv": [
+      "vericert24_gesummv",
+      "stream25_gesummv",
+      "dynamic_crush25__bb_organized_table2__gesummv_float",
+      "dynamic_crush25__fast_token_table3__gesummv_float",
+      "dynamic_crush25__unrolled_table1__gesummv_float_unroll",
+      "pca_gesummv"
+    ],
+    "h2v2": [
+      "heurigym__h2v2"
+    ],
+    "hal": [
+      "heurigym__hal"
+    ],
+    "histogram": [
+      "dynamic_outlsq26__best_N__histogram",
+      "rhls_histogram",
+      "dlf_hist2x_dram",
+      "pca_histogram"
+    ],
+    "horner": [
+      "heurigym__horner"
+    ],
+    "idctcol": [
+      "heurigym__idctcol"
+    ],
+    "iir_filter": [
+      "dynamic_spurious24__latency_occupancy__iir"
+    ],
+    "interpolate": [
+      "heurigym__interpolate"
+    ],
+    "invert": [
+      "heurigym__invert"
+    ],
+    "jacobi_stencil": [
+      "vericert24_jacobi_1d",
+      "vericert24_jacobi_2d",
+      "dynamic_outlsq26__best_N__jacobi_1d_imper",
+      "rhls_jacobi_1d"
+    ],
+    "jpeg_fdct": [
+      "heurigym__jpeg_fdct"
+    ],
+    "jpeg_idct": [
+      "heurigym__jpeg_idct"
+    ],
+    "matvec": [
+      "dynamic_spurious24__latency_occupancy__matvec"
+    ],
+    "memory_hazard_raw": [
+      "dlf_raw_loop"
+    ],
+    "memory_hazard_war": [
+      "dlf_war_loop"
+    ],
+    "memory_hazard_waw": [
+      "dlf_waw_loop"
+    ],
+    "motion": [
+      "heurigym__motion"
+    ],
+    "mvt": [
+      "dynamic_crush25__bb_organized_table2__mvt_float",
+      "dynamic_crush25__fast_token_table3__mvt_float",
+      "dynamic_outlsq26__best_N__mvt_float"
+    ],
+    "pagerank": [
+      "dlf_page_rank_dram"
+    ],
+    "polybench_adi": [
+      "vericert24_adi"
+    ],
+    "polybench_atax": [
+      "vericert24_atas"
+    ],
+    "polybench_cholesky": [
+      "vericert24_cholesky"
+    ],
+    "polybench_doitgen": [
+      "vericert24_doitgen"
+    ],
+    "polybench_durbin": [
+      "vericert24_durbin"
+    ],
+    "polybench_floyd-warshall": [
+      "vericert24_floyd_warshall"
+    ],
+    "polybench_gemver": [
+      "vericert24_gemver"
+    ],
+    "polybench_heat-3d": [
+      "vericert24_heat_3d"
+    ],
+    "polybench_lu": [
+      "vericert24_lu"
+    ],
+    "polybench_ludcmp": [
+      "vericert24_ludcmp"
+    ],
+    "polybench_mvt": [
+      "vericert24_mvt"
+    ],
+    "polybench_nussinov": [
+      "vericert24_nussinov"
+    ],
+    "polybench_seidel-2d": [
+      "vericert24_seidel_2d"
+    ],
+    "polybench_symm": [
+      "vericert24_symm"
+    ],
+    "polybench_syr2k": [
+      "vericert24_syr2k"
+    ],
+    "polybench_syrk": [
+      "vericert24_syrk"
+    ],
+    "polybench_trisolv": [
+      "vericert24_trisolv"
+    ],
+    "polybench_trmm": [
+      "vericert24_trmm"
+    ],
+    "sha256": [
+      "isdc24_public_sha256"
+    ],
+    "smooth": [
+      "heurigym__smooth"
+    ],
+    "sparse_matvec_family": [
+      "pca_sparseMatrix"
+    ],
+    "stream_attention": [
+      "stream25_multiheadselfattention1"
+    ],
+    "stream_autoencoder": [
+      "stream25_autoencoder"
+    ],
+    "stream_depthwiseseparableconvblock": [
+      "stream25_depthwiseseparableconvblock"
+    ],
+    "stream_feedforward": [
+      "stream25_feedforward"
+    ],
+    "stream_mvt": [
+      "stream25_mvt"
+    ],
+    "stream_residualblock": [
+      "stream25_residualblock"
+    ],
+    "stream_resmlp": [
+      "stream25_resmlp"
+    ],
+    "sum_reduction": [
+      "dynamic_spurious24__latency_occupancy__gsum",
+      "dynamic_crush25__bb_organized_table2__gsum",
+      "dynamic_crush25__fast_token_table3__gsum",
+      "pca_gSum"
+    ],
+    "symm": [
+      "dynamic_crush25__bb_organized_table2__symm_float",
+      "dynamic_crush25__fast_token_table3__symm_float"
+    ],
+    "synthetic_dag_generator": [
+      "diffsched__rand_graph_10000_1",
+      "diffsched__rand_graph_10000_2",
+      "diffsched__rand_graph_10000_3",
+      "diffsched__rand_graph_1000_1",
+      "diffsched__rand_graph_1000_2",
+      "diffsched__rand_graph_1000_3",
+      "diffsched__rand_graph_5000_1",
+      "diffsched__rand_graph_5000_2",
+      "diffsched__rand_graph_5000_3",
+      "diffsched__rand_graph_sparse_10000_1",
+      "diffsched__rand_graph_sparse_10000_2",
+      "diffsched__rand_graph_sparse_10000_3",
+      "diffsched__rand_graph_sparse_1000_1",
+      "diffsched__rand_graph_sparse_1000_2",
+      "diffsched__rand_graph_sparse_1000_3",
+      "diffsched__rand_graph_sparse_5000_1",
+      "diffsched__rand_graph_sparse_5000_2",
+      "diffsched__rand_graph_sparse_5000_3"
+    ],
+    "syr2k": [
+      "dynamic_crush25__bb_organized_table2__syr2k_float",
+      "dynamic_crush25__fast_token_table3__syr2k_float"
+    ],
+    "tanh_family": [
+      "dynamic_outlsq26__best_N__get_tanh",
+      "rhls_getTanh",
+      "dlf_tanh_spmv_dram",
+      "pca_getTanh"
+    ],
+    "triangular": [
+      "dynamic_outlsq26__best_N__triangular"
+    ],
+    "triangular_solver": [
+      "rhls_triangular"
+    ],
+    "vector_normalization": [
+      "pca_vecNormTrans"
+    ],
+    "write": [
+      "heurigym__write"
+    ],
+    "xls_float32_fast_rsqrt": [
+      "isdc24_public_float32_fast_rsqrt"
+    ],
+    "xls_fpexp_32": [
+      "isdc24_public_fpexp_32"
+    ],
+    "xls_hsv2rgb": [
+      "isdc24_public_hsv2rgb"
+    ]
+  },
+  "split_status": "not_frozen"
+}

@@ -1,0 +1,168 @@
+{
+  "missing_referenced_files": [
+    {
+      "artifact_id": "dynamic_crush25",
+      "path": "/home/eeuser/Desktop/Light-HLS/runs/benchmark_collection_20261119/dynamic/crush/asplos25summer-crush-main/include/dynamatic/Integration.h",
+      "role": "shared_dependencies",
+      "reason": "file_missing"
+    }
+  ],
+  "paper_gaps": [
+    {
+      "paper_id": "isdc_date2024",
+      "details": [
+        {
+          "name": "ML-core datapath1",
+          "clock_period_ps": 2500,
+          "status": "no_verified_public_source_mapping",
+          "reason": "Industrial datapath source not identified in the referenced public repo."
+        },
+        {
+          "name": "ML-core datapath0 opcode4",
+          "clock_period_ps": 5000,
+          "status": "no_verified_public_source_mapping",
+          "reason": "Industrial datapath source not identified in the referenced public repo."
+        },
+        {
+          "name": "rrot",
+          "clock_period_ps": 2500,
+          "status": "no_verified_public_source_mapping",
+          "reason": "Paper gives an algorithm label, but no precise source file/wrapper was verified; no substitute silently promoted to an exact case."
+        },
+        {
+          "name": "ML-core datapath0 opcode3",
+          "clock_period_ps": 5000,
+          "status": "no_verified_public_source_mapping",
+          "reason": "Industrial datapath source not identified in the referenced public repo."
+        },
+        {
+          "name": "binary_divide",
+          "clock_period_ps": 2500,
+          "status": "no_verified_public_source_mapping",
+          "reason": "Paper gives an algorithm label, but no precise source file/wrapper was verified; no substitute silently promoted to an exact case."
+        },
+        {
+          "name": "ML-core datapath0 opcode0",
+          "clock_period_ps": 5000,
+          "status": "no_verified_public_source_mapping",
+          "reason": "Industrial datapath source not identified in the referenced public repo."
+        },
+        {
+          "name": "ML-core datapath0 opcode1",
+          "clock_period_ps": 5000,
+          "status": "no_verified_public_source_mapping",
+          "reason": "Industrial datapath source not identified in the referenced public repo."
+        },
+        {
+          "name": "ML-core datapath0 opcode2",
+          "clock_period_ps": 5000,
+          "status": "no_verified_public_source_mapping",
+          "reason": "Industrial datapath source not identified in the referenced public repo."
+        },
+        {
+          "name": "ML-core datapath0 (all opcodes)",
+          "clock_period_ps": 5000,
+          "status": "no_verified_public_source_mapping",
+          "reason": "Industrial datapath source not identified in the referenced public repo."
+        },
+        {
+          "name": "ML-core datapath2",
+          "clock_period_ps": 2500,
+          "status": "no_verified_public_source_mapping",
+          "reason": "Industrial datapath source not identified in the referenced public repo."
+        },
+        {
+          "name": "video-core datapath",
+          "clock_period_ps": 2500,
+          "status": "no_verified_public_source_mapping",
+          "reason": "Industrial datapath source not identified in the referenced public repo."
+        },
+        {
+          "name": "internal datapath",
+          "clock_period_ps": 2500,
+          "status": "no_verified_public_source_mapping",
+          "reason": "Industrial datapath source not identified in the referenced public repo."
+        }
+      ]
+    },
+    {
+      "paper_id": "rhls_2024",
+      "details": [
+        "Exact named paper membership is confirmed; inputs are collected from cited StoQ repository, not claimed to be the exact transformed R-HLS variants.",
+        "JLM native test-suite is a broader auxiliary suite with no root license found, so it is not proposed for redistribution."
+      ]
+    },
+    {
+      "paper_id": "dynamic_loop_fusion_2025",
+      "details": [
+        "SYCL kernels include host execution and checking; they are not drop-in plain C kernels for Light-HLS.",
+        "The archived page-rank simulation command names test2-web-NotreDame.txt, which is absent in the archive; the hardware web-NotreDame.txt file is present.",
+        "No Intel compiler, simulation, FPGA execution or paper PPA reproduction was run during collection."
+      ]
+    },
+    {
+      "paper_id": "pca_hybrid_2025",
+      "details": [
+        {
+          "name": "vecNormTrans",
+          "status": "missing_exact_paper_variant",
+          "related_source_status": "broader current-upstream candidate downloaded; not a recovered paper variant"
+        },
+        {
+          "name": "gesummv",
+          "status": "missing_exact_paper_variant",
+          "related_source_status": "broader current-upstream candidate downloaded; not a recovered paper variant"
+        },
+        {
+          "name": "covariance",
+          "status": "missing_exact_paper_variant",
+          "related_source_status": "broader current-upstream candidate downloaded; not a recovered paper variant"
+        },
+        {
+          "name": "PCA compiler and transformed sources plus author input vectors",
+          "status": "unavailable",
+          "license": "not_established_for_unpublished_transformed_artifact",
+          "reason": "Article does not link a source archive; its Data Availability Statement refers to the article and correspondence. No author contact was attempted."
+        }
+      ]
+    },
+    {
+      "paper_id": "diffsched_2024",
+      "details": [
+        "EPFL el/el_mapped graph files",
+        "source C/C++ and RTL functional testbench"
+      ]
+    },
+    {
+      "paper_id": "heurigym_2026",
+      "details": [
+        "original C/C++ programs and RTL-level oracle"
+      ]
+    },
+    {
+      "paper_id": "rkhs_2026",
+      "details": [
+        "graph identities",
+        "graph files or exact generator+seeds",
+        "public code artifact"
+      ]
+    },
+    {
+      "paper_id": "neuroschedule2_2026",
+      "details": [
+        "accessible full experimental section",
+        "public benchmark artifact"
+      ]
+    }
+  ],
+  "exclusions": [
+    {
+      "title": "AlphaEvolve-XLS",
+      "reason": "公开工程项目，未核验为2024–2026正式调度论文；不计入论文覆盖或来源kernel数量。"
+    },
+    {
+      "title": "FICS: A machine learning-based feasibility inference classifier for accelerating simulated annealing in energy- and reliability-aware high-level synthesis",
+      "reason": "搜索结果标为January2027；未确认截止日前正式状态，本次不纳入。"
+    }
+  ]
+}

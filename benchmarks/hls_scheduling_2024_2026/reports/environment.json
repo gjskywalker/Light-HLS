@@ -1,0 +1,10 @@
+{
+  "collection_date": "2026-11-19",
+  "timezone": "Asia/Hong_Kong",
+  "tools": {
+    "python": "Python 3.10.12",
+    "clang": "clang version 18.0.0 (git@github.com:llvm/llvm-project.git bde5717d4638c27614d9d4a2e53df27087a69841)"
+  },
+  "native_semantic_oracle": "not_independent",
+  "hls_or_rtl_runs": 0
+}

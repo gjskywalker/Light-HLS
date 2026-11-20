@@ -14,8 +14,12 @@ build-*/
 *.bc
 *.vvp
 *.vcd
+*.fst
 *.wdb
+*.dcp
+*.bit
 *.jou
+*.log
 *.pb
 compile_commands.json
 # Historical generated files copied alongside upstream sources
@@ -35,3 +39,15 @@ __pycache__/
 .pytest_cache/
 
 # Keep regression runners, fixtures, board data, and archived evidence versioned.
+
+# Scheduling benchmark collection receipts and temporary copies.
+/benchmarks/hls_scheduling_2024_2026/research_*.json
+/benchmarks/hls_scheduling_2024_2026/sources/*/COLLECTION_ORIGIN.json
+
+# Keep the small, named validation receipts cited by the benchmark README.
+!/benchmarks/hls_scheduling_2024_2026/reports/
+/benchmarks/hls_scheduling_2024_2026/reports/*
+!/benchmarks/hls_scheduling_2024_2026/reports/collection_validation.json
+!/benchmarks/hls_scheduling_2024_2026/reports/environment.json
+!/benchmarks/hls_scheduling_2024_2026/reports/native_vericert.json
+!/benchmarks/hls_scheduling_2024_2026/reports/xls_dependency_closure.json

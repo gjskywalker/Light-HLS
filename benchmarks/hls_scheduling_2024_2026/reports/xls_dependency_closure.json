@@ -1,0 +1,8 @@
+{
+  "pinned_commit": "f0ad0e58eafcb062cbb08b4e7751c7442ac8346c",
+  "added_files": [
+    "third_party/xls_berkeley_softfloat/fpdiv_2x32.x",
+    "third_party/xls_berkeley_softfloat/LICENSE"
+  ],
+  "status": "all_five_case_import_closures_complete"
+}

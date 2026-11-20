@@ -1,0 +1,335 @@
+[
+  {
+    "id": "vericert_pldi2024_archive",
+    "kind": "archived_git_repository",
+    "repository_url": "https://github.com/ymherklotz/vericert",
+    "repository_branch": "pldi2024",
+    "commit": "9f99cb2b9572b5d426f75b070a3e4b25d5000d71",
+    "download_url": "https://zenodo.org/records/10808233/files/vericert-pldi2024.tar.gz?download=1",
+    "archive_sha256": "c559e9f0a9039be56e54e8a59d2c3436ba92d880425d1ceeaaf413e08ac925d7",
+    "archive_bytes": 56203755,
+    "local_root": "runs/benchmark_collection_20261119/static/vericert-pldi2024",
+    "license": "GPL-3.0",
+    "license_files": [
+      "LICENSE"
+    ],
+    "license_note": "Repository GPL-3.0; retain PolyBench attribution in individual sources. Imported CompCert has separate terms, but no CompCert implementation files are needed for the benchmark bundle.",
+    "paper_ids": [
+      "hyperblock_pldi2024"
+    ],
+    "frozen_input": true,
+    "not_downloaded": "9.7GB VM omitted; original archived source repository obtained instead.",
+    "bundle_root": "sources/vericert_pldi2024_archive"
+  },
+  {
+    "id": "stream_hls_official",
+    "kind": "git_repository",
+    "repository_url": "https://github.com/UCLA-VAST/Stream-HLS",
+    "commit": "00c6219a82fc710492f4eb44e4f34836dfb19e08",
+    "download_url": "https://github.com/UCLA-VAST/Stream-HLS.git",
+    "local_root": "runs/benchmark_collection_20261119/static/Stream-HLS",
+    "license": "MIT",
+    "license_files": [
+      "LICENSE"
+    ],
+    "paper_ids": [
+      "stream_hls_fpga2025"
+    ],
+    "frozen_input": true,
+    "note": "Generated HLS/testbench/config snapshots are in FPGA2025_Artificats. Large binaries/data/reports remain only in ignored runs; do not treat generated executables as source.",
+    "bundle_root": "sources/stream_hls_official"
+  },
+  {
+    "id": "xls_public_counterparts",
+    "kind": "sparse_git_repository",
+    "repository_url": "https://github.com/google/xls",
+    "commit": "f0ad0e58eafcb062cbb08b4e7751c7442ac8346c",
+    "download_url": "https://github.com/google/xls.git",
+    "local_root": "runs/benchmark_collection_20261119/static/xls",
+    "license": "Apache-2.0 with per-directory third-party MIT/BSD notices",
+    "license_files": [
+      "LICENSE",
+      "third_party/xls_colors/LICENSE",
+      "third_party/xls_go_math/LICENSE",
+      "third_party/xls_berkeley_softfloat/LICENSE"
+    ],
+    "paper_ids": [
+      "isdc_date2024"
+    ],
+    "frozen_input": true,
+    "note": "Current repository snapshot, not demonstrated to be the paper snapshot. Source-file headers and third-party licenses must accompany redistributed files.",
+    "bundle_root": "sources/xls_public_counterparts"
+  },
+  {
+    "id": "dynamic_spurious24",
+    "kind": "zenodo_archive",
+    "title": "FPGA2024 Spurious Dynamism author artifact",
+    "url": "https://doi.org/10.5281/zenodo.10307409",
+    "record_id": 10440335,
+    "fixed_record_url": "https://zenodo.org/records/10440335",
+    "archive_url": "https://zenodo.org/api/records/10440335/files/dhls-formal.zip/content",
+    "archive_local_path": "runs/benchmark_collection_20261119/dynamic/spurious_artifact.zip",
+    "archive_sha256": "aa0f7587bf2f8393e1e2027a3583a7bfd8a2ce99ad0c9b0567ff92bb81b13681",
+    "archive_md5": "0632952545b03cf7d53ad49bcc539738",
+    "published_checksum": "md5:0632952545b03cf7d53ad49bcc539738",
+    "source_root": "runs/benchmark_collection_20261119/dynamic/spurious/dhls-formal",
+    "license": "MIT (archive metadata); no archive-root LICENSE text found",
+    "license_evidence": [
+      "runs/benchmark_collection_20261119/dynamic/spurious_zenodo.json"
+    ],
+    "supporting_files": [
+      "README.md",
+      "fpga24_experiments/README.md",
+      "fpga24_experiments/step1_experiments_reproduce_table3.sh",
+      "fpga24_experiments/step2_experiments_reproduce_figure6.sh"
+    ],
+    "selection_note": "Only the eight kernels explicitly named in the experiment shell script are paper cases; wider Regression_test suite excluded.",
+    "bundle_root": "sources/dynamic_spurious24"
+  },
+  {
+    "id": "dynamic_crush25",
+    "kind": "zenodo_archive",
+    "title": "ASPLOS2025 CRUSH author artifact",
+    "url": "https://doi.org/10.5281/zenodo.14017399",
+    "record_id": 14046724,
+    "fixed_record_url": "https://zenodo.org/records/14046724",
+    "archive_url": "https://zenodo.org/api/records/14046724/files/asplos25summer-crush-main.zip/content",
+    "archive_local_path": "runs/benchmark_collection_20261119/dynamic/crush_artifact.zip",
+    "archive_sha256": "fa4e77ebab00533a86f87b69336b78381c4733b2d2e8cce35425fa052921e466",
+    "archive_md5": "7dac8a6153e2c91db574574751041895",
+    "published_checksum": "md5:7dac8a6153e2c91db574574751041895",
+    "source_root": "runs/benchmark_collection_20261119/dynamic/crush/asplos25summer-crush-main",
+    "license": "MIT (Zenodo metadata and paper artifact appendix); archive-root license text absent; vendor license is not substituted",
+    "license_evidence": [
+      "runs/benchmark_collection_20261119/dynamic/crush_zenodo.json",
+      "runs/benchmark_collection_20261119/dynamic/crush25.pdf"
+    ],
+    "supporting_files": [
+      "README.md",
+      "define.py",
+      "run_e1.py",
+      "run_e2.py",
+      "run_e3.py",
+      "run_e4.py",
+      "run_e5.py",
+      "run_e6.sh",
+      "manual_e4_fast_token_shared_gsumif.sh",
+      "manual_e5_fast_token_gsumif.sh",
+      "flow_compile_fast.sh",
+      "flow_compile_legacy.sh",
+      "flow_simulate.sh",
+      "flow_synthesize.sh"
+    ],
+    "selection_note": "Table 2 = 11 kernels in BENCHMARKS; Table 3 = 10 FAST_BENCHMARKS plus manually handled gsumif; Table 1 = gesummv_float_unroll. Extra cordic/dct/fft etc excluded.",
+    "bundle_root": "sources/dynamic_crush25"
+  },
+  {
+    "id": "dynamic_outlsq26",
+    "kind": "git_author_artifact_linked_branch",
+    "title": "Out with LSQs author README-designated replace-lsq branch",
+    "url": "https://github.com/EPFL-LAP/dynamatic.git",
+    "branch": "replace-lsq",
+    "commit": "b74ffe6623c88a16704fc0b8dc7c7b718aa169d7",
+    "source_root": "runs/benchmark_collection_20261119/dynamic/outlsq",
+    "license": "Apache-2.0 WITH LLVM-exception (repository LICENSE); separate Zenodo archive metadata says CC-BY-4.0",
+    "license_evidence": [
+      "runs/benchmark_collection_20261119/dynamic/outlsq/LICENSE"
+    ],
+    "supporting_files": [
+      "README.md",
+      "LICENSE",
+      "include/dynamatic/Integration.h",
+      "skip/all-inputs.txt",
+      "skip/run-exp.py",
+      "skip/common.py",
+      "skip/run.dyn",
+      "skip/templates/compile-with-dynamatic-compile-template.dyn",
+      "skip/templates/compile-with-dynamatic-simulate-template.dyn",
+      "skip/templates/call-vivado-impl-for-dynamatic.tcl",
+      "skip/templates/call-vivado-impl-for-dynamatic-contraints.xdc"
+    ],
+    "author_archive_url": "https://zenodo.org/records/17975150",
+    "author_archive_file_url": "https://zenodo.org/api/records/17975150/files/Out_with_LSQs_EPFL.zip/content",
+    "author_archive_downloaded": false,
+    "archive_download_note": "758,637,597-byte archive not downloaded; official small README explicitly identifies this Git branch. Fixed Git snapshot is reproducible but not claimed byte-identical to Zenodo zip.",
+    "readme_local_path": "runs/benchmark_collection_20261119/dynamic/outlsq_README.md",
+    "selection_note": "Only the 11 kernels in skip/all-inputs.txt are paper cases. Remaining integration-test directories are retained upstream material, not counted.",
+    "bundle_root": "sources/dynamic_outlsq26"
+  },
+  {
+    "id": "hybrid_stoq_baselines",
+    "url": "https://github.com/EPFL-LAP/fpga23-straight-lsq-interface",
+    "kind": "git",
+    "commit": "53b0e03acb564845527d492167ffc1b77dae6809",
+    "local_root": "runs/benchmark_collection_20261119/hybrid/straight_lsq",
+    "license": {
+      "id": "MIT",
+      "local_path": "runs/benchmark_collection_20261119/hybrid/straight_lsq/LICENSE",
+      "redistribution_status": "license_present",
+      "sha256": "e9bbc3fa33e3db72e25668ec69c2fd27251dc7dbbdc3a562de11722484d2679d"
+    },
+    "role": "R-HLS explicitly cited baseline benchmark source",
+    "bundle_root": "sources/hybrid_stoq_baselines"
+  },
+  {
+    "id": "hybrid_jlm",
+    "url": "https://github.com/EECS-NTNU/jlm",
+    "kind": "git",
+    "commit": "6ce079ffdeb8df84e6f49387b160f75460849dc7",
+    "local_root": "runs/benchmark_collection_20261119/hybrid/jlm",
+    "license": {
+      "id": "LGPL-2.1",
+      "local_path": "runs/benchmark_collection_20261119/hybrid/jlm/COPYING",
+      "redistribution_status": "license_present",
+      "sha256": "9214262d255b5186afdbb80bdf731c33adc9c47518f3abf829038fc9453e8f49"
+    },
+    "role": "R-HLS implementation and link to test-suite; no cases taken directly",
+    "bundle_root": "sources/hybrid_jlm"
+  },
+  {
+    "id": "hybrid_jlm_test_suite",
+    "url": "https://github.com/phate/hls-test-suite",
+    "kind": "git",
+    "commit": "8915f5efbd8726abd1ba03d049b0e237b88bfc2f",
+    "local_root": "runs/benchmark_collection_20261119/hybrid/hls_test_suite",
+    "license": {
+      "id": null,
+      "local_path": null,
+      "redistribution_status": "not_established_metadata_only"
+    },
+    "role": "auxiliary current JLM regression suite; not used as exact paper subset",
+    "bundle_status": "metadata_only_no_redistribution_license_established"
+  },
+  {
+    "id": "hybrid_hls_benchmarks_current",
+    "url": "https://github.com/JianyiCheng/HLS-benchmarks",
+    "kind": "git",
+    "commit": "c564eca438c123fe359a310a2297c363e22e65ee",
+    "local_root": "runs/benchmark_collection_20261119/hybrid/hls_benchmarks",
+    "license": {
+      "id": "GPL-3.0",
+      "local_path": "runs/benchmark_collection_20261119/hybrid/hls_benchmarks/LICENSE",
+      "redistribution_status": "license_present",
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    "role": "later upstream suite supplements missing v1 entries; exact paper source version unconfirmed",
+    "bundle_root": "sources/hybrid_hls_benchmarks_current"
+  },
+  {
+    "id": "hybrid_dlf_zenodo14383450",
+    "url": "https://zenodo.org/records/14383450",
+    "kind": "zenodo_archive",
+    "version": null,
+    "download_url": "https://zenodo.org/api/records/14383450/files/fpga25_artifact.zip/content",
+    "archive": {
+      "local_path": "runs/benchmark_collection_20261119/hybrid/14383450.zip",
+      "sha256": "d123ad144bf2ad3cf4dab8c5a5e5f8e113c193f46485911352f50384d49487ff",
+      "bytes": 3949259
+    },
+    "archive_checksum": "md5:5972cfa38c54a472a2ce979fe058083e",
+    "local_root": "runs/benchmark_collection_20261119/hybrid/dynamic_loop_fusion/elastic-sycl-hls",
+    "metadata_file": {
+      "local_path": "runs/benchmark_collection_20261119/hybrid/14383450.json",
+      "sha256": "3ce8fa30c660f8f8a31b8690902bb1ea984d78974d2ee4351d50aad3cf389197",
+      "bytes": 4758
+    },
+    "license": {
+      "archive_metadata_id": "cc-by-4.0",
+      "redistribution_status": "explicit_archive_license",
+      "code_license": "MIT",
+      "local_path": "runs/benchmark_collection_20261119/hybrid/dynamic_loop_fusion/elastic-sycl-hls/LICENSE",
+      "sha256": "afc161cad0ad6929ad630422214fe6753d0349cce51a25e781c19c053b076029",
+      "third_party_notice": "runs/benchmark_collection_20261119/hybrid/dynamic_loop_fusion/elastic-sycl-hls/include_sycl/License.txt"
+    },
+    "archive_checksum_verified": true,
+    "bundle_root": "sources/hybrid_dlf_zenodo14383450"
+  },
+  {
+    "id": "hybrid_hls_v1_zenodo3561115",
+    "url": "https://zenodo.org/records/3561115",
+    "kind": "zenodo_archive",
+    "version": "v1.0",
+    "download_url": "https://zenodo.org/api/records/3561115/files/JianyiCheng/HLS-benchmarks-v1.0.zip/content",
+    "archive": {
+      "local_path": "runs/benchmark_collection_20261119/hybrid/3561115.zip",
+      "sha256": "9b353f49e709c807e0472bd8214aa706eff649400bf00eab2f1a2dee0c0fbfe9",
+      "bytes": 46511
+    },
+    "archive_checksum": "md5:f1aaed4338f7336b4a80c19dfdea60b8",
+    "local_root": "runs/benchmark_collection_20261119/hybrid/hls_benchmarks_v1/JianyiCheng-HLS-benchmarks-a56c1dd",
+    "metadata_file": {
+      "local_path": "runs/benchmark_collection_20261119/hybrid/3561115.json",
+      "sha256": "c1295f3747ed5a47e796b36963cca27b485c19bd961a9bcf2ec3bfdf4df07141",
+      "bytes": 4647
+    },
+    "license": {
+      "archive_metadata_id": "gpl-2.0-or-later",
+      "redistribution_status": "explicit_archive_license",
+      "code_license": "GPL-2.0-or-later per Zenodo metadata; archive has no LICENSE file",
+      "local_path": null,
+      "version_note": "Do not replace v1 archive license with current GitHub GPL-3.0 license."
+    },
+    "archive_checksum_verified": true,
+    "bundle_root": "sources/hybrid_hls_v1_zenodo3561115"
+  },
+  {
+    "id": "diffsched_icml24",
+    "url": "https://github.com/Yu-Maryland/Differentiable_Scheduler_ICML24",
+    "revision": "f1a1204c68ba58622b5d25ab5d8a5df0aff1b5ef",
+    "kind": "git",
+    "license": "MIT",
+    "license_path": "runs/benchmark_collection_20261119/root/differentiable_scheduler/LICENSE",
+    "local_root": "runs/benchmark_collection_20261119/root/differentiable_scheduler",
+    "paper_ids": [
+      "diffsched_2024"
+    ],
+    "include": [
+      "graphgml",
+      "LICENSE",
+      "README.md",
+      "gen_cp_graph_w_attr.py",
+      "gen_lp_graph_w_attr.py",
+      "parse_graph_w_attr.py",
+      "scheduling_graph_w_attr_solver.sh"
+    ],
+    "notes": "18个公开合成图；不得将其说成论文全部真实应用测试集。",
+    "bundle_root": "sources/diffsched_icml24"
+  },
+  {
+    "id": "heurigym_dataset",
+    "url": "https://huggingface.co/datasets/heurigen/heurigen-data",
+    "revision": "c11ab2db2824068e523ac4656a20a6f2581961b8",
+    "kind": "huggingface",
+    "license": "CC-BY-4.0",
+    "license_path": "runs/benchmark_collection_20261119/root/heurigym_dataset/README.md",
+    "local_root": "runs/benchmark_collection_20261119/root/heurigym_dataset",
+    "paper_ids": [
+      "heurigym_2026"
+    ],
+    "include": [
+      "operator_scheduling",
+      "README.md"
+    ],
+    "notes": "数据集卡明确CC-BY-4.0；工具代码另受Apache-2.0许可。",
+    "bundle_root": "sources/heurigym_dataset"
+  },
+  {
+    "id": "heurigym_tools",
+    "url": "https://github.com/cornell-zhang/heurigym",
+    "revision": "a4cf0460152eb798f1b3a797ef22a08192661bf5",
+    "kind": "git",
+    "license": "Apache-2.0",
+    "license_path": "runs/benchmark_collection_20261119/root/heurigym_tools/LICENSE",
+    "local_root": "runs/benchmark_collection_20261119/root/heurigym_tools",
+    "paper_ids": [
+      "heurigym_2026"
+    ],
+    "include": [
+      "operator_scheduling",
+      "LICENSE",
+      "README.md"
+    ],
+    "notes": "仅收集静态验证器与专家基线说明；未执行API调用或LLM搜索。",
+    "bundle_root": "sources/heurigym_tools"
+  }
+]

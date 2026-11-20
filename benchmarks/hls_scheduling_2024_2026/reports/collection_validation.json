@@ -1,0 +1,346 @@
+{
+  "valid": true,
+  "files_checked": 512,
+  "cases": 157,
+  "papers": 14,
+  "graph_checks": [
+    {
+      "case_id": "diffsched__rand_graph_10000_1",
+      "sha256": "082176b460b0592ce56c26c22444942862629d2f4a21a9f65208d66e2aaadf2c",
+      "status": "valid",
+      "nodes": 9432,
+      "edges": 27636,
+      "scope": "Collected scalar-attribute GML DAG; resource model not executed"
+    },
+    {
+      "case_id": "diffsched__rand_graph_10000_2",
+      "sha256": "ff16eb9aec7ffdcda969ebe17bc6ac201cb97f167b01e10602be1e82315cfa36",
+      "status": "valid",
+      "nodes": 9447,
+      "edges": 27786,
+      "scope": "Collected scalar-attribute GML DAG; resource model not executed"
+    },
+    {
+      "case_id": "diffsched__rand_graph_10000_3",
+      "sha256": "4040de2eb3d25da5f8e7c70fd6c98d7c602024547b0c8fc7a48a5ae7db4827cf",
+      "status": "valid",
+      "nodes": 9396,
+      "edges": 27363,
+      "scope": "Collected scalar-attribute GML DAG; resource model not executed"
+    },
+    {
+      "case_id": "diffsched__rand_graph_1000_1",
+      "sha256": "b123277e9ea6dc7b35cb981316f14437e30bbcf736f49860a51746176b699556",
+      "status": "valid",
+      "nodes": 949,
+      "edges": 2730,
+      "scope": "Collected scalar-attribute GML DAG; resource model not executed"
+    },
+    {
+      "case_id": "diffsched__rand_graph_1000_2",
+      "sha256": "754b7e0234dd7c98c2b99c0cdc39d64aed4cfb1836d3b6d53a5280f49d62d70f",
+      "status": "valid",
+      "nodes": 941,
+      "edges": 2790,
+      "scope": "Collected scalar-attribute GML DAG; resource model not executed"
+    },
+    {
+      "case_id": "diffsched__rand_graph_1000_3",
+      "sha256": "b06a673d1063b3077d076cb15b8e07e36c62e55dd74e608ca345951f0beb2f3a",
+      "status": "valid",
+      "nodes": 929,
+      "edges": 2762,
+      "scope": "Collected scalar-attribute GML DAG; resource model not executed"
+    },
+    {
+      "case_id": "diffsched__rand_graph_5000_1",
+      "sha256": "d12130d3114dc8f973625ccbfc00e25962351dc58ddf1e42bcd56f34e90b2420",
+      "status": "valid",
+      "nodes": 4713,
+      "edges": 13913,
+      "scope": "Collected scalar-attribute GML DAG; resource model not executed"
+    },
+    {
+      "case_id": "diffsched__rand_graph_5000_2",
+      "sha256": "049e673332b92d198f749ecaa10393272820e504c1b232276203f734681f7e19",
+      "status": "valid",
+      "nodes": 4716,
+      "edges": 14050,
+      "scope": "Collected scalar-attribute GML DAG; resource model not executed"
+    },
+    {
+      "case_id": "diffsched__rand_graph_5000_3",
+      "sha256": "e46e3c3587160e67e30fb4a44f87fd5c11afb5f033be103b7cc9ff3d5bbd11d0",
+      "status": "valid",
+      "nodes": 4741,
+      "edges": 13872,
+      "scope": "Collected scalar-attribute GML DAG; resource model not executed"
+    },
+    {
+      "case_id": "diffsched__rand_graph_sparse_10000_1",
+      "sha256": "c87072cebffd1f4cbf05d50d0b30bfa956211bd7699fd5e74df51f5d6f88f9ab",
+      "status": "valid",
+      "nodes": 8058,
+      "edges": 9805,
+      "scope": "Collected scalar-attribute GML DAG; resource model not executed"
+    },
+    {
+      "case_id": "diffsched__rand_graph_sparse_10000_2",
+      "sha256": "8b49b74de3d50ddbf162a3ef7344ba69838fbd685b46a4f6c6399c937126bc5f",
+      "status": "valid",
+      "nodes": 8192,
+      "edges": 10079,
+      "scope": "Collected scalar-attribute GML DAG; resource model not executed"
+    },
+    {
+      "case_id": "diffsched__rand_graph_sparse_10000_3",
+      "sha256": "54e1b460c708e0f3201da2d66c68cf73de28e2ddd0ae2a39f7e1befcc26eb019",
+      "status": "valid",
+      "nodes": 8193,
+      "edges": 10035,
+      "scope": "Collected scalar-attribute GML DAG; resource model not executed"
+    },
+    {
+      "case_id": "diffsched__rand_graph_sparse_1000_1",
+      "sha256": "42c460cfb2ba982ac8da5beb80d39edfad6cebe933f62c1236de9e7f5df160f7",
+      "status": "valid",
+      "nodes": 810,
+      "edges": 946,
+      "scope": "Collected scalar-attribute GML DAG; resource model not executed"
+    },
+    {
+      "case_id": "diffsched__rand_graph_sparse_1000_2",
+      "sha256": "3562fc898e99f53a86fd552f597b303e335fde9bea2b76827dc922e27e0c71e9",
+      "status": "valid",
+      "nodes": 819,
+      "edges": 988,
+      "scope": "Collected scalar-attribute GML DAG; resource model not executed"
+    },
+    {
+      "case_id": "diffsched__rand_graph_sparse_1000_3",
+      "sha256": "c7e9a5089ce37218f566bc41ece95be65e679d25c41de39b2943770b22ffd80b",
+      "status": "valid",
+      "nodes": 829,
+      "edges": 1070,
+      "scope": "Collected scalar-attribute GML DAG; resource model not executed"
+    },
+    {
+      "case_id": "diffsched__rand_graph_sparse_5000_1",
+      "sha256": "8c6cb824946360885601eb178154459fda360fa3e6dde421ed52ed25ba271e61",
+      "status": "valid",
+      "nodes": 4087,
+      "edges": 5083,
+      "scope": "Collected scalar-attribute GML DAG; resource model not executed"
+    },
+    {
+      "case_id": "diffsched__rand_graph_sparse_5000_2",
+      "sha256": "d6eb45380f95347160eacdc3fc7e24ac658cd61aaf5231453e5c75ccef8bd7d6",
+      "status": "valid",
+      "nodes": 4063,
+      "edges": 4973,
+      "scope": "Collected scalar-attribute GML DAG; resource model not executed"
+    },
+    {
+      "case_id": "diffsched__rand_graph_sparse_5000_3",
+      "sha256": "c65818ca5c6f9dece43a7c5166f727a55cfdf7f8694a8ca093bb9e9415d1fc17",
+      "status": "valid",
+      "nodes": 4086,
+      "edges": 5022,
+      "scope": "Collected scalar-attribute GML DAG; resource model not executed"
+    },
+    {
+      "case_id": "heurigym__demo",
+      "sha256": "93ca4b9c63ab3b446f77c71da75897b06b702b563d5aacbbb61c49348f5556a7",
+      "status": "valid",
+      "nodes": 3,
+      "edges": 2,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__ewf",
+      "sha256": "324243ae5d7b8900fe2366c696f396c1beffcdff3713670c870f7d42dc5be1f0",
+      "status": "valid",
+      "nodes": 34,
+      "edges": 47,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__hal",
+      "sha256": "95c67695c5d69d658d8c905e758c55c0ae5154ff995d52366d210d9d54d81514",
+      "status": "valid",
+      "nodes": 11,
+      "edges": 8,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__horner",
+      "sha256": "2291f6c14a278bf31cbdab30f2c626ed2ba7996fb10993afe681b6d772f53238",
+      "status": "valid",
+      "nodes": 18,
+      "edges": 16,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__motion",
+      "sha256": "3aa8c5bc5c83248ac08c56962ae8cf382e5a3d68def52ae0c4a2fb4d2e2e0132",
+      "status": "valid",
+      "nodes": 32,
+      "edges": 29,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__arf",
+      "sha256": "63fce9ae3db82e116be9c707cbf68fb1df87809fb167f077925daf9fdceb5b68",
+      "status": "valid",
+      "nodes": 28,
+      "edges": 30,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__collapse",
+      "sha256": "b4404680f340ce2e2332b6cf43941ba12cd068c79f9409b19e9905ff1d8d8536",
+      "status": "valid",
+      "nodes": 56,
+      "edges": 73,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__cosine1",
+      "sha256": "493db361e848b54f3c9e14a47f2d2e3dc2a88fb1da2ca8b90cf6558dc1f107ac",
+      "status": "valid",
+      "nodes": 66,
+      "edges": 76,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__cosine2",
+      "sha256": "e9d91f5aa5186cd97d597df12df84fdf06c1b47c4e36889bf9428d936750d68b",
+      "status": "valid",
+      "nodes": 82,
+      "edges": 91,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__dag_1000",
+      "sha256": "46e366144200db704c8dd7f56c86c499544f5341e0bf2f541f7134e318c1bfb8",
+      "status": "valid",
+      "nodes": 1000,
+      "edges": 1280,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__dag_1500",
+      "sha256": "f3b0ee8bcc149eb1480d02352f6436921f766d90b4b567bf8c8f8aaff5ba1c25",
+      "status": "valid",
+      "nodes": 1500,
+      "edges": 2167,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__dag_500",
+      "sha256": "0985e8ae6f06164e8e3c7d3f17dfa14247476607f3283f0ff054a8cbadf5af64",
+      "status": "valid",
+      "nodes": 500,
+      "edges": 1330,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__feedback",
+      "sha256": "6f57e474534f576f82b0f141764d0af2c34c6b2ba1cd77cae35c176e916e5408",
+      "status": "valid",
+      "nodes": 53,
+      "edges": 50,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__fir1",
+      "sha256": "a3695925a2ef8b994678d8c3c841cea586d7ff2644099e2d293482b43548ae7f",
+      "status": "valid",
+      "nodes": 44,
+      "edges": 43,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__fir2",
+      "sha256": "8af23264f286c20b43fba57af11ad16730045f668d45bac507aa87ffa8b2466d",
+      "status": "valid",
+      "nodes": 40,
+      "edges": 39,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__h2v2",
+      "sha256": "cb17a375034d4d790f158073272578b88020a41ec6177ab65eeeeeea53e0cd1e",
+      "status": "valid",
+      "nodes": 51,
+      "edges": 52,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__idctcol",
+      "sha256": "a4ddafc8f400ea9e85dd7560deb0fc78a5125617cda9353b943e2d7db4c6d067",
+      "status": "valid",
+      "nodes": 114,
+      "edges": 164,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__interpolate",
+      "sha256": "e72ff36b3a56934b50ca3779b257b05b8b0d9f2fa28d1c6a45935ccb3b1f6ec8",
+      "status": "valid",
+      "nodes": 108,
+      "edges": 104,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__invert",
+      "sha256": "eb9612e5c1b6c490f0d3cf193cac2537ddde914a06388366d825f137390012ab",
+      "status": "valid",
+      "nodes": 333,
+      "edges": 354,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__jpeg_fdct",
+      "sha256": "1f7544379d5a6347309f1d5a92bdfd66365a012d8b3e548e68cf9bf4e3af0ec9",
+      "status": "valid",
+      "nodes": 134,
+      "edges": 169,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__jpeg_idct",
+      "sha256": "67162b6f365b5d46f6def1ae21f4b7680251ff27290a9e3bcd7a265f2c4d1f60",
+      "status": "valid",
+      "nodes": 122,
+      "edges": 162,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__matmul",
+      "sha256": "12bea16c1c558ecfc7c456e6422f05ec85b32644d3f1353133660754a929e589",
+      "status": "valid",
+      "nodes": 109,
+      "edges": 116,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__smooth",
+      "sha256": "694f90ae446f0b7c98b9fe0a151831eab7cc92a5aaff61111d97e2e2a7ce5416",
+      "status": "valid",
+      "nodes": 197,
+      "edges": 196,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    },
+    {
+      "case_id": "heurigym__write",
+      "sha256": "5f9f82a6682f170c1484360643ad34e0f972a93c77faf379bddcf60392ce67cc",
+      "status": "valid",
+      "nodes": 106,
+      "edges": 88,
+      "scope": "HeuriGym DAG; durations/capacities positive; scheduling not executed"
+    }
+  ],
+  "errors": [],
+  "scope": "Original-file integrity and graph structural checks only; no HLS/RTL correctness or paper QoR reproduction."
+}

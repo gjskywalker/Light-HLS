@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "collection_date": "2026-11-19",
+  "timezone": "Asia/Hong_Kong",
+  "papers": 14,
+  "artifacts": 15,
+  "case_configurations": 157,
+  "hls_source_configurations": 115,
+  "auxiliary_graphs": 42,
+  "unique_primary_source_hashes": 155,
+  "initial_family_groups": 81,
+  "paper_years": {
+    "2024": 5,
+    "2025": 5,
+    "2026": 4
+  },
+  "mapping_confidence": {
+    "exact": 87,
+    "broader_suite": 9,
+    "exact_names_artifact_linked_git_snapshot": 11,
+    "paper_cited_baseline_variant": 8,
+    "exact_available_suite": 42
+  },
+  "bundled_original_files": 512,
+  "bundled_original_bytes": 35366354,
+  "missing_referenced_files": 1,
+  "native_status": {
+    "execution_completed_no_sanitizer_diagnostic": 27,
+    "not_run": 130
+  },
+  "light_hls_tested": 0,
+  "rtl_functionally_verified": 0,
+  "paper_qor_reproduced": 0,
+  "split_status": "not_frozen"
+}
