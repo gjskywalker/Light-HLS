@@ -289,6 +289,7 @@ clangBasic
 # It links the same backend but does not run optional post-search optimizations.
 add_executable(Light_HLS_DAPO EXCLUDE_FROM_ALL Light_HLS_DAPO.cc ConfigParse.cc Pre_Process.cc)
 target_compile_definitions(Light_HLS_DAPO PRIVATE
+  LIGHT_HLS_LLVM_OPT="${LLVM_TOOLS_BINARY_DIR}/opt"
   LIGHT_HLS_INCLUDE_DIR="${CMAKE_CURRENT_SOURCE_DIR}/include")
 get_target_property(HI_DAPO_LINK_LIBRARIES ${Outputname} LINK_LIBRARIES)
 target_link_libraries(Light_HLS_DAPO PRIVATE ${HI_DAPO_LINK_LIBRARIES})

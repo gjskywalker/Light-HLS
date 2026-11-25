@@ -12,6 +12,7 @@
 #include <functional>
 #include <limits>
 #include <regex>
+#include <sstream>
 #include <stdexcept>
 
 using namespace llvm;
@@ -35,6 +36,8 @@ struct Options {
     bool prepare = false;
     bool estimateOnly = false;
     bool synthesis = false;
+    bool staged = false;
+    std::vector<std::string> preUnrollPasses;
     std::string latencyModel = "heuristic";
     std::string input;
     std::string top;
@@ -82,7 +85,7 @@ Options parseOptions(int argc, char **argv) {
     }
     require(index + 1 < argc,
             "Usage: Light_HLS_DAPO [--prepare-source] INPUT TOP --freq 100MHz "
-            "[--manifest MANIFEST] [--board u250] [--output ROOT] "
+            "[--manifest MANIFEST] [--board u250] [--output ROOT] [--pre-unroll-passes NAME,...] "
             "[--estimate-only] [--latency-model heuristic|scheduled|hybrid] [--synthesis enable|disable]");
     options.input = fs::absolute(argv[index++]).string();
     options.top = argv[index++];
@@ -96,7 +99,27 @@ Options parseOptions(int argc, char **argv) {
         }
         require(index < argc, "Missing value for " + key);
         const std::string value = argv[index++];
-        if (key == "--manifest")
+        if (key == "--pre-unroll-passes") {
+            require(options.prepare, "--pre-unroll-passes requires --prepare-source");
+            // DAPO-II v3 actions. Loop unrolling belongs to the following fixed anchor.
+            static const std::set<std::string> allowed{
+                "simplifycfg", "sroa", "early-cse", "ipsccp", "globalopt", "typepromotion",
+                "instcombine", "speculative-execution", "jump-threading", "correlated-propagation",
+                "reassociate", "loop-instsimplify", "loop-simplifycfg", "licm", "loop-rotate",
+                "loop-idiom", "indvars", "loop-deletion", "mldst-motion", "gvn", "sccp", "bdce",
+                "adce", "memcpyopt", "dse", "loop-vectorize", "loop-load-elim", "slp-vectorizer",
+                "instsimplify", "gvn-hoist", "newgvn", "loop-fusion"};
+            options.staged = true;
+            if (!value.empty()) {
+                require(value.back() != ',', "Empty trailing G0 action");
+                std::istringstream list(value);
+                std::string action;
+                while (std::getline(list, action, ',')) {
+                    require(allowed.count(action), "Unknown G0 pass: " + action);
+                    options.preUnrollPasses.push_back(action);
+                }
+            }
+        } else if (key == "--manifest")
             options.manifest = fs::absolute(value).string();
         else if (key == "--output")
             options.output = fs::absolute(value).string();
@@ -258,6 +281,55 @@ public:
     }
 };
 
+// A source location alone cannot disambiguate cloned loops.  For staged actions
+// insist that every selected loop retains a unique explicit lineage marker.
+std::map<std::string, std::set<std::string>> stageTargets(
+        llvm::Module &module, const std::map<std::string, int> &unroll,
+        const std::map<std::string, int> &pipeline) {
+    std::map<std::string, unsigned> occurrences;
+    std::map<std::string, std::set<std::string>> targets;
+    std::function<void(Loop *, std::string)> visit = [&](Loop *loop, std::string enclosing) {
+        std::set<std::string> ids;
+        if (auto *id = loop->getLoopID()) {
+            for (unsigned i = 1; i < id->getNumOperands(); ++i) {
+                auto *node = dyn_cast_or_null<MDNode>(id->getOperand(i));
+                if (!node || node->getNumOperands() != 2) continue;
+                auto *key = dyn_cast_or_null<MDString>(node->getOperand(0));
+                auto *val = dyn_cast_or_null<MDString>(node->getOperand(1));
+                if (key && val && key->getString() == "dapo.loop.label")
+                    ids.insert(val->getString().str());
+            }
+        }
+        require(ids.size() < 2, "Conflicting staged loop lineage labels");
+        std::string label = ids.empty() ? "" : *ids.begin();
+        if (!label.empty()) ++occurrences[label];
+        if (!enclosing.empty()) {
+            require(!label.empty(), "Missing label for a staged PIPELINE descendant");
+            targets[enclosing].insert(label);
+        }
+        if (pipeline.count(label)) {
+            require(enclosing.empty(), "Nested PIPELINE directives on the same loop chain are unsupported");
+            enclosing = label;
+            targets[label];
+        }
+        for (Loop *child : loop->getSubLoops()) visit(child, enclosing);
+    };
+    for (Function &f : module) {
+        if (f.isDeclaration()) continue;
+        DominatorTree dt(f);
+        LoopInfo loops(dt);
+        for (Loop *loop : loops) visit(loop, "");
+    }
+    auto unique = [&](const std::string &label) {
+        require(occurrences[label] == 1, "Missing or ambiguous staged loop target: " + label);
+    };
+    for (const auto &kv : pipeline) unique(kv.first);
+    for (const auto &kv : unroll) unique(kv.first);
+    for (const auto &kv : targets)
+        for (const auto &descendant : kv.second) unique(descendant);
+    return targets;
+}
+
 JSON prepare(const Options &options, const fs::path &reports,
              const fs::path &intermediate, LLVMContext &context) {
     std::map<std::string, int> outerSizes;
@@ -279,10 +351,12 @@ JSON prepare(const Options &options, const fs::path &reports,
         "-fno-discard-value-names", "-emit-llvm", "-c", "-std=c++17",
         "-I" + fs::path(options.input).parent_path().string(),
         "-I" LIGHT_HLS_INCLUDE_DIR, "tmp_loopLabeled.cc", "-o", "frontend.bc"};
+    if (options.staged) arguments.push_back("-fdebug-compilation-dir=.");
     SmallVector<StringRef, 16> references;
     for (const auto &argument : arguments) references.push_back(argument);
     require(sys::ExecuteAndWait(*compiler, references, std::nullopt, {}, 120) == 0,
             "Source-to-IR compilation failed");
+    std::unique_ptr<LLVMContext> stageContext;
     auto module = loadIR("frontend.bc", context);
     // CFG normalization may discard dbg.label intrinsics in unreachable label blocks.
     // Bind directive identity before any transformation can remove those labels.
@@ -302,6 +376,44 @@ JSON prepare(const Options &options, const fs::path &reports,
     collectSourceMaps(*module, labels, lines, trips, "HI_DAPO_preparation_map");
     annotateLoops(*module, labels);
     Parse_Config(config.c_str(), unroll, pipeline);
+    JSON window;
+    if (options.staged) {
+        const char *input = "g0_input.bc", *output = "g0_output.bc";
+        const auto initialTargets = stageTargets(*module, unroll, pipeline);
+        writeIR(*module, input);
+        window = {{"schema", "dapo_g0_v1"}, {"actions", options.preUnrollPasses},
+                  {"input", (intermediate / input).string()}, {"input_hash", stableFileHash(input)},
+                  {"steps", JSON::array()}, {"pipeline_descendants", initialTargets},
+                  {"explicit_unroll", unroll}, {"requested_pipeline", pipeline}};
+        std::string previous = input;
+        for (size_t i = 0; i < options.preUnrollPasses.size(); ++i) {
+            const auto &action = options.preUnrollPasses[i];
+            require(action != "loop-fusion" || (pipeline.empty() && unroll.empty()),
+                    "loop-fusion is masked with UNROLL or PIPELINE targets");
+            const std::string next = "g0_step_" + std::to_string(i + 1) + ".bc";
+            const std::string flag = "-passes=" + (action == "licm" ?
+                    "function(loop-mssa(licm))" : action);
+            const std::string opt = LIGHT_HLS_LLVM_OPT;
+            require(sys::ExecuteAndWait(opt, {opt, flag, previous, "-o", next},
+                                        std::nullopt, {}, 120) == 0,
+                    "G0 LLVM pass failed: " + action);
+            auto nextContext = std::make_unique<LLVMContext>();
+            auto transformed = loadIR(next, *nextContext);
+            require(stageTargets(*transformed, unroll, pipeline) == initialTargets,
+                    "G0 changed the targets of implicit full unrolling");
+            module = std::move(transformed);
+            stageContext = std::move(nextContext);
+            window["steps"].push_back({{"pass", action}, {"pipeline", flag}, {"opt", opt},
+                {"input", previous}, {"input_hash", stableFileHash(previous)},
+                {"output", next}, {"output_hash", stableFileHash(next)}});
+            previous = next;
+        }
+        fs::copy_file(previous, output, fs::copy_options::overwrite_existing);
+        window["output"] = (intermediate / output).string();
+        window["output_hash"] = stableFileHash(output);
+        if (!options.preUnrollPasses.empty())
+            collectSourceMaps(*module, labels, lines, trips, "HI_DAPO_after_g0_map");
+    }
     std::set<std::string> foundPipelines, requiredFullUnroll;
     for (Function &function : *module) {
         if (function.isDeclaration()) continue;
@@ -374,6 +486,14 @@ JSON prepare(const Options &options, const fs::path &reports,
                                       "constant-memory-initializers-v1", "same-base-pointer-phi-v1", "scalar-libm-no-errno-v1", "optional-fmuladd-unfused-v1",
                                       "mem2reg", "lower-switch", "loop-simplify", "lcssa"}}
     };
+    if (options.staged) {
+        window["post_anchor"] = prepared.string();
+        window["post_anchor_hash"] = stableFileHash(prepared.string());
+        manifest["staged_preparation"] = window;
+        auto &passes = manifest["preparation_passes"];
+        auto anchor = std::find(passes.begin(), passes.end(), JSON("source-pragma-unroll"));
+        passes.insert(anchor, "user-g0-window");
+    }
     writeJSON(reports / "dapo_manifest.json", manifest);
     return manifest;
 }
