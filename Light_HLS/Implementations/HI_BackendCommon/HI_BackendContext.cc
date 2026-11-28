@@ -616,8 +616,8 @@ std::string makeScheduleReport(const HLSBackendContext &context)
             {
                 const auto feedback = context.ordinaryFeedbackValues.find(&instruction);
                 if (feedback != context.ordinaryFeedbackValues.end())
-                    feedbackRows.push_back({context.valueNames.at(&instruction),
-                        context.valueNames.at(feedback->second),
+                    feedbackRows.push_back({scheduledOperationName(context, &instruction),
+                        scheduledOperationName(context, feedback->second),
                         std::to_string(instruction.getType()->getIntegerBitWidth()),
                         feedback->second->getParent() == &block ?
                             "ordinary self-backedge" : "ordinary loop latch"});
@@ -635,8 +635,8 @@ std::string makeScheduleReport(const HLSBackendContext &context)
                 if (bypass != context.ordinaryBackedgeBypasses.end())
                 {
                     const auto scheduled = context.schedule.instructionMap.find(bypass->second);
-                    bypassRows.push_back({context.valueNames.at(&phi),
-                        context.valueNames.at(bypass->second),
+                    bypassRows.push_back({scheduledOperationName(context, &phi),
+                        scheduledOperationName(context, bypass->second),
                         scheduled == context.schedule.instructionMap.end() ? "not scheduled" :
                             std::to_string(scheduled->second->startCycle),
                         context.ordinaryRegisterAliases.count(bypass->second) ? "shared with PHI" : "retained"});
@@ -651,7 +651,7 @@ std::string makeScheduleReport(const HLSBackendContext &context)
     {
         const auto scheduled = context.schedule.instructionMap.find(bypass.load);
         readPhiRows.push_back({bypass.predecessor->getName().str(),
-            context.valueNames.at(bypass.phi), context.valueNames.at(bypass.load),
+            scheduledOperationName(context, bypass.phi), scheduledOperationName(context, bypass.load),
             scheduled == context.schedule.instructionMap.end() ? "not scheduled" :
                 std::to_string(scheduled->second->startCycle + scheduled->second->latency - 1),
             "retained"});
@@ -1553,8 +1553,8 @@ std::string makeScheduleJSON(const HLSBackendContext &context, bool detailed)
                 if (!firstFeedback)
                     output << ',';
                 firstFeedback = false;
-                output << "{\"operation\":" << jsonString(context.valueNames.at(&instruction))
-                       << ",\"phi\":" << jsonString(context.valueNames.at(feedback->second))
+                output << "{\"operation\":" << jsonString(scheduledOperationName(context, &instruction))
+                       << ",\"phi\":" << jsonString(scheduledOperationName(context, feedback->second))
                        << ",\"bit_width\":" << scalarBitWidth(instruction.getType())
                        << ",\"sample_edge\":" << jsonString(feedback->second->getParent() == &block ?
                             "ordinary_self_backedge" : "ordinary_loop_latch") << '}';
@@ -1583,14 +1583,14 @@ std::string makeScheduleJSON(const HLSBackendContext &context, bool detailed)
                     output << ',';
                 firstBypass = false;
                 const auto scheduled = context.schedule.instructionMap.find(bypass->second);
-                output << "{\"phi\":" << jsonString(context.valueNames.at(&phi))
-                       << ",\"operation\":" << jsonString(context.valueNames.at(bypass->second))
+                output << "{\"phi\":" << jsonString(scheduledOperationName(context, &phi))
+                       << ",\"operation\":" << jsonString(scheduledOperationName(context, bypass->second))
                        << ",\"sample_cycle\":" << (scheduled == context.schedule.instructionMap.end() ?
                             "null" : std::to_string(scheduled->second->startCycle))
                        << ",\"result_register_retained\":" << (context.ordinaryRegisterAliases.count(bypass->second) ? "false" : "true")
                        << ",\"result_value_retained\":true,\"storage_register\":"
-                       << jsonString(context.valueNames.at(context.ordinaryRegisterAliases.count(bypass->second) ?
-                            static_cast<const llvm::Value *>(&phi) : static_cast<const llvm::Value *>(bypass->second))) << '}';
+                       << jsonString(scheduledOperationName(context, context.ordinaryRegisterAliases.count(bypass->second) ?
+                            &phi : bypass->second)) << '}';
             }
     output << ']';
     output << ",\"ordinary_read_phi_bypass_count\":" << context.ordinaryReadPhiBypasses.size()
@@ -1603,8 +1603,8 @@ std::string makeScheduleJSON(const HLSBackendContext &context, bool detailed)
         const auto scheduled = context.schedule.instructionMap.find(bypass.load);
         output << "{\"predecessor\":" << jsonString(bypass.predecessor->getName().str())
                << ",\"successor\":" << jsonString(bypass.phi->getParent()->getName().str())
-               << ",\"phi\":" << jsonString(context.valueNames.at(bypass.phi))
-               << ",\"load\":" << jsonString(context.valueNames.at(bypass.load))
+               << ",\"phi\":" << jsonString(scheduledOperationName(context, bypass.phi))
+               << ",\"load\":" << jsonString(scheduledOperationName(context, bypass.load))
                << ",\"sample_cycle\":" << (scheduled == context.schedule.instructionMap.end() ? "null" :
                     std::to_string(scheduled->second->startCycle + scheduled->second->latency - 1))
                << ",\"load_register_retained\":true}";

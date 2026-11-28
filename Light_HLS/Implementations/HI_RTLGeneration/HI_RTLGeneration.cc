@@ -821,6 +821,8 @@ std::string castExpression(const CastInst &cast,
     const unsigned destinationWidth = integerWidth(cast.getDestTy());
     if (isa<SExtInst>(cast) && destinationWidth > sourceWidth)
     {
+        if (sourceWidth == 1)
+            return "{" + std::to_string(destinationWidth) + "{" + source + "}}";
         return "{{" + std::to_string(destinationWidth - sourceWidth) + "{" +
                source + "[" + std::to_string(sourceWidth - 1) + "]}}, " + source +
                "}";

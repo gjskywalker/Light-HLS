@@ -192,15 +192,15 @@ HI_InstructionMoveBackward::getInstructions_PhiIndependent(BasicBlock *cur_block
         else
         {
             auto cur_opcode = I.getOpcode();
-            if (I.mayHaveSideEffects() ||
+            // Moving a read to a dominator can cross an aliasing write or execute it on a new path.
+            // This pass has no memory-dependence or safe-speculation proof for that move.
+            if (I.mayReadFromMemory() || I.mayHaveSideEffects() ||
                 cur_opcode == Instruction::Ret || cur_opcode == Instruction::Br ||
                 cur_opcode == Instruction::Switch || cur_opcode == Instruction::IndirectBr ||
                 cur_opcode == Instruction::Invoke || cur_opcode == Instruction::Resume ||
                 cur_opcode == Instruction::Unreachable || cur_opcode == Instruction::CleanupRet ||
                 cur_opcode == Instruction::CatchRet || cur_opcode == Instruction::CatchSwitch ||
                 cur_opcode == Instruction::Store)
-            // || cur_opcode == Instruction::Load) // should Load be hoisted? some time actually it
-            // can be hoisted but VivadoHLS does not T_T I don't know why
             {
                 isInstruction_PHI_dependent.insert(&I);
             }

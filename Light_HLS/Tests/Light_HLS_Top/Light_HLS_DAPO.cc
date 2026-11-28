@@ -395,6 +395,7 @@ int generate(const Options &options, JSON manifest, const fs::path &reports,
     const unsigned helperCalls = inlineDirectBackendCalls(*module);
     const unsigned constantExpressions = materializeBackendConstantExpressions(*module);
     const unsigned constantInitializers = lowerConstantMemoryInitializers(*module);
+    const unsigned integerMinMax = lowerIntegerMinMax(*module);
     const unsigned pointerPhis = lowerSameBasePointerPhis(*module);
     const unsigned mathCalls = lowerFloatingMathCalls(*module);
     const unsigned optionalContractions = lowerOptionalFloatingContraction(*module);
@@ -411,6 +412,7 @@ int generate(const Options &options, JSON manifest, const fs::path &reports,
         {"schema", "dapo_ir_audit_v1"}, {"input", options.input}, {"input_hash", inputHash},
         {"legalized_ir_hash", stableFileHash((intermediate / "legalized.bc").string())},
         {"same_base_pointer_phis_lowered", pointerPhis},
+        {"integer_min_max_lowered", integerMinMax},
         {"helper_calls_inlined", helperCalls},
         {"constant_expressions_materialized", constantExpressions},
         {"manifest", options.manifest}, {"manifest_hash", stableFileHash(options.manifest)},

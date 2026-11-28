@@ -981,6 +981,36 @@ bool HI_SeparateConstOffsetFromGEP::splitGEP(GetElementPtrInst *GEP)
     return true;
 }
 
+// Clang can express accesses to an i32 array as byte GEPs. Recover the typed
+// index while the pointer chain is intact, before our element-based lowering.
+static bool recoverArrayElementIndex(GetElementPtrInst &gep, const DataLayout &layout)
+{
+    if (!gep.getSourceElementType()->isIntegerTy(8) || gep.getNumIndices() != 1)
+        return false;
+    auto *alloca = dyn_cast<AllocaInst>(getUnderlyingObject(gep.getPointerOperand()));
+    if (!alloca || !alloca->getAllocatedType()->isArrayTy())
+        return false;
+    Type *element = alloca->getAllocatedType();
+    while (auto *array = dyn_cast<ArrayType>(element))
+        element = array->getElementType();
+    if (!element->isIntegerTy() && !element->isFloatingPointTy())
+        return false;
+    uint64_t stride = layout.getTypeAllocSize(element).getFixedValue();
+    Value *index = gep.getOperand(1);
+    auto *indexType = dyn_cast<IntegerType>(index->getType());
+    if (stride <= 1 || !isPowerOf2_64(stride) || !indexType ||
+        Log2_64(stride) >= indexType->getBitWidth())
+        return false;
+    if (!MaskedValueIsZero(index, APInt(indexType->getBitWidth(), stride - 1), layout))
+        return false;
+    IRBuilder<> builder(&gep);
+    Value *wordIndex = builder.CreateAShr(index, Log2_64(stride), "element.index", true);
+    gep.setSourceElementType(element);
+    gep.setResultElementType(element);
+    gep.setOperand(1, wordIndex);
+    return true;
+}
+
 bool HI_SeparateConstOffsetFromGEP::runOnFunction(Function &F)
 {
     if (skipFunction(F))
@@ -991,6 +1021,15 @@ bool HI_SeparateConstOffsetFromGEP::runOnFunction(Function &F)
     LI = &getAnalysis<LoopInfoWrapperPass>().getLoopInfo();
     TLI = &getAnalysis<TargetLibraryInfoWrapperPass>().getTLI(F);
     bool Changed = false;
+
+    for (BasicBlock &block : F)
+        for (Instruction &instruction : block)
+            if (auto *gep = dyn_cast<GetElementPtrInst>(&instruction))
+                if (recoverArrayElementIndex(*gep, *DL))
+                {
+                    SE->forgetValue(gep);
+                    Changed = true;
+                }
 
     for (BasicBlock &B : F)
     {

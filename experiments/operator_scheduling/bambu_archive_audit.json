@@ -1,0 +1,2861 @@
+{
+  "archive_sha256": "f43b0201b64b23ac071ae54af317984a40fb067943f1e09ccd22bd17c0e100f5",
+  "frozen_agent_data_sha256": "03b98e367e970eb892c673f95724c6c750ab2c23c9bb7819200931fe1b24d179",
+  "aggregate": {
+    "default_over_noopt": {
+      "less": 27,
+      "equal": 0,
+      "more": 0,
+      "geomean_ratio": 0.3375299265847404
+    },
+    "agent_over_default": {
+      "less": 8,
+      "equal": 0,
+      "more": 19,
+      "geomean_ratio": 1.2768789306845199
+    },
+    "agent_over_noopt": {
+      "less": 26,
+      "equal": 0,
+      "more": 1,
+      "geomean_ratio": 0.4309848517315478
+    },
+    "default_beats_agent_only_when_optimized": 18
+  },
+  "cases": {
+    "jacobi-1d": {
+      "agent_cycles": 3601,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/stencils/jacobi-1d/main_top.v",
+        "cycles": 2442,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "jacobi-1d.c"
+        ],
+        "sha256": "8ba3b69a6a5c8b5c5fdf5611312fa0465379d772b43796383dae2407dd422da6",
+        "top_fsm_states": 15,
+        "memories": {
+          "array_33829_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 30,
+            "access_lanes": 2
+          },
+          "array_33853_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 30,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 0,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/stencils/jacobi-1d/main_top.v",
+        "cycles": 16535,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "jacobi-1d.c"
+        ],
+        "sha256": "8e13940e22c1465a4c0a214a7b1b1b036c4e05d830c958dae26cf8e5bf21204f",
+        "top_fsm_states": 57,
+        "memories": {
+          "array_33857_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 30,
+            "access_lanes": 2
+          },
+          "array_33879_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 30,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 0,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 2442,
+          "c_checksum": "00000001",
+          "rtl_sha256": "8ba3b69a6a5c8b5c5fdf5611312fa0465379d772b43796383dae2407dd422da6",
+          "memory_interface_counts": {
+            "array_33829_0": {
+              "read_requests": 1170,
+              "write_requests": 590,
+              "two_or_more_reads_cycles": 560,
+              "two_or_more_requests_cycles": 560,
+              "unknown_enables": 0,
+              "first_read_tick": 62,
+              "last_write_tick": 2381
+            },
+            "array_33853_0": {
+              "read_requests": 1140,
+              "write_requests": 590,
+              "two_or_more_reads_cycles": 560,
+              "two_or_more_requests_cycles": 560,
+              "unknown_enables": 0,
+              "first_read_tick": 120,
+              "last_write_tick": 2323
+            }
+          },
+          "jacobi_store_interval": {
+            "all_stores": 1180,
+            "first_store_after_60": 65,
+            "last_store": 2381,
+            "kernel_multi_write_cycles": 0
+          }
+        },
+        "light": {
+          "verified_cycles": 3601,
+          "c_checksum": "00000001",
+          "rtl_sha256": "c77da4f3dcaf5226e85f5ea02088dd4b387aa8fdc6cb2f12dfd517a79bda9ba6",
+          "memory_interface_counts": {
+            "A": {
+              "read_requests": 1710,
+              "write_requests": 590,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 35,
+              "last_write_tick": 3511
+            },
+            "B": {
+              "read_requests": 1680,
+              "write_requests": 590,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 121,
+              "last_write_tick": 3425
+            }
+          },
+          "jacobi_store_interval": {
+            "all_stores": 1180,
+            "first_store_after_60": 38,
+            "last_store": 3511,
+            "kernel_multi_write_cycles": 0
+          }
+        },
+        "noopt": {
+          "verified_cycles": 16535,
+          "c_checksum": "00000001",
+          "rtl_sha256": "8e13940e22c1465a4c0a214a7b1b1b036c4e05d830c958dae26cf8e5bf21204f",
+          "memory_interface_counts": {
+            "array_33857_0": {
+              "read_requests": 2240,
+              "write_requests": 1150,
+              "two_or_more_reads_cycles": 560,
+              "two_or_more_requests_cycles": 560,
+              "unknown_enables": 0,
+              "first_read_tick": 422,
+              "last_write_tick": 15946
+            },
+            "array_33879_0": {
+              "read_requests": 2270,
+              "write_requests": 1150,
+              "two_or_more_reads_cycles": 560,
+              "two_or_more_requests_cycles": 560,
+              "unknown_enables": 0,
+              "first_read_tick": 417,
+              "last_write_tick": 16343
+            }
+          },
+          "jacobi_store_interval": {
+            "all_stores": 2300,
+            "first_store_after_60": 421,
+            "last_store": 16343,
+            "kernel_multi_write_cycles": 0
+          }
+        }
+      }
+    },
+    "heat-3d": {
+      "agent_cycles": 42761,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/stencils/heat-3d/main_top.v",
+        "cycles": 30377,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "heat-3d.c"
+        ],
+        "sha256": "7d442ae5f7a33fe411459f784cbf4af22c6ec734dc5b544cf6d6342f9a3d5f73",
+        "top_fsm_states": 30,
+        "memories": {
+          "array_33905_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1000,
+            "access_lanes": 2
+          },
+          "array_33916_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1000,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 0,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/stencils/heat-3d/main_top.v",
+        "cycles": 128208,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "heat-3d.c"
+        ],
+        "sha256": "e3545f64ed2d940a2e20f6a2bfe8686034116d8717e0988e345cee4daebcba3b",
+        "top_fsm_states": 99,
+        "memories": {
+          "array_33868_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1000,
+            "access_lanes": 2
+          },
+          "array_33921_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1000,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 0,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 30377,
+          "c_checksum": "00000014",
+          "rtl_sha256": "7d442ae5f7a33fe411459f784cbf4af22c6ec734dc5b544cf6d6342f9a3d5f73"
+        },
+        "noopt": {
+          "verified_cycles": 128208,
+          "c_checksum": "00000014",
+          "rtl_sha256": "e3545f64ed2d940a2e20f6a2bfe8686034116d8717e0988e345cee4daebcba3b"
+        }
+      }
+    },
+    "seidel-2d": {
+      "agent_cycles": 267172,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/stencils/seidel-2d/main_top.v",
+        "cycles": 146453,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "seidel-2d.c"
+        ],
+        "sha256": "61d150e85bea7c2d48c919a3f37c5a5f86954c13b533a3c99db7d16eaa1ac941",
+        "top_fsm_states": 24,
+        "memories": {
+          "array_33815_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1600,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 0,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/stencils/seidel-2d/main_top.v",
+        "cycles": 301671,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "seidel-2d.c"
+        ],
+        "sha256": "e730f087a6e230c14e6b38147b6dff2db97167c13e98a294d429e1438088e33b",
+        "top_fsm_states": 58,
+        "memories": {
+          "array_33802_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1600,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 0,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 146453,
+          "c_checksum": "00000027",
+          "rtl_sha256": "61d150e85bea7c2d48c919a3f37c5a5f86954c13b533a3c99db7d16eaa1ac941"
+        },
+        "noopt": {
+          "verified_cycles": 301671,
+          "c_checksum": "00000027",
+          "rtl_sha256": "e730f087a6e230c14e6b38147b6dff2db97167c13e98a294d429e1438088e33b"
+        }
+      }
+    },
+    "jacobi-2d": {
+      "agent_cycles": 76481,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/stencils/jacobi-2d/main_top.v",
+        "cycles": 52526,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "jacobi-2d.c"
+        ],
+        "sha256": "77cd27ad75e67548071b3a996ba871aecc0b93685e292e6b045852fe7641e858",
+        "top_fsm_states": 29,
+        "memories": {
+          "array_33814_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 900,
+            "access_lanes": 2
+          },
+          "array_33884_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 900,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 0,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/stencils/jacobi-2d/main_top.v",
+        "cycles": 170863,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "jacobi-2d.c"
+        ],
+        "sha256": "28b0f7bcad766c67499e1016a7ed26559c893ace64bfb558920c361b560c3a68",
+        "top_fsm_states": 75,
+        "memories": {
+          "array_33803_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 900,
+            "access_lanes": 2
+          },
+          "array_33820_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 900,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 0,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 52526,
+          "c_checksum": "000000a2",
+          "rtl_sha256": "77cd27ad75e67548071b3a996ba871aecc0b93685e292e6b045852fe7641e858"
+        },
+        "noopt": {
+          "verified_cycles": 170863,
+          "c_checksum": "000000a2",
+          "rtl_sha256": "28b0f7bcad766c67499e1016a7ed26559c893ace64bfb558920c361b560c3a68"
+        }
+      }
+    },
+    "fdtd-2d": {
+      "agent_cycles": 121980,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/stencils/fdtd-2d/main_top.v",
+        "cycles": 100760,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "fdtd-2d.c"
+        ],
+        "sha256": "99fb8f92d31067218771a462a6096bfbd110a5c2c303ea3edf9e2ba21f82b650",
+        "top_fsm_states": 41,
+        "memories": {
+          "array_33853_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 20,
+            "access_lanes": 2
+          },
+          "array_33893_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 600,
+            "access_lanes": 2
+          },
+          "array_33938_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 600,
+            "access_lanes": 2
+          },
+          "array_33955_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 600,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 0,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/stencils/fdtd-2d/main_top.v",
+        "cycles": 421291,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "fdtd-2d.c"
+        ],
+        "sha256": "6d5720eb01acc71c6310754242a6a94367b76feaed8636e88dbd7c8ae5147fd3",
+        "top_fsm_states": 131,
+        "memories": {
+          "array_33834_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 20,
+            "access_lanes": 2
+          },
+          "array_34015_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 600,
+            "access_lanes": 2
+          },
+          "array_34063_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 600,
+            "access_lanes": 2
+          },
+          "array_34099_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 600,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 0,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 100760,
+          "c_checksum": "00000e71",
+          "rtl_sha256": "99fb8f92d31067218771a462a6096bfbd110a5c2c303ea3edf9e2ba21f82b650"
+        },
+        "noopt": {
+          "verified_cycles": 421291,
+          "c_checksum": "00000e71",
+          "rtl_sha256": "6d5720eb01acc71c6310754242a6a94367b76feaed8636e88dbd7c8ae5147fd3"
+        }
+      }
+    },
+    "nussinov": {
+      "agent_cycles": 180656,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/medley/nussinov/main_top.v",
+        "cycles": 130185,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "nussinov.c"
+        ],
+        "sha256": "64fc3cd98de00ecf3218acce5a5039e959c097db7789a6c5a1fa11a4ab261f81",
+        "top_fsm_states": 31,
+        "memories": {
+          "array_33810_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 60,
+            "access_lanes": 2
+          },
+          "array_33921_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 3600,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 0,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/medley/nussinov/main_top.v",
+        "cycles": 347862,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "nussinov.c"
+        ],
+        "sha256": "152fd94e6d71f02f03f91d452a4bfdd810ac24b6f2c8a94fed9ebe5dfe02ae5b",
+        "top_fsm_states": 80,
+        "memories": {
+          "array_33867_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 60,
+            "access_lanes": 2
+          },
+          "array_33888_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 3600,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 0,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 130185,
+          "c_checksum": "0000001c",
+          "rtl_sha256": "64fc3cd98de00ecf3218acce5a5039e959c097db7789a6c5a1fa11a4ab261f81"
+        },
+        "noopt": {
+          "verified_cycles": 347862,
+          "c_checksum": "0000001c",
+          "rtl_sha256": "152fd94e6d71f02f03f91d452a4bfdd810ac24b6f2c8a94fed9ebe5dfe02ae5b"
+        }
+      }
+    },
+    "adi": {
+      "agent_cycles": 259441,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/stencils/adi/main_top.v",
+        "cycles": 183919,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "adi.c"
+        ],
+        "sha256": "4a6d212092308e6b91af8be5669ffe36ffed6af8bdd3ec367898f7024a4e63d2",
+        "top_fsm_states": 79,
+        "memories": {
+          "array_33802_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 400,
+            "access_lanes": 2
+          },
+          "array_33968_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 400,
+            "access_lanes": 2
+          },
+          "array_34076_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 400,
+            "access_lanes": 2
+          },
+          "array_34129_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 400,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 2,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/stencils/adi/main_top.v",
+        "cycles": 564373,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "adi.c"
+        ],
+        "sha256": "a2faf2524e2f507821588ce9068b4db32e54f909f36b9020bb21771d8b063049",
+        "top_fsm_states": 128,
+        "memories": {
+          "array_33962_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 400,
+            "access_lanes": 2
+          },
+          "array_34141_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 400,
+            "access_lanes": 2
+          },
+          "array_34196_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 400,
+            "access_lanes": 2
+          },
+          "array_34280_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 400,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 14,
+        "additional_controllers": [
+          "sdivider"
+        ],
+        "modulo_instances": []
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 183919,
+          "c_checksum": "00000001",
+          "rtl_sha256": "4a6d212092308e6b91af8be5669ffe36ffed6af8bdd3ec367898f7024a4e63d2"
+        },
+        "noopt": {
+          "verified_cycles": 564373,
+          "c_checksum": "00000001",
+          "rtl_sha256": "a2faf2524e2f507821588ce9068b4db32e54f909f36b9020bb21771d8b063049"
+        }
+      }
+    },
+    "3mm": {
+      "agent_cycles": 59476,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/linear-algebra/kernels/3mm/main_top.v",
+        "cycles": 102818,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "3mm.c"
+        ],
+        "sha256": "cc15a70fc724e70c7838763e90fdcf67005da679ffe84fd1c11af2c0610e49b7",
+        "top_fsm_states": 62,
+        "memories": {
+          "array_33817_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 320,
+            "access_lanes": 2
+          },
+          "array_34010_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 360,
+            "access_lanes": 2
+          },
+          "array_34133_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 432,
+            "access_lanes": 2
+          },
+          "array_34257_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 528,
+            "access_lanes": 2
+          },
+          "array_34388_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 288,
+            "access_lanes": 2
+          },
+          "array_34498_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 396,
+            "access_lanes": 2
+          },
+          "array_34607_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 352,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 3,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/linear-algebra/kernels/3mm/main_top.v",
+        "cycles": 224309,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "3mm.c"
+        ],
+        "sha256": "b03c5f37f59a13b92020145ed43d678efc9294a06001c226aab4b7d04ea4d214",
+        "top_fsm_states": 135,
+        "memories": {
+          "array_33951_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 320,
+            "access_lanes": 2
+          },
+          "array_34096_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 360,
+            "access_lanes": 2
+          },
+          "array_34198_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 432,
+            "access_lanes": 2
+          },
+          "array_34299_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 528,
+            "access_lanes": 2
+          },
+          "array_34406_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 288,
+            "access_lanes": 2
+          },
+          "array_34553_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 396,
+            "access_lanes": 2
+          },
+          "array_34681_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 352,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 3,
+        "additional_controllers": [
+          "smodulo"
+        ],
+        "modulo_instances": []
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 102818,
+          "c_checksum": "00000000",
+          "rtl_sha256": "cc15a70fc724e70c7838763e90fdcf67005da679ffe84fd1c11af2c0610e49b7"
+        },
+        "noopt": {
+          "verified_cycles": 224309,
+          "c_checksum": "00000000",
+          "rtl_sha256": "b03c5f37f59a13b92020145ed43d678efc9294a06001c226aab4b7d04ea4d214"
+        }
+      }
+    },
+    "bicg": {
+      "agent_cycles": 35814,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/linear-algebra/kernels/bicg/main_top.v",
+        "cycles": 18404,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "bicg.c"
+        ],
+        "sha256": "b7494b2ecfee186f7130137f2784a9d858cd2bb8f204d78e1ba84191d95c397a",
+        "top_fsm_states": 20,
+        "memories": {
+          "array_33847_0": {
+            "kind": "ARRAY_1D_STD_DISTRAM_NN_SDS",
+            "words": 38,
+            "access_lanes": 2
+          },
+          "array_33868_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1596,
+            "access_lanes": 2
+          },
+          "array_33938_0": {
+            "kind": "ARRAY_1D_STD_DISTRAM_NN_SDS",
+            "words": 42,
+            "access_lanes": 2
+          },
+          "array_34007_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 38,
+            "access_lanes": 2
+          },
+          "array_34103_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 42,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 0,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/linear-algebra/kernels/bicg/main_top.v",
+        "cycles": 63024,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "bicg.c"
+        ],
+        "sha256": "515f6560f73ad74c2285f49e787480024e0bfa0f1b399e282eaece85c70d9052",
+        "top_fsm_states": 83,
+        "memories": {
+          "array_33947_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 38,
+            "access_lanes": 2
+          },
+          "array_33960_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1596,
+            "access_lanes": 2
+          },
+          "array_34076_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 42,
+            "access_lanes": 2
+          },
+          "array_34162_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 38,
+            "access_lanes": 2
+          },
+          "array_34272_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 42,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 2,
+        "additional_controllers": [
+          "modulo"
+        ],
+        "modulo_instances": [
+          "modulo_158_i0"
+        ]
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 18404,
+          "c_checksum": "00000000",
+          "rtl_sha256": "b7494b2ecfee186f7130137f2784a9d858cd2bb8f204d78e1ba84191d95c397a",
+          "memory_interface_counts": {
+            "array_33847_0": {
+              "read_requests": 0,
+              "write_requests": 38,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 0,
+              "last_write_tick": 39
+            },
+            "array_33868_0": {
+              "read_requests": 0,
+              "write_requests": 1596,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 0,
+              "last_write_tick": 14929
+            },
+            "array_33938_0": {
+              "read_requests": 0,
+              "write_requests": 42,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 0,
+              "last_write_tick": 14483
+            },
+            "array_34007_0": {
+              "read_requests": 1634,
+              "write_requests": 1634,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 14969,
+              "last_write_tick": 18242
+            },
+            "array_34103_0": {
+              "read_requests": 42,
+              "write_requests": 42,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 18320,
+              "last_write_tick": 18243
+            }
+          }
+        },
+        "light": {
+          "verified_cycles": 35814,
+          "c_checksum": "00000000",
+          "rtl_sha256": "dd83141f106f42462642e343b4d414ec7d3f5572930bdec2594c4ce7df57ba85",
+          "memory_interface_counts": {
+            "A": {
+              "read_requests": 1596,
+              "write_requests": 1596,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 32135,
+              "last_write_tick": 32092
+            },
+            "s": {
+              "read_requests": 1634,
+              "write_requests": 1634,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 32135,
+              "last_write_tick": 35574
+            },
+            "q": {
+              "read_requests": 42,
+              "write_requests": 84,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 35690,
+              "last_write_tick": 35575
+            },
+            "p": {
+              "read_requests": 1596,
+              "write_requests": 38,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 32135,
+              "last_write_tick": 381
+            },
+            "r": {
+              "read_requests": 42,
+              "write_requests": 42,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 32132,
+              "last_write_tick": 31162
+            }
+          }
+        },
+        "noopt": {
+          "verified_cycles": 63024,
+          "c_checksum": "00000000",
+          "rtl_sha256": "515f6560f73ad74c2285f49e787480024e0bfa0f1b399e282eaece85c70d9052",
+          "memory_interface_counts": {
+            "array_33947_0": {
+              "read_requests": 1596,
+              "write_requests": 38,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 51076,
+              "last_write_tick": 650
+            },
+            "array_33960_0": {
+              "read_requests": 3192,
+              "write_requests": 1596,
+              "two_or_more_reads_cycles": 1596,
+              "two_or_more_requests_cycles": 1596,
+              "unknown_enables": 0,
+              "first_read_tick": 51076,
+              "last_write_tick": 50905
+            },
+            "array_34076_0": {
+              "read_requests": 1596,
+              "write_requests": 42,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 51076,
+              "last_write_tick": 49453
+            },
+            "array_34162_0": {
+              "read_requests": 1634,
+              "write_requests": 1634,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 51076,
+              "last_write_tick": 62532
+            },
+            "array_34272_0": {
+              "read_requests": 1638,
+              "write_requests": 1638,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 51076,
+              "last_write_tick": 62532
+            }
+          },
+          "modulo_start_done_pulses": [
+            1676,
+            1676
+          ]
+        }
+      }
+    },
+    "2mm": {
+      "agent_cycles": 47728,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/linear-algebra/kernels/2mm/main_top.v",
+        "cycles": 67992,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "2mm.c"
+        ],
+        "sha256": "36403c36e9de565bfb1f674fc67c4874a1db5d1faaa65ee2312548a58dd90206",
+        "top_fsm_states": 55,
+        "memories": {
+          "array_33817_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 352,
+            "access_lanes": 2
+          },
+          "array_34007_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 396,
+            "access_lanes": 2
+          },
+          "array_34125_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 432,
+            "access_lanes": 2
+          },
+          "array_34253_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 384,
+            "access_lanes": 2
+          },
+          "array_34370_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 288,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 2,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/linear-algebra/kernels/2mm/main_top.v",
+        "cycles": 177242,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "2mm.c"
+        ],
+        "sha256": "6fc1ad5d48368c12a6f237af94de2b6cd47a94dff546234a4cb6bc184dc39d10",
+        "top_fsm_states": 122,
+        "memories": {
+          "array_33951_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 352,
+            "access_lanes": 2
+          },
+          "array_34093_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 396,
+            "access_lanes": 2
+          },
+          "array_34189_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 432,
+            "access_lanes": 2
+          },
+          "array_34291_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 384,
+            "access_lanes": 2
+          },
+          "array_34395_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 288,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 2,
+        "additional_controllers": [
+          "smodulo"
+        ],
+        "modulo_instances": []
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 67992,
+          "c_checksum": "00000000",
+          "rtl_sha256": "36403c36e9de565bfb1f674fc67c4874a1db5d1faaa65ee2312548a58dd90206"
+        },
+        "noopt": {
+          "verified_cycles": 177242,
+          "c_checksum": "00000000",
+          "rtl_sha256": "6fc1ad5d48368c12a6f237af94de2b6cd47a94dff546234a4cb6bc184dc39d10"
+        }
+      }
+    },
+    "doitgen": {
+      "agent_cycles": 35200,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/linear-algebra/kernels/doitgen/main_top.v",
+        "cycles": 58910,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "doitgen.c"
+        ],
+        "sha256": "1ccca5b2643871656c7dc12fb74535105361ff7b84dc65b361ac8373d1729049",
+        "top_fsm_states": 37,
+        "memories": {
+          "array_33802_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 960,
+            "access_lanes": 2
+          },
+          "array_34012_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 144,
+            "access_lanes": 2
+          },
+          "array_34131_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 12,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 1,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/linear-algebra/kernels/doitgen/main_top.v",
+        "cycles": 136692,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "doitgen.c"
+        ],
+        "sha256": "2a79457abc016e5635dafb92b640d89323c53dc3c830bdf9529b935736184003",
+        "top_fsm_states": 97,
+        "memories": {
+          "array_33854_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 960,
+            "access_lanes": 2
+          },
+          "array_34053_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 144,
+            "access_lanes": 2
+          },
+          "array_34197_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 12,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 1,
+        "additional_controllers": [
+          "modulo"
+        ],
+        "modulo_instances": [
+          "modulo_186_i0"
+        ]
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 58910,
+          "c_checksum": "00000000",
+          "rtl_sha256": "1ccca5b2643871656c7dc12fb74535105361ff7b84dc65b361ac8373d1729049"
+        },
+        "noopt": {
+          "verified_cycles": 136692,
+          "c_checksum": "00000000",
+          "rtl_sha256": "2a79457abc016e5635dafb92b640d89323c53dc3c830bdf9529b935736184003"
+        }
+      }
+    },
+    "atas": {
+      "agent_cycles": 22972,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/linear-algebra/kernels/atas/main_top.v",
+        "cycles": 16947,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "atas.c"
+        ],
+        "sha256": "1f8e8cccec381ca89a8c26132588004f27eea7200d19272bbb2568a07b761a64",
+        "top_fsm_states": 22,
+        "memories": {
+          "array_33803_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 42,
+            "access_lanes": 2
+          },
+          "array_33855_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1596,
+            "access_lanes": 2
+          },
+          "array_33971_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 42,
+            "access_lanes": 2
+          },
+          "array_33999_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 38,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 2,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/linear-algebra/kernels/atas/main_top.v",
+        "cycles": 50860,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "atas.c"
+        ],
+        "sha256": "29437cca0e90ecb90bf41643e2f45d8caeace7a3b7f486d68a03b736af06f4c1",
+        "top_fsm_states": 71,
+        "memories": {
+          "array_33873_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 42,
+            "access_lanes": 2
+          },
+          "array_33886_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1596,
+            "access_lanes": 2
+          },
+          "array_34069_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 42,
+            "access_lanes": 2
+          },
+          "array_34106_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 38,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 2,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 16947,
+          "c_checksum": "00000000",
+          "rtl_sha256": "1f8e8cccec381ca89a8c26132588004f27eea7200d19272bbb2568a07b761a64"
+        },
+        "noopt": {
+          "verified_cycles": 50860,
+          "c_checksum": "00000000",
+          "rtl_sha256": "29437cca0e90ecb90bf41643e2f45d8caeace7a3b7f486d68a03b736af06f4c1"
+        }
+      }
+    },
+    "mvt": {
+      "agent_cycles": 36672,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/linear-algebra/kernels/mvt/main_top.v",
+        "cycles": 18478,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "mvt.c"
+        ],
+        "sha256": "46c0133eeee0a2abae981fde32299f6a01aa38cd7e1e85d397a1ece675ca74a9",
+        "top_fsm_states": 27,
+        "memories": {
+          "array_33815_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1600,
+            "access_lanes": 2
+          },
+          "array_33954_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33968_0": {
+            "kind": "ARRAY_1D_STD_DISTRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33970_0": {
+            "kind": "ARRAY_1D_STD_DISTRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_34004_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 0,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/linear-algebra/kernels/mvt/main_top.v",
+        "cycles": 71534,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "mvt.c"
+        ],
+        "sha256": "a611313d4e3d6772968b2685d5a08308e743114dcc4a0844cf94ea690f5ff874",
+        "top_fsm_states": 84,
+        "memories": {
+          "array_33951_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1600,
+            "access_lanes": 2
+          },
+          "array_34053_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_34069_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_34085_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_34134_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 2,
+        "additional_controllers": [
+          "smodulo"
+        ],
+        "modulo_instances": []
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 18478,
+          "c_checksum": "00000000",
+          "rtl_sha256": "46c0133eeee0a2abae981fde32299f6a01aa38cd7e1e85d397a1ece675ca74a9"
+        },
+        "noopt": {
+          "verified_cycles": 71534,
+          "c_checksum": "00000000",
+          "rtl_sha256": "a611313d4e3d6772968b2685d5a08308e743114dcc4a0844cf94ea690f5ff874"
+        }
+      }
+    },
+    "syrk": {
+      "agent_cycles": 61962,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/linear-algebra/blas/syrk/main_top.v",
+        "cycles": 54428,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "syrk.c"
+        ],
+        "sha256": "005414df217cc50a057c9a98a57fbcc2e4a47b49ec52f031fe90fd27c9227bc3",
+        "top_fsm_states": 31,
+        "memories": {
+          "array_33817_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 600,
+            "access_lanes": 2
+          },
+          "array_33987_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 900,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 1,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/linear-algebra/blas/syrk/main_top.v",
+        "cycles": 176575,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "syrk.c"
+        ],
+        "sha256": "37d125fec4eadcdc9b4aa5150bc364faac65ce1e844039dd0442909e9e01e076",
+        "top_fsm_states": 87,
+        "memories": {
+          "array_33854_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 600,
+            "access_lanes": 2
+          },
+          "array_34021_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 900,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 1,
+        "additional_controllers": [
+          "modulo"
+        ],
+        "modulo_instances": [
+          "modulo_155_i0"
+        ]
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 54428,
+          "c_checksum": "00000000",
+          "rtl_sha256": "005414df217cc50a057c9a98a57fbcc2e4a47b49ec52f031fe90fd27c9227bc3"
+        },
+        "noopt": {
+          "verified_cycles": 176575,
+          "c_checksum": "00000000",
+          "rtl_sha256": "37d125fec4eadcdc9b4aa5150bc364faac65ce1e844039dd0442909e9e01e076"
+        }
+      }
+    },
+    "gemver": {
+      "agent_cycles": 40192,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/linear-algebra/blas/gemver/main_top.v",
+        "cycles": 26478,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "gemver.c"
+        ],
+        "sha256": "87480dcbb5d38998433d8ac893aaecb2166df017e87b25dfd67d4840cc873cdd",
+        "top_fsm_states": 28,
+        "memories": {
+          "array_33815_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1600,
+            "access_lanes": 2
+          },
+          "array_33936_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33940_0": {
+            "kind": "ARRAY_1D_STD_DISTRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33944_0": {
+            "kind": "ARRAY_1D_STD_DISTRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33948_0": {
+            "kind": "ARRAY_1D_STD_DISTRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33952_0": {
+            "kind": "ARRAY_1D_STD_DISTRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33956_0": {
+            "kind": "ARRAY_1D_STD_DISTRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33960_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33963_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 1,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/linear-algebra/blas/gemver/main_top.v",
+        "cycles": 101335,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "gemver.c"
+        ],
+        "sha256": "80e8b1a4ee901f472a083fb348626396b042ba90d53098f16f94134786430492",
+        "top_fsm_states": 119,
+        "memories": {
+          "array_33802_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1600,
+            "access_lanes": 2
+          },
+          "array_33886_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33913_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33928_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33944_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33959_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33974_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33979_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_34017_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 4,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 26478,
+          "c_checksum": "00000000",
+          "rtl_sha256": "87480dcbb5d38998433d8ac893aaecb2166df017e87b25dfd67d4840cc873cdd"
+        },
+        "noopt": {
+          "verified_cycles": 101335,
+          "c_checksum": "00000000",
+          "rtl_sha256": "80e8b1a4ee901f472a083fb348626396b042ba90d53098f16f94134786430492"
+        }
+      }
+    },
+    "symm": {
+      "agent_cycles": 45651,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/linear-algebra/blas/symm/main_top.v",
+        "cycles": 32032,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "symm.c"
+        ],
+        "sha256": "2ca7ddf5e1c64b586e6b68c01e42ca40ce71280da11a1bdf8692d556b0057cae",
+        "top_fsm_states": 34,
+        "memories": {
+          "array_33813_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 600,
+            "access_lanes": 2
+          },
+          "array_33868_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 600,
+            "access_lanes": 2
+          },
+          "array_33991_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 400,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 3,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/linear-algebra/blas/symm/main_top.v",
+        "cycles": 115414,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "symm.c"
+        ],
+        "sha256": "b25b2314aa4ebc84224d1112e0d5736766a51d2bb33f0651cebfb80b4c44ea94",
+        "top_fsm_states": 116,
+        "memories": {
+          "array_34005_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 600,
+            "access_lanes": 2
+          },
+          "array_34036_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 600,
+            "access_lanes": 2
+          },
+          "array_34122_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 400,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 3,
+        "additional_controllers": [
+          "modulo"
+        ],
+        "modulo_instances": [
+          "modulo_203_i0"
+        ]
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 32032,
+          "c_checksum": "00000000",
+          "rtl_sha256": "2ca7ddf5e1c64b586e6b68c01e42ca40ce71280da11a1bdf8692d556b0057cae"
+        },
+        "noopt": {
+          "verified_cycles": 115414,
+          "c_checksum": "00000000",
+          "rtl_sha256": "b25b2314aa4ebc84224d1112e0d5736766a51d2bb33f0651cebfb80b4c44ea94"
+        }
+      }
+    },
+    "gesummv": {
+      "agent_cycles": 33178,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/linear-algebra/blas/gesummv/main_top.v",
+        "cycles": 15556,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "gesummv.c"
+        ],
+        "sha256": "93266258f8c39405703c9e1ab80b668c1b26fd8201c07522c9bab9a0d3de43ee",
+        "top_fsm_states": 21,
+        "memories": {
+          "array_33803_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 900,
+            "access_lanes": 2
+          },
+          "array_33820_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 900,
+            "access_lanes": 2
+          },
+          "array_33942_0": {
+            "kind": "ARRAY_1D_STD_DISTRAM_NN_SDS",
+            "words": 30,
+            "access_lanes": 2
+          },
+          "array_34067_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 30,
+            "access_lanes": 2
+          },
+          "array_34130_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 30,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 0,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/linear-algebra/blas/gesummv/main_top.v",
+        "cycles": 57506,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "gesummv.c"
+        ],
+        "sha256": "8d3dc490fa3cd10c8ccf56fdc7b2f849a08631d24b40f478b7dc78c2d974e4a3",
+        "top_fsm_states": 82,
+        "memories": {
+          "array_33967_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 900,
+            "access_lanes": 2
+          },
+          "array_33993_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 900,
+            "access_lanes": 2
+          },
+          "array_34009_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 30,
+            "access_lanes": 2
+          },
+          "array_34193_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 30,
+            "access_lanes": 2
+          },
+          "array_34235_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 30,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 2,
+        "additional_controllers": [
+          "modulo"
+        ],
+        "modulo_instances": [
+          "modulo_149_i0"
+        ]
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 15556,
+          "c_checksum": "00000000",
+          "rtl_sha256": "93266258f8c39405703c9e1ab80b668c1b26fd8201c07522c9bab9a0d3de43ee"
+        },
+        "noopt": {
+          "verified_cycles": 57506,
+          "c_checksum": "00000000",
+          "rtl_sha256": "8d3dc490fa3cd10c8ccf56fdc7b2f849a08631d24b40f478b7dc78c2d974e4a3"
+        }
+      }
+    },
+    "trmm": {
+      "agent_cycles": 36371,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/linear-algebra/blas/trmm/main_top.v",
+        "cycles": 28362,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "trmm.c"
+        ],
+        "sha256": "d7e1f1a9b09c64e367b4b2c121e638bf24cbf9c25bd30352a28653ad89e75445",
+        "top_fsm_states": 28,
+        "memories": {
+          "array_33804_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 400,
+            "access_lanes": 2
+          },
+          "array_33831_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 600,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 1,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/linear-algebra/blas/trmm/main_top.v",
+        "cycles": 80968,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "trmm.c"
+        ],
+        "sha256": "e6f3249330eb3ae7289dfa5b783e7d850454d42712d9d97550b90f31a7add65e",
+        "top_fsm_states": 86,
+        "memories": {
+          "array_33856_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 400,
+            "access_lanes": 2
+          },
+          "array_33873_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 600,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 1,
+        "additional_controllers": [
+          "modulo"
+        ],
+        "modulo_instances": [
+          "modulo_184_i0"
+        ]
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 28362,
+          "c_checksum": "00000000",
+          "rtl_sha256": "d7e1f1a9b09c64e367b4b2c121e638bf24cbf9c25bd30352a28653ad89e75445"
+        },
+        "noopt": {
+          "verified_cycles": 80968,
+          "c_checksum": "00000000",
+          "rtl_sha256": "e6f3249330eb3ae7289dfa5b783e7d850454d42712d9d97550b90f31a7add65e"
+        }
+      }
+    },
+    "gemm": {
+      "agent_cycles": 69860,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/linear-algebra/blas/gemm/main_top.v",
+        "cycles": 79422,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "gemm.c"
+        ],
+        "sha256": "4e5dc2ae3787024c13c1d2ef7d8d1b635e94a5abd53521ad2956951161e31301",
+        "top_fsm_states": 41,
+        "memories": {
+          "array_33817_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 500,
+            "access_lanes": 2
+          },
+          "array_33996_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 600,
+            "access_lanes": 2
+          },
+          "array_34111_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 750,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 1,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/linear-algebra/blas/gemm/main_top.v",
+        "cycles": 271845,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "gemm.c"
+        ],
+        "sha256": "78b5388789c3522140a520bc7e486947e894ce19e27316813e913e00679833fa",
+        "top_fsm_states": 106,
+        "memories": {
+          "array_33854_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 500,
+            "access_lanes": 2
+          },
+          "array_34025_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 600,
+            "access_lanes": 2
+          },
+          "array_34163_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 750,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 1,
+        "additional_controllers": [
+          "modulo"
+        ],
+        "modulo_instances": [
+          "modulo_180_i0"
+        ]
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 79422,
+          "c_checksum": "00000000",
+          "rtl_sha256": "4e5dc2ae3787024c13c1d2ef7d8d1b635e94a5abd53521ad2956951161e31301"
+        },
+        "noopt": {
+          "verified_cycles": 271845,
+          "c_checksum": "00000000",
+          "rtl_sha256": "78b5388789c3522140a520bc7e486947e894ce19e27316813e913e00679833fa"
+        }
+      }
+    },
+    "floyd-warshall": {
+      "agent_cycles": 1070392,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/medley/floyd-warshall/main_top.v",
+        "cycles": 763578,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "floyd-warshall.c"
+        ],
+        "sha256": "92dd521bfdc036a441202f6450588192f53175a7ef2c39987129e7b1449bf748",
+        "top_fsm_states": 30,
+        "memories": {
+          "array_33801_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 3600,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 1,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/medley/floyd-warshall/main_top.v",
+        "cycles": 2003066,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "floyd-warshall.c"
+        ],
+        "sha256": "3af42c132debb8bd00235ddad14caaa94ed97f450df5cd4b60be7e040d2f60e1",
+        "top_fsm_states": 58,
+        "memories": {
+          "array_33951_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 3600,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 1,
+        "additional_controllers": [
+          "smodulo"
+        ],
+        "modulo_instances": []
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 763578,
+          "c_checksum": "00000010",
+          "rtl_sha256": "92dd521bfdc036a441202f6450588192f53175a7ef2c39987129e7b1449bf748"
+        },
+        "noopt": {
+          "verified_cycles": 2003066,
+          "c_checksum": "00000010",
+          "rtl_sha256": "3af42c132debb8bd00235ddad14caaa94ed97f450df5cd4b60be7e040d2f60e1"
+        }
+      }
+    },
+    "syr2k": {
+      "agent_cycles": 79762,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/linear-algebra/blas/syr2k/main_top.v",
+        "cycles": 67962,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "syr2k.c"
+        ],
+        "sha256": "1078a314f52af42217a6ef7be9361f77cbc04f60933669a2f7f84b55eef87621",
+        "top_fsm_states": 38,
+        "memories": {
+          "array_33862_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 600,
+            "access_lanes": 2
+          },
+          "array_33905_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 600,
+            "access_lanes": 2
+          },
+          "array_34053_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 900,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 2,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/linear-algebra/blas/syr2k/main_top.v",
+        "cycles": 198579,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "syr2k.c"
+        ],
+        "sha256": "d72a471c44ffa61b97a6329f3fe4d3d5978d8730f3b9661f8debb0c3cf646540",
+        "top_fsm_states": 99,
+        "memories": {
+          "array_34005_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 600,
+            "access_lanes": 2
+          },
+          "array_34036_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 600,
+            "access_lanes": 2
+          },
+          "array_34093_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 900,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 2,
+        "additional_controllers": [
+          "modulo"
+        ],
+        "modulo_instances": [
+          "modulo_183_i0"
+        ]
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 67962,
+          "c_checksum": "00000003",
+          "rtl_sha256": "1078a314f52af42217a6ef7be9361f77cbc04f60933669a2f7f84b55eef87621"
+        },
+        "noopt": {
+          "verified_cycles": 198579,
+          "c_checksum": "00000003",
+          "rtl_sha256": "d72a471c44ffa61b97a6329f3fe4d3d5978d8730f3b9661f8debb0c3cf646540"
+        }
+      }
+    },
+    "trisolv": {
+      "agent_cycles": 34008,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/linear-algebra/solvers/trisolv/main_top.v",
+        "cycles": 7802,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "trisolv.c"
+        ],
+        "sha256": "8b02c73b2d664f33b7969b543fd42c70baabd1c0fbdb17fdeb3601c0a9377f2d",
+        "top_fsm_states": 22,
+        "memories": {
+          "array_33802_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1600,
+            "access_lanes": 2
+          },
+          "array_33918_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33921_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 1,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/linear-algebra/solvers/trisolv/main_top.v",
+        "cycles": 17008,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "trisolv.c"
+        ],
+        "sha256": "b872d7d4730f727dcbdc745b2c64b85e583bdfee190da0a39df2c575004e421e",
+        "top_fsm_states": 46,
+        "memories": {
+          "array_33802_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1600,
+            "access_lanes": 2
+          },
+          "array_33893_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33898_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 1,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 7802,
+          "c_checksum": "00000000",
+          "rtl_sha256": "8b02c73b2d664f33b7969b543fd42c70baabd1c0fbdb17fdeb3601c0a9377f2d",
+          "memory_interface_counts": {
+            "array_33802_0": {
+              "read_requests": 820,
+              "write_requests": 820,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 4376,
+              "last_write_tick": 4373
+            },
+            "array_33918_0": {
+              "read_requests": 820,
+              "write_requests": 900,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 4381,
+              "last_write_tick": 7721
+            },
+            "array_33921_0": {
+              "read_requests": 40,
+              "write_requests": 40,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 4374,
+              "last_write_tick": 4151
+            }
+          }
+        },
+        "light": {
+          "verified_cycles": 34008,
+          "c_checksum": "00000000",
+          "rtl_sha256": "c33ce64ad17c428542973b6ac13d9f0a77ee97c2b4de421d765f52a2d82075bc",
+          "memory_interface_counts": {
+            "L": {
+              "read_requests": 820,
+              "write_requests": 820,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 30465,
+              "last_write_tick": 30460
+            },
+            "x": {
+              "read_requests": 860,
+              "write_requests": 900,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 30465,
+              "last_write_tick": 33889
+            },
+            "b": {
+              "read_requests": 40,
+              "write_requests": 40,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 30462,
+              "last_write_tick": 28979
+            }
+          }
+        },
+        "noopt": {
+          "verified_cycles": 17008,
+          "c_checksum": "00000000",
+          "rtl_sha256": "b872d7d4730f727dcbdc745b2c64b85e583bdfee190da0a39df2c575004e421e",
+          "memory_interface_counts": {
+            "array_33802_0": {
+              "read_requests": 820,
+              "write_requests": 820,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 9823,
+              "last_write_tick": 9805
+            },
+            "array_33893_0": {
+              "read_requests": 1640,
+              "write_requests": 900,
+              "two_or_more_reads_cycles": 780,
+              "two_or_more_requests_cycles": 780,
+              "unknown_enables": 0,
+              "first_read_tick": 9823,
+              "last_write_tick": 16760
+            },
+            "array_33898_0": {
+              "read_requests": 40,
+              "write_requests": 40,
+              "two_or_more_reads_cycles": 0,
+              "two_or_more_requests_cycles": 0,
+              "unknown_enables": 0,
+              "first_read_tick": 9817,
+              "last_write_tick": 9321
+            }
+          }
+        }
+      }
+    },
+    "durbin": {
+      "agent_cycles": 7028,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/linear-algebra/solvers/durbin/main_top.v",
+        "cycles": 7492,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "durbin.c"
+        ],
+        "sha256": "b97949effc87933fc618c94e66d5b947c76f069088f66ce0f8282f9e60f72049",
+        "top_fsm_states": 44,
+        "memories": {
+          "array_33839_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33876_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_34041_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 6,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/linear-algebra/solvers/durbin/main_top.v",
+        "cycles": 19021,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "durbin.c"
+        ],
+        "sha256": "453ef4733a5b2319f25ab341fb99348566cd1db6043c6e4dd909eb92552cf8a6",
+        "top_fsm_states": 73,
+        "memories": {
+          "array_33907_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33919_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_34029_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 4,
+        "additional_controllers": [
+          "divider"
+        ],
+        "modulo_instances": []
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 7492,
+          "c_checksum": "ffffffd7",
+          "rtl_sha256": "b97949effc87933fc618c94e66d5b947c76f069088f66ce0f8282f9e60f72049"
+        },
+        "noopt": {
+          "verified_cycles": 19021,
+          "c_checksum": "ffffffd7",
+          "rtl_sha256": "453ef4733a5b2319f25ab341fb99348566cd1db6043c6e4dd909eb92552cf8a6"
+        }
+      }
+    },
+    "covariance": {
+      "agent_cycles": 108494,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/data-mining/covariance/main_top.v",
+        "cycles": 75091,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "covariance.c"
+        ],
+        "sha256": "4fc61df4d4e27fdb7eb06c8bf1d61fd576d56659a4678a7d261c61967c2fea7f",
+        "top_fsm_states": 31,
+        "memories": {
+          "array_33802_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 896,
+            "access_lanes": 2
+          },
+          "array_33930_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 28,
+            "access_lanes": 2
+          },
+          "array_34113_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 784,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 1,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/data-mining/covariance/main_top.v",
+        "cycles": 179708,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "covariance.c"
+        ],
+        "sha256": "e43d42fd36688db47ae1ca8e0d1792213fae5d30dcd9f12c3cf498147f9b8d27",
+        "top_fsm_states": 91,
+        "memories": {
+          "array_33802_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 896,
+            "access_lanes": 2
+          },
+          "array_33930_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 28,
+            "access_lanes": 2
+          },
+          "array_34117_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 784,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 1,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 75091,
+          "c_checksum": "00000038",
+          "rtl_sha256": "4fc61df4d4e27fdb7eb06c8bf1d61fd576d56659a4678a7d261c61967c2fea7f"
+        },
+        "noopt": {
+          "verified_cycles": 179708,
+          "c_checksum": "00000038",
+          "rtl_sha256": "e43d42fd36688db47ae1ca8e0d1792213fae5d30dcd9f12c3cf498147f9b8d27"
+        }
+      }
+    },
+    "lu": {
+      "agent_cycles": 336784,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/linear-algebra/solvers/lu/main_top.v",
+        "cycles": 360842,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "lu.c"
+        ],
+        "sha256": "8075a639b1903e0edb419d2b6d15a0e9a800db89af4c9bf56c2472e6c1a9643e",
+        "top_fsm_states": 61,
+        "memories": {
+          "array_33803_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1600,
+            "access_lanes": 2
+          },
+          "array_33957_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1600,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 3,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/linear-algebra/solvers/lu/main_top.v",
+        "cycles": 771511,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "lu.c"
+        ],
+        "sha256": "289e90181a99f39d923e73cfb388e22ee9761903b005778717d04b8d904522dc",
+        "top_fsm_states": 129,
+        "memories": {
+          "array_33963_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1600,
+            "access_lanes": 2
+          },
+          "array_34187_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1600,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 3,
+        "additional_controllers": [
+          "sdivider"
+        ],
+        "modulo_instances": []
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 360842,
+          "c_checksum": "00000001",
+          "rtl_sha256": "8075a639b1903e0edb419d2b6d15a0e9a800db89af4c9bf56c2472e6c1a9643e"
+        },
+        "noopt": {
+          "verified_cycles": 771511,
+          "c_checksum": "00000001",
+          "rtl_sha256": "289e90181a99f39d923e73cfb388e22ee9761903b005778717d04b8d904522dc"
+        }
+      }
+    },
+    "cholesky": {
+      "agent_cycles": 281304,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/linear-algebra/solvers/cholesky/main_top.v",
+        "cycles": 317584,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "cholesky.c"
+        ],
+        "sha256": "b9616f139539219bbff29647ff8e0dc53ef9917d090d8478b860b3b6e372e719",
+        "top_fsm_states": 65,
+        "memories": {
+          "array_33803_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN",
+            "words": 1600,
+            "access_lanes": 2
+          },
+          "array_33957_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN",
+            "words": 1600,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 4,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/linear-algebra/solvers/cholesky/main_top.v",
+        "cycles": 673392,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "cholesky.c"
+        ],
+        "sha256": "bab50e14cf2ad4c11e51b737963de84e988b5be38ea91f98172b04bf48ae809c",
+        "top_fsm_states": 129,
+        "memories": {
+          "array_33963_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1600,
+            "access_lanes": 2
+          },
+          "array_34187_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1600,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 4,
+        "additional_controllers": [
+          "sdivider"
+        ],
+        "modulo_instances": []
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 317584,
+          "c_checksum": "00000001",
+          "rtl_sha256": "b9616f139539219bbff29647ff8e0dc53ef9917d090d8478b860b3b6e372e719"
+        },
+        "noopt": {
+          "verified_cycles": 673392,
+          "c_checksum": "00000001",
+          "rtl_sha256": "bab50e14cf2ad4c11e51b737963de84e988b5be38ea91f98172b04bf48ae809c"
+        }
+      }
+    },
+    "ludcmp": {
+      "agent_cycles": 336572,
+      "opt": {
+        "archive_path": "synthesis-results/bambu-opt/linear-algebra/solvers/ludcmp/main_top.v",
+        "cycles": 362026,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "--simulate",
+          "--top-fname=main_top",
+          "ludcmp.c"
+        ],
+        "sha256": "47ef60ec69cd2c189ab9b6ab6360d5dcbadf2cb2af157ae8b10a0a7176e3fc55",
+        "top_fsm_states": 91,
+        "memories": {
+          "array_33846_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33850_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33860_0": {
+            "kind": "ARRAY_1D_STD_DISTRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_33890_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1600,
+            "access_lanes": 2
+          },
+          "array_33995_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1600,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 5,
+        "additional_controllers": [],
+        "modulo_instances": []
+      },
+      "noopt": {
+        "archive_path": "synthesis-results/bambu-noopt/linear-algebra/solvers/ludcmp/main_top.v",
+        "cycles": 768213,
+        "version": "PandA 2023.1",
+        "revision": "04336c437a53bc96ae90b74052c455629946ec8b-main",
+        "args": [
+          "-fno-if-conversion",
+          "-O0",
+          "--do-not-chain-memories",
+          "--do-not-use-asynchronous-memories",
+          "--clock-period=10",
+          "--top-fname=main_top",
+          "--no-chaining",
+          "--simulate",
+          "ludcmp.c"
+        ],
+        "sha256": "59b270d87bdab6f43ca7d413d9931cb33b22142572edc865cd97eaa0f271eac4",
+        "top_fsm_states": 178,
+        "memories": {
+          "array_33971_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_34006_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_34009_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 40,
+            "access_lanes": 2
+          },
+          "array_34031_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1600,
+            "access_lanes": 2
+          },
+          "array_34246_0": {
+            "kind": "ARRAY_1D_STD_BRAM_NN_SDS",
+            "words": 1600,
+            "access_lanes": 2
+          }
+        },
+        "top_mult_expr_fu_instances": 5,
+        "additional_controllers": [
+          "sdivider"
+        ],
+        "modulo_instances": []
+      },
+      "rtl_replay": {
+        "opt": {
+          "verified_cycles": 362026,
+          "c_checksum": "00000004",
+          "rtl_sha256": "47ef60ec69cd2c189ab9b6ab6360d5dcbadf2cb2af157ae8b10a0a7176e3fc55"
+        },
+        "noopt": {
+          "verified_cycles": 768213,
+          "c_checksum": "00000004",
+          "rtl_sha256": "59b270d87bdab6f43ca7d413d9931cb33b22142572edc865cd97eaa0f271eac4"
+        }
+      }
+    }
+  }
+}

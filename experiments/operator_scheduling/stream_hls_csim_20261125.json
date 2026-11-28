@@ -1,0 +1,578 @@
+{
+  "measurement": "author_host_cpp_float32",
+  "compiler": "g++ (Ubuntu 11.4.0-1ubuntu1~22.04.3) 11.4.0",
+  "vitis_include": "/vitis/2025.2/Vitis/include",
+  "revision": "00c6219a82fc710492f4eb44e4f34836dfb19e08",
+  "absolute_tolerance": 0.1,
+  "cases": [
+    {
+      "id": "stream25_gemm",
+      "status": "author_csim_pass",
+      "stages": [
+        {
+          "stage": "kernel",
+          "returncode": 0
+        },
+        {
+          "stage": "author_build",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_build",
+          "returncode": 0
+        },
+        {
+          "stage": "author_run",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_run",
+          "returncode": 0
+        }
+      ],
+      "outputs": {
+        "output_0": {
+          "elements": 44000,
+          "nonfinite_pairs": 0,
+          "above_absolute_tolerance": 0,
+          "max_absolute_error": 6.198883056640625e-06
+        }
+      },
+      "negative_controls": {
+        "output_0": true
+      }
+    },
+    {
+      "id": "stream25_k2mm",
+      "status": "author_csim_pass",
+      "stages": [
+        {
+          "stage": "kernel",
+          "returncode": 0
+        },
+        {
+          "stage": "author_build",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_build",
+          "returncode": 0
+        },
+        {
+          "stage": "author_run",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_run",
+          "returncode": 0
+        }
+      ],
+      "outputs": {
+        "output_0": {
+          "elements": 39600,
+          "nonfinite_pairs": 0,
+          "above_absolute_tolerance": 0,
+          "max_absolute_error": 4.9591064453125e-05
+        }
+      },
+      "negative_controls": {
+        "output_0": true
+      }
+    },
+    {
+      "id": "stream25_k3mm",
+      "status": "author_csim_pass",
+      "stages": [
+        {
+          "stage": "kernel",
+          "returncode": 0
+        },
+        {
+          "stage": "author_build",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_build",
+          "returncode": 0
+        },
+        {
+          "stage": "author_run",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_run",
+          "returncode": 0
+        }
+      ],
+      "outputs": {
+        "output_0": {
+          "elements": 37800,
+          "nonfinite_pairs": 0,
+          "above_absolute_tolerance": 0,
+          "max_absolute_error": 0.000823974609375
+        }
+      },
+      "negative_controls": {
+        "output_0": true
+      }
+    },
+    {
+      "id": "stream25_atax",
+      "status": "author_csim_pass",
+      "stages": [
+        {
+          "stage": "kernel",
+          "returncode": 0
+        },
+        {
+          "stage": "author_build",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_build",
+          "returncode": 0
+        },
+        {
+          "stage": "author_run",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_run",
+          "returncode": 0
+        }
+      ],
+      "outputs": {
+        "output_0": {
+          "elements": 410,
+          "nonfinite_pairs": 0,
+          "above_absolute_tolerance": 0,
+          "max_absolute_error": 0.0001373291015625
+        }
+      },
+      "negative_controls": {
+        "output_0": true
+      }
+    },
+    {
+      "id": "stream25_bicg",
+      "status": "author_csim_pass",
+      "stages": [
+        {
+          "stage": "kernel",
+          "returncode": 0
+        },
+        {
+          "stage": "author_build",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_build",
+          "returncode": 0
+        },
+        {
+          "stage": "author_run",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_run",
+          "returncode": 0
+        }
+      ],
+      "outputs": {
+        "output_0": {
+          "elements": 390,
+          "nonfinite_pairs": 0,
+          "above_absolute_tolerance": 0,
+          "max_absolute_error": 4.76837158203125e-06
+        },
+        "output_1": {
+          "elements": 410,
+          "nonfinite_pairs": 0,
+          "above_absolute_tolerance": 0,
+          "max_absolute_error": 1.33514404296875e-05
+        }
+      },
+      "negative_controls": {
+        "output_0": true,
+        "output_1": true
+      }
+    },
+    {
+      "id": "stream25_mvt",
+      "status": "author_csim_pass",
+      "stages": [
+        {
+          "stage": "kernel",
+          "returncode": 0
+        },
+        {
+          "stage": "author_build",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_build",
+          "returncode": 0
+        },
+        {
+          "stage": "author_run",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_run",
+          "returncode": 0
+        }
+      ],
+      "outputs": {
+        "output_0": {
+          "elements": 400,
+          "nonfinite_pairs": 0,
+          "above_absolute_tolerance": 0,
+          "max_absolute_error": 1.239776611328125e-05
+        },
+        "output_1": {
+          "elements": 400,
+          "nonfinite_pairs": 0,
+          "above_absolute_tolerance": 0,
+          "max_absolute_error": 5.7220458984375e-06
+        }
+      },
+      "negative_controls": {
+        "output_0": true,
+        "output_1": true
+      }
+    },
+    {
+      "id": "stream25_gesummv",
+      "status": "author_csim_pass",
+      "stages": [
+        {
+          "stage": "kernel",
+          "returncode": 0
+        },
+        {
+          "stage": "author_build",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_build",
+          "returncode": 0
+        },
+        {
+          "stage": "author_run",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_run",
+          "returncode": 0
+        }
+      ],
+      "outputs": {
+        "output_0": {
+          "elements": 250,
+          "nonfinite_pairs": 0,
+          "above_absolute_tolerance": 0,
+          "max_absolute_error": 1.33514404296875e-05
+        }
+      },
+      "negative_controls": {
+        "output_0": true
+      }
+    },
+    {
+      "id": "stream25_autoencoder",
+      "status": "author_csim_pass",
+      "stages": [
+        {
+          "stage": "kernel",
+          "returncode": 0
+        },
+        {
+          "stage": "author_build",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_build",
+          "returncode": 0
+        },
+        {
+          "stage": "author_run",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_run",
+          "returncode": 0
+        }
+      ],
+      "outputs": {
+        "output_0": {
+          "elements": 25088,
+          "nonfinite_pairs": 0,
+          "above_absolute_tolerance": 0,
+          "max_absolute_error": 5.960464477539063e-08
+        }
+      },
+      "negative_controls": {
+        "output_0": true
+      }
+    },
+    {
+      "id": "stream25_resmlp",
+      "status": "author_csim_pass",
+      "stages": [
+        {
+          "stage": "kernel",
+          "returncode": 0
+        },
+        {
+          "stage": "author_build",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_build",
+          "returncode": 0
+        },
+        {
+          "stage": "author_run",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_run",
+          "returncode": 0
+        }
+      ],
+      "outputs": {
+        "output_0": {
+          "elements": 80,
+          "nonfinite_pairs": 0,
+          "above_absolute_tolerance": 0,
+          "max_absolute_error": 1.4156103134155273e-07
+        }
+      },
+      "negative_controls": {
+        "output_0": true
+      }
+    },
+    {
+      "id": "stream25_residualblock",
+      "status": "author_csim_pass",
+      "stages": [
+        {
+          "stage": "kernel",
+          "returncode": 0
+        },
+        {
+          "stage": "author_build",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_build",
+          "returncode": 0
+        },
+        {
+          "stage": "author_run",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_run",
+          "returncode": 0
+        }
+      ],
+      "outputs": {
+        "output_0": {
+          "elements": 50176,
+          "nonfinite_pairs": 0,
+          "above_absolute_tolerance": 0,
+          "max_absolute_error": 2.384185791015625e-07
+        }
+      },
+      "negative_controls": {
+        "output_0": true
+      }
+    },
+    {
+      "id": "stream25_depthwiseseparableconvblock",
+      "status": "author_csim_pass",
+      "stages": [
+        {
+          "stage": "kernel",
+          "returncode": 0
+        },
+        {
+          "stage": "author_build",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_build",
+          "returncode": 0
+        },
+        {
+          "stage": "author_run",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_run",
+          "returncode": 0
+        }
+      ],
+      "outputs": {
+        "output_0": {
+          "elements": 100352,
+          "nonfinite_pairs": 0,
+          "above_absolute_tolerance": 0,
+          "max_absolute_error": 1.1920928955078125e-07
+        }
+      },
+      "negative_controls": {
+        "output_0": true
+      }
+    },
+    {
+      "id": "stream25_feedforward",
+      "status": "author_csim_pass",
+      "stages": [
+        {
+          "stage": "kernel",
+          "returncode": 0
+        },
+        {
+          "stage": "author_build",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_build",
+          "returncode": 0
+        },
+        {
+          "stage": "author_run",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_run",
+          "returncode": 0
+        }
+      ],
+      "outputs": {
+        "output_0": {
+          "elements": 65536,
+          "nonfinite_pairs": 0,
+          "above_absolute_tolerance": 0,
+          "max_absolute_error": 2.384185791015625e-07
+        }
+      },
+      "negative_controls": {
+        "output_0": true
+      }
+    },
+    {
+      "id": "stream25_multiheadselfattention1",
+      "status": "author_csim_pass",
+      "stages": [
+        {
+          "stage": "kernel",
+          "returncode": 0
+        },
+        {
+          "stage": "author_build",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_build",
+          "returncode": 0
+        },
+        {
+          "stage": "author_run",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_run",
+          "returncode": 0
+        }
+      ],
+      "outputs": {
+        "output_0": {
+          "elements": 8192,
+          "nonfinite_pairs": 0,
+          "above_absolute_tolerance": 0,
+          "max_absolute_error": 5.960464477539063e-08
+        }
+      },
+      "negative_controls": {
+        "output_0": true
+      }
+    },
+    {
+      "id": "stream25_k7mmseq_balanced",
+      "status": "author_csim_pass",
+      "stages": [
+        {
+          "stage": "kernel",
+          "returncode": 0
+        },
+        {
+          "stage": "author_build",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_build",
+          "returncode": 0
+        },
+        {
+          "stage": "author_run",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_run",
+          "returncode": 0
+        }
+      ],
+      "outputs": {
+        "output_0": {
+          "elements": 4096,
+          "nonfinite_pairs": 0,
+          "above_absolute_tolerance": 0,
+          "max_absolute_error": 0.05078125
+        }
+      },
+      "negative_controls": {
+        "output_0": true
+      }
+    },
+    {
+      "id": "stream25_k7mmseq_unbalanced",
+      "status": "author_csim_pass",
+      "stages": [
+        {
+          "stage": "kernel",
+          "returncode": 0
+        },
+        {
+          "stage": "author_build",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_build",
+          "returncode": 0
+        },
+        {
+          "stage": "author_run",
+          "returncode": 0
+        },
+        {
+          "stage": "audit_run",
+          "returncode": 0
+        }
+      ],
+      "outputs": {
+        "output_0": {
+          "elements": 1024,
+          "nonfinite_pairs": 0,
+          "above_absolute_tolerance": 0,
+          "max_absolute_error": 0.064453125
+        }
+      },
+      "negative_controls": {
+        "output_0": true
+      }
+    }
+  ]
+}

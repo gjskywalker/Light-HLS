@@ -1,0 +1,1589 @@
+{
+  "board": "u250",
+  "frequency": "250MHz",
+  "synthesis": false,
+  "compiler_sha256": "4f7f72da2a3f70ded431f4281af82fc2c574c2396847f6768c0bc7befde6776a",
+  "manifest_sha256": "98dc937f1e956290208d7917591462666124a256dccb5da023cd9ecc03acf842",
+  "timeout_seconds": 35,
+  "sim_timeout_seconds": 350,
+  "jobs": 5,
+  "weights": [
+    1,
+    0,
+    0,
+    0
+  ],
+  "cases": [
+    {
+      "id": "dynamic_spurious24__latency_occupancy__fir",
+      "family_group": "fir_filter",
+      "sha256": "47e27382c53f1cd8f8430c96f74cd5acf955bc1a12bd8d9fe941c078d62a4e8c",
+      "status": "matched",
+      "cycles": [
+        4000,
+        4000,
+        4000,
+        4000
+      ],
+      "native_cycles": [
+        4000,
+        4000,
+        4000,
+        4000
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          4000,
+          4000,
+          4000,
+          4000
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_spurious24__latency_occupancy__iir",
+      "family_group": "iir_filter",
+      "sha256": "853f701fd6118dd557b731cce23a798aa4396af5a763490f83e1d87cfb985870",
+      "status": "matched",
+      "cycles": [
+        3998,
+        3998,
+        3998,
+        3998
+      ],
+      "native_cycles": [
+        3998,
+        3998,
+        3998,
+        3998
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          3998,
+          3998,
+          3998,
+          3998
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_spurious24__latency_occupancy__matvec",
+      "family_group": "matvec",
+      "sha256": "343ce53758d71115d2f93744ad89e022bff1b0411880c91dca0fd57959fe474b",
+      "status": "matched",
+      "cycles": [
+        2760,
+        2760,
+        2760,
+        2760
+      ],
+      "native_cycles": [
+        2760,
+        2760,
+        2760,
+        2760
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          2760,
+          2760,
+          2760,
+          2760
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_spurious24__latency_occupancy__if_loop_add",
+      "family_group": "conditional_accumulation",
+      "sha256": "8686021477e23cb8a8fcb97560f5399f9c24d4642eb50daef594f2e4cf412786",
+      "status": "matched",
+      "cycles": [
+        6001,
+        6001,
+        6001,
+        6001
+      ],
+      "native_cycles": [
+        6001,
+        6001,
+        6001,
+        6001
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          6001,
+          6001,
+          6001,
+          6001
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_spurious24__latency_occupancy__gsum",
+      "family_group": "sum_reduction",
+      "sha256": "679c253381f8f996a7301b05918748c17367629842ee2cc7fc8c68adb8f1e0f4",
+      "status": "matched",
+      "cycles": [
+        13001,
+        13001,
+        13001,
+        13001
+      ],
+      "native_cycles": [
+        13001,
+        13001,
+        13001,
+        13001
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          13001,
+          13001,
+          13001,
+          13001
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_spurious24__latency_occupancy__gsumif",
+      "family_group": "conditional_sum",
+      "sha256": "af07dae42d2db3af5ecdd5c4a63f9c4cdd4d39fffefe369d67a81fc275cd67ac",
+      "status": "matched",
+      "cycles": [
+        11001,
+        11001,
+        11001,
+        11001
+      ],
+      "native_cycles": [
+        11001,
+        11001,
+        11001,
+        11001
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          11001,
+          11001,
+          11001,
+          11001
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_spurious24__latency_occupancy__kernel_2mm",
+      "family_group": "dense_matmul_family",
+      "sha256": "4c64ce22fee680fe4d887065ea45fdc394c58a362c0bc28cbbd8aa1b54c87465",
+      "status": "matched",
+      "cycles": [
+        7740,
+        7740,
+        7740,
+        7740
+      ],
+      "native_cycles": [
+        7740,
+        7740,
+        7740,
+        7740
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          7740,
+          7740,
+          7740,
+          7740
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_spurious24__latency_occupancy__kernel_3mm",
+      "family_group": "dense_matmul_family",
+      "sha256": "5d858961e4b7407eab70544be8d58fe824244d95136bfaa5ef09bc6bfccd8149",
+      "status": "matched",
+      "cycles": [
+        9960,
+        9960,
+        9960,
+        9960
+      ],
+      "native_cycles": [
+        9960,
+        9960,
+        9960,
+        9960
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          9960,
+          9960,
+          9960,
+          9960
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__atax_float",
+      "family_group": "atax",
+      "sha256": "214ad5a09a16a032e089713184ebe3e81cfac4fde07ab75a94deb45199a3c6d7",
+      "status": "matched",
+      "cycles": [
+        3260,
+        3260,
+        3260,
+        3260
+      ],
+      "native_cycles": [
+        3260,
+        3260,
+        3260,
+        3260
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          3260,
+          3260,
+          3260,
+          3260
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__bicg_float",
+      "family_group": "bicg",
+      "sha256": "be4b363293cf4f3e37113c0117a4f6a9a05d620ab677673dc03a303e50ed38a8",
+      "status": "matched",
+      "cycles": [
+        3690,
+        3690,
+        3690,
+        3690
+      ],
+      "native_cycles": [
+        3690,
+        3690,
+        3690,
+        3690
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          3690,
+          3690,
+          3690,
+          3690
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__gemm_float",
+      "family_group": "dense_matmul_family",
+      "sha256": "5b2317121fce7577e58c167f2e8d0e8b5f6d8c5a2d65c1040e47d723181079d1",
+      "status": "matched",
+      "cycles": [
+        41640,
+        41640,
+        41640,
+        41640
+      ],
+      "native_cycles": [
+        41640,
+        41640,
+        41640,
+        41640
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          41640,
+          41640,
+          41640,
+          41640
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__gesummv_float",
+      "family_group": "gesummv",
+      "sha256": "51df0231b6deade493b32eca00ef84b40b23f665eb1c2800edc2b5a3a8be967f",
+      "status": "matched",
+      "cycles": [
+        3720,
+        3720,
+        3720,
+        3720
+      ],
+      "native_cycles": [
+        3720,
+        3720,
+        3720,
+        3720
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          3720,
+          3720,
+          3720,
+          3720
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__symm_float",
+      "family_group": "symm",
+      "sha256": "3785a6e921158c8bf6267f635467ababbdb828cf5917433773931a5fc4a6a385",
+      "status": "matched",
+      "cycles": [
+        22720,
+        22720,
+        22720,
+        22720
+      ],
+      "native_cycles": [
+        22720,
+        22720,
+        22720,
+        22720
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          22720,
+          22720,
+          22720,
+          22720
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__gsum",
+      "family_group": "sum_reduction",
+      "sha256": "cde75eb565bbd2fd69152dff1ea8c39c7a928037547b31dfe696a17278a9b687",
+      "status": "matched",
+      "cycles": [
+        13001,
+        13001,
+        13001,
+        13001
+      ],
+      "native_cycles": [
+        13001,
+        13001,
+        13001,
+        13001
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          13001,
+          13001,
+          13001,
+          13001
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__gsumif",
+      "family_group": "conditional_sum",
+      "sha256": "bcbb050cf58be8162e024b651a97925cd460ff2baebf4311fd72e5fbc8f748c5",
+      "status": "matched",
+      "cycles": [
+        11001,
+        11001,
+        11001,
+        11001
+      ],
+      "native_cycles": [
+        11001,
+        11001,
+        11001,
+        11001
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          11001,
+          11001,
+          11001,
+          11001
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__kernel_2mm_float",
+      "family_group": "dense_matmul_family",
+      "sha256": "efffb44c2148ad9f4769130b942cd836d27f7c6169bcc0d72fd7300b8cd4320f",
+      "status": "matched",
+      "cycles": [
+        9740,
+        9740,
+        9740,
+        9740
+      ],
+      "native_cycles": [
+        9740,
+        9740,
+        9740,
+        9740
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          9740,
+          9740,
+          9740,
+          9740
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__kernel_3mm_float",
+      "family_group": "dense_matmul_family",
+      "sha256": "3557524bc59fd07d8c1290189085e366b91422f767f319e755363f2155a9129b",
+      "status": "matched",
+      "cycles": [
+        12960,
+        12960,
+        12960,
+        12960
+      ],
+      "native_cycles": [
+        12960,
+        12960,
+        12960,
+        12960
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          12960,
+          12960,
+          12960,
+          12960
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__mvt_float",
+      "family_group": "mvt",
+      "sha256": "940b15f4674d128a22e78c08484dc652d8f19d6a56f7b8545150790f7ef4a295",
+      "status": "matched",
+      "cycles": [
+        7380,
+        7380,
+        7380,
+        7380
+      ],
+      "native_cycles": [
+        7380,
+        7380,
+        7380,
+        7380
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          7380,
+          7380,
+          7380,
+          7380
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__syr2k_float",
+      "family_group": "syr2k",
+      "sha256": "cc59fadcf4ecf223e15f51e3687b4263f4d67c66ad8ecaaf6abd790af0e7f370",
+      "status": "matched",
+      "cycles": [
+        6640,
+        6640,
+        6640,
+        6640
+      ],
+      "native_cycles": [
+        6640,
+        6640,
+        6640,
+        6640
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          6640,
+          6640,
+          6640,
+          6640
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__atax_float",
+      "family_group": "atax",
+      "sha256": "a4348e30b6bf204b205ee6e93a36f4db5d2acb3cd79420c18161d25dfe706ebe",
+      "status": "matched",
+      "cycles": [
+        3260,
+        3260,
+        3260,
+        3260
+      ],
+      "native_cycles": [
+        3260,
+        3260,
+        3260,
+        3260
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          3260,
+          3260,
+          3260,
+          3260
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__bicg_float",
+      "family_group": "bicg",
+      "sha256": "be4b363293cf4f3e37113c0117a4f6a9a05d620ab677673dc03a303e50ed38a8",
+      "status": "matched",
+      "cycles": [
+        3690,
+        3690,
+        3690,
+        3690
+      ],
+      "native_cycles": [
+        3690,
+        3690,
+        3690,
+        3690
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          3690,
+          3690,
+          3690,
+          3690
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__gemm_float",
+      "family_group": "dense_matmul_family",
+      "sha256": "0b970330943002f0fafcc4a5645398e38df7135395c6838ac72caad99f0eb14d",
+      "status": "matched",
+      "cycles": [
+        41640,
+        41640,
+        41640,
+        41640
+      ],
+      "native_cycles": [
+        41640,
+        41640,
+        41640,
+        41640
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          41640,
+          41640,
+          41640,
+          41640
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__gesummv_float",
+      "family_group": "gesummv",
+      "sha256": "94654f2b70402c8cda2f829ff7d03ba9e299fc7679615768f793daecc7257683",
+      "status": "matched",
+      "cycles": [
+        3720,
+        3720,
+        3720,
+        3720
+      ],
+      "native_cycles": [
+        3720,
+        3720,
+        3720,
+        3720
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          3720,
+          3720,
+          3720,
+          3720
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__symm_float",
+      "family_group": "symm",
+      "sha256": "0a82f828ebafe29848b3d00981eedd87d351c28ea90a76f38423209b4e500bca",
+      "status": "matched",
+      "cycles": [
+        22720,
+        22720,
+        22720,
+        22720
+      ],
+      "native_cycles": [
+        22720,
+        22720,
+        22720,
+        22720
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          22720,
+          22720,
+          22720,
+          22720
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__gsum",
+      "family_group": "sum_reduction",
+      "sha256": "cde75eb565bbd2fd69152dff1ea8c39c7a928037547b31dfe696a17278a9b687",
+      "status": "matched",
+      "cycles": [
+        13001,
+        13001,
+        13001,
+        13001
+      ],
+      "native_cycles": [
+        13001,
+        13001,
+        13001,
+        13001
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          13001,
+          13001,
+          13001,
+          13001
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__gsumif",
+      "family_group": "conditional_sum",
+      "sha256": "f8d648719a91998bdd08464803318041d70218ee04e379c137ed9495d162b089",
+      "status": "matched",
+      "cycles": [
+        11001,
+        11001,
+        11001,
+        11001
+      ],
+      "native_cycles": [
+        11001,
+        11001,
+        11001,
+        11001
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          11001,
+          11001,
+          11001,
+          11001
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__kernel_2mm_float",
+      "family_group": "dense_matmul_family",
+      "sha256": "637afaf3d5ea63cc71192d10993c59e239c73260742b20ae612a3ba0ef7610a8",
+      "status": "matched",
+      "cycles": [
+        9740,
+        9740,
+        9740,
+        9740
+      ],
+      "native_cycles": [
+        9740,
+        9740,
+        9740,
+        9740
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          9740,
+          9740,
+          9740,
+          9740
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__kernel_3mm_float",
+      "family_group": "dense_matmul_family",
+      "sha256": "fb925ab599d99b78676bcf380761157d2bcc58d612665264f9597c0ae27a2519",
+      "status": "matched",
+      "cycles": [
+        12960,
+        12960,
+        12960,
+        12960
+      ],
+      "native_cycles": [
+        12960,
+        12960,
+        12960,
+        12960
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          12960,
+          12960,
+          12960,
+          12960
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__mvt_float",
+      "family_group": "mvt",
+      "sha256": "522c2bd5020509624291349ba331b595b777f1683a554052482c754e0119fbe5",
+      "status": "matched",
+      "cycles": [
+        7380,
+        7380,
+        7380,
+        7380
+      ],
+      "native_cycles": [
+        7380,
+        7380,
+        7380,
+        7380
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          7380,
+          7380,
+          7380,
+          7380
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__syr2k_float",
+      "family_group": "syr2k",
+      "sha256": "99394e94fc70a2d812c5f48a44feaf912cc1661dc85c6e876e75c5eb180754c8",
+      "status": "matched",
+      "cycles": [
+        6640,
+        6640,
+        6640,
+        6640
+      ],
+      "native_cycles": [
+        6640,
+        6640,
+        6640,
+        6640
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          6640,
+          6640,
+          6640,
+          6640
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__bicg",
+      "family_group": "bicg",
+      "sha256": "4727627fa310f05cf22a4e8de9cea7648bf07712249b7a2e791c7f592aad843d",
+      "status": "matched",
+      "cycles": [
+        2790,
+        2790,
+        2790,
+        2790
+      ],
+      "native_cycles": [
+        2790,
+        2790,
+        2790,
+        2790
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          2790,
+          2790,
+          2790,
+          2790
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__gaussian",
+      "family_group": "gaussian",
+      "sha256": "74f2747ad06a4028b1552421e30cf281b0cad99b42bb4502700d87ba99bc0175",
+      "status": "matched",
+      "cycles": [
+        9115,
+        9115,
+        9115,
+        9115
+      ],
+      "native_cycles": [
+        12022,
+        12022,
+        12022,
+        12022
+      ],
+      "gate": {
+        "selection": "policy",
+        "status": "matched",
+        "cycles": [
+          9115,
+          9115,
+          9115,
+          9115
+        ],
+        "selected_blocks": [
+          "for_body8"
+        ]
+      }
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__matrix_power",
+      "family_group": "dense_matmul_family",
+      "sha256": "8d9d03fcd50616d3adbec64238ca232f91c73970912de46582901aae65ed94a4",
+      "status": "matched",
+      "cycles": [
+        1558,
+        1558,
+        1558,
+        1558
+      ],
+      "native_cycles": [
+        1558,
+        1558,
+        1558,
+        1558
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          1558,
+          1558,
+          1558,
+          1558
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__get_tanh",
+      "family_group": "tanh_family",
+      "sha256": "5c4c1d803976c49f2819bcd5d57888c0434669df2a2e8d62042d7880d5bb6777",
+      "status": "matched",
+      "cycles": [
+        12000,
+        12000,
+        12000,
+        12000
+      ],
+      "native_cycles": [
+        12000,
+        12000,
+        12000,
+        12000
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          12000,
+          12000,
+          12000,
+          12000
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__histogram",
+      "family_group": "histogram",
+      "sha256": "a35a5648739f9e743a8b3bda15482f7c199c8d995626dd557ff7195a87094dfa",
+      "status": "matched",
+      "cycles": [
+        17,
+        22,
+        27,
+        32
+      ],
+      "native_cycles": [
+        17,
+        22,
+        27,
+        32
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          17,
+          22,
+          27,
+          32
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__atax",
+      "family_group": "atax",
+      "sha256": "2e5fab85653753d999caa2cf9de6a1ca20ed5cc85b69a109dc8dc12785fcaed3",
+      "status": "matched",
+      "cycles": [
+        3260,
+        3260,
+        3260,
+        3260
+      ],
+      "native_cycles": [
+        3260,
+        3260,
+        3260,
+        3260
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          3260,
+          3260,
+          3260,
+          3260
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__jacobi_1d_imper",
+      "family_group": "jacobi_stencil",
+      "sha256": "6a040ee9e7d6e60099ae1184b9c9b51ca7ca62ff0d5ef2898e797c4007bed65f",
+      "status": "matched",
+      "cycles": [
+        1770,
+        1770,
+        1770,
+        1770
+      ],
+      "native_cycles": [
+        1770,
+        1770,
+        1770,
+        1770
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          1770,
+          1770,
+          1770,
+          1770
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__triangular",
+      "family_group": "triangular",
+      "sha256": "3aa8f567b69312e11f9518e1eb2312ccff2bf441c02873b8a59436e6658a8406",
+      "status": "matched",
+      "cycles": [
+        31,
+        47,
+        66,
+        88
+      ],
+      "native_cycles": [
+        31,
+        47,
+        66,
+        88
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          31,
+          47,
+          66,
+          88
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__mvt_float",
+      "family_group": "mvt",
+      "sha256": "b1dfc5d51b595514818af388c8dc76990d5192067bf15f6c9fa6dc5d87bf397f",
+      "status": "matched",
+      "cycles": [
+        7380,
+        7380,
+        7380,
+        7380
+      ],
+      "native_cycles": [
+        7380,
+        7380,
+        7380,
+        7380
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          7380,
+          7380,
+          7380,
+          7380
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__kernel_2mm",
+      "family_group": "dense_matmul_family",
+      "sha256": "8fe4e59c99ad5a3cff193855039f82c3adf106a54b767b07475cfada737b20f6",
+      "status": "matched",
+      "cycles": [
+        9640,
+        9640,
+        9640,
+        9640
+      ],
+      "native_cycles": [
+        9640,
+        9640,
+        9640,
+        9640
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          9640,
+          9640,
+          9640,
+          9640
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__kernel_3mm",
+      "family_group": "dense_matmul_family",
+      "sha256": "fac90e0fde3192f4f81f8ab1bae14c94438c5a80cd98f9d5df8e9e1fa6f7158a",
+      "status": "matched",
+      "cycles": [
+        12660,
+        12660,
+        12660,
+        12660
+      ],
+      "native_cycles": [
+        12660,
+        12660,
+        12660,
+        12660
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          12660,
+          12660,
+          12660,
+          12660
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "rhls_kernel_2mm",
+      "family_group": "dense_matmul_family",
+      "sha256": "ddf4b4bc3bd1da8f36c4000dae8ad950a0cae15008b1d5f90eee83105c4b3317",
+      "status": "matched",
+      "cycles": [
+        7740,
+        7740,
+        7740,
+        7740
+      ],
+      "native_cycles": [
+        7740,
+        7740,
+        7740,
+        7740
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          7740,
+          7740,
+          7740,
+          7740
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "rhls_kernel_3mm",
+      "family_group": "dense_matmul_family",
+      "sha256": "1f269368a05b7b7056a87c2b156afa8357c491520c9e133168e554ae37a4af7b",
+      "status": "matched",
+      "cycles": [
+        9960,
+        9960,
+        9960,
+        9960
+      ],
+      "native_cycles": [
+        9960,
+        9960,
+        9960,
+        9960
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          9960,
+          9960,
+          9960,
+          9960
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "rhls_atax",
+      "family_group": "atax",
+      "sha256": "5e8d52f3a4c38c4967c84cc6760b2dc84e60abb411bd420eb016618d25c69056",
+      "status": "matched",
+      "cycles": [
+        2460,
+        2460,
+        2460,
+        2460
+      ],
+      "native_cycles": [
+        2460,
+        2460,
+        2460,
+        2460
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          2460,
+          2460,
+          2460,
+          2460
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "rhls_covariance",
+      "family_group": "covariance",
+      "sha256": "14f197061ed7b922baf229891f978333dd3e8809f7531ffe698ed6e593381a03",
+      "status": "matched",
+      "cycles": [
+        72928,
+        72928,
+        72928,
+        72928
+      ],
+      "native_cycles": [
+        72928,
+        72928,
+        72928,
+        72928
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          72928,
+          72928,
+          72928,
+          72928
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "rhls_getTanh",
+      "family_group": "tanh_family",
+      "sha256": "fce5e30e7737ef2dbb1184307b289cf3a3f17e9d8368d7cc6f7396b857dcae95",
+      "status": "matched",
+      "cycles": [
+        11000,
+        11000,
+        11000,
+        11000
+      ],
+      "native_cycles": [
+        11000,
+        11000,
+        11000,
+        11000
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          11000,
+          11000,
+          11000,
+          11000
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "rhls_histogram",
+      "family_group": "histogram",
+      "sha256": "4e05997ef5326c8a45eda693a9db8edf06d00d4dea37ff2baee6c9a8d999d3f0",
+      "status": "matched",
+      "cycles": [
+        15,
+        19,
+        23,
+        27
+      ],
+      "native_cycles": [
+        15,
+        19,
+        23,
+        27
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          15,
+          19,
+          23,
+          27
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "rhls_jacobi_1d",
+      "family_group": "jacobi_stencil",
+      "sha256": "c7a1c84f531abfb30642dba777b7ec3e7a74051c04a24c86fff7f7e5af7d00ae",
+      "status": "matched",
+      "cycles": [
+        1770,
+        1770,
+        1770,
+        1770
+      ],
+      "native_cycles": [
+        1770,
+        1770,
+        1770,
+        1770
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          1770,
+          1770,
+          1770,
+          1770
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "rhls_triangular",
+      "family_group": "triangular_solver",
+      "sha256": "c73ea971e2c06a4c0c49be6bc7d72a73dc193f7f478366b7f5b64e3f70971828",
+      "status": "matched",
+      "cycles": [
+        34,
+        50,
+        69,
+        91
+      ],
+      "native_cycles": [
+        34,
+        50,
+        69,
+        91
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          34,
+          50,
+          69,
+          91
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "pca_gSum",
+      "family_group": "sum_reduction",
+      "sha256": "0c84466bf2dc5bbbf67da25f0eba133a7617580227a6a76493a1189d50e48bf5",
+      "status": "matched",
+      "cycles": [
+        17001,
+        17001,
+        17001,
+        17001
+      ],
+      "native_cycles": [
+        17001,
+        17001,
+        17001,
+        17001
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          17001,
+          17001,
+          17001,
+          17001
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "pca_gSumIf",
+      "family_group": "conditional_sum",
+      "sha256": "ae90736466485cb91ff6190163215ceb6e12684c04ac4f77f67d8232c6b24268",
+      "status": "matched",
+      "cycles": [
+        18001,
+        18001,
+        18001,
+        18001
+      ],
+      "native_cycles": [
+        18001,
+        18001,
+        18001,
+        18001
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          18001,
+          18001,
+          18001,
+          18001
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "pca_histogram",
+      "family_group": "histogram",
+      "sha256": "f5a21fb560a2588a5270ed8bb53fd2e45ee212206a150ebbb6700d24f4f85c93",
+      "status": "matched",
+      "cycles": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "native_cycles": [
+        10000,
+        10000,
+        10000,
+        10000
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          10000,
+          10000,
+          10000,
+          10000
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "pca_BNNKernel",
+      "family_group": "bnn",
+      "sha256": "b8d9ad2f2153e4dbd2027f21fe78a83fdf523e135a022e1950e8867bd86e6c1e",
+      "status": "matched",
+      "cycles": [
+        40800,
+        40800,
+        40800,
+        40800
+      ],
+      "native_cycles": [
+        40800,
+        40800,
+        40800,
+        40800
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          40800,
+          40800,
+          40800,
+          40800
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "pca_sparseMatrix",
+      "family_group": "sparse_matvec_family",
+      "sha256": "4b2b405765a0bda2e88c5c85ecf6f571f94ad2a442b9f90b3568110b551d846a",
+      "status": "matched",
+      "cycles": [
+        30400,
+        30400,
+        30400,
+        30400
+      ],
+      "native_cycles": [
+        30400,
+        30400,
+        30400,
+        30400
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          30400,
+          30400,
+          30400,
+          30400
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "pca_vecNormTrans",
+      "family_group": "vector_normalization",
+      "sha256": "a01be8a8f3f9d0913255abc923397ec7cbe7376f05faa16c8daa7ac78ed48a56",
+      "status": "matched",
+      "cycles": [
+        42882,
+        42882,
+        42882,
+        42882
+      ],
+      "native_cycles": [
+        42882,
+        42882,
+        42882,
+        42882
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          42882,
+          42882,
+          42882,
+          42882
+        ],
+        "selected_blocks": []
+      }
+    },
+    {
+      "id": "pca_gesummv",
+      "family_group": "gesummv",
+      "sha256": "679004671ae747caf6ca77b451e2cc63279f2ca270553e1f7ce7d263b7f446b2",
+      "status": "matched",
+      "cycles": [
+        263168,
+        263168,
+        263168,
+        263168
+      ],
+      "native_cycles": [
+        263168,
+        263168,
+        263168,
+        263168
+      ],
+      "gate": {
+        "selection": "native",
+        "cycles": [
+          263168,
+          263168,
+          263168,
+          263168
+        ],
+        "selected_blocks": []
+      }
+    }
+  ]
+}

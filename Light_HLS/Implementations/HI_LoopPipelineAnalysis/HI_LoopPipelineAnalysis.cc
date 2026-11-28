@@ -1,6 +1,7 @@
 #include "HI_LoopPipelineAnalysis.h"
 
 #include "llvm/Analysis/LoopInfo.h"
+#include "llvm/Analysis/ScalarEvolution.h"
 #include "llvm/IR/Dominators.h"
 #include "llvm/IR/Constants.h"
 #include "llvm/IR/Instructions.h"
@@ -75,7 +76,7 @@ bool isCanonicalSingleBlockLoop(const Loop &loop)
 }
 
 void flattenContinuousNest(const HLSBackendContext &context, const Loop &loop,
-                           LoopPipelineInfo &pipeline)
+                           ScalarEvolution &evolution, LoopPipelineInfo &pipeline)
 {
     pipeline.sourceTripCount = pipeline.tripCount;
     pipeline.flatteningReason = "not a proven continuous perfect nest";
@@ -88,6 +89,7 @@ void flattenContinuousNest(const HLSBackendContext &context, const Loop &loop,
         return;
     const auto count = context.configuration.irLoopTripCounts.find(loopName(*outer));
     if (count == context.configuration.irLoopTripCounts.end() || count->second <= 0 ||
+        evolution.getSmallConstantTripCount(outer) != static_cast<unsigned>(count->second) ||
         static_cast<unsigned long long>(count->second) * pipeline.tripCount >
             std::numeric_limits<unsigned>::max())
         return;
@@ -188,8 +190,8 @@ bool HI_LoopPipelineAnalysis::runOnModule(Module &module)
         return false;
 
     Function &top = *context->top;
-    DominatorTree dominatorTree(top);
-    LoopInfo loopInfo(dominatorTree);
+    LoopInfo &loopInfo = getAnalysis<LoopInfoWrapperPass>(top).getLoopInfo();
+    ScalarEvolution &evolution = getAnalysis<ScalarEvolutionWrapperPass>(top).getSE();
     std::vector<Loop *> loops;
     for (Loop *loop : loopInfo)
         collectLoops(loop, loops);
@@ -258,7 +260,8 @@ bool HI_LoopPipelineAnalysis::runOnModule(Module &module)
         const auto tripCount =
             context->configuration.irLoopTripCounts.find(irName);
         if (tripCount == context->configuration.irLoopTripCounts.end() ||
-            tripCount->second <= 0)
+            tripCount->second <= 0 || evolution.getSmallConstantTripCount(loop) !=
+                static_cast<unsigned>(tripCount->second))
         {
             context->addError(
                 "BACKEND_PIPELINE_TRIP_COUNT_UNKNOWN",
@@ -307,7 +310,7 @@ bool HI_LoopPipelineAnalysis::runOnModule(Module &module)
         }
         if (!context->hasErrors())
         {
-            flattenContinuousNest(*context, *loop, pipeline);
+            flattenContinuousNest(*context, *loop, evolution, pipeline);
             pipeline.valid = true;
             context->pipelineRegions.push_back(std::move(pipeline));
         }
@@ -317,5 +320,7 @@ bool HI_LoopPipelineAnalysis::runOnModule(Module &module)
 
 void HI_LoopPipelineAnalysis::getAnalysisUsage(AnalysisUsage &usage) const
 {
+    usage.addRequired<LoopInfoWrapperPass>();
+    usage.addRequired<ScalarEvolutionWrapperPass>();
     usage.setPreservesAll();
 }

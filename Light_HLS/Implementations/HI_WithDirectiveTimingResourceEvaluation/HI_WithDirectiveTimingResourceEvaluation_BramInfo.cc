@@ -2509,7 +2509,8 @@ void HI_WithDirectiveTimingResourceEvaluation::handleSAREAccess(Instruction *I, 
             }
             else
             {
-                assert(target && "There should be an PtrToInt/Alloc Instruction for the addition operation.\n");
+                handleComplexSCEVAccess(I, SARE);
+                return;
             }
 
             if (Target2ArrayInfo.find(target) == Target2ArrayInfo.end())
@@ -2567,7 +2568,13 @@ void HI_WithDirectiveTimingResourceEvaluation::handleDirectAccess(Instruction *I
     Value *target = nullptr;
     auto PTI = dyn_cast<PtrToIntInst>(SUnkown->getValue());
 
-    assert(PTI);
+    if (!PTI)
+    {
+        // A runtime integer/PHI may form the address. Use the traced object's
+        // conservative partition set rather than assuming an exact offset.
+        handleComplexSCEVAccess(I, SUnkown);
+        return;
+    }
 
     target = PTI->getOperand(0);
 

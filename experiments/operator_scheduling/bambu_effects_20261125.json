@@ -1,0 +1,685 @@
+{
+  "groups": {
+    "F": "-O0 and -fno-if-conversion",
+    "S": "disable both general and memory chaining",
+    "M": "exclude asynchronous memories from allocation"
+  },
+  "summary": {
+    "cases": 27,
+    "noopt_over_default": 2.962700256295465,
+    "share_of_endpoint_log_cycle_gap": {
+      "F": 0.22750127552758143,
+      "S": 0.7724996340262651,
+      "M": -9.095538464142866e-07
+    },
+    "multiplicative_cost_by_group": {
+      "F": 1.2802935478338642,
+      "S": 2.3140811637023604,
+      "M": 0.9999990121330538
+    },
+    "marginal_geomean_range": {
+      "F": [
+        1.1534132691096093,
+        1.421133995122577
+      ],
+      "S": [
+        2.084752097955905,
+        2.5686474719467633
+      ],
+      "M": [
+        0.9999960099015789,
+        1.0000020530102653
+      ]
+    }
+  },
+  "cases": {
+    "2mm": {
+      "corner_cycles": {
+        "": 67992,
+        "F": 87067,
+        "S": 140513,
+        "M": 67992,
+        "FS": 177242,
+        "FM": 87067,
+        "SM": 140513,
+        "FSM": 177242
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.23975195261635068,
+        "S": 0.7183740265894544,
+        "M": 0.0
+      }
+    },
+    "3mm": {
+      "corner_cycles": {
+        "": 102818,
+        "F": 130812,
+        "S": 198335,
+        "M": 102818,
+        "FS": 224309,
+        "FM": 130812,
+        "SM": 198335,
+        "FSM": 224309
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.18193389415753553,
+        "S": 0.5981302364268702,
+        "M": 0.0
+      }
+    },
+    "adi": {
+      "corner_cycles": {
+        "": 183919,
+        "F": 267801,
+        "S": 657619,
+        "M": 183919,
+        "FS": 564373,
+        "FM": 267801,
+        "SM": 657619,
+        "FSM": 564373
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.1114191841198824,
+        "S": 1.0098007530084505,
+        "M": 0.0
+      }
+    },
+    "atas": {
+      "corner_cycles": {
+        "": 16947,
+        "F": 27703,
+        "S": 39255,
+        "M": 16947,
+        "FS": 50860,
+        "FM": 27703,
+        "SM": 39255,
+        "FSM": 50860
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.3752239094552684,
+        "S": 0.7237620235274704,
+        "M": 0.0
+      }
+    },
+    "bicg": {
+      "corner_cycles": {
+        "": 18404,
+        "F": 30424,
+        "S": 50453,
+        "M": 18404,
+        "FS": 63024,
+        "FM": 30424,
+        "SM": 50453,
+        "FSM": 63024
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.36256856735649023,
+        "S": 0.8683790065788377,
+        "M": 0.0
+      }
+    },
+    "cholesky": {
+      "corner_cycles": {
+        "": 317584,
+        "F": 392329,
+        "S": 660150,
+        "M": 317584,
+        "FS": 673392,
+        "FM": 392329,
+        "SM": 660150,
+        "FSM": 673392
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.1156094839752639,
+        "S": 0.6359757923990406,
+        "M": 0.0
+      }
+    },
+    "covariance": {
+      "corner_cycles": {
+        "": 75091,
+        "F": 81279,
+        "S": 160300,
+        "M": 75091,
+        "FS": 179708,
+        "FM": 81279,
+        "SM": 160300,
+        "FSM": 179708
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.09673661052725775,
+        "S": 0.7758959895378841,
+        "M": 0.0
+      }
+    },
+    "doitgen": {
+      "corner_cycles": {
+        "": 58910,
+        "F": 77912,
+        "S": 114323,
+        "M": 58910,
+        "FS": 136692,
+        "FM": 77912,
+        "SM": 114323,
+        "FSM": 136692
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.2291357867132112,
+        "S": 0.6125835774589681,
+        "M": 0.0
+      }
+    },
+    "durbin": {
+      "corner_cycles": {
+        "": 7492,
+        "F": 11010,
+        "S": 15070,
+        "M": 7492,
+        "FS": 19021,
+        "FM": 11010,
+        "SM": 15070,
+        "FSM": 19021
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.30890289274252325,
+        "S": 0.6228049546463386,
+        "M": 0.0
+      }
+    },
+    "fdtd_2d": {
+      "corner_cycles": {
+        "": 100760,
+        "F": 141462,
+        "S": 461039,
+        "M": 100760,
+        "FS": 421291,
+        "FM": 141462,
+        "SM": 461039,
+        "FSM": 421291
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.12456542324308037,
+        "S": 1.3060169315797399,
+        "M": 0.0
+      }
+    },
+    "floyd_warshall": {
+      "corner_cycles": {
+        "": 763578,
+        "F": 985405,
+        "S": 1832189,
+        "M": 763578,
+        "FS": 2003066,
+        "FM": 985405,
+        "SM": 1832189,
+        "FSM": 2003066
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.17210251174159252,
+        "S": 0.7923164934147124,
+        "M": 0.0
+      }
+    },
+    "gemm": {
+      "corner_cycles": {
+        "": 79422,
+        "F": 102317,
+        "S": 218945,
+        "M": 79422,
+        "FS": 271845,
+        "FM": 102317,
+        "SM": 218945,
+        "FSM": 271845
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.2348559616521208,
+        "S": 0.9956006813151145,
+        "M": 0.0
+      }
+    },
+    "gemver": {
+      "corner_cycles": {
+        "": 26478,
+        "F": 43004,
+        "S": 79273,
+        "M": 26478,
+        "FS": 101335,
+        "FM": 43004,
+        "SM": 79273,
+        "FSM": 101335
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.3652566018035648,
+        "S": 0.9768610586522467,
+        "M": 0.0
+      }
+    },
+    "gesummv": {
+      "corner_cycles": {
+        "": 15556,
+        "F": 27679,
+        "S": 41237,
+        "M": 15556,
+        "FS": 57506,
+        "FM": 27679,
+        "SM": 41237,
+        "FSM": 57506
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.45439048261320425,
+        "S": 0.8530523912788308,
+        "M": 0.0
+      }
+    },
+    "heat_3d": {
+      "corner_cycles": {
+        "": 30377,
+        "F": 49860,
+        "S": 80575,
+        "M": 30377,
+        "FS": 128208,
+        "FM": 49860,
+        "SM": 80575,
+        "FSM": 128208
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.4799994261575547,
+        "S": 0.9599687757636444,
+        "M": 0.0
+      }
+    },
+    "jacobi_1d": {
+      "corner_cycles": {
+        "": 2442,
+        "F": 7060,
+        "S": 12825,
+        "M": 2442,
+        "FS": 16535,
+        "FM": 7060,
+        "SM": 12825,
+        "FSM": 16535
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.6578553155967802,
+        "S": 1.254806655148463,
+        "M": 0.0
+      }
+    },
+    "jacobi_2d": {
+      "corner_cycles": {
+        "": 52526,
+        "F": 76889,
+        "S": 186210,
+        "M": 52526,
+        "FS": 170863,
+        "FM": 76889,
+        "SM": 186210,
+        "FSM": 170863
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.1475207674873389,
+        "S": 1.0320330132138988,
+        "M": 0.0
+      }
+    },
+    "lu": {
+      "corner_cycles": {
+        "": 360842,
+        "F": 445428,
+        "S": 723247,
+        "M": 360842,
+        "FS": 771511,
+        "FM": 445428,
+        "SM": 723247,
+        "FSM": 771511
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.1375977810142117,
+        "S": 0.6223129592305932,
+        "M": 0.0
+      }
+    },
+    "ludcmp": {
+      "corner_cycles": {
+        "": 362026,
+        "F": 463095,
+        "S": 721595,
+        "M": 361987,
+        "FS": 768213,
+        "FM": 463095,
+        "SM": 721635,
+        "FSM": 768213
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.15440906987549902,
+        "S": 0.597968608539201,
+        "M": -2.6672420724107613e-05
+      }
+    },
+    "mvt": {
+      "corner_cycles": {
+        "": 18478,
+        "F": 37083,
+        "S": 56953,
+        "M": 18478,
+        "FS": 71534,
+        "FM": 37083,
+        "SM": 56953,
+        "FSM": 71534
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.4622621515907484,
+        "S": 0.8913298743102509,
+        "M": 0.0
+      }
+    },
+    "nussinov": {
+      "corner_cycles": {
+        "": 130185,
+        "F": 209550,
+        "S": 313024,
+        "M": 130185,
+        "FS": 347862,
+        "FM": 209550,
+        "SM": 313024,
+        "FSM": 347862
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.2907659215463898,
+        "S": 0.6920834120922013,
+        "M": 0.0
+      }
+    },
+    "seidel_2d": {
+      "corner_cycles": {
+        "": 146453,
+        "F": 150014,
+        "S": 387615,
+        "M": 146453,
+        "FS": 301671,
+        "FM": 150014,
+        "SM": 387615,
+        "FSM": 301671
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": -0.11332574709269924,
+        "S": 0.8359582087911962,
+        "M": 0.0
+      }
+    },
+    "symm": {
+      "corner_cycles": {
+        "": 32032,
+        "F": 48176,
+        "S": 70035,
+        "M": 32032,
+        "FS": 115414,
+        "FM": 48176,
+        "SM": 70035,
+        "FSM": 115414
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.4538280576944691,
+        "S": 0.827962203046101,
+        "M": 0.0
+      }
+    },
+    "syr2k": {
+      "corner_cycles": {
+        "": 67962,
+        "F": 86867,
+        "S": 171680,
+        "M": 67962,
+        "FS": 198579,
+        "FM": 86867,
+        "SM": 171680,
+        "FSM": 198579
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.1954921074118554,
+        "S": 0.8767461729804293,
+        "M": 0.0
+      }
+    },
+    "syrk": {
+      "corner_cycles": {
+        "": 54428,
+        "F": 71217,
+        "S": 124238,
+        "M": 54428,
+        "FS": 176575,
+        "FM": 71217,
+        "SM": 124238,
+        "FSM": 176575
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.3101997305469354,
+        "S": 0.8666672574194385,
+        "M": 0.0
+      }
+    },
+    "trisolv": {
+      "corner_cycles": {
+        "": 7802,
+        "F": 8031,
+        "S": 23279,
+        "M": 7802,
+        "FS": 17008,
+        "FM": 8031,
+        "SM": 23279,
+        "FSM": 17008
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": -0.1424694514463588,
+        "S": 0.9217731619614862,
+        "M": 0.0
+      }
+    },
+    "trmm": {
+      "corner_cycles": {
+        "": 28362,
+        "F": 35495,
+        "S": 59665,
+        "M": 28362,
+        "FS": 80968,
+        "FM": 35495,
+        "SM": 59665,
+        "FSM": 80968
+      },
+      "mean_marginal_log_cycle_cost": {
+        "F": 0.264825025758588,
+        "S": 0.7841787680888579,
+        "M": 0.0
+      }
+    }
+  },
+  "priority_and_channels": {
+    "static_mobility": {
+      "pairs": 27,
+      "fewer": 0,
+      "equal": 27,
+      "more": 0,
+      "ratio": 1.0,
+      "normalized_rtl_and_initialization_match": [
+        "2mm",
+        "3mm",
+        "adi",
+        "atas",
+        "bicg",
+        "covariance",
+        "doitgen",
+        "fdtd_2d",
+        "floyd_warshall",
+        "gemm",
+        "gemver",
+        "gesummv",
+        "heat_3d",
+        "jacobi_1d",
+        "jacobi_2d",
+        "ludcmp",
+        "mvt",
+        "nussinov",
+        "seidel_2d",
+        "symm",
+        "syr2k",
+        "syrk",
+        "trisolv",
+        "trmm"
+      ]
+    },
+    "fixed_priority": {
+      "pairs": 27,
+      "fewer": 0,
+      "equal": 27,
+      "more": 0,
+      "ratio": 1.0,
+      "normalized_rtl_and_initialization_match": [
+        "2mm",
+        "3mm",
+        "adi",
+        "atas",
+        "bicg",
+        "covariance",
+        "doitgen",
+        "fdtd_2d",
+        "floyd_warshall",
+        "gemm",
+        "gemver",
+        "gesummv",
+        "heat_3d",
+        "jacobi_1d",
+        "lu",
+        "ludcmp",
+        "mvt",
+        "nussinov",
+        "symm",
+        "syr2k",
+        "syrk",
+        "trisolv",
+        "trmm"
+      ]
+    },
+    "single_channel": {
+      "pairs": 27,
+      "fewer": 0,
+      "equal": 14,
+      "more": 13,
+      "ratio": 1.096493264508301,
+      "normalized_rtl_and_initialization_match": []
+    }
+  },
+  "bambu_vs_frozen_agent": {
+    "default": {
+      "pairs": 27,
+      "bambu_fewer": 19,
+      "equal": 0,
+      "bambu_more": 8,
+      "geomean_bambu_over_light": 0.7831596057927839
+    },
+    "static_mobility": {
+      "pairs": 27,
+      "bambu_fewer": 19,
+      "equal": 0,
+      "bambu_more": 8,
+      "geomean_bambu_over_light": 0.7831596057927839
+    },
+    "no_chaining": {
+      "pairs": 27,
+      "bambu_fewer": 1,
+      "equal": 0,
+      "bambu_more": 26,
+      "geomean_bambu_over_light": 2.0116487848897058
+    },
+    "no_memory_chaining": {
+      "pairs": 27,
+      "bambu_fewer": 10,
+      "equal": 0,
+      "bambu_more": 17,
+      "geomean_bambu_over_light": 1.0709467954878742
+    },
+    "no_async_memory": {
+      "pairs": 27,
+      "bambu_fewer": 19,
+      "equal": 0,
+      "bambu_more": 8,
+      "geomean_bambu_over_light": 0.7831564809088772
+    },
+    "frontend_O0": {
+      "pairs": 27,
+      "bambu_fewer": 7,
+      "equal": 0,
+      "bambu_more": 20,
+      "geomean_bambu_over_light": 1.112970298520171
+    },
+    "no_if_conversion": {
+      "pairs": 27,
+      "bambu_fewer": 19,
+      "equal": 0,
+      "bambu_more": 8,
+      "geomean_bambu_over_light": 0.7831596057927839
+    },
+    "O0_no_chaining": {
+      "pairs": 27,
+      "bambu_fewer": 1,
+      "equal": 0,
+      "bambu_more": 26,
+      "geomean_bambu_over_light": 2.3202671648025364
+    },
+    "paper_noopt": {
+      "pairs": 27,
+      "bambu_fewer": 1,
+      "equal": 0,
+      "bambu_more": 26,
+      "geomean_bambu_over_light": 2.3202671648025364
+    },
+    "F": {
+      "pairs": 27,
+      "bambu_fewer": 7,
+      "equal": 0,
+      "bambu_more": 20,
+      "geomean_bambu_over_light": 1.112970298520171
+    },
+    "S": {
+      "pairs": 27,
+      "bambu_fewer": 1,
+      "equal": 0,
+      "bambu_more": 26,
+      "geomean_bambu_over_light": 2.0116487848897058
+    },
+    "FS": {
+      "pairs": 27,
+      "bambu_fewer": 1,
+      "equal": 0,
+      "bambu_more": 26,
+      "geomean_bambu_over_light": 2.3202671648025364
+    },
+    "FM": {
+      "pairs": 27,
+      "bambu_fewer": 7,
+      "equal": 0,
+      "bambu_more": 20,
+      "geomean_bambu_over_light": 1.112970298520171
+    },
+    "SM": {
+      "pairs": 27,
+      "bambu_fewer": 1,
+      "equal": 0,
+      "bambu_more": 26,
+      "geomean_bambu_over_light": 2.011652914825311
+    },
+    "fixed_priority": {
+      "pairs": 27,
+      "bambu_fewer": 19,
+      "equal": 0,
+      "bambu_more": 8,
+      "geomean_bambu_over_light": 0.7831596057927839
+    },
+    "single_channel": {
+      "pairs": 27,
+      "bambu_fewer": 17,
+      "equal": 0,
+      "bambu_more": 10,
+      "geomean_bambu_over_light": 0.8587292327867636
+    }
+  }
+}

@@ -1,0 +1,3683 @@
+{
+  "protocol": {
+    "compiler_sha256": "b678bdb2b037efcc23bbdc221e87408d78c0788fda75afd3dbf72e4400a965e5",
+    "board_sha256": {
+      "boards/vericert_z020/add/add": "f7eebf04104507a5edf185c45a94b335066f6d80224912b3bdbbaff997bd16c3",
+      "boards/vericert_z020/and/and": "4c60f4ab3c9f73e9e70140e3b7675c7a41a354c99246532c25079cbe55c9f8f4",
+      "boards/vericert_z020/ashr/ashr": "d28cdac7317db59e35b68db3374a0428310b5d324d523fa0c61f86131eddc9da",
+      "boards/vericert_z020/board.json": "930e478b9cbad4e83397bb44e837566d1e7c35f35f3e675e787a4b0351851cee",
+      "boards/vericert_z020/br/br": "44366137603bf16fa518adb20233a413cf252b7e9282f4a9aba32d63ce60af69",
+      "boards/vericert_z020/dadd/dadd": "9ccbedf9b89bfd6434c815c5751b2f813cc85a701498ab34146b6a47e598958a",
+      "boards/vericert_z020/dcmp/dcmp": "eeb0571f951a031c07d9f30d284e95f09bb6a14f1aa8bea4acdeef884c291e2a",
+      "boards/vericert_z020/ddiv/ddiv": "8902194edac0ef71e30498d0eb73c85cae6d2b072734acb6f21516a5ea983e8f",
+      "boards/vericert_z020/dmul/dmul": "52d4d4943439c14a2ce82b54bfc740098372b56c5670b204e114f53b678a1797",
+      "boards/vericert_z020/dmuladd/dmuladd": "166f0461a1e7029f4d9ad434fda21b7e7e6acd291d0e44c97d405f4826058d86",
+      "boards/vericert_z020/dsub/dsub": "1ca5d33f7d3c87fda34b1e2a58ae91902ac16729c14c31b2e10d6304d3e9668b",
+      "boards/vericert_z020/fadd/fadd": "ed18aa6f9ac5310b6d061599832758328b99a95d6f7f63c3378efeb3f8d28bc6",
+      "boards/vericert_z020/fcmp/fcmp": "47bbd7b0baf1491aa421bd6a4f28f28904ef5cb3d8398ddcd95f5a508d237a8e",
+      "boards/vericert_z020/fdiv/fdiv": "73dc0cb43f9a94d2cd90dba0d63ce06479ebfd9ccc553e88dd5383ec285491bf",
+      "boards/vericert_z020/fmul/fmul": "00f559765fa6beef9d404bb7f47d02eb6ec9ac9144b7b079cc66c704b687483b",
+      "boards/vericert_z020/fptosi/fptosi": "92f71e1c25659df050ffe970f331eb648881524c2dbe869c5090a23103d06dd2",
+      "boards/vericert_z020/fptoui/fptoui": "9691d00e4064d729ebe9e470c06d047f8339c8628373ca05f4e853a2e005105a",
+      "boards/vericert_z020/fsub/fsub": "ed18aa6f9ac5310b6d061599832758328b99a95d6f7f63c3378efeb3f8d28bc6",
+      "boards/vericert_z020/getelementptr/getelementptr": "44366137603bf16fa518adb20233a413cf252b7e9282f4a9aba32d63ce60af69",
+      "boards/vericert_z020/icmp/icmp": "d9786b3e4794121e6f010b60de627b22e38f2e289292da25eb15e3bcbc68e209",
+      "boards/vericert_z020/load/load": "9319d1731d67953ee358b073f3f5098adb1d5b8043003c4450d2cea7e7d6989a",
+      "boards/vericert_z020/lshr/lshr": "d28cdac7317db59e35b68db3374a0428310b5d324d523fa0c61f86131eddc9da",
+      "boards/vericert_z020/mac/mac": "e8300a77e9bf5c2fbe28f1876ad52a4f134713e2e61ec8a44711c877aab00230",
+      "boards/vericert_z020/mul/mul": "ddebf3430a7314b2d667fa632aa6ae8937ba8e5d6533112d737cc558249a720b",
+      "boards/vericert_z020/or/or": "4c60f4ab3c9f73e9e70140e3b7675c7a41a354c99246532c25079cbe55c9f8f4",
+      "boards/vericert_z020/ret/ret": "44366137603bf16fa518adb20233a413cf252b7e9282f4a9aba32d63ce60af69",
+      "boards/vericert_z020/sdiv/sdiv": "77d0dded5325c6d4ddb6d3a4cb05bdc288447a725640fe40462500ce928d43ad",
+      "boards/vericert_z020/shl/shl": "d28cdac7317db59e35b68db3374a0428310b5d324d523fa0c61f86131eddc9da",
+      "boards/vericert_z020/sitofp/sitofp": "dc93fa8598dab5c681210b60dfac3d47c97015c8ec1dc9ff2f2b2479d0d2d82b",
+      "boards/vericert_z020/srem/srem": "77d0dded5325c6d4ddb6d3a4cb05bdc288447a725640fe40462500ce928d43ad",
+      "boards/vericert_z020/store/store": "5ea9df51c7311eb105196d5cd68f5fe7e61b1ac477a345e8c240733b38d5f859",
+      "boards/vericert_z020/sub/sub": "f7eebf04104507a5edf185c45a94b335066f6d80224912b3bdbbaff997bd16c3",
+      "boards/vericert_z020/tadd/tadd": "fd30f53675ffbb1f882b13e8a677311e09f0904815b12f35cd9228bb4d6d0ee6",
+      "boards/vericert_z020/udiv/udiv": "77d0dded5325c6d4ddb6d3a4cb05bdc288447a725640fe40462500ce928d43ad",
+      "boards/vericert_z020/uitofp/uitofp": "dc93fa8598dab5c681210b60dfac3d47c97015c8ec1dc9ff2f2b2479d0d2d82b",
+      "boards/vericert_z020/urem/urem": "77d0dded5325c6d4ddb6d3a4cb05bdc288447a725640fe40462500ce928d43ad",
+      "boards/vericert_z020/xor/xor": "4c60f4ab3c9f73e9e70140e3b7675c7a41a354c99246532c25079cbe55c9f8f4"
+    },
+    "part": "xc7z020clg484-1",
+    "period_ns": 10,
+    "dev": [
+      "vericert24_gemm",
+      "vericert24_gesummv",
+      "vericert24_syrk",
+      "vericert24_bicg",
+      "vericert24_mvt",
+      "vericert24_ludcmp",
+      "vericert24_nussinov",
+      "vericert24_jacobi_1d"
+    ],
+    "holdout": [
+      "vericert24_covariance",
+      "vericert24_gemver",
+      "vericert24_symm",
+      "vericert24_syr2k",
+      "vericert24_trmm",
+      "vericert24_2mm",
+      "vericert24_3mm",
+      "vericert24_atas",
+      "vericert24_doitgen",
+      "vericert24_cholesky",
+      "vericert24_durbin",
+      "vericert24_lu",
+      "vericert24_trisolv",
+      "vericert24_floyd_warshall",
+      "vericert24_adi",
+      "vericert24_fdtd_2d",
+      "vericert24_heat_3d",
+      "vericert24_jacobi_2d",
+      "vericert24_seidel_2d"
+    ],
+    "source_hashes": {
+      "vericert24_covariance": {
+        "original": "a4808b30352dcb3834bd929b9087ff87fcaf39b2e9ada4f3e94601193e2eb62d",
+        "adapter": "b49d7940442f2b3288a7d1fc3523c6045bba751eade85ca45c91c9acde550a84",
+        "checksum": "00000038"
+      },
+      "vericert24_gemm": {
+        "original": "0183ac4f5ac7108d1b81ffab50f3b7a971192d3068418393b223c4844f9cfe81",
+        "adapter": "04a4e6c138cdfaf6a5bc9f4797e20ba0ef30685d6e6d88e7e382ebec79de05fc",
+        "checksum": "00000000"
+      },
+      "vericert24_gemver": {
+        "original": "49cfad2221ed9cbcee8666718fd77696232b4955d21440739a3ec0b1df48e072",
+        "adapter": "ba13daa76b969486e094daed59f5d32a27325ec449a45039b4155e5285e7032c",
+        "checksum": "00000000"
+      },
+      "vericert24_gesummv": {
+        "original": "bf026cc2e534ff4b9d639d671060f424a20d5422922bbd60b9878f3b3f3d9b47",
+        "adapter": "a6e5f995020c917585d44fecc98dbb93a378a62b4d1a65d08ec3b2170f704be2",
+        "checksum": "00000000"
+      },
+      "vericert24_symm": {
+        "original": "eac8e689d3c54178991f10c77c27e6bdb663ea140ca0eea4bad9a7a0c7979683",
+        "adapter": "bcfbf22778cac7aa690294fef001e11d938f5b1338589b3c1e3137e43204bc2e",
+        "checksum": "00000000"
+      },
+      "vericert24_syr2k": {
+        "original": "df0eee7fe5099dc5b1da4fc3504e9b7296a6080ad55d2afa14ffbada5ecdaeb3",
+        "adapter": "7eeb679fa4a07337f3db1fabc9fe68b898d2a66c74627defcb8640ed9fe105bb",
+        "checksum": "00000003"
+      },
+      "vericert24_syrk": {
+        "original": "8aa62e674893df1189d77c898b043d499cfad125085b4b65e9dad52acbad82e1",
+        "adapter": "3a7db6d09aac52a2d0de401274b1dfec2d94257066c274277761027bd88559d3",
+        "checksum": "00000000"
+      },
+      "vericert24_trmm": {
+        "original": "1e1d52d20636633058afd258b5e42b0cb6e734bbc7aef462de32e811e6a02063",
+        "adapter": "879aeb84932040ce7e515d1790fc29fab2a99641337c41254243c4ae208659d5",
+        "checksum": "00000000"
+      },
+      "vericert24_2mm": {
+        "original": "522818aa7b499e6fa4531a08d820188cbf2090e54e356d938aaa126213d55d0e",
+        "adapter": "eb5ac1258104a55184d9c348e342f8ac53f6ff8eb49d229e63642e2c0ba8f307",
+        "checksum": "00000000"
+      },
+      "vericert24_3mm": {
+        "original": "eb33c602f74706b7110050eeca60b3cb6dcd400d97c1bc6a7974745ca9ef071e",
+        "adapter": "97a2ef45c907afdb2d024bcb2c6d3ec31684cc54e8d6fc7fdd5f3fdab78b1aac",
+        "checksum": "00000000"
+      },
+      "vericert24_atas": {
+        "original": "7d89cd0eb2b94515a4ad34607fec1bacce9f6f058fb87c7d87048667587cd274",
+        "adapter": "d8b8010309c137ef437a5360988aff46a6dc5263a63b0b467e5fc47167273e47",
+        "checksum": "00000000"
+      },
+      "vericert24_bicg": {
+        "original": "472c6c92242edc61a650f517837f694886ba3fc6f47c41824d9528ecd79af90c",
+        "adapter": "185e59e1c29e4895de9851d777cabc5b666f19cc873172dc7cebf6089abe6e37",
+        "checksum": "00000000"
+      },
+      "vericert24_doitgen": {
+        "original": "4e87ee571ad9b7a7a7e4259411ec91f17385bec8dfad2037d6f241bc95d06adf",
+        "adapter": "50c84faa0dd729885d877467227ee49924a6906b5934022099365057b8d2f684",
+        "checksum": "00000000"
+      },
+      "vericert24_mvt": {
+        "original": "1e0a9e61b159dce22a6f0fab49a773839b88e1f00b7184de0deb71124c2861a7",
+        "adapter": "79b3a437f8b8d45221396fdaacd3c1e8bb8905918a2a4ffb27ee2a7e8076a7c3",
+        "checksum": "00000000"
+      },
+      "vericert24_cholesky": {
+        "original": "2aef04e826017538f2b6be98d3a75ef5d18a5bd63219fce434176ed5bcc149de",
+        "adapter": "9c15fcda9ef7da302b4ce6ddb93bfc03907efb0a0c20e5e3394509da9a71cd6f",
+        "checksum": "00000001"
+      },
+      "vericert24_durbin": {
+        "original": "a54112e0cee3c64975b38fb88c200a8c45c93c865f3fe974b51a92d2ea0a2be7",
+        "adapter": "72e394e0004dfd09acd7eccd8e13050af88bce922963fd495e6a2f40c9b460a8",
+        "checksum": "ffffffd7"
+      },
+      "vericert24_lu": {
+        "original": "c47cb1e14fc8bd49d536be505d043b629a4cb30a111995f651c7828ab0340f83",
+        "adapter": "eca16264a1298bd81b4a2ad82399b4a3a94fbf538f42e59ed11aa9a3d037e37a",
+        "checksum": "00000001"
+      },
+      "vericert24_ludcmp": {
+        "original": "26a51ca651ed10b0f11a5049d3ecbc19202543eab9da77c8d39d97a6a6586f81",
+        "adapter": "fb5131acb2c07511a687c415bab01a84d6b3f68e2a044641733e05be43335f46",
+        "checksum": "00000004"
+      },
+      "vericert24_trisolv": {
+        "original": "68a3c92ff87cb75ad9ed64a4544b3f292e4d66584d6e9ad458f63a02447bd987",
+        "adapter": "9d07c7aff00e723d0661fa4a09e20b69346c838393142a02ba3687996e76befb",
+        "checksum": "00000000"
+      },
+      "vericert24_floyd_warshall": {
+        "original": "8033d5ffc501e95c2b7bab77d98cab09c4c958b903f73bab70fe00090d8e3875",
+        "adapter": "bf752aaf665a812c6eff143576c3b1574e0636b59ee12454d2317c2e2c538cb8",
+        "checksum": "00000010"
+      },
+      "vericert24_nussinov": {
+        "original": "013a09df750418098f841ac8bead63a6cafad3e169dec973a807a2d920f6ec09",
+        "adapter": "4c252d3427906953cb040ecf92b950a450b4571324f7b8cd6ae02afb1d87b08f",
+        "checksum": "0000001c"
+      },
+      "vericert24_adi": {
+        "original": "76147fba7c8cd3fb9fd82a99297aeeab6a3936f10510767f17498380c91765c3",
+        "adapter": "60f9777de10ead228b38431b12d07562712c170523ac7d2eff5e46a476fe714b",
+        "checksum": "00000001"
+      },
+      "vericert24_fdtd_2d": {
+        "original": "0de4a06fa28cc726ad2526360eebceb5109433dde9c89287647f06ea2af63a7e",
+        "adapter": "4713f55e73637f3fd16a6c1c280938771c02c3146f16627cfc6152c3ea55f666",
+        "checksum": "00000e71"
+      },
+      "vericert24_heat_3d": {
+        "original": "54c3e2c9c00f414a6354ce4605f1d905d32817b8a38679edb4e462fb03102734",
+        "adapter": "46f790d326e594712b850a5b71027e0e2ede3d1ca8cc90e0498f8d6230e74037",
+        "checksum": "00000014"
+      },
+      "vericert24_jacobi_1d": {
+        "original": "45de71cb16555dd584bf11ba4b547c2bd65f2ae5c650d7a812f2045ccb255891",
+        "adapter": "89f81b2f26934caddc1b7e30f816d368301053d98a21daef7bf9099c439a77e2",
+        "checksum": "00000001"
+      },
+      "vericert24_jacobi_2d": {
+        "original": "7ffb093bb76c55b9e1048f7c5d418a935e42a6a4f8719f1886b925a63e31266d",
+        "adapter": "b69fc4d3bc02f6c94cdee2d2648f909a38b2c31a8b5fb7ccbd342bf53ede22a4",
+        "checksum": "000000a2"
+      },
+      "vericert24_seidel_2d": {
+        "original": "55a817c6086d703bf89b99bec6ebc6557ae677f53ca35d1bffacf64214266adb",
+        "adapter": "a605a85bb03db843c6ff1776f71aec228249925a25b78a739f4bfda4953d6ec5",
+        "checksum": "00000027"
+      }
+    },
+    "order": [
+      4,
+      8,
+      1,
+      -2
+    ],
+    "loops": [
+      4,
+      -5,
+      2,
+      0,
+      -1
+    ],
+    "manual_order": [
+      1,
+      0,
+      0,
+      0
+    ],
+    "manual_loops": [
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "order_freeze": "a5d7878cc727dec2582ea50c72ed4dd9e94a09be2bcdfe6cebc9136dae62ab97",
+    "loop_freeze": "198283800bcdf43d4ba87da4120c0e5fdb39de2bbd33f2258ac8b45a810d26ea",
+    "combined_rule": "use selected pipeline when compiler predicts positive savings and proves exact trip count; otherwise use gated ordinary-block policy",
+    "source_files": {
+      "paper_frozen_replay.py": "5c7cbe2eeee155f4b77426706ed0d90b3dbab35ced4a0f7415877f16d17ecffc",
+      "paper_loop_flow.py": "ad1e6f34eeed2ca0b5ee431749afadd7ffe486e1b02ae9f4e25403debdfc774f",
+      "paper_order_flow.py": "863be39fb8259ca13f9c50457146958f4564de3fba5b0fbb93df2c88631b5ca9"
+    }
+  },
+  "model_receipts": {
+    "block": {
+      "calls": 3,
+      "status": [
+        "generated",
+        "generated",
+        "generated"
+      ],
+      "tokens": {
+        "input_tokens": 37359,
+        "output_tokens": 387,
+        "reasoning_output_tokens": 80,
+        "cached_input_tokens": 10880
+      }
+    },
+    "loop": {
+      "calls": 2,
+      "status": [
+        "generated",
+        "generated"
+      ],
+      "tokens": {
+        "input_tokens": 29085,
+        "output_tokens": 959,
+        "reasoning_output_tokens": 750
+      }
+    }
+  },
+  "summary": {
+    "dev": {
+      "total": 8,
+      "native_status": {
+        "valid": 7,
+        "rtl_failed": 1
+      },
+      "native/native": {
+        "paired": 7,
+        "faster": 0,
+        "tie": 7,
+        "slower": 0,
+        "geomean_ratio": 1.0
+      },
+      "native/manual_deployed": {
+        "paired": 7,
+        "faster": 0,
+        "tie": 1,
+        "slower": 6,
+        "geomean_ratio": 1.067556704656033
+      },
+      "native/manual_joint": {
+        "paired": 7,
+        "faster": 0,
+        "tie": 1,
+        "slower": 6,
+        "geomean_ratio": 1.1007798594788913
+      },
+      "native/vericert-hyperblock": {
+        "paired": 7,
+        "faster": 7,
+        "tie": 0,
+        "slower": 0,
+        "geomean_ratio": 0.4439859745537772
+      },
+      "native/bambu-opt": {
+        "paired": 7,
+        "faster": 1,
+        "tie": 0,
+        "slower": 6,
+        "geomean_ratio": 1.5560797470837113
+      },
+      "native/best-published": {
+        "paired": 7,
+        "faster": 1,
+        "tie": 0,
+        "slower": 6,
+        "geomean_ratio": 1.5560797470837113
+      },
+      "manual_ordering/native": {
+        "paired": 7,
+        "faster": 1,
+        "tie": 6,
+        "slower": 0,
+        "geomean_ratio": 0.9996685622309016
+      },
+      "manual_ordering/manual_deployed": {
+        "paired": 7,
+        "faster": 0,
+        "tie": 2,
+        "slower": 5,
+        "geomean_ratio": 1.0672028760434558
+      },
+      "manual_ordering/manual_joint": {
+        "paired": 7,
+        "faster": 0,
+        "tie": 2,
+        "slower": 5,
+        "geomean_ratio": 1.1004150194579971
+      },
+      "manual_ordering/vericert-hyperblock": {
+        "paired": 7,
+        "faster": 7,
+        "tie": 0,
+        "slower": 0,
+        "geomean_ratio": 0.4438388208328601
+      },
+      "manual_ordering/bambu-opt": {
+        "paired": 7,
+        "faster": 1,
+        "tie": 0,
+        "slower": 6,
+        "geomean_ratio": 1.5555640034837988
+      },
+      "manual_ordering/best-published": {
+        "paired": 7,
+        "faster": 1,
+        "tie": 0,
+        "slower": 6,
+        "geomean_ratio": 1.5555640034837988
+      },
+      "agent_ordering/native": {
+        "paired": 7,
+        "faster": 1,
+        "tie": 6,
+        "slower": 0,
+        "geomean_ratio": 0.9996685622309016
+      },
+      "agent_ordering/manual_deployed": {
+        "paired": 7,
+        "faster": 0,
+        "tie": 2,
+        "slower": 5,
+        "geomean_ratio": 1.0672028760434558
+      },
+      "agent_ordering/manual_joint": {
+        "paired": 7,
+        "faster": 0,
+        "tie": 2,
+        "slower": 5,
+        "geomean_ratio": 1.1004150194579971
+      },
+      "agent_ordering/vericert-hyperblock": {
+        "paired": 7,
+        "faster": 7,
+        "tie": 0,
+        "slower": 0,
+        "geomean_ratio": 0.4438388208328601
+      },
+      "agent_ordering/bambu-opt": {
+        "paired": 7,
+        "faster": 1,
+        "tie": 0,
+        "slower": 6,
+        "geomean_ratio": 1.5555640034837988
+      },
+      "agent_ordering/best-published": {
+        "paired": 7,
+        "faster": 1,
+        "tie": 0,
+        "slower": 6,
+        "geomean_ratio": 1.5555640034837988
+      },
+      "manual_deployed/native": {
+        "paired": 7,
+        "faster": 6,
+        "tie": 1,
+        "slower": 0,
+        "geomean_ratio": 0.9367183922302283
+      },
+      "manual_deployed/manual_deployed": {
+        "paired": 7,
+        "faster": 0,
+        "tie": 7,
+        "slower": 0,
+        "geomean_ratio": 1.0
+      },
+      "manual_deployed/manual_joint": {
+        "paired": 7,
+        "faster": 0,
+        "tie": 5,
+        "slower": 2,
+        "geomean_ratio": 1.0311207401704838
+      },
+      "manual_deployed/vericert-hyperblock": {
+        "paired": 7,
+        "faster": 7,
+        "tie": 0,
+        "slower": 0,
+        "geomean_ratio": 0.4158898282567852
+      },
+      "manual_deployed/bambu-opt": {
+        "paired": 7,
+        "faster": 2,
+        "tie": 0,
+        "slower": 5,
+        "geomean_ratio": 1.4576085188702743
+      },
+      "manual_deployed/best-published": {
+        "paired": 7,
+        "faster": 2,
+        "tie": 0,
+        "slower": 5,
+        "geomean_ratio": 1.4576085188702743
+      },
+      "agent_deployed/native": {
+        "paired": 7,
+        "faster": 6,
+        "tie": 1,
+        "slower": 0,
+        "geomean_ratio": 0.9367183922302283
+      },
+      "agent_deployed/manual_deployed": {
+        "paired": 7,
+        "faster": 0,
+        "tie": 7,
+        "slower": 0,
+        "geomean_ratio": 1.0
+      },
+      "agent_deployed/manual_joint": {
+        "paired": 7,
+        "faster": 0,
+        "tie": 5,
+        "slower": 2,
+        "geomean_ratio": 1.0311207401704838
+      },
+      "agent_deployed/vericert-hyperblock": {
+        "paired": 7,
+        "faster": 7,
+        "tie": 0,
+        "slower": 0,
+        "geomean_ratio": 0.4158898282567852
+      },
+      "agent_deployed/bambu-opt": {
+        "paired": 7,
+        "faster": 2,
+        "tie": 0,
+        "slower": 5,
+        "geomean_ratio": 1.4576085188702743
+      },
+      "agent_deployed/best-published": {
+        "paired": 7,
+        "faster": 2,
+        "tie": 0,
+        "slower": 5,
+        "geomean_ratio": 1.4576085188702743
+      },
+      "manual_joint/native": {
+        "paired": 7,
+        "faster": 6,
+        "tie": 1,
+        "slower": 0,
+        "geomean_ratio": 0.9084468537364042
+      },
+      "manual_joint/manual_deployed": {
+        "paired": 7,
+        "faster": 2,
+        "tie": 5,
+        "slower": 0,
+        "geomean_ratio": 0.9698185295299769
+      },
+      "manual_joint/manual_joint": {
+        "paired": 7,
+        "faster": 0,
+        "tie": 7,
+        "slower": 0,
+        "geomean_ratio": 1.0
+      },
+      "manual_joint/vericert-hyperblock": {
+        "paired": 7,
+        "faster": 7,
+        "tie": 0,
+        "slower": 0,
+        "geomean_ratio": 0.4033376616864701
+      },
+      "manual_joint/bambu-opt": {
+        "paired": 7,
+        "faster": 2,
+        "tie": 0,
+        "slower": 5,
+        "geomean_ratio": 1.4136157504011373
+      },
+      "manual_joint/best-published": {
+        "paired": 7,
+        "faster": 2,
+        "tie": 0,
+        "slower": 5,
+        "geomean_ratio": 1.4136157504011373
+      },
+      "agent_joint/native": {
+        "paired": 7,
+        "faster": 6,
+        "tie": 1,
+        "slower": 0,
+        "geomean_ratio": 0.9084468537364042
+      },
+      "agent_joint/manual_deployed": {
+        "paired": 7,
+        "faster": 2,
+        "tie": 5,
+        "slower": 0,
+        "geomean_ratio": 0.9698185295299769
+      },
+      "agent_joint/manual_joint": {
+        "paired": 7,
+        "faster": 0,
+        "tie": 7,
+        "slower": 0,
+        "geomean_ratio": 1.0
+      },
+      "agent_joint/vericert-hyperblock": {
+        "paired": 7,
+        "faster": 7,
+        "tie": 0,
+        "slower": 0,
+        "geomean_ratio": 0.4033376616864701
+      },
+      "agent_joint/bambu-opt": {
+        "paired": 7,
+        "faster": 2,
+        "tie": 0,
+        "slower": 5,
+        "geomean_ratio": 1.4136157504011373
+      },
+      "agent_joint/best-published": {
+        "paired": 7,
+        "faster": 2,
+        "tie": 0,
+        "slower": 5,
+        "geomean_ratio": 1.4136157504011373
+      }
+    },
+    "holdout": {
+      "total": 19,
+      "native_status": {
+        "valid": 17,
+        "rtl_failed": 2
+      },
+      "native/native": {
+        "paired": 17,
+        "faster": 0,
+        "tie": 17,
+        "slower": 0,
+        "geomean_ratio": 1.0
+      },
+      "native/manual_deployed": {
+        "paired": 17,
+        "faster": 0,
+        "tie": 7,
+        "slower": 10,
+        "geomean_ratio": 1.1003513443458812
+      },
+      "native/manual_joint": {
+        "paired": 17,
+        "faster": 0,
+        "tie": 7,
+        "slower": 10,
+        "geomean_ratio": 1.1725108385596266
+      },
+      "native/vericert-hyperblock": {
+        "paired": 17,
+        "faster": 16,
+        "tie": 0,
+        "slower": 1,
+        "geomean_ratio": 0.42891654622340997
+      },
+      "native/bambu-opt": {
+        "paired": 17,
+        "faster": 3,
+        "tie": 0,
+        "slower": 14,
+        "geomean_ratio": 1.4025266029976187
+      },
+      "native/best-published": {
+        "paired": 17,
+        "faster": 3,
+        "tie": 0,
+        "slower": 14,
+        "geomean_ratio": 1.4025266029976187
+      },
+      "manual_ordering/native": {
+        "paired": 17,
+        "faster": 1,
+        "tie": 16,
+        "slower": 0,
+        "geomean_ratio": 0.993828143531359
+      },
+      "manual_ordering/manual_deployed": {
+        "paired": 17,
+        "faster": 0,
+        "tie": 8,
+        "slower": 9,
+        "geomean_ratio": 1.0935601337835021
+      },
+      "manual_ordering/manual_joint": {
+        "paired": 17,
+        "faster": 0,
+        "tie": 8,
+        "slower": 9,
+        "geomean_ratio": 1.1652742699561107
+      },
+      "manual_ordering/vericert-hyperblock": {
+        "paired": 17,
+        "faster": 16,
+        "tie": 0,
+        "slower": 1,
+        "geomean_ratio": 0.4262693348630938
+      },
+      "manual_ordering/bambu-opt": {
+        "paired": 17,
+        "faster": 4,
+        "tie": 0,
+        "slower": 13,
+        "geomean_ratio": 1.3938704101104666
+      },
+      "manual_ordering/best-published": {
+        "paired": 17,
+        "faster": 4,
+        "tie": 0,
+        "slower": 13,
+        "geomean_ratio": 1.3938704101104666
+      },
+      "agent_ordering/native": {
+        "paired": 17,
+        "faster": 1,
+        "tie": 16,
+        "slower": 0,
+        "geomean_ratio": 0.993828143531359
+      },
+      "agent_ordering/manual_deployed": {
+        "paired": 17,
+        "faster": 0,
+        "tie": 8,
+        "slower": 9,
+        "geomean_ratio": 1.0935601337835021
+      },
+      "agent_ordering/manual_joint": {
+        "paired": 17,
+        "faster": 0,
+        "tie": 8,
+        "slower": 9,
+        "geomean_ratio": 1.1652742699561107
+      },
+      "agent_ordering/vericert-hyperblock": {
+        "paired": 17,
+        "faster": 16,
+        "tie": 0,
+        "slower": 1,
+        "geomean_ratio": 0.4262693348630938
+      },
+      "agent_ordering/bambu-opt": {
+        "paired": 17,
+        "faster": 4,
+        "tie": 0,
+        "slower": 13,
+        "geomean_ratio": 1.3938704101104666
+      },
+      "agent_ordering/best-published": {
+        "paired": 17,
+        "faster": 4,
+        "tie": 0,
+        "slower": 13,
+        "geomean_ratio": 1.3938704101104666
+      },
+      "manual_deployed/native": {
+        "paired": 17,
+        "faster": 10,
+        "tie": 7,
+        "slower": 0,
+        "geomean_ratio": 0.9088006345777344
+      },
+      "manual_deployed/manual_deployed": {
+        "paired": 17,
+        "faster": 0,
+        "tie": 17,
+        "slower": 0,
+        "geomean_ratio": 1.0
+      },
+      "manual_deployed/manual_joint": {
+        "paired": 17,
+        "faster": 0,
+        "tie": 8,
+        "slower": 9,
+        "geomean_ratio": 1.0655785941322602
+      },
+      "manual_deployed/vericert-hyperblock": {
+        "paired": 17,
+        "faster": 16,
+        "tie": 0,
+        "slower": 1,
+        "geomean_ratio": 0.3897996293887251
+      },
+      "manual_deployed/bambu-opt": {
+        "paired": 17,
+        "faster": 5,
+        "tie": 0,
+        "slower": 12,
+        "geomean_ratio": 1.27461706681639
+      },
+      "manual_deployed/best-published": {
+        "paired": 17,
+        "faster": 5,
+        "tie": 0,
+        "slower": 12,
+        "geomean_ratio": 1.27461706681639
+      },
+      "agent_deployed/native": {
+        "paired": 17,
+        "faster": 10,
+        "tie": 7,
+        "slower": 0,
+        "geomean_ratio": 0.925976978675583
+      },
+      "agent_deployed/manual_deployed": {
+        "paired": 17,
+        "faster": 0,
+        "tie": 15,
+        "slower": 2,
+        "geomean_ratio": 1.0189000133190151
+      },
+      "agent_deployed/manual_joint": {
+        "paired": 17,
+        "faster": 0,
+        "tie": 8,
+        "slower": 9,
+        "geomean_ratio": 1.0857180437538174
+      },
+      "agent_deployed/vericert-hyperblock": {
+        "paired": 17,
+        "faster": 16,
+        "tie": 0,
+        "slower": 1,
+        "geomean_ratio": 0.3971668475759192
+      },
+      "agent_deployed/bambu-opt": {
+        "paired": 17,
+        "faster": 5,
+        "tie": 0,
+        "slower": 12,
+        "geomean_ratio": 1.298707346355864
+      },
+      "agent_deployed/best-published": {
+        "paired": 17,
+        "faster": 5,
+        "tie": 0,
+        "slower": 12,
+        "geomean_ratio": 1.298707346355864
+      },
+      "manual_joint/native": {
+        "paired": 17,
+        "faster": 10,
+        "tie": 7,
+        "slower": 0,
+        "geomean_ratio": 0.8528705809052068
+      },
+      "manual_joint/manual_deployed": {
+        "paired": 17,
+        "faster": 9,
+        "tie": 8,
+        "slower": 0,
+        "geomean_ratio": 0.938457290252097
+      },
+      "manual_joint/manual_joint": {
+        "paired": 17,
+        "faster": 0,
+        "tie": 17,
+        "slower": 0,
+        "geomean_ratio": 1.0
+      },
+      "manual_joint/vericert-hyperblock": {
+        "paired": 17,
+        "faster": 16,
+        "tie": 0,
+        "slower": 1,
+        "geomean_ratio": 0.36581030393741465
+      },
+      "manual_joint/bambu-opt": {
+        "paired": 17,
+        "faster": 5,
+        "tie": 0,
+        "slower": 12,
+        "geomean_ratio": 1.1961736786335855
+      },
+      "manual_joint/best-published": {
+        "paired": 17,
+        "faster": 5,
+        "tie": 0,
+        "slower": 12,
+        "geomean_ratio": 1.1961736786335855
+      },
+      "agent_joint/native": {
+        "paired": 17,
+        "faster": 10,
+        "tie": 7,
+        "slower": 0,
+        "geomean_ratio": 0.8772817801929301
+      },
+      "agent_joint/manual_deployed": {
+        "paired": 17,
+        "faster": 7,
+        "tie": 8,
+        "slower": 2,
+        "geomean_ratio": 0.9653181862054385
+      },
+      "agent_joint/manual_joint": {
+        "paired": 17,
+        "faster": 0,
+        "tie": 14,
+        "slower": 3,
+        "geomean_ratio": 1.0286223957470946
+      },
+      "agent_joint/vericert-hyperblock": {
+        "paired": 17,
+        "faster": 16,
+        "tie": 0,
+        "slower": 1,
+        "geomean_ratio": 0.37628067122507625
+      },
+      "agent_joint/bambu-opt": {
+        "paired": 17,
+        "faster": 5,
+        "tie": 0,
+        "slower": 12,
+        "geomean_ratio": 1.2304110350456938
+      },
+      "agent_joint/best-published": {
+        "paired": 17,
+        "faster": 5,
+        "tie": 0,
+        "slower": 12,
+        "geomean_ratio": 1.2304110350456938
+      }
+    },
+    "all": {
+      "total": 27,
+      "native_status": {
+        "valid": 24,
+        "rtl_failed": 3
+      },
+      "native/native": {
+        "paired": 24,
+        "faster": 0,
+        "tie": 24,
+        "slower": 0,
+        "geomean_ratio": 1.0
+      },
+      "native/manual_deployed": {
+        "paired": 24,
+        "faster": 0,
+        "tie": 8,
+        "slower": 16,
+        "geomean_ratio": 1.0906835276812548
+      },
+      "native/manual_joint": {
+        "paired": 24,
+        "faster": 0,
+        "tie": 8,
+        "slower": 16,
+        "geomean_ratio": 1.151119520205167
+      },
+      "native/vericert-hyperblock": {
+        "paired": 24,
+        "faster": 23,
+        "tie": 0,
+        "slower": 1,
+        "geomean_ratio": 0.4332581740477883
+      },
+      "native/bambu-opt": {
+        "paired": 24,
+        "faster": 4,
+        "tie": 0,
+        "slower": 20,
+        "geomean_ratio": 1.4456771750510884
+      },
+      "native/best-published": {
+        "paired": 24,
+        "faster": 4,
+        "tie": 0,
+        "slower": 20,
+        "geomean_ratio": 1.4456771750510884
+      },
+      "manual_ordering/native": {
+        "paired": 24,
+        "faster": 2,
+        "tie": 22,
+        "slower": 0,
+        "geomean_ratio": 0.9955280653547451
+      },
+      "manual_ordering/manual_deployed": {
+        "paired": 24,
+        "faster": 0,
+        "tie": 10,
+        "slower": 14,
+        "geomean_ratio": 1.0858060622268082
+      },
+      "manual_ordering/manual_joint": {
+        "paired": 24,
+        "faster": 0,
+        "tie": 10,
+        "slower": 14,
+        "geomean_ratio": 1.1459717889419323
+      },
+      "manual_ordering/vericert-hyperblock": {
+        "paired": 24,
+        "faster": 23,
+        "tie": 0,
+        "slower": 1,
+        "geomean_ratio": 0.43132067180892414
+      },
+      "manual_ordering/bambu-opt": {
+        "paired": 24,
+        "faster": 5,
+        "tie": 0,
+        "slower": 19,
+        "geomean_ratio": 1.4392122012061233
+      },
+      "manual_ordering/best-published": {
+        "paired": 24,
+        "faster": 5,
+        "tie": 0,
+        "slower": 19,
+        "geomean_ratio": 1.4392122012061233
+      },
+      "agent_ordering/native": {
+        "paired": 24,
+        "faster": 2,
+        "tie": 22,
+        "slower": 0,
+        "geomean_ratio": 0.9955280653547451
+      },
+      "agent_ordering/manual_deployed": {
+        "paired": 24,
+        "faster": 0,
+        "tie": 10,
+        "slower": 14,
+        "geomean_ratio": 1.0858060622268082
+      },
+      "agent_ordering/manual_joint": {
+        "paired": 24,
+        "faster": 0,
+        "tie": 10,
+        "slower": 14,
+        "geomean_ratio": 1.1459717889419323
+      },
+      "agent_ordering/vericert-hyperblock": {
+        "paired": 24,
+        "faster": 23,
+        "tie": 0,
+        "slower": 1,
+        "geomean_ratio": 0.43132067180892414
+      },
+      "agent_ordering/bambu-opt": {
+        "paired": 24,
+        "faster": 5,
+        "tie": 0,
+        "slower": 19,
+        "geomean_ratio": 1.4392122012061233
+      },
+      "agent_ordering/best-published": {
+        "paired": 24,
+        "faster": 5,
+        "tie": 0,
+        "slower": 19,
+        "geomean_ratio": 1.4392122012061233
+      },
+      "manual_deployed/native": {
+        "paired": 24,
+        "faster": 16,
+        "tie": 8,
+        "slower": 0,
+        "geomean_ratio": 0.916856241632214
+      },
+      "manual_deployed/manual_deployed": {
+        "paired": 24,
+        "faster": 0,
+        "tie": 24,
+        "slower": 0,
+        "geomean_ratio": 1.0
+      },
+      "manual_deployed/manual_joint": {
+        "paired": 24,
+        "faster": 0,
+        "tie": 13,
+        "slower": 11,
+        "geomean_ratio": 1.0554111169647868
+      },
+      "manual_deployed/vericert-hyperblock": {
+        "paired": 24,
+        "faster": 23,
+        "tie": 0,
+        "slower": 1,
+        "geomean_ratio": 0.39723546111389074
+      },
+      "manual_deployed/bambu-opt": {
+        "paired": 24,
+        "faster": 7,
+        "tie": 0,
+        "slower": 17,
+        "geomean_ratio": 1.325478141330817
+      },
+      "manual_deployed/best-published": {
+        "paired": 24,
+        "faster": 7,
+        "tie": 0,
+        "slower": 17,
+        "geomean_ratio": 1.325478141330817
+      },
+      "agent_deployed/native": {
+        "paired": 24,
+        "faster": 16,
+        "tie": 8,
+        "slower": 0,
+        "geomean_ratio": 0.9290971041774054
+      },
+      "agent_deployed/manual_deployed": {
+        "paired": 24,
+        "faster": 0,
+        "tie": 22,
+        "slower": 2,
+        "geomean_ratio": 1.0133509071426507
+      },
+      "agent_deployed/manual_joint": {
+        "paired": 24,
+        "faster": 0,
+        "tie": 13,
+        "slower": 11,
+        "geomean_ratio": 1.069501812784705
+      },
+      "agent_deployed/vericert-hyperblock": {
+        "paired": 24,
+        "faster": 23,
+        "tie": 0,
+        "slower": 1,
+        "geomean_ratio": 0.4025389148689904
+      },
+      "agent_deployed/bambu-opt": {
+        "paired": 24,
+        "faster": 7,
+        "tie": 0,
+        "slower": 17,
+        "geomean_ratio": 1.3431744769153382
+      },
+      "agent_deployed/best-published": {
+        "paired": 24,
+        "faster": 7,
+        "tie": 0,
+        "slower": 17,
+        "geomean_ratio": 1.3431744769153382
+      },
+      "manual_joint/native": {
+        "paired": 24,
+        "faster": 16,
+        "tie": 8,
+        "slower": 0,
+        "geomean_ratio": 0.8687195225581505
+      },
+      "manual_joint/manual_deployed": {
+        "paired": 24,
+        "faster": 11,
+        "tie": 13,
+        "slower": 0,
+        "geomean_ratio": 0.947498073429299
+      },
+      "manual_joint/manual_joint": {
+        "paired": 24,
+        "faster": 0,
+        "tie": 24,
+        "slower": 0,
+        "geomean_ratio": 1.0
+      },
+      "manual_joint/vericert-hyperblock": {
+        "paired": 24,
+        "faster": 23,
+        "tie": 0,
+        "slower": 1,
+        "geomean_ratio": 0.3763798341032107
+      },
+      "manual_joint/bambu-opt": {
+        "paired": 24,
+        "faster": 7,
+        "tie": 0,
+        "slower": 17,
+        "geomean_ratio": 1.2558879852835974
+      },
+      "manual_joint/best-published": {
+        "paired": 24,
+        "faster": 7,
+        "tie": 0,
+        "slower": 17,
+        "geomean_ratio": 1.2558879852835974
+      },
+      "agent_joint/native": {
+        "paired": 24,
+        "faster": 16,
+        "tie": 8,
+        "slower": 0,
+        "geomean_ratio": 0.8862594879845509
+      },
+      "agent_joint/manual_deployed": {
+        "paired": 24,
+        "faster": 9,
+        "tie": 13,
+        "slower": 2,
+        "geomean_ratio": 0.9666286247959726
+      },
+      "agent_joint/manual_joint": {
+        "paired": 24,
+        "faster": 0,
+        "tie": 21,
+        "slower": 3,
+        "geomean_ratio": 1.0201905965860532
+      },
+      "agent_joint/vericert-hyperblock": {
+        "paired": 24,
+        "faster": 23,
+        "tie": 0,
+        "slower": 1,
+        "geomean_ratio": 0.38397916749671424
+      },
+      "agent_joint/bambu-opt": {
+        "paired": 24,
+        "faster": 7,
+        "tie": 0,
+        "slower": 17,
+        "geomean_ratio": 1.2812451129517295
+      },
+      "agent_joint/best-published": {
+        "paired": 24,
+        "faster": 7,
+        "tie": 0,
+        "slower": 17,
+        "geomean_ratio": 1.2812451129517295
+      }
+    }
+  },
+  "order_search": {
+    "winner": [
+      "tail",
+      [
+        1,
+        0,
+        0,
+        0
+      ]
+    ],
+    "agent": [
+      "agent_1",
+      [
+        4,
+        8,
+        1,
+        -2
+      ]
+    ],
+    "history": [
+      {
+        "label": "tail",
+        "weights": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "dev": {
+          "vericert24_gemm": {
+            "status": "valid",
+            "cycles": 83060,
+            "selection": "native",
+            "port_conflicts": null
+          },
+          "vericert24_gesummv": {
+            "status": "valid",
+            "cycles": 34858,
+            "selection": "native",
+            "port_conflicts": null
+          },
+          "vericert24_syrk": {
+            "status": "valid",
+            "cycles": 61962,
+            "selection": "native",
+            "port_conflicts": null
+          },
+          "vericert24_bicg": {
+            "status": "valid",
+            "cycles": 37284,
+            "selection": "native",
+            "port_conflicts": null
+          },
+          "vericert24_mvt": {
+            "status": "valid",
+            "cycles": 42752,
+            "selection": "native",
+            "port_conflicts": null
+          },
+          "vericert24_ludcmp": {
+            "status": "valid",
+            "cycles": 335752,
+            "selection": "policy",
+            "port_conflicts": 3
+          },
+          "vericert24_nussinov": {
+            "status": "native_unavailable",
+            "cycles": null,
+            "selection": null,
+            "port_conflicts": null
+          },
+          "vericert24_jacobi_1d": {
+            "status": "valid",
+            "cycles": 4641,
+            "selection": "native",
+            "port_conflicts": null
+          }
+        }
+      },
+      {
+        "label": "native",
+        "weights": null,
+        "dev": {
+          "vericert24_gemm": {
+            "status": "valid",
+            "cycles": 83060,
+            "selection": null,
+            "port_conflicts": 0
+          },
+          "vericert24_gesummv": {
+            "status": "valid",
+            "cycles": 34858,
+            "selection": null,
+            "port_conflicts": 0
+          },
+          "vericert24_syrk": {
+            "status": "valid",
+            "cycles": 61962,
+            "selection": null,
+            "port_conflicts": 0
+          },
+          "vericert24_bicg": {
+            "status": "valid",
+            "cycles": 37284,
+            "selection": null,
+            "port_conflicts": 0
+          },
+          "vericert24_mvt": {
+            "status": "valid",
+            "cycles": 42752,
+            "selection": null,
+            "port_conflicts": 0
+          },
+          "vericert24_ludcmp": {
+            "status": "valid",
+            "cycles": 336532,
+            "selection": null,
+            "port_conflicts": 3
+          },
+          "vericert24_nussinov": {
+            "status": "rtl_failed",
+            "cycles": null,
+            "selection": null,
+            "port_conflicts": 3
+          },
+          "vericert24_jacobi_1d": {
+            "status": "valid",
+            "cycles": 4641,
+            "selection": null,
+            "port_conflicts": 4
+          }
+        }
+      },
+      {
+        "call": 1,
+        "label": "agent_1",
+        "weights": [
+          4,
+          8,
+          1,
+          -2
+        ],
+        "hypothesis": "Prioritize paths with many remaining memory requests to expose address generation and feed serial ports earlier, while retaining critical-path urgency. Fanout favors shared prerequisites; the negative intrinsic-latency term tempers preference for isolated long operations. Load sampling remains compiler-controlled, so earlier allocation need not mean earlier data capture. This is untested; strict state-count selection limits deployment but does not guarantee fewer RTL cycles.",
+        "dev": {
+          "vericert24_gemm": {
+            "status": "valid",
+            "cycles": 83060,
+            "selection": "native",
+            "port_conflicts": null
+          },
+          "vericert24_gesummv": {
+            "status": "valid",
+            "cycles": 34858,
+            "selection": "native",
+            "port_conflicts": null
+          },
+          "vericert24_syrk": {
+            "status": "valid",
+            "cycles": 61962,
+            "selection": "native",
+            "port_conflicts": null
+          },
+          "vericert24_bicg": {
+            "status": "valid",
+            "cycles": 37284,
+            "selection": "native",
+            "port_conflicts": null
+          },
+          "vericert24_mvt": {
+            "status": "valid",
+            "cycles": 42752,
+            "selection": "native",
+            "port_conflicts": null
+          },
+          "vericert24_ludcmp": {
+            "status": "valid",
+            "cycles": 335752,
+            "selection": "policy",
+            "port_conflicts": 3
+          },
+          "vericert24_nussinov": {
+            "status": "native_unavailable",
+            "cycles": null,
+            "selection": null,
+            "port_conflicts": null
+          },
+          "vericert24_jacobi_1d": {
+            "status": "valid",
+            "cycles": 4641,
+            "selection": "native",
+            "port_conflicts": null
+          }
+        },
+        "receipt": {
+          "status": "generated",
+          "seconds": 13.896050689741969,
+          "usage": {
+            "input_tokens": 11987,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 160,
+            "reasoning_output_tokens": 51
+          }
+        }
+      },
+      {
+        "call": 2,
+        "label": "agent_2",
+        "weights": [
+          1,
+          16,
+          2,
+          -4
+        ],
+        "hypothesis": "Stronger memory-path priority may expose address prerequisites sooner and keep serial ports supplied; fanout favors shared prerequisites, while negative intrinsic latency favors short enabling operations. Allocation order does not determine load sampling cycles, which remain compiler-controlled. The previous candidate matched baseline results, so this is an untested stronger perturbation; strict state-count selection does not guarantee fewer RTL cycles.",
+        "dev": {
+          "vericert24_gemm": {
+            "status": "valid",
+            "cycles": 83060,
+            "selection": "native",
+            "port_conflicts": null
+          },
+          "vericert24_gesummv": {
+            "status": "valid",
+            "cycles": 34858,
+            "selection": "native",
+            "port_conflicts": null
+          },
+          "vericert24_syrk": {
+            "status": "valid",
+            "cycles": 61962,
+            "selection": "native",
+            "port_conflicts": null
+          },
+          "vericert24_bicg": {
+            "status": "valid",
+            "cycles": 37284,
+            "selection": "native",
+            "port_conflicts": null
+          },
+          "vericert24_mvt": {
+            "status": "valid",
+            "cycles": 42752,
+            "selection": "native",
+            "port_conflicts": null
+          },
+          "vericert24_ludcmp": {
+            "status": "valid",
+            "cycles": 335752,
+            "selection": "mixed",
+            "port_conflicts": 3
+          },
+          "vericert24_nussinov": {
+            "status": "native_unavailable",
+            "cycles": null,
+            "selection": null,
+            "port_conflicts": null
+          },
+          "vericert24_jacobi_1d": {
+            "status": "valid",
+            "cycles": 4641,
+            "selection": "native",
+            "port_conflicts": null
+          }
+        },
+        "receipt": {
+          "status": "generated",
+          "seconds": 13.046530958265066,
+          "usage": {
+            "input_tokens": 12457,
+            "cached_input_tokens": 10880,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 131,
+            "reasoning_output_tokens": 29
+          }
+        }
+      },
+      {
+        "call": 3,
+        "label": "agent_3",
+        "weights": [
+          4,
+          -8,
+          2,
+          -1
+        ],
+        "hypothesis": "Positive memory-path bonuses left RTL cycles unchanged; try reversing that preference to let shorter memory chains clear serial ports before deeper chains dominate allocation. Critical-path and fanout terms retain urgency for shared prerequisites. Load sampling remains compiler-controlled, so earlier allocation need not mean earlier capture. This is untested; strict state-count selection does not guarantee cycle improvement.",
+        "dev": {
+          "vericert24_gemm": {
+            "status": "valid",
+            "cycles": 83060,
+            "selection": "native",
+            "port_conflicts": null
+          },
+          "vericert24_gesummv": {
+            "status": "valid",
+            "cycles": 34858,
+            "selection": "native",
+            "port_conflicts": null
+          },
+          "vericert24_syrk": {
+            "status": "valid",
+            "cycles": 61962,
+            "selection": "native",
+            "port_conflicts": null
+          },
+          "vericert24_bicg": {
+            "status": "valid",
+            "cycles": 37284,
+            "selection": "native",
+            "port_conflicts": null
+          },
+          "vericert24_mvt": {
+            "status": "valid",
+            "cycles": 42752,
+            "selection": "native",
+            "port_conflicts": null
+          },
+          "vericert24_ludcmp": {
+            "status": "valid",
+            "cycles": 335752,
+            "selection": "policy",
+            "port_conflicts": 3
+          },
+          "vericert24_nussinov": {
+            "status": "native_unavailable",
+            "cycles": null,
+            "selection": null,
+            "port_conflicts": null
+          },
+          "vericert24_jacobi_1d": {
+            "status": "valid",
+            "cycles": 4641,
+            "selection": "native",
+            "port_conflicts": null
+          }
+        },
+        "receipt": {
+          "status": "generated",
+          "seconds": 10.288238190114498,
+          "usage": {
+            "input_tokens": 12915,
+            "cached_input_tokens": 0,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 96,
+            "reasoning_output_tokens": 0
+          }
+        }
+      }
+    ],
+    "dev_summary": {
+      "tail": {
+        "valid": 7,
+        "wins": 1,
+        "geomean": 0.9996685622309016
+      },
+      "native": {
+        "valid": 7,
+        "wins": 0,
+        "geomean": 1.0
+      },
+      "agent_1": {
+        "valid": 7,
+        "wins": 1,
+        "geomean": 0.9996685622309016
+      },
+      "agent_2": {
+        "valid": 7,
+        "wins": 1,
+        "geomean": 0.9996685622309016
+      },
+      "agent_3": {
+        "valid": 7,
+        "wins": 1,
+        "geomean": 0.9996685622309016
+      }
+    }
+  },
+  "loop_freeze": {
+    "agent": [
+      "agent_1",
+      [
+        4,
+        -5,
+        2,
+        0,
+        -1
+      ]
+    ],
+    "winner": [
+      "agent_1",
+      [
+        4,
+        -5,
+        2,
+        0,
+        -1
+      ]
+    ]
+  },
+  "loop_search": {
+    "innermost": {
+      "weights": [
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "score": {
+        "valid": 7,
+        "wins": 5,
+        "geomean": 0.9570822910664128
+      }
+    },
+    "agent_1": {
+      "weights": [
+        4,
+        -5,
+        2,
+        0,
+        -1
+      ],
+      "score": {
+        "valid": 7,
+        "wins": 6,
+        "geomean": 0.9564949495831222
+      }
+    },
+    "agent_2": {
+      "weights": [
+        -4,
+        -5,
+        2,
+        0,
+        -16
+      ],
+      "score": {
+        "valid": 7,
+        "wins": 6,
+        "geomean": 0.9564949495831222
+      }
+    }
+  },
+  "cases": {
+    "vericert24_gemm": {
+      "split": "dev",
+      "native_status": "valid",
+      "native": 83060,
+      "observed_checksum": "00000000",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 234643,
+        "vericert-list-scheduling": 247250,
+        "vericert-original": 406774,
+        "bambu-opt": 79422,
+        "bambu-noopt": 271845
+      },
+      "manual_ordering": 83060,
+      "manual_pipeline": 69860,
+      "manual_deployed": 69860,
+      "manual_choice": "Loop_kernel_gemm_4",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_gemm_4": {
+          "status": "compiled",
+          "gain_estimate": 22,
+          "trip": 25,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body11_i"
+        },
+        "Loop_kernel_gemm_2": {
+          "status": "compiled",
+          "gain_estimate": -1,
+          "trip": 25,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body3_i13"
+        },
+        "Loop_kernel_gemm_3": {
+          "status": "compiled",
+          "gain_estimate": -2981,
+          "trip": 30,
+          "ii": 103,
+          "bottleneck": "conservative mixed read/write memory dependence",
+          "block": "for_cond9_preheader_i"
+        }
+      },
+      "manual_joint": 69860,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 69860,
+        "source": "single",
+        "positive": [
+          "Loop_kernel_gemm_4"
+        ]
+      },
+      "agent_ordering": 83060,
+      "agent_pipeline": 69860,
+      "agent_deployed": 69860,
+      "agent_choice": "Loop_kernel_gemm_4",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_gemm_2": {
+          "status": "compiled",
+          "gain_estimate": -1,
+          "trip": 25,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body3_i13"
+        },
+        "Loop_kernel_gemm_4": {
+          "status": "compiled",
+          "gain_estimate": 22,
+          "trip": 25,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body11_i"
+        },
+        "Loop_kernel_gemm_3": {
+          "status": "compiled",
+          "gain_estimate": -2981,
+          "trip": 30,
+          "ii": 103,
+          "bottleneck": "conservative mixed read/write memory dependence",
+          "block": "for_cond9_preheader_i"
+        }
+      },
+      "agent_joint": 69860,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 69860,
+        "source": "single",
+        "positive": [
+          "Loop_kernel_gemm_4"
+        ]
+      }
+    },
+    "vericert24_gesummv": {
+      "split": "dev",
+      "native_status": "valid",
+      "native": 34858,
+      "observed_checksum": "00000000",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 51738,
+        "vericert-list-scheduling": 63778,
+        "vericert-original": 116556,
+        "bambu-opt": 15556,
+        "bambu-noopt": 57506
+      },
+      "manual_ordering": 34858,
+      "manual_pipeline": 33178,
+      "manual_deployed": 33178,
+      "manual_choice": "Loop_kernel_gesummv_2",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_gesummv_2": {
+          "status": "compiled",
+          "gain_estimate": 56,
+          "trip": 30,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body5_i"
+        },
+        "Loop_kernel_gesummv_1": {
+          "status": "compiled",
+          "gain_estimate": -33,
+          "trip": 30,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body_i"
+        }
+      },
+      "manual_joint": 33178,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 33178,
+        "source": "single",
+        "positive": [
+          "Loop_kernel_gesummv_2"
+        ]
+      },
+      "agent_ordering": 34858,
+      "agent_pipeline": 33178,
+      "agent_deployed": 33178,
+      "agent_choice": "Loop_kernel_gesummv_2",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_gesummv_2": {
+          "status": "compiled",
+          "gain_estimate": 56,
+          "trip": 30,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body5_i"
+        },
+        "Loop_kernel_gesummv_1": {
+          "status": "compiled",
+          "gain_estimate": -33,
+          "trip": 30,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body_i"
+        }
+      },
+      "agent_joint": 33178,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 33178,
+        "source": "single",
+        "positive": [
+          "Loop_kernel_gesummv_2"
+        ]
+      }
+    },
+    "vericert24_syrk": {
+      "split": "dev",
+      "native_status": "valid",
+      "native": 61962,
+      "observed_checksum": "00000000",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 164798,
+        "vericert-list-scheduling": 178992,
+        "vericert-original": 338285,
+        "bambu-opt": 54428,
+        "bambu-noopt": 176575
+      },
+      "manual_ordering": 61962,
+      "manual_pipeline": 61962,
+      "manual_deployed": 61962,
+      "manual_choice": "native",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_syrk_4": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_syrk_2": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_syrk_3": {
+          "status": "compiled",
+          "gain_estimate": -1220,
+          "trip": 20,
+          "ii": 63,
+          "bottleneck": "conservative mixed read/write memory dependence",
+          "block": "for_cond9_preheader_i"
+        }
+      },
+      "manual_joint": 61962,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 61962,
+        "source": "single",
+        "positive": []
+      },
+      "agent_ordering": 61962,
+      "agent_pipeline": 61962,
+      "agent_deployed": 61962,
+      "agent_choice": "native",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_syrk_2": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_syrk_4": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_syrk_3": {
+          "status": "compiled",
+          "gain_estimate": -1220,
+          "trip": 20,
+          "ii": 63,
+          "bottleneck": "conservative mixed read/write memory dependence",
+          "block": "for_cond9_preheader_i"
+        }
+      },
+      "agent_joint": 61962,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 61962,
+        "source": "single",
+        "positive": []
+      }
+    },
+    "vericert24_bicg": {
+      "split": "dev",
+      "native_status": "valid",
+      "native": 37284,
+      "observed_checksum": "00000000",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 65812,
+        "vericert-list-scheduling": 77513,
+        "vericert-original": 130790,
+        "bambu-opt": 18404,
+        "bambu-noopt": 63024
+      },
+      "manual_ordering": 37284,
+      "manual_pipeline": 35814,
+      "manual_deployed": 35814,
+      "manual_choice": "Loop_kernel_bicg_3",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_bicg_3": {
+          "status": "compiled",
+          "gain_estimate": 35,
+          "trip": 38,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body8_i"
+        },
+        "Loop_kernel_bicg_1": {
+          "status": "compiled",
+          "gain_estimate": -1,
+          "trip": 38,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body_i"
+        },
+        "Loop_kernel_bicg_2": {
+          "status": "compiled",
+          "gain_estimate": -3109,
+          "trip": 42,
+          "ii": 76,
+          "bottleneck": "memory port capacity",
+          "block": "for_body3_i"
+        }
+      },
+      "manual_joint": 35814,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 35814,
+        "source": "single",
+        "positive": [
+          "Loop_kernel_bicg_3"
+        ]
+      },
+      "agent_ordering": 37284,
+      "agent_pipeline": 35814,
+      "agent_deployed": 35814,
+      "agent_choice": "Loop_kernel_bicg_3",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_bicg_1": {
+          "status": "compiled",
+          "gain_estimate": -1,
+          "trip": 38,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body_i"
+        },
+        "Loop_kernel_bicg_3": {
+          "status": "compiled",
+          "gain_estimate": 35,
+          "trip": 38,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body8_i"
+        },
+        "Loop_kernel_bicg_2": {
+          "status": "compiled",
+          "gain_estimate": -3109,
+          "trip": 42,
+          "ii": 76,
+          "bottleneck": "memory port capacity",
+          "block": "for_body3_i"
+        }
+      },
+      "agent_joint": 35814,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 35814,
+        "source": "single",
+        "positive": [
+          "Loop_kernel_bicg_3"
+        ]
+      }
+    },
+    "vericert24_mvt": {
+      "split": "dev",
+      "native_status": "valid",
+      "native": 42752,
+      "observed_checksum": "00000000",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 67998,
+        "vericert-list-scheduling": 79718,
+        "vericert-original": 148873,
+        "bambu-opt": 18478,
+        "bambu-noopt": 71534
+      },
+      "manual_ordering": 42752,
+      "manual_pipeline": 39712,
+      "manual_deployed": 39712,
+      "manual_choice": "Loop_kernel_mvt_2",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_mvt_2": {
+          "status": "compiled",
+          "gain_estimate": 76,
+          "trip": 40,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body3_i"
+        },
+        "Loop_kernel_mvt_4": {
+          "status": "compiled",
+          "gain_estimate": 76,
+          "trip": 40,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body21_i"
+        },
+        "Loop_kernel_mvt_1": {
+          "status": "compiled",
+          "gain_estimate": -3,
+          "trip": 40,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_cond1_preheader_i"
+        }
+      },
+      "manual_joint": 36672,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 36672,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_mvt_2",
+          "Loop_kernel_mvt_4"
+        ],
+        "joint_status": "valid"
+      },
+      "agent_ordering": 42752,
+      "agent_pipeline": 39712,
+      "agent_deployed": 39712,
+      "agent_choice": "Loop_kernel_mvt_2",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_mvt_2": {
+          "status": "compiled",
+          "gain_estimate": 76,
+          "trip": 40,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body3_i"
+        },
+        "Loop_kernel_mvt_4": {
+          "status": "compiled",
+          "gain_estimate": 76,
+          "trip": 40,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body21_i"
+        },
+        "Loop_kernel_mvt_1": {
+          "status": "compiled",
+          "gain_estimate": -3,
+          "trip": 40,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_cond1_preheader_i"
+        }
+      },
+      "agent_joint": 36672,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 36672,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_mvt_2",
+          "Loop_kernel_mvt_4"
+        ],
+        "joint_status": "valid"
+      }
+    },
+    "vericert24_ludcmp": {
+      "split": "dev",
+      "native_status": "valid",
+      "native": 336532,
+      "observed_checksum": "00000004",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 1006889,
+        "vericert-list-scheduling": 1022658,
+        "vericert-original": 2641694,
+        "bambu-opt": 362026,
+        "bambu-noopt": 768213
+      },
+      "manual_ordering": 335752,
+      "manual_pipeline": 336532,
+      "manual_deployed": 335752,
+      "manual_choice": "policy",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_ludcmp_3": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_ludcmp_5": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_ludcmp_2": {
+          "status": "rejected",
+          "gain_estimate": 0
+        }
+      },
+      "manual_joint": 335752,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 335752,
+        "source": "single",
+        "positive": []
+      },
+      "agent_ordering": 335752,
+      "agent_pipeline": 336532,
+      "agent_deployed": 335752,
+      "agent_choice": "policy",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_ludcmp_7": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_ludcmp_9": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_ludcmp_3": {
+          "status": "rejected",
+          "gain_estimate": 0
+        }
+      },
+      "agent_joint": 335752,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 335752,
+        "source": "single",
+        "positive": []
+      }
+    },
+    "vericert24_nussinov": {
+      "split": "dev",
+      "native_status": "rtl_failed",
+      "native": null,
+      "observed_checksum": null,
+      "native_diagnostic": "FATAL: /home/eeuser/Desktop/Light-HLS/runs/collection_verified_20261125/input/vericert24_nussinov/tb.v:12: RTL expected 0000001c, actual 00000000 after      168679 cycles\n       Time: 1686820000 Scope: tb\n",
+      "published": {
+        "vericert-hyperblock": 595933,
+        "vericert-list-scheduling": 626831,
+        "vericert-original": 956490,
+        "bambu-opt": 130185,
+        "bambu-noopt": 347862
+      }
+    },
+    "vericert24_jacobi_1d": {
+      "split": "dev",
+      "native_status": "valid",
+      "native": 4641,
+      "observed_checksum": "00000001",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 14568,
+        "vericert-list-scheduling": 16154,
+        "vericert-original": 19996,
+        "bambu-opt": 2442,
+        "bambu-noopt": 16535
+      },
+      "manual_ordering": 4641,
+      "manual_pipeline": 4121,
+      "manual_deployed": 4121,
+      "manual_choice": "Loop_kernel_jacobi_1d_2",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_jacobi_1d_2": {
+          "status": "compiled",
+          "gain_estimate": 26,
+          "trip": 28,
+          "ii": 3,
+          "bottleneck": "memory port capacity",
+          "block": "for_body3_i"
+        },
+        "Loop_kernel_jacobi_1d_3": {
+          "status": "compiled",
+          "gain_estimate": 26,
+          "trip": 28,
+          "ii": 3,
+          "bottleneck": "memory port capacity",
+          "block": "for_body21_i"
+        },
+        "Loop_kernel_jacobi_1d_1": {
+          "status": "rejected",
+          "gain_estimate": 0
+        }
+      },
+      "manual_joint": 3601,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 3601,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_jacobi_1d_2",
+          "Loop_kernel_jacobi_1d_3"
+        ],
+        "joint_status": "valid"
+      },
+      "agent_ordering": 4641,
+      "agent_pipeline": 4121,
+      "agent_deployed": 4121,
+      "agent_choice": "Loop_kernel_jacobi_1d_2",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_jacobi_1d_2": {
+          "status": "compiled",
+          "gain_estimate": 26,
+          "trip": 28,
+          "ii": 3,
+          "bottleneck": "memory port capacity",
+          "block": "for_body3_i"
+        },
+        "Loop_kernel_jacobi_1d_3": {
+          "status": "compiled",
+          "gain_estimate": 26,
+          "trip": 28,
+          "ii": 3,
+          "bottleneck": "memory port capacity",
+          "block": "for_body21_i"
+        },
+        "Loop_kernel_jacobi_1d_1": {
+          "status": "rejected",
+          "gain_estimate": 0
+        }
+      },
+      "agent_joint": 3601,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 3601,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_jacobi_1d_2",
+          "Loop_kernel_jacobi_1d_3"
+        ],
+        "joint_status": "valid"
+      }
+    },
+    "vericert24_covariance": {
+      "split": "holdout",
+      "native_status": "valid",
+      "native": 110174,
+      "observed_checksum": "00000038",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 201897,
+        "vericert-list-scheduling": 217601,
+        "vericert-original": 340794,
+        "bambu-opt": 75091,
+        "bambu-noopt": 179708
+      },
+      "manual_ordering": 110174,
+      "manual_pipeline": 85814,
+      "manual_deployed": 85814,
+      "manual_choice": "Loop_kernel_covariance_7",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_covariance_7": {
+          "status": "compiled",
+          "gain_estimate": 60,
+          "trip": 32,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body48_i"
+        },
+        "Loop_kernel_covariance_2": {
+          "status": "compiled",
+          "gain_estimate": 60,
+          "trip": 32,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body3_i8"
+        },
+        "Loop_kernel_covariance_4": {
+          "status": "compiled",
+          "gain_estimate": -1,
+          "trip": 28,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body23_i"
+        }
+      },
+      "manual_joint": 84134,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 84134,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_covariance_2",
+          "Loop_kernel_covariance_7"
+        ],
+        "joint_status": "valid"
+      },
+      "agent_ordering": 110174,
+      "agent_pipeline": 108494,
+      "agent_deployed": 108494,
+      "agent_choice": "Loop_kernel_covariance_2",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_covariance_2": {
+          "status": "compiled",
+          "gain_estimate": 60,
+          "trip": 32,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body3_i8"
+        },
+        "Loop_kernel_covariance_4": {
+          "status": "compiled",
+          "gain_estimate": -1,
+          "trip": 28,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body23_i"
+        },
+        "Loop_kernel_covariance_3": {
+          "status": "compiled",
+          "gain_estimate": -1761,
+          "trip": 32,
+          "ii": 56,
+          "bottleneck": "memory port capacity",
+          "block": "for_cond21_preheader_i"
+        }
+      },
+      "agent_joint": 108494,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 108494,
+        "source": "single",
+        "positive": [
+          "Loop_kernel_covariance_2"
+        ]
+      }
+    },
+    "vericert24_gemver": {
+      "split": "holdout",
+      "native_status": "valid",
+      "native": 46272,
+      "observed_checksum": "00000000",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 99529,
+        "vericert-list-scheduling": 111121,
+        "vericert-original": 193047,
+        "bambu-opt": 26478,
+        "bambu-noopt": 101335
+      },
+      "manual_ordering": 46272,
+      "manual_pipeline": 43232,
+      "manual_deployed": 43232,
+      "manual_choice": "Loop_kernel_gemver_4",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_gemver_2": {
+          "status": "compiled",
+          "gain_estimate": 37,
+          "trip": 40,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body3_i"
+        },
+        "Loop_kernel_gemver_4": {
+          "status": "compiled",
+          "gain_estimate": 76,
+          "trip": 40,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body29_i25"
+        },
+        "Loop_kernel_gemver_7": {
+          "status": "compiled",
+          "gain_estimate": 76,
+          "trip": 40,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body67_i"
+        }
+      },
+      "manual_joint": 38712,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 38712,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_gemver_2",
+          "Loop_kernel_gemver_4",
+          "Loop_kernel_gemver_7"
+        ],
+        "joint_status": "valid"
+      },
+      "agent_ordering": 46272,
+      "agent_pipeline": 43232,
+      "agent_deployed": 43232,
+      "agent_choice": "Loop_kernel_gemver_4",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_gemver_5": {
+          "status": "compiled",
+          "gain_estimate": -1,
+          "trip": 40,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body51_i"
+        },
+        "Loop_kernel_gemver_4": {
+          "status": "compiled",
+          "gain_estimate": 76,
+          "trip": 40,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body29_i25"
+        },
+        "Loop_kernel_gemver_7": {
+          "status": "compiled",
+          "gain_estimate": 76,
+          "trip": 40,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body67_i"
+        }
+      },
+      "agent_joint": 40192,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 40192,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_gemver_4",
+          "Loop_kernel_gemver_7"
+        ],
+        "joint_status": "valid"
+      }
+    },
+    "vericert24_symm": {
+      "split": "holdout",
+      "native_status": "valid",
+      "native": 43911,
+      "observed_checksum": "00000000",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 156473,
+        "vericert-list-scheduling": 154224,
+        "vericert-original": 279831,
+        "bambu-opt": 32032,
+        "bambu-noopt": 115414
+      },
+      "manual_ordering": 43911,
+      "manual_pipeline": 43911,
+      "manual_deployed": 43911,
+      "manual_choice": "native",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_symm_3": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_symm_2": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_symm_1": {
+          "status": "rejected",
+          "gain_estimate": 0
+        }
+      },
+      "manual_joint": 43911,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 43911,
+        "source": "single",
+        "positive": []
+      },
+      "agent_ordering": 43911,
+      "agent_pipeline": 43911,
+      "agent_deployed": 43911,
+      "agent_choice": "native",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_symm_3": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_symm_2": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_symm_1": {
+          "status": "rejected",
+          "gain_estimate": 0
+        }
+      },
+      "agent_joint": 43911,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 43911,
+        "source": "single",
+        "positive": []
+      }
+    },
+    "vericert24_syr2k": {
+      "split": "holdout",
+      "native_status": "valid",
+      "native": 79762,
+      "observed_checksum": "00000003",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 232381,
+        "vericert-list-scheduling": 246426,
+        "vericert-original": 525907,
+        "bambu-opt": 67962,
+        "bambu-noopt": 198579
+      },
+      "manual_ordering": 79762,
+      "manual_pipeline": 79762,
+      "manual_deployed": 79762,
+      "manual_choice": "native",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_syr2k_4": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_syr2k_2": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_syr2k_3": {
+          "status": "compiled",
+          "gain_estimate": -1240,
+          "trip": 20,
+          "ii": 64,
+          "bottleneck": "conservative mixed read/write memory dependence",
+          "block": "for_cond9_preheader_i"
+        }
+      },
+      "manual_joint": 79762,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 79762,
+        "source": "single",
+        "positive": []
+      },
+      "agent_ordering": 79762,
+      "agent_pipeline": 79762,
+      "agent_deployed": 79762,
+      "agent_choice": "native",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_syr2k_2": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_syr2k_4": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_syr2k_3": {
+          "status": "compiled",
+          "gain_estimate": -1240,
+          "trip": 20,
+          "ii": 64,
+          "bottleneck": "conservative mixed read/write memory dependence",
+          "block": "for_cond9_preheader_i"
+        }
+      },
+      "agent_joint": 79762,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 79762,
+        "source": "single",
+        "positive": []
+      }
+    },
+    "vericert24_trmm": {
+      "split": "holdout",
+      "native_status": "valid",
+      "native": 35231,
+      "observed_checksum": "00000000",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 92049,
+        "vericert-list-scheduling": 93279,
+        "vericert-original": 165828,
+        "bambu-opt": 28362,
+        "bambu-noopt": 80968
+      },
+      "manual_ordering": 35231,
+      "manual_pipeline": 35231,
+      "manual_deployed": 35231,
+      "manual_choice": "native",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_trmm_3": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_trmm_2": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_trmm_1": {
+          "status": "rejected",
+          "gain_estimate": 0
+        }
+      },
+      "manual_joint": 35231,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 35231,
+        "source": "single",
+        "positive": []
+      },
+      "agent_ordering": 35231,
+      "agent_pipeline": 35231,
+      "agent_deployed": 35231,
+      "agent_choice": "native",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_trmm_3": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_trmm_2": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_trmm_1": {
+          "status": "rejected",
+          "gain_estimate": 0
+        }
+      },
+      "agent_joint": 35231,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 35231,
+        "source": "single",
+        "positive": []
+      }
+    },
+    "vericert24_2mm": {
+      "split": "holdout",
+      "native_status": "valid",
+      "native": 71536,
+      "observed_checksum": "00000000",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 202457,
+        "vericert-list-scheduling": 212625,
+        "vericert-original": 467611,
+        "bambu-opt": 67992,
+        "bambu-noopt": 177242
+      },
+      "manual_ordering": 71536,
+      "manual_pipeline": 60016,
+      "manual_deployed": 60016,
+      "manual_choice": "Loop_kernel_2mm_3",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_2mm_3": {
+          "status": "compiled",
+          "gain_estimate": 40,
+          "trip": 22,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body8_i"
+        },
+        "Loop_kernel_2mm_6": {
+          "status": "compiled",
+          "gain_estimate": 32,
+          "trip": 18,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body42_i"
+        },
+        "Loop_kernel_2mm_2": {
+          "status": "compiled",
+          "gain_estimate": -21,
+          "trip": 18,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body3_i17"
+        }
+      },
+      "manual_joint": 47728,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 47728,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_2mm_3",
+          "Loop_kernel_2mm_6"
+        ],
+        "joint_status": "valid"
+      },
+      "agent_ordering": 71536,
+      "agent_pipeline": 60016,
+      "agent_deployed": 60016,
+      "agent_choice": "Loop_kernel_2mm_3",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_2mm_3": {
+          "status": "compiled",
+          "gain_estimate": 40,
+          "trip": 22,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body8_i"
+        },
+        "Loop_kernel_2mm_6": {
+          "status": "compiled",
+          "gain_estimate": 32,
+          "trip": 18,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body42_i"
+        },
+        "Loop_kernel_2mm_2": {
+          "status": "compiled",
+          "gain_estimate": -21,
+          "trip": 18,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body3_i17"
+        }
+      },
+      "agent_joint": 47728,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 47728,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_2mm_3",
+          "Loop_kernel_2mm_6"
+        ],
+        "joint_status": "valid"
+      }
+    },
+    "vericert24_3mm": {
+      "split": "holdout",
+      "native_status": "valid",
+      "native": 98532,
+      "observed_checksum": "00000000",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 293105,
+        "vericert-list-scheduling": 304734,
+        "vericert-original": 604581,
+        "bambu-opt": 102818,
+        "bambu-noopt": 224309
+      },
+      "manual_ordering": 98532,
+      "manual_pipeline": 81108,
+      "manual_deployed": 81108,
+      "manual_choice": "Loop_kernel_3mm_6",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_3mm_3": {
+          "status": "compiled",
+          "gain_estimate": 36,
+          "trip": 20,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body8_i"
+        },
+        "Loop_kernel_3mm_6": {
+          "status": "compiled",
+          "gain_estimate": 44,
+          "trip": 24,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body40_i"
+        },
+        "Loop_kernel_3mm_9": {
+          "status": "compiled",
+          "gain_estimate": 32,
+          "trip": 18,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body76_i"
+        }
+      },
+      "manual_joint": 59476,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 59476,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_3mm_3",
+          "Loop_kernel_3mm_6",
+          "Loop_kernel_3mm_9"
+        ],
+        "joint_status": "valid"
+      },
+      "agent_ordering": 98532,
+      "agent_pipeline": 81108,
+      "agent_deployed": 81108,
+      "agent_choice": "Loop_kernel_3mm_6",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_3mm_3": {
+          "status": "compiled",
+          "gain_estimate": 36,
+          "trip": 20,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body8_i"
+        },
+        "Loop_kernel_3mm_6": {
+          "status": "compiled",
+          "gain_estimate": 44,
+          "trip": 24,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body40_i"
+        },
+        "Loop_kernel_3mm_9": {
+          "status": "compiled",
+          "gain_estimate": 32,
+          "trip": 18,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body76_i"
+        }
+      },
+      "agent_joint": 59476,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 59476,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_3mm_3",
+          "Loop_kernel_3mm_6",
+          "Loop_kernel_3mm_9"
+        ],
+        "joint_status": "valid"
+      }
+    },
+    "vericert24_atas": {
+      "split": "holdout",
+      "native_status": "valid",
+      "native": 27494,
+      "observed_checksum": "00000000",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 56516,
+        "vericert-list-scheduling": 60530,
+        "vericert-original": 101618,
+        "bambu-opt": 16947,
+        "bambu-noopt": 50860
+      },
+      "manual_ordering": 27494,
+      "manual_pipeline": 24454,
+      "manual_deployed": 24454,
+      "manual_choice": "Loop_kernel_atax_3",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_atax_3": {
+          "status": "compiled",
+          "gain_estimate": 80,
+          "trip": 42,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body8_i"
+        },
+        "Loop_kernel_atax_4": {
+          "status": "compiled",
+          "gain_estimate": 39,
+          "trip": 42,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body25_i"
+        },
+        "Loop_kernel_atax_1": {
+          "status": "compiled",
+          "gain_estimate": -1,
+          "trip": 42,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body_i"
+        }
+      },
+      "manual_joint": 22972,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 22972,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_atax_3",
+          "Loop_kernel_atax_4"
+        ],
+        "joint_status": "valid"
+      },
+      "agent_ordering": 27494,
+      "agent_pipeline": 24454,
+      "agent_deployed": 24454,
+      "agent_choice": "Loop_kernel_atax_3",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_atax_1": {
+          "status": "compiled",
+          "gain_estimate": -1,
+          "trip": 42,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body_i"
+        },
+        "Loop_kernel_atax_3": {
+          "status": "compiled",
+          "gain_estimate": 80,
+          "trip": 42,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body8_i"
+        },
+        "Loop_kernel_atax_4": {
+          "status": "compiled",
+          "gain_estimate": 39,
+          "trip": 42,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body25_i"
+        }
+      },
+      "agent_joint": 22972,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 22972,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_atax_3",
+          "Loop_kernel_atax_4"
+        ],
+        "joint_status": "valid"
+      }
+    },
+    "vericert24_doitgen": {
+      "split": "holdout",
+      "native_status": "valid",
+      "native": 55200,
+      "observed_checksum": "00000000",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 167912,
+        "vericert-list-scheduling": 174109,
+        "vericert-original": 386782,
+        "bambu-opt": 58910,
+        "bambu-noopt": 136692
+      },
+      "manual_ordering": 55200,
+      "manual_pipeline": 36000,
+      "manual_deployed": 36000,
+      "manual_choice": "Loop_kernel_doitgen_4",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_doitgen_4": {
+          "status": "compiled",
+          "gain_estimate": 20,
+          "trip": 12,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body9_i"
+        },
+        "Loop_kernel_doitgen_3": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_doitgen_5": {
+          "status": "compiled",
+          "gain_estimate": 10,
+          "trip": 12,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body28_i"
+        }
+      },
+      "manual_joint": 35200,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 35200,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_doitgen_4",
+          "Loop_kernel_doitgen_5"
+        ],
+        "joint_status": "valid"
+      },
+      "agent_ordering": 55200,
+      "agent_pipeline": 36000,
+      "agent_deployed": 36000,
+      "agent_choice": "Loop_kernel_doitgen_4",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_doitgen_5": {
+          "status": "compiled",
+          "gain_estimate": 10,
+          "trip": 12,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body28_i"
+        },
+        "Loop_kernel_doitgen_4": {
+          "status": "compiled",
+          "gain_estimate": 20,
+          "trip": 12,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body9_i"
+        },
+        "Loop_kernel_doitgen_3": {
+          "status": "rejected",
+          "gain_estimate": 0
+        }
+      },
+      "agent_joint": 35200,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 35200,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_doitgen_4",
+          "Loop_kernel_doitgen_5"
+        ],
+        "joint_status": "valid"
+      }
+    },
+    "vericert24_cholesky": {
+      "split": "holdout",
+      "native_status": "valid",
+      "native": 281879,
+      "observed_checksum": "00000001",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 948645,
+        "vericert-list-scheduling": 958249,
+        "vericert-original": 2575069,
+        "bambu-opt": 317584,
+        "bambu-noopt": 673392
+      },
+      "manual_ordering": 281879,
+      "manual_pipeline": 281879,
+      "manual_deployed": 281879,
+      "manual_choice": "native",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_cholesky_3": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_cholesky_2": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_cholesky_4": {
+          "status": "rejected",
+          "gain_estimate": 0
+        }
+      },
+      "manual_joint": 281879,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 281879,
+        "source": "single",
+        "positive": []
+      },
+      "agent_ordering": 281879,
+      "agent_pipeline": 281879,
+      "agent_deployed": 281879,
+      "agent_choice": "native",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_cholesky_3": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_cholesky_4": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_cholesky_2": {
+          "status": "rejected",
+          "gain_estimate": 0
+        }
+      },
+      "agent_joint": 281879,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 281879,
+        "source": "single",
+        "positive": []
+      }
+    },
+    "vericert24_durbin": {
+      "split": "holdout",
+      "native_status": "valid",
+      "native": 7808,
+      "observed_checksum": "ffffffd7",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 18812,
+        "vericert-list-scheduling": 21349,
+        "vericert-original": 23832,
+        "bambu-opt": 7492,
+        "bambu-noopt": 19021
+      },
+      "manual_ordering": 7028,
+      "manual_pipeline": 7808,
+      "manual_deployed": 7028,
+      "manual_choice": "policy",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_durbin_2": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_durbin_3": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_durbin_4": {
+          "status": "rejected",
+          "gain_estimate": 0
+        }
+      },
+      "manual_joint": 7028,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 7028,
+        "source": "single",
+        "positive": []
+      },
+      "agent_ordering": 7028,
+      "agent_pipeline": 7808,
+      "agent_deployed": 7028,
+      "agent_choice": "policy",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_durbin_2": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_durbin_4": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_durbin_3": {
+          "status": "rejected",
+          "gain_estimate": 0
+        }
+      },
+      "agent_joint": 7028,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 7028,
+        "source": "single",
+        "positive": []
+      }
+    },
+    "vericert24_lu": {
+      "split": "holdout",
+      "native_status": "rtl_failed",
+      "native": null,
+      "observed_checksum": null,
+      "native_diagnostic": "FATAL: /home/eeuser/Desktop/Light-HLS/runs/collection_verified_20261125/input/vericert24_lu/tb.v:12: RTL expected 00000001, actual 00000000 after    20000000 cycles\n       Time: 200000030000 Scope: tb\n",
+      "published": {
+        "vericert-hyperblock": 1080685,
+        "vericert-list-scheduling": 1093347,
+        "vericert-original": 2893146,
+        "bambu-opt": 360842,
+        "bambu-noopt": 771511
+      }
+    },
+    "vericert24_trisolv": {
+      "split": "holdout",
+      "native_status": "valid",
+      "native": 34780,
+      "observed_checksum": "00000000",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 17609,
+        "vericert-list-scheduling": 19916,
+        "vericert-original": 36049,
+        "bambu-opt": 7802,
+        "bambu-noopt": 17008
+      },
+      "manual_ordering": 34780,
+      "manual_pipeline": 34780,
+      "manual_deployed": 34780,
+      "manual_choice": "native",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_trisolv_2": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_trisolv_1": {
+          "status": "rejected",
+          "gain_estimate": 0
+        }
+      },
+      "manual_joint": 34780,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 34780,
+        "source": "single",
+        "positive": []
+      },
+      "agent_ordering": 34780,
+      "agent_pipeline": 34780,
+      "agent_deployed": 34780,
+      "agent_choice": "native",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_trisolv_2": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_trisolv_1": {
+          "status": "rejected",
+          "gain_estimate": 0
+        }
+      },
+      "agent_joint": 34780,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 34780,
+        "source": "single",
+        "positive": []
+      }
+    },
+    "vericert24_floyd_warshall": {
+      "split": "holdout",
+      "native_status": "valid",
+      "native": 1070392,
+      "observed_checksum": "00000010",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 3066928,
+        "vericert-list-scheduling": 3313731,
+        "vericert-original": 5414365,
+        "bambu-opt": 763578,
+        "bambu-noopt": 2003066
+      },
+      "manual_ordering": 1070392,
+      "manual_pipeline": 1070392,
+      "manual_deployed": 1070392,
+      "manual_choice": "native",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_floyd_warshall_3": {
+          "status": "compiled",
+          "gain_estimate": -1,
+          "trip": 60,
+          "ii": 4,
+          "bottleneck": "memory port capacity",
+          "block": "for_body6_i"
+        },
+        "Loop_kernel_floyd_warshall_2": {
+          "status": "compiled",
+          "gain_estimate": -14341,
+          "trip": 60,
+          "ii": 240,
+          "bottleneck": "memory port capacity",
+          "block": "for_cond4_preheader_i"
+        },
+        "Loop_kernel_floyd_warshall_1": {
+          "status": "rejected",
+          "gain_estimate": 0
+        }
+      },
+      "manual_joint": 1070392,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 1070392,
+        "source": "single",
+        "positive": []
+      },
+      "agent_ordering": 1070392,
+      "agent_pipeline": 1070392,
+      "agent_deployed": 1070392,
+      "agent_choice": "native",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_floyd_warshall_3": {
+          "status": "compiled",
+          "gain_estimate": -1,
+          "trip": 60,
+          "ii": 4,
+          "bottleneck": "memory port capacity",
+          "block": "for_body6_i"
+        },
+        "Loop_kernel_floyd_warshall_2": {
+          "status": "compiled",
+          "gain_estimate": -14341,
+          "trip": 60,
+          "ii": 240,
+          "bottleneck": "memory port capacity",
+          "block": "for_cond4_preheader_i"
+        },
+        "Loop_kernel_floyd_warshall_1": {
+          "status": "rejected",
+          "gain_estimate": 0
+        }
+      },
+      "agent_joint": 1070392,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 1070392,
+        "source": "single",
+        "positive": []
+      }
+    },
+    "vericert24_adi": {
+      "split": "holdout",
+      "native_status": "rtl_failed",
+      "native": null,
+      "observed_checksum": null,
+      "native_diagnostic": "FATAL: /home/eeuser/Desktop/Light-HLS/runs/collection_verified_20261125/input/vericert24_adi/tb.v:12: RTL expected 00000001, actual 00000000 after    20000000 cycles\n       Time: 200000030000 Scope: tb\n",
+      "published": {
+        "vericert-hyperblock": 662187,
+        "vericert-list-scheduling": 677785,
+        "vericert-original": 1831461,
+        "bambu-opt": 183919,
+        "bambu-noopt": 564373
+      }
+    },
+    "vericert24_fdtd_2d": {
+      "split": "holdout",
+      "native_status": "valid",
+      "native": 142640,
+      "observed_checksum": "00000e71",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 529160,
+        "vericert-list-scheduling": 559995,
+        "vericert-original": 958411,
+        "bambu-opt": 100760,
+        "bambu-noopt": 421291
+      },
+      "manual_ordering": 142640,
+      "manual_pipeline": 121740,
+      "manual_deployed": 121740,
+      "manual_choice": "Loop_kernel_fdtd_2d_8",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_fdtd_2d_4": {
+          "status": "compiled",
+          "gain_estimate": 27,
+          "trip": 30,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body12_i"
+        },
+        "Loop_kernel_fdtd_2d_6": {
+          "status": "compiled",
+          "gain_estimate": 26,
+          "trip": 29,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body42_i"
+        },
+        "Loop_kernel_fdtd_2d_8": {
+          "status": "compiled",
+          "gain_estimate": 55,
+          "trip": 29,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body76_i"
+        }
+      },
+      "manual_joint": 101080,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 101080,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_fdtd_2d_4",
+          "Loop_kernel_fdtd_2d_6",
+          "Loop_kernel_fdtd_2d_8"
+        ],
+        "joint_status": "valid"
+      },
+      "agent_ordering": 142640,
+      "agent_pipeline": 132380,
+      "agent_deployed": 132380,
+      "agent_choice": "Loop_kernel_fdtd_2d_4",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_fdtd_2d_2": {
+          "status": "compiled",
+          "gain_estimate": -1,
+          "trip": 30,
+          "ii": 1,
+          "bottleneck": "requested initiation interval",
+          "block": "for_body3_i"
+        },
+        "Loop_kernel_fdtd_2d_4": {
+          "status": "compiled",
+          "gain_estimate": 27,
+          "trip": 30,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body12_i"
+        },
+        "Loop_kernel_fdtd_2d_6": {
+          "status": "compiled",
+          "gain_estimate": 26,
+          "trip": 29,
+          "ii": 2,
+          "bottleneck": "memory port capacity",
+          "block": "for_body42_i"
+        }
+      },
+      "agent_joint": 121980,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 121980,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_fdtd_2d_4",
+          "Loop_kernel_fdtd_2d_6"
+        ],
+        "joint_status": "valid"
+      }
+    },
+    "vericert24_heat_3d": {
+      "split": "holdout",
+      "native_status": "valid",
+      "native": 51081,
+      "observed_checksum": "00000014",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 147909,
+        "vericert-list-scheduling": 149469,
+        "vericert-original": 592770,
+        "bambu-opt": 30377,
+        "bambu-noopt": 128208
+      },
+      "manual_ordering": 51081,
+      "manual_pipeline": 46921,
+      "manual_deployed": 46921,
+      "manual_choice": "Loop_kernel_heat_3d_4",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_heat_3d_4": {
+          "status": "compiled",
+          "gain_estimate": 13,
+          "trip": 8,
+          "ii": 7,
+          "bottleneck": "memory port capacity",
+          "block": "for_body11_i"
+        },
+        "Loop_kernel_heat_3d_7": {
+          "status": "compiled",
+          "gain_estimate": 13,
+          "trip": 8,
+          "ii": 7,
+          "bottleneck": "memory port capacity",
+          "block": "for_body112_i"
+        },
+        "Loop_kernel_heat_3d_3": {
+          "status": "compiled",
+          "gain_estimate": -331,
+          "trip": 8,
+          "ii": 42,
+          "bottleneck": "memory port capacity",
+          "block": "for_cond8_preheader_i"
+        }
+      },
+      "manual_joint": 42761,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 42761,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_heat_3d_4",
+          "Loop_kernel_heat_3d_7"
+        ],
+        "joint_status": "valid"
+      },
+      "agent_ordering": 51081,
+      "agent_pipeline": 46921,
+      "agent_deployed": 46921,
+      "agent_choice": "Loop_kernel_heat_3d_4",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_heat_3d_4": {
+          "status": "compiled",
+          "gain_estimate": 13,
+          "trip": 8,
+          "ii": 7,
+          "bottleneck": "memory port capacity",
+          "block": "for_body11_i"
+        },
+        "Loop_kernel_heat_3d_7": {
+          "status": "compiled",
+          "gain_estimate": 13,
+          "trip": 8,
+          "ii": 7,
+          "bottleneck": "memory port capacity",
+          "block": "for_body112_i"
+        },
+        "Loop_kernel_heat_3d_3": {
+          "status": "compiled",
+          "gain_estimate": -331,
+          "trip": 8,
+          "ii": 42,
+          "bottleneck": "memory port capacity",
+          "block": "for_cond8_preheader_i"
+        }
+      },
+      "agent_joint": 42761,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 42761,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_heat_3d_4",
+          "Loop_kernel_heat_3d_7"
+        ],
+        "joint_status": "valid"
+      }
+    },
+    "vericert24_jacobi_2d": {
+      "split": "holdout",
+      "native_status": "valid",
+      "native": 83761,
+      "observed_checksum": "000000a2",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 184948,
+        "vericert-list-scheduling": 202487,
+        "vericert-original": 397199,
+        "bambu-opt": 52526,
+        "bambu-noopt": 170863
+      },
+      "manual_ordering": 83761,
+      "manual_pipeline": 80121,
+      "manual_deployed": 80121,
+      "manual_choice": "Loop_kernel_jacobi_2d_3",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_jacobi_2d_3": {
+          "status": "compiled",
+          "gain_estimate": 26,
+          "trip": 28,
+          "ii": 5,
+          "bottleneck": "memory port capacity",
+          "block": "for_body7_i"
+        },
+        "Loop_kernel_jacobi_2d_5": {
+          "status": "compiled",
+          "gain_estimate": 26,
+          "trip": 28,
+          "ii": 5,
+          "bottleneck": "memory port capacity",
+          "block": "for_body56_i"
+        },
+        "Loop_kernel_jacobi_2d_2": {
+          "status": "compiled",
+          "gain_estimate": -2410,
+          "trip": 28,
+          "ii": 87,
+          "bottleneck": "memory port capacity",
+          "block": "for_cond4_preheader_i"
+        }
+      },
+      "manual_joint": 76481,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 76481,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_jacobi_2d_3",
+          "Loop_kernel_jacobi_2d_5"
+        ],
+        "joint_status": "valid"
+      },
+      "agent_ordering": 83761,
+      "agent_pipeline": 80121,
+      "agent_deployed": 80121,
+      "agent_choice": "Loop_kernel_jacobi_2d_3",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_jacobi_2d_3": {
+          "status": "compiled",
+          "gain_estimate": 26,
+          "trip": 28,
+          "ii": 5,
+          "bottleneck": "memory port capacity",
+          "block": "for_body7_i"
+        },
+        "Loop_kernel_jacobi_2d_5": {
+          "status": "compiled",
+          "gain_estimate": 26,
+          "trip": 28,
+          "ii": 5,
+          "bottleneck": "memory port capacity",
+          "block": "for_body56_i"
+        },
+        "Loop_kernel_jacobi_2d_2": {
+          "status": "compiled",
+          "gain_estimate": -2410,
+          "trip": 28,
+          "ii": 87,
+          "bottleneck": "memory port capacity",
+          "block": "for_cond4_preheader_i"
+        }
+      },
+      "agent_joint": 76481,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 76481,
+        "source": "joint",
+        "positive": [
+          "Loop_kernel_jacobi_2d_3",
+          "Loop_kernel_jacobi_2d_5"
+        ],
+        "joint_status": "valid"
+      }
+    },
+    "vericert24_seidel_2d": {
+      "split": "holdout",
+      "native_status": "valid",
+      "native": 267172,
+      "observed_checksum": "00000027",
+      "native_diagnostic": null,
+      "published": {
+        "vericert-hyperblock": 302333,
+        "vericert-list-scheduling": 377683,
+        "vericert-original": 942337,
+        "bambu-opt": 146453,
+        "bambu-noopt": 301671
+      },
+      "manual_ordering": 267172,
+      "manual_pipeline": 267172,
+      "manual_deployed": 267172,
+      "manual_choice": "native",
+      "manual_deployed_status": "valid",
+      "manual_pipeline_attempts": {
+        "Loop_kernel_seidel_2d_3": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_seidel_2d_2": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_seidel_2d_1": {
+          "status": "rejected",
+          "gain_estimate": 0
+        }
+      },
+      "manual_joint": 267172,
+      "manual_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 267172,
+        "source": "single",
+        "positive": []
+      },
+      "agent_ordering": 267172,
+      "agent_pipeline": 267172,
+      "agent_deployed": 267172,
+      "agent_choice": "native",
+      "agent_deployed_status": "valid",
+      "agent_pipeline_attempts": {
+        "Loop_kernel_seidel_2d_3": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_seidel_2d_2": {
+          "status": "rejected",
+          "gain_estimate": 0
+        },
+        "Loop_kernel_seidel_2d_1": {
+          "status": "rejected",
+          "gain_estimate": 0
+        }
+      },
+      "agent_joint": 267172,
+      "agent_joint_diagnosis": {
+        "status": "valid",
+        "cycles": 267172,
+        "source": "single",
+        "positive": []
+      }
+    }
+  }
+}

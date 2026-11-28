@@ -3,6 +3,7 @@
 
 #include "HI_FloatingPoint.h"
 #include "llvm/IR/IRBuilder.h"
+#include "llvm/IR/IntrinsicInst.h"
 #include "llvm/IR/Module.h"
 #include "llvm/Transforms/Utils/Cloning.h"
 #include <functional>
@@ -11,6 +12,39 @@
 #include <vector>
 
 namespace light_hls { namespace backend {
+
+// Clang canonicalizes even simple loop bounds and integer comparisons to
+// llvm.{s,u}{min,max}. Map the scalar intrinsics to the RTL backend's cmp/mux.
+inline unsigned lowerIntegerMinMax(llvm::Module &module)
+{
+    using namespace llvm;
+    std::vector<std::pair<IntrinsicInst *, CmpInst::Predicate>> calls;
+    for (Function &function : module)
+        for (BasicBlock &block : function)
+            for (Instruction &inst : block)
+            {
+                auto *call = dyn_cast<IntrinsicInst>(&inst);
+                if (!call || !call->getType()->isIntegerTy())
+                    continue;
+                switch (call->getIntrinsicID())
+                {
+                case Intrinsic::smin: calls.emplace_back(call, CmpInst::ICMP_SLT); break;
+                case Intrinsic::smax: calls.emplace_back(call, CmpInst::ICMP_SGT); break;
+                case Intrinsic::umin: calls.emplace_back(call, CmpInst::ICMP_ULT); break;
+                case Intrinsic::umax: calls.emplace_back(call, CmpInst::ICMP_UGT); break;
+                default: break;
+                }
+            }
+    for (auto [call, predicate] : calls)
+    {
+        IRBuilder<> builder(call);
+        builder.SetCurrentDebugLocation(call->getDebugLoc());
+        Value *a = call->getArgOperand(0), *b = call->getArgOperand(1);
+        call->replaceAllUsesWith(builder.CreateSelect(builder.CreateICmp(predicate, a, b), a, b));
+        call->eraseFromParent();
+    }
+    return calls.size();
+}
 
 inline unsigned inlineDirectBackendCalls(llvm::Module &module)
 {

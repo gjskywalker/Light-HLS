@@ -1,0 +1,178 @@
+{
+  "hoist": {
+    "compiler_sha256": "89fa2dbc27118c90fbf56538abd2e7ae957e535c153eca57d6b3f180f010f889",
+    "cases": {
+      "nussinov": {
+        "status": "valid",
+        "cycles": 180656,
+        "checksum": "0000001c",
+        "oracle_hex": "0000001c",
+        "adapter_sha256": "4c252d3427906953cb040ecf92b950a450b4571324f7b8cd6ae02afb1d87b08f",
+        "rtl_sha256": "843606980c0b6b75b54c88ed4c83a621a78f4e4a551a3c40a9ce264a090b220b"
+      },
+      "lu": {
+        "status": "valid",
+        "cycles": 336784,
+        "checksum": "00000001",
+        "oracle_hex": "00000001",
+        "adapter_sha256": "eca16264a1298bd81b4a2ad82399b4a3a94fbf538f42e59ed11aa9a3d037e37a",
+        "rtl_sha256": "1b36ad4afdb8c9c5cf478f7e0b1ac1330c1d553a1c48434cec6468299f39f224"
+      },
+      "adi": {
+        "status": "rtl_failed",
+        "diagnostic": "FATAL: /home/eeuser/Desktop/Light-HLS/runs/collection_verified_20261125/input/vericert24_adi/tb.v:12: RTL expected 00000001, actual 00000000 after    20000000 cycles\n       Time: 200000030000 Scope: tb\n",
+        "oracle_hex": "00000001",
+        "adapter_sha256": "60f9777de10ead228b38431b12d07562712c170523ac7d2eff5e46a476fe714b",
+        "rtl_sha256": "052c10a9b4e4ce415a0d0101e716ec0048cc106c2adb14ad78e9e7124011582c"
+      }
+    },
+    "output_arrays": {
+      "lu": {
+        "array": "A",
+        "words": 1600,
+        "mismatches": 0,
+        "first_mismatches": [],
+        "simulation": "cycles=336784 return=00000001",
+        "native_memory_sha256": "43060875d7d1498d5729d9efc5a110bbe71a41bbca324f5660dcbdfed0257616",
+        "rtl_memory_sha256": "43060875d7d1498d5729d9efc5a110bbe71a41bbca324f5660dcbdfed0257616"
+      },
+      "nussinov": {
+        "array": "table",
+        "words": 3600,
+        "mismatches": 0,
+        "first_mismatches": [],
+        "simulation": "cycles=180656 return=0000001c",
+        "native_memory_sha256": "18a5927400ec592c9c97b85684c358c991c9326855320814f451cdd0fadf0fb3",
+        "rtl_memory_sha256": "18a5927400ec592c9c97b85684c358c991c9326855320814f451cdd0fadf0fb3"
+      }
+    },
+    "regression": {
+      "expected_suites": 27,
+      "completed_suites": 27,
+      "complete": true,
+      "statuses": {
+        "AppCorrectness": "PASS",
+        "RTL_Backend": "PASS",
+        "PipelineBackend": "PASS",
+        "PipelineStorage": "PASS",
+        "ArrayPartitionBackend": "PASS",
+        "OrdinaryBankAnalysis": "PASS",
+        "LocalWriteData": "PASS",
+        "FIFOEvents": "PASS",
+        "OrdinaryFeedback": "PASS",
+        "OrdinaryBackedge": "PASS",
+        "OrdinaryLoopEdges": "PASS",
+        "TransactionEdges": "PASS",
+        "ScalarBankEvents": "PASS",
+        "ScalarReturns": "PASS",
+        "PIPOBanks": "PASS",
+        "BindingCost": "PASS",
+        "QoRPressure": "PASS",
+        "BankConflict": "PASS",
+        "ArithmeticMapping": "PASS",
+        "DataflowCompletion": "PASS",
+        "StorageBindingBackend": "PASS",
+        "DataflowBackend": "PASS",
+        "FairComparisonInterface": "PASS",
+        "AppCapability": "PASS",
+        "FairComparisonQoR": "PASS",
+        "TransactionEventMetrics": "PASS",
+        "EvaluationContract": "PASS"
+      }
+    },
+    "adi_first_unknown_read": "unknown memory=u write=0 edge=8854 state=82 address=476",
+    "adi_four_state_near_final": "cycle=219481 state=38 done=0 return=00000000 accumulated=0040445f bound=xxxxxxxx sum=0040445f exit=x"
+  },
+  "byte_gep": {
+    "compiler_sha256": "4f7f72da2a3f70ded431f4281af82fc2c574c2396847f6768c0bc7befde6776a",
+    "cases": {
+      "nussinov": {
+        "status": "valid",
+        "cycles": 180656,
+        "checksum": "0000001c",
+        "oracle_hex": "0000001c",
+        "adapter_sha256": "4c252d3427906953cb040ecf92b950a450b4571324f7b8cd6ae02afb1d87b08f",
+        "rtl_sha256": "843606980c0b6b75b54c88ed4c83a621a78f4e4a551a3c40a9ce264a090b220b"
+      },
+      "lu": {
+        "status": "valid",
+        "cycles": 336784,
+        "checksum": "00000001",
+        "oracle_hex": "00000001",
+        "adapter_sha256": "eca16264a1298bd81b4a2ad82399b4a3a94fbf538f42e59ed11aa9a3d037e37a",
+        "rtl_sha256": "1b36ad4afdb8c9c5cf478f7e0b1ac1330c1d553a1c48434cec6468299f39f224"
+      },
+      "adi": {
+        "status": "valid",
+        "cycles": 271321,
+        "checksum": "00000001",
+        "oracle_hex": "00000001",
+        "adapter_sha256": "60f9777de10ead228b38431b12d07562712c170523ac7d2eff5e46a476fe714b",
+        "rtl_sha256": "dcde9cbe5cf752d55a10b71b00d57be01196ad7edd7bf886f1555af362860be5"
+      }
+    },
+    "output_arrays": {
+      "lu": {
+        "array": "A",
+        "words": 1600,
+        "mismatches": 0,
+        "first_mismatches": [],
+        "simulation": "cycles=336784 return=00000001",
+        "native_memory_sha256": "43060875d7d1498d5729d9efc5a110bbe71a41bbca324f5660dcbdfed0257616",
+        "rtl_memory_sha256": "43060875d7d1498d5729d9efc5a110bbe71a41bbca324f5660dcbdfed0257616"
+      },
+      "adi": {
+        "array": "u",
+        "words": 400,
+        "mismatches": 0,
+        "first_mismatches": [],
+        "simulation": "cycles=271321 return=00000001",
+        "native_memory_sha256": "17ae796fc6f2008d817f7a5e385e126814ab15b5d9e354b2cb98e6e8b190740f",
+        "rtl_memory_sha256": "17ae796fc6f2008d817f7a5e385e126814ab15b5d9e354b2cb98e6e8b190740f"
+      },
+      "nussinov": {
+        "array": "table",
+        "words": 3600,
+        "mismatches": 0,
+        "first_mismatches": [],
+        "simulation": "cycles=180656 return=0000001c",
+        "native_memory_sha256": "18a5927400ec592c9c97b85684c358c991c9326855320814f451cdd0fadf0fb3",
+        "rtl_memory_sha256": "18a5927400ec592c9c97b85684c358c991c9326855320814f451cdd0fadf0fb3"
+      }
+    },
+    "regression": {
+      "expected_suites": 27,
+      "completed_suites": 27,
+      "complete": true,
+      "statuses": {
+        "AppCorrectness": "PASS",
+        "RTL_Backend": "PASS",
+        "PipelineBackend": "PASS",
+        "PipelineStorage": "PASS",
+        "ArrayPartitionBackend": "PASS",
+        "OrdinaryBankAnalysis": "PASS",
+        "LocalWriteData": "PASS",
+        "FIFOEvents": "PASS",
+        "OrdinaryFeedback": "PASS",
+        "OrdinaryBackedge": "PASS",
+        "OrdinaryLoopEdges": "PASS",
+        "TransactionEdges": "PASS",
+        "ScalarBankEvents": "PASS",
+        "ScalarReturns": "PASS",
+        "PIPOBanks": "PASS",
+        "BindingCost": "PASS",
+        "QoRPressure": "PASS",
+        "BankConflict": "PASS",
+        "ArithmeticMapping": "PASS",
+        "DataflowCompletion": "PASS",
+        "StorageBindingBackend": "PASS",
+        "DataflowBackend": "PASS",
+        "FairComparisonInterface": "PASS",
+        "AppCapability": "PASS",
+        "FairComparisonQoR": "PASS",
+        "TransactionEventMetrics": "PASS",
+        "EvaluationContract": "PASS"
+      }
+    }
+  }
+}

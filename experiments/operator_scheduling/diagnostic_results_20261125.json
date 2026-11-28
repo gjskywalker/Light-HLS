@@ -1,0 +1,1552 @@
+{
+  "protocol": {
+    "dev": [
+      "lookup_xor",
+      "mix_words",
+      "weighted_sum",
+      "dot_product",
+      "bit_extract"
+    ],
+    "holdout": [
+      "crc_step",
+      "wavelet_lift",
+      "hamming_distance",
+      "majority_vote",
+      "linear_interp",
+      "horner_eval",
+      "table_blend",
+      "sum_squares"
+    ],
+    "arms": [
+      "A",
+      "B",
+      "C"
+    ],
+    "rounds": 2,
+    "repeats": 3,
+    "model": "gpt-6.1-sol",
+    "effort": "low",
+    "max_queries_per_round": 5,
+    "model_calls_per_round": 2,
+    "max_development_evaluations_per_round": 5,
+    "model_timeout": 150,
+    "policy_timeout": 3,
+    "frequency": "250MHz",
+    "selection": "maximize dev RTL coverage, minimize valid geomean ratio, earliest index including seed",
+    "seed": "def priority(op):\n    return 0\n",
+    "compiler_sha256": "a6223e1ff3a7a7f5dbfcd978c728c064ad35e76338269eb7a6e29fd04cfc7bb7",
+    "cpu": 0,
+    "codex": "codex-cli 0.170.0",
+    "git_revision": "6d5d757ed74f572698f2533f1aceb9125bece10a",
+    "source_sha256": {
+      "diagnostic_flow.py": "37ce8b7f5895812bdfa1d9ab23c203d66e5cb116336660c4f0cc240996674c0d",
+      "diagnostic_kernels.c": "eea838545bcead3203d09079bb9abd88c553edb044afb18b6559a149fee85f26",
+      "flow_pilot.c": "95ba692a33e1c632c694689702788db1f4dcdbaa34b6548e38852b31e1f20d28",
+      "HI_OperationScheduling.cc": "5225748cda13c0d8be5844e3b48fcdc6b6e83d3fab5e3c386e1d2ecdccbeb113",
+      "flow_pilot.py": "d521bb95f6fb6d76a07f3a72d2c8c445de57df3446b3a9275d2df8148244302d",
+      "run_round.py": "a1fbc47943369c34a2f1b6f33e2491dd34ae5f499f06720b1ca029e0d0869f86",
+      "flow_schedule.py": "aaf413b4df6ab23d151966801d6f99dcba17d581dbe948e9bc7e8bbe95dae206",
+      "flow_pilot_tb.v": "46470b12766191d54618e610725d20e09e517ddee08eca203888b261dbe72d68"
+    }
+  },
+  "graph_hashes": {
+    "lookup_xor": "1ccbdbc50120e087536bc067f8bc73a096b57eb7224de0cf219b42a99be2ee67",
+    "mix_words": "135baf574bc46ca7bea8a0d2d72ec485a9dafa36e151d16e8e2c1d9320a6dc60",
+    "weighted_sum": "0e379b1702b87bca3c33aaa9088af6851a9235e8912d6f4612080d4471875a02",
+    "dot_product": "25b97dcf80fac60ae1b1350a935a9497d9d8926f1c39aa7b5953ef9c890a17d9",
+    "bit_extract": "3741c0f664ff6b88f4bf8a53e18914bdebd8e572cbb02d2569e640f9cfd4eeee",
+    "crc_step": "2e871a3aaaef537b5e853a3518ef39e2d59224d3566c1befe9e593890cdd6fb3",
+    "wavelet_lift": "700f4882b28201e8ee1e1ba0dc8e9523631e89f559bf577e65f0660b3d8978f6",
+    "hamming_distance": "656c9b1e3f47f3927ecdfd6b8a137531a4dea21fab724916d90943d91299e14a",
+    "majority_vote": "208b12ffbb22ab9b6745077ae825a633ae403d4e129a90d36f04331943b350e3",
+    "linear_interp": "604abeb40721d90c7a165fd28b74b63ac13e4dd9b1eb0cb6f6d795552f099e2d",
+    "horner_eval": "e639c85965d1935f80b072986e2047112a343f6603fa70609b33ab1102f43478",
+    "table_blend": "c840307c2be044d6d76c34e7cf33f8521f2fc2047c8bbaf9e18440bb767d0b1a",
+    "sum_squares": "6742378063bab6ff54acfbba120b6901d1e2979aa67127650616da8862225ada"
+  },
+  "baseline": {
+    "lookup_xor": {
+      "native": 5,
+      "graph_opt": 5,
+      "exact_replay": 5,
+      "critical_path_replay": null
+    },
+    "mix_words": {
+      "native": 5,
+      "graph_opt": 4,
+      "exact_replay": 4,
+      "critical_path_replay": 4
+    },
+    "weighted_sum": {
+      "native": 6,
+      "graph_opt": 5,
+      "exact_replay": 5,
+      "critical_path_replay": 5
+    },
+    "dot_product": {
+      "native": 7,
+      "graph_opt": 7,
+      "exact_replay": 7,
+      "critical_path_replay": 7
+    },
+    "bit_extract": {
+      "native": 5,
+      "graph_opt": 5,
+      "exact_replay": 5,
+      "critical_path_replay": 5
+    },
+    "crc_step": {
+      "native": 5,
+      "graph_opt": 5,
+      "exact_replay": 5,
+      "critical_path_replay": 5
+    },
+    "wavelet_lift": {
+      "native": 6,
+      "graph_opt": 6,
+      "exact_replay": 6,
+      "critical_path_replay": 6
+    },
+    "hamming_distance": {
+      "native": 8,
+      "graph_opt": 6,
+      "exact_replay": 6,
+      "critical_path_replay": 6
+    },
+    "majority_vote": {
+      "native": 5,
+      "graph_opt": 5,
+      "exact_replay": 5,
+      "critical_path_replay": 5
+    },
+    "linear_interp": {
+      "native": 5,
+      "graph_opt": 5,
+      "exact_replay": 5,
+      "critical_path_replay": 5
+    },
+    "horner_eval": {
+      "native": 8,
+      "graph_opt": 7,
+      "exact_replay": 7,
+      "critical_path_replay": 7
+    },
+    "table_blend": {
+      "native": 7,
+      "graph_opt": 7,
+      "exact_replay": 7,
+      "critical_path_replay": 7
+    },
+    "sum_squares": {
+      "native": 7,
+      "graph_opt": 6,
+      "exact_replay": 6,
+      "critical_path_replay": 6
+    }
+  },
+  "extra_vector_seed": 20261125,
+  "extra_vectors": 32,
+  "distinct_schedules_replayed": 11,
+  "policies": {
+    "4bcce18a5cdb0e15083d36e991f7ca8fef974c22379fcbbc871f18e29df5c67f": "def priority(op):\n    return 0\n",
+    "ef6dd9ca579de6f645c16b4c225ce2280578fc7927138a1867aebabe05334c22": "def priority(op):\n    return float(op[\"tail\"])\n\n",
+    "486f1dac489d1e204d79810eccf9d40df9a97fd4cee2ecfa54ab7de3f4c3e720": "def priority(op):\n    if op[\"uses_port\"]:\n        return 0\n    return float(op[\"tail\"])\n\n",
+    "447898a588eca9c1fe8c9b66d4cee487603eba5d44361e830d43b645fb2c9f8e": "def priority(op):\n    return op[\"tail\"]\n\n",
+    "e9360e3ceb97affe34dd94987f704b86c94898428265c0f268da200e3c6a53ed": "def priority(op):\n    if op[\"latency\"] > 0:\n        if not op[\"uses_port\"]:\n            return op[\"tail\"]\n    return 0\n\n",
+    "d9c013099a87df4ce67b50e45a8a44b4cb2b3fb8f16488d5612a5ee9ab03ab7f": "def priority(op):\n    tail = max(0.0, float(op[\"tail\"]))\n    score = tail / (1.0 + tail)\n    if op[\"uses_port\"]:\n        score = score + 2.0\n    return score\n\n",
+    "41595cd9622c7eb34976f49908602e8e4254ef0a5692080ef3736f31a17109d3": "def priority(op):\n    if op[\"uses_port\"]:\n        return 0\n    return op[\"tail\"]\n\n",
+    "ee322e5bb0fb346e66a964cf7847c3966900ba8ad9b4d5b97be68a26ee3e6907": "def priority(op):\n    if op[\"uses_port\"]:\n        return op[\"tail\"]\n    return 0\n\n",
+    "db887d6ba28289350918383906a42ae0baa57238c50a857e760900935b2bb3a9": "def priority(op):\n    if not op[\"uses_port\"] and op[\"latency\"] == 0:\n        return 2\n    if op[\"uses_port\"]:\n        tail = op[\"tail\"]\n        return tail / (1 + abs(tail))\n    return 0\n\n",
+    "e7752745cca3d755f43a89850da9597d98e23585887507c74ea09464d66baaf5": "def priority(op):\n    return min(1000000000, max(0, op[\"tail\"]))\n\n",
+    "0464bb0101816bf561a7291ac4e0f526583a5e14c4e93243f2ade5356eb9139d": "def priority(op):\n    if op[\"uses_port\"]:\n        return 0\n    if op[\"latency\"] > 0:\n        return min(1000000000, max(0, op[\"tail\"]))\n    return 0\n\n",
+    "ba5dfe5651fba157fd112b437a9c46791613aede92889ec97b0fb748268e3fbe": "def priority(op):\n    score = float(op[\"tail\"])\n    if op[\"uses_port\"] and op[\"competing_requests\"] > 0:\n        requests = max(0, op[\"downstream_requests\"])\n        score = score + 0.25 * requests / (1 + requests)\n    return score\n\n",
+    "ff1e2f721253a8eb735cbd6b42f26acfee97e4234f13b46ea6f37d63a15d2ba3": "def priority(op):\n    score = 0.0\n    if not op[\"uses_port\"]:\n        score = float(op[\"tail\"])\n    return score\n\n",
+    "018e962ed6864e01ce27f9afb0f694ab9b8b30575b61ea0fd1c4fe8080da8912": "def priority(op):\n    score = float(op[\"tail\"])\n    if op[\"uses_port\"] and op[\"competing_requests\"] > 0:\n        requests = max(0.0, float(op[\"downstream_requests\"]))\n        score = score + 0.001 * requests / (1.0 + requests)\n    return score\n\n",
+    "a55aae8e42e932653e450f2ae8463d3d330874e53fc70f4010776b940fc89666": "def priority(op):\n    if op[\"latency\"] == 0 and not op[\"uses_port\"]:\n        return 1.0 + max(0.0, float(op[\"tail\"]))\n    return 0.0\n\n",
+    "bd4a4e20c49376bb85663879e310f2b654b7ee6b096a9791db1a525542106864": "def priority(op):\n    if op[\"uses_port\"]:\n        return 1.0\n    tail = float(op[\"tail\"])\n    return tail / (1.0 + abs(tail))\n\n"
+  },
+  "trials": [
+    {
+      "arm": "A",
+      "repeat": 1,
+      "selected": 0,
+      "candidates": [
+        {
+          "index": 0,
+          "parent": null,
+          "sha256": "4bcce18a5cdb0e15083d36e991f7ca8fef974c22379fcbbc871f18e29df5c67f",
+          "dev": {
+            "lookup_xor": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 6
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        },
+        {
+          "index": 1,
+          "parent": 0,
+          "sha256": "ef6dd9ca579de6f645c16b4c225ce2280578fc7927138a1867aebabe05334c22",
+          "dev": {
+            "lookup_xor": {
+              "status": "rtl_replay_failed",
+              "cycles": null
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 4
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        },
+        {
+          "index": 2,
+          "parent": 0,
+          "sha256": "486f1dac489d1e204d79810eccf9d40df9a97fd4cee2ecfa54ab7de3f4c3e720",
+          "dev": {
+            "lookup_xor": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 6
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        }
+      ],
+      "queries": [
+        [],
+        []
+      ],
+      "hypotheses": [
+        "Prioritizing larger op[\"tail\"] should reduce critical-path stalls across kernels; confirm if all five RTL cases pass and geometric mean cycles versus native falls below 1, otherwise refute.",
+        "Prioritize tail only for operations that do not use a port, retaining native order among port users; confirm if all five RTL cases pass and geometric mean cycles versus native is below 1, otherwise refute."
+      ],
+      "calls": [
+        "generated",
+        "generated",
+        "generated",
+        "generated"
+      ],
+      "development_replays": 10,
+      "holdout_replays": 8,
+      "development_compiles": 10,
+      "holdout_compiles": 8,
+      "tokens": {
+        "input_tokens": 47039,
+        "output_tokens": 421,
+        "reasoning_output_tokens": 117
+      },
+      "holdout": {
+        "crc_step": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "wavelet_lift": {
+          "status": "valid",
+          "cycles": 6
+        },
+        "hamming_distance": {
+          "status": "valid",
+          "cycles": 8
+        },
+        "majority_vote": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "linear_interp": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "horner_eval": {
+          "status": "valid",
+          "cycles": 8
+        },
+        "table_blend": {
+          "status": "valid",
+          "cycles": 7
+        },
+        "sum_squares": {
+          "status": "valid",
+          "cycles": 7
+        }
+      }
+    },
+    {
+      "arm": "B",
+      "repeat": 1,
+      "selected": 0,
+      "candidates": [
+        {
+          "index": 0,
+          "parent": null,
+          "sha256": "4bcce18a5cdb0e15083d36e991f7ca8fef974c22379fcbbc871f18e29df5c67f",
+          "dev": {
+            "lookup_xor": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 6
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        },
+        {
+          "index": 1,
+          "parent": 0,
+          "sha256": "447898a588eca9c1fe8c9b66d4cee487603eba5d44361e830d43b645fb2c9f8e",
+          "dev": {
+            "lookup_xor": {
+              "status": "rtl_replay_failed",
+              "cycles": null
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 4
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        },
+        {
+          "index": 2,
+          "parent": 0,
+          "sha256": "e9360e3ceb97affe34dd94987f704b86c94898428265c0f268da200e3c6a53ed",
+          "dev": {
+            "lookup_xor": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 6
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        }
+      ],
+      "queries": [
+        [
+          "lookup_xor/overview",
+          "mix_words/overview",
+          "weighted_sum/overview",
+          "dot_product/overview",
+          "bit_extract/overview"
+        ],
+        [
+          "lookup_xor/overview",
+          "mix_words/overview",
+          "weighted_sum/overview",
+          "dot_product/overview",
+          "bit_extract/overview"
+        ]
+      ],
+      "hypotheses": [
+        "Replace the constant score with op[\"tail\"], preserving native order on ties. Confirm if all five RTL cases pass and geometric mean cycles improves; refute if any RTL case fails or the mean does not improve.",
+        "Score op[\"tail\"] only when op[\"latency\"] > 0 and not op[\"uses_port\"]; otherwise return 0. This may accelerate computation while preserving ties among ports and zero-latency operations. Confirm with all five RTL passes and lower geometric mean cycles; refute on any failure or no improvement."
+      ],
+      "calls": [
+        "generated",
+        "generated",
+        "generated",
+        "generated"
+      ],
+      "development_replays": 10,
+      "holdout_replays": 8,
+      "development_compiles": 10,
+      "holdout_compiles": 8,
+      "tokens": {
+        "input_tokens": 50804,
+        "output_tokens": 648,
+        "reasoning_output_tokens": 279,
+        "cached_input_tokens": 10880
+      },
+      "holdout": {
+        "crc_step": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "wavelet_lift": {
+          "status": "valid",
+          "cycles": 6
+        },
+        "hamming_distance": {
+          "status": "valid",
+          "cycles": 8
+        },
+        "majority_vote": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "linear_interp": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "horner_eval": {
+          "status": "valid",
+          "cycles": 8
+        },
+        "table_blend": {
+          "status": "valid",
+          "cycles": 7
+        },
+        "sum_squares": {
+          "status": "valid",
+          "cycles": 7
+        }
+      }
+    },
+    {
+      "arm": "C",
+      "repeat": 1,
+      "selected": 2,
+      "candidates": [
+        {
+          "index": 0,
+          "parent": null,
+          "sha256": "4bcce18a5cdb0e15083d36e991f7ca8fef974c22379fcbbc871f18e29df5c67f",
+          "dev": {
+            "lookup_xor": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 6
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        },
+        {
+          "index": 1,
+          "parent": 0,
+          "sha256": "ef6dd9ca579de6f645c16b4c225ce2280578fc7927138a1867aebabe05334c22",
+          "dev": {
+            "lookup_xor": {
+              "status": "rtl_replay_failed",
+              "cycles": null
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 4
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        },
+        {
+          "index": 2,
+          "parent": 1,
+          "sha256": "d9c013099a87df4ce67b50e45a8a44b4cb2b3fb8f16488d5612a5ee9ab03ab7f",
+          "dev": {
+            "lookup_xor": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        }
+      ],
+      "queries": [
+        [
+          "lookup_xor/overview",
+          "mix_words/overview",
+          "weighted_sum/overview",
+          "dot_product/overview",
+          "bit_extract/overview"
+        ],
+        [
+          "lookup_xor/diff",
+          "lookup_xor/cycle/0",
+          "lookup_xor/cycle/1",
+          "mix_words/diff",
+          "weighted_sum/diff"
+        ]
+      ],
+      "hypotheses": [
+        "Prioritizing larger tail among eligible operations should shorten critical dependency chains; confirm if RTL cycles improve while all five cases retain RTL validity, and refute if replay fails or geometric mean cycles does not decrease.",
+        "Prioritizing ready port-using operations over zero-latency operations, then ranking by tail, may prevent address-generation lookahead from changing load forwarding. Confirm if lookup_xor passes RTL replay while mix_words and weighted_sum retain their cycle reductions; refute if replay still fails or those gains disappear."
+      ],
+      "calls": [
+        "generated",
+        "generated",
+        "generated",
+        "generated"
+      ],
+      "development_replays": 10,
+      "holdout_replays": 8,
+      "development_compiles": 10,
+      "holdout_compiles": 8,
+      "tokens": {
+        "input_tokens": 50859,
+        "output_tokens": 622,
+        "reasoning_output_tokens": 195
+      },
+      "holdout": {
+        "crc_step": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "wavelet_lift": {
+          "status": "valid",
+          "cycles": 6
+        },
+        "hamming_distance": {
+          "status": "valid",
+          "cycles": 7
+        },
+        "majority_vote": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "linear_interp": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "horner_eval": {
+          "status": "valid",
+          "cycles": 8
+        },
+        "table_blend": {
+          "status": "valid",
+          "cycles": 7
+        },
+        "sum_squares": {
+          "status": "valid",
+          "cycles": 7
+        }
+      }
+    },
+    {
+      "arm": "A",
+      "repeat": 2,
+      "selected": 0,
+      "candidates": [
+        {
+          "index": 0,
+          "parent": null,
+          "sha256": "4bcce18a5cdb0e15083d36e991f7ca8fef974c22379fcbbc871f18e29df5c67f",
+          "dev": {
+            "lookup_xor": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 6
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        },
+        {
+          "index": 1,
+          "parent": 0,
+          "sha256": "447898a588eca9c1fe8c9b66d4cee487603eba5d44361e830d43b645fb2c9f8e",
+          "dev": {
+            "lookup_xor": {
+              "status": "rtl_replay_failed",
+              "cycles": null
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 4
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        },
+        {
+          "index": 2,
+          "parent": 0,
+          "sha256": "41595cd9622c7eb34976f49908602e8e4254ef0a5692080ef3736f31a17109d3",
+          "dev": {
+            "lookup_xor": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 6
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        }
+      ],
+      "queries": [
+        [],
+        []
+      ],
+      "hypotheses": [
+        "Test def priority(op): return op[\"tail\"]. Prioritizing the longest remaining dependency path should reduce geometric mean RTL cycles while preserving all five RTL passes; any lost pass or no cycle reduction refutes the hypothesis.",
+        "Use score 0 for port-using operations and tail for other operations. Prioritizing dependency progress while preserving native port arbitration should retain all five RTL passes and reduce geometric mean cycles; any replay failure or no geometric mean reduction refutes this."
+      ],
+      "calls": [
+        "generated",
+        "generated",
+        "generated",
+        "generated"
+      ],
+      "development_replays": 10,
+      "holdout_replays": 8,
+      "development_compiles": 10,
+      "holdout_compiles": 8,
+      "tokens": {
+        "input_tokens": 46124,
+        "output_tokens": 466,
+        "reasoning_output_tokens": 154
+      },
+      "holdout": {
+        "crc_step": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "wavelet_lift": {
+          "status": "valid",
+          "cycles": 6
+        },
+        "hamming_distance": {
+          "status": "valid",
+          "cycles": 8
+        },
+        "majority_vote": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "linear_interp": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "horner_eval": {
+          "status": "valid",
+          "cycles": 8
+        },
+        "table_blend": {
+          "status": "valid",
+          "cycles": 7
+        },
+        "sum_squares": {
+          "status": "valid",
+          "cycles": 7
+        }
+      }
+    },
+    {
+      "arm": "B",
+      "repeat": 2,
+      "selected": 1,
+      "candidates": [
+        {
+          "index": 0,
+          "parent": null,
+          "sha256": "4bcce18a5cdb0e15083d36e991f7ca8fef974c22379fcbbc871f18e29df5c67f",
+          "dev": {
+            "lookup_xor": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 6
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        },
+        {
+          "index": 1,
+          "parent": 0,
+          "sha256": "ee322e5bb0fb346e66a964cf7847c3966900ba8ad9b4d5b97be68a26ee3e6907",
+          "dev": {
+            "lookup_xor": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        },
+        {
+          "index": 2,
+          "parent": 1,
+          "sha256": "db887d6ba28289350918383906a42ae0baa57238c50a857e760900935b2bb3a9",
+          "dev": {
+            "lookup_xor": {
+              "status": "rtl_replay_failed",
+              "cycles": null
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 4
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        }
+      ],
+      "queries": [
+        [
+          "lookup_xor/overview",
+          "mix_words/overview",
+          "weighted_sum/overview",
+          "dot_product/overview",
+          "bit_extract/overview"
+        ],
+        [
+          "lookup_xor/overview",
+          "mix_words/overview",
+          "weighted_sum/overview",
+          "dot_product/overview",
+          "bit_extract/overview"
+        ]
+      ],
+      "hypotheses": [
+        "Prioritize larger tail among operations using a port, retaining native order for ties and other operations. Confirm if all five RTL cases pass and geometric mean cycles decreases; refute if any case fails or the mean does not improve.",
+        "Give zero-latency non-port operations priority above port operations to expose ready requests before choosing by tail. Confirm if all five RTL cases pass and geometric mean cycles improves over parent 1; refute if any fails or the mean does not improve."
+      ],
+      "calls": [
+        "generated",
+        "generated",
+        "generated",
+        "generated"
+      ],
+      "development_replays": 10,
+      "holdout_replays": 8,
+      "development_compiles": 10,
+      "holdout_compiles": 8,
+      "tokens": {
+        "input_tokens": 50811,
+        "output_tokens": 519,
+        "reasoning_output_tokens": 132,
+        "cached_input_tokens": 10880
+      },
+      "holdout": {
+        "crc_step": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "wavelet_lift": {
+          "status": "valid",
+          "cycles": 6
+        },
+        "hamming_distance": {
+          "status": "valid",
+          "cycles": 7
+        },
+        "majority_vote": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "linear_interp": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "horner_eval": {
+          "status": "valid",
+          "cycles": 8
+        },
+        "table_blend": {
+          "status": "valid",
+          "cycles": 7
+        },
+        "sum_squares": {
+          "status": "valid",
+          "cycles": 7
+        }
+      }
+    },
+    {
+      "arm": "C",
+      "repeat": 2,
+      "selected": 0,
+      "candidates": [
+        {
+          "index": 0,
+          "parent": null,
+          "sha256": "4bcce18a5cdb0e15083d36e991f7ca8fef974c22379fcbbc871f18e29df5c67f",
+          "dev": {
+            "lookup_xor": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 6
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        },
+        {
+          "index": 1,
+          "parent": 0,
+          "sha256": "e7752745cca3d755f43a89850da9597d98e23585887507c74ea09464d66baaf5",
+          "dev": {
+            "lookup_xor": {
+              "status": "rtl_replay_failed",
+              "cycles": null
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 4
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        },
+        {
+          "index": 2,
+          "parent": 0,
+          "sha256": "0464bb0101816bf561a7291ac4e0f526583a5e14c4e93243f2ade5356eb9139d",
+          "dev": {
+            "lookup_xor": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 6
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        }
+      ],
+      "queries": [
+        [
+          "lookup_xor/overview",
+          "mix_words/overview",
+          "weighted_sum/overview",
+          "dot_product/overview",
+          "bit_extract/overview"
+        ],
+        [
+          "lookup_xor/cycle/0",
+          "lookup_xor/cycle/1",
+          "mix_words/cycle/0",
+          "weighted_sum/cycle/0",
+          "dot_product/cycle/0"
+        ]
+      ],
+      "hypotheses": [
+        "Prioritizing ready operations with larger tails, especially when they compete for a port, will reduce RTL cycles; replay and RTL validation will confirm or refute whether changed starts preserve correctness.",
+        "Apply tail priority only to positive-latency operations without ports, retaining native ties for loads and zero-latency operations; confirmed if all five RTL cases pass and geometric mean cycles improves, refuted otherwise."
+      ],
+      "calls": [
+        "generated",
+        "generated",
+        "generated",
+        "generated"
+      ],
+      "development_replays": 10,
+      "holdout_replays": 8,
+      "development_compiles": 10,
+      "holdout_compiles": 8,
+      "tokens": {
+        "input_tokens": 51210,
+        "output_tokens": 606,
+        "reasoning_output_tokens": 163
+      },
+      "holdout": {
+        "crc_step": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "wavelet_lift": {
+          "status": "valid",
+          "cycles": 6
+        },
+        "hamming_distance": {
+          "status": "valid",
+          "cycles": 8
+        },
+        "majority_vote": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "linear_interp": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "horner_eval": {
+          "status": "valid",
+          "cycles": 8
+        },
+        "table_blend": {
+          "status": "valid",
+          "cycles": 7
+        },
+        "sum_squares": {
+          "status": "valid",
+          "cycles": 7
+        }
+      }
+    },
+    {
+      "arm": "A",
+      "repeat": 3,
+      "selected": 0,
+      "candidates": [
+        {
+          "index": 0,
+          "parent": null,
+          "sha256": "4bcce18a5cdb0e15083d36e991f7ca8fef974c22379fcbbc871f18e29df5c67f",
+          "dev": {
+            "lookup_xor": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 6
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        },
+        {
+          "index": 1,
+          "parent": 0,
+          "sha256": "ba5dfe5651fba157fd112b437a9c46791613aede92889ec97b0fb748268e3fbe",
+          "dev": {
+            "lookup_xor": {
+              "status": "rtl_replay_failed",
+              "cycles": null
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 4
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        },
+        {
+          "index": 2,
+          "parent": 0,
+          "sha256": "ff1e2f721253a8eb735cbd6b42f26acfee97e4234f13b46ea6f37d63a15d2ba3",
+          "dev": {
+            "lookup_xor": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 6
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        }
+      ],
+      "queries": [
+        [],
+        []
+      ],
+      "hypotheses": [
+        "Prioritizing larger tail, with a small downstream_requests bonus only for port-using operations facing contention, should reduce critical-path stalls. Confirm if all five RTL cases pass and geometric mean cycles falls below native; refute if any RTL case fails or the mean does not improve.",
+        "Prioritize larger tail only for non-port operations, keeping port operations tied. Confirm if all five RTL cases pass and geometric mean cycles improves over native; refute if either condition fails."
+      ],
+      "calls": [
+        "generated",
+        "generated",
+        "generated",
+        "generated"
+      ],
+      "development_replays": 10,
+      "holdout_replays": 8,
+      "development_compiles": 10,
+      "holdout_compiles": 8,
+      "tokens": {
+        "input_tokens": 47205,
+        "cached_input_tokens": 21760,
+        "output_tokens": 654,
+        "reasoning_output_tokens": 249
+      },
+      "holdout": {
+        "crc_step": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "wavelet_lift": {
+          "status": "valid",
+          "cycles": 6
+        },
+        "hamming_distance": {
+          "status": "valid",
+          "cycles": 8
+        },
+        "majority_vote": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "linear_interp": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "horner_eval": {
+          "status": "valid",
+          "cycles": 8
+        },
+        "table_blend": {
+          "status": "valid",
+          "cycles": 7
+        },
+        "sum_squares": {
+          "status": "valid",
+          "cycles": 7
+        }
+      }
+    },
+    {
+      "arm": "B",
+      "repeat": 3,
+      "selected": 0,
+      "candidates": [
+        {
+          "index": 0,
+          "parent": null,
+          "sha256": "4bcce18a5cdb0e15083d36e991f7ca8fef974c22379fcbbc871f18e29df5c67f",
+          "dev": {
+            "lookup_xor": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 6
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        },
+        {
+          "index": 1,
+          "parent": 0,
+          "sha256": "018e962ed6864e01ce27f9afb0f694ab9b8b30575b61ea0fd1c4fe8080da8912",
+          "dev": {
+            "lookup_xor": {
+              "status": "rtl_replay_failed",
+              "cycles": null
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 4
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        },
+        {
+          "index": 2,
+          "parent": 0,
+          "sha256": "a55aae8e42e932653e450f2ae8463d3d330874e53fc70f4010776b940fc89666",
+          "dev": {
+            "lookup_xor": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 6
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        }
+      ],
+      "queries": [
+        [
+          "lookup_xor/overview",
+          "mix_words/overview",
+          "weighted_sum/overview",
+          "dot_product/overview",
+          "bit_extract/overview"
+        ],
+        [
+          "lookup_xor/overview",
+          "mix_words/overview",
+          "weighted_sum/overview",
+          "dot_product/overview",
+          "bit_extract/overview"
+        ]
+      ],
+      "hypotheses": [
+        "Prioritize larger tail, breaking equal tails by larger downstream_requests only for port-using operations under contention. Confirm if compiler replay and RTL vs C pass all five cases and geometric mean RTL cycles falls below native; refute if any case fails or the mean does not improve.",
+        "Score zero-latency non-port operations as 1 + max(0, op[\"tail\"]) and all others as 0, exposing ready requests while preserving native ties among port operations. Confirm if all five RTL checks pass and geometric mean cycles improves; refute on any failure or no improvement."
+      ],
+      "calls": [
+        "generated",
+        "generated",
+        "generated",
+        "generated"
+      ],
+      "development_replays": 10,
+      "holdout_replays": 8,
+      "development_compiles": 10,
+      "holdout_compiles": 8,
+      "tokens": {
+        "input_tokens": 50967,
+        "cached_input_tokens": 18944,
+        "output_tokens": 692,
+        "reasoning_output_tokens": 222
+      },
+      "holdout": {
+        "crc_step": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "wavelet_lift": {
+          "status": "valid",
+          "cycles": 6
+        },
+        "hamming_distance": {
+          "status": "valid",
+          "cycles": 8
+        },
+        "majority_vote": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "linear_interp": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "horner_eval": {
+          "status": "valid",
+          "cycles": 8
+        },
+        "table_blend": {
+          "status": "valid",
+          "cycles": 7
+        },
+        "sum_squares": {
+          "status": "valid",
+          "cycles": 7
+        }
+      }
+    },
+    {
+      "arm": "C",
+      "repeat": 3,
+      "selected": 0,
+      "candidates": [
+        {
+          "index": 0,
+          "parent": null,
+          "sha256": "4bcce18a5cdb0e15083d36e991f7ca8fef974c22379fcbbc871f18e29df5c67f",
+          "dev": {
+            "lookup_xor": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 6
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        },
+        {
+          "index": 1,
+          "parent": 0,
+          "sha256": "447898a588eca9c1fe8c9b66d4cee487603eba5d44361e830d43b645fb2c9f8e",
+          "dev": {
+            "lookup_xor": {
+              "status": "rtl_replay_failed",
+              "cycles": null
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 4
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        },
+        {
+          "index": 2,
+          "parent": 0,
+          "sha256": "bd4a4e20c49376bb85663879e310f2b654b7ee6b096a9791db1a525542106864",
+          "dev": {
+            "lookup_xor": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "mix_words": {
+              "status": "valid",
+              "cycles": 5
+            },
+            "weighted_sum": {
+              "status": "valid",
+              "cycles": 6
+            },
+            "dot_product": {
+              "status": "valid",
+              "cycles": 7
+            },
+            "bit_extract": {
+              "status": "valid",
+              "cycles": 5
+            }
+          }
+        }
+      ],
+      "queries": [
+        [
+          "lookup_xor/overview",
+          "mix_words/overview",
+          "weighted_sum/overview",
+          "dot_product/overview",
+          "bit_extract/overview"
+        ],
+        [
+          "lookup_xor/cycle/0",
+          "lookup_xor/cycle/2",
+          "mix_words/cycle/0",
+          "weighted_sum/cycle/0",
+          "dot_product/cycle/0"
+        ]
+      ],
+      "hypotheses": [
+        "Prioritizing larger tail among ready operations will shorten RTL schedules while preserving correctness; replay failures or a geometric mean cycle ratio of at least 1 would refute this.",
+        "Prioritizing tail only for operations without ports may expose critical work while preserving native port issue order; confirmed by all five RTL passes and a geometric mean cycle ratio below 1, refuted by any replay failure or no improvement."
+      ],
+      "calls": [
+        "generated",
+        "generated",
+        "generated",
+        "generated"
+      ],
+      "development_replays": 10,
+      "holdout_replays": 8,
+      "development_compiles": 10,
+      "holdout_compiles": 8,
+      "tokens": {
+        "input_tokens": 51307,
+        "output_tokens": 700,
+        "reasoning_output_tokens": 272,
+        "cached_input_tokens": 10880
+      },
+      "holdout": {
+        "crc_step": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "wavelet_lift": {
+          "status": "valid",
+          "cycles": 6
+        },
+        "hamming_distance": {
+          "status": "valid",
+          "cycles": 8
+        },
+        "majority_vote": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "linear_interp": {
+          "status": "valid",
+          "cycles": 5
+        },
+        "horner_eval": {
+          "status": "valid",
+          "cycles": 8
+        },
+        "table_blend": {
+          "status": "valid",
+          "cycles": 7
+        },
+        "sum_squares": {
+          "status": "valid",
+          "cycles": 7
+        }
+      }
+    }
+  ]
+}

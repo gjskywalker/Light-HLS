@@ -1042,6 +1042,7 @@ int main(int argc, const char **argv)
             light_hls::backend::inlineDirectBackendCalls(*Mod_tmp);
         light_hls::backend::materializeBackendConstantExpressions(*Mod_tmp);
         light_hls::backend::lowerConstantMemoryInitializers(*Mod_tmp);
+        light_hls::backend::lowerIntegerMinMax(*Mod_tmp);
         light_hls::backend::lowerSameBasePointerPhis(*Mod_tmp);
         light_hls::backend::lowerFloatingMathCalls(*Mod_tmp);
         light_hls::backend::lowerOptionalFloatingContraction(*Mod_tmp);

@@ -1,0 +1,149 @@
+{
+  "compiler_sha256": "4f7f72da2a3f70ded431f4281af82fc2c574c2396847f6768c0bc7befde6776a",
+  "source_sha256": "89f81b2f26934caddc1b7e30f816d368301053d98a21daef7bf9099c439a77e2",
+  "frozen_directives": [
+    "loop_pipeline label=Loop_kernel_jacobi_1d_2 II=1",
+    "loop_pipeline label=Loop_kernel_jacobi_1d_3 II=1"
+  ],
+  "target_clock_ns": 10,
+  "reference_bambu": {
+    "vivado": "2025.2",
+    "part": "xc7z020clg484-1",
+    "wns_ns": 2.376,
+    "whs_ns": 0.18,
+    "delay_ns": 7.624,
+    "lut": 363,
+    "ff": 290,
+    "slice": 128,
+    "bram18_equiv": 4,
+    "dsp": 0,
+    "routed_nets": 871,
+    "setup_start_pin": "_main_top_i0/Datapath_i/array_33829_0/ARRAY_1D_STD_BRAM_NN_instance/multiple_elements.memory_reg/CLKBWRCLK",
+    "setup_end_pin": "_main_top_i0/Datapath_i/array_33853_0/ARRAY_1D_STD_BRAM_NN_instance/multiple_elements.memory_reg/DIADI[27]",
+    "meets_100mhz": true,
+    "rtl_sha256": "8ba3b69a6a5c8b5c5fdf5611312fa0465379d772b43796383dae2407dd422da6",
+    "cycles": 2442,
+    "checksum_hex": "00000001",
+    "physical_directory": "paper_physical_20261125/bambu/jacobi_1d",
+    "execution_us_at_design_delay": 18.6178,
+    "execution_us_at_100mhz": 24.42
+  },
+  "trials": [
+    {
+      "cycles": 3601,
+      "ii": {
+        "Loop_kernel_jacobi_1d_2": 3,
+        "Loop_kernel_jacobi_1d_3": 3
+      },
+      "checksum": "00000001",
+      "checked_words": 30,
+      "rtl_sha256": "c77da4f3dcaf5226e85f5ea02088dd4b387aa8fdc6cb2f12dfd517a79bda9ba6",
+      "memory_ports": {
+        "A": 1,
+        "B": 1
+      },
+      "physical_source": "identical frozen routed RTL",
+      "physical": {
+        "vivado": "2025.2",
+        "part": "xc7z020clg484-1",
+        "wns_ns": 1.158,
+        "whs_ns": 0.136,
+        "delay_ns": 8.842,
+        "meets_100mhz": true,
+        "lut": 263,
+        "ff": 312,
+        "slice": 110,
+        "dsp": 0,
+        "bram18_equiv": 2,
+        "estimated_us": 31.840042
+      }
+    },
+    {
+      "cycles": 3041,
+      "ii": {
+        "Loop_kernel_jacobi_1d_2": 2,
+        "Loop_kernel_jacobi_1d_3": 3
+      },
+      "checksum": "00000001",
+      "checked_words": 30,
+      "rtl_sha256": "0fc4fd33441be2ad8f07fd33f170f2b4627c96c40775141470ec822a2cbc9ebe",
+      "memory_ports": {
+        "A": 2,
+        "B": 1
+      },
+      "physical_source": "new OOC route",
+      "physical": {
+        "vivado": "2025.2",
+        "part": "xc7z020clg484-1",
+        "wns_ns": 1.774,
+        "whs_ns": 0.112,
+        "delay_ns": 8.226,
+        "meets_100mhz": true,
+        "lut": 309,
+        "ff": 369,
+        "slice": 124,
+        "dsp": 0,
+        "bram18_equiv": 1,
+        "estimated_us": 25.015266000000004
+      }
+    },
+    {
+      "cycles": 3041,
+      "ii": {
+        "Loop_kernel_jacobi_1d_2": 3,
+        "Loop_kernel_jacobi_1d_3": 2
+      },
+      "checksum": "00000001",
+      "checked_words": 30,
+      "rtl_sha256": "d9f1f98b087ae0ab145c9d858b7b565a579da6d8c9e404fb1518fe5bddf879c9",
+      "memory_ports": {
+        "A": 1,
+        "B": 2
+      },
+      "physical_source": "new OOC route",
+      "physical": {
+        "vivado": "2025.2",
+        "part": "xc7z020clg484-1",
+        "wns_ns": 1.528,
+        "whs_ns": 0.123,
+        "delay_ns": 8.472,
+        "meets_100mhz": true,
+        "lut": 311,
+        "ff": 369,
+        "slice": 131,
+        "dsp": 0,
+        "bram18_equiv": 1,
+        "estimated_us": 25.763351999999998
+      }
+    },
+    {
+      "cycles": 2481,
+      "ii": {
+        "Loop_kernel_jacobi_1d_2": 2,
+        "Loop_kernel_jacobi_1d_3": 2
+      },
+      "checksum": "00000001",
+      "checked_words": 30,
+      "rtl_sha256": "8364048301ea67982b9fa4b7704e65c3b05c045b9e906c174a276143186962db",
+      "memory_ports": {
+        "A": 2,
+        "B": 2
+      },
+      "physical_source": "new OOC route",
+      "physical": {
+        "vivado": "2025.2",
+        "part": "xc7z020clg484-1",
+        "wns_ns": 2.923,
+        "whs_ns": 0.13,
+        "delay_ns": 7.077,
+        "meets_100mhz": true,
+        "lut": 410,
+        "ff": 426,
+        "slice": 154,
+        "dsp": 0,
+        "bram18_equiv": 0,
+        "estimated_us": 17.558037
+      }
+    }
+  ]
+}

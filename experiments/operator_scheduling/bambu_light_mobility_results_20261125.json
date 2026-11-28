@@ -1,0 +1,764 @@
+{
+  "provenance": {
+    "original_source": "5ac55116a6f83f6d8de5989892dc0def74a591a5d1d1431a2d4f75fdb83918b7",
+    "modified_source": "5c6fc96549a25ba592070c1cd67bc50d257c886757bcb6c971e6e2f9d56ddd4f",
+    "isolated_compiler": "b90c9a48c530c708472ccbdafae1e47e89c9efbc920814c97f59871ff4b64bbe"
+  },
+  "parent_protocol": "ad555b428d0bee64b3ef16b700ca1d73dce5b05fbfbd5858c577d979c7abcde9",
+  "agent_weights": [
+    4,
+    8,
+    1,
+    -2
+  ],
+  "summary": {
+    "all": {
+      "native": {
+        "paired": 27,
+        "faster": 1,
+        "tie": 26,
+        "slower": 0,
+        "geomean_ratio": 0.9961095622979004
+      },
+      "agent": {
+        "paired": 27,
+        "faster": 0,
+        "tie": 27,
+        "slower": 0,
+        "geomean_ratio": 1.0
+      },
+      "raw_mobility_vs_raw_agent": {
+        "paired": 27,
+        "faster": 1,
+        "tie": 26,
+        "slower": 0,
+        "geomean_ratio": 0.9987417642500489
+      }
+    },
+    "dev": {
+      "native": {
+        "paired": 8,
+        "faster": 0,
+        "tie": 8,
+        "slower": 0,
+        "geomean_ratio": 1.0
+      },
+      "agent": {
+        "paired": 8,
+        "faster": 0,
+        "tie": 8,
+        "slower": 0,
+        "geomean_ratio": 1.0
+      },
+      "raw_mobility_vs_raw_agent": {
+        "paired": 8,
+        "faster": 0,
+        "tie": 8,
+        "slower": 0,
+        "geomean_ratio": 1.0
+      }
+    },
+    "holdout": {
+      "native": {
+        "paired": 19,
+        "faster": 1,
+        "tie": 18,
+        "slower": 0,
+        "geomean_ratio": 0.9944760147439557
+      },
+      "agent": {
+        "paired": 19,
+        "faster": 0,
+        "tie": 19,
+        "slower": 0,
+        "geomean_ratio": 1.0
+      },
+      "raw_mobility_vs_raw_agent": {
+        "paired": 19,
+        "faster": 1,
+        "tie": 18,
+        "slower": 0,
+        "geomean_ratio": 0.998212454522966
+      }
+    }
+  },
+  "cases": {
+    "vericert24_gemm": {
+      "split": "dev",
+      "native": 83060,
+      "native_rtl": "3b221a1d06d4341c417028a711ce8b5486942fe431187f6fc9a3d6886ef75c41",
+      "unweighted_rtl_identical": true,
+      "agent": 83060,
+      "mobility": 83060,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000000",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 83060,
+          "checksum": "00000000",
+          "rtl": "c0f891554a2bcd01f71906d404cd02ed147fef59fe62ecf9473bab9fa058df98"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 83060,
+          "checksum": "00000000",
+          "rtl": "c0f891554a2bcd01f71906d404cd02ed147fef59fe62ecf9473bab9fa058df98"
+        }
+      }
+    },
+    "vericert24_gesummv": {
+      "split": "dev",
+      "native": 34858,
+      "native_rtl": "d4864b9f7c183ac8b8b08f41932e33da9c8ce326c70f78cbb3ffbc09e5699708",
+      "unweighted_rtl_identical": true,
+      "agent": 34858,
+      "mobility": 34858,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000000",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 34858,
+          "checksum": "00000000",
+          "rtl": "bb8c89e7355668e079ea722ad6f7eb6a1c087b77eec29a7b93e5ebc3dc22d7b9"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 34858,
+          "checksum": "00000000",
+          "rtl": "bcd1700380db489539df371501cbc6634dd0a0f5c40936bdddcff2c02a5fb4e0"
+        }
+      }
+    },
+    "vericert24_syrk": {
+      "split": "dev",
+      "native": 61962,
+      "native_rtl": "4523ca1adf3d503bc5a31337ce67c73b8945ae5d31d74cab8b4520057c91cf66",
+      "unweighted_rtl_identical": true,
+      "agent": 61962,
+      "mobility": 61962,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000000",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 61962,
+          "checksum": "00000000",
+          "rtl": "ddf73917348f882f93552886c6a46ee2d3f16bb325b0912efaa3ab2bec8e66fe"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 61962,
+          "checksum": "00000000",
+          "rtl": "ddf73917348f882f93552886c6a46ee2d3f16bb325b0912efaa3ab2bec8e66fe"
+        }
+      }
+    },
+    "vericert24_bicg": {
+      "split": "dev",
+      "native": 37284,
+      "native_rtl": "55d19e23a6fb2df625696ba86ebab47cc5b393249995940f48cc981422340854",
+      "unweighted_rtl_identical": true,
+      "agent": 37284,
+      "mobility": 37284,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000000",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 37284,
+          "checksum": "00000000",
+          "rtl": "f26d98e220eb20c753f9ec23311690f7b62702c8eea6679a212235fd7d8ba659"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 37284,
+          "checksum": "00000000",
+          "rtl": "54f7579fb8670084aef0e86504802cc05b1545e9928253a5adde12b5d771e213"
+        }
+      }
+    },
+    "vericert24_mvt": {
+      "split": "dev",
+      "native": 42752,
+      "native_rtl": "4b4f842d0ef933c4472d6fea40f709633db139c6607dcc614d7e3fb6402f7e02",
+      "unweighted_rtl_identical": true,
+      "agent": 42752,
+      "mobility": 42752,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000000",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 42752,
+          "checksum": "00000000",
+          "rtl": "01e7ab0769aee5b75850690d02fbfc4f7041542799e801a662c44b5e1b243e6c"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 42752,
+          "checksum": "00000000",
+          "rtl": "01e7ab0769aee5b75850690d02fbfc4f7041542799e801a662c44b5e1b243e6c"
+        }
+      }
+    },
+    "vericert24_ludcmp": {
+      "split": "dev",
+      "native": 336572,
+      "native_rtl": "9dfe551adaa51632e727d4ca87acfbda0cff90a7fd77f984eb4449ecc7fe6a44",
+      "unweighted_rtl_identical": true,
+      "agent": 336572,
+      "mobility": 336572,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000004",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 336572,
+          "checksum": "00000004",
+          "rtl": "bbc5f5966ae9aaa4769e9407a625436a21a2d29b6bc4ad397dfe5318fc3f52e5"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 336572,
+          "checksum": "00000004",
+          "rtl": "083d3b94dad91a1ef7449593bb9f41576feed55469936e1c4594152bafc41b9c"
+        }
+      }
+    },
+    "vericert24_nussinov": {
+      "split": "dev",
+      "native": 180656,
+      "native_rtl": "843606980c0b6b75b54c88ed4c83a621a78f4e4a551a3c40a9ce264a090b220b",
+      "unweighted_rtl_identical": true,
+      "agent": 180656,
+      "mobility": 180656,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "0000001c",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 180656,
+          "checksum": "0000001c",
+          "rtl": "25272ff4f1998266317a7c030d6b13d657552b59b7ebce1602b9d0186354fad9"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 180656,
+          "checksum": "0000001c",
+          "rtl": "25272ff4f1998266317a7c030d6b13d657552b59b7ebce1602b9d0186354fad9"
+        }
+      }
+    },
+    "vericert24_jacobi_1d": {
+      "split": "dev",
+      "native": 4641,
+      "native_rtl": "371f58ac93943d2d49197a0dc5e34df820e89ade66a856c1a6ee0e3bf9c01253",
+      "unweighted_rtl_identical": true,
+      "agent": 4641,
+      "mobility": 4641,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000001",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 4641,
+          "checksum": "00000001",
+          "rtl": "371f58ac93943d2d49197a0dc5e34df820e89ade66a856c1a6ee0e3bf9c01253"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 4641,
+          "checksum": "00000001",
+          "rtl": "371f58ac93943d2d49197a0dc5e34df820e89ade66a856c1a6ee0e3bf9c01253"
+        }
+      }
+    },
+    "vericert24_covariance": {
+      "split": "holdout",
+      "native": 110174,
+      "native_rtl": "e6ccdde41d759dfc6b5aaef0e39f60c8c48aebc283c5f7daaf3e3035e91063b9",
+      "unweighted_rtl_identical": true,
+      "agent": 110174,
+      "mobility": 110174,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000038",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 110174,
+          "checksum": "00000038",
+          "rtl": "e6ccdde41d759dfc6b5aaef0e39f60c8c48aebc283c5f7daaf3e3035e91063b9"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 110174,
+          "checksum": "00000038",
+          "rtl": "e6ccdde41d759dfc6b5aaef0e39f60c8c48aebc283c5f7daaf3e3035e91063b9"
+        }
+      }
+    },
+    "vericert24_gemver": {
+      "split": "holdout",
+      "native": 46272,
+      "native_rtl": "d6d1f482f1e0b4cd40b888f05c0b09ec2440ca751dd6f08b36d5fc566480a7b9",
+      "unweighted_rtl_identical": true,
+      "agent": 46272,
+      "mobility": 46272,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000000",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 47872,
+          "checksum": "00000000",
+          "rtl": "95a81db9d16065a380e6d992e478f59a41abbe2f5a1f7a507f7e698892698b0f"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 46272,
+          "checksum": "00000000",
+          "rtl": "00421736701ddc071032eb896d113d85cdbf7b607d748ae88fc443b837aa68c4"
+        }
+      }
+    },
+    "vericert24_symm": {
+      "split": "holdout",
+      "native": 45651,
+      "native_rtl": "7248fdf799ec2402b9eca92a644430535149f59aa38d2c0a0c852b87bad0810d",
+      "unweighted_rtl_identical": true,
+      "agent": 45651,
+      "mobility": 45651,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000000",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 45651,
+          "checksum": "00000000",
+          "rtl": "81b7338014768a1d55e6bcc1f8d9767c7dcfe39123a89dd4457957ddf7028f76"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 45651,
+          "checksum": "00000000",
+          "rtl": "81b7338014768a1d55e6bcc1f8d9767c7dcfe39123a89dd4457957ddf7028f76"
+        }
+      }
+    },
+    "vericert24_syr2k": {
+      "split": "holdout",
+      "native": 79762,
+      "native_rtl": "5fdbd43bbabb4c210b4db9c9664895561b414674ad74913139a2d334fb79ba8c",
+      "unweighted_rtl_identical": true,
+      "agent": 79762,
+      "mobility": 79762,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000003",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 79762,
+          "checksum": "00000003",
+          "rtl": "6633ecee02a92dab7d2c9324e65b1833f38429d3e505a7d6b4e592fc9f120bd4"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 79762,
+          "checksum": "00000003",
+          "rtl": "6633ecee02a92dab7d2c9324e65b1833f38429d3e505a7d6b4e592fc9f120bd4"
+        }
+      }
+    },
+    "vericert24_trmm": {
+      "split": "holdout",
+      "native": 36371,
+      "native_rtl": "3768ab10f4515a30c33d8b2fac15ef6a212176a68b9e37e180a847e56993b675",
+      "unweighted_rtl_identical": true,
+      "agent": 36371,
+      "mobility": 36371,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000000",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 36371,
+          "checksum": "00000000",
+          "rtl": "e02420c7199514b104b81b43174462135d1790dc9a6d6ad77e938f5f7af819c3"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 36371,
+          "checksum": "00000000",
+          "rtl": "e02420c7199514b104b81b43174462135d1790dc9a6d6ad77e938f5f7af819c3"
+        }
+      }
+    },
+    "vericert24_2mm": {
+      "split": "holdout",
+      "native": 71536,
+      "native_rtl": "9754869bf86158d26839fd9e1376f140db46547ab3603b121363ec6e851c34d2",
+      "unweighted_rtl_identical": true,
+      "agent": 71536,
+      "mobility": 71536,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000000",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 71536,
+          "checksum": "00000000",
+          "rtl": "78cd6bd04b90dfcd259f0619a73d2a5fe81c69c3cd2b865d3ff81a1940d51063"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 71536,
+          "checksum": "00000000",
+          "rtl": "78cd6bd04b90dfcd259f0619a73d2a5fe81c69c3cd2b865d3ff81a1940d51063"
+        }
+      }
+    },
+    "vericert24_3mm": {
+      "split": "holdout",
+      "native": 98532,
+      "native_rtl": "ba5ef8097c67e587282d7edb5b62356e92ed426c03e0ad0fd5ed06a1d527022c",
+      "unweighted_rtl_identical": true,
+      "agent": 98532,
+      "mobility": 98532,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000000",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 98532,
+          "checksum": "00000000",
+          "rtl": "0d4b95fe1e1248b231254aec4194784a17cfe3934f39a18fa3af212a16fe909b"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 98532,
+          "checksum": "00000000",
+          "rtl": "0d4b95fe1e1248b231254aec4194784a17cfe3934f39a18fa3af212a16fe909b"
+        }
+      }
+    },
+    "vericert24_atas": {
+      "split": "holdout",
+      "native": 27494,
+      "native_rtl": "54521e8724e7e3b476b3e796484633eaa0cdca8e19c8074f51a773af20d7ff89",
+      "unweighted_rtl_identical": true,
+      "agent": 27494,
+      "mobility": 27494,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000000",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 27494,
+          "checksum": "00000000",
+          "rtl": "b1cc69ad408cad2d44407637eb3aabc547c2354b92d920b7d6b8931d5741c2e3"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 27494,
+          "checksum": "00000000",
+          "rtl": "2727f87ff5d5e59d91198d2e6ef27c5f0ee9fe384efe32f8d8a198743b6df568"
+        }
+      }
+    },
+    "vericert24_doitgen": {
+      "split": "holdout",
+      "native": 55200,
+      "native_rtl": "b3bf1c8941847d27cd67213e3ae33fd31059306a850c1127bf403c985347146c",
+      "unweighted_rtl_identical": true,
+      "agent": 55200,
+      "mobility": 55200,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000000",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 55200,
+          "checksum": "00000000",
+          "rtl": "47b63a7e98819390c1d1a023aab5dab10fb9e4d58bd1ab1f395d183cda024b3c"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 55200,
+          "checksum": "00000000",
+          "rtl": "47b63a7e98819390c1d1a023aab5dab10fb9e4d58bd1ab1f395d183cda024b3c"
+        }
+      }
+    },
+    "vericert24_cholesky": {
+      "split": "holdout",
+      "native": 281304,
+      "native_rtl": "eb5a659c5791e4b28cfa91045a2561aa09e2e9be203e7e9106dd2bc89f5f1f73",
+      "unweighted_rtl_identical": true,
+      "agent": 281304,
+      "mobility": 281304,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000001",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 281304,
+          "checksum": "00000001",
+          "rtl": "ed0426dce7be2e0f3aba86f73af1a907769bf4bcecd744ed1b4b6dd28a29d76f"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 281304,
+          "checksum": "00000001",
+          "rtl": "e9e9a7a25fd9f68149eb2136018354a5643614ac2dfabab95d9bc296d36b4a7f"
+        }
+      }
+    },
+    "vericert24_durbin": {
+      "split": "holdout",
+      "native": 7808,
+      "native_rtl": "21f65404aa54b52f0b03655f98aa316febd043a531b08e062e1536b4ef93c088",
+      "unweighted_rtl_identical": true,
+      "agent": 7028,
+      "mobility": 7028,
+      "selected_blocks": [
+        "for_body22_i"
+      ],
+      "choice": "policy",
+      "checksum": "ffffffd7",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 7028,
+          "checksum": "ffffffd7",
+          "rtl": "c16def4b2ff5f6b1f135ddbbcd765ee50c9b748b30120f5f69f4d264b16da62d"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 7028,
+          "checksum": "ffffffd7",
+          "rtl": "f32ec46e29f59fdc00cfaaebcce3cdafd74f48eb0fb6d9fa2b5df5791cf5ef76"
+        }
+      }
+    },
+    "vericert24_lu": {
+      "split": "holdout",
+      "native": 336784,
+      "native_rtl": "1b36ad4afdb8c9c5cf478f7e0b1ac1330c1d553a1c48434cec6468299f39f224",
+      "unweighted_rtl_identical": true,
+      "agent": 336784,
+      "mobility": 336784,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000001",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 336784,
+          "checksum": "00000001",
+          "rtl": "a2a57c2d8318a12e2507c4e2657808566b6cb80ea1df8f6424a7cef00cbadb3c"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 336784,
+          "checksum": "00000001",
+          "rtl": "817e23a8d97c698ccf6324a31c3b358c237d43970f9a9e751d8abac14b115fc6"
+        }
+      }
+    },
+    "vericert24_trisolv": {
+      "split": "holdout",
+      "native": 34008,
+      "native_rtl": "c33ce64ad17c428542973b6ac13d9f0a77ee97c2b4de421d765f52a2d82075bc",
+      "unweighted_rtl_identical": true,
+      "agent": 34008,
+      "mobility": 34008,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000000",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 34008,
+          "checksum": "00000000",
+          "rtl": "17d2314fa1e1c044afb93ad6e0122e8c81ffc7fa252a4148da6567e0e3313ed5"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 34008,
+          "checksum": "00000000",
+          "rtl": "c33ce64ad17c428542973b6ac13d9f0a77ee97c2b4de421d765f52a2d82075bc"
+        }
+      }
+    },
+    "vericert24_floyd_warshall": {
+      "split": "holdout",
+      "native": 1070392,
+      "native_rtl": "9b3d0719d221c755987dc013267109645a64029ec655f5dcd88a6a0e1c961727",
+      "unweighted_rtl_identical": true,
+      "agent": 1070392,
+      "mobility": 1070392,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000010",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 1070392,
+          "checksum": "00000010",
+          "rtl": "9b3d0719d221c755987dc013267109645a64029ec655f5dcd88a6a0e1c961727"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 1070392,
+          "checksum": "00000010",
+          "rtl": "9b3d0719d221c755987dc013267109645a64029ec655f5dcd88a6a0e1c961727"
+        }
+      }
+    },
+    "vericert24_adi": {
+      "split": "holdout",
+      "native": 271321,
+      "native_rtl": "dcde9cbe5cf752d55a10b71b00d57be01196ad7edd7bf886f1555af362860be5",
+      "unweighted_rtl_identical": true,
+      "agent": 271321,
+      "mobility": 271321,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000001",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 271321,
+          "checksum": "00000001",
+          "rtl": "cce7d1696037144afa8be4f62c0b5878e5277cbb9bd2315dccb72f6657b486f7"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 271321,
+          "checksum": "00000001",
+          "rtl": "9c321b5d28c2a0b86116b2d1235fa69cfdac4b34650a3f53ebf0b3ac1cbc33be"
+        }
+      }
+    },
+    "vericert24_fdtd_2d": {
+      "split": "holdout",
+      "native": 142640,
+      "native_rtl": "5f677911b76010d7818432275c65999812f00acf507f4e3a7f3790eb346dfceb",
+      "unweighted_rtl_identical": true,
+      "agent": 142640,
+      "mobility": 142640,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000e71",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 142640,
+          "checksum": "00000e71",
+          "rtl": "fc5159608c2c23021c7763c146dab3c5439784acb87ee10caef56cfa51195e35"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 142640,
+          "checksum": "00000e71",
+          "rtl": "fc5159608c2c23021c7763c146dab3c5439784acb87ee10caef56cfa51195e35"
+        }
+      }
+    },
+    "vericert24_heat_3d": {
+      "split": "holdout",
+      "native": 51081,
+      "native_rtl": "80ee2a6bbe9227881cf8bbb1cdd4c230de92ca3367f03ecad145055de311a19f",
+      "unweighted_rtl_identical": true,
+      "agent": 51081,
+      "mobility": 51081,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000014",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 51081,
+          "checksum": "00000014",
+          "rtl": "2d503767466dd0da9438566c925285c5273686d419eac60f7ce49fd8222f4129"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 51081,
+          "checksum": "00000014",
+          "rtl": "2d503767466dd0da9438566c925285c5273686d419eac60f7ce49fd8222f4129"
+        }
+      }
+    },
+    "vericert24_jacobi_2d": {
+      "split": "holdout",
+      "native": 83761,
+      "native_rtl": "f9f4c97a7825c942a9707eee64b0a5e41002795b9807ef824cb7c2dfa4948e21",
+      "unweighted_rtl_identical": true,
+      "agent": 83761,
+      "mobility": 83761,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "000000a2",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 83761,
+          "checksum": "000000a2",
+          "rtl": "5b9b9b2396a0776836f29e7aab5cba516175ff66c2d7af5b0f95b15af82345de"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 83761,
+          "checksum": "000000a2",
+          "rtl": "5b9b9b2396a0776836f29e7aab5cba516175ff66c2d7af5b0f95b15af82345de"
+        }
+      }
+    },
+    "vericert24_seidel_2d": {
+      "split": "holdout",
+      "native": 267172,
+      "native_rtl": "f7fd4bba3287ec396cce918ef64875eb5f0f817315c528d06d5c76160ddc52d3",
+      "unweighted_rtl_identical": true,
+      "agent": 267172,
+      "mobility": 267172,
+      "selected_blocks": [],
+      "choice": "native",
+      "checksum": "00000027",
+      "raw": {
+        "agent": {
+          "status": "valid",
+          "cycles": 267172,
+          "checksum": "00000027",
+          "rtl": "68610ff0dacfa9cc9bfbf73d76e58eb81ad7c3f911dda066fbbcb53a8d24a961"
+        },
+        "mobility": {
+          "status": "valid",
+          "cycles": 267172,
+          "checksum": "00000027",
+          "rtl": "68610ff0dacfa9cc9bfbf73d76e58eb81ad7c3f911dda066fbbcb53a8d24a961"
+        }
+      }
+    }
+  }
+}

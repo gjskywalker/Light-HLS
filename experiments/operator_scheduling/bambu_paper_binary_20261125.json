@@ -1,0 +1,62 @@
+{
+  "paper_artifact": {
+    "url": "https://zenodo.org/records/10808233",
+    "ova_file": "vericert-pldi2024.ova",
+    "ova_bytes": 9746932736,
+    "published_md5": "d3d732edda6b0beb0c925c4e1bf2b588",
+    "whole_ova_downloaded": false,
+    "vmdk_base_in_ova": 9216,
+    "vmdk_bytes": 9746922496,
+    "vm_root_ext4_start_sector": 1054720,
+    "vm_sector_bytes": 512,
+    "guest_file": "/home/pldi/bambu/bambu",
+    "guest_AppImage_bytes": 1455158464,
+    "squashfs_offset_in_guest_file": 189632,
+    "member": "usr/bin/bambu"
+  },
+  "official_image": {
+    "url": "https://release.bambuhls.eu/bambu-2023.01.AppImage",
+    "sha256": "a3c7988c53bca160d35a330513d06ea7fd94af8619df3270da060ae50157d06b",
+    "bytes": 1455158464
+  },
+  "verification": {
+    "method": "Trace all reads of unsquashfs -p 1 -o 189632 -cat OFFICIAL_APPIMAGE usr/bin/bambu. Reconstruct exactly those guest file ranges via ext4 extents, VMDK grain directory/tables, and validated HTTP byte ranges from the original OVA. Repeat unsquashfs on the sparse reconstruction and hash both uncompressed ELF files independently.",
+    "ova_HTTP_range_base_url": "https://zenodo.org/api/records/10808233/files/vericert-pldi2024.ova/content",
+    "logical_guest_file_ranges_start_end_exclusive": [
+      [
+        189632,
+        189728
+      ],
+      [
+        722080352,
+        744213187
+      ],
+      [
+        1454897280,
+        1454905072
+      ],
+      [
+        1454977225,
+        1454978092
+      ],
+      [
+        1455092475,
+        1455095983
+      ],
+      [
+        1455127429,
+        1455134771
+      ],
+      [
+        1455155731,
+        1455155857
+      ]
+    ],
+    "vm_elf_bytes": 55963816,
+    "official_elf_bytes": 55963816,
+    "vm_elf_sha256": "cbf1ff036d9337cefc7e339cdad463f7a406a18ac19d04311b19999ac1b641c1",
+    "official_elf_sha256": "cbf1ff036d9337cefc7e339cdad463f7a406a18ac19d04311b19999ac1b641c1",
+    "git_revision_reported_by_binary": "04336c437a53bc96ae90b74052c455629946ec8b",
+    "scope": "Bambu main executable; other packages and plugins in the whole guest image were not compared byte-for-byte."
+  }
+}

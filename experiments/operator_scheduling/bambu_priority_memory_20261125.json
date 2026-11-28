@@ -1,0 +1,396 @@
+{
+  "revision": "04336c437a53bc96ae90b74052c455629946ec8b",
+  "bambu_binary_sha256": "cbf1ff036d9337cefc7e339cdad463f7a406a18ac19d04311b19999ac1b641c1",
+  "archive_sha256": "f43b0201b64b23ac071ae54af317984a40fb067943f1e09ccd22bd17c0e100f5",
+  "flags": {
+    "fixed_priority": [
+      "--parametric-list-based=1"
+    ],
+    "single_channel": [
+      "--channels-type=MEM_ACC_11",
+      "--channels-number=1"
+    ]
+  },
+  "summary": {},
+  "archive_cycle_match": {},
+  "cases": {
+    "2mm": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 67992,
+        "rtl_sha256": "8154251e5810b3bfdc9d41c3eb9dc8fb8edf1962ef0ecb90a42a4d3883745e99"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 67992,
+        "rtl_sha256": "42f2c638c1bd4f86288eea98842be1493e037a6e1c2e79aedb434b70007bfb67"
+      }
+    },
+    "3mm": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 102818,
+        "rtl_sha256": "9a07913abeb4bcf3cd35c81dc43d9a7c3cf492803d06df50a0abd3ed9805fb15"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 102818,
+        "rtl_sha256": "b9e68eecbae4581152b612cb74453aa8e19758d4dbc15351f7bcb6eb57c10865"
+      }
+    },
+    "adi": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000001",
+        "cycles": 183919,
+        "rtl_sha256": "37a6525a6811633651307c719b3354556eeeac14c05d21934c4a96992b761085"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000001",
+        "cycles": 197239,
+        "rtl_sha256": "4853cbfe6f0490626185fedd53e2c7c05b7af04ae035d70dd0a51a79a1b4f7bf"
+      }
+    },
+    "atas": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 16947,
+        "rtl_sha256": "6f4c959d5bd38ad1a0d180d5bdb1c646860e4b1cc264eba4ea24c10948dc47b7"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 16947,
+        "rtl_sha256": "66ecafd28f286cd02564a49842f27a7d83955d1ebf0c93640355a97afa352e99"
+      }
+    },
+    "bicg": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 18404,
+        "rtl_sha256": "a1e0f5eb69dbf67acb995fbaa64ac6552d4557cbdcb2b39308c024e92cb07863"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 18404,
+        "rtl_sha256": "28db51ce4dbd3d2194c341487864de05d295f99fa45a511bd75c666714c82ebf"
+      }
+    },
+    "cholesky": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000001",
+        "cycles": 317584,
+        "rtl_sha256": "92640367110d02e7855221dcab76001fed3031f9fcd3cdf138f04813f7844c8f"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000001",
+        "cycles": 327464,
+        "rtl_sha256": "462c7b5755e7fffe13fb07c4462342b02b6f153468e2983dc36ed050d0147205"
+      }
+    },
+    "covariance": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000038",
+        "cycles": 75091,
+        "rtl_sha256": "d988cc7220eaea095e2ba44971909daaf93c47e036f5c8d1091b73e6d49f51b9"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000038",
+        "cycles": 88083,
+        "rtl_sha256": "e46b6e94b416dc6b070746a816d24c81cf8b2ff324d6d6cd819b11bfedb9ffdb"
+      }
+    },
+    "doitgen": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 58910,
+        "rtl_sha256": "a412da94222f6b3cdcee8d1d66003bb6922b93f0353c23f578f6883b532ccfcd"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 58910,
+        "rtl_sha256": "3843871e1e2ffd94c72527854c273b3bc6aa9576e4b75d89465c4e73e01122a3"
+      }
+    },
+    "durbin": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "ffffffd7",
+        "cycles": 7492,
+        "rtl_sha256": "178d11551b1c1b1c152c6dbf6f4bd12c0cc6493f4795efe6889df3a3fd97d63b"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "ffffffd7",
+        "cycles": 8233,
+        "rtl_sha256": "8e0c2d684049b3149761157ef6fe821be9b7e584886e2fe14dea20d6f96e6cc2"
+      }
+    },
+    "fdtd_2d": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000e71",
+        "cycles": 100760,
+        "rtl_sha256": "a51fc836529425e882c90dbfc2595194dd0b8e45dfbb4857d813c1a7577b098a"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000e71",
+        "cycles": 134780,
+        "rtl_sha256": "db0f11a29bcd2c967626b81a801797ce82b6de07ea03d6ab9d3af5d3c3190ee2"
+      }
+    },
+    "floyd_warshall": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000010",
+        "cycles": 763578,
+        "rtl_sha256": "793e795282ed7691cdefa7bf917a118330b3eb9cc21c0755d73c82d4aa5804fe"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000010",
+        "cycles": 979578,
+        "rtl_sha256": "71548c68e19b8bf431b2e33e411d9117f4c406a7b9973d0dfb5656e761114886"
+      }
+    },
+    "gemm": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 79422,
+        "rtl_sha256": "7c268ef3307b42e54f95f8e42a0c730d23dc9c4932ea14db9e70dcb01bcab68c"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 79422,
+        "rtl_sha256": "9c7cf413c1f1629e07ab74c6400ed4116f99750c515f7966c87ce2a793708668"
+      }
+    },
+    "gemver": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 26478,
+        "rtl_sha256": "46bd6c32ae58480c948078f4068f9dd2ab6ae481ebcd11649bb2fa18ed5f81ba"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 26478,
+        "rtl_sha256": "f5d7d8217cc18f49e39ad5c81b0ee5cb1304db6c46688881f931243ff8d9cfa6"
+      }
+    },
+    "gesummv": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 15556,
+        "rtl_sha256": "2fa57178d8414adc4eca3fbff521a38866f0a5dce48a4430c6c52c379c4fdda0"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 15556,
+        "rtl_sha256": "0048e990497abbc3de187dbe09210de16110b6b176b818c4d90e46bdb4287517"
+      }
+    },
+    "heat_3d": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000014",
+        "cycles": 30377,
+        "rtl_sha256": "63b1ffa9a7740171451808aa45f6d81ec583d6cd8306a25ffb2489cc831ff790"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000014",
+        "cycles": 45737,
+        "rtl_sha256": "4effa78dc6e9364e4014237e91a2506569971ce37933bc389a5819a155eac526"
+      }
+    },
+    "jacobi_1d": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000001",
+        "cycles": 2442,
+        "rtl_sha256": "be39a6621b3393257a88e6ce04afe43379dab870f748fdf40e75c33f8f96af32"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000001",
+        "cycles": 3562,
+        "rtl_sha256": "95a49274162547a05e28fef9ae0ae79c3f75ac7eadc6d3f2f3bd1ec65f66b452"
+      }
+    },
+    "jacobi_2d": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "000000a2",
+        "cycles": 52526,
+        "rtl_sha256": "20499b8dd1b990b11439a8d5288b07446101778302f6d0b269d550bf7bd61342"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "000000a2",
+        "cycles": 68206,
+        "rtl_sha256": "f4ecd74a53844ddf40dbc7def2cc03eeb8561df447e2e39dde586bb71feb2629"
+      }
+    },
+    "lu": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000001",
+        "cycles": 360842,
+        "rtl_sha256": "16acbf09c79bb2a490f5367c57d2ae9e7c20029706b9077596b6e63ff09e643f"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000001",
+        "cycles": 381382,
+        "rtl_sha256": "7721a4ebf0743f954a8524a1b03ff7b94ff82c6ee83f17057f28fdb89ca26d1d"
+      }
+    },
+    "ludcmp": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000004",
+        "cycles": 362026,
+        "rtl_sha256": "6eafb8bcfb31cf68810ef39d95cae1779a7fcee8aa105a209178b18b8cac5b14"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000004",
+        "cycles": 382526,
+        "rtl_sha256": "eb9911ed12d151b4e3f6d100ead18c830a815d25eb0e7100a2297d766d37af49"
+      }
+    },
+    "mvt": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 18478,
+        "rtl_sha256": "b0aeac5ec87ae7f91cf454216ee3a9e59142a8068968b7e3becacf6828bb2c1b"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 18478,
+        "rtl_sha256": "4df0e35bd6f6599c151d8b95499d9524fee552cecaac9ed7edeaf1f52e487eee"
+      }
+    },
+    "nussinov": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "0000001c",
+        "cycles": 130185,
+        "rtl_sha256": "df1b98e298f83ea9f1d8289ea0812b0ce9a2745721fe0dadd87416df115c020b"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "0000001c",
+        "cycles": 167886,
+        "rtl_sha256": "5cea7ac227f44cac7f12fdec27be3e4b7c34e02e465dc3809b55817d51ae4732"
+      }
+    },
+    "seidel_2d": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000027",
+        "cycles": 146453,
+        "rtl_sha256": "31ddf33a1da612685f59eb04f88a2397d3fcf2c820b671a47df84d681405cd99"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000027",
+        "cycles": 175333,
+        "rtl_sha256": "0adfdc193d17e88465d4e9be2228d228d8b3438cb18c5068d21de17380f55555"
+      }
+    },
+    "symm": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 32032,
+        "rtl_sha256": "7e5b44ab420f9b26d20604ff30818b8123163b7b4c60755c3b4724042d9f7e6a"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 32032,
+        "rtl_sha256": "c2d95642e334025b0af8bb69c077264666d13ac3c6df1bcc09b4a6b8db79adb8"
+      }
+    },
+    "syr2k": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000003",
+        "cycles": 67962,
+        "rtl_sha256": "b41c8d3b29321040b96c1f61be2d5c8a2f3eac49995071bc97f55a297567a9c3"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000003",
+        "cycles": 67962,
+        "rtl_sha256": "26fa8fa2af3d887adda8d9b048d8052b550cc4718f67c70a935bfa58e8ca0623"
+      }
+    },
+    "syrk": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 54428,
+        "rtl_sha256": "4f583550ce9031e8f0b6df1aaade8c0381b85bccd51a6d30f0a61b7904226e5e"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 54428,
+        "rtl_sha256": "00a2512eadb3d82ecda3c58b191d76eff1a6d32e812940069652bb1bed0d7980"
+      }
+    },
+    "trisolv": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 7802,
+        "rtl_sha256": "30bea6429778a1e3a9120b44bdcd6582906736a375b7cf551cc3cf1602dc50a4"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 7802,
+        "rtl_sha256": "3fbf4bd9d55cef50b8a12469338710bcb0e88db3f429c18c22d74ab78e0d9d53"
+      }
+    },
+    "trmm": {
+      "fixed_priority": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 28362,
+        "rtl_sha256": "c3a758d4d1f6dd6e4c810d9cc6d57b0d3e93e90dbdfe6313838dcfa10d508b7d"
+      },
+      "single_channel": {
+        "status": "valid",
+        "expected_checksum": "00000000",
+        "cycles": 28362,
+        "rtl_sha256": "b6a8e23d3e11ab3a8b539824710f88194b69121fb3081ae8175e5da8466b429a"
+      }
+    }
+  }
+}

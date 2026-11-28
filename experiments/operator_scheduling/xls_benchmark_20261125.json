@@ -1,0 +1,190 @@
+{
+  "release_tag": "v0.0.0-11174-g32dc47058",
+  "archive_sha256": "d62488b1c8270ac626aab13a03dfddb238458270f64164b8bf3ccb5d782d0fe7",
+  "tools_sha256": {
+    "interpreter_main": "e3a012937b2fed1731a7d07dc513511dea34fff7c57fdb7aeebfe2cfb749fc10",
+    "ir_converter_main": "9d785df9337a151fcf422ae96b49042f514655e00cc9caf41fb810353aeaedd1",
+    "opt_main": "1fb7f34d2370623b3343cf2ef215e057e1db5c0c7c0f9a68afd52814fe60b743",
+    "codegen_main": "0c3ae9681fbb30551681b0c3999d973085e50b2eb390e67073f7b4fd661039d0"
+  },
+  "source_commit": "f0ad0e58eafcb062cbb08b4e7751c7442ac8346c",
+  "delay_model": "sky130",
+  "source_equivalence": "broader_suite",
+  "input_seed": 20261125,
+  "cases": {
+    "crc32": {
+      "source": "xls/examples/crc32/crc32.x",
+      "sha256": "c0f62fba5811dbe3634fb72b2c67f4085d2ac8aefb9ce16a845cb61768bc8c61",
+      "top": "main",
+      "clock_ps": 2500,
+      "strategies": {
+        "sdc": {
+          "schedule_stages": 1,
+          "block_register_bits": 40,
+          "registers": 2,
+          "rtl_sha256": "365bbf287507cb31c4b09012cfc4ed4dbf6d052d4ec54a3e0bf4f048978eecda",
+          "tested": 16,
+          "signature_latency": 2,
+          "rtl_outputs_sha256": "651280cb6bcf6876dba063af617530dee4da95a26cd520d81dc3672aa1db0eb6",
+          "status": "passed"
+        },
+        "asap": {
+          "schedule_stages": 1,
+          "block_register_bits": 40,
+          "registers": 2,
+          "rtl_sha256": "365bbf287507cb31c4b09012cfc4ed4dbf6d052d4ec54a3e0bf4f048978eecda",
+          "tested": 16,
+          "signature_latency": 2,
+          "rtl_outputs_sha256": "651280cb6bcf6876dba063af617530dee4da95a26cd520d81dc3672aa1db0eb6",
+          "status": "passed"
+        }
+      },
+      "upstream_tests": [
+        "[ RUN UNITTEST  ] crc32_one_char",
+        "[            OK ]",
+        "[===============] 1 test(s) ran; 0 failed; 0 skipped."
+      ],
+      "optimized_ir_sha256": "2946597ec6eb1dad99c985873681769f44244e84cb481f99b90c2d104eb43aaa"
+    },
+    "hsv2rgb": {
+      "source": "third_party/xls_colors/hsv2rgb.x",
+      "sha256": "800657d5debd9b55a8baf536f0ad9273dad19b11d4795953d832fe852299102b",
+      "top": "hsv2rgb",
+      "clock_ps": 5000,
+      "strategies": {
+        "sdc": {
+          "schedule_stages": 2,
+          "block_register_bits": 103,
+          "registers": 14,
+          "rtl_sha256": "93203b12c95dec46f0af17c9366b2a3ff1c30ae04ba865b1bdc034ba091db49d",
+          "tested": 16,
+          "signature_latency": 3,
+          "rtl_outputs_sha256": "592a76f3b8293b9219c1b8968f1546c9f86547f6e414ccb5600d61f4dd5afad5",
+          "status": "passed"
+        },
+        "asap": {
+          "schedule_stages": 2,
+          "block_register_bits": 212,
+          "registers": 15,
+          "rtl_sha256": "36a59680d3aadf183f381e8028826074d3127ac4824a48c8ed07f26429528d84",
+          "tested": 16,
+          "signature_latency": 3,
+          "rtl_outputs_sha256": "592a76f3b8293b9219c1b8968f1546c9f86547f6e414ccb5600d61f4dd5afad5",
+          "status": "passed"
+        }
+      },
+      "upstream_tests": [
+        "[ RUN UNITTEST  ] hsv2rgb_test",
+        "[            OK ]",
+        "[===============] 1 test(s) ran; 0 failed; 0 skipped."
+      ],
+      "optimized_ir_sha256": "33ffbe28ee7ba5b4bcdac1094d35b2b1fda731d63fa210a089aef936bd9e26c5"
+    },
+    "float32_fast_rsqrt": {
+      "source": "xls/dslx/stdlib/float32.x",
+      "sha256": "2dbc3bd4c5045fb1b8765b293457d6cca1ba338ca1bd5763b2957d11b0a7d84a",
+      "top": "fast_rsqrt",
+      "clock_ps": 5000,
+      "strategies": {
+        "sdc": {
+          "schedule_stages": 7,
+          "block_register_bits": 646,
+          "registers": 84,
+          "rtl_sha256": "f2933df050cc58a5c0f3debc0381104c2275e3439f89f0fc8ab68b2e77d67fc4",
+          "tested": 16,
+          "signature_latency": 8,
+          "rtl_outputs_sha256": "7bbbff4397a1d3c0ee1d2d734ccc4d0c84582335cbfe1e0a9f7f67320dde9dc1",
+          "status": "passed"
+        },
+        "asap": {
+          "schedule_stages": 7,
+          "block_register_bits": 2498,
+          "registers": 245,
+          "rtl_sha256": "f7bb6195205afb3be3334baae712a9f8f7023390adc8cfba295ee9540f44b70f",
+          "tested": 16,
+          "signature_latency": 8,
+          "rtl_outputs_sha256": "7bbbff4397a1d3c0ee1d2d734ccc4d0c84582335cbfe1e0a9f7f67320dde9dc1",
+          "status": "passed"
+        }
+      },
+      "upstream_tests": [
+        "[            OK ]",
+        "[ RUN UNITTEST  ] round_test",
+        "[            OK ]",
+        "[===============] 6 test(s) ran; 0 failed; 0 skipped.",
+        "[ SKIPPING QUICKCHECKS  ] (JIT is disabled and quickcheck is not enabled with the interpreter)"
+      ],
+      "optimized_ir_sha256": "9eac860f7cd9bdd26237a8229c42c81d51d079daaf957d16d3209d6812f8798a"
+    },
+    "sha256": {
+      "source": "xls/examples/sha256.x",
+      "sha256": "d2873304c5c0c88e5d5987611418dc397acb29841f9fba2c848fa58f7eae47cd",
+      "top": "sha256",
+      "clock_ps": 2500,
+      "strategies": {
+        "sdc": {
+          "schedule_stages": 96,
+          "block_register_bits": 75204,
+          "registers": 2231,
+          "rtl_sha256": "f28a922d6fa97d0d0f52ea955ec40bcab7782260f471b6173d6e9a187052872f",
+          "tested": 16,
+          "signature_latency": 97,
+          "rtl_outputs_sha256": "7d46ece01ab5f4b0d2c77cb0b7f4becafe9e1417753e100861844fbf6cdf146b",
+          "status": "passed"
+        },
+        "asap": {
+          "schedule_stages": 96,
+          "block_register_bits": 188065,
+          "registers": 6244,
+          "rtl_sha256": "2d05f3ccb052167ed7f86637b44eb14af4a333792442270ba4800cbfda21f708",
+          "tested": 16,
+          "signature_latency": 97,
+          "rtl_outputs_sha256": "7d46ece01ab5f4b0d2c77cb0b7f4becafe9e1417753e100861844fbf6cdf146b",
+          "status": "passed"
+        }
+      },
+      "upstream_tests": [
+        "[ RUN UNITTEST  ] sha256_empty_payload_test",
+        "[            OK ]",
+        "[ RUN UNITTEST  ] sha256_abc_test",
+        "[            OK ]",
+        "[===============] 3 test(s) ran; 0 failed; 0 skipped."
+      ],
+      "optimized_ir_sha256": "e4787e173cda66506b61672811285153c71e29188d0438af63553ab17e252d93"
+    },
+    "fpexp_32": {
+      "source": "third_party/xls_go_math/fpexp_32.x",
+      "sha256": "e6fecd757954a49875c26f30b96b09dd0601c623127da04b5a4aa17275957521",
+      "top": "fpexp_32",
+      "clock_ps": 5000,
+      "strategies": {
+        "sdc": {
+          "schedule_stages": 48,
+          "block_register_bits": 9552,
+          "registers": 1268,
+          "rtl_sha256": "91a07745e8e1adc06da4e85eedbdb8e2150ce389ae1873d60584c94b1b4bd43e",
+          "tested": 16,
+          "signature_latency": 49,
+          "rtl_outputs_sha256": "463d50e543cd4b24a9b67e72bce017e2571220eaa2399a0ed85f6e7bfd1f790c",
+          "status": "passed"
+        },
+        "asap": {
+          "schedule_stages": 48,
+          "block_register_bits": 65274,
+          "registers": 4357,
+          "rtl_sha256": "80ed6c4035c20990fd5d99fff3b1094dc38d873fbbcce10a7d9a17b5d07a4d8d",
+          "tested": 16,
+          "signature_latency": 49,
+          "rtl_outputs_sha256": "463d50e543cd4b24a9b67e72bce017e2571220eaa2399a0ed85f6e7bfd1f790c",
+          "status": "passed"
+        }
+      },
+      "upstream_tests": [
+        "[ RUN UNITTEST  ] fpexp_32_test",
+        "[            OK ]",
+        "[===============] 1 test(s) ran; 0 failed; 0 skipped."
+      ],
+      "optimized_ir_sha256": "6dfac6f044aec9c25372405ec961665130fd8007595229dbaf576ecbe1bcb8a8"
+    }
+  }
+}

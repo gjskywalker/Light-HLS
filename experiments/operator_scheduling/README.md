@@ -1,5 +1,7 @@
 # Codex 算子调度实验
 
+[近期论文 benchmark 的端到端实验、配置与跨工具对照](paper_sweep_20261125.md) · [真实 HLS 调度的研究动机](../../docs/research/03_hls_scheduling_motivation.md)
+
 本实验比较固定候选数下的两种 Codex 调度算法生成方式。输入是 HeuriGym 的算子 DAG。给定操作延时和各类功能单元数量，求每个节点的整数起始周期，使所有依赖和资源约束成立，并最小化最后一个节点的完成周期（makespan）。操作从开始到结束持续占用一个功能单元。
 
 [第一轮实验结果及选中的调度器](round1_20261120/README.md)
@@ -37,3 +39,31 @@ python3 experiments/operator_scheduling/run_round.py \
 - `results.json` 保存逐图结果、各轮验证分数和 HeuriGym 作者公布的 ILP 参考值。参考值直接读取收集包。
 
 数据来源见仓库内的 [HLS Scheduling Benchmark 收集说明](../../benchmarks/hls_scheduling_2024_2026/README.md)。
+
+## Light-HLS 工作流试点
+
+[2026-11-24 试点结果](flow_pilot_20261124.md)
+
+`flow_pilot.py` 对比固定模型与请求数下的独立生成、执行反馈和执行反馈加独立审阅。三组各跑两条轨迹，每条 3 次请求。独立组和反馈组各发起 3 次候选生成，审阅组用 1 次请求审阅首份代码，再生成第二份候选。报告分别记录实际 token、生成状态和候选成绩。所有 Codex 请求使用 `--ephemeral`。
+
+先按仓库根目录的构建说明更新 `Light_HLS_Top`，再执行以下命令。`--calibrate-only` 可单独检查编译器、图的精确参考和 RTL 仿真。
+
+```bash
+python3 experiments/operator_scheduling/flow_pilot.py \
+  --output runs/operator_scheduling_flow_pilot_v2_20261124 \
+  --repeats 2 --model gpt-6.1-sol --effort low
+```
+
+`flow_pilot.c` 提供四个直线 C 用例，`lookup_xor` 和 `mix_words` 用于开发，`weighted_sum` 和 `pack_channels` 用于预留评测。目标配置为 U250、250 MHz 调度约束。编译器以 `HI_EXPERIMENT_SCHEDULE_GRAPH` 指定输出图，记录操作延时、数据依赖和发请求时的 bank／端口容量。以 `HI_EXPERIMENT_SCHEDULE_REPLAY` 指定 JSON 起始周期数组时，原调度器检查并回放候选。实验入口要求单基本块、只读或无内存访问，适用于这轮非流水试点。
+
+`flow_schedule.py` 在隔离进程中加载 Agent 提交的优先级函数，使用固定列表调度器生成起始周期。小图通过枚举端口请求顺序得到给定图模型下的精确参考。候选先过图检查，再由 Light-HLS 回放，并用 Icarus Verilog 对每个生成的 RTL 执行 32 个原生 C 差分测试。每条轨迹按开发集 RTL 通过数、RTL 周期比值和提交顺序选出候选，保存选拔后再对预留图运行选中的代码。
+
+## KDA 启发的调度诊断对照
+
+[三组实验结果、用例划分与复现说明](diagnostic_flow_20261125.md)
+
+`diagnostic_flow.py` 在同一初始策略上比较结果反馈、固定诊断和 Agent 自选诊断。三组都限额调用临时 Codex 会话，候选只修改 `priority(op)`。调度器记录每次选择时的就绪操作、满足资源约束的操作和实际选择。实验脚本管理父候选、诊断查询、实测 RTL 周期和开发集选拔。冻结后在八个预留设计上回放，独立核查工具可重新编译并用另一批输入做 C/RTL 差分验证。
+
+## Bambu 调度机制对照
+
+[Bambu 与 Light-HLS 的 27 项对照实验](bambu_attribution_20261125.md)记录了论文版 Bambu 的调度源码、432 组 RTL 仿真、运算链与前端的独立消融，以及 Jacobi-1D 在两套工具中的端口实验。

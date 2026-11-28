@@ -1,0 +1,2519 @@
+{
+  "posthoc": true,
+  "frozen": {
+    "protocol": {
+      "dev": [
+        "vericert24_gemm",
+        "vericert24_gesummv",
+        "vericert24_syrk",
+        "vericert24_bicg",
+        "vericert24_mvt",
+        "vericert24_ludcmp",
+        "vericert24_nussinov",
+        "vericert24_jacobi_1d"
+      ],
+      "features": [
+        "log2_header_cycles",
+        "log2_slack_cycles",
+        "log2_visits",
+        "state_count",
+        "leaf",
+        "depth",
+        "loads",
+        "stores",
+        "multiplies",
+        "body_conditions",
+        "mapped"
+      ],
+      "compiler": "b678bdb2b037efcc23bbdc221e87408d78c0788fda75afd3dbf72e4400a965e5",
+      "selection": "Keep the incumbent unless all valid development cases pass and the product of candidate cycles is strictly lower than the product of manual cycles on exactly those cases.",
+      "budget": 3,
+      "first_case_freeze": "9ca5cc4995ed5b4e89e88b32829ae00b74fd052e511e8abe76c30fca9c3da222"
+    },
+    "proposal": {
+      "weights": [
+        0,
+        -4,
+        0,
+        -16,
+        0,
+        0,
+        16,
+        0,
+        0,
+        0,
+        0
+      ],
+      "response": {
+        "weights": "[0,-4,0,-16,0,0,16,0,0,0,0]",
+        "hypothesis": "Favor low-state, load-bearing residual loops while discounting slack, opening previously missed candidates and avoiding paired rejected probes. Keep the protected probe first; promote only after a strictly lower valid development geomean."
+      },
+      "receipt": {
+        "status": "generated",
+        "seconds": 35.753760093823075,
+        "usage": {
+          "input_tokens": 16894,
+          "cached_input_tokens": 0,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 725,
+          "reasoning_output_tokens": 641
+        }
+      },
+      "prompt_sha256": "37fefb1afdc9c81b79c8c023e3fabb1340162393a51ed17e2cc50b828c7a0b85"
+    },
+    "deploy": "manual_incumbent",
+    "dev_score": {
+      "scheduled": 8,
+      "native_valid": 7,
+      "paired": 7,
+      "manual/native": {
+        "wins": 5,
+        "ties": 2,
+        "losses": 0,
+        "geomean": 0.9370289590179859
+      },
+      "agent/native": {
+        "wins": 5,
+        "ties": 2,
+        "losses": 0,
+        "geomean": 0.9370289590179859
+      },
+      "agent/manual": {
+        "wins": 0,
+        "ties": 7,
+        "losses": 0,
+        "geomean": 1.0
+      }
+    },
+    "dev_cases": {
+      "vericert24_gemm": {
+        "status": "valid",
+        "cycles": 69860,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_gemm_4",
+        "attempts": {
+          "Loop_kernel_gemm_4": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 22,
+              "trip": 25,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body11_i"
+            },
+            "predicted_saving": 13200.0
+          },
+          "Loop_kernel_gemm_1": {
+            "source": "profile_run",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_gemm_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -1,
+              "trip": 25,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body3_i13"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "da038fbb5efce5ccb86d41fe6ed9c25ee626fdd441731196766994d4dd6fdd83"
+      },
+      "vericert24_gesummv": {
+        "status": "valid",
+        "cycles": 33178,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_gesummv_2",
+        "attempts": {
+          "Loop_kernel_gesummv_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 56,
+              "trip": 30,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body5_i"
+            },
+            "predicted_saving": 1680.0
+          },
+          "Loop_kernel_gesummv_1": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -33,
+              "trip": 30,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body_i"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "7a6bc8a753565005d6e4b1eaae1c70afd5b639abb8310aed02d0542999279a7f"
+      },
+      "vericert24_syrk": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 61962,
+        "attempts": {
+          "Loop_kernel_syrk_4": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_syrk_1": {
+            "source": "profile_run",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_syrk_2": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "00000000"
+      },
+      "vericert24_bicg": {
+        "status": "valid",
+        "cycles": 35814,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_bicg_3",
+        "attempts": {
+          "Loop_kernel_bicg_3": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 35,
+              "trip": 38,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body8_i"
+            },
+            "predicted_saving": 1470.0
+          },
+          "Loop_kernel_bicg_1": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -1,
+              "trip": 38,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body_i"
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_bicg_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -3109,
+              "trip": 42,
+              "ii": 76,
+              "bottleneck": "memory port capacity",
+              "block": "for_body3_i"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "dd83141f106f42462642e343b4d414ec7d3f5572930bdec2594c4ce7df57ba85"
+      },
+      "vericert24_mvt": {
+        "status": "valid",
+        "cycles": 39712,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_mvt_2",
+        "attempts": {
+          "Loop_kernel_mvt_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 76,
+              "trip": 40,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body3_i"
+            },
+            "predicted_saving": 3040.0
+          },
+          "Loop_kernel_mvt_1": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -3,
+              "trip": 40,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_cond1_preheader_i"
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_mvt_3": {
+            "source": "profile_run",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -3,
+              "trip": 40,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_cond19_preheader_i"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "94c65395e6ac956abd3d329fb1dc1cfbc20c53f557d0a8d1ae6baca61989ce68"
+      },
+      "vericert24_ludcmp": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 336532,
+        "attempts": {
+          "Loop_kernel_ludcmp_5": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_ludcmp_6": {
+            "source": "profile_run",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_ludcmp_8": {
+            "source": "profile_run",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "00000004"
+      },
+      "vericert24_nussinov": {
+        "status": "native_unavailable",
+        "reason": "rtl_failed"
+      },
+      "vericert24_jacobi_1d": {
+        "status": "valid",
+        "cycles": 4121,
+        "checksum": "00000001",
+        "choice": "Loop_kernel_jacobi_1d_2",
+        "attempts": {
+          "Loop_kernel_jacobi_1d_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 26,
+              "trip": 28,
+              "ii": 3,
+              "bottleneck": "memory port capacity",
+              "block": "for_body3_i"
+            },
+            "predicted_saving": 520.0
+          },
+          "Loop_kernel_jacobi_1d_1": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_jacobi_1d_3": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 26,
+              "trip": 28,
+              "ii": 3,
+              "bottleneck": "memory port capacity",
+              "block": "for_body21_i"
+            },
+            "predicted_saving": 520.0
+          }
+        },
+        "rtl_sha256": "94e5bf2f51f4448a4c38e05cb38eab8d7f3ce08f661190877b02ec167595daa2"
+      }
+    }
+  },
+  "splits": {
+    "dev": {
+      "raw": {
+        "scheduled": 8,
+        "native_valid": 7,
+        "paired": 7,
+        "manual/native": {
+          "wins": 5,
+          "ties": 2,
+          "losses": 0,
+          "geomean": 0.9370289590179859
+        },
+        "agent/native": {
+          "wins": 5,
+          "ties": 2,
+          "losses": 0,
+          "geomean": 0.9370289590179859
+        },
+        "agent/manual": {
+          "wins": 0,
+          "ties": 7,
+          "losses": 0,
+          "geomean": 1.0
+        }
+      },
+      "deployed": {
+        "scheduled": 8,
+        "native_valid": 7,
+        "paired": 7,
+        "manual/native": {
+          "wins": 5,
+          "ties": 2,
+          "losses": 0,
+          "geomean": 0.9370289590179859
+        },
+        "agent/native": {
+          "wins": 5,
+          "ties": 2,
+          "losses": 0,
+          "geomean": 0.9370289590179859
+        },
+        "agent/manual": {
+          "wins": 0,
+          "ties": 7,
+          "losses": 0,
+          "geomean": 1.0
+        }
+      }
+    },
+    "holdout": {
+      "raw": {
+        "scheduled": 19,
+        "native_valid": 17,
+        "paired": 17,
+        "manual/native": {
+          "wins": 9,
+          "ties": 8,
+          "losses": 0,
+          "geomean": 0.9137519353979163
+        },
+        "agent/native": {
+          "wins": 9,
+          "ties": 8,
+          "losses": 0,
+          "geomean": 0.9156592890870935
+        },
+        "agent/manual": {
+          "wins": 0,
+          "ties": 16,
+          "losses": 1,
+          "geomean": 1.0020873867570486
+        }
+      },
+      "deployed": {
+        "scheduled": 19,
+        "native_valid": 17,
+        "paired": 17,
+        "manual/native": {
+          "wins": 9,
+          "ties": 8,
+          "losses": 0,
+          "geomean": 0.9137519353979163
+        },
+        "agent/native": {
+          "wins": 9,
+          "ties": 8,
+          "losses": 0,
+          "geomean": 0.9137519353979163
+        },
+        "agent/manual": {
+          "wins": 0,
+          "ties": 17,
+          "losses": 0,
+          "geomean": 1.0
+        }
+      }
+    },
+    "all": {
+      "raw": {
+        "scheduled": 27,
+        "native_valid": 24,
+        "paired": 24,
+        "manual/native": {
+          "wins": 14,
+          "ties": 10,
+          "losses": 0,
+          "geomean": 0.9204806886625898
+        },
+        "agent/native": {
+          "wins": 14,
+          "ties": 10,
+          "losses": 0,
+          "geomean": 0.921841265834157
+        },
+        "agent/manual": {
+          "wins": 0,
+          "ties": 23,
+          "losses": 1,
+          "geomean": 1.001478115932605
+        }
+      },
+      "deployed": {
+        "scheduled": 27,
+        "native_valid": 24,
+        "paired": 24,
+        "manual/native": {
+          "wins": 14,
+          "ties": 10,
+          "losses": 0,
+          "geomean": 0.9204806886625898
+        },
+        "agent/native": {
+          "wins": 14,
+          "ties": 10,
+          "losses": 0,
+          "geomean": 0.9204806886625898
+        },
+        "agent/manual": {
+          "wins": 0,
+          "ties": 24,
+          "losses": 0,
+          "geomean": 1.0
+        }
+      }
+    }
+  },
+  "cases": {
+    "vericert24_gemm": {
+      "split": "dev",
+      "native": 83060,
+      "manual": {
+        "status": "valid",
+        "cycles": 69860,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_gemm_4",
+        "attempts": {
+          "Loop_kernel_gemm_4": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 22,
+              "trip": 25,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body11_i"
+            },
+            "predicted_saving": 13200.0
+          },
+          "Loop_kernel_gemm_3": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -2981,
+              "trip": 30,
+              "ii": 103,
+              "bottleneck": "conservative mixed read/write memory dependence",
+              "block": "for_cond9_preheader_i"
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_gemm_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -1,
+              "trip": 25,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body3_i13"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "da038fbb5efce5ccb86d41fe6ed9c25ee626fdd441731196766994d4dd6fdd83"
+      },
+      "raw": {
+        "status": "valid",
+        "cycles": 69860,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_gemm_4",
+        "attempts": {
+          "Loop_kernel_gemm_4": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 22,
+              "trip": 25,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body11_i"
+            },
+            "predicted_saving": 13200.0
+          },
+          "Loop_kernel_gemm_1": {
+            "source": "profile_run",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_gemm_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -1,
+              "trip": 25,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body3_i13"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "da038fbb5efce5ccb86d41fe6ed9c25ee626fdd441731196766994d4dd6fdd83"
+      },
+      "deployed_cycles": 69860
+    },
+    "vericert24_gesummv": {
+      "split": "dev",
+      "native": 34858,
+      "manual": {
+        "status": "valid",
+        "cycles": 33178,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_gesummv_2",
+        "attempts": {
+          "Loop_kernel_gesummv_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 56,
+              "trip": 30,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body5_i"
+            },
+            "predicted_saving": 1680.0
+          },
+          "Loop_kernel_gesummv_1": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -33,
+              "trip": 30,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body_i"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "7a6bc8a753565005d6e4b1eaae1c70afd5b639abb8310aed02d0542999279a7f"
+      },
+      "raw": {
+        "status": "valid",
+        "cycles": 33178,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_gesummv_2",
+        "attempts": {
+          "Loop_kernel_gesummv_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 56,
+              "trip": 30,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body5_i"
+            },
+            "predicted_saving": 1680.0
+          },
+          "Loop_kernel_gesummv_1": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -33,
+              "trip": 30,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body_i"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "7a6bc8a753565005d6e4b1eaae1c70afd5b639abb8310aed02d0542999279a7f"
+      },
+      "deployed_cycles": 33178
+    },
+    "vericert24_syrk": {
+      "split": "dev",
+      "native": 61962,
+      "manual": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 61962,
+        "attempts": {
+          "Loop_kernel_syrk_4": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_syrk_3": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -1220,
+              "trip": 20,
+              "ii": 63,
+              "bottleneck": "conservative mixed read/write memory dependence",
+              "block": "for_cond9_preheader_i"
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_syrk_2": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "00000000"
+      },
+      "raw": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 61962,
+        "attempts": {
+          "Loop_kernel_syrk_4": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_syrk_1": {
+            "source": "profile_run",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_syrk_2": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "00000000"
+      },
+      "deployed_cycles": 61962
+    },
+    "vericert24_bicg": {
+      "split": "dev",
+      "native": 37284,
+      "manual": {
+        "status": "valid",
+        "cycles": 35814,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_bicg_3",
+        "attempts": {
+          "Loop_kernel_bicg_3": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 35,
+              "trip": 38,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body8_i"
+            },
+            "predicted_saving": 1470.0
+          },
+          "Loop_kernel_bicg_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -3109,
+              "trip": 42,
+              "ii": 76,
+              "bottleneck": "memory port capacity",
+              "block": "for_body3_i"
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_bicg_1": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -1,
+              "trip": 38,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body_i"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "dd83141f106f42462642e343b4d414ec7d3f5572930bdec2594c4ce7df57ba85"
+      },
+      "raw": {
+        "status": "valid",
+        "cycles": 35814,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_bicg_3",
+        "attempts": {
+          "Loop_kernel_bicg_3": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 35,
+              "trip": 38,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body8_i"
+            },
+            "predicted_saving": 1470.0
+          },
+          "Loop_kernel_bicg_1": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -1,
+              "trip": 38,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body_i"
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_bicg_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -3109,
+              "trip": 42,
+              "ii": 76,
+              "bottleneck": "memory port capacity",
+              "block": "for_body3_i"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "dd83141f106f42462642e343b4d414ec7d3f5572930bdec2594c4ce7df57ba85"
+      },
+      "deployed_cycles": 35814
+    },
+    "vericert24_mvt": {
+      "split": "dev",
+      "native": 42752,
+      "manual": {
+        "status": "valid",
+        "cycles": 39712,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_mvt_2",
+        "attempts": {
+          "Loop_kernel_mvt_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 76,
+              "trip": 40,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body3_i"
+            },
+            "predicted_saving": 3040.0
+          },
+          "Loop_kernel_mvt_4": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 76,
+              "trip": 40,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body21_i"
+            },
+            "predicted_saving": 3040.0
+          },
+          "Loop_kernel_mvt_1": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -3,
+              "trip": 40,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_cond1_preheader_i"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "94c65395e6ac956abd3d329fb1dc1cfbc20c53f557d0a8d1ae6baca61989ce68"
+      },
+      "raw": {
+        "status": "valid",
+        "cycles": 39712,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_mvt_2",
+        "attempts": {
+          "Loop_kernel_mvt_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 76,
+              "trip": 40,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body3_i"
+            },
+            "predicted_saving": 3040.0
+          },
+          "Loop_kernel_mvt_1": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -3,
+              "trip": 40,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_cond1_preheader_i"
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_mvt_3": {
+            "source": "profile_run",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -3,
+              "trip": 40,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_cond19_preheader_i"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "94c65395e6ac956abd3d329fb1dc1cfbc20c53f557d0a8d1ae6baca61989ce68"
+      },
+      "deployed_cycles": 39712
+    },
+    "vericert24_ludcmp": {
+      "split": "dev",
+      "native": 336532,
+      "manual": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 336532,
+        "attempts": {
+          "Loop_kernel_ludcmp_5": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_ludcmp_3": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_ludcmp_7": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "00000004"
+      },
+      "raw": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 336532,
+        "attempts": {
+          "Loop_kernel_ludcmp_5": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_ludcmp_6": {
+            "source": "profile_run",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_ludcmp_8": {
+            "source": "profile_run",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "00000004"
+      },
+      "deployed_cycles": 336532
+    },
+    "vericert24_nussinov": {
+      "split": "dev",
+      "native": null,
+      "manual": {
+        "status": "native_unavailable",
+        "reason": "rtl_failed"
+      },
+      "raw": {
+        "status": "native_unavailable",
+        "reason": "rtl_failed"
+      },
+      "deployed_cycles": null
+    },
+    "vericert24_jacobi_1d": {
+      "split": "dev",
+      "native": 4641,
+      "manual": {
+        "status": "valid",
+        "cycles": 4121,
+        "checksum": "00000001",
+        "choice": "Loop_kernel_jacobi_1d_2",
+        "attempts": {
+          "Loop_kernel_jacobi_1d_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 26,
+              "trip": 28,
+              "ii": 3,
+              "bottleneck": "memory port capacity",
+              "block": "for_body3_i"
+            },
+            "predicted_saving": 520.0
+          },
+          "Loop_kernel_jacobi_1d_3": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 26,
+              "trip": 28,
+              "ii": 3,
+              "bottleneck": "memory port capacity",
+              "block": "for_body21_i"
+            },
+            "predicted_saving": 520.0
+          },
+          "Loop_kernel_jacobi_1d_1": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "94e5bf2f51f4448a4c38e05cb38eab8d7f3ce08f661190877b02ec167595daa2"
+      },
+      "raw": {
+        "status": "valid",
+        "cycles": 4121,
+        "checksum": "00000001",
+        "choice": "Loop_kernel_jacobi_1d_2",
+        "attempts": {
+          "Loop_kernel_jacobi_1d_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 26,
+              "trip": 28,
+              "ii": 3,
+              "bottleneck": "memory port capacity",
+              "block": "for_body3_i"
+            },
+            "predicted_saving": 520.0
+          },
+          "Loop_kernel_jacobi_1d_1": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_jacobi_1d_3": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 26,
+              "trip": 28,
+              "ii": 3,
+              "bottleneck": "memory port capacity",
+              "block": "for_body21_i"
+            },
+            "predicted_saving": 520.0
+          }
+        },
+        "rtl_sha256": "94e5bf2f51f4448a4c38e05cb38eab8d7f3ce08f661190877b02ec167595daa2"
+      },
+      "deployed_cycles": 4121
+    },
+    "vericert24_covariance": {
+      "split": "holdout",
+      "native": 110174,
+      "manual": {
+        "status": "valid",
+        "cycles": 85814,
+        "checksum": "00000038",
+        "choice": "Loop_kernel_covariance_7",
+        "attempts": {
+          "Loop_kernel_covariance_7": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 60,
+              "trip": 32,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body48_i"
+            },
+            "predicted_saving": 24360.0
+          },
+          "Loop_kernel_covariance_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 60,
+              "trip": 32,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body3_i8"
+            },
+            "predicted_saving": 1680.0
+          },
+          "Loop_kernel_covariance_4": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -1,
+              "trip": 28,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body23_i"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "5a7ffa8cd71f35273559c94d247c0eeba8c90e809c53f65ed9b901cf610da055"
+      },
+      "raw": {
+        "status": "valid",
+        "cycles": 85814,
+        "checksum": "00000038",
+        "choice": "Loop_kernel_covariance_7",
+        "attempts": {
+          "Loop_kernel_covariance_7": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 60,
+              "trip": 32,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body48_i"
+            },
+            "predicted_saving": 24360.0
+          },
+          "Loop_kernel_covariance_1": {
+            "source": "profile_run",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -59,
+              "trip": 28,
+              "ii": 3,
+              "bottleneck": "memory port capacity",
+              "block": "for_body_i"
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_covariance_3": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -1761,
+              "trip": 32,
+              "ii": 56,
+              "bottleneck": "memory port capacity",
+              "block": "for_cond21_preheader_i"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "5a7ffa8cd71f35273559c94d247c0eeba8c90e809c53f65ed9b901cf610da055"
+      },
+      "deployed_cycles": 85814
+    },
+    "vericert24_gemver": {
+      "split": "holdout",
+      "native": 46272,
+      "manual": {
+        "status": "valid",
+        "cycles": 43232,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_gemver_4",
+        "attempts": {
+          "Loop_kernel_gemver_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 37,
+              "trip": 40,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body3_i"
+            },
+            "predicted_saving": 1480.0
+          },
+          "Loop_kernel_gemver_4": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 76,
+              "trip": 40,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body29_i25"
+            },
+            "predicted_saving": 3040.0
+          },
+          "Loop_kernel_gemver_7": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 76,
+              "trip": 40,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body67_i"
+            },
+            "predicted_saving": 3040.0
+          }
+        },
+        "rtl_sha256": "8a2f4956f4cb5bee54150d58390b7e32b80ae468b316de3f3658f618e6897e4f"
+      },
+      "raw": {
+        "status": "valid",
+        "cycles": 44792,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_gemver_2",
+        "attempts": {
+          "Loop_kernel_gemver_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 37,
+              "trip": 40,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body3_i"
+            },
+            "predicted_saving": 1480.0
+          },
+          "Loop_kernel_gemver_1": {
+            "source": "profile_run",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -3121,
+              "trip": 40,
+              "ii": 80,
+              "bottleneck": "memory port capacity",
+              "block": "for_cond1_preheader_i"
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_gemver_5": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -1,
+              "trip": 40,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body51_i"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "1daef6848a004cfec5a5174266d8d7e07c09c40a4db285716f8b46ff67aecaee"
+      },
+      "deployed_cycles": 43232
+    },
+    "vericert24_symm": {
+      "split": "holdout",
+      "native": 43911,
+      "manual": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 43911,
+        "attempts": {
+          "Loop_kernel_symm_3": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_symm_2": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_symm_1": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "00000000"
+      },
+      "raw": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 43911,
+        "attempts": {
+          "Loop_kernel_symm_3": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_symm_1": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_symm_2": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "00000000"
+      },
+      "deployed_cycles": 43911
+    },
+    "vericert24_syr2k": {
+      "split": "holdout",
+      "native": 79762,
+      "manual": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 79762,
+        "attempts": {
+          "Loop_kernel_syr2k_4": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_syr2k_3": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -1240,
+              "trip": 20,
+              "ii": 64,
+              "bottleneck": "conservative mixed read/write memory dependence",
+              "block": "for_cond9_preheader_i"
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_syr2k_2": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "00000003"
+      },
+      "raw": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 79762,
+        "attempts": {
+          "Loop_kernel_syr2k_4": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_syr2k_1": {
+            "source": "profile_run",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_syr2k_3": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -1240,
+              "trip": 20,
+              "ii": 64,
+              "bottleneck": "conservative mixed read/write memory dependence",
+              "block": "for_cond9_preheader_i"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "00000003"
+      },
+      "deployed_cycles": 79762
+    },
+    "vericert24_trmm": {
+      "split": "holdout",
+      "native": 35231,
+      "manual": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 35231,
+        "attempts": {
+          "Loop_kernel_trmm_3": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_trmm_2": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_trmm_1": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "00000000"
+      },
+      "raw": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 35231,
+        "attempts": {
+          "Loop_kernel_trmm_3": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_trmm_1": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_trmm_2": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "00000000"
+      },
+      "deployed_cycles": 35231
+    },
+    "vericert24_2mm": {
+      "split": "holdout",
+      "native": 71536,
+      "manual": {
+        "status": "valid",
+        "cycles": 59248,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_2mm_6",
+        "attempts": {
+          "Loop_kernel_2mm_6": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 32,
+              "trip": 18,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body42_i"
+            },
+            "predicted_saving": 12288.0
+          },
+          "Loop_kernel_2mm_3": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 40,
+              "trip": 22,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body8_i"
+            },
+            "predicted_saving": 11520.0
+          },
+          "Loop_kernel_2mm_5": {
+            "source": "profile_run",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -3,
+              "trip": 24,
+              "ii": 3,
+              "bottleneck": "memory port capacity",
+              "block": "for_body34_i"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "d55b99d98f90e6efc5e6097fdcc445872314e15e7bc63c6bade3abeb3b18d930"
+      },
+      "raw": {
+        "status": "valid",
+        "cycles": 59248,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_2mm_6",
+        "attempts": {
+          "Loop_kernel_2mm_6": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 32,
+              "trip": 18,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body42_i"
+            },
+            "predicted_saving": 12288.0
+          },
+          "Loop_kernel_2mm_1": {
+            "source": "profile_run",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -291,
+              "trip": 16,
+              "ii": 19,
+              "bottleneck": "memory port capacity",
+              "block": "for_cond1_preheader_i16"
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_2mm_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -21,
+              "trip": 18,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body3_i17"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "d55b99d98f90e6efc5e6097fdcc445872314e15e7bc63c6bade3abeb3b18d930"
+      },
+      "deployed_cycles": 59248
+    },
+    "vericert24_3mm": {
+      "split": "holdout",
+      "native": 98532,
+      "manual": {
+        "status": "valid",
+        "cycles": 81108,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_3mm_6",
+        "attempts": {
+          "Loop_kernel_3mm_6": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 44,
+              "trip": 24,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body40_i"
+            },
+            "predicted_saving": 17424.0
+          },
+          "Loop_kernel_3mm_9": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 32,
+              "trip": 18,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body76_i"
+            },
+            "predicted_saving": 11264.0
+          },
+          "Loop_kernel_3mm_3": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 36,
+              "trip": 20,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body8_i"
+            },
+            "predicted_saving": 10368.0
+          }
+        },
+        "rtl_sha256": "174e1f39d1e3b56d29f851356709942ed2b86cec99b6f957eb8a9ba01bce54e9"
+      },
+      "raw": {
+        "status": "valid",
+        "cycles": 81108,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_3mm_6",
+        "attempts": {
+          "Loop_kernel_3mm_6": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 44,
+              "trip": 24,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body40_i"
+            },
+            "predicted_saving": 17424.0
+          },
+          "Loop_kernel_3mm_1": {
+            "source": "profile_run",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -291,
+              "trip": 16,
+              "ii": 19,
+              "bottleneck": "memory port capacity",
+              "block": "for_cond1_preheader_i19"
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_3mm_2": {
+            "source": "profile_run",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -21,
+              "trip": 18,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body3_i20"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "174e1f39d1e3b56d29f851356709942ed2b86cec99b6f957eb8a9ba01bce54e9"
+      },
+      "deployed_cycles": 81108
+    },
+    "vericert24_atas": {
+      "split": "holdout",
+      "native": 27494,
+      "manual": {
+        "status": "valid",
+        "cycles": 24454,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_atax_3",
+        "attempts": {
+          "Loop_kernel_atax_3": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 80,
+              "trip": 42,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body8_i"
+            },
+            "predicted_saving": 3040.0
+          },
+          "Loop_kernel_atax_4": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 39,
+              "trip": 42,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body25_i"
+            },
+            "predicted_saving": 1482.0
+          },
+          "Loop_kernel_atax_1": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -1,
+              "trip": 42,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body_i"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "02d9ba75fc6cd9cf03535bd629eb292ebddc34f742aac267299cb9e713fa15ce"
+      },
+      "raw": {
+        "status": "valid",
+        "cycles": 24454,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_atax_3",
+        "attempts": {
+          "Loop_kernel_atax_3": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 80,
+              "trip": 42,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body8_i"
+            },
+            "predicted_saving": 3040.0
+          },
+          "Loop_kernel_atax_1": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -1,
+              "trip": 42,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body_i"
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_atax_2": {
+            "source": "profile_run",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "02d9ba75fc6cd9cf03535bd629eb292ebddc34f742aac267299cb9e713fa15ce"
+      },
+      "deployed_cycles": 24454
+    },
+    "vericert24_doitgen": {
+      "split": "holdout",
+      "native": 55200,
+      "manual": {
+        "status": "valid",
+        "cycles": 36000,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_doitgen_4",
+        "attempts": {
+          "Loop_kernel_doitgen_4": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 20,
+              "trip": 12,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body9_i"
+            },
+            "predicted_saving": 19200.0
+          },
+          "Loop_kernel_doitgen_5": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 10,
+              "trip": 12,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body28_i"
+            },
+            "predicted_saving": 800.0
+          },
+          "Loop_kernel_doitgen_3": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "c77a6582f40d3e1823d361870923001706f63c535e8685f71d0feb1bd1d5e7a4"
+      },
+      "raw": {
+        "status": "valid",
+        "cycles": 36000,
+        "checksum": "00000000",
+        "choice": "Loop_kernel_doitgen_4",
+        "attempts": {
+          "Loop_kernel_doitgen_4": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 20,
+              "trip": 12,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body9_i"
+            },
+            "predicted_saving": 19200.0
+          },
+          "Loop_kernel_doitgen_1": {
+            "source": "profile_run",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_doitgen_2": {
+            "source": "profile_run",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "c77a6582f40d3e1823d361870923001706f63c535e8685f71d0feb1bd1d5e7a4"
+      },
+      "deployed_cycles": 36000
+    },
+    "vericert24_cholesky": {
+      "split": "holdout",
+      "native": 281879,
+      "manual": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 281879,
+        "attempts": {
+          "Loop_kernel_cholesky_3": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_cholesky_2": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_cholesky_4": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "00000001"
+      },
+      "raw": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 281879,
+        "attempts": {
+          "Loop_kernel_cholesky_3": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_cholesky_1": {
+            "source": "previous_profile",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_cholesky_2": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "00000001"
+      },
+      "deployed_cycles": 281879
+    },
+    "vericert24_durbin": {
+      "split": "holdout",
+      "native": 7808,
+      "manual": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 7808,
+        "attempts": {
+          "Loop_kernel_durbin_3": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_durbin_2": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_durbin_4": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "ffffffd7"
+      },
+      "raw": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 7808,
+        "attempts": {
+          "Loop_kernel_durbin_3": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_durbin_4": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_durbin_2": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "ffffffd7"
+      },
+      "deployed_cycles": 7808
+    },
+    "vericert24_lu": {
+      "split": "holdout",
+      "native": null,
+      "manual": {
+        "status": "native_unavailable",
+        "reason": "rtl_failed"
+      },
+      "raw": {
+        "status": "native_unavailable",
+        "reason": "rtl_failed"
+      },
+      "deployed_cycles": null
+    },
+    "vericert24_trisolv": {
+      "split": "holdout",
+      "native": 34780,
+      "manual": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 34780,
+        "attempts": {
+          "Loop_kernel_trisolv_2": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_trisolv_1": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "00000000"
+      },
+      "raw": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 34780,
+        "attempts": {
+          "Loop_kernel_trisolv_2": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_trisolv_1": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "00000000"
+      },
+      "deployed_cycles": 34780
+    },
+    "vericert24_floyd_warshall": {
+      "split": "holdout",
+      "native": 1070392,
+      "manual": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 1070392,
+        "attempts": {
+          "Loop_kernel_floyd_warshall_3": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -1,
+              "trip": 60,
+              "ii": 4,
+              "bottleneck": "memory port capacity",
+              "block": "for_body6_i"
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_floyd_warshall_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -14341,
+              "trip": 60,
+              "ii": 240,
+              "bottleneck": "memory port capacity",
+              "block": "for_cond4_preheader_i"
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_floyd_warshall_1": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "00000010"
+      },
+      "raw": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 1070392,
+        "attempts": {
+          "Loop_kernel_floyd_warshall_3": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -1,
+              "trip": 60,
+              "ii": 4,
+              "bottleneck": "memory port capacity",
+              "block": "for_body6_i"
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_floyd_warshall_1": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_floyd_warshall_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -14341,
+              "trip": 60,
+              "ii": 240,
+              "bottleneck": "memory port capacity",
+              "block": "for_cond4_preheader_i"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "00000010"
+      },
+      "deployed_cycles": 1070392
+    },
+    "vericert24_adi": {
+      "split": "holdout",
+      "native": null,
+      "manual": {
+        "status": "native_unavailable",
+        "reason": "rtl_failed"
+      },
+      "raw": {
+        "status": "native_unavailable",
+        "reason": "rtl_failed"
+      },
+      "deployed_cycles": null
+    },
+    "vericert24_fdtd_2d": {
+      "split": "holdout",
+      "native": 142640,
+      "manual": {
+        "status": "valid",
+        "cycles": 121740,
+        "checksum": "00000e71",
+        "choice": "Loop_kernel_fdtd_2d_8",
+        "attempts": {
+          "Loop_kernel_fdtd_2d_8": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 55,
+              "trip": 29,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body76_i"
+            },
+            "predicted_saving": 20900.0
+          },
+          "Loop_kernel_fdtd_2d_6": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 26,
+              "trip": 29,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body42_i"
+            },
+            "predicted_saving": 10400.0
+          },
+          "Loop_kernel_fdtd_2d_4": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 27,
+              "trip": 30,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body12_i"
+            },
+            "predicted_saving": 10260.0
+          }
+        },
+        "rtl_sha256": "a56503ba3f28646ff7ed95b26675985b0451fb653bc098521e3e7747782c287f"
+      },
+      "raw": {
+        "status": "valid",
+        "cycles": 121740,
+        "checksum": "00000e71",
+        "choice": "Loop_kernel_fdtd_2d_8",
+        "attempts": {
+          "Loop_kernel_fdtd_2d_8": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 55,
+              "trip": 29,
+              "ii": 2,
+              "bottleneck": "memory port capacity",
+              "block": "for_body76_i"
+            },
+            "predicted_saving": 20900.0
+          },
+          "Loop_kernel_fdtd_2d_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -1,
+              "trip": 30,
+              "ii": 1,
+              "bottleneck": "requested initiation interval",
+              "block": "for_body3_i"
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_fdtd_2d_3": {
+            "source": "profile_run",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -1182,
+              "trip": 19,
+              "ii": 60,
+              "bottleneck": "memory port capacity",
+              "block": "for_cond10_preheader_i"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "a56503ba3f28646ff7ed95b26675985b0451fb653bc098521e3e7747782c287f"
+      },
+      "deployed_cycles": 121740
+    },
+    "vericert24_heat_3d": {
+      "split": "holdout",
+      "native": 51081,
+      "manual": {
+        "status": "valid",
+        "cycles": 46921,
+        "checksum": "00000014",
+        "choice": "Loop_kernel_heat_3d_4",
+        "attempts": {
+          "Loop_kernel_heat_3d_4": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 13,
+              "trip": 8,
+              "ii": 7,
+              "bottleneck": "memory port capacity",
+              "block": "for_body11_i"
+            },
+            "predicted_saving": 4160.0
+          },
+          "Loop_kernel_heat_3d_7": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 13,
+              "trip": 8,
+              "ii": 7,
+              "bottleneck": "memory port capacity",
+              "block": "for_body112_i"
+            },
+            "predicted_saving": 4160.0
+          },
+          "Loop_kernel_heat_3d_3": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -331,
+              "trip": 8,
+              "ii": 42,
+              "bottleneck": "memory port capacity",
+              "block": "for_cond8_preheader_i"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "1612bb6f7a9fb40820902cd50217d3755cd33ba1814b39417f0661c3346a9918"
+      },
+      "raw": {
+        "status": "valid",
+        "cycles": 46921,
+        "checksum": "00000014",
+        "choice": "Loop_kernel_heat_3d_4",
+        "attempts": {
+          "Loop_kernel_heat_3d_4": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 13,
+              "trip": 8,
+              "ii": 7,
+              "bottleneck": "memory port capacity",
+              "block": "for_body11_i"
+            },
+            "predicted_saving": 4160.0
+          },
+          "Loop_kernel_heat_3d_1": {
+            "source": "profile_run",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_heat_3d_2": {
+            "source": "previous_profile",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "1612bb6f7a9fb40820902cd50217d3755cd33ba1814b39417f0661c3346a9918"
+      },
+      "deployed_cycles": 46921
+    },
+    "vericert24_jacobi_2d": {
+      "split": "holdout",
+      "native": 83761,
+      "manual": {
+        "status": "valid",
+        "cycles": 80121,
+        "checksum": "000000a2",
+        "choice": "Loop_kernel_jacobi_2d_3",
+        "attempts": {
+          "Loop_kernel_jacobi_2d_3": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 26,
+              "trip": 28,
+              "ii": 5,
+              "bottleneck": "memory port capacity",
+              "block": "for_body7_i"
+            },
+            "predicted_saving": 3640.0
+          },
+          "Loop_kernel_jacobi_2d_5": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 26,
+              "trip": 28,
+              "ii": 5,
+              "bottleneck": "memory port capacity",
+              "block": "for_body56_i"
+            },
+            "predicted_saving": 3640.0
+          },
+          "Loop_kernel_jacobi_2d_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -2410,
+              "trip": 28,
+              "ii": 87,
+              "bottleneck": "memory port capacity",
+              "block": "for_cond4_preheader_i"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "fc4c28ffa5248bbd5ff1327298860e18168113600812d58612e3638d68825437"
+      },
+      "raw": {
+        "status": "valid",
+        "cycles": 80121,
+        "checksum": "000000a2",
+        "choice": "Loop_kernel_jacobi_2d_3",
+        "attempts": {
+          "Loop_kernel_jacobi_2d_3": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": 26,
+              "trip": 28,
+              "ii": 5,
+              "bottleneck": "memory port capacity",
+              "block": "for_body7_i"
+            },
+            "predicted_saving": 3640.0
+          },
+          "Loop_kernel_jacobi_2d_1": {
+            "source": "previous_profile",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_jacobi_2d_2": {
+            "source": "original",
+            "probe": {
+              "status": "compiled",
+              "gain_estimate": -2410,
+              "trip": 28,
+              "ii": 87,
+              "bottleneck": "memory port capacity",
+              "block": "for_cond4_preheader_i"
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "rtl_sha256": "fc4c28ffa5248bbd5ff1327298860e18168113600812d58612e3638d68825437"
+      },
+      "deployed_cycles": 80121
+    },
+    "vericert24_seidel_2d": {
+      "split": "holdout",
+      "native": 267172,
+      "manual": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 267172,
+        "attempts": {
+          "Loop_kernel_seidel_2d_3": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_seidel_2d_2": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_seidel_2d_1": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "00000027"
+      },
+      "raw": {
+        "status": "valid",
+        "choice": "native",
+        "cycles": 267172,
+        "attempts": {
+          "Loop_kernel_seidel_2d_3": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_seidel_2d_1": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          },
+          "Loop_kernel_seidel_2d_2": {
+            "source": "original",
+            "probe": {
+              "status": "rejected",
+              "gain_estimate": 0
+            },
+            "predicted_saving": 0.0
+          }
+        },
+        "checksum": "00000027"
+      },
+      "deployed_cycles": 267172
+    }
+  }
+}

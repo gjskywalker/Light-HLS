@@ -7,9 +7,15 @@
 #include "llvm/IR/CFG.h"
 #include "llvm/IR/IntrinsicInst.h"
 #include "llvm/IR/Instructions.h"
+#include "llvm/Support/FileSystem.h"
+#include "llvm/Support/JSON.h"
+#include "llvm/Support/MemoryBuffer.h"
+#include "llvm/Support/raw_ostream.h"
 
 #include <algorithm>
+#include <array>
 #include <cmath>
+#include <cstdlib>
 #include <functional>
 #include <map>
 #include <set>
@@ -64,6 +70,83 @@ std::vector<unsigned> accessBanks(const MemoryObject &memory,
     for (unsigned bank = 0; bank < memory.banks; ++bank)
         banks.push_back(bank);
     return banks;
+}
+
+Expected<std::vector<int>> readExperimentalSchedule(const char *path)
+{
+    if (!path)
+        return std::vector<int>{};
+    auto buffer = MemoryBuffer::getFile(path);
+    if (!buffer)
+        return errorCodeToError(buffer.getError());
+    auto parsed = json::parse((*buffer)->getBuffer());
+    if (!parsed)
+        return parsed.takeError();
+    const auto *array = parsed->getAsArray();
+    if (!array)
+        return createStringError(inconvertibleErrorCode(), "expected an array of start cycles");
+    std::vector<int> starts;
+    for (const json::Value &entry : *array)
+    {
+        auto cycle = entry.getAsInteger();
+        if (!cycle || *cycle < 0 || *cycle > 100000)
+            return createStringError(inconvertibleErrorCode(), "start cycle must be an integer in [0, 100000]");
+        starts.push_back(static_cast<int>(*cycle));
+    }
+    return starts;
+}
+
+std::string exportExperimentalGraph(const char *path, const HLSBackendContext &context,
+                                    const BlockSchedule &block)
+{
+    json::Array nodes, edges;
+    json::Object ports;
+    std::map<const Instruction *, unsigned> ids;
+    for (const InstructionSchedule &operation : block.instructions)
+    {
+        const unsigned id = ids.size();
+        ids.emplace(operation.instruction, id);
+        for (const Use &operand : operation.instruction->operands())
+            if (auto source = ids.find(dyn_cast<Instruction>(operand.get()));
+                source != ids.end() && source->second != id)
+                edges.push_back(json::Array{source->second, id});
+
+        json::Array resources;
+        auto access = context.memoryAccesses.find(operation.instruction);
+        if (access != context.memoryAccesses.end())
+        {
+            const MemoryObject &memory = *findMemoryObject(context, access->second.memory);
+            if (!memory.hasCombinationalScalarReads())
+                for (unsigned bank : accessBanks(memory, access->second))
+                {
+                    const std::string key = memory.name + ":" + std::to_string(bank);
+                    ports[key] = memory.ports;
+                    resources.push_back(key);
+                }
+        }
+        nodes.push_back(json::Object{{"opcode", operation.opcode},
+                                    {"latency", operation.latency},
+                                    {"resources", std::move(resources)},
+                                    {"native_start", operation.startCycle}});
+    }
+    const auto *ret = cast<ReturnInst>(block.block->getTerminator());
+    auto returned = ids.find(dyn_cast_or_null<Instruction>(ret->getReturnValue()));
+    std::error_code error;
+    raw_fd_ostream output(path, error, sys::fs::OF_Text);
+    if (error)
+        return error.message();
+    output << json::Value(json::Object{
+        {"nodes", std::move(nodes)}, {"edges", std::move(edges)},
+        {"ports", std::move(ports)}, {"return_node", returned == ids.end() ? -1 : int(returned->second)},
+        {"native_cycles", block.executionLatency}}) << '\n';
+    output.close();
+    if (output.has_error())
+    {
+        error = output.error();
+        output.clear_error();
+        return error.message();
+    }
+    return {};
 }
 
 unsigned getResultWidth(const Instruction &instruction)
@@ -159,6 +242,107 @@ int getLatency(const HLSBackendContext &context, const Instruction &instruction)
     if (model == context.latencyModel.end())
         return 1;
     return std::max(1, std::min(model->second, 64));
+}
+
+// In the experiment the agent only ranks operations. The ordinary allocator still
+// determines starts, bank conflicts, load forwarding and control/PHI timing.
+using OrderWeights = std::array<int, 4>;
+
+Expected<OrderWeights> readOrderWeights(StringRef text)
+{
+    auto parsed = json::parse(text);
+    if (!parsed)
+        return parsed.takeError();
+    const auto *array = parsed->getAsArray();
+    OrderWeights weights{};
+    if (!array || array->size() != weights.size())
+        return createStringError(inconvertibleErrorCode(), "expected four priority weights");
+    for (size_t i = 0; i < weights.size(); ++i)
+    {
+        auto value = (*array)[i].getAsInteger();
+        if (!value || *value < -64 || *value > 64)
+            return createStringError(inconvertibleErrorCode(), "expected integer weights in [-64,64]");
+        weights[i] = static_cast<int>(*value);
+    }
+    return weights;
+}
+
+std::vector<Instruction *> allocationOrder(BasicBlock &block, const HLSBackendContext &context,
+                                           const OrderWeights *weights)
+{
+    std::vector<Instruction *> ops;
+    for (Instruction &op : block)
+        if (isDatapathInstruction(op) && !context.constantValues.count(&op))
+            ops.push_back(&op);
+    if (!weights || ops.size() < 2)
+        return ops;
+
+    std::map<const Instruction *, unsigned> ids;
+    std::vector<std::vector<unsigned>> children(ops.size());
+    std::vector<unsigned> indegree(ops.size());
+    std::vector<unsigned> readsSinceBarrier;
+    unsigned lastBarrier = ops.size();
+    for (unsigned i = 0; i < ops.size(); ++i)
+    {
+        Instruction *op = ops[i];
+        std::set<unsigned> predecessors;
+        for (const Use &use : op->operands())
+            if (auto it = ids.find(dyn_cast<Instruction>(use.get())); it != ids.end())
+                predecessors.insert(it->second);
+        ids.emplace(op, i);
+        auto access = context.memoryAccesses.find(op);
+        if (access != context.memoryAccesses.end() || op->mayReadOrWriteMemory() || op->mayHaveSideEffects())
+        {
+            // Reorder ordinary known reads only. All stores, FIFO/volatile/atomic
+            // accesses and unknown effects keep their original order w.r.t. memory.
+            const auto *load = dyn_cast<LoadInst>(op);
+            const bool movableRead = load && load->isSimple() && access != context.memoryAccesses.end()
+                                      && !access->second.isFIFO && !access->second.isWrite;
+            if (lastBarrier < ops.size())
+                predecessors.insert(lastBarrier);
+            if (movableRead)
+                readsSinceBarrier.push_back(i);
+            else
+            {
+                predecessors.insert(readsSinceBarrier.begin(), readsSinceBarrier.end());
+                readsSinceBarrier.clear();
+                lastBarrier = i;
+            }
+        }
+        indegree[i] = predecessors.size();
+        for (unsigned pred : predecessors)
+            children[pred].push_back(i);
+    }
+    std::vector<int> tail(ops.size()), requests(ops.size());
+    std::vector<long long> score(ops.size());
+    std::set<std::pair<long long, unsigned>> ready;
+    for (size_t i = ops.size(); i-- > 0;)
+    {
+        for (unsigned child : children[i])
+        {
+            tail[i] = std::max(tail[i], tail[child]);
+            requests[i] = std::max(requests[i], requests[child]);
+        }
+        int latency = getLatency(context, *ops[i]);
+        tail[i] += latency;
+        requests[i] += context.memoryAccesses.count(ops[i]) != 0;
+        score[i] = 1LL * (*weights)[0] * tail[i] + 1LL * (*weights)[1] * requests[i] +
+                   1LL * (*weights)[2] * static_cast<int>(children[i].size()) + (*weights)[3] * latency;
+        if (!indegree[i])
+            ready.emplace(-score[i], i);
+    }
+    std::vector<Instruction *> ordered;
+    ordered.reserve(ops.size());
+    while (!ready.empty())
+    {
+        unsigned i = ready.begin()->second;
+        ready.erase(ready.begin());
+        ordered.push_back(ops[i]);
+        for (unsigned child : children[i])
+            if (!--indegree[child])
+                ready.emplace(-score[child], child);
+    }
+    return ordered;
 }
 
 bool canForwardMemoryResponse(const HLSBackendContext &context,
@@ -1075,6 +1259,92 @@ bool HI_OperationScheduling::runOnModule(Module &module)
     LoopInfo &loops = getAnalysis<LoopInfoWrapperPass>(*context->top).getLoopInfo();
     selectCombinationalValues(*context, loops);
 
+    const char *graphPath = std::getenv("HI_EXPERIMENT_SCHEDULE_GRAPH");
+    const char *schedulePath = std::getenv("HI_EXPERIMENT_SCHEDULE_REPLAY");
+    const char *orderText = std::getenv("HI_EXPERIMENT_ORDER_WEIGHTS");
+    const char *blocksText = std::getenv("HI_EXPERIMENT_ORDER_BLOCKS");
+    std::set<std::string> selectedBlocks;
+    if (blocksText)
+    {
+        auto parsed = json::parse(blocksText);
+        if (!parsed)
+        {
+            context->addError("EXPERIMENT_ORDER_INPUT", toString(parsed.takeError()));
+            return false;
+        }
+        if (!orderText || !parsed->getAsArray())
+        {
+            context->addError("EXPERIMENT_ORDER_INPUT", "a block list requires an order policy");
+            return false;
+        }
+        for (const auto &item : *parsed->getAsArray())
+        {
+            if (!item.getAsString())
+            {
+                context->addError("EXPERIMENT_ORDER_INPUT", "expected block names");
+                return false;
+            }
+            selectedBlocks.insert(item.getAsString()->str());
+        }
+    }
+    OrderWeights weights{};
+    if (orderText)
+    {
+        auto parsed = readOrderWeights(orderText);
+        if (!parsed)
+        {
+            context->addError("EXPERIMENT_ORDER_INPUT", toString(parsed.takeError()));
+            return false;
+        }
+        if (graphPath || schedulePath)
+        {
+            context->addError("EXPERIMENT_ORDER_INPUT", "order and exact-start modes require separate runs");
+            return false;
+        }
+        weights = *parsed;
+    }
+    std::vector<int> proposedStarts;
+    if (graphPath || schedulePath)
+    {
+        const Function &top = *context->top;
+        if (top.size() != 1 || !isa<ReturnInst>(top.front().getTerminator()) ||
+            !context->pipelineRegions.empty())
+        {
+            context->addError("EXPERIMENT_SCHEDULE_SCOPE", "expected a straight-line top function");
+            return false;
+        }
+        for (const Instruction &instruction : top.front())
+        {
+            if (instruction.mayWriteToMemory() && !isIgnoredIntrinsic(instruction))
+            {
+                context->addError("EXPERIMENT_SCHEDULE_SCOPE", "expected read-only memory accesses");
+                return false;
+            }
+            const auto access = context->memoryAccesses.find(&instruction);
+            if (access != context->memoryAccesses.end() &&
+                (access->second.isFIFO || !findMemoryObject(*context, access->second.memory)))
+            {
+                context->addError("EXPERIMENT_SCHEDULE_SCOPE", "expected a known non-FIFO memory");
+                return false;
+            }
+        }
+        auto starts = readExperimentalSchedule(schedulePath);
+        if (!starts)
+        {
+            context->addError("EXPERIMENT_SCHEDULE_INPUT", toString(starts.takeError()));
+            return false;
+        }
+        proposedStarts = std::move(*starts);
+        if (schedulePath && proposedStarts.size() != static_cast<size_t>(
+            std::count_if(top.front().begin(), top.front().end(), [&](const Instruction &instruction) {
+                return isDatapathInstruction(instruction) && !context->constantValues.count(&instruction);
+            })))
+        {
+            context->addError("EXPERIMENT_SCHEDULE_INPUT", "expected one start cycle per scheduled operation");
+            return false;
+        }
+    }
+
     for (const BasicBlock &block : *context->top)
     {
         const auto *ret = dyn_cast<ReturnInst>(block.getTerminator());
@@ -1191,11 +1461,11 @@ bool HI_OperationScheduling::runOnModule(Module &module)
             std::vector<std::pair<const MemoryAccessInfo *, int>> memoryRequests;
             std::map<std::string, std::map<unsigned, std::map<int, unsigned>>> memoryPortUsage;
             int maximumCompletion = 0;
-            for (Instruction &instruction : block)
+            const bool useOrder = orderText && (!blocksText || selectedBlocks.count(blockSchedule.name));
+            for (Instruction *operation : allocationOrder(block, *context, useOrder ? &weights : nullptr))
             {
-                if (!isDatapathInstruction(instruction) || context->constantValues.count(&instruction))
-                    continue;
-
+                Instruction &instruction = *operation;
+                const int proposedStart = schedulePath ? proposedStarts[blockSchedule.instructions.size()] : 0;
                 int startCycle = 0;
                 for (const Use &operandUse : instruction.operands())
                 {
@@ -1254,6 +1524,7 @@ bool HI_OperationScheduling::runOnModule(Module &module)
                         startCycle = std::max(startCycle, previous.second + separation);
                     }
                     context->schedule.memoryOrderingCycles += startCycle - dataReadyCycle;
+                    startCycle = std::max(startCycle, proposedStart);
                     const int requestedCycle = startCycle;
                     memoryRequests.emplace_back(&memoryAccess->second, startCycle);
                     auto conflicts = [&](int cycle)
@@ -1284,6 +1555,8 @@ bool HI_OperationScheduling::runOnModule(Module &module)
                         for (unsigned bank : banks)
                             ++memoryPortUsage[memoryAccess->second.memory][bank][startCycle];
                 }
+                else
+                    startCycle = std::max(startCycle, proposedStart);
 
                 const int latency = getLatency(*context, instruction);
                 completionCycle[&instruction] = startCycle + latency;
@@ -1474,6 +1747,23 @@ bool HI_OperationScheduling::runOnModule(Module &module)
                 blockSchedule.stateCount = 0;
             blockSchedule.executionLatency = blockSchedule.stateCount;
             break;
+        }
+        if (schedulePath)
+            for (size_t index = 0; index < proposedStarts.size(); ++index)
+                if (blockSchedule.instructions[index].startCycle != proposedStarts[index])
+                {
+                    context->addError("EXPERIMENT_SCHEDULE_CONSTRAINT",
+                                      "Light-HLS cannot honor start cycle for operation " + std::to_string(index));
+                    return false;
+                }
+        if (graphPath)
+        {
+            std::string error = exportExperimentalGraph(graphPath, *context, blockSchedule);
+            if (!error.empty())
+            {
+                context->addError("EXPERIMENT_SCHEDULE_OUTPUT", error);
+                return false;
+            }
         }
         blockSchedule.firstState = nextState;
         nextState += blockSchedule.stateCount;

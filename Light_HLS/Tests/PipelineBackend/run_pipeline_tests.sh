@@ -238,6 +238,15 @@ iverilog -g2012 -Wall -s backend_pipeline_nested_tb \
   >"${run_directory}/row_dependent/iverilog.log" 2>&1
 vvp "${run_directory}/row_dependent/sim"
 
+mkdir -p "${run_directory}/triangular_trip"
+if "${top_executable}" "${script_directory}/triangular_trip.cpp" triangular_trip \
+    --board u250 --freq 100MHz --output "${run_directory}/triangular_trip" \
+    >"${run_directory}/triangular_trip/light_hls.log" 2>&1; then
+  echo "A maximum trip count was accepted as a fixed pipeline trip count." >&2
+  exit 1
+fi
+grep -q 'BACKEND_PIPELINE_TRIP_COUNT_UNKNOWN' "${run_directory}/triangular_trip/light_hls.log"
+
 for frequency in 100MHz 200MHz; do
   case_directory="${run_directory}/signed_chain_${frequency}"
   mkdir -p "${case_directory}/work"

@@ -1,0 +1,83 @@
+{
+  "period_ns": 10,
+  "cases": {
+    "gemm": {
+      "passes": [
+        "native",
+        "agent"
+      ],
+      "selected": "agent",
+      "cycles": 69860,
+      "time_us_at_target": 698.6,
+      "sha256": "da038fbb5efce5ccb86d41fe6ed9c25ee626fdd441731196766994d4dd6fdd83",
+      "split": "dev",
+      "bambu_cycles_at_target": 79422
+    },
+    "bicg": {
+      "passes": [
+        "native",
+        "agent"
+      ],
+      "selected": "agent",
+      "cycles": 35814,
+      "time_us_at_target": 358.14,
+      "sha256": "dd83141f106f42462642e343b4d414ec7d3f5572930bdec2594c4ce7df57ba85",
+      "split": "dev",
+      "bambu_cycles_at_target": 18404
+    },
+    "jacobi_1d": {
+      "passes": [
+        "native",
+        "agent"
+      ],
+      "selected": "agent",
+      "cycles": 4121,
+      "time_us_at_target": 41.21,
+      "sha256": "94e5bf2f51f4448a4c38e05cb38eab8d7f3ce08f661190877b02ec167595daa2",
+      "split": "dev",
+      "bambu_cycles_at_target": 2442
+    },
+    "vericert24_cholesky": {
+      "passes": [],
+      "selected": null,
+      "cycles": null,
+      "time_us_at_target": null,
+      "sha256": null,
+      "split": "holdout",
+      "bambu_cycles_at_target": 317584
+    },
+    "vericert24_fdtd_2d": {
+      "passes": [],
+      "selected": null,
+      "cycles": null,
+      "time_us_at_target": null,
+      "sha256": null,
+      "split": "holdout",
+      "bambu_cycles_at_target": 100760
+    },
+    "vericert24_syr2k": {
+      "passes": [
+        "native",
+        "agent"
+      ],
+      "selected": "native",
+      "cycles": 79762,
+      "time_us_at_target": 797.62,
+      "sha256": "5fdbd43bbabb4c210b4db9c9664895561b414674ad74913139a2d334fb79ba8c",
+      "split": "holdout",
+      "bambu_cycles_at_target": 67962
+    },
+    "vericert24_trmm": {
+      "passes": [
+        "native",
+        "agent"
+      ],
+      "selected": "native",
+      "cycles": 35231,
+      "time_us_at_target": 352.31,
+      "sha256": "d0a77d4fb914dc4d1fd3100c4f84909fd7ec82d7aa39161f0feb1a1bc8d121db",
+      "split": "holdout",
+      "bambu_cycles_at_target": 28362
+    }
+  }
+}

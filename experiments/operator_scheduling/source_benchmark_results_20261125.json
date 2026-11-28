@@ -1,0 +1,2565 @@
+{
+  "board": "u250",
+  "frequency": "250MHz",
+  "synthesis": false,
+  "compiler_sha256": "3c3514c5e45f4a15034a1cb9b452a1b4bea556a1ad88a2ba37579ff19a7a9a27",
+  "manifest_sha256": "98dc937f1e956290208d7917591462666124a256dccb5da023cd9ecc03acf842",
+  "timeout_seconds": 35,
+  "sim_timeout_seconds": 55,
+  "jobs": 6,
+  "cases": [
+    {
+      "id": "vericert24_covariance",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "a4808b30352dcb3834bd929b9087ff87fcaf39b2e9ada4f3e94601193e2eb62d",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 1,
+      "detail": "Light-HLS backend error [BACKEND_UNSUPPORTED_INSTRUCTION]: Unsupported LLVM instruction 'call'. (for.body3.i:   %umax.i = tail call i32 @llvm.umax.i32(i32 %bcast4, i32 56), !dbg !59)"
+    },
+    {
+      "id": "vericert24_gemm",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "0183ac4f5ac7108d1b81ffab50f3b7a971192d3068418393b223c4844f9cfe81",
+      "functional": {
+        "status": "matched",
+        "cycles": 81810,
+        "expected": "00000000"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "2ddea2b795af8898a0894b37de41f1cd6fd93c0800067ddf7d8e123d2f57af30",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "vericert24_gemver",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "49cfad2221ed9cbcee8666718fd77696232b4955d21440739a3ec0b1df48e072",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 1,
+      "detail": "Light-HLS backend error [BACKEND_UNSUPPORTED_INSTRUCTION]: Unsupported LLVM instruction 'call'. (entry:   call void @llvm.memset.p0.i64(ptr noundef nonnull align 16 dereferenceable(160) %u2, i8 0, i64 160, i1 false), !dbg !81, !tbaa !82)"
+    },
+    {
+      "id": "vericert24_gesummv",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "bf026cc2e534ff4b9d639d671060f424a20d5422922bbd60b9878f3b3f3d9b47",
+      "functional": {
+        "status": "matched",
+        "cycles": 34858,
+        "expected": "00000000"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "db76aff5936eb4c5bd715b57b3e23f0e9630fb5e195c4f85e071c36e307f14da",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "vericert24_symm",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "eac8e689d3c54178991f10c77c27e6bdb663ea140ca0eea4bad9a7a0c7979683",
+      "functional": {
+        "status": "matched",
+        "cycles": 43121,
+        "expected": "00000000"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "747fc6a0980c27b4d115d4a87de2b98bb65679e616d4f7ad3df6641093c4d20a",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "vericert24_syr2k",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "df0eee7fe5099dc5b1da4fc3504e9b7296a6080ad55d2afa14ffbada5ecdaeb3",
+      "functional": {
+        "status": "matched",
+        "cycles": 69562,
+        "expected": "00000003"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "be05411e78016baa56c21fe0d2388eefd08ecd504b625c82dde43863e6a041d4",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "vericert24_syrk",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "8aa62e674893df1189d77c898b043d499cfad125085b4b65e9dad52acbad82e1",
+      "functional": {
+        "status": "matched",
+        "cycles": 60462,
+        "expected": "00000000"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "bed682c8bcb16d9373222d3acf0656bd991e8c2e511f8b87b4031ebfd843c256",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "vericert24_trmm",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "1e1d52d20636633058afd258b5e42b0cb6e734bbc7aef462de32e811e6a02063",
+      "functional": {
+        "status": "matched",
+        "cycles": 35231,
+        "expected": "00000000"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "499b8d6121bbc4e2d5236214bbaa3557444cd30c40a9322c6b2f91e51144cec2",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "vericert24_2mm",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "522818aa7b499e6fa4531a08d820188cbf2090e54e356d938aaa126213d55d0e",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 1,
+      "detail": "Light-HLS backend error [BACKEND_UNSUPPORTED_INSTRUCTION]: Unsupported LLVM instruction 'call'. (_Z7smoduloii.exit.i:   %umax.i = tail call i32 @llvm.umax.i32(i32 %3, i32 32), !dbg !158)"
+    },
+    {
+      "id": "vericert24_3mm",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "eb33c602f74706b7110050eeca60b3cb6dcd400d97c1bc6a7974745ca9ef071e",
+      "functional": {
+        "status": "matched",
+        "cycles": 96892,
+        "expected": "00000000"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "70c7e3f1545abffed41ea6897e80562d78f7ded0a8ee101848cbe62b3becd0fa",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "vericert24_atas",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "7d89cd0eb2b94515a4ad34607fec1bacce9f6f058fb87c7d87048667587cd274",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 1,
+      "detail": "Light-HLS backend error [BACKEND_UNSUPPORTED_INSTRUCTION]: Unsupported LLVM instruction 'call'. (_ZL10init_arrayiiPA42_iPi.exit:   call void @llvm.memset.p0.i64(ptr noundef nonnull align 16 dereferenceable(168) %y, i8 0, i64 168, i1 false), !dbg !170"
+    },
+    {
+      "id": "vericert24_bicg",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "472c6c92242edc61a650f517837f694886ba3fc6f47c41824d9528ecd79af90c",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 1,
+      "detail": "Light-HLS backend error [BACKEND_UNSUPPORTED_INSTRUCTION]: Unsupported LLVM instruction 'call'. (_ZL10init_arrayiiPA38_iPiS1_.exit:   call void @llvm.memset.p0.i64(ptr noundef nonnull align 16 dereferenceable(152) %s, i8 0, i64 152, i1 false), !dbg !"
+    },
+    {
+      "id": "vericert24_doitgen",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "4e87ee571ad9b7a7a7e4259411ec91f17385bec8dfad2037d6f241bc95d06adf",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": -6,
+      "detail": "Assertion `target && \"There should be an PtrToInt/Alloc Instruction for the addition operation.\\n\"' failed."
+    },
+    {
+      "id": "vericert24_mvt",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "1e0a9e61b159dce22a6f0fab49a773839b88e1f00b7184de0deb71124c2861a7",
+      "functional": {
+        "status": "matched",
+        "cycles": 42752,
+        "expected": "00000000"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "046ebd840fd1498a31c95d67ce90f68092fdda5231b7ea88ba30b7f4690b69cc",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "vericert24_cholesky",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "2aef04e826017538f2b6be98d3a75ef5d18a5bd63219fce434176ed5bcc149de",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": -6,
+      "detail": "Assertion `target && \"There should be an PtrToInt/Alloc Instruction for the addition operation.\\n\"' failed."
+    },
+    {
+      "id": "vericert24_durbin",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "a54112e0cee3c64975b38fb88c200a8c45c93c865f3fe974b51a92d2ea0a2be7",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": -6,
+      "detail": "Assertion `PTI' failed."
+    },
+    {
+      "id": "vericert24_lu",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "c47cb1e14fc8bd49d536be505d043b629a4cb30a111995f651c7828ab0340f83",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": -6,
+      "detail": "Assertion `target && \"There should be an PtrToInt/Alloc Instruction for the addition operation.\\n\"' failed."
+    },
+    {
+      "id": "vericert24_ludcmp",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "26a51ca651ed10b0f11a5049d3ecbc19202543eab9da77c8d39d97a6a6586f81",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": -6,
+      "detail": "Assertion `target && \"There should be an PtrToInt/Alloc Instruction for the addition operation.\\n\"' failed."
+    },
+    {
+      "id": "vericert24_trisolv",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "68a3c92ff87cb75ad9ed64a4544b3f292e4d66584d6e9ad458f63a02447bd987",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 1,
+      "detail": "Light-HLS backend error [BACKEND_UNSUPPORTED_INSTRUCTION]: Unsupported LLVM instruction 'call'. (for.body5.i:   %umax.i = tail call i32 @llvm.umax.i32(i32 %bcast13, i32 80), !dbg !64)"
+    },
+    {
+      "id": "vericert24_floyd_warshall",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "8033d5ffc501e95c2b7bab77d98cab09c4c958b903f73bab70fe00090d8e3875",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 1,
+      "detail": "Light-HLS backend error [BACKEND_UNSUPPORTED_INSTRUCTION]: Unsupported LLVM instruction 'call'. (for.body6.i:   %.add.i = tail call i32 @llvm.smin.i32(i32 %5, i32 %add.i7), !dbg !189)"
+    },
+    {
+      "id": "vericert24_nussinov",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "013a09df750418098f841ac8bead63a6cafad3e169dec973a807a2d920f6ec09",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 1,
+      "detail": "Light-HLS backend error [BACKEND_UNSUPPORTED_INSTRUCTION]: Unsupported LLVM instruction 'call'. (_ZL10init_arrayiPiPA60_i.exit:   call void @llvm.memset.p0.i64(ptr noundef nonnull align 16 dereferenceable(14400) %table, i8 0, i64 14400, i1 false), !d"
+    },
+    {
+      "id": "vericert24_adi",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "76147fba7c8cd3fb9fd82a99297aeeab6a3936f10510767f17498380c91765c3",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": -6,
+      "detail": "Assertion `target && \"There should be an PtrToInt/Alloc Instruction for the addition operation.\\n\"' failed."
+    },
+    {
+      "id": "vericert24_fdtd_2d",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "0de4a06fa28cc726ad2526360eebceb5109433dde9c89287647f06ea2af63a7e",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 1,
+      "detail": "Light-HLS backend error [BACKEND_UNSUPPORTED_INSTRUCTION]: Unsupported LLVM instruction 'call'. (for.body6.i:   %umax91.i = tail call i32 @llvm.umax.i32(i32 %bcast18, i32 40), !dbg !79)"
+    },
+    {
+      "id": "vericert24_heat_3d",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "54c3e2c9c00f414a6354ce4605f1d905d32817b8a38679edb4e462fb03102734",
+      "functional": {
+        "status": "matched",
+        "cycles": 51081,
+        "expected": "00000014"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "d60d4e403373ff3df7be95f02a27b999175a72395b502e356f87eccff5602757",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "vericert24_jacobi_1d",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "45de71cb16555dd584bf11ba4b547c2bd65f2ae5c650d7a812f2045ccb255891",
+      "functional": {
+        "status": "matched",
+        "cycles": 4641,
+        "expected": "00000001"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "adbc0ad3e0d89ce8eb4dbedfa741c9f225d937daebb42370d169f94b60fea858",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "vericert24_jacobi_2d",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "7ffb093bb76c55b9e1048f7c5d418a935e42a6a4f8719f1886b925a63e31266d",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 1,
+      "detail": "Light-HLS backend error [BACKEND_UNSUPPORTED_INSTRUCTION]: Unsupported LLVM instruction 'call'. (for.body3.i:   %umax52.i = tail call i32 @llvm.umax.i32(i32 %bcast14, i32 60), !dbg !52)"
+    },
+    {
+      "id": "vericert24_seidel_2d",
+      "paper_ids": [
+        "hyperblock_pldi2024"
+      ],
+      "artifact_id": "vericert_pldi2024_archive",
+      "mapping_confidence": "exact",
+      "sha256": "55a817c6086d703bf89b99bec6ebc6557ae677f53ca35d1bffacf64214266adb",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "main",
+      "source_setup": [
+        "archive Makefile defines SYNTHESIS"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 1,
+      "detail": "Light-HLS backend error [BACKEND_UNSUPPORTED_INSTRUCTION]: Unsupported LLVM instruction 'call'. (for.body3.i:   %umax.i = tail call i32 @llvm.umax.i32(i32 %bcast8, i32 80), !dbg !47)"
+    },
+    {
+      "id": "stream25_gemm",
+      "paper_ids": [
+        "stream_hls_fpga2025"
+      ],
+      "artifact_id": "stream_hls_official",
+      "mapping_confidence": "exact",
+      "sha256": "05fc8774cdd32f7b46401e500c2e284cb2d2e02a8de5e5a89209f2903d2c4284",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "forward",
+      "source_setup": [
+        "enable Vitis vendor include path"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 124,
+      "detail": "timeout"
+    },
+    {
+      "id": "stream25_k2mm",
+      "paper_ids": [
+        "stream_hls_fpga2025"
+      ],
+      "artifact_id": "stream_hls_official",
+      "mapping_confidence": "exact",
+      "sha256": "836a23695c1b74a08662c03f789d978f1561c4af82094e4492dcce19e2d233cd",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "forward",
+      "source_setup": [
+        "enable Vitis vendor include path"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 124,
+      "detail": "timeout"
+    },
+    {
+      "id": "stream25_k3mm",
+      "paper_ids": [
+        "stream_hls_fpga2025"
+      ],
+      "artifact_id": "stream_hls_official",
+      "mapping_confidence": "exact",
+      "sha256": "875d913962771323069a3b68aca7c58968ee3f022eb51e7c6270a17a691a5553",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "forward",
+      "source_setup": [
+        "enable Vitis vendor include path"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 124,
+      "detail": "timeout"
+    },
+    {
+      "id": "stream25_atax",
+      "paper_ids": [
+        "stream_hls_fpga2025"
+      ],
+      "artifact_id": "stream_hls_official",
+      "mapping_confidence": "exact",
+      "sha256": "1272ea450aa22e3c2b23f75fcc54253945ad06219543b174464d9d484051b706",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "forward",
+      "source_setup": [
+        "enable Vitis vendor include path"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 124,
+      "detail": "timeout"
+    },
+    {
+      "id": "stream25_bicg",
+      "paper_ids": [
+        "stream_hls_fpga2025"
+      ],
+      "artifact_id": "stream_hls_official",
+      "mapping_confidence": "exact",
+      "sha256": "f6dd88dfe5f12bf767ac1df6981390dfb325824bf80d75ae91244424bb79effa",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "forward",
+      "source_setup": [
+        "enable Vitis vendor include path"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 124,
+      "detail": "timeout"
+    },
+    {
+      "id": "stream25_mvt",
+      "paper_ids": [
+        "stream_hls_fpga2025"
+      ],
+      "artifact_id": "stream_hls_official",
+      "mapping_confidence": "exact",
+      "sha256": "ff3f541f3c93f1c468c45b8ee70427cdfc29133b04b5d1cbf0c0de9fe3ef527b",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "forward",
+      "source_setup": [
+        "enable Vitis vendor include path"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 124,
+      "detail": "timeout"
+    },
+    {
+      "id": "stream25_gesummv",
+      "paper_ids": [
+        "stream_hls_fpga2025"
+      ],
+      "artifact_id": "stream_hls_official",
+      "mapping_confidence": "exact",
+      "sha256": "6060c3acefa011cf46f1279803b5f5a790995af48ef4f1acfcac05c813542b60",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "forward",
+      "source_setup": [
+        "enable Vitis vendor include path"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 124,
+      "detail": "timeout"
+    },
+    {
+      "id": "stream25_autoencoder",
+      "paper_ids": [
+        "stream_hls_fpga2025"
+      ],
+      "artifact_id": "stream_hls_official",
+      "mapping_confidence": "exact",
+      "sha256": "f7e57e35e40f0787ef890421f17aad294104c0273afb40783fbfd469130b7d2c",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "forward",
+      "source_setup": [
+        "enable Vitis vendor include path"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 124,
+      "detail": "timeout"
+    },
+    {
+      "id": "stream25_resmlp",
+      "paper_ids": [
+        "stream_hls_fpga2025"
+      ],
+      "artifact_id": "stream_hls_official",
+      "mapping_confidence": "exact",
+      "sha256": "3b52c70f5f7bf3f56d41f91a2e5d976301bf20a73ba3110a114fe8cb00fccc90",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "forward",
+      "source_setup": [
+        "enable Vitis vendor include path"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 124,
+      "detail": "timeout"
+    },
+    {
+      "id": "stream25_residualblock",
+      "paper_ids": [
+        "stream_hls_fpga2025"
+      ],
+      "artifact_id": "stream_hls_official",
+      "mapping_confidence": "exact",
+      "sha256": "a2eb38a1568fc82f4bb058e6d54d53d2c62dd2dc3b38c5773d5812cb8e458b4a",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "forward",
+      "source_setup": [
+        "enable Vitis vendor include path"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 124,
+      "detail": "timeout"
+    },
+    {
+      "id": "stream25_depthwiseseparableconvblock",
+      "paper_ids": [
+        "stream_hls_fpga2025"
+      ],
+      "artifact_id": "stream_hls_official",
+      "mapping_confidence": "exact",
+      "sha256": "3338912045fe62ea6f020f9a5d79a011c339efca2e338428eefb13511b3af09f",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "forward",
+      "source_setup": [
+        "enable Vitis vendor include path"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 124,
+      "detail": "timeout"
+    },
+    {
+      "id": "stream25_feedforward",
+      "paper_ids": [
+        "stream_hls_fpga2025"
+      ],
+      "artifact_id": "stream_hls_official",
+      "mapping_confidence": "exact",
+      "sha256": "755ed1993feb62ae513e6e0787232a4a3126487873bd6104ea6095527bf8f490",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "forward",
+      "source_setup": [
+        "enable Vitis vendor include path"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 124,
+      "detail": "timeout"
+    },
+    {
+      "id": "stream25_multiheadselfattention1",
+      "paper_ids": [
+        "stream_hls_fpga2025"
+      ],
+      "artifact_id": "stream_hls_official",
+      "mapping_confidence": "exact",
+      "sha256": "34661837b7829cb066adb35a38c0b19be3985edc751a0ada0cb6f7277da6e323",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "forward",
+      "source_setup": [
+        "enable Vitis vendor include path"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 124,
+      "detail": "timeout"
+    },
+    {
+      "id": "stream25_k7mmseq_balanced",
+      "paper_ids": [
+        "stream_hls_fpga2025"
+      ],
+      "artifact_id": "stream_hls_official",
+      "mapping_confidence": "exact",
+      "sha256": "f1dc4816820118279a64f424df9b72b217496e4bc426a8570cf6855065575932",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "forward",
+      "source_setup": [
+        "enable Vitis vendor include path"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 124,
+      "detail": "timeout"
+    },
+    {
+      "id": "stream25_k7mmseq_unbalanced",
+      "paper_ids": [
+        "stream_hls_fpga2025"
+      ],
+      "artifact_id": "stream_hls_official",
+      "mapping_confidence": "exact",
+      "sha256": "27ee9a8774a5a26e955bed861f79518f80ac99d6726752485888f86d2f591003",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "forward",
+      "source_setup": [
+        "enable Vitis vendor include path"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 124,
+      "detail": "timeout"
+    },
+    {
+      "id": "isdc24_public_crc32",
+      "paper_ids": [
+        "isdc_date2024"
+      ],
+      "artifact_id": "xls_public_counterparts",
+      "mapping_confidence": "broader_suite",
+      "sha256": "c0f62fba5811dbe3634fb72b2c67f4085d2ac8aefb9ce16a845cb61768bc8c61",
+      "functional": {
+        "status": "not_run"
+      },
+      "status": "requires_xls_dslx"
+    },
+    {
+      "id": "isdc24_public_sha256",
+      "paper_ids": [
+        "isdc_date2024"
+      ],
+      "artifact_id": "xls_public_counterparts",
+      "mapping_confidence": "broader_suite",
+      "sha256": "d2873304c5c0c88e5d5987611418dc397acb29841f9fba2c848fa58f7eae47cd",
+      "functional": {
+        "status": "not_run"
+      },
+      "status": "requires_xls_dslx"
+    },
+    {
+      "id": "isdc24_public_hsv2rgb",
+      "paper_ids": [
+        "isdc_date2024"
+      ],
+      "artifact_id": "xls_public_counterparts",
+      "mapping_confidence": "broader_suite",
+      "sha256": "800657d5debd9b55a8baf536f0ad9273dad19b11d4795953d832fe852299102b",
+      "functional": {
+        "status": "not_run"
+      },
+      "status": "requires_xls_dslx"
+    },
+    {
+      "id": "isdc24_public_float32_fast_rsqrt",
+      "paper_ids": [
+        "isdc_date2024"
+      ],
+      "artifact_id": "xls_public_counterparts",
+      "mapping_confidence": "broader_suite",
+      "sha256": "2dbc3bd4c5045fb1b8765b293457d6cca1ba338ca1bd5763b2957d11b0a7d84a",
+      "functional": {
+        "status": "not_run"
+      },
+      "status": "requires_xls_dslx"
+    },
+    {
+      "id": "isdc24_public_fpexp_32",
+      "paper_ids": [
+        "isdc_date2024"
+      ],
+      "artifact_id": "xls_public_counterparts",
+      "mapping_confidence": "broader_suite",
+      "sha256": "e6fecd757954a49875c26f30b96b09dd0601c623127da04b5a4aa17275957521",
+      "functional": {
+        "status": "not_run"
+      },
+      "status": "requires_xls_dslx"
+    },
+    {
+      "id": "dynamic_spurious24__latency_occupancy__fir",
+      "paper_ids": [
+        "spurious_dynamism_2024"
+      ],
+      "artifact_id": "dynamic_spurious24",
+      "mapping_confidence": "exact",
+      "sha256": "47e27382c53f1cd8f8430c96f74cd5acf955bc1a12bd8d9fe941c078d62a4e8c",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          4000,
+          4000,
+          4000,
+          4000
+        ],
+        "vectors": 4
+      },
+      "top": "fir",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "c42de92b2c530cc040c0fe56cf9e74a28ecc98365a7c8f87826c1f73effdf421",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_spurious24__latency_occupancy__iir",
+      "paper_ids": [
+        "spurious_dynamism_2024"
+      ],
+      "artifact_id": "dynamic_spurious24",
+      "mapping_confidence": "exact",
+      "sha256": "853f701fd6118dd557b731cce23a798aa4396af5a763490f83e1d87cfb985870",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          3998,
+          3998,
+          3998,
+          3998
+        ],
+        "vectors": 4
+      },
+      "top": "iir",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "6ae74d9bcee6c96c0716370463e084d9bf64cd6ba5c705bf9b182da18ccee169",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_spurious24__latency_occupancy__matvec",
+      "paper_ids": [
+        "spurious_dynamism_2024"
+      ],
+      "artifact_id": "dynamic_spurious24",
+      "mapping_confidence": "exact",
+      "sha256": "343ce53758d71115d2f93744ad89e022bff1b0411880c91dca0fd57959fe474b",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          2760,
+          2760,
+          2760,
+          2760
+        ],
+        "vectors": 4
+      },
+      "top": "matvec",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "f1035532e2f0e099d0ee8a4c16ae80cb76cba5bc85a8ae6e89c6528c36c91781",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_spurious24__latency_occupancy__if_loop_add",
+      "paper_ids": [
+        "spurious_dynamism_2024"
+      ],
+      "artifact_id": "dynamic_spurious24",
+      "mapping_confidence": "exact",
+      "sha256": "8686021477e23cb8a8fcb97560f5399f9c24d4642eb50daef594f2e4cf412786",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          6001,
+          6001,
+          6001,
+          6001
+        ],
+        "vectors": 4
+      },
+      "top": "if_loop_add",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "389cb70f4d1f5c6a512491cd95db2a2aff013a4a3892b91dc8ff19b6a49393c0",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_spurious24__latency_occupancy__gsum",
+      "paper_ids": [
+        "spurious_dynamism_2024"
+      ],
+      "artifact_id": "dynamic_spurious24",
+      "mapping_confidence": "exact",
+      "sha256": "679c253381f8f996a7301b05918748c17367629842ee2cc7fc8c68adb8f1e0f4",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          13001,
+          13001,
+          13001,
+          13001
+        ],
+        "vectors": 4
+      },
+      "top": "gsum",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "761a626f00180f38a4d89a9a767d949c1737b1270ad9eab94f865044792f062b",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_spurious24__latency_occupancy__gsumif",
+      "paper_ids": [
+        "spurious_dynamism_2024"
+      ],
+      "artifact_id": "dynamic_spurious24",
+      "mapping_confidence": "exact",
+      "sha256": "af07dae42d2db3af5ecdd5c4a63f9c4cdd4d39fffefe369d67a81fc275cd67ac",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          11001,
+          11001,
+          11001,
+          11001
+        ],
+        "vectors": 4
+      },
+      "top": "gsumif",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "cd1f369417e8b444ae48d2243174bd0661f7667316c5abbe5b56d5ae3dcf8ca5",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_spurious24__latency_occupancy__kernel_2mm",
+      "paper_ids": [
+        "spurious_dynamism_2024"
+      ],
+      "artifact_id": "dynamic_spurious24",
+      "mapping_confidence": "exact",
+      "sha256": "4c64ce22fee680fe4d887065ea45fdc394c58a362c0bc28cbbd8aa1b54c87465",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          7740,
+          7740,
+          7740,
+          7740
+        ],
+        "vectors": 4
+      },
+      "top": "kernel_2mm",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "ffe3f4262f0239505b77c49e807597c29e46ba26f8f93162ef404b3c7020a939",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_spurious24__latency_occupancy__kernel_3mm",
+      "paper_ids": [
+        "spurious_dynamism_2024"
+      ],
+      "artifact_id": "dynamic_spurious24",
+      "mapping_confidence": "exact",
+      "sha256": "5d858961e4b7407eab70544be8d58fe824244d95136bfaa5ef09bc6bfccd8149",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          9960,
+          9960,
+          9960,
+          9960
+        ],
+        "vectors": 4
+      },
+      "top": "kernel_3mm",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "11a54d67e292ed3e488b8dab3e4915fa44b09dd48199410acb05875a0a0c99fc",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__atax_float",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "214ad5a09a16a032e089713184ebe3e81cfac4fde07ab75a94deb45199a3c6d7",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          3260,
+          3260,
+          3260,
+          3260
+        ],
+        "vectors": 4
+      },
+      "top": "atax_float",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "dcf8c73a3f0a9e19eb67e6650036c53d0fcf4332a39c7eb3811016dbc6d16063",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__bicg_float",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "be4b363293cf4f3e37113c0117a4f6a9a05d620ab677673dc03a303e50ed38a8",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          3690,
+          3690,
+          3690,
+          3690
+        ],
+        "vectors": 4
+      },
+      "top": "bicg_float",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "061e16858c5b6dffa1780d044719914c3f9c2b0b0e4c2f1bda024976882224db",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__gemm_float",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "5b2317121fce7577e58c167f2e8d0e8b5f6d8c5a2d65c1040e47d723181079d1",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          41640,
+          41640,
+          41640,
+          41640
+        ],
+        "vectors": 4
+      },
+      "top": "gemm_float",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "8c85a22e72981966626a17a657bb733b8d8578cbf48c69ed1eca857445850c90",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__gesummv_float",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "51df0231b6deade493b32eca00ef84b40b23f665eb1c2800edc2b5a3a8be967f",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          3720,
+          3720,
+          3720,
+          3720
+        ],
+        "vectors": 4
+      },
+      "top": "gesummv_float",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "e064f3907ec7efabb1978970f556384b5b3afe6ca2ac43a7a1ecc25cec06041f",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__symm_float",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "3785a6e921158c8bf6267f635467ababbdb828cf5917433773931a5fc4a6a385",
+      "functional": {
+        "status": "rtl_mismatch_or_cycle_limit",
+        "passed_vectors": 0,
+        "detail": "mismatch 421c0000 42280000"
+      },
+      "top": "symm_float",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "13a022a9536824593261c71066e3177ff010ffe1a3652554d4de2bdb8094ce99",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__gsum",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "cde75eb565bbd2fd69152dff1ea8c39c7a928037547b31dfe696a17278a9b687",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          13001,
+          13001,
+          13001,
+          13001
+        ],
+        "vectors": 4
+      },
+      "top": "gsum",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "761a626f00180f38a4d89a9a767d949c1737b1270ad9eab94f865044792f062b",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__gsumif",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "bcbb050cf58be8162e024b651a97925cd460ff2baebf4311fd72e5fbc8f748c5",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          11001,
+          11001,
+          11001,
+          11001
+        ],
+        "vectors": 4
+      },
+      "top": "gsumif",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "cd1f369417e8b444ae48d2243174bd0661f7667316c5abbe5b56d5ae3dcf8ca5",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__kernel_2mm_float",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "efffb44c2148ad9f4769130b942cd836d27f7c6169bcc0d72fd7300b8cd4320f",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          9740,
+          9740,
+          9740,
+          9740
+        ],
+        "vectors": 4
+      },
+      "top": "kernel_2mm_float",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "4b585d8deba9cbd75d5cc7eb8bb14113b5fb9d2c1c51205ab2eb6fe9fd1cc38e",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__kernel_3mm_float",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "3557524bc59fd07d8c1290189085e366b91422f767f319e755363f2155a9129b",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          12960,
+          12960,
+          12960,
+          12960
+        ],
+        "vectors": 4
+      },
+      "top": "kernel_3mm_float",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "ea6df0f08cba344fee712dc214257e4b8588fcf2c20f5bd1ed060a6071466f2e",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__mvt_float",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "940b15f4674d128a22e78c08484dc652d8f19d6a56f7b8545150790f7ef4a295",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          7380,
+          7380,
+          7380,
+          7380
+        ],
+        "vectors": 4
+      },
+      "top": "mvt_float",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "927fdd8d328f064add8858477adf85162e5be322bdd7e2844b0e99583db511bc",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__bb_organized_table2__syr2k_float",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "cc59fadcf4ecf223e15f51e3687b4263f4d67c66ad8ecaaf6abd790af0e7f370",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          6640,
+          6640,
+          6640,
+          6640
+        ],
+        "vectors": 4
+      },
+      "top": "syr2k_float",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "8432ba107a9e80517740d8df22e60bd6ddf0491bb8a1b8051fefca94222f2cb0",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__atax_float",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "a4348e30b6bf204b205ee6e93a36f4db5d2acb3cd79420c18161d25dfe706ebe",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          3260,
+          3260,
+          3260,
+          3260
+        ],
+        "vectors": 4
+      },
+      "top": "atax_float",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "5d3b0e147f941a5e61bcbd582e8cd8751419f93e714580366665bb1825f5a913",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__bicg_float",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "be4b363293cf4f3e37113c0117a4f6a9a05d620ab677673dc03a303e50ed38a8",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          3690,
+          3690,
+          3690,
+          3690
+        ],
+        "vectors": 4
+      },
+      "top": "bicg_float",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "061e16858c5b6dffa1780d044719914c3f9c2b0b0e4c2f1bda024976882224db",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__gemm_float",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "0b970330943002f0fafcc4a5645398e38df7135395c6838ac72caad99f0eb14d",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          41640,
+          41640,
+          41640,
+          41640
+        ],
+        "vectors": 4
+      },
+      "top": "gemm_float",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "8329516e6f02863a79d36820262ed220b8adf59dbc3d24d01cad234006d9a327",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__gesummv_float",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "94654f2b70402c8cda2f829ff7d03ba9e299fc7679615768f793daecc7257683",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          3720,
+          3720,
+          3720,
+          3720
+        ],
+        "vectors": 4
+      },
+      "top": "gesummv_float",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "4be80c83db924ba959304cf6e0f1f15cd5842fa19c17954c461db1b56ee8df40",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__symm_float",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "0a82f828ebafe29848b3d00981eedd87d351c28ea90a76f38423209b4e500bca",
+      "functional": {
+        "status": "rtl_mismatch_or_cycle_limit",
+        "passed_vectors": 0,
+        "detail": "mismatch 421c0000 42280000"
+      },
+      "top": "symm_float",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "27fad8cf93c5e8f46e561d743995a15bfa5ba549fd76e9012c43ff8753fb42cb",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__gsum",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "cde75eb565bbd2fd69152dff1ea8c39c7a928037547b31dfe696a17278a9b687",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          13001,
+          13001,
+          13001,
+          13001
+        ],
+        "vectors": 4
+      },
+      "top": "gsum",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "761a626f00180f38a4d89a9a767d949c1737b1270ad9eab94f865044792f062b",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__gsumif",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "f8d648719a91998bdd08464803318041d70218ee04e379c137ed9495d162b089",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          11001,
+          11001,
+          11001,
+          11001
+        ],
+        "vectors": 4
+      },
+      "top": "gsumif",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "cd1f369417e8b444ae48d2243174bd0661f7667316c5abbe5b56d5ae3dcf8ca5",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__kernel_2mm_float",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "637afaf3d5ea63cc71192d10993c59e239c73260742b20ae612a3ba0ef7610a8",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          9740,
+          9740,
+          9740,
+          9740
+        ],
+        "vectors": 4
+      },
+      "top": "kernel_2mm_float",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "9272c4d66b7ca472a7acdd997c29704ab8c45fef24186eeee97ec97ca3a2ca8f",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__kernel_3mm_float",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "fb925ab599d99b78676bcf380761157d2bcc58d612665264f9597c0ae27a2519",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          12960,
+          12960,
+          12960,
+          12960
+        ],
+        "vectors": 4
+      },
+      "top": "kernel_3mm_float",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "316c2542cafabdf1f737309a88516f0be968cac84e12947f8f6ecd6805125e1e",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__mvt_float",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "522c2bd5020509624291349ba331b595b777f1683a554052482c754e0119fbe5",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          7380,
+          7380,
+          7380,
+          7380
+        ],
+        "vectors": 4
+      },
+      "top": "mvt_float",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "8f575285302d2941dd8763f5e6086958fcc6b8a2e80cbada14be741b5bc8c70c",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__fast_token_table3__syr2k_float",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "99394e94fc70a2d812c5f48a44feaf912cc1661dc85c6e876e75c5eb180754c8",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          6640,
+          6640,
+          6640,
+          6640
+        ],
+        "vectors": 4
+      },
+      "top": "syr2k_float",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "547156b78e611f3924ecbb7f836fcf25acfea3bebf8cfc128f2358fd5d4869e7",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_crush25__unrolled_table1__gesummv_float_unroll",
+      "paper_ids": [
+        "crush_2025"
+      ],
+      "artifact_id": "dynamic_crush25",
+      "mapping_confidence": "exact",
+      "sha256": "0a294eacdb0af52e45f21f9742962608d88a962607753e13b35bece75a9abe7c",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "gesummv_float_unroll",
+      "source_setup": [],
+      "status": "native_compile_failed",
+      "native_exit": 1,
+      "detail": "fatal error: 'dynamatic/Integration.h' file not found"
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__bicg",
+      "paper_ids": [
+        "out_with_lsqs_2026"
+      ],
+      "artifact_id": "dynamic_outlsq26",
+      "mapping_confidence": "exact_names_artifact_linked_git_snapshot",
+      "sha256": "4727627fa310f05cf22a4e8de9cea7648bf07712249b7a2e791c7f592aad843d",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          2790,
+          2790,
+          2790,
+          2790
+        ],
+        "vectors": 4
+      },
+      "top": "bicg",
+      "source_setup": [
+        "use matched Dynamatic Integration.h include path"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "a0e9f3f9cdde60ca869f1be8df75d2f077c772d23e723171edd74547ef2b3b0d",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__gaussian",
+      "paper_ids": [
+        "out_with_lsqs_2026"
+      ],
+      "artifact_id": "dynamic_outlsq26",
+      "mapping_confidence": "exact_names_artifact_linked_git_snapshot",
+      "sha256": "74f2747ad06a4028b1552421e30cf281b0cad99b42bb4502700d87ba99bc0175",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          12022,
+          12022,
+          12022,
+          12022
+        ],
+        "vectors": 4
+      },
+      "top": "gaussian",
+      "source_setup": [
+        "use matched Dynamatic Integration.h include path"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "aef14c5e9d75ec3ee620a13a9e788e97c6342d05f31e83f994ea7fd4cbe3f54a",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__matrix_power",
+      "paper_ids": [
+        "out_with_lsqs_2026"
+      ],
+      "artifact_id": "dynamic_outlsq26",
+      "mapping_confidence": "exact_names_artifact_linked_git_snapshot",
+      "sha256": "8d9d03fcd50616d3adbec64238ca232f91c73970912de46582901aae65ed94a4",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          1558,
+          1558,
+          1558,
+          1558
+        ],
+        "vectors": 4
+      },
+      "top": "matrix_power",
+      "source_setup": [
+        "use matched Dynamatic Integration.h include path"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "fb01f4eda9657d19531547b9c4bb69437a6a46976229554cd6a7e7ddea101552",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__get_tanh",
+      "paper_ids": [
+        "out_with_lsqs_2026"
+      ],
+      "artifact_id": "dynamic_outlsq26",
+      "mapping_confidence": "exact_names_artifact_linked_git_snapshot",
+      "sha256": "5c4c1d803976c49f2819bcd5d57888c0434669df2a2e8d62042d7880d5bb6777",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          12000,
+          12000,
+          12000,
+          12000
+        ],
+        "vectors": 4
+      },
+      "top": "get_tanh",
+      "source_setup": [
+        "use matched Dynamatic Integration.h include path"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "8deaa8c458e5a8205762e86a0bac27df6cf4cfbe9ff88c06c970003b6f2895ce",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__histogram",
+      "paper_ids": [
+        "out_with_lsqs_2026"
+      ],
+      "artifact_id": "dynamic_outlsq26",
+      "mapping_confidence": "exact_names_artifact_linked_git_snapshot",
+      "sha256": "a35a5648739f9e743a8b3bda15482f7c199c8d995626dd557ff7195a87094dfa",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          17,
+          22,
+          27,
+          32
+        ],
+        "vectors": 4
+      },
+      "top": "histogram",
+      "source_setup": [
+        "use matched Dynamatic Integration.h include path"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "929a4138e9af1481a74ae3e383c7857a21e0cb818d9724986c3badfce5c2cda5",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__atax",
+      "paper_ids": [
+        "out_with_lsqs_2026"
+      ],
+      "artifact_id": "dynamic_outlsq26",
+      "mapping_confidence": "exact_names_artifact_linked_git_snapshot",
+      "sha256": "2e5fab85653753d999caa2cf9de6a1ca20ed5cc85b69a109dc8dc12785fcaed3",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          3260,
+          3260,
+          3260,
+          3260
+        ],
+        "vectors": 4
+      },
+      "top": "atax",
+      "source_setup": [
+        "use matched Dynamatic Integration.h include path"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "f5f431453761d525893d8415487985d324720648216943da4e177c13c816912e",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__jacobi_1d_imper",
+      "paper_ids": [
+        "out_with_lsqs_2026"
+      ],
+      "artifact_id": "dynamic_outlsq26",
+      "mapping_confidence": "exact_names_artifact_linked_git_snapshot",
+      "sha256": "6a040ee9e7d6e60099ae1184b9c9b51ca7ca62ff0d5ef2898e797c4007bed65f",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          1770,
+          1770,
+          1770,
+          1770
+        ],
+        "vectors": 4
+      },
+      "top": "jacobi_1d_imper",
+      "source_setup": [
+        "use matched Dynamatic Integration.h include path"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "acec9e20318e8bace1ec05245a3cb3e09c356deccd3835831665778a52878d46",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__triangular",
+      "paper_ids": [
+        "out_with_lsqs_2026"
+      ],
+      "artifact_id": "dynamic_outlsq26",
+      "mapping_confidence": "exact_names_artifact_linked_git_snapshot",
+      "sha256": "3aa8f567b69312e11f9518e1eb2312ccff2bf441c02873b8a59436e6658a8406",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          31,
+          47,
+          66,
+          88
+        ],
+        "vectors": 4
+      },
+      "top": "triangular",
+      "source_setup": [
+        "use matched Dynamatic Integration.h include path"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "a55240c192e95eaa9d1c879ac892998365d1d1fd886ee1a4ad0784de9a3bb523",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__mvt_float",
+      "paper_ids": [
+        "out_with_lsqs_2026"
+      ],
+      "artifact_id": "dynamic_outlsq26",
+      "mapping_confidence": "exact_names_artifact_linked_git_snapshot",
+      "sha256": "b1dfc5d51b595514818af388c8dc76990d5192067bf15f6c9fa6dc5d87bf397f",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          7380,
+          7380,
+          7380,
+          7380
+        ],
+        "vectors": 4
+      },
+      "top": "mvt_float",
+      "source_setup": [
+        "use matched Dynamatic Integration.h include path"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "927fdd8d328f064add8858477adf85162e5be322bdd7e2844b0e99583db511bc",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__kernel_2mm",
+      "paper_ids": [
+        "out_with_lsqs_2026"
+      ],
+      "artifact_id": "dynamic_outlsq26",
+      "mapping_confidence": "exact_names_artifact_linked_git_snapshot",
+      "sha256": "8fe4e59c99ad5a3cff193855039f82c3adf106a54b767b07475cfada737b20f6",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          9640,
+          9640,
+          9640,
+          9640
+        ],
+        "vectors": 4
+      },
+      "top": "kernel_2mm",
+      "source_setup": [
+        "use matched Dynamatic Integration.h include path"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "752a291afddd482432688ea2f064f72158084ea1c15d830e772a2c4103144e37",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dynamic_outlsq26__best_N__kernel_3mm",
+      "paper_ids": [
+        "out_with_lsqs_2026"
+      ],
+      "artifact_id": "dynamic_outlsq26",
+      "mapping_confidence": "exact_names_artifact_linked_git_snapshot",
+      "sha256": "fac90e0fde3192f4f81f8ab1bae14c94438c5a80cd98f9d5df8e9e1fa6f7158a",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          12660,
+          12660,
+          12660,
+          12660
+        ],
+        "vectors": 4
+      },
+      "top": "kernel_3mm",
+      "source_setup": [
+        "use matched Dynamatic Integration.h include path"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "71d6069d3ba7fa49296bc6ef6bb825960fb0e2441f4db9656904af76ab0be124",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "rhls_kernel_2mm",
+      "paper_ids": [
+        "rhls_2024"
+      ],
+      "artifact_id": "hybrid_stoq_baselines",
+      "mapping_confidence": "paper_cited_baseline_variant",
+      "sha256": "ddf4b4bc3bd1da8f36c4000dae8ad950a0cae15008b1d5f90eee83105c4b3317",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          7740,
+          7740,
+          7740,
+          7740
+        ],
+        "vectors": 4
+      },
+      "top": "kernel_2mm",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "cfe19ff9a707657ffe5ddf65d75ab4c82bc72a713c4d155a23c9b39e3b7ee485",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "rhls_kernel_3mm",
+      "paper_ids": [
+        "rhls_2024"
+      ],
+      "artifact_id": "hybrid_stoq_baselines",
+      "mapping_confidence": "paper_cited_baseline_variant",
+      "sha256": "1f269368a05b7b7056a87c2b156afa8357c491520c9e133168e554ae37a4af7b",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          9960,
+          9960,
+          9960,
+          9960
+        ],
+        "vectors": 4
+      },
+      "top": "kernel_3mm",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "71bac38b01ac9438b1f4594370ff57ba6b68d2e42909bed19a113eca62298eba",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "rhls_atax",
+      "paper_ids": [
+        "rhls_2024"
+      ],
+      "artifact_id": "hybrid_stoq_baselines",
+      "mapping_confidence": "paper_cited_baseline_variant",
+      "sha256": "5e8d52f3a4c38c4967c84cc6760b2dc84e60abb411bd420eb016618d25c69056",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          2460,
+          2460,
+          2460,
+          2460
+        ],
+        "vectors": 4
+      },
+      "top": "atax",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "b97670c79e80c1f3b87f9dd93ffae406fe1c2b574197e1857d395b12c46b19a5",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "rhls_covariance",
+      "paper_ids": [
+        "rhls_2024"
+      ],
+      "artifact_id": "hybrid_stoq_baselines",
+      "mapping_confidence": "paper_cited_baseline_variant",
+      "sha256": "14f197061ed7b922baf229891f978333dd3e8809f7531ffe698ed6e593381a03",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          72928,
+          72928,
+          72928,
+          72928
+        ],
+        "vectors": 4
+      },
+      "top": "covariance",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "4bc058efbe795cb6ca8253ea7378c6572c3ebc1d5f25ba4e20d6cfa333654ce1",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "rhls_getTanh",
+      "paper_ids": [
+        "rhls_2024"
+      ],
+      "artifact_id": "hybrid_stoq_baselines",
+      "mapping_confidence": "paper_cited_baseline_variant",
+      "sha256": "fce5e30e7737ef2dbb1184307b289cf3a3f17e9d8368d7cc6f7396b857dcae95",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          11000,
+          11000,
+          11000,
+          11000
+        ],
+        "vectors": 4
+      },
+      "top": "getTanh",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "d4ec68995b4210bacf3c500c4e0f0975e3507a0ee0b77869850fb9c92c55a9e1",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "rhls_histogram",
+      "paper_ids": [
+        "rhls_2024"
+      ],
+      "artifact_id": "hybrid_stoq_baselines",
+      "mapping_confidence": "paper_cited_baseline_variant",
+      "sha256": "4e05997ef5326c8a45eda693a9db8edf06d00d4dea37ff2baee6c9a8d999d3f0",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          15,
+          19,
+          23,
+          27
+        ],
+        "vectors": 4
+      },
+      "top": "histogram",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "1fc5c3dc219f1e96185945be12a2b8e9cc19faf738532ca2e625efe83d01e290",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "rhls_jacobi_1d",
+      "paper_ids": [
+        "rhls_2024"
+      ],
+      "artifact_id": "hybrid_stoq_baselines",
+      "mapping_confidence": "paper_cited_baseline_variant",
+      "sha256": "c7a1c84f531abfb30642dba777b7ec3e7a74051c04a24c86fff7f7e5af7d00ae",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          1770,
+          1770,
+          1770,
+          1770
+        ],
+        "vectors": 4
+      },
+      "top": "jacobi_1d",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "54b23782ea4f357e580ce8e0d0303193aa3160abc0bf44e3bbaa68adddbeb1da",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "rhls_triangular",
+      "paper_ids": [
+        "rhls_2024"
+      ],
+      "artifact_id": "hybrid_stoq_baselines",
+      "mapping_confidence": "paper_cited_baseline_variant",
+      "sha256": "c73ea971e2c06a4c0c49be6bc7d72a73dc193f7f478366b7f5b64e3f70971828",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          34,
+          50,
+          69,
+          91
+        ],
+        "vectors": 4
+      },
+      "top": "triangular",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "14fcba1e2f3312d1d5fde6b1d1fa7a331aece30f8c882a70371b0454ff006458",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "dlf_raw_loop",
+      "paper_ids": [
+        "dynamic_loop_fusion_2025"
+      ],
+      "artifact_id": "hybrid_dlf_zenodo14383450",
+      "mapping_confidence": "exact",
+      "sha256": "414b31d1c33a213f1a49a567f9308b8151e1276625fcbd36ccabf2cecb0b5b7f",
+      "functional": {
+        "status": "not_run"
+      },
+      "status": "requires_intel_sycl_device_flow"
+    },
+    {
+      "id": "dlf_war_loop",
+      "paper_ids": [
+        "dynamic_loop_fusion_2025"
+      ],
+      "artifact_id": "hybrid_dlf_zenodo14383450",
+      "mapping_confidence": "exact",
+      "sha256": "2ec18ebe9327ebc63c31051f371db07d555a6a7ccb3dd2a3e6b2a6c0b48db8b5",
+      "functional": {
+        "status": "not_run"
+      },
+      "status": "requires_intel_sycl_device_flow"
+    },
+    {
+      "id": "dlf_waw_loop",
+      "paper_ids": [
+        "dynamic_loop_fusion_2025"
+      ],
+      "artifact_id": "hybrid_dlf_zenodo14383450",
+      "mapping_confidence": "exact",
+      "sha256": "a3622078e6e751160893ef2d51039c2c271dab18482e2a8ba4393d99cd8d2c6e",
+      "functional": {
+        "status": "not_run"
+      },
+      "status": "requires_intel_sycl_device_flow"
+    },
+    {
+      "id": "dlf_fft2x_dram",
+      "paper_ids": [
+        "dynamic_loop_fusion_2025"
+      ],
+      "artifact_id": "hybrid_dlf_zenodo14383450",
+      "mapping_confidence": "exact",
+      "sha256": "a24634471eb54857842361bcab5b3d2bdbaf4cf4407650a5be8d11b770109c6c",
+      "functional": {
+        "status": "not_run"
+      },
+      "status": "requires_intel_sycl_device_flow"
+    },
+    {
+      "id": "dlf_bnn_dram",
+      "paper_ids": [
+        "dynamic_loop_fusion_2025"
+      ],
+      "artifact_id": "hybrid_dlf_zenodo14383450",
+      "mapping_confidence": "exact",
+      "sha256": "2aa409a1ecc0f1da4ac9496cdb210f652327e8fab6d02f53bf3eec5d0b6392fc",
+      "functional": {
+        "status": "not_run"
+      },
+      "status": "requires_intel_sycl_device_flow"
+    },
+    {
+      "id": "dlf_matrix_power_dram",
+      "paper_ids": [
+        "dynamic_loop_fusion_2025"
+      ],
+      "artifact_id": "hybrid_dlf_zenodo14383450",
+      "mapping_confidence": "exact",
+      "sha256": "6b3b14281f05e6e8a7187a5c66ae1109a8512bbdb2f0ea8385d2a4204a5c2674",
+      "functional": {
+        "status": "not_run"
+      },
+      "status": "requires_intel_sycl_device_flow"
+    },
+    {
+      "id": "dlf_page_rank_dram",
+      "paper_ids": [
+        "dynamic_loop_fusion_2025"
+      ],
+      "artifact_id": "hybrid_dlf_zenodo14383450",
+      "mapping_confidence": "exact",
+      "sha256": "95a0c0b3f693701b5254171bea58b4783b48b242df1141d297219bd6e65ae7c2",
+      "functional": {
+        "status": "not_run"
+      },
+      "status": "requires_intel_sycl_device_flow"
+    },
+    {
+      "id": "dlf_hist2x_dram",
+      "paper_ids": [
+        "dynamic_loop_fusion_2025"
+      ],
+      "artifact_id": "hybrid_dlf_zenodo14383450",
+      "mapping_confidence": "exact",
+      "sha256": "a1dd4c60a49ebb30a815d4fdc5dc47b8d271a7cd211055e0cb24e22ef084b6b0",
+      "functional": {
+        "status": "not_run"
+      },
+      "status": "requires_intel_sycl_device_flow"
+    },
+    {
+      "id": "dlf_tanh_spmv_dram",
+      "paper_ids": [
+        "dynamic_loop_fusion_2025"
+      ],
+      "artifact_id": "hybrid_dlf_zenodo14383450",
+      "mapping_confidence": "exact",
+      "sha256": "2bb1cf72324b0dfaf1df9466166e68fe730282535e68d28616b62bc5d148d4da",
+      "functional": {
+        "status": "not_run"
+      },
+      "status": "requires_intel_sycl_device_flow"
+    },
+    {
+      "id": "pca_gSum",
+      "paper_ids": [
+        "pca_hybrid_2025"
+      ],
+      "artifact_id": "hybrid_hls_v1_zenodo3561115",
+      "mapping_confidence": "exact",
+      "sha256": "0c84466bf2dc5bbbf67da25f0eba133a7617580227a6a76493a1189d50e48bf5",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          17001,
+          17001,
+          17001,
+          17001
+        ],
+        "vectors": 4
+      },
+      "top": "gSum",
+      "source_setup": [
+        "one translation unit with g.cpp"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "71651be3f3932285c3cf8a9c07d05aee4c024d315973f338581b34cca89017e8",
+      "elaboration": "passed",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "report_aborted_after_scope_rejection": true,
+      "graph_export_exit": -6
+    },
+    {
+      "id": "pca_gSumIf",
+      "paper_ids": [
+        "pca_hybrid_2025"
+      ],
+      "artifact_id": "hybrid_hls_v1_zenodo3561115",
+      "mapping_confidence": "exact",
+      "sha256": "ae90736466485cb91ff6190163215ceb6e12684c04ac4f77f67d8232c6b24268",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          18001,
+          18001,
+          18001,
+          18001
+        ],
+        "vectors": 4
+      },
+      "top": "gSumIf",
+      "source_setup": [
+        "one translation unit with g.cpp"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "86ebe96bcf5ec9720368712150b1805c1ffdceb710e500985a73e39ba8f7e5b0",
+      "elaboration": "passed",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "report_aborted_after_scope_rejection": true,
+      "graph_export_exit": -6
+    },
+    {
+      "id": "pca_getTanh",
+      "paper_ids": [
+        "pca_hybrid_2025"
+      ],
+      "artifact_id": "hybrid_hls_v1_zenodo3561115",
+      "mapping_confidence": "exact",
+      "sha256": "4dea0492c9cc276af9bfb0cd3945fc80ad3c495095e45ce12e90e1224f493fd1",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "getTanh",
+      "source_setup": [
+        "one translation unit with g.cpp"
+      ],
+      "status": "native_compile_failed",
+      "native_exit": 1,
+      "detail": "Assertion `U && \"Cannot dereference end iterator!\"' failed."
+    },
+    {
+      "id": "pca_histogram",
+      "paper_ids": [
+        "pca_hybrid_2025"
+      ],
+      "artifact_id": "hybrid_hls_v1_zenodo3561115",
+      "mapping_confidence": "exact",
+      "sha256": "f5a21fb560a2588a5270ed8bb53fd2e45ee212206a150ebbb6700d24f4f85c93",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          6000,
+          6000,
+          6000,
+          6000
+        ],
+        "vectors": 4
+      },
+      "top": "histogram",
+      "source_setup": [
+        "one translation unit with g.cpp"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "02b032a9031578b92242a044751635abaff8a9ba85ef72b91e707d6b01e69e1c",
+      "elaboration": "passed",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "report_aborted_after_scope_rejection": false,
+      "graph_export_exit": 1
+    },
+    {
+      "id": "pca_BNNKernel",
+      "paper_ids": [
+        "pca_hybrid_2025"
+      ],
+      "artifact_id": "hybrid_hls_v1_zenodo3561115",
+      "mapping_confidence": "exact",
+      "sha256": "b8d9ad2f2153e4dbd2027f21fe78a83fdf523e135a022e1950e8867bd86e6c1e",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          40800,
+          40800,
+          40800,
+          40800
+        ],
+        "vectors": 4
+      },
+      "top": "bnn",
+      "source_setup": [
+        "one translation unit with g1.cpp, g2.cpp"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "89394d1184c3068db28c69b39ff284b0421ed781f1881cdd2394347c0511eff5",
+      "elaboration": "passed",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "report_aborted_after_scope_rejection": true,
+      "graph_export_exit": -6
+    },
+    {
+      "id": "pca_sparseMatrix",
+      "paper_ids": [
+        "pca_hybrid_2025"
+      ],
+      "artifact_id": "hybrid_hls_v1_zenodo3561115",
+      "mapping_confidence": "broader_suite",
+      "sha256": "4b2b405765a0bda2e88c5c85ecf6f571f94ad2a442b9f90b3568110b551d846a",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          30400,
+          30400,
+          30400,
+          30400
+        ],
+        "vectors": 4
+      },
+      "top": "smm",
+      "source_setup": [
+        "one translation unit with g.cpp"
+      ],
+      "status": "rtl_emitted",
+      "rtl_sha256": "d6234168d3fea4fc079026f515486f6aebdb346dd634d144d3d5b11de918811c",
+      "elaboration": "passed",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "report_aborted_after_scope_rejection": true,
+      "graph_export_exit": -6
+    },
+    {
+      "id": "pca_vecNormTrans",
+      "paper_ids": [
+        "pca_hybrid_2025"
+      ],
+      "artifact_id": "hybrid_hls_benchmarks_current",
+      "mapping_confidence": "broader_suite",
+      "sha256": "a01be8a8f3f9d0913255abc923397ec7cbe7376f05faa16c8daa7ac78ed48a56",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          42882,
+          42882,
+          42882,
+          42882
+        ],
+        "vectors": 4
+      },
+      "top": "vecNormTrans",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "7f3da844ecc8df6b05e17227f46d041be9b6637214e8754bed98e7fcf5a477cf",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "pca_gesummv",
+      "paper_ids": [
+        "pca_hybrid_2025"
+      ],
+      "artifact_id": "hybrid_hls_benchmarks_current",
+      "mapping_confidence": "broader_suite",
+      "sha256": "679004671ae747caf6ca77b451e2cc63279f2ca270553e1f7ce7d263b7f446b2",
+      "functional": {
+        "status": "matched",
+        "cycles": [
+          263168,
+          263168,
+          263168,
+          263168
+        ],
+        "vectors": 4,
+        "simulation_timeout_seconds": 350,
+        "prior_timeout_seconds": 55
+      },
+      "top": "gesummv",
+      "source_setup": [],
+      "status": "rtl_emitted",
+      "rtl_sha256": "53a7f180dda246b435e1bfc3bd18897faef2a3663ed5844b859575ef56fff61d",
+      "graph_export": "EXPERIMENT_SCHEDULE_SCOPE: expected a straight-line top function",
+      "elaboration": "passed",
+      "report_aborted_after_scope_rejection": true
+    },
+    {
+      "id": "pca_covariance",
+      "paper_ids": [
+        "pca_hybrid_2025"
+      ],
+      "artifact_id": "hybrid_hls_benchmarks_current",
+      "mapping_confidence": "broader_suite",
+      "sha256": "a764f6ca8ccb3bda9a4255c53b7c6fe04e0ada0ca29c25d980080ec9d5dfde04",
+      "functional": {
+        "status": "not_run"
+      },
+      "top": "covariance",
+      "source_setup": [],
+      "status": "native_compile_failed",
+      "native_exit": -6,
+      "detail": "Assertion `false && \"The access target should be found.\\n\"' failed."
+    }
+  ],
+  "weights": null,
+  "functional_vectors": {
+    "vericert": "archived main initialization and full native 32-bit checksum",
+    "others": "4 deterministic, sanitizer-checked native C/C++ input sets, all memory words and return checked bitwise; signed reduction, finite normalization and bounded matrix power input variants"
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "tcl_sha256": "50d0f003cdf943013f4741584fb8f0f261e415db7710d2f53613747e485606c8",
+  "clock_ns": 10,
+  "board": "xc7z020clg484-1",
+  "bambu_option_delta": {
+    "default": [],
+    "no_chaining": [
+      "--no-chaining"
+    ]
+  },
+  "timing_measure": "post-route estimate: RTL cycles * (10 ns - WNS); single implementation per design",
+  "cases": {
+    "bicg": {
+      "default": {
+        "vivado": "2025.2",
+        "part": "xc7z020clg484-1",
+        "wns_ns": 2.957,
+        "whs_ns": 0.096,
+        "delay_ns": 7.043,
+        "lut": 748,
+        "ff": 655,
+        "slice": 294,
+        "bram18_equiv": 2,
+        "dsp": 0,
+        "routed_nets": 1288,
+        "rtl_sha256": "602e6b6e72c129d027af112750e096b5f3a86bc9d8f76417b512cc51418d2e21",
+        "memory_files": {
+          "array_ref_33847.mem": "9b0d87e1e4f04a4307f000a71aba89bc008dabcb5d0632b1e0f790b1882e73c8",
+          "array_ref_33868.mem": "62a5ad537cf31bbefefdcab4248864b01d7b58ae805174b046286ef80c7373c2",
+          "array_ref_33938.mem": "b5c786193c35f3f395b2a448af983ec3349495c685fd6c236bded0e54ab7fa02",
+          "array_ref_34007.mem": "9b0d87e1e4f04a4307f000a71aba89bc008dabcb5d0632b1e0f790b1882e73c8",
+          "array_ref_34103.mem": "b5c786193c35f3f395b2a448af983ec3349495c685fd6c236bded0e54ab7fa02"
+        },
+        "cycles": 18404,
+        "checksum_hex": "00000000",
+        "meets_100mhz": true,
+        "time_us_at_100mhz": 184.04,
+        "estimated_time_us": 129.6194,
+        "reference_matrix_rtl_sha256": "602e6b6e72c129d027af112750e096b5f3a86bc9d8f76417b512cc51418d2e21",
+        "normalized_rtl_sha256": "6dce5c10d10bd9fc610b909652bdab880145a0aae75d2d7c029c1aa45c2eeb6f",
+        "reference_input_verified": true
+      },
+      "no_chaining": {
+        "vivado": "2025.2",
+        "part": "xc7z020clg484-1",
+        "wns_ns": 2.321,
+        "whs_ns": 0.124,
+        "delay_ns": 7.679,
+        "lut": 888,
+        "ff": 1153,
+        "slice": 372,
+        "bram18_equiv": 2,
+        "dsp": 0,
+        "routed_nets": 1638,
+        "rtl_sha256": "6b589749fe7541b4a891ea9767dc96cec56451ef40166de3f77e89390b00de63",
+        "memory_files": {
+          "array_ref_33847.mem": "9b0d87e1e4f04a4307f000a71aba89bc008dabcb5d0632b1e0f790b1882e73c8",
+          "array_ref_33868.mem": "62a5ad537cf31bbefefdcab4248864b01d7b58ae805174b046286ef80c7373c2",
+          "array_ref_33938.mem": "b5c786193c35f3f395b2a448af983ec3349495c685fd6c236bded0e54ab7fa02",
+          "array_ref_34007.mem": "9b0d87e1e4f04a4307f000a71aba89bc008dabcb5d0632b1e0f790b1882e73c8",
+          "array_ref_34103.mem": "b5c786193c35f3f395b2a448af983ec3349495c685fd6c236bded0e54ab7fa02"
+        },
+        "cycles": 50453,
+        "checksum_hex": "00000000",
+        "meets_100mhz": true,
+        "time_us_at_100mhz": 504.53,
+        "estimated_time_us": 387.4286,
+        "reference_matrix_rtl_sha256": "6b589749fe7541b4a891ea9767dc96cec56451ef40166de3f77e89390b00de63",
+        "normalized_rtl_sha256": "4cb8e0d988e387a77df6cdff3de61303faa463841d86a69926a1da1620f34481",
+        "reference_input_verified": true
+      }
+    },
+    "jacobi_1d": {
+      "default": {
+        "vivado": "2025.2",
+        "part": "xc7z020clg484-1",
+        "wns_ns": 2.376,
+        "whs_ns": 0.18,
+        "delay_ns": 7.624,
+        "lut": 363,
+        "ff": 290,
+        "slice": 128,
+        "bram18_equiv": 4,
+        "dsp": 0,
+        "routed_nets": 871,
+        "rtl_sha256": "5a4b7330c35a0f4145a6422d1683f89d37d328666f6abfb29d853a66a8d20b00",
+        "memory_files": {
+          "array_ref_33829.mem": "e08a9d5c432af2b61042dfd50b1fbcd4cf5a74be3f4f264a6fe68c01977cecf8",
+          "array_ref_33853.mem": "e08a9d5c432af2b61042dfd50b1fbcd4cf5a74be3f4f264a6fe68c01977cecf8"
+        },
+        "cycles": 2442,
+        "checksum_hex": "00000001",
+        "meets_100mhz": true,
+        "time_us_at_100mhz": 24.42,
+        "estimated_time_us": 18.6178,
+        "reference_matrix_rtl_sha256": "639f7f3726707ffb974c8ecf2f3d17cc032ddfb5b8a2a686cb05e5ea677b40ac",
+        "normalized_rtl_sha256": "b17058069e43e47650ee65fb0a5d050bdadb0839aa0480448633c5f8f4527578",
+        "reference_input_verified": true
+      },
+      "no_chaining": {
+        "vivado": "2025.2",
+        "part": "xc7z020clg484-1",
+        "wns_ns": 2.092,
+        "whs_ns": 0.123,
+        "delay_ns": 7.908,
+        "lut": 572,
+        "ff": 737,
+        "slice": 233,
+        "bram18_equiv": 4,
+        "dsp": 0,
+        "routed_nets": 1259,
+        "rtl_sha256": "10555cebefb78a82e78f728a385502e785d058f7b3a4f4b245c4f3e830e1b1a4",
+        "memory_files": {
+          "array_ref_33829.mem": "e08a9d5c432af2b61042dfd50b1fbcd4cf5a74be3f4f264a6fe68c01977cecf8",
+          "array_ref_33853.mem": "e08a9d5c432af2b61042dfd50b1fbcd4cf5a74be3f4f264a6fe68c01977cecf8"
+        },
+        "cycles": 12825,
+        "checksum_hex": "00000001",
+        "meets_100mhz": true,
+        "time_us_at_100mhz": 128.25,
+        "estimated_time_us": 101.4201,
+        "reference_matrix_rtl_sha256": "ab596188e8e171ee437e6ff208981c7a4715cf8acd488d3f4c65767e53e18342",
+        "normalized_rtl_sha256": "fe31ac0325eb58bb44d30e6ebfad3670a23e7f305ae616fdb0b4e18dc3298164",
+        "reference_input_verified": true
+      }
+    }
+  }
+}
